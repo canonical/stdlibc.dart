@@ -9,6 +9,7 @@ headers:
     - "/usr/include/errno.h"
     - "/usr/include/stdlib.h"
     - "/usr/include/string.h"
+    - "/usr/include/x86_64-linux-gnu/sys/stat.h"
     - "/usr/include/x86_64-linux-gnu/sys/sysinfo.h"
     - "/usr/include/x86_64-linux-gnu/sys/utsname.h"
 globals:
@@ -17,19 +18,27 @@ globals:
 functions:
   include:
     - "__errno_location"
+    - "__fxstat"
     - "getenv"
+    - "__lxstat"
     - "putenv"
     - "setenv"
     - "strerror"
     - "sysinfo"
     - "uname"
     - "unsetenv"
+    - "__xstat"
   rename:
     "__errno_location": "errno"
+    "__fxstat": "fstat"
+    "__lxstat": "lstat"
+    "__xstat": "stat"
 macros:
   include:
+    - "_STAT_VER"
     - "_UTSNAME_.*"
   rename:
+    "_STAT_VER": "STAT_VER"
     "_UTSNAME_(.*)": "UTSNAME_$1"
 enums:
   exclude:
@@ -39,10 +48,14 @@ unnamed-enums:
     - ".*"
 structs:
   include:
+    - "stat"
     - "sysinfo"
+    - "timespec"
     - "utsname"
   rename:
+    "stat": "stat_t"
     "sysinfo": "sysinfo_t"
+    "timespec": "timespec_t"
     "utsname": "utsname_t"
 unions:
   exclude:

@@ -9,6 +9,7 @@ headers:
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/errno.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdlib.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/string.h"
+    - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/stat.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/utsname.h"
 globals:
   exclude:
@@ -16,9 +17,12 @@ globals:
 functions:
   include:
     - "__error"
+    - "fstat"
+    - "lstat"
     - "getenv"
     - "putenv"
     - "setenv"
+    - "stat"
     - "strerror"
     - "uname"
     - "unsetenv"
@@ -37,8 +41,12 @@ unnamed-enums:
     - ".*"
 structs:
   include:
+    - "stat"
+    - "timespec"
     - "utsname"
   rename:
+    "stat": "stat_t"
+    "timespec": "timespec_t"
     "utsname": "utsname_t"
 unions:
   exclude:

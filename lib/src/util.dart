@@ -42,3 +42,8 @@ extension Int8TypedList on ffi.Array<ffi.Int8> {
     ];
   }
 }
+
+DateTime fromTimespec(int tv_sec, int tv_nsec) {
+  return DateTime.fromMicrosecondsSinceEpoch(
+      tv_sec * 1000000 + tv_nsec ~/ 1000);
+}

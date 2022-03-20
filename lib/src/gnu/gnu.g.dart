@@ -28,6 +28,25 @@ class DynamicGnuCLibrary {
           '__errno_location');
   late final _errno = _errnoPtr.asFunction<ffi.Pointer<ffi.Int32> Function()>();
 
+  int fstat(
+    int __ver,
+    int __fildes,
+    ffi.Pointer<stat_t> __stat_buf,
+  ) {
+    return _fstat(
+      __ver,
+      __fildes,
+      __stat_buf,
+    );
+  }
+
+  late final _fstatPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Int32, ffi.Int32, ffi.Pointer<stat_t>)>>('__fxstat');
+  late final _fstat =
+      _fstatPtr.asFunction<int Function(int, int, ffi.Pointer<stat_t>)>();
+
   ffi.Pointer<ffi.Int8> getenv(
     ffi.Pointer<ffi.Int8> __name,
   ) {
@@ -41,6 +60,25 @@ class DynamicGnuCLibrary {
           ffi.Pointer<ffi.Int8> Function(ffi.Pointer<ffi.Int8>)>>('getenv');
   late final _getenv = _getenvPtr
       .asFunction<ffi.Pointer<ffi.Int8> Function(ffi.Pointer<ffi.Int8>)>();
+
+  int lstat(
+    int __ver,
+    ffi.Pointer<ffi.Int8> __filename,
+    ffi.Pointer<stat_t> __stat_buf,
+  ) {
+    return _lstat(
+      __ver,
+      __filename,
+      __stat_buf,
+    );
+  }
+
+  late final _lstatPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Int32, ffi.Pointer<ffi.Int8>,
+              ffi.Pointer<stat_t>)>>('__lxstat');
+  late final _lstat = _lstatPtr.asFunction<
+      int Function(int, ffi.Pointer<ffi.Int8>, ffi.Pointer<stat_t>)>();
 
   int putenv(
     ffi.Pointer<ffi.Int8> __string,
@@ -74,6 +112,25 @@ class DynamicGnuCLibrary {
               ffi.Int32)>>('setenv');
   late final _setenv = _setenvPtr.asFunction<
       int Function(ffi.Pointer<ffi.Int8>, ffi.Pointer<ffi.Int8>, int)>();
+
+  int stat(
+    int __ver,
+    ffi.Pointer<ffi.Int8> __filename,
+    ffi.Pointer<stat_t> __stat_buf,
+  ) {
+    return _stat(
+      __ver,
+      __filename,
+      __stat_buf,
+    );
+  }
+
+  late final _statPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Int32, ffi.Pointer<ffi.Int8>,
+              ffi.Pointer<stat_t>)>>('__xstat');
+  late final _stat = _statPtr.asFunction<
+      int Function(int, ffi.Pointer<ffi.Int8>, ffi.Pointer<stat_t>)>();
 
   ffi.Pointer<ffi.Int8> strerror(
     int __errnum,
@@ -132,6 +189,8 @@ class DynamicGnuCLibrary {
       _unsetenvPtr.asFunction<int Function(ffi.Pointer<ffi.Int8>)>();
 }
 
+const int STAT_VER = 1;
+
 const int UTSNAME_DOMAIN_LENGTH = 65;
 
 const int UTSNAME_LENGTH = 65;
@@ -145,6 +204,50 @@ const int UTSNAME_RELEASE_LENGTH = 65;
 const int UTSNAME_SYSNAME_LENGTH = 65;
 
 const int UTSNAME_VERSION_LENGTH = 65;
+
+class stat_t extends ffi.Struct {
+  @ffi.Uint64()
+  external int st_dev;
+
+  @ffi.Uint64()
+  external int st_ino;
+
+  @ffi.Uint64()
+  external int st_nlink;
+
+  @ffi.Uint32()
+  external int st_mode;
+
+  @ffi.Uint32()
+  external int st_uid;
+
+  @ffi.Uint32()
+  external int st_gid;
+
+  @ffi.Int32()
+  external int __pad0;
+
+  @ffi.Uint64()
+  external int st_rdev;
+
+  @ffi.Int64()
+  external int st_size;
+
+  @ffi.Int64()
+  external int st_blksize;
+
+  @ffi.Int64()
+  external int st_blocks;
+
+  external timespec_t st_atim;
+
+  external timespec_t st_mtim;
+
+  external timespec_t st_ctim;
+
+  @ffi.Array.multi([3])
+  external ffi.Array<ffi.Int64> __glibc_reserved;
+}
 
 class sysinfo_t extends ffi.Struct {
   @ffi.Int64()
@@ -188,6 +291,14 @@ class sysinfo_t extends ffi.Struct {
 
   @ffi.Array.multi([0])
   external ffi.Array<ffi.Int8> _f;
+}
+
+class timespec_t extends ffi.Struct {
+  @ffi.Int64()
+  external int tv_sec;
+
+  @ffi.Int64()
+  external int tv_nsec;
 }
 
 class utsname_t extends ffi.Struct {

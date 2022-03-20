@@ -27,6 +27,22 @@ class DynamicBsdCLibrary {
       _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Int32> Function()>>('__error');
   late final _errno = _errnoPtr.asFunction<ffi.Pointer<ffi.Int32> Function()>();
 
+  int fstat(
+    int arg0,
+    ffi.Pointer<stat_t> arg1,
+  ) {
+    return _fstat(
+      arg0,
+      arg1,
+    );
+  }
+
+  late final _fstatPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Int32, ffi.Pointer<stat_t>)>>('fstat');
+  late final _fstat =
+      _fstatPtr.asFunction<int Function(int, ffi.Pointer<stat_t>)>();
+
   ffi.Pointer<ffi.Int8> getenv(
     ffi.Pointer<ffi.Int8> arg0,
   ) {
@@ -40,6 +56,23 @@ class DynamicBsdCLibrary {
           ffi.Pointer<ffi.Int8> Function(ffi.Pointer<ffi.Int8>)>>('getenv');
   late final _getenv = _getenvPtr
       .asFunction<ffi.Pointer<ffi.Int8> Function(ffi.Pointer<ffi.Int8>)>();
+
+  int lstat(
+    ffi.Pointer<ffi.Int8> arg0,
+    ffi.Pointer<stat_t> arg1,
+  ) {
+    return _lstat(
+      arg0,
+      arg1,
+    );
+  }
+
+  late final _lstatPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<ffi.Int8>, ffi.Pointer<stat_t>)>>('lstat');
+  late final _lstat = _lstatPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Int8>, ffi.Pointer<stat_t>)>();
 
   int putenv(
     ffi.Pointer<ffi.Int8> arg0,
@@ -73,6 +106,23 @@ class DynamicBsdCLibrary {
               ffi.Int32)>>('setenv');
   late final _setenv = _setenvPtr.asFunction<
       int Function(ffi.Pointer<ffi.Int8>, ffi.Pointer<ffi.Int8>, int)>();
+
+  int stat(
+    ffi.Pointer<ffi.Int8> arg0,
+    ffi.Pointer<stat_t> arg1,
+  ) {
+    return _stat(
+      arg0,
+      arg1,
+    );
+  }
+
+  late final _statPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<ffi.Int8>, ffi.Pointer<stat_t>)>>('stat');
+  late final _stat = _statPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Int8>, ffi.Pointer<stat_t>)>();
 
   ffi.Pointer<ffi.Int8> strerror(
     int __errnum,
@@ -118,6 +168,66 @@ class DynamicBsdCLibrary {
 }
 
 const int SYS_NAMELEN = 256;
+
+class stat_t extends ffi.Struct {
+  @ffi.Int32()
+  external int st_dev;
+
+  @ffi.Uint16()
+  external int st_mode;
+
+  @ffi.Uint16()
+  external int st_nlink;
+
+  @ffi.Uint64()
+  external int st_ino;
+
+  @ffi.Uint32()
+  external int st_uid;
+
+  @ffi.Uint32()
+  external int st_gid;
+
+  @ffi.Int32()
+  external int st_rdev;
+
+  external timespec_t st_atimespec;
+
+  external timespec_t st_mtimespec;
+
+  external timespec_t st_ctimespec;
+
+  external timespec_t st_birthtimespec;
+
+  @ffi.Int64()
+  external int st_size;
+
+  @ffi.Int64()
+  external int st_blocks;
+
+  @ffi.Int32()
+  external int st_blksize;
+
+  @ffi.Uint32()
+  external int st_flags;
+
+  @ffi.Uint32()
+  external int st_gen;
+
+  @ffi.Int32()
+  external int st_lspare;
+
+  @ffi.Array.multi([2])
+  external ffi.Array<ffi.Int64> st_qspare;
+}
+
+class timespec_t extends ffi.Struct {
+  @ffi.Int64()
+  external int tv_sec;
+
+  @ffi.Int64()
+  external int tv_nsec;
+}
 
 class utsname_t extends ffi.Struct {
   @ffi.Array.multi([256])
