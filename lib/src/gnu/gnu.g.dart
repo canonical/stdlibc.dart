@@ -19,6 +19,18 @@ class DynamicGnuCLibrary {
           lookup)
       : _lookup = lookup;
 
+  int close(
+    int __fd,
+  ) {
+    return _close(
+      __fd,
+    );
+  }
+
+  late final _closePtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32)>>('close');
+  late final _close = _closePtr.asFunction<int Function(int)>();
+
   ffi.Pointer<ffi.Int32> errno() {
     return _errno();
   }
@@ -79,6 +91,22 @@ class DynamicGnuCLibrary {
               ffi.Pointer<stat_t>)>>('__lxstat');
   late final _lstat = _lstatPtr.asFunction<
       int Function(int, ffi.Pointer<ffi.Int8>, ffi.Pointer<stat_t>)>();
+
+  int open(
+    ffi.Pointer<ffi.Int8> __file,
+    int __oflag,
+  ) {
+    return _open(
+      __file,
+      __oflag,
+    );
+  }
+
+  late final _openPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<ffi.Int8>, ffi.Int32)>>('open');
+  late final _open =
+      _openPtr.asFunction<int Function(ffi.Pointer<ffi.Int8>, int)>();
 
   int putenv(
     ffi.Pointer<ffi.Int8> __string,
@@ -188,6 +216,44 @@ class DynamicGnuCLibrary {
   late final _unsetenv =
       _unsetenvPtr.asFunction<int Function(ffi.Pointer<ffi.Int8>)>();
 }
+
+const int O_ACCMODE = 3;
+
+const int O_APPEND = 1024;
+
+const int O_ASYNC = 8192;
+
+const int O_CLOEXEC = 524288;
+
+const int O_CREAT = 64;
+
+const int O_DIRECTORY = 65536;
+
+const int O_DSYNC = 4096;
+
+const int O_EXCL = 128;
+
+const int O_FSYNC = 1052672;
+
+const int O_NDELAY = 2048;
+
+const int O_NOCTTY = 256;
+
+const int O_NOFOLLOW = 131072;
+
+const int O_NONBLOCK = 2048;
+
+const int O_RDONLY = 0;
+
+const int O_RDWR = 2;
+
+const int O_RSYNC = 1052672;
+
+const int O_SYNC = 1052672;
+
+const int O_TRUNC = 512;
+
+const int O_WRONLY = 1;
 
 const int STAT_VER = 1;
 

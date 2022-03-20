@@ -7,8 +7,10 @@ llvm-path:
 headers:
   entry-points:
     - "/usr/include/errno.h"
+    - "/usr/include/fcntl.h"
     - "/usr/include/stdlib.h"
     - "/usr/include/string.h"
+    - "/usr/include/unistd.h"
     - "/usr/include/x86_64-linux-gnu/sys/stat.h"
     - "/usr/include/x86_64-linux-gnu/sys/sysinfo.h"
     - "/usr/include/x86_64-linux-gnu/sys/utsname.h"
@@ -17,10 +19,12 @@ globals:
     - ".*"
 functions:
   include:
+    - "close"
     - "__errno_location"
     - "__fxstat"
     - "getenv"
     - "__lxstat"
+    - "open"
     - "putenv"
     - "setenv"
     - "strerror"
@@ -35,6 +39,7 @@ functions:
     "__xstat": "stat"
 macros:
   include:
+    - "O_.*"
     - "_STAT_VER"
     - "_UTSNAME_.*"
   rename:

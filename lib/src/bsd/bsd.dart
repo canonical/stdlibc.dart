@@ -3,11 +3,13 @@ import 'dart:ffi' as ffi;
 import '../libc.dart';
 import 'bsd.g.dart';
 import 'errno.dart';
+import 'fcntl.dart';
 import 'stat.dart';
 import 'stdlib.dart';
 import 'string.dart';
 import 'sysinfo.dart';
 import 'uname.dart';
+import 'unistd.dart';
 
 export 'bsd.g.dart';
 
@@ -21,8 +23,10 @@ ffi.Pointer<T> inode64Lookup<T extends ffi.NativeType>(String symbolName) {
 class BsdLibC extends LibC
     with
         BsdErrnoMixin,
+        BsdFcntlMixin,
         BsdStatMixin,
         BsdStdlibMixin,
         BsdStringMixin,
         BsdSysinfoMixin,
-        BsdUnameMixin {}
+        BsdUnameMixin,
+        BsdUnistdMixin {}
