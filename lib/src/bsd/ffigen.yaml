@@ -1,0 +1,35 @@
+name: DynamicBsdCLibrary
+description: "BSD C Library"
+output: "lib/src/bsd/bsd.g.dart"
+sort: true
+llvm-path:
+  - "/Library/Developer/CommandLineTools/usr/lib/libclang.dylib"
+headers:
+  entry-points:
+    - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/errno.h"
+globals:
+  exclude:
+    - ".*"
+functions:
+  include:
+    - "__error"
+  rename:
+    "__error": "errno"
+macros:
+  exclude:
+    - ".*"
+enums:
+  exclude:
+    - ".*"
+unnamed-enums:
+  exclude:
+    - ".*"
+structs:
+  exclude:
+    - ".*"
+unions:
+  exclude:
+    - ".*"
+typedefs:
+  exclude:
+    - ".*"

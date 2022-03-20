@@ -1,6 +1,9 @@
+import 'dart:io';
+
+import 'bsd/bsd.dart';
 import 'gnu/gnu.dart';
 
-final libc = GnuLibC();
+final libc = Platform.isMacOS ? BsdLibC() : GnuLibC();
 
 abstract class LibC {
   int get errno;
