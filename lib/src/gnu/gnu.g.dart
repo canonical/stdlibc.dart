@@ -59,6 +59,14 @@ class DynamicGnuCLibrary {
   late final _fstat =
       _fstatPtr.asFunction<int Function(int, int, ffi.Pointer<stat_t>)>();
 
+  int getegid() {
+    return _getegid();
+  }
+
+  late final _getegidPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint32 Function()>>('getegid');
+  late final _getegid = _getegidPtr.asFunction<int Function()>();
+
   ffi.Pointer<ffi.Int8> getenv(
     ffi.Pointer<ffi.Int8> __name,
   ) {
@@ -72,6 +80,78 @@ class DynamicGnuCLibrary {
           ffi.Pointer<ffi.Int8> Function(ffi.Pointer<ffi.Int8>)>>('getenv');
   late final _getenv = _getenvPtr
       .asFunction<ffi.Pointer<ffi.Int8> Function(ffi.Pointer<ffi.Int8>)>();
+
+  int geteuid() {
+    return _geteuid();
+  }
+
+  late final _geteuidPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint32 Function()>>('geteuid');
+  late final _geteuid = _geteuidPtr.asFunction<int Function()>();
+
+  int getgid() {
+    return _getgid();
+  }
+
+  late final _getgidPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint32 Function()>>('getgid');
+  late final _getgid = _getgidPtr.asFunction<int Function()>();
+
+  int gethostid() {
+    return _gethostid();
+  }
+
+  late final _gethostidPtr =
+      _lookup<ffi.NativeFunction<ffi.Int64 Function()>>('gethostid');
+  late final _gethostid = _gethostidPtr.asFunction<int Function()>();
+
+  int getpgid(
+    int __pid,
+  ) {
+    return _getpgid(
+      __pid,
+    );
+  }
+
+  late final _getpgidPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32)>>('getpgid');
+  late final _getpgid = _getpgidPtr.asFunction<int Function(int)>();
+
+  int getpid() {
+    return _getpid();
+  }
+
+  late final _getpidPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function()>>('getpid');
+  late final _getpid = _getpidPtr.asFunction<int Function()>();
+
+  int getppid() {
+    return _getppid();
+  }
+
+  late final _getppidPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function()>>('getppid');
+  late final _getppid = _getppidPtr.asFunction<int Function()>();
+
+  int getsid(
+    int __pid,
+  ) {
+    return _getsid(
+      __pid,
+    );
+  }
+
+  late final _getsidPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32)>>('getsid');
+  late final _getsid = _getsidPtr.asFunction<int Function(int)>();
+
+  int getuid() {
+    return _getuid();
+  }
+
+  late final _getuidPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint32 Function()>>('getuid');
+  late final _getuid = _getuidPtr.asFunction<int Function()>();
 
   int lstat(
     int __ver,
@@ -122,6 +202,18 @@ class DynamicGnuCLibrary {
   late final _putenv =
       _putenvPtr.asFunction<int Function(ffi.Pointer<ffi.Int8>)>();
 
+  int setegid(
+    int __gid,
+  ) {
+    return _setegid(
+      __gid,
+    );
+  }
+
+  late final _setegidPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Uint32)>>('setegid');
+  late final _setegid = _setegidPtr.asFunction<int Function(int)>();
+
   int setenv(
     ffi.Pointer<ffi.Int8> __name,
     ffi.Pointer<ffi.Int8> __value,
@@ -140,6 +232,107 @@ class DynamicGnuCLibrary {
               ffi.Int32)>>('setenv');
   late final _setenv = _setenvPtr.asFunction<
       int Function(ffi.Pointer<ffi.Int8>, ffi.Pointer<ffi.Int8>, int)>();
+
+  int seteuid(
+    int __uid,
+  ) {
+    return _seteuid(
+      __uid,
+    );
+  }
+
+  late final _seteuidPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Uint32)>>('seteuid');
+  late final _seteuid = _seteuidPtr.asFunction<int Function(int)>();
+
+  int setgid(
+    int __gid,
+  ) {
+    return _setgid(
+      __gid,
+    );
+  }
+
+  late final _setgidPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Uint32)>>('setgid');
+  late final _setgid = _setgidPtr.asFunction<int Function(int)>();
+
+  int sethostid(
+    int __id,
+  ) {
+    return _sethostid(
+      __id,
+    );
+  }
+
+  late final _sethostidPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int64)>>('sethostid');
+  late final _sethostid = _sethostidPtr.asFunction<int Function(int)>();
+
+  int setpgid(
+    int __pid,
+    int __pgid,
+  ) {
+    return _setpgid(
+      __pid,
+      __pgid,
+    );
+  }
+
+  late final _setpgidPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32, ffi.Int32)>>(
+          'setpgid');
+  late final _setpgid = _setpgidPtr.asFunction<int Function(int, int)>();
+
+  int setregid(
+    int __rgid,
+    int __egid,
+  ) {
+    return _setregid(
+      __rgid,
+      __egid,
+    );
+  }
+
+  late final _setregidPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Uint32, ffi.Uint32)>>(
+          'setregid');
+  late final _setregid = _setregidPtr.asFunction<int Function(int, int)>();
+
+  int setreuid(
+    int __ruid,
+    int __euid,
+  ) {
+    return _setreuid(
+      __ruid,
+      __euid,
+    );
+  }
+
+  late final _setreuidPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Uint32, ffi.Uint32)>>(
+          'setreuid');
+  late final _setreuid = _setreuidPtr.asFunction<int Function(int, int)>();
+
+  int setsid() {
+    return _setsid();
+  }
+
+  late final _setsidPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function()>>('setsid');
+  late final _setsid = _setsidPtr.asFunction<int Function()>();
+
+  int setuid(
+    int __uid,
+  ) {
+    return _setuid(
+      __uid,
+    );
+  }
+
+  late final _setuidPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Uint32)>>('setuid');
+  late final _setuid = _setuidPtr.asFunction<int Function(int)>();
 
   int stat(
     int __ver,
