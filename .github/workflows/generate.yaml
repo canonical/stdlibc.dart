@@ -1,0 +1,39 @@
+name: Generate
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  bsd:
+    runs-on: macos-11
+    steps:
+    - uses: actions/checkout@v2
+    - uses: dart-lang/setup-dart@v1
+    - run: dart pub get
+    - run: dart run ffigen --config lib/src/bsd/ffigen.yaml
+    - run: ./.github/scripts/check-outdated-files.sh
+    - uses: peter-evans/create-pull-request@v3
+      if: github.event_name != 'pull_request'
+      with:
+        title: 'Regenerate BSD bindings'
+        commit-message: 'Regenerate BSD bindings'
+
+  gnu:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+    - run: sudo apt update
+    - run: sudo apt install -y libclang-9-dev
+    - uses: dart-lang/setup-dart@v1
+    - run: dart pub get
+    - run: dart run ffigen --config lib/src/gnu/ffigen.yaml
+    - run: ./.github/scripts/check-outdated-files.sh
+    - uses: peter-evans/create-pull-request@v3
+      if: github.event_name != 'pull_request'
+      with:
+        title: 'Regenerate GNU bindings'
+        commit-message: 'Regenerate GNU bindings'
