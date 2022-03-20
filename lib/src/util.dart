@@ -14,6 +14,12 @@ void checkErrno(String id, int res) {
   }
 }
 
+extension CString on String {
+  ffi.Pointer<ffi.Int8> toCString(ffi.Allocator alloc) {
+    return toNativeUtf8(allocator: alloc).cast();
+  }
+}
+
 extension Int8PointerString on ffi.Pointer<ffi.Int8> {
   String? toDartString({int? length}) {
     if (this == ffi.nullptr) return null;

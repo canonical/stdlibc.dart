@@ -7,6 +7,7 @@ llvm-path:
 headers:
   entry-points:
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/errno.h"
+    - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdlib.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/string.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/utsname.h"
 globals:
@@ -15,8 +16,12 @@ globals:
 functions:
   include:
     - "__error"
+    - "getenv"
+    - "putenv"
+    - "setenv"
     - "strerror"
     - "uname"
+    - "unsetenv"
   rename:
     "__error": "errno"
 macros:

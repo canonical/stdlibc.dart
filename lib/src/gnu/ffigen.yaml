@@ -7,6 +7,7 @@ llvm-path:
 headers:
   entry-points:
     - "/usr/include/errno.h"
+    - "/usr/include/stdlib.h"
     - "/usr/include/string.h"
     - "/usr/include/x86_64-linux-gnu/sys/sysinfo.h"
     - "/usr/include/x86_64-linux-gnu/sys/utsname.h"
@@ -16,9 +17,13 @@ globals:
 functions:
   include:
     - "__errno_location"
+    - "getenv"
+    - "putenv"
+    - "setenv"
     - "strerror"
     - "sysinfo"
     - "uname"
+    - "unsetenv"
   rename:
     "__errno_location": "errno"
 macros:

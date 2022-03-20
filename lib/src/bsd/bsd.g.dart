@@ -27,6 +27,53 @@ class DynamicBsdCLibrary {
       _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Int32> Function()>>('__error');
   late final _errno = _errnoPtr.asFunction<ffi.Pointer<ffi.Int32> Function()>();
 
+  ffi.Pointer<ffi.Int8> getenv(
+    ffi.Pointer<ffi.Int8> arg0,
+  ) {
+    return _getenv(
+      arg0,
+    );
+  }
+
+  late final _getenvPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Int8> Function(ffi.Pointer<ffi.Int8>)>>('getenv');
+  late final _getenv = _getenvPtr
+      .asFunction<ffi.Pointer<ffi.Int8> Function(ffi.Pointer<ffi.Int8>)>();
+
+  int putenv(
+    ffi.Pointer<ffi.Int8> arg0,
+  ) {
+    return _putenv(
+      arg0,
+    );
+  }
+
+  late final _putenvPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<ffi.Int8>)>>(
+          'putenv');
+  late final _putenv =
+      _putenvPtr.asFunction<int Function(ffi.Pointer<ffi.Int8>)>();
+
+  int setenv(
+    ffi.Pointer<ffi.Int8> __name,
+    ffi.Pointer<ffi.Int8> __value,
+    int __overwrite,
+  ) {
+    return _setenv(
+      __name,
+      __value,
+      __overwrite,
+    );
+  }
+
+  late final _setenvPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<ffi.Int8>, ffi.Pointer<ffi.Int8>,
+              ffi.Int32)>>('setenv');
+  late final _setenv = _setenvPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Int8>, ffi.Pointer<ffi.Int8>, int)>();
+
   ffi.Pointer<ffi.Int8> strerror(
     int __errnum,
   ) {
@@ -54,6 +101,20 @@ class DynamicBsdCLibrary {
           'uname');
   late final _uname =
       _unamePtr.asFunction<int Function(ffi.Pointer<utsname_t>)>();
+
+  int unsetenv(
+    ffi.Pointer<ffi.Int8> arg0,
+  ) {
+    return _unsetenv(
+      arg0,
+    );
+  }
+
+  late final _unsetenvPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<ffi.Int8>)>>(
+          'unsetenv');
+  late final _unsetenv =
+      _unsetenvPtr.asFunction<int Function(ffi.Pointer<ffi.Int8>)>();
 }
 
 const int SYS_NAMELEN = 256;
