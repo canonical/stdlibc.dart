@@ -1,0 +1,35 @@
+name: DynamicGnuCLibrary
+description: "GNU C Library"
+output: "lib/src/gnu/gnu.g.dart"
+sort: true
+llvm-path:
+  - "/usr/lib/llvm-9"
+headers:
+  entry-points:
+    - "/usr/include/errno.h"
+globals:
+  exclude:
+    - ".*"
+functions:
+  include:
+    - "__errno_location"
+  rename:
+    "__errno_location": "errno"
+macros:
+  exclude:
+    - ".*"
+enums:
+  exclude:
+    - ".*"
+unnamed-enums:
+  exclude:
+    - ".*"
+structs:
+  exclude:
+    - ".*"
+unions:
+  exclude:
+    - ".*"
+typedefs:
+  exclude:
+    - ".*"
