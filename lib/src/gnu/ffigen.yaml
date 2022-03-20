@@ -8,6 +8,7 @@ headers:
   entry-points:
     - "/usr/include/errno.h"
     - "/usr/include/string.h"
+    - "/usr/include/x86_64-linux-gnu/sys/utsname.h"
 globals:
   exclude:
     - ".*"
@@ -15,11 +16,14 @@ functions:
   include:
     - "__errno_location"
     - "strerror"
+    - "uname"
   rename:
     "__errno_location": "errno"
 macros:
-  exclude:
-    - ".*"
+  include:
+    - "_UTSNAME_.*"
+  rename:
+    "_UTSNAME_(.*)": "UTSNAME_$1"
 enums:
   exclude:
     - ".*"
@@ -27,8 +31,10 @@ unnamed-enums:
   exclude:
     - ".*"
 structs:
-  exclude:
-    - ".*"
+  include:
+    - "utsname"
+  rename:
+    "utsname": "utsname_t"
 unions:
   exclude:
     - ".*"

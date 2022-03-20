@@ -1,11 +1,13 @@
 import 'dart:ffi' as ffi;
 
-import 'package:libc/src/gnu/string.dart';
-
 import '../libc.dart';
-import 'gnu.g.dart' as g;
+import 'gnu.g.dart';
 import 'errno.dart';
+import 'string.dart';
+import 'uname.dart';
 
-final dylib = g.DynamicGnuCLibrary(ffi.DynamicLibrary.process());
+export 'gnu.g.dart';
 
-class GnuLibC extends LibC with GnuErrnoMixin, GnuStringMixin {}
+final dylib = DynamicGnuCLibrary(ffi.DynamicLibrary.process());
+
+class GnuLibC extends LibC with GnuErrnoMixin, GnuStringMixin, GnuUnameMixin {}

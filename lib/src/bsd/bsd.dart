@@ -1,11 +1,13 @@
 import 'dart:ffi' as ffi;
 
-import 'package:libc/src/bsd/string.dart';
-
 import '../libc.dart';
 import 'bsd.g.dart';
 import 'errno.dart';
+import 'string.dart';
+import 'uname.dart';
+
+export 'bsd.g.dart';
 
 final dylib = DynamicBsdCLibrary(ffi.DynamicLibrary.process());
 
-class BsdLibC extends LibC with BsdErrnoMixin, BsdStringMixin {}
+class BsdLibC extends LibC with BsdErrnoMixin, BsdStringMixin, BsdUnameMixin {}

@@ -40,4 +40,37 @@ class DynamicBsdCLibrary {
           'strerror');
   late final _strerror =
       _strerrorPtr.asFunction<ffi.Pointer<ffi.Int8> Function(int)>();
+
+  int uname(
+    ffi.Pointer<utsname_t> arg0,
+  ) {
+    return _uname(
+      arg0,
+    );
+  }
+
+  late final _unamePtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<utsname_t>)>>(
+          'uname');
+  late final _uname =
+      _unamePtr.asFunction<int Function(ffi.Pointer<utsname_t>)>();
+}
+
+const int SYS_NAMELEN = 256;
+
+class utsname_t extends ffi.Struct {
+  @ffi.Array.multi([256])
+  external ffi.Array<ffi.Int8> sysname;
+
+  @ffi.Array.multi([256])
+  external ffi.Array<ffi.Int8> nodename;
+
+  @ffi.Array.multi([256])
+  external ffi.Array<ffi.Int8> release;
+
+  @ffi.Array.multi([256])
+  external ffi.Array<ffi.Int8> version;
+
+  @ffi.Array.multi([256])
+  external ffi.Array<ffi.Int8> machine;
 }
