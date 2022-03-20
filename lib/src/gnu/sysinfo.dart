@@ -1,0 +1,38 @@
+import 'dart:ffi' as ffi;
+
+import 'package:ffi/ffi.dart' as ffi;
+
+import '../libc.dart';
+import '../sysinfo.dart';
+import '../util.dart';
+import 'gnu.dart';
+
+mixin GnuSysinfoMixin on LibC {
+  @override
+  Sysinfo sysinfo() {
+    return ffi.using((arena) {
+      final buf = arena<sysinfo_t>();
+      final res = dylib.sysinfo(buf);
+      checkErrno('sysinfo', res);
+      return buf.toSysinfo();
+    });
+  }
+}
+
+extension GnuSysinfo on ffi.Pointer<sysinfo_t> {
+  Sysinfo toSysinfo() {
+    return Sysinfo(
+      uptime: Duration(seconds: ref.uptime),
+      loads: [ref.loads[0], ref.loads[1], ref.loads[2]],
+      totalram: ref.totalram,
+      sharedram: ref.sharedram,
+      bufferram: ref.bufferram,
+      totalswap: ref.totalswap,
+      freeswap: ref.freeswap,
+      procs: ref.procs,
+      totalhigh: ref.totalhigh,
+      freehigh: ref.freehigh,
+      mem_unit: ref.mem_unit,
+    );
+  }
+}

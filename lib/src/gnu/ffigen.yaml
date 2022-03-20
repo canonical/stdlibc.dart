@@ -8,6 +8,7 @@ headers:
   entry-points:
     - "/usr/include/errno.h"
     - "/usr/include/string.h"
+    - "/usr/include/x86_64-linux-gnu/sys/sysinfo.h"
     - "/usr/include/x86_64-linux-gnu/sys/utsname.h"
 globals:
   exclude:
@@ -16,6 +17,7 @@ functions:
   include:
     - "__errno_location"
     - "strerror"
+    - "sysinfo"
     - "uname"
   rename:
     "__errno_location": "errno"
@@ -32,8 +34,10 @@ unnamed-enums:
     - ".*"
 structs:
   include:
+    - "sysinfo"
     - "utsname"
   rename:
+    "sysinfo": "sysinfo_t"
     "utsname": "utsname_t"
 unions:
   exclude:

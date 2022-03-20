@@ -4,10 +4,12 @@ import '../libc.dart';
 import 'gnu.g.dart';
 import 'errno.dart';
 import 'string.dart';
+import 'sysinfo.dart';
 import 'uname.dart';
 
 export 'gnu.g.dart';
 
 final dylib = DynamicGnuCLibrary(ffi.DynamicLibrary.process());
 
-class GnuLibC extends LibC with GnuErrnoMixin, GnuStringMixin, GnuUnameMixin {}
+class GnuLibC extends LibC
+    with GnuErrnoMixin, GnuStringMixin, GnuSysinfoMixin, GnuUnameMixin {}

@@ -42,6 +42,20 @@ class DynamicGnuCLibrary {
   late final _strerror =
       _strerrorPtr.asFunction<ffi.Pointer<ffi.Int8> Function(int)>();
 
+  int sysinfo(
+    ffi.Pointer<sysinfo_t> __info,
+  ) {
+    return _sysinfo(
+      __info,
+    );
+  }
+
+  late final _sysinfoPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<sysinfo_t>)>>(
+          'sysinfo');
+  late final _sysinfo =
+      _sysinfoPtr.asFunction<int Function(ffi.Pointer<sysinfo_t>)>();
+
   int uname(
     ffi.Pointer<utsname_t> __name,
   ) {
@@ -70,6 +84,50 @@ const int UTSNAME_RELEASE_LENGTH = 65;
 const int UTSNAME_SYSNAME_LENGTH = 65;
 
 const int UTSNAME_VERSION_LENGTH = 65;
+
+class sysinfo_t extends ffi.Struct {
+  @ffi.Int64()
+  external int uptime;
+
+  @ffi.Array.multi([3])
+  external ffi.Array<ffi.Uint64> loads;
+
+  @ffi.Uint64()
+  external int totalram;
+
+  @ffi.Uint64()
+  external int freeram;
+
+  @ffi.Uint64()
+  external int sharedram;
+
+  @ffi.Uint64()
+  external int bufferram;
+
+  @ffi.Uint64()
+  external int totalswap;
+
+  @ffi.Uint64()
+  external int freeswap;
+
+  @ffi.Uint16()
+  external int procs;
+
+  @ffi.Uint16()
+  external int pad;
+
+  @ffi.Uint64()
+  external int totalhigh;
+
+  @ffi.Uint64()
+  external int freehigh;
+
+  @ffi.Uint32()
+  external int mem_unit;
+
+  @ffi.Array.multi([0])
+  external ffi.Array<ffi.Int8> _f;
+}
 
 class utsname_t extends ffi.Struct {
   @ffi.Array.multi([65])
