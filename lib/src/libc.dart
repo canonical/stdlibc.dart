@@ -8,4 +8,5 @@ final libc = Platform.isMacOS ? BsdLibC() : GnuLibC();
 abstract class LibC {
   int get errno;
   set errno(int errno);
+  String? strerror(int errnum);
 }

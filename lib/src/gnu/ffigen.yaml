@@ -7,12 +7,14 @@ llvm-path:
 headers:
   entry-points:
     - "/usr/include/errno.h"
+    - "/usr/include/string.h"
 globals:
   exclude:
     - ".*"
 functions:
   include:
     - "__errno_location"
+    - "strerror"
   rename:
     "__errno_location": "errno"
 macros:

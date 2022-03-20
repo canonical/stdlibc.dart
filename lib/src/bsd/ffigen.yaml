@@ -7,12 +7,14 @@ llvm-path:
 headers:
   entry-points:
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/errno.h"
+    - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/string.h"
 globals:
   exclude:
     - ".*"
 functions:
   include:
     - "__error"
+    - "strerror"
   rename:
     "__error": "errno"
 macros:

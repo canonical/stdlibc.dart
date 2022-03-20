@@ -26,4 +26,18 @@ class DynamicBsdCLibrary {
   late final _errnoPtr =
       _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Int32> Function()>>('__error');
   late final _errno = _errnoPtr.asFunction<ffi.Pointer<ffi.Int32> Function()>();
+
+  ffi.Pointer<ffi.Int8> strerror(
+    int __errnum,
+  ) {
+    return _strerror(
+      __errnum,
+    );
+  }
+
+  late final _strerrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Int8> Function(ffi.Int32)>>(
+          'strerror');
+  late final _strerror =
+      _strerrorPtr.asFunction<ffi.Pointer<ffi.Int8> Function(int)>();
 }
