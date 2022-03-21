@@ -11,6 +11,7 @@ headers:
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdlib.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/string.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/unistd.h"
+    - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/mman.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/stat.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/utsname.h"
 globals:
@@ -24,6 +25,8 @@ functions:
     - "lstat"
     - "getenv"
     - "get.*id"
+    - "mmap"
+    - "munmap"
     - "open"
     - "putenv"
     - "setenv"
@@ -36,7 +39,9 @@ functions:
     "__error": "errno"
 macros:
   include:
+    - "MAP_.*"
     - "O_.*"
+    - "PROT_.*"
     - "_SYS_NAMELEN"
   rename:
     "_SYS_NAMELEN": "SYS_NAMELEN"

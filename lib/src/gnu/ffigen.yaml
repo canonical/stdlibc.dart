@@ -11,6 +11,7 @@ headers:
     - "/usr/include/stdlib.h"
     - "/usr/include/string.h"
     - "/usr/include/unistd.h"
+    - "/usr/include/x86_64-linux-gnu/sys/mman.h"
     - "/usr/include/x86_64-linux-gnu/sys/stat.h"
     - "/usr/include/x86_64-linux-gnu/sys/sysinfo.h"
     - "/usr/include/x86_64-linux-gnu/sys/utsname.h"
@@ -25,6 +26,8 @@ functions:
     - "getenv"
     - "get.*id"
     - "__lxstat"
+    - "mmap"
+    - "munmap"
     - "open"
     - "putenv"
     - "setenv"
@@ -41,7 +44,9 @@ functions:
     "__xstat": "stat"
 macros:
   include:
+    - "MAP_.*"
     - "O_.*"
+    - "PROT_.*"
     - "_STAT_VER"
     - "_UTSNAME_.*"
   rename:
