@@ -172,6 +172,48 @@ class DynamicGnuCLibrary {
   late final _lstat = _lstatPtr.asFunction<
       int Function(int, ffi.Pointer<ffi.Int8>, ffi.Pointer<stat_t>)>();
 
+  ffi.Pointer<ffi.Void> mmap(
+    ffi.Pointer<ffi.Void> __addr,
+    int __len,
+    int __prot,
+    int __flags,
+    int __fd,
+    int __offset,
+  ) {
+    return _mmap(
+      __addr,
+      __len,
+      __prot,
+      __flags,
+      __fd,
+      __offset,
+    );
+  }
+
+  late final _mmapPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, ffi.Uint64,
+              ffi.Int32, ffi.Int32, ffi.Int32, ffi.Int64)>>('mmap');
+  late final _mmap = _mmapPtr.asFunction<
+      ffi.Pointer<ffi.Void> Function(
+          ffi.Pointer<ffi.Void>, int, int, int, int, int)>();
+
+  int munmap(
+    ffi.Pointer<ffi.Void> __addr,
+    int __len,
+  ) {
+    return _munmap(
+      __addr,
+      __len,
+    );
+  }
+
+  late final _munmapPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<ffi.Void>, ffi.Uint64)>>('munmap');
+  late final _munmap =
+      _munmapPtr.asFunction<int Function(ffi.Pointer<ffi.Void>, int)>();
+
   int open(
     ffi.Pointer<ffi.Int8> __file,
     int __oflag,
@@ -410,6 +452,44 @@ class DynamicGnuCLibrary {
       _unsetenvPtr.asFunction<int Function(ffi.Pointer<ffi.Int8>)>();
 }
 
+const int MAP_32BIT = 64;
+
+const int MAP_ANON = 32;
+
+const int MAP_ANONYMOUS = 32;
+
+const int MAP_DENYWRITE = 2048;
+
+const int MAP_EXECUTABLE = 4096;
+
+const int MAP_FILE = 0;
+
+const int MAP_FIXED = 16;
+
+const int MAP_GROWSDOWN = 256;
+
+const int MAP_HUGETLB = 262144;
+
+const int MAP_HUGE_MASK = 63;
+
+const int MAP_HUGE_SHIFT = 26;
+
+const int MAP_LOCKED = 8192;
+
+const int MAP_NONBLOCK = 65536;
+
+const int MAP_NORESERVE = 16384;
+
+const int MAP_POPULATE = 32768;
+
+const int MAP_PRIVATE = 2;
+
+const int MAP_SHARED = 1;
+
+const int MAP_STACK = 131072;
+
+const int MAP_TYPE = 15;
+
 const int O_ACCMODE = 3;
 
 const int O_APPEND = 1024;
@@ -447,6 +527,18 @@ const int O_SYNC = 1052672;
 const int O_TRUNC = 512;
 
 const int O_WRONLY = 1;
+
+const int PROT_EXEC = 4;
+
+const int PROT_GROWSDOWN = 16777216;
+
+const int PROT_GROWSUP = 33554432;
+
+const int PROT_NONE = 0;
+
+const int PROT_READ = 1;
+
+const int PROT_WRITE = 2;
 
 const int STAT_VER = 1;
 
