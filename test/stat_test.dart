@@ -32,7 +32,7 @@ void main() {
     expect(actual.st_uid, isNonNegative);
     expect(actual.st_gid, isNonNegative);
     expect(actual.st_rdev, isNonNegative);
-    expect(actual.st_size, isZero);
+    expect(actual.st_size, isNonNegative);
     expect(actual.st_blksize, isNonNegative);
     expect(actual.st_blocks, isNonNegative);
     expect(actual.st_atim, anyOf(isEpoch, isRecent));
