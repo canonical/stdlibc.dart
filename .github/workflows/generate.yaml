@@ -9,7 +9,7 @@ on:
 
 jobs:
   bsd:
-    runs-on: macos-11
+    runs-on: macos-10.15
     steps:
     - uses: actions/checkout@v2
     - uses: dart-lang/setup-dart@v1
