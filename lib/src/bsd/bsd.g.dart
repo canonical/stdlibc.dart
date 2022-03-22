@@ -512,8 +512,6 @@ const int AT_SYMLINK_FOLLOW = 64;
 
 const int AT_SYMLINK_NOFOLLOW = 32;
 
-const int AT_SYMLINK_NOFOLLOW_ANY = 2048;
-
 const int BIG_ENDIAN = 4321;
 
 const int BUS_ADRALN = 1;
@@ -822,6 +820,22 @@ const int FPE_INTOVF = 8;
 
 const int FPE_NOOP = 0;
 
+const int FP_CHOP = 3;
+
+const int FP_PREC_24B = 0;
+
+const int FP_PREC_53B = 2;
+
+const int FP_PREC_64B = 3;
+
+const int FP_RND_DOWN = 1;
+
+const int FP_RND_NEAR = 0;
+
+const int FP_RND_UP = 2;
+
+const int FP_STATE_BYTES = 512;
+
 const int FREAD = 1;
 
 const int FWRITE = 2;
@@ -857,8 +871,6 @@ const int F_FINDSIGS = 78;
 const int F_FLUSH_DATA = 40;
 
 const int F_FREEZE_FS = 53;
-
-const int F_FSRESERVED = 106;
 
 const int F_FULLFSYNC = 51;
 
@@ -1066,17 +1078,11 @@ const int IOPOL_THROTTLE = 3;
 
 const int IOPOL_TYPE_DISK = 0;
 
-const int IOPOL_TYPE_VFS_ALLOW_LOW_SPACE_WRITES = 9;
-
 const int IOPOL_TYPE_VFS_ATIME_UPDATES = 2;
 
 const int IOPOL_TYPE_VFS_IGNORE_CONTENT_PROTECTION = 6;
 
-const int IOPOL_TYPE_VFS_IGNORE_PERMISSIONS = 7;
-
 const int IOPOL_TYPE_VFS_MATERIALIZE_DATALESS_FILES = 3;
-
-const int IOPOL_TYPE_VFS_SKIP_MTIME_UPDATE = 8;
 
 const int IOPOL_TYPE_VFS_STATFS_NO_DATA_VOLUME = 4;
 
@@ -1084,21 +1090,9 @@ const int IOPOL_TYPE_VFS_TRIGGER_RESOLVE = 5;
 
 const int IOPOL_UTILITY = 4;
 
-const int IOPOL_VFS_ALLOW_LOW_SPACE_WRITES_OFF = 0;
-
-const int IOPOL_VFS_ALLOW_LOW_SPACE_WRITES_ON = 1;
-
 const int IOPOL_VFS_CONTENT_PROTECTION_DEFAULT = 0;
 
 const int IOPOL_VFS_CONTENT_PROTECTION_IGNORE = 1;
-
-const int IOPOL_VFS_IGNORE_PERMISSIONS_OFF = 0;
-
-const int IOPOL_VFS_IGNORE_PERMISSIONS_ON = 1;
-
-const int IOPOL_VFS_SKIP_MTIME_UPDATE_OFF = 0;
-
-const int IOPOL_VFS_SKIP_MTIME_UPDATE_ON = 1;
 
 const int IOPOL_VFS_STATFS_FORCE_NO_DATA_VOLUME = 1;
 
@@ -1125,8 +1119,6 @@ const int L_SET = 0;
 const int L_XTND = 2;
 
 const int MAC_OS_VERSION_11_0 = 110000;
-
-const int MAC_OS_VERSION_12_0 = 120000;
 
 const int MAC_OS_X_VERSION_10_0 = 1000;
 
