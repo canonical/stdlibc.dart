@@ -490,6 +490,730 @@ class DynamicBsdCLibrary {
       _unsetenvPtr.asFunction<int Function(ffi.Pointer<ffi.Int8>)>();
 }
 
+const int ACCESSPERMS = 511;
+
+const int ACCESSX_MAX_DESCRIPTORS = 100;
+
+const int ACCESSX_MAX_TABLESIZE = 16384;
+
+const int ALLPERMS = 4095;
+
+const int AT_EACCESS = 16;
+
+const int AT_FDCWD = -2;
+
+const int AT_FDONLY = 1024;
+
+const int AT_REALDEV = 512;
+
+const int AT_REMOVEDIR = 128;
+
+const int AT_SYMLINK_FOLLOW = 64;
+
+const int AT_SYMLINK_NOFOLLOW = 32;
+
+const int AT_SYMLINK_NOFOLLOW_ANY = 2048;
+
+const int BIG_ENDIAN = 4321;
+
+const int BUS_ADRALN = 1;
+
+const int BUS_ADRERR = 2;
+
+const int BUS_NOOP = 0;
+
+const int BUS_OBJERR = 3;
+
+const int BYTE_ORDER = 1234;
+
+const int CLD_CONTINUED = 6;
+
+const int CLD_DUMPED = 3;
+
+const int CLD_EXITED = 1;
+
+const int CLD_KILLED = 2;
+
+const int CLD_NOOP = 0;
+
+const int CLD_STOPPED = 5;
+
+const int CLD_TRAPPED = 4;
+
+const int CPF_IGNORE_MODE = 2;
+
+const int CPF_MASK = 3;
+
+const int CPF_OVERWRITE = 1;
+
+const int CPUMON_MAKE_FATAL = 4096;
+
+const int DEFFILEMODE = 438;
+
+const int E2BIG = 7;
+
+const int EACCES = 13;
+
+const int EADDRINUSE = 48;
+
+const int EADDRNOTAVAIL = 49;
+
+const int EAFNOSUPPORT = 47;
+
+const int EAGAIN = 35;
+
+const int EALREADY = 37;
+
+const int EAUTH = 80;
+
+const int EBADARCH = 86;
+
+const int EBADEXEC = 85;
+
+const int EBADF = 9;
+
+const int EBADMACHO = 88;
+
+const int EBADMSG = 94;
+
+const int EBADRPC = 72;
+
+const int EBUSY = 16;
+
+const int ECANCELED = 89;
+
+const int ECHILD = 10;
+
+const int ECONNABORTED = 53;
+
+const int ECONNREFUSED = 61;
+
+const int ECONNRESET = 54;
+
+const int EDEADLK = 11;
+
+const int EDESTADDRREQ = 39;
+
+const int EDEVERR = 83;
+
+const int EDOM = 33;
+
+const int EDQUOT = 69;
+
+const int EEXIST = 17;
+
+const int EFAULT = 14;
+
+const int EFBIG = 27;
+
+const int EFTYPE = 79;
+
+const int EF_IS_PURGEABLE = 8;
+
+const int EF_IS_SPARSE = 16;
+
+const int EF_IS_SYNC_ROOT = 4;
+
+const int EF_IS_SYNTHETIC = 32;
+
+const int EF_MAY_SHARE_BLOCKS = 1;
+
+const int EF_NO_XATTRS = 2;
+
+const int EHOSTDOWN = 64;
+
+const int EHOSTUNREACH = 65;
+
+const int EIDRM = 90;
+
+const int EILSEQ = 92;
+
+const int EINPROGRESS = 36;
+
+const int EINTR = 4;
+
+const int EINVAL = 22;
+
+const int EIO = 5;
+
+const int EISCONN = 56;
+
+const int EISDIR = 21;
+
+const int ELAST = 106;
+
+const int ELOOP = 62;
+
+const int EMFILE = 24;
+
+const int EMLINK = 31;
+
+const int EMSGSIZE = 40;
+
+const int EMULTIHOP = 95;
+
+const int ENAMETOOLONG = 63;
+
+const int ENEEDAUTH = 81;
+
+const int ENETDOWN = 50;
+
+const int ENETRESET = 52;
+
+const int ENETUNREACH = 51;
+
+const int ENFILE = 23;
+
+const int ENOATTR = 93;
+
+const int ENOBUFS = 55;
+
+const int ENODATA = 96;
+
+const int ENODEV = 19;
+
+const int ENOENT = 2;
+
+const int ENOEXEC = 8;
+
+const int ENOLCK = 77;
+
+const int ENOLINK = 97;
+
+const int ENOMEM = 12;
+
+const int ENOMSG = 91;
+
+const int ENOPOLICY = 103;
+
+const int ENOPROTOOPT = 42;
+
+const int ENOSPC = 28;
+
+const int ENOSR = 98;
+
+const int ENOSTR = 99;
+
+const int ENOSYS = 78;
+
+const int ENOTBLK = 15;
+
+const int ENOTCONN = 57;
+
+const int ENOTDIR = 20;
+
+const int ENOTEMPTY = 66;
+
+const int ENOTRECOVERABLE = 104;
+
+const int ENOTSOCK = 38;
+
+const int ENOTSUP = 45;
+
+const int ENOTTY = 25;
+
+const int ENXIO = 6;
+
+const int EOPNOTSUPP = 102;
+
+const int EOVERFLOW = 84;
+
+const int EOWNERDEAD = 105;
+
+const int EPERM = 1;
+
+const int EPFNOSUPPORT = 46;
+
+const int EPIPE = 32;
+
+const int EPROCLIM = 67;
+
+const int EPROCUNAVAIL = 76;
+
+const int EPROGMISMATCH = 75;
+
+const int EPROGUNAVAIL = 74;
+
+const int EPROTO = 100;
+
+const int EPROTONOSUPPORT = 43;
+
+const int EPROTOTYPE = 41;
+
+const int EPWROFF = 82;
+
+const int EQFULL = 106;
+
+const int ERANGE = 34;
+
+const int EREMOTE = 71;
+
+const int EROFS = 30;
+
+const int ERPCMISMATCH = 73;
+
+const int ESHLIBVERS = 87;
+
+const int ESHUTDOWN = 58;
+
+const int ESOCKTNOSUPPORT = 44;
+
+const int ESPIPE = 29;
+
+const int ESRCH = 3;
+
+const int ESTALE = 70;
+
+const int ETIME = 101;
+
+const int ETIMEDOUT = 60;
+
+const int ETOOMANYREFS = 59;
+
+const int ETXTBSY = 26;
+
+const int EUSERS = 68;
+
+const int EWOULDBLOCK = 35;
+
+const int EXDEV = 18;
+
+const int EXIT_FAILURE = 1;
+
+const int EXIT_SUCCESS = 0;
+
+const int FAPPEND = 8;
+
+const int FASYNC = 64;
+
+const int FCNTL_FS_SPECIFIC_BASE = 65536;
+
+const int FD_CLOEXEC = 1;
+
+const int FD_SETSIZE = 1024;
+
+const int FFDSYNC = 4194304;
+
+const int FFSYNC = 128;
+
+const int FILESEC_GUID = 3;
+
+const int FNDELAY = 4;
+
+const int FNONBLOCK = 4;
+
+const int FOOTPRINT_INTERVAL_RESET = 1;
+
+const int FPE_FLTDIV = 1;
+
+const int FPE_FLTINV = 5;
+
+const int FPE_FLTOVF = 2;
+
+const int FPE_FLTRES = 4;
+
+const int FPE_FLTSUB = 6;
+
+const int FPE_FLTUND = 3;
+
+const int FPE_INTDIV = 7;
+
+const int FPE_INTOVF = 8;
+
+const int FPE_NOOP = 0;
+
+const int FREAD = 1;
+
+const int FWRITE = 2;
+
+const int F_ADDFILESIGS = 61;
+
+const int F_ADDFILESIGS_FOR_DYLD_SIM = 83;
+
+const int F_ADDFILESIGS_INFO = 103;
+
+const int F_ADDFILESIGS_RETURN = 97;
+
+const int F_ADDFILESUPPL = 104;
+
+const int F_ADDSIGS = 59;
+
+const int F_ALLOCATEALL = 4;
+
+const int F_ALLOCATECONTIG = 2;
+
+const int F_BARRIERFSYNC = 85;
+
+const int F_CHECK_LV = 98;
+
+const int F_CHKCLEAN = 41;
+
+const int F_DUPFD = 0;
+
+const int F_DUPFD_CLOEXEC = 67;
+
+const int F_FINDSIGS = 78;
+
+const int F_FLUSH_DATA = 40;
+
+const int F_FREEZE_FS = 53;
+
+const int F_FSRESERVED = 106;
+
+const int F_FULLFSYNC = 51;
+
+const int F_GETCODEDIR = 72;
+
+const int F_GETFD = 1;
+
+const int F_GETFL = 3;
+
+const int F_GETLK = 7;
+
+const int F_GETLKPID = 66;
+
+const int F_GETNOSIGPIPE = 74;
+
+const int F_GETOWN = 5;
+
+const int F_GETPATH = 50;
+
+const int F_GETPATH_MTMINFO = 71;
+
+const int F_GETPATH_NOFIRMLINK = 102;
+
+const int F_GETPROTECTIONCLASS = 63;
+
+const int F_GETPROTECTIONLEVEL = 77;
+
+const int F_GETSIGSINFO = 105;
+
+const int F_GLOBAL_NOCACHE = 55;
+
+const int F_LOCK = 1;
+
+const int F_LOG2PHYS = 49;
+
+const int F_LOG2PHYS_EXT = 65;
+
+const int F_NOCACHE = 48;
+
+const int F_NODIRECT = 62;
+
+const int F_OK = 0;
+
+const int F_PATHPKG_CHECK = 52;
+
+const int F_PEOFPOSMODE = 3;
+
+const int F_PREALLOCATE = 42;
+
+const int F_PUNCHHOLE = 99;
+
+const int F_RDADVISE = 44;
+
+const int F_RDAHEAD = 45;
+
+const int F_RDLCK = 1;
+
+const int F_SETBACKINGSTORE = 70;
+
+const int F_SETFD = 2;
+
+const int F_SETFL = 4;
+
+const int F_SETLK = 8;
+
+const int F_SETLKW = 9;
+
+const int F_SETLKWTIMEOUT = 10;
+
+const int F_SETNOSIGPIPE = 73;
+
+const int F_SETOWN = 6;
+
+const int F_SETPROTECTIONCLASS = 64;
+
+const int F_SETSIZE = 43;
+
+const int F_SINGLE_WRITER = 76;
+
+const int F_SPECULATIVE_READ = 101;
+
+const int F_TEST = 3;
+
+const int F_THAW_FS = 54;
+
+const int F_TLOCK = 2;
+
+const int F_TRANSCODEKEY = 75;
+
+const int F_TRIM_ACTIVE_FILE = 100;
+
+const int F_ULOCK = 0;
+
+const int F_UNLCK = 2;
+
+const int F_VOLPOSMODE = 4;
+
+const int F_WRLCK = 3;
+
+const int GETSIGSINFO_PLATFORM_BINARY = 1;
+
+const int ILL_BADSTK = 8;
+
+const int ILL_COPROC = 7;
+
+const int ILL_ILLADR = 5;
+
+const int ILL_ILLOPC = 1;
+
+const int ILL_ILLOPN = 4;
+
+const int ILL_ILLTRP = 2;
+
+const int ILL_NOOP = 0;
+
+const int ILL_PRVOPC = 3;
+
+const int ILL_PRVREG = 6;
+
+const int INT16_MAX = 32767;
+
+const int INT16_MIN = -32768;
+
+const int INT32_MAX = 2147483647;
+
+const int INT32_MIN = -2147483648;
+
+const int INT64_MAX = 9223372036854775807;
+
+const int INT64_MIN = -9223372036854775808;
+
+const int INT8_MAX = 127;
+
+const int INT8_MIN = -128;
+
+const int INTMAX_MAX = 9223372036854775807;
+
+const int INTMAX_MIN = -9223372036854775808;
+
+const int INTPTR_MAX = 9223372036854775807;
+
+const int INTPTR_MIN = -9223372036854775808;
+
+const int INT_FAST16_MAX = 32767;
+
+const int INT_FAST16_MIN = -32768;
+
+const int INT_FAST32_MAX = 2147483647;
+
+const int INT_FAST32_MIN = -2147483648;
+
+const int INT_FAST64_MAX = 9223372036854775807;
+
+const int INT_FAST64_MIN = -9223372036854775808;
+
+const int INT_FAST8_MAX = 127;
+
+const int INT_FAST8_MIN = -128;
+
+const int INT_LEAST16_MAX = 32767;
+
+const int INT_LEAST16_MIN = -32768;
+
+const int INT_LEAST32_MAX = 2147483647;
+
+const int INT_LEAST32_MIN = -2147483648;
+
+const int INT_LEAST64_MAX = 9223372036854775807;
+
+const int INT_LEAST64_MIN = -9223372036854775808;
+
+const int INT_LEAST8_MAX = 127;
+
+const int INT_LEAST8_MIN = -128;
+
+const int IOPOL_APPLICATION = 5;
+
+const int IOPOL_ATIME_UPDATES_DEFAULT = 0;
+
+const int IOPOL_ATIME_UPDATES_OFF = 1;
+
+const int IOPOL_DEFAULT = 0;
+
+const int IOPOL_IMPORTANT = 1;
+
+const int IOPOL_MATERIALIZE_DATALESS_FILES_DEFAULT = 0;
+
+const int IOPOL_MATERIALIZE_DATALESS_FILES_OFF = 1;
+
+const int IOPOL_MATERIALIZE_DATALESS_FILES_ON = 2;
+
+const int IOPOL_NORMAL = 1;
+
+const int IOPOL_PASSIVE = 2;
+
+const int IOPOL_SCOPE_DARWIN_BG = 2;
+
+const int IOPOL_SCOPE_PROCESS = 0;
+
+const int IOPOL_SCOPE_THREAD = 1;
+
+const int IOPOL_STANDARD = 5;
+
+const int IOPOL_THROTTLE = 3;
+
+const int IOPOL_TYPE_DISK = 0;
+
+const int IOPOL_TYPE_VFS_ALLOW_LOW_SPACE_WRITES = 9;
+
+const int IOPOL_TYPE_VFS_ATIME_UPDATES = 2;
+
+const int IOPOL_TYPE_VFS_IGNORE_CONTENT_PROTECTION = 6;
+
+const int IOPOL_TYPE_VFS_IGNORE_PERMISSIONS = 7;
+
+const int IOPOL_TYPE_VFS_MATERIALIZE_DATALESS_FILES = 3;
+
+const int IOPOL_TYPE_VFS_SKIP_MTIME_UPDATE = 8;
+
+const int IOPOL_TYPE_VFS_STATFS_NO_DATA_VOLUME = 4;
+
+const int IOPOL_TYPE_VFS_TRIGGER_RESOLVE = 5;
+
+const int IOPOL_UTILITY = 4;
+
+const int IOPOL_VFS_ALLOW_LOW_SPACE_WRITES_OFF = 0;
+
+const int IOPOL_VFS_ALLOW_LOW_SPACE_WRITES_ON = 1;
+
+const int IOPOL_VFS_CONTENT_PROTECTION_DEFAULT = 0;
+
+const int IOPOL_VFS_CONTENT_PROTECTION_IGNORE = 1;
+
+const int IOPOL_VFS_IGNORE_PERMISSIONS_OFF = 0;
+
+const int IOPOL_VFS_IGNORE_PERMISSIONS_ON = 1;
+
+const int IOPOL_VFS_SKIP_MTIME_UPDATE_OFF = 0;
+
+const int IOPOL_VFS_SKIP_MTIME_UPDATE_ON = 1;
+
+const int IOPOL_VFS_STATFS_FORCE_NO_DATA_VOLUME = 1;
+
+const int IOPOL_VFS_STATFS_NO_DATA_VOLUME_DEFAULT = 0;
+
+const int IOPOL_VFS_TRIGGER_RESOLVE_DEFAULT = 0;
+
+const int IOPOL_VFS_TRIGGER_RESOLVE_OFF = 1;
+
+const int LITTLE_ENDIAN = 1234;
+
+const int LOCK_EX = 2;
+
+const int LOCK_NB = 4;
+
+const int LOCK_SH = 1;
+
+const int LOCK_UN = 8;
+
+const int L_INCR = 1;
+
+const int L_SET = 0;
+
+const int L_XTND = 2;
+
+const int MAC_OS_VERSION_11_0 = 110000;
+
+const int MAC_OS_VERSION_12_0 = 120000;
+
+const int MAC_OS_X_VERSION_10_0 = 1000;
+
+const int MAC_OS_X_VERSION_10_1 = 1010;
+
+const int MAC_OS_X_VERSION_10_10 = 101000;
+
+const int MAC_OS_X_VERSION_10_10_2 = 101002;
+
+const int MAC_OS_X_VERSION_10_10_3 = 101003;
+
+const int MAC_OS_X_VERSION_10_11 = 101100;
+
+const int MAC_OS_X_VERSION_10_11_2 = 101102;
+
+const int MAC_OS_X_VERSION_10_11_3 = 101103;
+
+const int MAC_OS_X_VERSION_10_11_4 = 101104;
+
+const int MAC_OS_X_VERSION_10_12 = 101200;
+
+const int MAC_OS_X_VERSION_10_12_1 = 101201;
+
+const int MAC_OS_X_VERSION_10_12_2 = 101202;
+
+const int MAC_OS_X_VERSION_10_12_4 = 101204;
+
+const int MAC_OS_X_VERSION_10_13 = 101300;
+
+const int MAC_OS_X_VERSION_10_13_1 = 101301;
+
+const int MAC_OS_X_VERSION_10_13_2 = 101302;
+
+const int MAC_OS_X_VERSION_10_13_4 = 101304;
+
+const int MAC_OS_X_VERSION_10_14 = 101400;
+
+const int MAC_OS_X_VERSION_10_14_1 = 101401;
+
+const int MAC_OS_X_VERSION_10_14_4 = 101404;
+
+const int MAC_OS_X_VERSION_10_14_6 = 101406;
+
+const int MAC_OS_X_VERSION_10_15 = 101500;
+
+const int MAC_OS_X_VERSION_10_15_1 = 101501;
+
+const int MAC_OS_X_VERSION_10_16 = 101600;
+
+const int MAC_OS_X_VERSION_10_2 = 1020;
+
+const int MAC_OS_X_VERSION_10_3 = 1030;
+
+const int MAC_OS_X_VERSION_10_4 = 1040;
+
+const int MAC_OS_X_VERSION_10_5 = 1050;
+
+const int MAC_OS_X_VERSION_10_6 = 1060;
+
+const int MAC_OS_X_VERSION_10_7 = 1070;
+
+const int MAC_OS_X_VERSION_10_8 = 1080;
+
+const int MAC_OS_X_VERSION_10_9 = 1090;
+
+const int MADV_CAN_REUSE = 9;
+
+const int MADV_DONTNEED = 4;
+
+const int MADV_FREE = 5;
+
+const int MADV_FREE_REUSABLE = 7;
+
+const int MADV_FREE_REUSE = 8;
+
+const int MADV_NORMAL = 0;
+
+const int MADV_PAGEOUT = 10;
+
+const int MADV_RANDOM = 1;
+
+const int MADV_SEQUENTIAL = 2;
+
+const int MADV_WILLNEED = 3;
+
+const int MADV_ZERO_WIRED_PAGES = 6;
+
 const int MAP_32BIT = 32768;
 
 const int MAP_ANON = 4096;
@@ -527,6 +1251,42 @@ const int MAP_SHARED = 1;
 const int MAP_TRANSLATED_ALLOW_EXECUTE = 131072;
 
 const int MAP_UNIX03 = 262144;
+
+const int MCL_CURRENT = 1;
+
+const int MCL_FUTURE = 2;
+
+const int MINCORE_ANONYMOUS = 128;
+
+const int MINCORE_COPIED = 64;
+
+const int MINCORE_INCORE = 1;
+
+const int MINCORE_MODIFIED = 4;
+
+const int MINCORE_MODIFIED_OTHER = 16;
+
+const int MINCORE_PAGED_OUT = 32;
+
+const int MINCORE_REFERENCED = 2;
+
+const int MINCORE_REFERENCED_OTHER = 8;
+
+const int MINSIGSTKSZ = 32768;
+
+const int MS_ASYNC = 1;
+
+const int MS_DEACTIVATE = 8;
+
+const int MS_INVALIDATE = 2;
+
+const int MS_KILLPAGES = 4;
+
+const int MS_SYNC = 16;
+
+const int NSIG = 32;
+
+const int NULL = 0;
 
 const int O_ACCMODE = 3;
 
@@ -582,6 +1342,48 @@ const int O_TRUNC = 1024;
 
 const int O_WRONLY = 1;
 
+const int PDP_ENDIAN = 3412;
+
+const int POLL_ERR = 4;
+
+const int POLL_HUP = 6;
+
+const int POLL_IN = 1;
+
+const int POLL_MSG = 3;
+
+const int POLL_OUT = 2;
+
+const int POLL_PRI = 5;
+
+const int POSIX_MADV_DONTNEED = 4;
+
+const int POSIX_MADV_NORMAL = 0;
+
+const int POSIX_MADV_RANDOM = 1;
+
+const int POSIX_MADV_SEQUENTIAL = 2;
+
+const int POSIX_MADV_WILLNEED = 3;
+
+const int PRIO_DARWIN_BG = 4096;
+
+const int PRIO_DARWIN_NONUI = 4097;
+
+const int PRIO_DARWIN_PROCESS = 4;
+
+const int PRIO_DARWIN_THREAD = 3;
+
+const int PRIO_MAX = 20;
+
+const int PRIO_MIN = -20;
+
+const int PRIO_PGRP = 1;
+
+const int PRIO_PROCESS = 0;
+
+const int PRIO_USER = 2;
+
 const int PROT_EXEC = 4;
 
 const int PROT_NONE = 0;
@@ -590,7 +1392,405 @@ const int PROT_READ = 1;
 
 const int PROT_WRITE = 2;
 
+const int PTRDIFF_MAX = 9223372036854775807;
+
+const int PTRDIFF_MIN = -9223372036854775808;
+
+const int RAND_MAX = 2147483647;
+
+const int RLIMIT_AS = 5;
+
+const int RLIMIT_CORE = 4;
+
+const int RLIMIT_CPU = 0;
+
+const int RLIMIT_CPU_USAGE_MONITOR = 2;
+
+const int RLIMIT_DATA = 2;
+
+const int RLIMIT_FOOTPRINT_INTERVAL = 4;
+
+const int RLIMIT_FSIZE = 1;
+
+const int RLIMIT_MEMLOCK = 6;
+
+const int RLIMIT_NOFILE = 8;
+
+const int RLIMIT_NPROC = 7;
+
+const int RLIMIT_RSS = 5;
+
+const int RLIMIT_STACK = 3;
+
+const int RLIMIT_THREAD_CPULIMITS = 3;
+
+const int RLIMIT_WAKEUPS_MONITOR = 1;
+
+const int RLIM_INFINITY = 9223372036854775807;
+
+const int RLIM_NLIMITS = 9;
+
+const int RLIM_SAVED_CUR = 9223372036854775807;
+
+const int RLIM_SAVED_MAX = 9223372036854775807;
+
+const int RSIZE_MAX = 9223372036854775807;
+
+const int RUSAGE_CHILDREN = -1;
+
+const int RUSAGE_INFO_CURRENT = 5;
+
+const int RUSAGE_INFO_V0 = 0;
+
+const int RUSAGE_INFO_V1 = 1;
+
+const int RUSAGE_INFO_V2 = 2;
+
+const int RUSAGE_INFO_V3 = 3;
+
+const int RUSAGE_INFO_V4 = 4;
+
+const int RUSAGE_INFO_V5 = 5;
+
+const int RUSAGE_SELF = 0;
+
+const int RU_PROC_RUNS_RESLIDE = 1;
+
+const int R_OK = 4;
+
+const int SA_64REGSET = 512;
+
+const int SA_NOCLDSTOP = 8;
+
+const int SA_NOCLDWAIT = 32;
+
+const int SA_NODEFER = 16;
+
+const int SA_ONSTACK = 1;
+
+const int SA_RESETHAND = 4;
+
+const int SA_RESTART = 2;
+
+const int SA_SIGINFO = 64;
+
+const int SA_USERSPACE_MASK = 127;
+
+const int SA_USERTRAMP = 256;
+
+const int SEEK_CUR = 1;
+
+const int SEEK_DATA = 4;
+
+const int SEEK_END = 2;
+
+const int SEEK_HOLE = 3;
+
+const int SEEK_SET = 0;
+
+const int SEGV_ACCERR = 2;
+
+const int SEGV_MAPERR = 1;
+
+const int SEGV_NOOP = 0;
+
+const int SF_APPEND = 262144;
+
+const int SF_ARCHIVED = 65536;
+
+const int SF_DATALESS = 1073741824;
+
+const int SF_FIRMLINK = 8388608;
+
+const int SF_IMMUTABLE = 131072;
+
+const int SF_NOUNLINK = 1048576;
+
+const int SF_RESTRICTED = 524288;
+
+const int SF_SETTABLE = 1073676288;
+
+const int SF_SUPPORTED = 10420224;
+
+const int SF_SYNTHETIC = 3221225472;
+
+const int SIGABRT = 6;
+
+const int SIGALRM = 14;
+
+const int SIGBUS = 10;
+
+const int SIGCHLD = 20;
+
+const int SIGCONT = 19;
+
+const int SIGEMT = 7;
+
+const int SIGEV_NONE = 0;
+
+const int SIGEV_SIGNAL = 1;
+
+const int SIGEV_THREAD = 3;
+
+const int SIGFPE = 8;
+
+const int SIGHUP = 1;
+
+const int SIGILL = 4;
+
+const int SIGINFO = 29;
+
+const int SIGINT = 2;
+
+const int SIGIO = 23;
+
+const int SIGIOT = 6;
+
+const int SIGKILL = 9;
+
+const int SIGPIPE = 13;
+
+const int SIGPROF = 27;
+
+const int SIGQUIT = 3;
+
+const int SIGSEGV = 11;
+
+const int SIGSTKSZ = 131072;
+
+const int SIGSTOP = 17;
+
+const int SIGSYS = 12;
+
+const int SIGTERM = 15;
+
+const int SIGTRAP = 5;
+
+const int SIGTSTP = 18;
+
+const int SIGTTIN = 21;
+
+const int SIGTTOU = 22;
+
+const int SIGURG = 16;
+
+const int SIGUSR1 = 30;
+
+const int SIGUSR2 = 31;
+
+const int SIGVTALRM = 26;
+
+const int SIGWINCH = 28;
+
+const int SIGXCPU = 24;
+
+const int SIGXFSZ = 25;
+
+const int SIG_ATOMIC_MAX = 2147483647;
+
+const int SIG_ATOMIC_MIN = -2147483648;
+
+const int SIG_BLOCK = 1;
+
+const int SIG_SETMASK = 3;
+
+const int SIG_UNBLOCK = 2;
+
+const int SIZE_MAX = -1;
+
+const int SI_ASYNCIO = 65540;
+
+const int SI_MESGQ = 65541;
+
+const int SI_QUEUE = 65538;
+
+const int SI_TIMER = 65539;
+
+const int SI_USER = 65537;
+
+const int SS_DISABLE = 4;
+
+const int SS_ONSTACK = 1;
+
+const int STDERR_FILENO = 2;
+
+const int STDIN_FILENO = 0;
+
+const int STDOUT_FILENO = 1;
+
+const int SV_INTERRUPT = 2;
+
+const int SV_NOCLDSTOP = 8;
+
+const int SV_NODEFER = 16;
+
+const int SV_ONSTACK = 1;
+
+const int SV_RESETHAND = 4;
+
+const int SV_SIGINFO = 64;
+
+const int SYNC_VOLUME_FULLSYNC = 1;
+
+const int SYNC_VOLUME_WAIT = 2;
+
 const int SYS_NAMELEN = 256;
+
+const int S_BLKSIZE = 512;
+
+const int S_IEXEC = 64;
+
+const int S_IFBLK = 24576;
+
+const int S_IFCHR = 8192;
+
+const int S_IFDIR = 16384;
+
+const int S_IFIFO = 4096;
+
+const int S_IFLNK = 40960;
+
+const int S_IFMT = 61440;
+
+const int S_IFREG = 32768;
+
+const int S_IFSOCK = 49152;
+
+const int S_IFWHT = 57344;
+
+const int S_IREAD = 256;
+
+const int S_IRGRP = 32;
+
+const int S_IROTH = 4;
+
+const int S_IRUSR = 256;
+
+const int S_IRWXG = 56;
+
+const int S_IRWXO = 7;
+
+const int S_IRWXU = 448;
+
+const int S_ISGID = 1024;
+
+const int S_ISTXT = 512;
+
+const int S_ISUID = 2048;
+
+const int S_ISVTX = 512;
+
+const int S_IWGRP = 16;
+
+const int S_IWOTH = 2;
+
+const int S_IWRITE = 128;
+
+const int S_IWUSR = 128;
+
+const int S_IXGRP = 8;
+
+const int S_IXOTH = 1;
+
+const int S_IXUSR = 64;
+
+const int TRAP_BRKPT = 1;
+
+const int TRAP_TRACE = 2;
+
+const int UF_APPEND = 4;
+
+const int UF_COMPRESSED = 32;
+
+const int UF_DATAVAULT = 128;
+
+const int UF_HIDDEN = 32768;
+
+const int UF_IMMUTABLE = 2;
+
+const int UF_NODUMP = 1;
+
+const int UF_OPAQUE = 8;
+
+const int UF_SETTABLE = 65535;
+
+const int UF_TRACKED = 64;
+
+const int UINT16_MAX = 65535;
+
+const int UINT32_MAX = 4294967295;
+
+const int UINT64_MAX = -1;
+
+const int UINT8_MAX = 255;
+
+const int UINTMAX_MAX = -1;
+
+const int UINTPTR_MAX = -1;
+
+const int UINT_FAST16_MAX = 65535;
+
+const int UINT_FAST32_MAX = 4294967295;
+
+const int UINT_FAST64_MAX = -1;
+
+const int UINT_FAST8_MAX = 255;
+
+const int UINT_LEAST16_MAX = 65535;
+
+const int UINT_LEAST32_MAX = 4294967295;
+
+const int UINT_LEAST64_MAX = -1;
+
+const int UINT_LEAST8_MAX = 255;
+
+const int USER_ADDR_NULL = 0;
+
+const int USER_FSIGNATURES_CDHASH_LEN = 20;
+
+const int UTIME_NOW = -1;
+
+const int UTIME_OMIT = -2;
+
+const int WAIT_ANY = -1;
+
+const int WAIT_MYPGRP = 0;
+
+const int WAKEMON_DISABLE = 2;
+
+const int WAKEMON_ENABLE = 1;
+
+const int WAKEMON_GET_PARAMS = 4;
+
+const int WAKEMON_MAKE_FATAL = 16;
+
+const int WAKEMON_SET_DEFAULTS = 8;
+
+const int WCHAR_MAX = 2147483647;
+
+const int WCHAR_MIN = -2147483648;
+
+const int WCONTINUED = 16;
+
+const int WCOREFLAG = 128;
+
+const int WEXITED = 4;
+
+const int WINT_MAX = 2147483647;
+
+const int WINT_MIN = -2147483648;
+
+const int WNOHANG = 1;
+
+const int WNOWAIT = 32;
+
+const int WSTOPPED = 8;
+
+const int WUNTRACED = 2;
+
+const int W_OK = 2;
+
+const int X_OK = 1;
 
 class stat_t extends ffi.Struct {
   @ffi.Int32()

@@ -44,9 +44,7 @@ functions:
     "__xstat": "stat"
 macros:
   include:
-    - "MAP_.*"
-    - "O_.*"
-    - "PROT_.*"
+    - "[A-Z].*"
     - "_STAT_VER"
     - "_UTSNAME_.*"
   rename:

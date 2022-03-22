@@ -452,6 +452,412 @@ class DynamicGnuCLibrary {
       _unsetenvPtr.asFunction<int Function(ffi.Pointer<ffi.Int8>)>();
 }
 
+const int ACCESSPERMS = 511;
+
+const int ALLPERMS = 4095;
+
+const int AT_EACCESS = 512;
+
+const int AT_FDCWD = -100;
+
+const int AT_REMOVEDIR = 512;
+
+const int AT_SYMLINK_FOLLOW = 1024;
+
+const int AT_SYMLINK_NOFOLLOW = 256;
+
+const int BIG_ENDIAN = 4321;
+
+const int BYTE_ORDER = 1234;
+
+const int DEFFILEMODE = 438;
+
+const int E2BIG = 7;
+
+const int EACCES = 13;
+
+const int EADDRINUSE = 98;
+
+const int EADDRNOTAVAIL = 99;
+
+const int EADV = 68;
+
+const int EAFNOSUPPORT = 97;
+
+const int EAGAIN = 11;
+
+const int EALREADY = 114;
+
+const int EBADE = 52;
+
+const int EBADF = 9;
+
+const int EBADFD = 77;
+
+const int EBADMSG = 74;
+
+const int EBADR = 53;
+
+const int EBADRQC = 56;
+
+const int EBADSLT = 57;
+
+const int EBFONT = 59;
+
+const int EBUSY = 16;
+
+const int ECANCELED = 125;
+
+const int ECHILD = 10;
+
+const int ECHRNG = 44;
+
+const int ECOMM = 70;
+
+const int ECONNABORTED = 103;
+
+const int ECONNREFUSED = 111;
+
+const int ECONNRESET = 104;
+
+const int EDEADLK = 35;
+
+const int EDEADLOCK = 35;
+
+const int EDESTADDRREQ = 89;
+
+const int EDOM = 33;
+
+const int EDOTDOT = 73;
+
+const int EDQUOT = 122;
+
+const int EEXIST = 17;
+
+const int EFAULT = 14;
+
+const int EFBIG = 27;
+
+const int EHOSTDOWN = 112;
+
+const int EHOSTUNREACH = 113;
+
+const int EHWPOISON = 133;
+
+const int EIDRM = 43;
+
+const int EILSEQ = 84;
+
+const int EINPROGRESS = 115;
+
+const int EINTR = 4;
+
+const int EINVAL = 22;
+
+const int EIO = 5;
+
+const int EISCONN = 106;
+
+const int EISDIR = 21;
+
+const int EISNAM = 120;
+
+const int EKEYEXPIRED = 127;
+
+const int EKEYREJECTED = 129;
+
+const int EKEYREVOKED = 128;
+
+const int EL2HLT = 51;
+
+const int EL2NSYNC = 45;
+
+const int EL3HLT = 46;
+
+const int EL3RST = 47;
+
+const int ELIBACC = 79;
+
+const int ELIBBAD = 80;
+
+const int ELIBEXEC = 83;
+
+const int ELIBMAX = 82;
+
+const int ELIBSCN = 81;
+
+const int ELNRNG = 48;
+
+const int ELOOP = 40;
+
+const int EMEDIUMTYPE = 124;
+
+const int EMFILE = 24;
+
+const int EMLINK = 31;
+
+const int EMSGSIZE = 90;
+
+const int EMULTIHOP = 72;
+
+const int ENAMETOOLONG = 36;
+
+const int ENAVAIL = 119;
+
+const int ENETDOWN = 100;
+
+const int ENETRESET = 102;
+
+const int ENETUNREACH = 101;
+
+const int ENFILE = 23;
+
+const int ENOANO = 55;
+
+const int ENOBUFS = 105;
+
+const int ENOCSI = 50;
+
+const int ENODATA = 61;
+
+const int ENODEV = 19;
+
+const int ENOENT = 2;
+
+const int ENOEXEC = 8;
+
+const int ENOKEY = 126;
+
+const int ENOLCK = 37;
+
+const int ENOLINK = 67;
+
+const int ENOMEDIUM = 123;
+
+const int ENOMEM = 12;
+
+const int ENOMSG = 42;
+
+const int ENONET = 64;
+
+const int ENOPKG = 65;
+
+const int ENOPROTOOPT = 92;
+
+const int ENOSPC = 28;
+
+const int ENOSR = 63;
+
+const int ENOSTR = 60;
+
+const int ENOSYS = 38;
+
+const int ENOTBLK = 15;
+
+const int ENOTCONN = 107;
+
+const int ENOTDIR = 20;
+
+const int ENOTEMPTY = 39;
+
+const int ENOTNAM = 118;
+
+const int ENOTRECOVERABLE = 131;
+
+const int ENOTSOCK = 88;
+
+const int ENOTSUP = 95;
+
+const int ENOTTY = 25;
+
+const int ENOTUNIQ = 76;
+
+const int ENXIO = 6;
+
+const int EOPNOTSUPP = 95;
+
+const int EOVERFLOW = 75;
+
+const int EOWNERDEAD = 130;
+
+const int EPERM = 1;
+
+const int EPFNOSUPPORT = 96;
+
+const int EPIPE = 32;
+
+const int EPROTO = 71;
+
+const int EPROTONOSUPPORT = 93;
+
+const int EPROTOTYPE = 91;
+
+const int ERANGE = 34;
+
+const int EREMCHG = 78;
+
+const int EREMOTE = 66;
+
+const int EREMOTEIO = 121;
+
+const int ERESTART = 85;
+
+const int ERFKILL = 132;
+
+const int EROFS = 30;
+
+const int ESHUTDOWN = 108;
+
+const int ESOCKTNOSUPPORT = 94;
+
+const int ESPIPE = 29;
+
+const int ESRCH = 3;
+
+const int ESRMNT = 69;
+
+const int ESTALE = 116;
+
+const int ESTRPIPE = 86;
+
+const int ETIME = 62;
+
+const int ETIMEDOUT = 110;
+
+const int ETOOMANYREFS = 109;
+
+const int ETXTBSY = 26;
+
+const int EUCLEAN = 117;
+
+const int EUNATCH = 49;
+
+const int EUSERS = 87;
+
+const int EWOULDBLOCK = 11;
+
+const int EXDEV = 18;
+
+const int EXFULL = 54;
+
+const int EXIT_FAILURE = 1;
+
+const int EXIT_SUCCESS = 0;
+
+const int FAPPEND = 1024;
+
+const int FASYNC = 8192;
+
+const int FD_CLOEXEC = 1;
+
+const int FD_SETSIZE = 1024;
+
+const int FFSYNC = 1052672;
+
+const int FNDELAY = 2048;
+
+const int FNONBLOCK = 2048;
+
+const int F_DUPFD = 0;
+
+const int F_DUPFD_CLOEXEC = 1030;
+
+const int F_EXLCK = 4;
+
+const int F_GETFD = 1;
+
+const int F_GETFL = 3;
+
+const int F_GETLK = 5;
+
+const int F_GETLK64 = 5;
+
+const int F_GETOWN = 9;
+
+const int F_LOCK = 1;
+
+const int F_OK = 0;
+
+const int F_RDLCK = 0;
+
+const int F_SETFD = 2;
+
+const int F_SETFL = 4;
+
+const int F_SETLK = 6;
+
+const int F_SETLK64 = 6;
+
+const int F_SETLKW = 7;
+
+const int F_SETLKW64 = 7;
+
+const int F_SETOWN = 8;
+
+const int F_SHLCK = 8;
+
+const int F_TEST = 3;
+
+const int F_TLOCK = 2;
+
+const int F_ULOCK = 0;
+
+const int F_UNLCK = 2;
+
+const int F_WRLCK = 1;
+
+const int LITTLE_ENDIAN = 1234;
+
+const int LOCK_EX = 2;
+
+const int LOCK_NB = 4;
+
+const int LOCK_SH = 1;
+
+const int LOCK_UN = 8;
+
+const int L_INCR = 1;
+
+const int L_SET = 0;
+
+const int L_XTND = 2;
+
+const int MADV_DODUMP = 17;
+
+const int MADV_DOFORK = 11;
+
+const int MADV_DONTDUMP = 16;
+
+const int MADV_DONTFORK = 10;
+
+const int MADV_DONTNEED = 4;
+
+const int MADV_FREE = 8;
+
+const int MADV_HUGEPAGE = 14;
+
+const int MADV_HWPOISON = 100;
+
+const int MADV_KEEPONFORK = 19;
+
+const int MADV_MERGEABLE = 12;
+
+const int MADV_NOHUGEPAGE = 15;
+
+const int MADV_NORMAL = 0;
+
+const int MADV_RANDOM = 1;
+
+const int MADV_REMOVE = 9;
+
+const int MADV_SEQUENTIAL = 2;
+
+const int MADV_UNMERGEABLE = 13;
+
+const int MADV_WILLNEED = 3;
+
+const int MADV_WIPEONFORK = 18;
+
 const int MAP_32BIT = 64;
 
 const int MAP_ANON = 32;
@@ -489,6 +895,22 @@ const int MAP_SHARED = 1;
 const int MAP_STACK = 131072;
 
 const int MAP_TYPE = 15;
+
+const int MCL_CURRENT = 1;
+
+const int MCL_FUTURE = 2;
+
+const int MCL_ONFAULT = 4;
+
+const int MS_ASYNC = 1;
+
+const int MS_INVALIDATE = 2;
+
+const int MS_SYNC = 4;
+
+const int NFDBITS = 64;
+
+const int NULL = 0;
 
 const int O_ACCMODE = 3;
 
@@ -528,6 +950,30 @@ const int O_TRUNC = 512;
 
 const int O_WRONLY = 1;
 
+const int PDP_ENDIAN = 3412;
+
+const int POSIX_FADV_DONTNEED = 4;
+
+const int POSIX_FADV_NOREUSE = 5;
+
+const int POSIX_FADV_NORMAL = 0;
+
+const int POSIX_FADV_RANDOM = 1;
+
+const int POSIX_FADV_SEQUENTIAL = 2;
+
+const int POSIX_FADV_WILLNEED = 3;
+
+const int POSIX_MADV_DONTNEED = 4;
+
+const int POSIX_MADV_NORMAL = 0;
+
+const int POSIX_MADV_RANDOM = 1;
+
+const int POSIX_MADV_SEQUENTIAL = 2;
+
+const int POSIX_MADV_WILLNEED = 3;
+
 const int PROT_EXEC = 4;
 
 const int PROT_GROWSDOWN = 16777216;
@@ -540,7 +986,85 @@ const int PROT_READ = 1;
 
 const int PROT_WRITE = 2;
 
+const int RAND_MAX = 2147483647;
+
+const int R_OK = 4;
+
+const int SEEK_CUR = 1;
+
+const int SEEK_END = 2;
+
+const int SEEK_SET = 0;
+
+const int SI_LOAD_SHIFT = 16;
+
 const int STAT_VER = 1;
+
+const int STDERR_FILENO = 2;
+
+const int STDIN_FILENO = 0;
+
+const int STDOUT_FILENO = 1;
+
+const int SYS_NMLN = 65;
+
+const int S_BLKSIZE = 512;
+
+const int S_IEXEC = 64;
+
+const int S_IFBLK = 24576;
+
+const int S_IFCHR = 8192;
+
+const int S_IFDIR = 16384;
+
+const int S_IFIFO = 4096;
+
+const int S_IFLNK = 40960;
+
+const int S_IFMT = 61440;
+
+const int S_IFREG = 32768;
+
+const int S_IFSOCK = 49152;
+
+const int S_IREAD = 256;
+
+const int S_IRGRP = 32;
+
+const int S_IROTH = 4;
+
+const int S_IRUSR = 256;
+
+const int S_IRWXG = 56;
+
+const int S_IRWXO = 7;
+
+const int S_IRWXU = 448;
+
+const int S_ISGID = 1024;
+
+const int S_ISUID = 2048;
+
+const int S_ISVTX = 512;
+
+const int S_IWGRP = 16;
+
+const int S_IWOTH = 2;
+
+const int S_IWRITE = 128;
+
+const int S_IWUSR = 128;
+
+const int S_IXGRP = 8;
+
+const int S_IXOTH = 1;
+
+const int S_IXUSR = 64;
+
+const int UTIME_NOW = 1073741823;
+
+const int UTIME_OMIT = 1073741822;
 
 const int UTSNAME_DOMAIN_LENGTH = 65;
 
@@ -555,6 +1079,22 @@ const int UTSNAME_RELEASE_LENGTH = 65;
 const int UTSNAME_SYSNAME_LENGTH = 65;
 
 const int UTSNAME_VERSION_LENGTH = 65;
+
+const int WCONTINUED = 8;
+
+const int WEXITED = 4;
+
+const int WNOHANG = 1;
+
+const int WNOWAIT = 16777216;
+
+const int WSTOPPED = 2;
+
+const int WUNTRACED = 2;
+
+const int W_OK = 2;
+
+const int X_OK = 1;
 
 class stat_t extends ffi.Struct {
   @ffi.Uint64()

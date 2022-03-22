@@ -39,9 +39,7 @@ functions:
     "__error": "errno"
 macros:
   include:
-    - "MAP_.*"
-    - "O_.*"
-    - "PROT_.*"
+    - "[A-Z].*"
     - "_SYS_NAMELEN"
   rename:
     "_SYS_NAMELEN": "SYS_NAMELEN"
