@@ -6,12 +6,13 @@ import '../libc.dart';
 import '../stat.dart';
 import '../util.dart';
 import 'bsd.dart';
+import 'ffigen.dart' as ffi;
 
 mixin BsdStatMixin on LibC {
   @override
   Stat stat(String file) {
     return ffi.using((arena) {
-      final buf = arena<stat_t>();
+      final buf = arena<ffi.stat_t>();
       late int res;
       try {
         res = inode64.stat(file.toCString(arena), buf);
@@ -26,7 +27,7 @@ mixin BsdStatMixin on LibC {
   @override
   Stat fstat(int fd) {
     return ffi.using((arena) {
-      final buf = arena<stat_t>();
+      final buf = arena<ffi.stat_t>();
       late int res;
       try {
         res = inode64.fstat(fd, buf);
@@ -41,7 +42,7 @@ mixin BsdStatMixin on LibC {
   @override
   Stat lstat(String file) {
     return ffi.using((arena) {
-      final buf = arena<stat_t>();
+      final buf = arena<ffi.stat_t>();
       late int res;
       try {
         res = inode64.lstat(file.toCString(arena), buf);
@@ -54,7 +55,7 @@ mixin BsdStatMixin on LibC {
   }
 }
 
-extension BsdStat on ffi.Pointer<stat_t> {
+extension BsdStat on ffi.Pointer<ffi.stat_t> {
   Stat toStat() {
     return Stat(
       st_dev: ref.st_dev,
@@ -74,6 +75,6 @@ extension BsdStat on ffi.Pointer<stat_t> {
   }
 }
 
-extension _BsdTimespec on timespec_t {
+extension _BsdTimespec on ffi.timespec_t {
   DateTime toDateTime() => fromTimespec(tv_sec, tv_nsec);
 }

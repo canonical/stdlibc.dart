@@ -3,23 +3,23 @@ import 'dart:ffi' as ffi;
 import '../libc.dart';
 import '../mman.dart';
 import '../util.dart';
+import 'ffigen.dart' as ffi;
 import 'gnu.dart';
-import 'gnu.g.dart' as gnu;
 
 mixin GnuMmanMixin on LibC {
   @override
-  int get MAP_PRIVATE => gnu.MAP_PRIVATE;
+  int get MAP_PRIVATE => ffi.MAP_PRIVATE;
   @override
-  int get MAP_SHARED => gnu.MAP_SHARED;
+  int get MAP_SHARED => ffi.MAP_SHARED;
 
   @override
-  int get PROT_EXEC => gnu.PROT_EXEC;
+  int get PROT_EXEC => ffi.PROT_EXEC;
   @override
-  int get PROT_NONE => gnu.PROT_NONE;
+  int get PROT_NONE => ffi.PROT_NONE;
   @override
-  int get PROT_READ => gnu.PROT_READ;
+  int get PROT_READ => ffi.PROT_READ;
   @override
-  int get PROT_WRITE => gnu.PROT_WRITE;
+  int get PROT_WRITE => ffi.PROT_WRITE;
 
   @override
   Mmap mmap(

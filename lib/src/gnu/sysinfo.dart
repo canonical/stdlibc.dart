@@ -5,13 +5,14 @@ import 'package:ffi/ffi.dart' as ffi;
 import '../libc.dart';
 import '../sysinfo.dart';
 import '../util.dart';
+import 'ffigen.dart' as ffi;
 import 'gnu.dart';
 
 mixin GnuSysinfoMixin on LibC {
   @override
   Sysinfo sysinfo() {
     return ffi.using((arena) {
-      final buf = arena<sysinfo_t>();
+      final buf = arena<ffi.sysinfo_t>();
       final res = dylib.sysinfo(buf);
       checkErrno('sysinfo', res);
       return buf.toSysinfo();
@@ -19,7 +20,7 @@ mixin GnuSysinfoMixin on LibC {
   }
 }
 
-extension GnuSysinfo on ffi.Pointer<sysinfo_t> {
+extension GnuSysinfo on ffi.Pointer<ffi.sysinfo_t> {
   Sysinfo toSysinfo() {
     return Sysinfo(
       uptime: Duration(seconds: ref.uptime),
