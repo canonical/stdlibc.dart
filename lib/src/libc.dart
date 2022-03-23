@@ -4,6 +4,7 @@ import 'bsd/bsd.dart';
 import 'errno.dart';
 import 'fcntl.dart';
 import 'gnu/gnu.dart';
+import 'macros.g.dart';
 import 'mman.dart';
 import 'stat.dart';
 import 'stdlib.dart';
@@ -18,6 +19,7 @@ abstract class LibC
     with
         ErrnoMixin,
         FcntlMixin,
+        MacroMixin,
         MmanMixin,
         StatMixin,
         StdlibMixin,

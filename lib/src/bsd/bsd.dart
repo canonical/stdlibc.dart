@@ -4,6 +4,7 @@ import '../libc.dart';
 import 'errno.dart';
 import 'fcntl.dart';
 import 'ffigen.dart' as ffi;
+import 'macros.g.dart';
 import 'mman.dart';
 import 'stat.dart';
 import 'stdlib.dart';
@@ -23,6 +24,7 @@ class BsdLibC extends LibC
     with
         BsdErrnoMixin,
         BsdFcntlMixin,
+        BsdMacroMixin,
         BsdMmanMixin,
         BsdStatMixin,
         BsdStdlibMixin,

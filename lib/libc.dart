@@ -3,6 +3,7 @@ library libc;
 
 export 'src/errno.dart' hide ErrnoMixin;
 export 'src/fcntl.dart' hide FcntlMixin;
+export 'src/macros.g.dart' hide MacroMixin;
 export 'src/mman.dart' hide MmanMixin;
 export 'src/stat.dart' hide StatMixin;
 export 'src/stdlib.dart' hide StdlibMixin;

@@ -4,6 +4,7 @@ import '../libc.dart';
 import 'errno.dart';
 import 'fcntl.dart';
 import 'ffigen.dart' as ffi;
+import 'macros.g.dart';
 import 'mman.dart';
 import 'stat.dart';
 import 'stdlib.dart';
@@ -18,6 +19,7 @@ class GnuLibC extends LibC
     with
         GnuErrnoMixin,
         GnuFcntlMixin,
+        GnuMacroMixin,
         GnuMmanMixin,
         GnuStatMixin,
         GnuStdlibMixin,
