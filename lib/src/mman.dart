@@ -4,14 +4,6 @@ import 'package:meta/meta.dart';
 
 import 'libc.dart';
 
-int get MAP_PRIVATE => libc.MAP_PRIVATE;
-int get MAP_SHARED => libc.MAP_SHARED;
-
-int get PROT_EXEC => libc.PROT_EXEC;
-int get PROT_NONE => libc.PROT_NONE;
-int get PROT_READ => libc.PROT_READ;
-int get PROT_WRITE => libc.PROT_WRITE;
-
 Mmap mmap({
   int? address,
   required int length,
@@ -34,14 +26,6 @@ class Mmap {
 }
 
 mixin MmanMixin {
-  int get MAP_PRIVATE;
-  int get MAP_SHARED;
-
-  int get PROT_EXEC;
-  int get PROT_NONE;
-  int get PROT_READ;
-  int get PROT_WRITE;
-
   Mmap mmap(int address, int length, int prot, int flags, int fd, int offset);
   void munmap(Mmap map);
 }

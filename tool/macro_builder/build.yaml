@@ -1,0 +1,8 @@
+builders:
+  macro_builder:
+    import: "package:macro_builder/builder.dart"
+    builder_factories: ["macroBuilder"]
+    build_extensions: {".dart": ["macros.g.dart"]}
+    auto_apply: dependents
+    build_to: source
+    applies_builders: ["source_gen|combining_builder"]

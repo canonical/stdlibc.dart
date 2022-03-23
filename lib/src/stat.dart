@@ -2,33 +2,6 @@ import 'package:meta/meta.dart';
 
 import 'libc.dart';
 
-const int S_IEXEC = 64;
-const int S_IFBLK = 24576;
-const int S_IFCHR = 8192;
-const int S_IFDIR = 16384;
-const int S_IFIFO = 4096;
-const int S_IFLNK = 40960;
-const int S_IFMT = 61440;
-const int S_IFREG = 32768;
-const int S_IFSOCK = 49152;
-const int S_IREAD = 256;
-const int S_IRGRP = 32;
-const int S_IROTH = 4;
-const int S_IRUSR = 256;
-const int S_IRWXG = 56;
-const int S_IRWXO = 7;
-const int S_IRWXU = 448;
-const int S_ISGID = 1024;
-const int S_ISUID = 2048;
-const int S_ISVTX = 512;
-const int S_IWGRP = 16;
-const int S_IWOTH = 2;
-const int S_IWRITE = 128;
-const int S_IWUSR = 128;
-const int S_IXGRP = 8;
-const int S_IXOTH = 1;
-const int S_IXUSR = 64;
-
 Stat stat(String file) => libc.stat(file);
 Stat fstat(int fd) => libc.fstat(fd);
 Stat lstat(String file) => libc.lstat(file);
