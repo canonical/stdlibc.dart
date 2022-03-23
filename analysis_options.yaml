@@ -4,6 +4,7 @@ analyzer:
   exclude:
     - "**/*.g.dart"
     - "**/*.mocks.dart"
+    - "**/ffigen.dart"
 
   strong-mode:
     implicit-casts: false

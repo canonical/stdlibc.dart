@@ -1,4 +1,4 @@
-name: DynamicGnuCLibrary
+name: GnuLibC
 description: "GNU C Library"
 output: "lib/src/gnu/gnu.g.dart"
 sort: true

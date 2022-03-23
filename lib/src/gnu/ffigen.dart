@@ -4,7 +4,7 @@
 import 'dart:ffi' as ffi;
 
 /// GNU C Library
-class DynamicGnuCLibrary {
+class GnuLibC {
   /// Holds the symbol lookup function.
   final ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName)
       _lookup;
