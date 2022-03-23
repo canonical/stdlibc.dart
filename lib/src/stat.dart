@@ -134,3 +134,9 @@ class Stat {
     return 'Stat(st_dev: $st_dev, st_ino: $st_ino, st_nlink: $st_nlink, st_mode: $st_mode, st_uid: $st_uid, st_gid: $st_gid, st_rdev: $st_rdev, st_size: $st_size, st_blksize: $st_blksize, st_blocks: $st_blocks, st_atim: $st_atim, st_mtim: $st_mtim, st_ctim: $st_ctim)';
   }
 }
+
+mixin StatMixin {
+  Stat fstat(int fd);
+  Stat lstat(String file);
+  Stat stat(String file);
+}

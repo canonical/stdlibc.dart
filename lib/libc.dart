@@ -1,12 +1,12 @@
 /// C Standard Library
 library libc;
 
-export 'src/errno.dart';
-export 'src/fcntl.dart';
-export 'src/mman.dart';
-export 'src/stat.dart';
-export 'src/stdlib.dart';
-export 'src/string.dart';
-export 'src/sysinfo.dart';
-export 'src/uname.dart';
-export 'src/unistd.dart';
+export 'src/errno.dart' hide ErrnoMixin;
+export 'src/fcntl.dart' hide FcntlMixin;
+export 'src/mman.dart' hide MmanMixin;
+export 'src/stat.dart' hide StatMixin;
+export 'src/stdlib.dart' hide StdlibMixin;
+export 'src/string.dart' hide StringMixin;
+export 'src/sysinfo.dart' hide SysinfoMixin;
+export 'src/uname.dart' hide UnameMixin;
+export 'src/unistd.dart' hide UnistdMixin;

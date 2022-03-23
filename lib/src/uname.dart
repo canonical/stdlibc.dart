@@ -60,3 +60,7 @@ class Utsname {
     return 'Utsname(sysname: $sysname, nodename: $nodename, release: $release, version: $version, machine: $machine)';
   }
 }
+
+mixin UnameMixin {
+  Utsname uname();
+}
