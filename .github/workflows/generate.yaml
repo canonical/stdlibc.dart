@@ -39,3 +39,18 @@ jobs:
       with:
         title: 'Regenerate GNU bindings'
         commit-message: 'Regenerate GNU bindings'
+
+  macros:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+    - uses: dart-lang/setup-dart@v1
+    - run: dart pub get
+    - run: dart run build_runner build --delete-conflicting-outputs
+    - run: ./.github/scripts/check-outdated-files.sh
+      continue-on-error: true
+    - uses: peter-evans/create-pull-request@v3
+      if: github.event_name != 'pull_request'
+      with:
+        title: 'Regenerate macros'
+        commit-message: 'Regenerate macros'
