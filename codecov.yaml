@@ -1,3 +1,4 @@
 comment: false
 ignore:
   - "**/*.g.dart"
+  - "**/ffigen.dart"
