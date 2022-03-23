@@ -97,3 +97,7 @@ class Sysinfo {
     return 'Sysinfo(uptime: $uptime, loads: $loads, totalram: $totalram, sharedram: $sharedram, bufferram: $bufferram, totalswap: $totalswap, freeswap: $freeswap, procs: $procs, totalhigh: $totalhigh, freehigh: $freehigh, mem_unit: $mem_unit)';
   }
 }
+
+mixin SysinfoMixin {
+  Sysinfo sysinfo();
+}

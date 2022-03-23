@@ -32,3 +32,16 @@ class Mmap {
   final int address;
   final ByteBuffer data;
 }
+
+mixin MmanMixin {
+  int get MAP_PRIVATE;
+  int get MAP_SHARED;
+
+  int get PROT_EXEC;
+  int get PROT_NONE;
+  int get PROT_READ;
+  int get PROT_WRITE;
+
+  Mmap mmap(int address, int length, int prot, int flags, int fd, int offset);
+  void munmap(Mmap map);
+}
