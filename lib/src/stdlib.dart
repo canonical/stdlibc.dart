@@ -9,3 +9,10 @@ void setenv(String name, String value, {bool overwrite = true}) {
 }
 
 void unsetenv(String name) => libc.unsetenv(name);
+
+mixin StdlibMixin {
+  String? getenv(String name);
+  void putenv(String str);
+  void setenv(String name, String value, bool overwrite);
+  void unsetenv(String name);
+}

@@ -49,3 +49,23 @@ int setsid() => libc.setsid();
 
 /// Sets the effective user ID of the calling process.
 int setuid(int uid) => libc.setuid(uid);
+
+mixin UnistdMixin {
+  void close(int fd);
+  int getegid();
+  int geteuid();
+  int getgid();
+  int getpgid(int pid);
+  int getpid();
+  int getppid();
+  int getsid(int pid);
+  int getuid();
+  int setegid(int gid);
+  int seteuid(int uid);
+  int setgid(int gid);
+  int setpgid(int pid, int pgid);
+  int setregid(int rgid, int egid);
+  int setreuid(int ruid, int euid);
+  int setsid();
+  int setuid(int uid);
+}

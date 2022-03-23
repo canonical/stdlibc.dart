@@ -25,3 +25,8 @@ class Errno implements Exception {
   @override
   String toString() => 'Errno($errno, $id: "${strerror(errno)}")';
 }
+
+mixin ErrnoMixin {
+  int get errno;
+  set errno(int errno);
+}
