@@ -3,23 +3,23 @@ import 'package:ffi/ffi.dart' as ffi;
 import '../libc.dart';
 import '../util.dart';
 import 'bsd.dart';
-import 'bsd.g.dart' as bsd;
+import 'ffigen.dart' as ffi;
 
 mixin BsdFcntlMixin on LibC {
   @override
-  int get O_APPEND => bsd.O_APPEND;
+  int get O_APPEND => ffi.O_APPEND;
   @override
-  int get O_CREAT => bsd.O_CREAT;
+  int get O_CREAT => ffi.O_CREAT;
   @override
-  int get O_EXCL => bsd.O_EXCL;
+  int get O_EXCL => ffi.O_EXCL;
   @override
-  int get O_RDONLY => bsd.O_RDONLY;
+  int get O_RDONLY => ffi.O_RDONLY;
   @override
-  int get O_RDWR => bsd.O_RDWR;
+  int get O_RDWR => ffi.O_RDWR;
   @override
-  int get O_TRUNC => bsd.O_TRUNC;
+  int get O_TRUNC => ffi.O_TRUNC;
   @override
-  int get O_WRONLY => bsd.O_WRONLY;
+  int get O_WRONLY => ffi.O_WRONLY;
 
   @override
   int open(String file, int? flags) {

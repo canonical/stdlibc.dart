@@ -1,6 +1,6 @@
-name: DynamicGnuCLibrary
+name: GnuLibC
 description: "GNU C Library"
-output: "lib/src/gnu/gnu.g.dart"
+output: "lib/src/gnu/ffigen.dart"
 sort: true
 llvm-path:
   - "/usr/lib/llvm-9"

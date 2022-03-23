@@ -2,24 +2,24 @@ import 'package:ffi/ffi.dart' as ffi;
 
 import '../libc.dart';
 import '../util.dart';
+import 'ffigen.dart' as ffi;
 import 'gnu.dart';
-import 'gnu.g.dart' as gnu;
 
 mixin GnuFcntlMixin on LibC {
   @override
-  int get O_APPEND => gnu.O_APPEND;
+  int get O_APPEND => ffi.O_APPEND;
   @override
-  int get O_CREAT => gnu.O_CREAT;
+  int get O_CREAT => ffi.O_CREAT;
   @override
-  int get O_EXCL => gnu.O_EXCL;
+  int get O_EXCL => ffi.O_EXCL;
   @override
-  int get O_RDONLY => gnu.O_RDONLY;
+  int get O_RDONLY => ffi.O_RDONLY;
   @override
-  int get O_RDWR => gnu.O_RDWR;
+  int get O_RDWR => ffi.O_RDWR;
   @override
-  int get O_TRUNC => gnu.O_TRUNC;
+  int get O_TRUNC => ffi.O_TRUNC;
   @override
-  int get O_WRONLY => gnu.O_WRONLY;
+  int get O_WRONLY => ffi.O_WRONLY;
 
   @override
   int open(String file, int? flags) {

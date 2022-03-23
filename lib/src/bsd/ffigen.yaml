@@ -1,6 +1,6 @@
-name: DynamicBsdCLibrary
+name: BsdLibC
 description: "BSD C Library"
-output: "lib/src/bsd/bsd.g.dart"
+output: "lib/src/bsd/ffigen.dart"
 sort: true
 llvm-path:
   - "/Library/Developer/CommandLineTools/usr/lib/libclang.dylib"
