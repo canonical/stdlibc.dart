@@ -38,6 +38,10 @@ functions:
   rename:
     "__error": "errno"
 macros:
+  exclude:
+    - ".*_DARWIN_.*"
+    - "IOPOL_.*"
+    - "MAC_OS_.*"
   include:
     - "[A-Z].*"
     - "_SYS_NAMELEN"

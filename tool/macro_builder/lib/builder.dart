@@ -81,7 +81,7 @@ class MacroBuilder implements Builder {
       final lib = Library((b) => b
         ..directives.addAll([
           Directive.import('../libc.dart'),
-          Directive.import('ffigen.dart', as: impl.key),
+          Directive.import('ffigen.dart', as: 'ffi'),
         ])
         ..body.addAll([
           Mixin((b) => b
@@ -97,7 +97,7 @@ class MacroBuilder implements Builder {
                       refer(m.value.getDisplayString(withNullability: true))
                   ..lambda = true
                   ..body = impl.value.containsKey(m.key)
-                      ? Code('${impl.key}.${m.key}')
+                      ? Code('ffi.${m.key}')
                       : Code("throw UnsupportedError('${m.key}')"))
             ]))
         ]));

@@ -1,651 +1,651 @@
 import '../libc.dart';
-import 'ffigen.dart' as gnu;
+import 'ffigen.dart' as ffi;
 
 mixin GnuMacroMixin on LibC {
   @override
-  int get ACCESSPERMS => gnu.ACCESSPERMS;
+  int get ACCESSPERMS => ffi.ACCESSPERMS;
   @override
-  int get ALLPERMS => gnu.ALLPERMS;
+  int get ALLPERMS => ffi.ALLPERMS;
   @override
-  int get AT_EACCESS => gnu.AT_EACCESS;
+  int get AT_EACCESS => ffi.AT_EACCESS;
   @override
-  int get AT_FDCWD => gnu.AT_FDCWD;
+  int get AT_FDCWD => ffi.AT_FDCWD;
   @override
-  int get AT_REMOVEDIR => gnu.AT_REMOVEDIR;
+  int get AT_REMOVEDIR => ffi.AT_REMOVEDIR;
   @override
-  int get AT_SYMLINK_FOLLOW => gnu.AT_SYMLINK_FOLLOW;
+  int get AT_SYMLINK_FOLLOW => ffi.AT_SYMLINK_FOLLOW;
   @override
-  int get AT_SYMLINK_NOFOLLOW => gnu.AT_SYMLINK_NOFOLLOW;
+  int get AT_SYMLINK_NOFOLLOW => ffi.AT_SYMLINK_NOFOLLOW;
   @override
-  int get BIG_ENDIAN => gnu.BIG_ENDIAN;
+  int get BIG_ENDIAN => ffi.BIG_ENDIAN;
   @override
-  int get BYTE_ORDER => gnu.BYTE_ORDER;
+  int get BYTE_ORDER => ffi.BYTE_ORDER;
   @override
-  int get DEFFILEMODE => gnu.DEFFILEMODE;
+  int get DEFFILEMODE => ffi.DEFFILEMODE;
   @override
-  int get E2BIG => gnu.E2BIG;
+  int get E2BIG => ffi.E2BIG;
   @override
-  int get EACCES => gnu.EACCES;
+  int get EACCES => ffi.EACCES;
   @override
-  int get EADDRINUSE => gnu.EADDRINUSE;
+  int get EADDRINUSE => ffi.EADDRINUSE;
   @override
-  int get EADDRNOTAVAIL => gnu.EADDRNOTAVAIL;
+  int get EADDRNOTAVAIL => ffi.EADDRNOTAVAIL;
   @override
-  int get EADV => gnu.EADV;
+  int get EADV => ffi.EADV;
   @override
-  int get EAFNOSUPPORT => gnu.EAFNOSUPPORT;
+  int get EAFNOSUPPORT => ffi.EAFNOSUPPORT;
   @override
-  int get EAGAIN => gnu.EAGAIN;
+  int get EAGAIN => ffi.EAGAIN;
   @override
-  int get EALREADY => gnu.EALREADY;
+  int get EALREADY => ffi.EALREADY;
   @override
-  int get EBADE => gnu.EBADE;
+  int get EBADE => ffi.EBADE;
   @override
-  int get EBADF => gnu.EBADF;
+  int get EBADF => ffi.EBADF;
   @override
-  int get EBADFD => gnu.EBADFD;
+  int get EBADFD => ffi.EBADFD;
   @override
-  int get EBADMSG => gnu.EBADMSG;
+  int get EBADMSG => ffi.EBADMSG;
   @override
-  int get EBADR => gnu.EBADR;
+  int get EBADR => ffi.EBADR;
   @override
-  int get EBADRQC => gnu.EBADRQC;
+  int get EBADRQC => ffi.EBADRQC;
   @override
-  int get EBADSLT => gnu.EBADSLT;
+  int get EBADSLT => ffi.EBADSLT;
   @override
-  int get EBFONT => gnu.EBFONT;
+  int get EBFONT => ffi.EBFONT;
   @override
-  int get EBUSY => gnu.EBUSY;
+  int get EBUSY => ffi.EBUSY;
   @override
-  int get ECANCELED => gnu.ECANCELED;
+  int get ECANCELED => ffi.ECANCELED;
   @override
-  int get ECHILD => gnu.ECHILD;
+  int get ECHILD => ffi.ECHILD;
   @override
-  int get ECHRNG => gnu.ECHRNG;
+  int get ECHRNG => ffi.ECHRNG;
   @override
-  int get ECOMM => gnu.ECOMM;
+  int get ECOMM => ffi.ECOMM;
   @override
-  int get ECONNABORTED => gnu.ECONNABORTED;
+  int get ECONNABORTED => ffi.ECONNABORTED;
   @override
-  int get ECONNREFUSED => gnu.ECONNREFUSED;
+  int get ECONNREFUSED => ffi.ECONNREFUSED;
   @override
-  int get ECONNRESET => gnu.ECONNRESET;
+  int get ECONNRESET => ffi.ECONNRESET;
   @override
-  int get EDEADLK => gnu.EDEADLK;
+  int get EDEADLK => ffi.EDEADLK;
   @override
-  int get EDEADLOCK => gnu.EDEADLOCK;
+  int get EDEADLOCK => ffi.EDEADLOCK;
   @override
-  int get EDESTADDRREQ => gnu.EDESTADDRREQ;
+  int get EDESTADDRREQ => ffi.EDESTADDRREQ;
   @override
-  int get EDOM => gnu.EDOM;
+  int get EDOM => ffi.EDOM;
   @override
-  int get EDOTDOT => gnu.EDOTDOT;
+  int get EDOTDOT => ffi.EDOTDOT;
   @override
-  int get EDQUOT => gnu.EDQUOT;
+  int get EDQUOT => ffi.EDQUOT;
   @override
-  int get EEXIST => gnu.EEXIST;
+  int get EEXIST => ffi.EEXIST;
   @override
-  int get EFAULT => gnu.EFAULT;
+  int get EFAULT => ffi.EFAULT;
   @override
-  int get EFBIG => gnu.EFBIG;
+  int get EFBIG => ffi.EFBIG;
   @override
-  int get EHOSTDOWN => gnu.EHOSTDOWN;
+  int get EHOSTDOWN => ffi.EHOSTDOWN;
   @override
-  int get EHOSTUNREACH => gnu.EHOSTUNREACH;
+  int get EHOSTUNREACH => ffi.EHOSTUNREACH;
   @override
-  int get EHWPOISON => gnu.EHWPOISON;
+  int get EHWPOISON => ffi.EHWPOISON;
   @override
-  int get EIDRM => gnu.EIDRM;
+  int get EIDRM => ffi.EIDRM;
   @override
-  int get EILSEQ => gnu.EILSEQ;
+  int get EILSEQ => ffi.EILSEQ;
   @override
-  int get EINPROGRESS => gnu.EINPROGRESS;
+  int get EINPROGRESS => ffi.EINPROGRESS;
   @override
-  int get EINTR => gnu.EINTR;
+  int get EINTR => ffi.EINTR;
   @override
-  int get EINVAL => gnu.EINVAL;
+  int get EINVAL => ffi.EINVAL;
   @override
-  int get EIO => gnu.EIO;
+  int get EIO => ffi.EIO;
   @override
-  int get EISCONN => gnu.EISCONN;
+  int get EISCONN => ffi.EISCONN;
   @override
-  int get EISDIR => gnu.EISDIR;
+  int get EISDIR => ffi.EISDIR;
   @override
-  int get EISNAM => gnu.EISNAM;
+  int get EISNAM => ffi.EISNAM;
   @override
-  int get EKEYEXPIRED => gnu.EKEYEXPIRED;
+  int get EKEYEXPIRED => ffi.EKEYEXPIRED;
   @override
-  int get EKEYREJECTED => gnu.EKEYREJECTED;
+  int get EKEYREJECTED => ffi.EKEYREJECTED;
   @override
-  int get EKEYREVOKED => gnu.EKEYREVOKED;
+  int get EKEYREVOKED => ffi.EKEYREVOKED;
   @override
-  int get EL2HLT => gnu.EL2HLT;
+  int get EL2HLT => ffi.EL2HLT;
   @override
-  int get EL2NSYNC => gnu.EL2NSYNC;
+  int get EL2NSYNC => ffi.EL2NSYNC;
   @override
-  int get EL3HLT => gnu.EL3HLT;
+  int get EL3HLT => ffi.EL3HLT;
   @override
-  int get EL3RST => gnu.EL3RST;
+  int get EL3RST => ffi.EL3RST;
   @override
-  int get ELIBACC => gnu.ELIBACC;
+  int get ELIBACC => ffi.ELIBACC;
   @override
-  int get ELIBBAD => gnu.ELIBBAD;
+  int get ELIBBAD => ffi.ELIBBAD;
   @override
-  int get ELIBEXEC => gnu.ELIBEXEC;
+  int get ELIBEXEC => ffi.ELIBEXEC;
   @override
-  int get ELIBMAX => gnu.ELIBMAX;
+  int get ELIBMAX => ffi.ELIBMAX;
   @override
-  int get ELIBSCN => gnu.ELIBSCN;
+  int get ELIBSCN => ffi.ELIBSCN;
   @override
-  int get ELNRNG => gnu.ELNRNG;
+  int get ELNRNG => ffi.ELNRNG;
   @override
-  int get ELOOP => gnu.ELOOP;
+  int get ELOOP => ffi.ELOOP;
   @override
-  int get EMEDIUMTYPE => gnu.EMEDIUMTYPE;
+  int get EMEDIUMTYPE => ffi.EMEDIUMTYPE;
   @override
-  int get EMFILE => gnu.EMFILE;
+  int get EMFILE => ffi.EMFILE;
   @override
-  int get EMLINK => gnu.EMLINK;
+  int get EMLINK => ffi.EMLINK;
   @override
-  int get EMSGSIZE => gnu.EMSGSIZE;
+  int get EMSGSIZE => ffi.EMSGSIZE;
   @override
-  int get EMULTIHOP => gnu.EMULTIHOP;
+  int get EMULTIHOP => ffi.EMULTIHOP;
   @override
-  int get ENAMETOOLONG => gnu.ENAMETOOLONG;
+  int get ENAMETOOLONG => ffi.ENAMETOOLONG;
   @override
-  int get ENAVAIL => gnu.ENAVAIL;
+  int get ENAVAIL => ffi.ENAVAIL;
   @override
-  int get ENETDOWN => gnu.ENETDOWN;
+  int get ENETDOWN => ffi.ENETDOWN;
   @override
-  int get ENETRESET => gnu.ENETRESET;
+  int get ENETRESET => ffi.ENETRESET;
   @override
-  int get ENETUNREACH => gnu.ENETUNREACH;
+  int get ENETUNREACH => ffi.ENETUNREACH;
   @override
-  int get ENFILE => gnu.ENFILE;
+  int get ENFILE => ffi.ENFILE;
   @override
-  int get ENOANO => gnu.ENOANO;
+  int get ENOANO => ffi.ENOANO;
   @override
-  int get ENOBUFS => gnu.ENOBUFS;
+  int get ENOBUFS => ffi.ENOBUFS;
   @override
-  int get ENOCSI => gnu.ENOCSI;
+  int get ENOCSI => ffi.ENOCSI;
   @override
-  int get ENODATA => gnu.ENODATA;
+  int get ENODATA => ffi.ENODATA;
   @override
-  int get ENODEV => gnu.ENODEV;
+  int get ENODEV => ffi.ENODEV;
   @override
-  int get ENOENT => gnu.ENOENT;
+  int get ENOENT => ffi.ENOENT;
   @override
-  int get ENOEXEC => gnu.ENOEXEC;
+  int get ENOEXEC => ffi.ENOEXEC;
   @override
-  int get ENOKEY => gnu.ENOKEY;
+  int get ENOKEY => ffi.ENOKEY;
   @override
-  int get ENOLCK => gnu.ENOLCK;
+  int get ENOLCK => ffi.ENOLCK;
   @override
-  int get ENOLINK => gnu.ENOLINK;
+  int get ENOLINK => ffi.ENOLINK;
   @override
-  int get ENOMEDIUM => gnu.ENOMEDIUM;
+  int get ENOMEDIUM => ffi.ENOMEDIUM;
   @override
-  int get ENOMEM => gnu.ENOMEM;
+  int get ENOMEM => ffi.ENOMEM;
   @override
-  int get ENOMSG => gnu.ENOMSG;
+  int get ENOMSG => ffi.ENOMSG;
   @override
-  int get ENONET => gnu.ENONET;
+  int get ENONET => ffi.ENONET;
   @override
-  int get ENOPKG => gnu.ENOPKG;
+  int get ENOPKG => ffi.ENOPKG;
   @override
-  int get ENOPROTOOPT => gnu.ENOPROTOOPT;
+  int get ENOPROTOOPT => ffi.ENOPROTOOPT;
   @override
-  int get ENOSPC => gnu.ENOSPC;
+  int get ENOSPC => ffi.ENOSPC;
   @override
-  int get ENOSR => gnu.ENOSR;
+  int get ENOSR => ffi.ENOSR;
   @override
-  int get ENOSTR => gnu.ENOSTR;
+  int get ENOSTR => ffi.ENOSTR;
   @override
-  int get ENOSYS => gnu.ENOSYS;
+  int get ENOSYS => ffi.ENOSYS;
   @override
-  int get ENOTBLK => gnu.ENOTBLK;
+  int get ENOTBLK => ffi.ENOTBLK;
   @override
-  int get ENOTCONN => gnu.ENOTCONN;
+  int get ENOTCONN => ffi.ENOTCONN;
   @override
-  int get ENOTDIR => gnu.ENOTDIR;
+  int get ENOTDIR => ffi.ENOTDIR;
   @override
-  int get ENOTEMPTY => gnu.ENOTEMPTY;
+  int get ENOTEMPTY => ffi.ENOTEMPTY;
   @override
-  int get ENOTNAM => gnu.ENOTNAM;
+  int get ENOTNAM => ffi.ENOTNAM;
   @override
-  int get ENOTRECOVERABLE => gnu.ENOTRECOVERABLE;
+  int get ENOTRECOVERABLE => ffi.ENOTRECOVERABLE;
   @override
-  int get ENOTSOCK => gnu.ENOTSOCK;
+  int get ENOTSOCK => ffi.ENOTSOCK;
   @override
-  int get ENOTSUP => gnu.ENOTSUP;
+  int get ENOTSUP => ffi.ENOTSUP;
   @override
-  int get ENOTTY => gnu.ENOTTY;
+  int get ENOTTY => ffi.ENOTTY;
   @override
-  int get ENOTUNIQ => gnu.ENOTUNIQ;
+  int get ENOTUNIQ => ffi.ENOTUNIQ;
   @override
-  int get ENXIO => gnu.ENXIO;
+  int get ENXIO => ffi.ENXIO;
   @override
-  int get EOPNOTSUPP => gnu.EOPNOTSUPP;
+  int get EOPNOTSUPP => ffi.EOPNOTSUPP;
   @override
-  int get EOVERFLOW => gnu.EOVERFLOW;
+  int get EOVERFLOW => ffi.EOVERFLOW;
   @override
-  int get EOWNERDEAD => gnu.EOWNERDEAD;
+  int get EOWNERDEAD => ffi.EOWNERDEAD;
   @override
-  int get EPERM => gnu.EPERM;
+  int get EPERM => ffi.EPERM;
   @override
-  int get EPFNOSUPPORT => gnu.EPFNOSUPPORT;
+  int get EPFNOSUPPORT => ffi.EPFNOSUPPORT;
   @override
-  int get EPIPE => gnu.EPIPE;
+  int get EPIPE => ffi.EPIPE;
   @override
-  int get EPROTO => gnu.EPROTO;
+  int get EPROTO => ffi.EPROTO;
   @override
-  int get EPROTONOSUPPORT => gnu.EPROTONOSUPPORT;
+  int get EPROTONOSUPPORT => ffi.EPROTONOSUPPORT;
   @override
-  int get EPROTOTYPE => gnu.EPROTOTYPE;
+  int get EPROTOTYPE => ffi.EPROTOTYPE;
   @override
-  int get ERANGE => gnu.ERANGE;
+  int get ERANGE => ffi.ERANGE;
   @override
-  int get EREMCHG => gnu.EREMCHG;
+  int get EREMCHG => ffi.EREMCHG;
   @override
-  int get EREMOTE => gnu.EREMOTE;
+  int get EREMOTE => ffi.EREMOTE;
   @override
-  int get EREMOTEIO => gnu.EREMOTEIO;
+  int get EREMOTEIO => ffi.EREMOTEIO;
   @override
-  int get ERESTART => gnu.ERESTART;
+  int get ERESTART => ffi.ERESTART;
   @override
-  int get ERFKILL => gnu.ERFKILL;
+  int get ERFKILL => ffi.ERFKILL;
   @override
-  int get EROFS => gnu.EROFS;
+  int get EROFS => ffi.EROFS;
   @override
-  int get ESHUTDOWN => gnu.ESHUTDOWN;
+  int get ESHUTDOWN => ffi.ESHUTDOWN;
   @override
-  int get ESOCKTNOSUPPORT => gnu.ESOCKTNOSUPPORT;
+  int get ESOCKTNOSUPPORT => ffi.ESOCKTNOSUPPORT;
   @override
-  int get ESPIPE => gnu.ESPIPE;
+  int get ESPIPE => ffi.ESPIPE;
   @override
-  int get ESRCH => gnu.ESRCH;
+  int get ESRCH => ffi.ESRCH;
   @override
-  int get ESRMNT => gnu.ESRMNT;
+  int get ESRMNT => ffi.ESRMNT;
   @override
-  int get ESTALE => gnu.ESTALE;
+  int get ESTALE => ffi.ESTALE;
   @override
-  int get ESTRPIPE => gnu.ESTRPIPE;
+  int get ESTRPIPE => ffi.ESTRPIPE;
   @override
-  int get ETIME => gnu.ETIME;
+  int get ETIME => ffi.ETIME;
   @override
-  int get ETIMEDOUT => gnu.ETIMEDOUT;
+  int get ETIMEDOUT => ffi.ETIMEDOUT;
   @override
-  int get ETOOMANYREFS => gnu.ETOOMANYREFS;
+  int get ETOOMANYREFS => ffi.ETOOMANYREFS;
   @override
-  int get ETXTBSY => gnu.ETXTBSY;
+  int get ETXTBSY => ffi.ETXTBSY;
   @override
-  int get EUCLEAN => gnu.EUCLEAN;
+  int get EUCLEAN => ffi.EUCLEAN;
   @override
-  int get EUNATCH => gnu.EUNATCH;
+  int get EUNATCH => ffi.EUNATCH;
   @override
-  int get EUSERS => gnu.EUSERS;
+  int get EUSERS => ffi.EUSERS;
   @override
-  int get EWOULDBLOCK => gnu.EWOULDBLOCK;
+  int get EWOULDBLOCK => ffi.EWOULDBLOCK;
   @override
-  int get EXDEV => gnu.EXDEV;
+  int get EXDEV => ffi.EXDEV;
   @override
-  int get EXFULL => gnu.EXFULL;
+  int get EXFULL => ffi.EXFULL;
   @override
-  int get EXIT_FAILURE => gnu.EXIT_FAILURE;
+  int get EXIT_FAILURE => ffi.EXIT_FAILURE;
   @override
-  int get EXIT_SUCCESS => gnu.EXIT_SUCCESS;
+  int get EXIT_SUCCESS => ffi.EXIT_SUCCESS;
   @override
-  int get FAPPEND => gnu.FAPPEND;
+  int get FAPPEND => ffi.FAPPEND;
   @override
-  int get FASYNC => gnu.FASYNC;
+  int get FASYNC => ffi.FASYNC;
   @override
-  int get FD_CLOEXEC => gnu.FD_CLOEXEC;
+  int get FD_CLOEXEC => ffi.FD_CLOEXEC;
   @override
-  int get FD_SETSIZE => gnu.FD_SETSIZE;
+  int get FD_SETSIZE => ffi.FD_SETSIZE;
   @override
-  int get FFSYNC => gnu.FFSYNC;
+  int get FFSYNC => ffi.FFSYNC;
   @override
-  int get FNDELAY => gnu.FNDELAY;
+  int get FNDELAY => ffi.FNDELAY;
   @override
-  int get FNONBLOCK => gnu.FNONBLOCK;
+  int get FNONBLOCK => ffi.FNONBLOCK;
   @override
-  int get F_DUPFD => gnu.F_DUPFD;
+  int get F_DUPFD => ffi.F_DUPFD;
   @override
-  int get F_DUPFD_CLOEXEC => gnu.F_DUPFD_CLOEXEC;
+  int get F_DUPFD_CLOEXEC => ffi.F_DUPFD_CLOEXEC;
   @override
-  int get F_EXLCK => gnu.F_EXLCK;
+  int get F_EXLCK => ffi.F_EXLCK;
   @override
-  int get F_GETFD => gnu.F_GETFD;
+  int get F_GETFD => ffi.F_GETFD;
   @override
-  int get F_GETFL => gnu.F_GETFL;
+  int get F_GETFL => ffi.F_GETFL;
   @override
-  int get F_GETLK => gnu.F_GETLK;
+  int get F_GETLK => ffi.F_GETLK;
   @override
-  int get F_GETLK64 => gnu.F_GETLK64;
+  int get F_GETLK64 => ffi.F_GETLK64;
   @override
-  int get F_GETOWN => gnu.F_GETOWN;
+  int get F_GETOWN => ffi.F_GETOWN;
   @override
-  int get F_LOCK => gnu.F_LOCK;
+  int get F_LOCK => ffi.F_LOCK;
   @override
-  int get F_OK => gnu.F_OK;
+  int get F_OK => ffi.F_OK;
   @override
-  int get F_RDLCK => gnu.F_RDLCK;
+  int get F_RDLCK => ffi.F_RDLCK;
   @override
-  int get F_SETFD => gnu.F_SETFD;
+  int get F_SETFD => ffi.F_SETFD;
   @override
-  int get F_SETFL => gnu.F_SETFL;
+  int get F_SETFL => ffi.F_SETFL;
   @override
-  int get F_SETLK => gnu.F_SETLK;
+  int get F_SETLK => ffi.F_SETLK;
   @override
-  int get F_SETLK64 => gnu.F_SETLK64;
+  int get F_SETLK64 => ffi.F_SETLK64;
   @override
-  int get F_SETLKW => gnu.F_SETLKW;
+  int get F_SETLKW => ffi.F_SETLKW;
   @override
-  int get F_SETLKW64 => gnu.F_SETLKW64;
+  int get F_SETLKW64 => ffi.F_SETLKW64;
   @override
-  int get F_SETOWN => gnu.F_SETOWN;
+  int get F_SETOWN => ffi.F_SETOWN;
   @override
-  int get F_SHLCK => gnu.F_SHLCK;
+  int get F_SHLCK => ffi.F_SHLCK;
   @override
-  int get F_TEST => gnu.F_TEST;
+  int get F_TEST => ffi.F_TEST;
   @override
-  int get F_TLOCK => gnu.F_TLOCK;
+  int get F_TLOCK => ffi.F_TLOCK;
   @override
-  int get F_ULOCK => gnu.F_ULOCK;
+  int get F_ULOCK => ffi.F_ULOCK;
   @override
-  int get F_UNLCK => gnu.F_UNLCK;
+  int get F_UNLCK => ffi.F_UNLCK;
   @override
-  int get F_WRLCK => gnu.F_WRLCK;
+  int get F_WRLCK => ffi.F_WRLCK;
   @override
-  int get LITTLE_ENDIAN => gnu.LITTLE_ENDIAN;
+  int get LITTLE_ENDIAN => ffi.LITTLE_ENDIAN;
   @override
-  int get LOCK_EX => gnu.LOCK_EX;
+  int get LOCK_EX => ffi.LOCK_EX;
   @override
-  int get LOCK_NB => gnu.LOCK_NB;
+  int get LOCK_NB => ffi.LOCK_NB;
   @override
-  int get LOCK_SH => gnu.LOCK_SH;
+  int get LOCK_SH => ffi.LOCK_SH;
   @override
-  int get LOCK_UN => gnu.LOCK_UN;
+  int get LOCK_UN => ffi.LOCK_UN;
   @override
-  int get L_INCR => gnu.L_INCR;
+  int get L_INCR => ffi.L_INCR;
   @override
-  int get L_SET => gnu.L_SET;
+  int get L_SET => ffi.L_SET;
   @override
-  int get L_XTND => gnu.L_XTND;
+  int get L_XTND => ffi.L_XTND;
   @override
-  int get MADV_DODUMP => gnu.MADV_DODUMP;
+  int get MADV_DODUMP => ffi.MADV_DODUMP;
   @override
-  int get MADV_DOFORK => gnu.MADV_DOFORK;
+  int get MADV_DOFORK => ffi.MADV_DOFORK;
   @override
-  int get MADV_DONTDUMP => gnu.MADV_DONTDUMP;
+  int get MADV_DONTDUMP => ffi.MADV_DONTDUMP;
   @override
-  int get MADV_DONTFORK => gnu.MADV_DONTFORK;
+  int get MADV_DONTFORK => ffi.MADV_DONTFORK;
   @override
-  int get MADV_DONTNEED => gnu.MADV_DONTNEED;
+  int get MADV_DONTNEED => ffi.MADV_DONTNEED;
   @override
-  int get MADV_FREE => gnu.MADV_FREE;
+  int get MADV_FREE => ffi.MADV_FREE;
   @override
-  int get MADV_HUGEPAGE => gnu.MADV_HUGEPAGE;
+  int get MADV_HUGEPAGE => ffi.MADV_HUGEPAGE;
   @override
-  int get MADV_HWPOISON => gnu.MADV_HWPOISON;
+  int get MADV_HWPOISON => ffi.MADV_HWPOISON;
   @override
-  int get MADV_KEEPONFORK => gnu.MADV_KEEPONFORK;
+  int get MADV_KEEPONFORK => ffi.MADV_KEEPONFORK;
   @override
-  int get MADV_MERGEABLE => gnu.MADV_MERGEABLE;
+  int get MADV_MERGEABLE => ffi.MADV_MERGEABLE;
   @override
-  int get MADV_NOHUGEPAGE => gnu.MADV_NOHUGEPAGE;
+  int get MADV_NOHUGEPAGE => ffi.MADV_NOHUGEPAGE;
   @override
-  int get MADV_NORMAL => gnu.MADV_NORMAL;
+  int get MADV_NORMAL => ffi.MADV_NORMAL;
   @override
-  int get MADV_RANDOM => gnu.MADV_RANDOM;
+  int get MADV_RANDOM => ffi.MADV_RANDOM;
   @override
-  int get MADV_REMOVE => gnu.MADV_REMOVE;
+  int get MADV_REMOVE => ffi.MADV_REMOVE;
   @override
-  int get MADV_SEQUENTIAL => gnu.MADV_SEQUENTIAL;
+  int get MADV_SEQUENTIAL => ffi.MADV_SEQUENTIAL;
   @override
-  int get MADV_UNMERGEABLE => gnu.MADV_UNMERGEABLE;
+  int get MADV_UNMERGEABLE => ffi.MADV_UNMERGEABLE;
   @override
-  int get MADV_WILLNEED => gnu.MADV_WILLNEED;
+  int get MADV_WILLNEED => ffi.MADV_WILLNEED;
   @override
-  int get MADV_WIPEONFORK => gnu.MADV_WIPEONFORK;
+  int get MADV_WIPEONFORK => ffi.MADV_WIPEONFORK;
   @override
-  int get MAP_32BIT => gnu.MAP_32BIT;
+  int get MAP_32BIT => ffi.MAP_32BIT;
   @override
-  int get MAP_ANON => gnu.MAP_ANON;
+  int get MAP_ANON => ffi.MAP_ANON;
   @override
-  int get MAP_ANONYMOUS => gnu.MAP_ANONYMOUS;
+  int get MAP_ANONYMOUS => ffi.MAP_ANONYMOUS;
   @override
-  int get MAP_DENYWRITE => gnu.MAP_DENYWRITE;
+  int get MAP_DENYWRITE => ffi.MAP_DENYWRITE;
   @override
-  int get MAP_EXECUTABLE => gnu.MAP_EXECUTABLE;
+  int get MAP_EXECUTABLE => ffi.MAP_EXECUTABLE;
   @override
-  int get MAP_FILE => gnu.MAP_FILE;
+  int get MAP_FILE => ffi.MAP_FILE;
   @override
-  int get MAP_FIXED => gnu.MAP_FIXED;
+  int get MAP_FIXED => ffi.MAP_FIXED;
   @override
-  int get MAP_GROWSDOWN => gnu.MAP_GROWSDOWN;
+  int get MAP_GROWSDOWN => ffi.MAP_GROWSDOWN;
   @override
-  int get MAP_HUGETLB => gnu.MAP_HUGETLB;
+  int get MAP_HUGETLB => ffi.MAP_HUGETLB;
   @override
-  int get MAP_HUGE_MASK => gnu.MAP_HUGE_MASK;
+  int get MAP_HUGE_MASK => ffi.MAP_HUGE_MASK;
   @override
-  int get MAP_HUGE_SHIFT => gnu.MAP_HUGE_SHIFT;
+  int get MAP_HUGE_SHIFT => ffi.MAP_HUGE_SHIFT;
   @override
-  int get MAP_LOCKED => gnu.MAP_LOCKED;
+  int get MAP_LOCKED => ffi.MAP_LOCKED;
   @override
-  int get MAP_NONBLOCK => gnu.MAP_NONBLOCK;
+  int get MAP_NONBLOCK => ffi.MAP_NONBLOCK;
   @override
-  int get MAP_NORESERVE => gnu.MAP_NORESERVE;
+  int get MAP_NORESERVE => ffi.MAP_NORESERVE;
   @override
-  int get MAP_POPULATE => gnu.MAP_POPULATE;
+  int get MAP_POPULATE => ffi.MAP_POPULATE;
   @override
-  int get MAP_PRIVATE => gnu.MAP_PRIVATE;
+  int get MAP_PRIVATE => ffi.MAP_PRIVATE;
   @override
-  int get MAP_SHARED => gnu.MAP_SHARED;
+  int get MAP_SHARED => ffi.MAP_SHARED;
   @override
-  int get MAP_STACK => gnu.MAP_STACK;
+  int get MAP_STACK => ffi.MAP_STACK;
   @override
-  int get MAP_TYPE => gnu.MAP_TYPE;
+  int get MAP_TYPE => ffi.MAP_TYPE;
   @override
-  int get MCL_CURRENT => gnu.MCL_CURRENT;
+  int get MCL_CURRENT => ffi.MCL_CURRENT;
   @override
-  int get MCL_FUTURE => gnu.MCL_FUTURE;
+  int get MCL_FUTURE => ffi.MCL_FUTURE;
   @override
-  int get MCL_ONFAULT => gnu.MCL_ONFAULT;
+  int get MCL_ONFAULT => ffi.MCL_ONFAULT;
   @override
-  int get MS_ASYNC => gnu.MS_ASYNC;
+  int get MS_ASYNC => ffi.MS_ASYNC;
   @override
-  int get MS_INVALIDATE => gnu.MS_INVALIDATE;
+  int get MS_INVALIDATE => ffi.MS_INVALIDATE;
   @override
-  int get MS_SYNC => gnu.MS_SYNC;
+  int get MS_SYNC => ffi.MS_SYNC;
   @override
-  int get NFDBITS => gnu.NFDBITS;
+  int get NFDBITS => ffi.NFDBITS;
   @override
-  int get NULL => gnu.NULL;
+  int get NULL => ffi.NULL;
   @override
-  int get O_ACCMODE => gnu.O_ACCMODE;
+  int get O_ACCMODE => ffi.O_ACCMODE;
   @override
-  int get O_APPEND => gnu.O_APPEND;
+  int get O_APPEND => ffi.O_APPEND;
   @override
-  int get O_ASYNC => gnu.O_ASYNC;
+  int get O_ASYNC => ffi.O_ASYNC;
   @override
-  int get O_CLOEXEC => gnu.O_CLOEXEC;
+  int get O_CLOEXEC => ffi.O_CLOEXEC;
   @override
-  int get O_CREAT => gnu.O_CREAT;
+  int get O_CREAT => ffi.O_CREAT;
   @override
-  int get O_DIRECTORY => gnu.O_DIRECTORY;
+  int get O_DIRECTORY => ffi.O_DIRECTORY;
   @override
-  int get O_DSYNC => gnu.O_DSYNC;
+  int get O_DSYNC => ffi.O_DSYNC;
   @override
-  int get O_EXCL => gnu.O_EXCL;
+  int get O_EXCL => ffi.O_EXCL;
   @override
-  int get O_FSYNC => gnu.O_FSYNC;
+  int get O_FSYNC => ffi.O_FSYNC;
   @override
-  int get O_NDELAY => gnu.O_NDELAY;
+  int get O_NDELAY => ffi.O_NDELAY;
   @override
-  int get O_NOCTTY => gnu.O_NOCTTY;
+  int get O_NOCTTY => ffi.O_NOCTTY;
   @override
-  int get O_NOFOLLOW => gnu.O_NOFOLLOW;
+  int get O_NOFOLLOW => ffi.O_NOFOLLOW;
   @override
-  int get O_NONBLOCK => gnu.O_NONBLOCK;
+  int get O_NONBLOCK => ffi.O_NONBLOCK;
   @override
-  int get O_RDONLY => gnu.O_RDONLY;
+  int get O_RDONLY => ffi.O_RDONLY;
   @override
-  int get O_RDWR => gnu.O_RDWR;
+  int get O_RDWR => ffi.O_RDWR;
   @override
-  int get O_RSYNC => gnu.O_RSYNC;
+  int get O_RSYNC => ffi.O_RSYNC;
   @override
-  int get O_SYNC => gnu.O_SYNC;
+  int get O_SYNC => ffi.O_SYNC;
   @override
-  int get O_TRUNC => gnu.O_TRUNC;
+  int get O_TRUNC => ffi.O_TRUNC;
   @override
-  int get O_WRONLY => gnu.O_WRONLY;
+  int get O_WRONLY => ffi.O_WRONLY;
   @override
-  int get PDP_ENDIAN => gnu.PDP_ENDIAN;
+  int get PDP_ENDIAN => ffi.PDP_ENDIAN;
   @override
-  int get POSIX_FADV_DONTNEED => gnu.POSIX_FADV_DONTNEED;
+  int get POSIX_FADV_DONTNEED => ffi.POSIX_FADV_DONTNEED;
   @override
-  int get POSIX_FADV_NOREUSE => gnu.POSIX_FADV_NOREUSE;
+  int get POSIX_FADV_NOREUSE => ffi.POSIX_FADV_NOREUSE;
   @override
-  int get POSIX_FADV_NORMAL => gnu.POSIX_FADV_NORMAL;
+  int get POSIX_FADV_NORMAL => ffi.POSIX_FADV_NORMAL;
   @override
-  int get POSIX_FADV_RANDOM => gnu.POSIX_FADV_RANDOM;
+  int get POSIX_FADV_RANDOM => ffi.POSIX_FADV_RANDOM;
   @override
-  int get POSIX_FADV_SEQUENTIAL => gnu.POSIX_FADV_SEQUENTIAL;
+  int get POSIX_FADV_SEQUENTIAL => ffi.POSIX_FADV_SEQUENTIAL;
   @override
-  int get POSIX_FADV_WILLNEED => gnu.POSIX_FADV_WILLNEED;
+  int get POSIX_FADV_WILLNEED => ffi.POSIX_FADV_WILLNEED;
   @override
-  int get POSIX_MADV_DONTNEED => gnu.POSIX_MADV_DONTNEED;
+  int get POSIX_MADV_DONTNEED => ffi.POSIX_MADV_DONTNEED;
   @override
-  int get POSIX_MADV_NORMAL => gnu.POSIX_MADV_NORMAL;
+  int get POSIX_MADV_NORMAL => ffi.POSIX_MADV_NORMAL;
   @override
-  int get POSIX_MADV_RANDOM => gnu.POSIX_MADV_RANDOM;
+  int get POSIX_MADV_RANDOM => ffi.POSIX_MADV_RANDOM;
   @override
-  int get POSIX_MADV_SEQUENTIAL => gnu.POSIX_MADV_SEQUENTIAL;
+  int get POSIX_MADV_SEQUENTIAL => ffi.POSIX_MADV_SEQUENTIAL;
   @override
-  int get POSIX_MADV_WILLNEED => gnu.POSIX_MADV_WILLNEED;
+  int get POSIX_MADV_WILLNEED => ffi.POSIX_MADV_WILLNEED;
   @override
-  int get PROT_EXEC => gnu.PROT_EXEC;
+  int get PROT_EXEC => ffi.PROT_EXEC;
   @override
-  int get PROT_GROWSDOWN => gnu.PROT_GROWSDOWN;
+  int get PROT_GROWSDOWN => ffi.PROT_GROWSDOWN;
   @override
-  int get PROT_GROWSUP => gnu.PROT_GROWSUP;
+  int get PROT_GROWSUP => ffi.PROT_GROWSUP;
   @override
-  int get PROT_NONE => gnu.PROT_NONE;
+  int get PROT_NONE => ffi.PROT_NONE;
   @override
-  int get PROT_READ => gnu.PROT_READ;
+  int get PROT_READ => ffi.PROT_READ;
   @override
-  int get PROT_WRITE => gnu.PROT_WRITE;
+  int get PROT_WRITE => ffi.PROT_WRITE;
   @override
-  int get RAND_MAX => gnu.RAND_MAX;
+  int get RAND_MAX => ffi.RAND_MAX;
   @override
-  int get R_OK => gnu.R_OK;
+  int get R_OK => ffi.R_OK;
   @override
-  int get SEEK_CUR => gnu.SEEK_CUR;
+  int get SEEK_CUR => ffi.SEEK_CUR;
   @override
-  int get SEEK_END => gnu.SEEK_END;
+  int get SEEK_END => ffi.SEEK_END;
   @override
-  int get SEEK_SET => gnu.SEEK_SET;
+  int get SEEK_SET => ffi.SEEK_SET;
   @override
-  int get SI_LOAD_SHIFT => gnu.SI_LOAD_SHIFT;
+  int get SI_LOAD_SHIFT => ffi.SI_LOAD_SHIFT;
   @override
-  int get STAT_VER => gnu.STAT_VER;
+  int get STAT_VER => ffi.STAT_VER;
   @override
-  int get STDERR_FILENO => gnu.STDERR_FILENO;
+  int get STDERR_FILENO => ffi.STDERR_FILENO;
   @override
-  int get STDIN_FILENO => gnu.STDIN_FILENO;
+  int get STDIN_FILENO => ffi.STDIN_FILENO;
   @override
-  int get STDOUT_FILENO => gnu.STDOUT_FILENO;
+  int get STDOUT_FILENO => ffi.STDOUT_FILENO;
   @override
-  int get SYS_NMLN => gnu.SYS_NMLN;
+  int get SYS_NMLN => ffi.SYS_NMLN;
   @override
-  int get S_BLKSIZE => gnu.S_BLKSIZE;
+  int get S_BLKSIZE => ffi.S_BLKSIZE;
   @override
-  int get S_IEXEC => gnu.S_IEXEC;
+  int get S_IEXEC => ffi.S_IEXEC;
   @override
-  int get S_IFBLK => gnu.S_IFBLK;
+  int get S_IFBLK => ffi.S_IFBLK;
   @override
-  int get S_IFCHR => gnu.S_IFCHR;
+  int get S_IFCHR => ffi.S_IFCHR;
   @override
-  int get S_IFDIR => gnu.S_IFDIR;
+  int get S_IFDIR => ffi.S_IFDIR;
   @override
-  int get S_IFIFO => gnu.S_IFIFO;
+  int get S_IFIFO => ffi.S_IFIFO;
   @override
-  int get S_IFLNK => gnu.S_IFLNK;
+  int get S_IFLNK => ffi.S_IFLNK;
   @override
-  int get S_IFMT => gnu.S_IFMT;
+  int get S_IFMT => ffi.S_IFMT;
   @override
-  int get S_IFREG => gnu.S_IFREG;
+  int get S_IFREG => ffi.S_IFREG;
   @override
-  int get S_IFSOCK => gnu.S_IFSOCK;
+  int get S_IFSOCK => ffi.S_IFSOCK;
   @override
-  int get S_IREAD => gnu.S_IREAD;
+  int get S_IREAD => ffi.S_IREAD;
   @override
-  int get S_IRGRP => gnu.S_IRGRP;
+  int get S_IRGRP => ffi.S_IRGRP;
   @override
-  int get S_IROTH => gnu.S_IROTH;
+  int get S_IROTH => ffi.S_IROTH;
   @override
-  int get S_IRUSR => gnu.S_IRUSR;
+  int get S_IRUSR => ffi.S_IRUSR;
   @override
-  int get S_IRWXG => gnu.S_IRWXG;
+  int get S_IRWXG => ffi.S_IRWXG;
   @override
-  int get S_IRWXO => gnu.S_IRWXO;
+  int get S_IRWXO => ffi.S_IRWXO;
   @override
-  int get S_IRWXU => gnu.S_IRWXU;
+  int get S_IRWXU => ffi.S_IRWXU;
   @override
-  int get S_ISGID => gnu.S_ISGID;
+  int get S_ISGID => ffi.S_ISGID;
   @override
-  int get S_ISUID => gnu.S_ISUID;
+  int get S_ISUID => ffi.S_ISUID;
   @override
-  int get S_ISVTX => gnu.S_ISVTX;
+  int get S_ISVTX => ffi.S_ISVTX;
   @override
-  int get S_IWGRP => gnu.S_IWGRP;
+  int get S_IWGRP => ffi.S_IWGRP;
   @override
-  int get S_IWOTH => gnu.S_IWOTH;
+  int get S_IWOTH => ffi.S_IWOTH;
   @override
-  int get S_IWRITE => gnu.S_IWRITE;
+  int get S_IWRITE => ffi.S_IWRITE;
   @override
-  int get S_IWUSR => gnu.S_IWUSR;
+  int get S_IWUSR => ffi.S_IWUSR;
   @override
-  int get S_IXGRP => gnu.S_IXGRP;
+  int get S_IXGRP => ffi.S_IXGRP;
   @override
-  int get S_IXOTH => gnu.S_IXOTH;
+  int get S_IXOTH => ffi.S_IXOTH;
   @override
-  int get S_IXUSR => gnu.S_IXUSR;
+  int get S_IXUSR => ffi.S_IXUSR;
   @override
-  int get UTIME_NOW => gnu.UTIME_NOW;
+  int get UTIME_NOW => ffi.UTIME_NOW;
   @override
-  int get UTIME_OMIT => gnu.UTIME_OMIT;
+  int get UTIME_OMIT => ffi.UTIME_OMIT;
   @override
-  int get UTSNAME_DOMAIN_LENGTH => gnu.UTSNAME_DOMAIN_LENGTH;
+  int get UTSNAME_DOMAIN_LENGTH => ffi.UTSNAME_DOMAIN_LENGTH;
   @override
-  int get UTSNAME_LENGTH => gnu.UTSNAME_LENGTH;
+  int get UTSNAME_LENGTH => ffi.UTSNAME_LENGTH;
   @override
-  int get UTSNAME_MACHINE_LENGTH => gnu.UTSNAME_MACHINE_LENGTH;
+  int get UTSNAME_MACHINE_LENGTH => ffi.UTSNAME_MACHINE_LENGTH;
   @override
-  int get UTSNAME_NODENAME_LENGTH => gnu.UTSNAME_NODENAME_LENGTH;
+  int get UTSNAME_NODENAME_LENGTH => ffi.UTSNAME_NODENAME_LENGTH;
   @override
-  int get UTSNAME_RELEASE_LENGTH => gnu.UTSNAME_RELEASE_LENGTH;
+  int get UTSNAME_RELEASE_LENGTH => ffi.UTSNAME_RELEASE_LENGTH;
   @override
-  int get UTSNAME_SYSNAME_LENGTH => gnu.UTSNAME_SYSNAME_LENGTH;
+  int get UTSNAME_SYSNAME_LENGTH => ffi.UTSNAME_SYSNAME_LENGTH;
   @override
-  int get UTSNAME_VERSION_LENGTH => gnu.UTSNAME_VERSION_LENGTH;
+  int get UTSNAME_VERSION_LENGTH => ffi.UTSNAME_VERSION_LENGTH;
   @override
-  int get WCONTINUED => gnu.WCONTINUED;
+  int get WCONTINUED => ffi.WCONTINUED;
   @override
-  int get WEXITED => gnu.WEXITED;
+  int get WEXITED => ffi.WEXITED;
   @override
-  int get WNOHANG => gnu.WNOHANG;
+  int get WNOHANG => ffi.WNOHANG;
   @override
-  int get WNOWAIT => gnu.WNOWAIT;
+  int get WNOWAIT => ffi.WNOWAIT;
   @override
-  int get WSTOPPED => gnu.WSTOPPED;
+  int get WSTOPPED => ffi.WSTOPPED;
   @override
-  int get WUNTRACED => gnu.WUNTRACED;
+  int get WUNTRACED => ffi.WUNTRACED;
   @override
-  int get W_OK => gnu.W_OK;
+  int get W_OK => ffi.W_OK;
   @override
-  int get X_OK => gnu.X_OK;
+  int get X_OK => ffi.X_OK;
   @override
   int get ACCESSX_MAX_DESCRIPTORS =>
       throw UnsupportedError('ACCESSX_MAX_DESCRIPTORS');
