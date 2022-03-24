@@ -28,8 +28,9 @@ class MacroBuilder implements Builder {
 
   @override
   Future<void> build(BuildStep buildStep) async {
-    final macros = <String, DartType>{};
-    final implementations = <String, Map<String, TopLevelVariableElement>>{};
+    final macros = <String>[];
+    final types = <String, DartType>{};
+    final libs = <String, Map<String, TopLevelVariableElement>>{};
 
     final glob = Glob('lib/**/ffigen.dart');
     final assets = await buildStep.findAssets(glob).toList();
@@ -43,29 +44,34 @@ class MacroBuilder implements Builder {
               e.isConst &&
               e.displayName == e.displayName.toUpperCase())
           .cast<TopLevelVariableElement>();
-      macros.addAll({for (final e in elements) e.name: e.type});
-      implementations[name] = {for (final e in elements) e.name: e};
+      macros.addAll(elements.map((e) => e.name));
+      types.addAll({for (final e in elements) e.name: e.type});
+      libs[name] = {for (final e in elements) e.name: e};
+    }
+    macros.sort();
+
+    Reference getType(String macro) {
+      return refer(types[macro]!.getDisplayString(withNullability: true));
     }
 
     final lib = Library((b) => b
       ..directives.addAll([Directive.import('libc.dart')])
       ..body.addAll([
-        for (final m in macros.entries)
+        for (final m in macros)
           Method((b) => b
-            ..name = m.key
+            ..name = m
             ..type = MethodType.getter
-            ..returns = refer(m.value.getDisplayString(withNullability: true))
+            ..returns = getType(m)
             ..lambda = true
-            ..body = Code('libc.${m.key}')),
+            ..body = Code('libc.$m')),
         Mixin((b) => b
           ..name = 'MacroMixin'
           ..methods.addAll([
-            for (final m in macros.entries)
+            for (final m in macros)
               Method((b) => b
-                ..name = m.key
+                ..name = m
                 ..type = MethodType.getter
-                ..returns =
-                    refer(m.value.getDisplayString(withNullability: true)))
+                ..returns = getType(m))
           ]))
       ]));
 
@@ -77,7 +83,7 @@ class MacroBuilder implements Builder {
       DartFormatter().format('${lib.accept(DartEmitter.scoped())}'),
     );
 
-    for (final impl in implementations.entries) {
+    for (final impl in libs.entries) {
       final lib = Library((b) => b
         ..directives.addAll([
           Directive.import('../libc.dart'),
@@ -88,17 +94,16 @@ class MacroBuilder implements Builder {
             ..name = '${impl.key.capitalized}MacroMixin'
             ..on = refer('LibC')
             ..methods.addAll([
-              for (final m in macros.entries)
+              for (final m in macros)
                 Method((b) => b
-                  ..name = m.key
+                  ..name = m
                   ..type = MethodType.getter
                   ..annotations.add(refer('override'))
-                  ..returns =
-                      refer(m.value.getDisplayString(withNullability: true))
+                  ..returns = getType(m)
                   ..lambda = true
-                  ..body = impl.value.containsKey(m.key)
-                      ? Code('ffi.${m.key}')
-                      : Code("throw UnsupportedError('${m.key}')"))
+                  ..body = impl.value.containsKey(m)
+                      ? Code('ffi.$m')
+                      : Code("throw UnsupportedError('$m')"))
             ]))
         ]));
 
