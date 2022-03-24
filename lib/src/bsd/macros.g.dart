@@ -5,664 +5,45 @@ mixin BsdMacroMixin on LibC {
   @override
   int get ACCESSPERMS => ffi.ACCESSPERMS;
   @override
-  int get ALLPERMS => ffi.ALLPERMS;
-  @override
-  int get AT_EACCESS => ffi.AT_EACCESS;
-  @override
-  int get AT_FDCWD => ffi.AT_FDCWD;
-  @override
-  int get AT_REMOVEDIR => ffi.AT_REMOVEDIR;
-  @override
-  int get AT_SYMLINK_FOLLOW => ffi.AT_SYMLINK_FOLLOW;
-  @override
-  int get AT_SYMLINK_NOFOLLOW => ffi.AT_SYMLINK_NOFOLLOW;
-  @override
-  int get BIG_ENDIAN => ffi.BIG_ENDIAN;
-  @override
-  int get BYTE_ORDER => ffi.BYTE_ORDER;
-  @override
-  int get DEFFILEMODE => ffi.DEFFILEMODE;
-  @override
-  int get E2BIG => ffi.E2BIG;
-  @override
-  int get EACCES => ffi.EACCES;
-  @override
-  int get EADDRINUSE => ffi.EADDRINUSE;
-  @override
-  int get EADDRNOTAVAIL => ffi.EADDRNOTAVAIL;
-  @override
-  int get EADV => throw UnsupportedError('EADV');
-  @override
-  int get EAFNOSUPPORT => ffi.EAFNOSUPPORT;
-  @override
-  int get EAGAIN => ffi.EAGAIN;
-  @override
-  int get EALREADY => ffi.EALREADY;
-  @override
-  int get EBADE => throw UnsupportedError('EBADE');
-  @override
-  int get EBADF => ffi.EBADF;
-  @override
-  int get EBADFD => throw UnsupportedError('EBADFD');
-  @override
-  int get EBADMSG => ffi.EBADMSG;
-  @override
-  int get EBADR => throw UnsupportedError('EBADR');
-  @override
-  int get EBADRQC => throw UnsupportedError('EBADRQC');
-  @override
-  int get EBADSLT => throw UnsupportedError('EBADSLT');
-  @override
-  int get EBFONT => throw UnsupportedError('EBFONT');
-  @override
-  int get EBUSY => ffi.EBUSY;
-  @override
-  int get ECANCELED => ffi.ECANCELED;
-  @override
-  int get ECHILD => ffi.ECHILD;
-  @override
-  int get ECHRNG => throw UnsupportedError('ECHRNG');
-  @override
-  int get ECOMM => throw UnsupportedError('ECOMM');
-  @override
-  int get ECONNABORTED => ffi.ECONNABORTED;
-  @override
-  int get ECONNREFUSED => ffi.ECONNREFUSED;
-  @override
-  int get ECONNRESET => ffi.ECONNRESET;
-  @override
-  int get EDEADLK => ffi.EDEADLK;
-  @override
-  int get EDEADLOCK => throw UnsupportedError('EDEADLOCK');
-  @override
-  int get EDESTADDRREQ => ffi.EDESTADDRREQ;
-  @override
-  int get EDOM => ffi.EDOM;
-  @override
-  int get EDOTDOT => throw UnsupportedError('EDOTDOT');
-  @override
-  int get EDQUOT => ffi.EDQUOT;
-  @override
-  int get EEXIST => ffi.EEXIST;
-  @override
-  int get EFAULT => ffi.EFAULT;
-  @override
-  int get EFBIG => ffi.EFBIG;
-  @override
-  int get EHOSTDOWN => ffi.EHOSTDOWN;
-  @override
-  int get EHOSTUNREACH => ffi.EHOSTUNREACH;
-  @override
-  int get EHWPOISON => throw UnsupportedError('EHWPOISON');
-  @override
-  int get EIDRM => ffi.EIDRM;
-  @override
-  int get EILSEQ => ffi.EILSEQ;
-  @override
-  int get EINPROGRESS => ffi.EINPROGRESS;
-  @override
-  int get EINTR => ffi.EINTR;
-  @override
-  int get EINVAL => ffi.EINVAL;
-  @override
-  int get EIO => ffi.EIO;
-  @override
-  int get EISCONN => ffi.EISCONN;
-  @override
-  int get EISDIR => ffi.EISDIR;
-  @override
-  int get EISNAM => throw UnsupportedError('EISNAM');
-  @override
-  int get EKEYEXPIRED => throw UnsupportedError('EKEYEXPIRED');
-  @override
-  int get EKEYREJECTED => throw UnsupportedError('EKEYREJECTED');
-  @override
-  int get EKEYREVOKED => throw UnsupportedError('EKEYREVOKED');
-  @override
-  int get EL2HLT => throw UnsupportedError('EL2HLT');
-  @override
-  int get EL2NSYNC => throw UnsupportedError('EL2NSYNC');
-  @override
-  int get EL3HLT => throw UnsupportedError('EL3HLT');
-  @override
-  int get EL3RST => throw UnsupportedError('EL3RST');
-  @override
-  int get ELIBACC => throw UnsupportedError('ELIBACC');
-  @override
-  int get ELIBBAD => throw UnsupportedError('ELIBBAD');
-  @override
-  int get ELIBEXEC => throw UnsupportedError('ELIBEXEC');
-  @override
-  int get ELIBMAX => throw UnsupportedError('ELIBMAX');
-  @override
-  int get ELIBSCN => throw UnsupportedError('ELIBSCN');
-  @override
-  int get ELNRNG => throw UnsupportedError('ELNRNG');
-  @override
-  int get ELOOP => ffi.ELOOP;
-  @override
-  int get EMEDIUMTYPE => throw UnsupportedError('EMEDIUMTYPE');
-  @override
-  int get EMFILE => ffi.EMFILE;
-  @override
-  int get EMLINK => ffi.EMLINK;
-  @override
-  int get EMSGSIZE => ffi.EMSGSIZE;
-  @override
-  int get EMULTIHOP => ffi.EMULTIHOP;
-  @override
-  int get ENAMETOOLONG => ffi.ENAMETOOLONG;
-  @override
-  int get ENAVAIL => throw UnsupportedError('ENAVAIL');
-  @override
-  int get ENETDOWN => ffi.ENETDOWN;
-  @override
-  int get ENETRESET => ffi.ENETRESET;
-  @override
-  int get ENETUNREACH => ffi.ENETUNREACH;
-  @override
-  int get ENFILE => ffi.ENFILE;
-  @override
-  int get ENOANO => throw UnsupportedError('ENOANO');
-  @override
-  int get ENOBUFS => ffi.ENOBUFS;
-  @override
-  int get ENOCSI => throw UnsupportedError('ENOCSI');
-  @override
-  int get ENODATA => ffi.ENODATA;
-  @override
-  int get ENODEV => ffi.ENODEV;
-  @override
-  int get ENOENT => ffi.ENOENT;
-  @override
-  int get ENOEXEC => ffi.ENOEXEC;
-  @override
-  int get ENOKEY => throw UnsupportedError('ENOKEY');
-  @override
-  int get ENOLCK => ffi.ENOLCK;
-  @override
-  int get ENOLINK => ffi.ENOLINK;
-  @override
-  int get ENOMEDIUM => throw UnsupportedError('ENOMEDIUM');
-  @override
-  int get ENOMEM => ffi.ENOMEM;
-  @override
-  int get ENOMSG => ffi.ENOMSG;
-  @override
-  int get ENONET => throw UnsupportedError('ENONET');
-  @override
-  int get ENOPKG => throw UnsupportedError('ENOPKG');
-  @override
-  int get ENOPROTOOPT => ffi.ENOPROTOOPT;
-  @override
-  int get ENOSPC => ffi.ENOSPC;
-  @override
-  int get ENOSR => ffi.ENOSR;
-  @override
-  int get ENOSTR => ffi.ENOSTR;
-  @override
-  int get ENOSYS => ffi.ENOSYS;
-  @override
-  int get ENOTBLK => ffi.ENOTBLK;
-  @override
-  int get ENOTCONN => ffi.ENOTCONN;
-  @override
-  int get ENOTDIR => ffi.ENOTDIR;
-  @override
-  int get ENOTEMPTY => ffi.ENOTEMPTY;
-  @override
-  int get ENOTNAM => throw UnsupportedError('ENOTNAM');
-  @override
-  int get ENOTRECOVERABLE => ffi.ENOTRECOVERABLE;
-  @override
-  int get ENOTSOCK => ffi.ENOTSOCK;
-  @override
-  int get ENOTSUP => ffi.ENOTSUP;
-  @override
-  int get ENOTTY => ffi.ENOTTY;
-  @override
-  int get ENOTUNIQ => throw UnsupportedError('ENOTUNIQ');
-  @override
-  int get ENXIO => ffi.ENXIO;
-  @override
-  int get EOPNOTSUPP => ffi.EOPNOTSUPP;
-  @override
-  int get EOVERFLOW => ffi.EOVERFLOW;
-  @override
-  int get EOWNERDEAD => ffi.EOWNERDEAD;
-  @override
-  int get EPERM => ffi.EPERM;
-  @override
-  int get EPFNOSUPPORT => ffi.EPFNOSUPPORT;
-  @override
-  int get EPIPE => ffi.EPIPE;
-  @override
-  int get EPROTO => ffi.EPROTO;
-  @override
-  int get EPROTONOSUPPORT => ffi.EPROTONOSUPPORT;
-  @override
-  int get EPROTOTYPE => ffi.EPROTOTYPE;
-  @override
-  int get ERANGE => ffi.ERANGE;
-  @override
-  int get EREMCHG => throw UnsupportedError('EREMCHG');
-  @override
-  int get EREMOTE => ffi.EREMOTE;
-  @override
-  int get EREMOTEIO => throw UnsupportedError('EREMOTEIO');
-  @override
-  int get ERESTART => throw UnsupportedError('ERESTART');
-  @override
-  int get ERFKILL => throw UnsupportedError('ERFKILL');
-  @override
-  int get EROFS => ffi.EROFS;
-  @override
-  int get ESHUTDOWN => ffi.ESHUTDOWN;
-  @override
-  int get ESOCKTNOSUPPORT => ffi.ESOCKTNOSUPPORT;
-  @override
-  int get ESPIPE => ffi.ESPIPE;
-  @override
-  int get ESRCH => ffi.ESRCH;
-  @override
-  int get ESRMNT => throw UnsupportedError('ESRMNT');
-  @override
-  int get ESTALE => ffi.ESTALE;
-  @override
-  int get ESTRPIPE => throw UnsupportedError('ESTRPIPE');
-  @override
-  int get ETIME => ffi.ETIME;
-  @override
-  int get ETIMEDOUT => ffi.ETIMEDOUT;
-  @override
-  int get ETOOMANYREFS => ffi.ETOOMANYREFS;
-  @override
-  int get ETXTBSY => ffi.ETXTBSY;
-  @override
-  int get EUCLEAN => throw UnsupportedError('EUCLEAN');
-  @override
-  int get EUNATCH => throw UnsupportedError('EUNATCH');
-  @override
-  int get EUSERS => ffi.EUSERS;
-  @override
-  int get EWOULDBLOCK => ffi.EWOULDBLOCK;
-  @override
-  int get EXDEV => ffi.EXDEV;
-  @override
-  int get EXFULL => throw UnsupportedError('EXFULL');
-  @override
-  int get EXIT_FAILURE => ffi.EXIT_FAILURE;
-  @override
-  int get EXIT_SUCCESS => ffi.EXIT_SUCCESS;
-  @override
-  int get FAPPEND => ffi.FAPPEND;
-  @override
-  int get FASYNC => ffi.FASYNC;
-  @override
-  int get FD_CLOEXEC => ffi.FD_CLOEXEC;
-  @override
-  int get FD_SETSIZE => ffi.FD_SETSIZE;
-  @override
-  int get FFSYNC => ffi.FFSYNC;
-  @override
-  int get FNDELAY => ffi.FNDELAY;
-  @override
-  int get FNONBLOCK => ffi.FNONBLOCK;
-  @override
-  int get F_DUPFD => ffi.F_DUPFD;
-  @override
-  int get F_DUPFD_CLOEXEC => ffi.F_DUPFD_CLOEXEC;
-  @override
-  int get F_EXLCK => throw UnsupportedError('F_EXLCK');
-  @override
-  int get F_GETFD => ffi.F_GETFD;
-  @override
-  int get F_GETFL => ffi.F_GETFL;
-  @override
-  int get F_GETLK => ffi.F_GETLK;
-  @override
-  int get F_GETLK64 => throw UnsupportedError('F_GETLK64');
-  @override
-  int get F_GETOWN => ffi.F_GETOWN;
-  @override
-  int get F_LOCK => ffi.F_LOCK;
-  @override
-  int get F_OK => ffi.F_OK;
-  @override
-  int get F_RDLCK => ffi.F_RDLCK;
-  @override
-  int get F_SETFD => ffi.F_SETFD;
-  @override
-  int get F_SETFL => ffi.F_SETFL;
-  @override
-  int get F_SETLK => ffi.F_SETLK;
-  @override
-  int get F_SETLK64 => throw UnsupportedError('F_SETLK64');
-  @override
-  int get F_SETLKW => ffi.F_SETLKW;
-  @override
-  int get F_SETLKW64 => throw UnsupportedError('F_SETLKW64');
-  @override
-  int get F_SETOWN => ffi.F_SETOWN;
-  @override
-  int get F_SHLCK => throw UnsupportedError('F_SHLCK');
-  @override
-  int get F_TEST => ffi.F_TEST;
-  @override
-  int get F_TLOCK => ffi.F_TLOCK;
-  @override
-  int get F_ULOCK => ffi.F_ULOCK;
-  @override
-  int get F_UNLCK => ffi.F_UNLCK;
-  @override
-  int get F_WRLCK => ffi.F_WRLCK;
-  @override
-  int get LITTLE_ENDIAN => ffi.LITTLE_ENDIAN;
-  @override
-  int get LOCK_EX => ffi.LOCK_EX;
-  @override
-  int get LOCK_NB => ffi.LOCK_NB;
-  @override
-  int get LOCK_SH => ffi.LOCK_SH;
-  @override
-  int get LOCK_UN => ffi.LOCK_UN;
-  @override
-  int get L_INCR => ffi.L_INCR;
-  @override
-  int get L_SET => ffi.L_SET;
-  @override
-  int get L_XTND => ffi.L_XTND;
-  @override
-  int get MADV_DODUMP => throw UnsupportedError('MADV_DODUMP');
-  @override
-  int get MADV_DOFORK => throw UnsupportedError('MADV_DOFORK');
-  @override
-  int get MADV_DONTDUMP => throw UnsupportedError('MADV_DONTDUMP');
-  @override
-  int get MADV_DONTFORK => throw UnsupportedError('MADV_DONTFORK');
-  @override
-  int get MADV_DONTNEED => ffi.MADV_DONTNEED;
-  @override
-  int get MADV_FREE => ffi.MADV_FREE;
-  @override
-  int get MADV_HUGEPAGE => throw UnsupportedError('MADV_HUGEPAGE');
-  @override
-  int get MADV_HWPOISON => throw UnsupportedError('MADV_HWPOISON');
-  @override
-  int get MADV_KEEPONFORK => throw UnsupportedError('MADV_KEEPONFORK');
-  @override
-  int get MADV_MERGEABLE => throw UnsupportedError('MADV_MERGEABLE');
-  @override
-  int get MADV_NOHUGEPAGE => throw UnsupportedError('MADV_NOHUGEPAGE');
-  @override
-  int get MADV_NORMAL => ffi.MADV_NORMAL;
-  @override
-  int get MADV_RANDOM => ffi.MADV_RANDOM;
-  @override
-  int get MADV_REMOVE => throw UnsupportedError('MADV_REMOVE');
-  @override
-  int get MADV_SEQUENTIAL => ffi.MADV_SEQUENTIAL;
-  @override
-  int get MADV_UNMERGEABLE => throw UnsupportedError('MADV_UNMERGEABLE');
-  @override
-  int get MADV_WILLNEED => ffi.MADV_WILLNEED;
-  @override
-  int get MADV_WIPEONFORK => throw UnsupportedError('MADV_WIPEONFORK');
-  @override
-  int get MAP_32BIT => ffi.MAP_32BIT;
-  @override
-  int get MAP_ANON => ffi.MAP_ANON;
-  @override
-  int get MAP_ANONYMOUS => ffi.MAP_ANONYMOUS;
-  @override
-  int get MAP_DENYWRITE => throw UnsupportedError('MAP_DENYWRITE');
-  @override
-  int get MAP_EXECUTABLE => throw UnsupportedError('MAP_EXECUTABLE');
-  @override
-  int get MAP_FILE => ffi.MAP_FILE;
-  @override
-  int get MAP_FIXED => ffi.MAP_FIXED;
-  @override
-  int get MAP_GROWSDOWN => throw UnsupportedError('MAP_GROWSDOWN');
-  @override
-  int get MAP_HUGETLB => throw UnsupportedError('MAP_HUGETLB');
-  @override
-  int get MAP_HUGE_MASK => throw UnsupportedError('MAP_HUGE_MASK');
-  @override
-  int get MAP_HUGE_SHIFT => throw UnsupportedError('MAP_HUGE_SHIFT');
-  @override
-  int get MAP_LOCKED => throw UnsupportedError('MAP_LOCKED');
-  @override
-  int get MAP_NONBLOCK => throw UnsupportedError('MAP_NONBLOCK');
-  @override
-  int get MAP_NORESERVE => ffi.MAP_NORESERVE;
-  @override
-  int get MAP_POPULATE => throw UnsupportedError('MAP_POPULATE');
-  @override
-  int get MAP_PRIVATE => ffi.MAP_PRIVATE;
-  @override
-  int get MAP_SHARED => ffi.MAP_SHARED;
-  @override
-  int get MAP_STACK => throw UnsupportedError('MAP_STACK');
-  @override
-  int get MAP_TYPE => throw UnsupportedError('MAP_TYPE');
-  @override
-  int get MCL_CURRENT => ffi.MCL_CURRENT;
-  @override
-  int get MCL_FUTURE => ffi.MCL_FUTURE;
-  @override
-  int get MCL_ONFAULT => throw UnsupportedError('MCL_ONFAULT');
-  @override
-  int get MS_ASYNC => ffi.MS_ASYNC;
-  @override
-  int get MS_INVALIDATE => ffi.MS_INVALIDATE;
-  @override
-  int get MS_SYNC => ffi.MS_SYNC;
-  @override
-  int get NFDBITS => throw UnsupportedError('NFDBITS');
-  @override
-  int get NULL => ffi.NULL;
-  @override
-  int get O_ACCMODE => ffi.O_ACCMODE;
-  @override
-  int get O_APPEND => ffi.O_APPEND;
-  @override
-  int get O_ASYNC => ffi.O_ASYNC;
-  @override
-  int get O_CLOEXEC => ffi.O_CLOEXEC;
-  @override
-  int get O_CREAT => ffi.O_CREAT;
-  @override
-  int get O_DIRECTORY => ffi.O_DIRECTORY;
-  @override
-  int get O_DSYNC => ffi.O_DSYNC;
-  @override
-  int get O_EXCL => ffi.O_EXCL;
-  @override
-  int get O_FSYNC => ffi.O_FSYNC;
-  @override
-  int get O_NDELAY => ffi.O_NDELAY;
-  @override
-  int get O_NOCTTY => ffi.O_NOCTTY;
-  @override
-  int get O_NOFOLLOW => ffi.O_NOFOLLOW;
-  @override
-  int get O_NONBLOCK => ffi.O_NONBLOCK;
-  @override
-  int get O_RDONLY => ffi.O_RDONLY;
-  @override
-  int get O_RDWR => ffi.O_RDWR;
-  @override
-  int get O_RSYNC => throw UnsupportedError('O_RSYNC');
-  @override
-  int get O_SYNC => ffi.O_SYNC;
-  @override
-  int get O_TRUNC => ffi.O_TRUNC;
-  @override
-  int get O_WRONLY => ffi.O_WRONLY;
-  @override
-  int get PDP_ENDIAN => ffi.PDP_ENDIAN;
-  @override
-  int get POSIX_FADV_DONTNEED => throw UnsupportedError('POSIX_FADV_DONTNEED');
-  @override
-  int get POSIX_FADV_NOREUSE => throw UnsupportedError('POSIX_FADV_NOREUSE');
-  @override
-  int get POSIX_FADV_NORMAL => throw UnsupportedError('POSIX_FADV_NORMAL');
-  @override
-  int get POSIX_FADV_RANDOM => throw UnsupportedError('POSIX_FADV_RANDOM');
-  @override
-  int get POSIX_FADV_SEQUENTIAL =>
-      throw UnsupportedError('POSIX_FADV_SEQUENTIAL');
-  @override
-  int get POSIX_FADV_WILLNEED => throw UnsupportedError('POSIX_FADV_WILLNEED');
-  @override
-  int get POSIX_MADV_DONTNEED => ffi.POSIX_MADV_DONTNEED;
-  @override
-  int get POSIX_MADV_NORMAL => ffi.POSIX_MADV_NORMAL;
-  @override
-  int get POSIX_MADV_RANDOM => ffi.POSIX_MADV_RANDOM;
-  @override
-  int get POSIX_MADV_SEQUENTIAL => ffi.POSIX_MADV_SEQUENTIAL;
-  @override
-  int get POSIX_MADV_WILLNEED => ffi.POSIX_MADV_WILLNEED;
-  @override
-  int get PROT_EXEC => ffi.PROT_EXEC;
-  @override
-  int get PROT_GROWSDOWN => throw UnsupportedError('PROT_GROWSDOWN');
-  @override
-  int get PROT_GROWSUP => throw UnsupportedError('PROT_GROWSUP');
-  @override
-  int get PROT_NONE => ffi.PROT_NONE;
-  @override
-  int get PROT_READ => ffi.PROT_READ;
-  @override
-  int get PROT_WRITE => ffi.PROT_WRITE;
-  @override
-  int get RAND_MAX => ffi.RAND_MAX;
-  @override
-  int get R_OK => ffi.R_OK;
-  @override
-  int get SEEK_CUR => ffi.SEEK_CUR;
-  @override
-  int get SEEK_END => ffi.SEEK_END;
-  @override
-  int get SEEK_SET => ffi.SEEK_SET;
-  @override
-  int get SI_LOAD_SHIFT => throw UnsupportedError('SI_LOAD_SHIFT');
-  @override
-  int get STAT_VER => throw UnsupportedError('STAT_VER');
-  @override
-  int get STDERR_FILENO => ffi.STDERR_FILENO;
-  @override
-  int get STDIN_FILENO => ffi.STDIN_FILENO;
-  @override
-  int get STDOUT_FILENO => ffi.STDOUT_FILENO;
-  @override
-  int get SYS_NMLN => throw UnsupportedError('SYS_NMLN');
-  @override
-  int get S_BLKSIZE => ffi.S_BLKSIZE;
-  @override
-  int get S_IEXEC => ffi.S_IEXEC;
-  @override
-  int get S_IFBLK => ffi.S_IFBLK;
-  @override
-  int get S_IFCHR => ffi.S_IFCHR;
-  @override
-  int get S_IFDIR => ffi.S_IFDIR;
-  @override
-  int get S_IFIFO => ffi.S_IFIFO;
-  @override
-  int get S_IFLNK => ffi.S_IFLNK;
-  @override
-  int get S_IFMT => ffi.S_IFMT;
-  @override
-  int get S_IFREG => ffi.S_IFREG;
-  @override
-  int get S_IFSOCK => ffi.S_IFSOCK;
-  @override
-  int get S_IREAD => ffi.S_IREAD;
-  @override
-  int get S_IRGRP => ffi.S_IRGRP;
-  @override
-  int get S_IROTH => ffi.S_IROTH;
-  @override
-  int get S_IRUSR => ffi.S_IRUSR;
-  @override
-  int get S_IRWXG => ffi.S_IRWXG;
-  @override
-  int get S_IRWXO => ffi.S_IRWXO;
-  @override
-  int get S_IRWXU => ffi.S_IRWXU;
-  @override
-  int get S_ISGID => ffi.S_ISGID;
-  @override
-  int get S_ISUID => ffi.S_ISUID;
-  @override
-  int get S_ISVTX => ffi.S_ISVTX;
-  @override
-  int get S_IWGRP => ffi.S_IWGRP;
-  @override
-  int get S_IWOTH => ffi.S_IWOTH;
-  @override
-  int get S_IWRITE => ffi.S_IWRITE;
-  @override
-  int get S_IWUSR => ffi.S_IWUSR;
-  @override
-  int get S_IXGRP => ffi.S_IXGRP;
-  @override
-  int get S_IXOTH => ffi.S_IXOTH;
-  @override
-  int get S_IXUSR => ffi.S_IXUSR;
-  @override
-  int get UTIME_NOW => ffi.UTIME_NOW;
-  @override
-  int get UTIME_OMIT => ffi.UTIME_OMIT;
-  @override
-  int get UTSNAME_DOMAIN_LENGTH =>
-      throw UnsupportedError('UTSNAME_DOMAIN_LENGTH');
-  @override
-  int get UTSNAME_LENGTH => throw UnsupportedError('UTSNAME_LENGTH');
-  @override
-  int get UTSNAME_MACHINE_LENGTH =>
-      throw UnsupportedError('UTSNAME_MACHINE_LENGTH');
-  @override
-  int get UTSNAME_NODENAME_LENGTH =>
-      throw UnsupportedError('UTSNAME_NODENAME_LENGTH');
-  @override
-  int get UTSNAME_RELEASE_LENGTH =>
-      throw UnsupportedError('UTSNAME_RELEASE_LENGTH');
-  @override
-  int get UTSNAME_SYSNAME_LENGTH =>
-      throw UnsupportedError('UTSNAME_SYSNAME_LENGTH');
-  @override
-  int get UTSNAME_VERSION_LENGTH =>
-      throw UnsupportedError('UTSNAME_VERSION_LENGTH');
-  @override
-  int get WCONTINUED => ffi.WCONTINUED;
-  @override
-  int get WEXITED => ffi.WEXITED;
-  @override
-  int get WNOHANG => ffi.WNOHANG;
-  @override
-  int get WNOWAIT => ffi.WNOWAIT;
-  @override
-  int get WSTOPPED => ffi.WSTOPPED;
-  @override
-  int get WUNTRACED => ffi.WUNTRACED;
-  @override
-  int get W_OK => ffi.W_OK;
-  @override
-  int get X_OK => ffi.X_OK;
+  int get ACCESSPERMS => ffi.ACCESSPERMS;
   @override
   int get ACCESSX_MAX_DESCRIPTORS => ffi.ACCESSX_MAX_DESCRIPTORS;
   @override
   int get ACCESSX_MAX_TABLESIZE => ffi.ACCESSX_MAX_TABLESIZE;
   @override
+  int get ALLPERMS => ffi.ALLPERMS;
+  @override
+  int get ALLPERMS => ffi.ALLPERMS;
+  @override
+  int get AT_EACCESS => ffi.AT_EACCESS;
+  @override
+  int get AT_EACCESS => ffi.AT_EACCESS;
+  @override
+  int get AT_FDCWD => ffi.AT_FDCWD;
+  @override
+  int get AT_FDCWD => ffi.AT_FDCWD;
+  @override
   int get AT_FDONLY => ffi.AT_FDONLY;
   @override
   int get AT_REALDEV => ffi.AT_REALDEV;
   @override
+  int get AT_REMOVEDIR => ffi.AT_REMOVEDIR;
+  @override
+  int get AT_REMOVEDIR => ffi.AT_REMOVEDIR;
+  @override
+  int get AT_SYMLINK_FOLLOW => ffi.AT_SYMLINK_FOLLOW;
+  @override
+  int get AT_SYMLINK_FOLLOW => ffi.AT_SYMLINK_FOLLOW;
+  @override
+  int get AT_SYMLINK_NOFOLLOW => ffi.AT_SYMLINK_NOFOLLOW;
+  @override
+  int get AT_SYMLINK_NOFOLLOW => ffi.AT_SYMLINK_NOFOLLOW;
+  @override
   int get AT_SYMLINK_NOFOLLOW_ANY => ffi.AT_SYMLINK_NOFOLLOW_ANY;
+  @override
+  int get BIG_ENDIAN => ffi.BIG_ENDIAN;
+  @override
+  int get BIG_ENDIAN => ffi.BIG_ENDIAN;
   @override
   int get BUS_ADRALN => ffi.BUS_ADRALN;
   @override
@@ -671,6 +52,10 @@ mixin BsdMacroMixin on LibC {
   int get BUS_NOOP => ffi.BUS_NOOP;
   @override
   int get BUS_OBJERR => ffi.BUS_OBJERR;
+  @override
+  int get BYTE_ORDER => ffi.BYTE_ORDER;
+  @override
+  int get BYTE_ORDER => ffi.BYTE_ORDER;
   @override
   int get CLD_CONTINUED => ffi.CLD_CONTINUED;
   @override
@@ -694,17 +79,131 @@ mixin BsdMacroMixin on LibC {
   @override
   int get CPUMON_MAKE_FATAL => ffi.CPUMON_MAKE_FATAL;
   @override
+  int get DEFFILEMODE => ffi.DEFFILEMODE;
+  @override
+  int get DEFFILEMODE => ffi.DEFFILEMODE;
+  @override
+  int get E2BIG => ffi.E2BIG;
+  @override
+  int get E2BIG => ffi.E2BIG;
+  @override
+  int get EACCES => ffi.EACCES;
+  @override
+  int get EACCES => ffi.EACCES;
+  @override
+  int get EADDRINUSE => ffi.EADDRINUSE;
+  @override
+  int get EADDRINUSE => ffi.EADDRINUSE;
+  @override
+  int get EADDRNOTAVAIL => ffi.EADDRNOTAVAIL;
+  @override
+  int get EADDRNOTAVAIL => ffi.EADDRNOTAVAIL;
+  @override
+  int get EADV => throw UnsupportedError('EADV');
+  @override
+  int get EAFNOSUPPORT => ffi.EAFNOSUPPORT;
+  @override
+  int get EAFNOSUPPORT => ffi.EAFNOSUPPORT;
+  @override
+  int get EAGAIN => ffi.EAGAIN;
+  @override
+  int get EAGAIN => ffi.EAGAIN;
+  @override
+  int get EALREADY => ffi.EALREADY;
+  @override
+  int get EALREADY => ffi.EALREADY;
+  @override
   int get EAUTH => ffi.EAUTH;
   @override
   int get EBADARCH => ffi.EBADARCH;
   @override
+  int get EBADE => throw UnsupportedError('EBADE');
+  @override
   int get EBADEXEC => ffi.EBADEXEC;
+  @override
+  int get EBADF => ffi.EBADF;
+  @override
+  int get EBADF => ffi.EBADF;
+  @override
+  int get EBADFD => throw UnsupportedError('EBADFD');
   @override
   int get EBADMACHO => ffi.EBADMACHO;
   @override
+  int get EBADMSG => ffi.EBADMSG;
+  @override
+  int get EBADMSG => ffi.EBADMSG;
+  @override
+  int get EBADR => throw UnsupportedError('EBADR');
+  @override
   int get EBADRPC => ffi.EBADRPC;
   @override
+  int get EBADRQC => throw UnsupportedError('EBADRQC');
+  @override
+  int get EBADSLT => throw UnsupportedError('EBADSLT');
+  @override
+  int get EBFONT => throw UnsupportedError('EBFONT');
+  @override
+  int get EBUSY => ffi.EBUSY;
+  @override
+  int get EBUSY => ffi.EBUSY;
+  @override
+  int get ECANCELED => ffi.ECANCELED;
+  @override
+  int get ECANCELED => ffi.ECANCELED;
+  @override
+  int get ECHILD => ffi.ECHILD;
+  @override
+  int get ECHILD => ffi.ECHILD;
+  @override
+  int get ECHRNG => throw UnsupportedError('ECHRNG');
+  @override
+  int get ECOMM => throw UnsupportedError('ECOMM');
+  @override
+  int get ECONNABORTED => ffi.ECONNABORTED;
+  @override
+  int get ECONNABORTED => ffi.ECONNABORTED;
+  @override
+  int get ECONNREFUSED => ffi.ECONNREFUSED;
+  @override
+  int get ECONNREFUSED => ffi.ECONNREFUSED;
+  @override
+  int get ECONNRESET => ffi.ECONNRESET;
+  @override
+  int get ECONNRESET => ffi.ECONNRESET;
+  @override
+  int get EDEADLK => ffi.EDEADLK;
+  @override
+  int get EDEADLK => ffi.EDEADLK;
+  @override
+  int get EDEADLOCK => throw UnsupportedError('EDEADLOCK');
+  @override
+  int get EDESTADDRREQ => ffi.EDESTADDRREQ;
+  @override
+  int get EDESTADDRREQ => ffi.EDESTADDRREQ;
+  @override
   int get EDEVERR => ffi.EDEVERR;
+  @override
+  int get EDOM => ffi.EDOM;
+  @override
+  int get EDOM => ffi.EDOM;
+  @override
+  int get EDOTDOT => throw UnsupportedError('EDOTDOT');
+  @override
+  int get EDQUOT => ffi.EDQUOT;
+  @override
+  int get EDQUOT => ffi.EDQUOT;
+  @override
+  int get EEXIST => ffi.EEXIST;
+  @override
+  int get EEXIST => ffi.EEXIST;
+  @override
+  int get EFAULT => ffi.EFAULT;
+  @override
+  int get EFAULT => ffi.EFAULT;
+  @override
+  int get EFBIG => ffi.EFBIG;
+  @override
+  int get EFBIG => ffi.EFBIG;
   @override
   int get EFTYPE => ffi.EFTYPE;
   @override
@@ -720,13 +219,259 @@ mixin BsdMacroMixin on LibC {
   @override
   int get EF_NO_XATTRS => ffi.EF_NO_XATTRS;
   @override
+  int get EHOSTDOWN => ffi.EHOSTDOWN;
+  @override
+  int get EHOSTDOWN => ffi.EHOSTDOWN;
+  @override
+  int get EHOSTUNREACH => ffi.EHOSTUNREACH;
+  @override
+  int get EHOSTUNREACH => ffi.EHOSTUNREACH;
+  @override
+  int get EHWPOISON => throw UnsupportedError('EHWPOISON');
+  @override
+  int get EIDRM => ffi.EIDRM;
+  @override
+  int get EIDRM => ffi.EIDRM;
+  @override
+  int get EILSEQ => ffi.EILSEQ;
+  @override
+  int get EILSEQ => ffi.EILSEQ;
+  @override
+  int get EINPROGRESS => ffi.EINPROGRESS;
+  @override
+  int get EINPROGRESS => ffi.EINPROGRESS;
+  @override
+  int get EINTR => ffi.EINTR;
+  @override
+  int get EINTR => ffi.EINTR;
+  @override
+  int get EINVAL => ffi.EINVAL;
+  @override
+  int get EINVAL => ffi.EINVAL;
+  @override
+  int get EIO => ffi.EIO;
+  @override
+  int get EIO => ffi.EIO;
+  @override
+  int get EISCONN => ffi.EISCONN;
+  @override
+  int get EISCONN => ffi.EISCONN;
+  @override
+  int get EISDIR => ffi.EISDIR;
+  @override
+  int get EISDIR => ffi.EISDIR;
+  @override
+  int get EISNAM => throw UnsupportedError('EISNAM');
+  @override
+  int get EKEYEXPIRED => throw UnsupportedError('EKEYEXPIRED');
+  @override
+  int get EKEYREJECTED => throw UnsupportedError('EKEYREJECTED');
+  @override
+  int get EKEYREVOKED => throw UnsupportedError('EKEYREVOKED');
+  @override
+  int get EL2HLT => throw UnsupportedError('EL2HLT');
+  @override
+  int get EL2NSYNC => throw UnsupportedError('EL2NSYNC');
+  @override
+  int get EL3HLT => throw UnsupportedError('EL3HLT');
+  @override
+  int get EL3RST => throw UnsupportedError('EL3RST');
+  @override
   int get ELAST => ffi.ELAST;
+  @override
+  int get ELIBACC => throw UnsupportedError('ELIBACC');
+  @override
+  int get ELIBBAD => throw UnsupportedError('ELIBBAD');
+  @override
+  int get ELIBEXEC => throw UnsupportedError('ELIBEXEC');
+  @override
+  int get ELIBMAX => throw UnsupportedError('ELIBMAX');
+  @override
+  int get ELIBSCN => throw UnsupportedError('ELIBSCN');
+  @override
+  int get ELNRNG => throw UnsupportedError('ELNRNG');
+  @override
+  int get ELOOP => ffi.ELOOP;
+  @override
+  int get ELOOP => ffi.ELOOP;
+  @override
+  int get EMEDIUMTYPE => throw UnsupportedError('EMEDIUMTYPE');
+  @override
+  int get EMFILE => ffi.EMFILE;
+  @override
+  int get EMFILE => ffi.EMFILE;
+  @override
+  int get EMLINK => ffi.EMLINK;
+  @override
+  int get EMLINK => ffi.EMLINK;
+  @override
+  int get EMSGSIZE => ffi.EMSGSIZE;
+  @override
+  int get EMSGSIZE => ffi.EMSGSIZE;
+  @override
+  int get EMULTIHOP => ffi.EMULTIHOP;
+  @override
+  int get EMULTIHOP => ffi.EMULTIHOP;
+  @override
+  int get ENAMETOOLONG => ffi.ENAMETOOLONG;
+  @override
+  int get ENAMETOOLONG => ffi.ENAMETOOLONG;
+  @override
+  int get ENAVAIL => throw UnsupportedError('ENAVAIL');
   @override
   int get ENEEDAUTH => ffi.ENEEDAUTH;
   @override
+  int get ENETDOWN => ffi.ENETDOWN;
+  @override
+  int get ENETDOWN => ffi.ENETDOWN;
+  @override
+  int get ENETRESET => ffi.ENETRESET;
+  @override
+  int get ENETRESET => ffi.ENETRESET;
+  @override
+  int get ENETUNREACH => ffi.ENETUNREACH;
+  @override
+  int get ENETUNREACH => ffi.ENETUNREACH;
+  @override
+  int get ENFILE => ffi.ENFILE;
+  @override
+  int get ENFILE => ffi.ENFILE;
+  @override
+  int get ENOANO => throw UnsupportedError('ENOANO');
+  @override
   int get ENOATTR => ffi.ENOATTR;
   @override
+  int get ENOBUFS => ffi.ENOBUFS;
+  @override
+  int get ENOBUFS => ffi.ENOBUFS;
+  @override
+  int get ENOCSI => throw UnsupportedError('ENOCSI');
+  @override
+  int get ENODATA => ffi.ENODATA;
+  @override
+  int get ENODATA => ffi.ENODATA;
+  @override
+  int get ENODEV => ffi.ENODEV;
+  @override
+  int get ENODEV => ffi.ENODEV;
+  @override
+  int get ENOENT => ffi.ENOENT;
+  @override
+  int get ENOENT => ffi.ENOENT;
+  @override
+  int get ENOEXEC => ffi.ENOEXEC;
+  @override
+  int get ENOEXEC => ffi.ENOEXEC;
+  @override
+  int get ENOKEY => throw UnsupportedError('ENOKEY');
+  @override
+  int get ENOLCK => ffi.ENOLCK;
+  @override
+  int get ENOLCK => ffi.ENOLCK;
+  @override
+  int get ENOLINK => ffi.ENOLINK;
+  @override
+  int get ENOLINK => ffi.ENOLINK;
+  @override
+  int get ENOMEDIUM => throw UnsupportedError('ENOMEDIUM');
+  @override
+  int get ENOMEM => ffi.ENOMEM;
+  @override
+  int get ENOMEM => ffi.ENOMEM;
+  @override
+  int get ENOMSG => ffi.ENOMSG;
+  @override
+  int get ENOMSG => ffi.ENOMSG;
+  @override
+  int get ENONET => throw UnsupportedError('ENONET');
+  @override
+  int get ENOPKG => throw UnsupportedError('ENOPKG');
+  @override
   int get ENOPOLICY => ffi.ENOPOLICY;
+  @override
+  int get ENOPROTOOPT => ffi.ENOPROTOOPT;
+  @override
+  int get ENOPROTOOPT => ffi.ENOPROTOOPT;
+  @override
+  int get ENOSPC => ffi.ENOSPC;
+  @override
+  int get ENOSPC => ffi.ENOSPC;
+  @override
+  int get ENOSR => ffi.ENOSR;
+  @override
+  int get ENOSR => ffi.ENOSR;
+  @override
+  int get ENOSTR => ffi.ENOSTR;
+  @override
+  int get ENOSTR => ffi.ENOSTR;
+  @override
+  int get ENOSYS => ffi.ENOSYS;
+  @override
+  int get ENOSYS => ffi.ENOSYS;
+  @override
+  int get ENOTBLK => ffi.ENOTBLK;
+  @override
+  int get ENOTBLK => ffi.ENOTBLK;
+  @override
+  int get ENOTCONN => ffi.ENOTCONN;
+  @override
+  int get ENOTCONN => ffi.ENOTCONN;
+  @override
+  int get ENOTDIR => ffi.ENOTDIR;
+  @override
+  int get ENOTDIR => ffi.ENOTDIR;
+  @override
+  int get ENOTEMPTY => ffi.ENOTEMPTY;
+  @override
+  int get ENOTEMPTY => ffi.ENOTEMPTY;
+  @override
+  int get ENOTNAM => throw UnsupportedError('ENOTNAM');
+  @override
+  int get ENOTRECOVERABLE => ffi.ENOTRECOVERABLE;
+  @override
+  int get ENOTRECOVERABLE => ffi.ENOTRECOVERABLE;
+  @override
+  int get ENOTSOCK => ffi.ENOTSOCK;
+  @override
+  int get ENOTSOCK => ffi.ENOTSOCK;
+  @override
+  int get ENOTSUP => ffi.ENOTSUP;
+  @override
+  int get ENOTSUP => ffi.ENOTSUP;
+  @override
+  int get ENOTTY => ffi.ENOTTY;
+  @override
+  int get ENOTTY => ffi.ENOTTY;
+  @override
+  int get ENOTUNIQ => throw UnsupportedError('ENOTUNIQ');
+  @override
+  int get ENXIO => ffi.ENXIO;
+  @override
+  int get ENXIO => ffi.ENXIO;
+  @override
+  int get EOPNOTSUPP => ffi.EOPNOTSUPP;
+  @override
+  int get EOPNOTSUPP => ffi.EOPNOTSUPP;
+  @override
+  int get EOVERFLOW => ffi.EOVERFLOW;
+  @override
+  int get EOVERFLOW => ffi.EOVERFLOW;
+  @override
+  int get EOWNERDEAD => ffi.EOWNERDEAD;
+  @override
+  int get EOWNERDEAD => ffi.EOWNERDEAD;
+  @override
+  int get EPERM => ffi.EPERM;
+  @override
+  int get EPERM => ffi.EPERM;
+  @override
+  int get EPFNOSUPPORT => ffi.EPFNOSUPPORT;
+  @override
+  int get EPFNOSUPPORT => ffi.EPFNOSUPPORT;
+  @override
+  int get EPIPE => ffi.EPIPE;
+  @override
+  int get EPIPE => ffi.EPIPE;
   @override
   int get EPROCLIM => ffi.EPROCLIM;
   @override
@@ -736,19 +481,145 @@ mixin BsdMacroMixin on LibC {
   @override
   int get EPROGUNAVAIL => ffi.EPROGUNAVAIL;
   @override
+  int get EPROTO => ffi.EPROTO;
+  @override
+  int get EPROTO => ffi.EPROTO;
+  @override
+  int get EPROTONOSUPPORT => ffi.EPROTONOSUPPORT;
+  @override
+  int get EPROTONOSUPPORT => ffi.EPROTONOSUPPORT;
+  @override
+  int get EPROTOTYPE => ffi.EPROTOTYPE;
+  @override
+  int get EPROTOTYPE => ffi.EPROTOTYPE;
+  @override
   int get EPWROFF => ffi.EPWROFF;
   @override
   int get EQFULL => ffi.EQFULL;
+  @override
+  int get ERANGE => ffi.ERANGE;
+  @override
+  int get ERANGE => ffi.ERANGE;
+  @override
+  int get EREMCHG => throw UnsupportedError('EREMCHG');
+  @override
+  int get EREMOTE => ffi.EREMOTE;
+  @override
+  int get EREMOTE => ffi.EREMOTE;
+  @override
+  int get EREMOTEIO => throw UnsupportedError('EREMOTEIO');
+  @override
+  int get ERESTART => throw UnsupportedError('ERESTART');
+  @override
+  int get ERFKILL => throw UnsupportedError('ERFKILL');
+  @override
+  int get EROFS => ffi.EROFS;
+  @override
+  int get EROFS => ffi.EROFS;
   @override
   int get ERPCMISMATCH => ffi.ERPCMISMATCH;
   @override
   int get ESHLIBVERS => ffi.ESHLIBVERS;
   @override
+  int get ESHUTDOWN => ffi.ESHUTDOWN;
+  @override
+  int get ESHUTDOWN => ffi.ESHUTDOWN;
+  @override
+  int get ESOCKTNOSUPPORT => ffi.ESOCKTNOSUPPORT;
+  @override
+  int get ESOCKTNOSUPPORT => ffi.ESOCKTNOSUPPORT;
+  @override
+  int get ESPIPE => ffi.ESPIPE;
+  @override
+  int get ESPIPE => ffi.ESPIPE;
+  @override
+  int get ESRCH => ffi.ESRCH;
+  @override
+  int get ESRCH => ffi.ESRCH;
+  @override
+  int get ESRMNT => throw UnsupportedError('ESRMNT');
+  @override
+  int get ESTALE => ffi.ESTALE;
+  @override
+  int get ESTALE => ffi.ESTALE;
+  @override
+  int get ESTRPIPE => throw UnsupportedError('ESTRPIPE');
+  @override
+  int get ETIME => ffi.ETIME;
+  @override
+  int get ETIME => ffi.ETIME;
+  @override
+  int get ETIMEDOUT => ffi.ETIMEDOUT;
+  @override
+  int get ETIMEDOUT => ffi.ETIMEDOUT;
+  @override
+  int get ETOOMANYREFS => ffi.ETOOMANYREFS;
+  @override
+  int get ETOOMANYREFS => ffi.ETOOMANYREFS;
+  @override
+  int get ETXTBSY => ffi.ETXTBSY;
+  @override
+  int get ETXTBSY => ffi.ETXTBSY;
+  @override
+  int get EUCLEAN => throw UnsupportedError('EUCLEAN');
+  @override
+  int get EUNATCH => throw UnsupportedError('EUNATCH');
+  @override
+  int get EUSERS => ffi.EUSERS;
+  @override
+  int get EUSERS => ffi.EUSERS;
+  @override
+  int get EWOULDBLOCK => ffi.EWOULDBLOCK;
+  @override
+  int get EWOULDBLOCK => ffi.EWOULDBLOCK;
+  @override
+  int get EXDEV => ffi.EXDEV;
+  @override
+  int get EXDEV => ffi.EXDEV;
+  @override
+  int get EXFULL => throw UnsupportedError('EXFULL');
+  @override
+  int get EXIT_FAILURE => ffi.EXIT_FAILURE;
+  @override
+  int get EXIT_FAILURE => ffi.EXIT_FAILURE;
+  @override
+  int get EXIT_SUCCESS => ffi.EXIT_SUCCESS;
+  @override
+  int get EXIT_SUCCESS => ffi.EXIT_SUCCESS;
+  @override
+  int get FAPPEND => ffi.FAPPEND;
+  @override
+  int get FAPPEND => ffi.FAPPEND;
+  @override
+  int get FASYNC => ffi.FASYNC;
+  @override
+  int get FASYNC => ffi.FASYNC;
+  @override
   int get FCNTL_FS_SPECIFIC_BASE => ffi.FCNTL_FS_SPECIFIC_BASE;
+  @override
+  int get FD_CLOEXEC => ffi.FD_CLOEXEC;
+  @override
+  int get FD_CLOEXEC => ffi.FD_CLOEXEC;
+  @override
+  int get FD_SETSIZE => ffi.FD_SETSIZE;
+  @override
+  int get FD_SETSIZE => ffi.FD_SETSIZE;
   @override
   int get FFDSYNC => ffi.FFDSYNC;
   @override
+  int get FFSYNC => ffi.FFSYNC;
+  @override
+  int get FFSYNC => ffi.FFSYNC;
+  @override
   int get FILESEC_GUID => ffi.FILESEC_GUID;
+  @override
+  int get FNDELAY => ffi.FNDELAY;
+  @override
+  int get FNDELAY => ffi.FNDELAY;
+  @override
+  int get FNONBLOCK => ffi.FNONBLOCK;
+  @override
+  int get FNONBLOCK => ffi.FNONBLOCK;
   @override
   int get FOOTPRINT_INTERVAL_RESET => ffi.FOOTPRINT_INTERVAL_RESET;
   @override
@@ -796,6 +667,16 @@ mixin BsdMacroMixin on LibC {
   @override
   int get F_CHKCLEAN => ffi.F_CHKCLEAN;
   @override
+  int get F_DUPFD => ffi.F_DUPFD;
+  @override
+  int get F_DUPFD => ffi.F_DUPFD;
+  @override
+  int get F_DUPFD_CLOEXEC => ffi.F_DUPFD_CLOEXEC;
+  @override
+  int get F_DUPFD_CLOEXEC => ffi.F_DUPFD_CLOEXEC;
+  @override
+  int get F_EXLCK => throw UnsupportedError('F_EXLCK');
+  @override
   int get F_FINDSIGS => ffi.F_FINDSIGS;
   @override
   int get F_FLUSH_DATA => ffi.F_FLUSH_DATA;
@@ -808,9 +689,27 @@ mixin BsdMacroMixin on LibC {
   @override
   int get F_GETCODEDIR => ffi.F_GETCODEDIR;
   @override
+  int get F_GETFD => ffi.F_GETFD;
+  @override
+  int get F_GETFD => ffi.F_GETFD;
+  @override
+  int get F_GETFL => ffi.F_GETFL;
+  @override
+  int get F_GETFL => ffi.F_GETFL;
+  @override
+  int get F_GETLK => ffi.F_GETLK;
+  @override
+  int get F_GETLK => ffi.F_GETLK;
+  @override
+  int get F_GETLK64 => throw UnsupportedError('F_GETLK64');
+  @override
   int get F_GETLKPID => ffi.F_GETLKPID;
   @override
   int get F_GETNOSIGPIPE => ffi.F_GETNOSIGPIPE;
+  @override
+  int get F_GETOWN => ffi.F_GETOWN;
+  @override
+  int get F_GETOWN => ffi.F_GETOWN;
   @override
   int get F_GETPATH => ffi.F_GETPATH;
   @override
@@ -826,6 +725,10 @@ mixin BsdMacroMixin on LibC {
   @override
   int get F_GLOBAL_NOCACHE => ffi.F_GLOBAL_NOCACHE;
   @override
+  int get F_LOCK => ffi.F_LOCK;
+  @override
+  int get F_LOCK => ffi.F_LOCK;
+  @override
   int get F_LOG2PHYS => ffi.F_LOG2PHYS;
   @override
   int get F_LOG2PHYS_EXT => ffi.F_LOG2PHYS_EXT;
@@ -833,6 +736,10 @@ mixin BsdMacroMixin on LibC {
   int get F_NOCACHE => ffi.F_NOCACHE;
   @override
   int get F_NODIRECT => ffi.F_NODIRECT;
+  @override
+  int get F_OK => ffi.F_OK;
+  @override
+  int get F_OK => ffi.F_OK;
   @override
   int get F_PATHPKG_CHECK => ffi.F_PATHPKG_CHECK;
   @override
@@ -846,27 +753,77 @@ mixin BsdMacroMixin on LibC {
   @override
   int get F_RDAHEAD => ffi.F_RDAHEAD;
   @override
+  int get F_RDLCK => ffi.F_RDLCK;
+  @override
+  int get F_RDLCK => ffi.F_RDLCK;
+  @override
   int get F_SETBACKINGSTORE => ffi.F_SETBACKINGSTORE;
+  @override
+  int get F_SETFD => ffi.F_SETFD;
+  @override
+  int get F_SETFD => ffi.F_SETFD;
+  @override
+  int get F_SETFL => ffi.F_SETFL;
+  @override
+  int get F_SETFL => ffi.F_SETFL;
+  @override
+  int get F_SETLK => ffi.F_SETLK;
+  @override
+  int get F_SETLK => ffi.F_SETLK;
+  @override
+  int get F_SETLK64 => throw UnsupportedError('F_SETLK64');
+  @override
+  int get F_SETLKW => ffi.F_SETLKW;
+  @override
+  int get F_SETLKW => ffi.F_SETLKW;
+  @override
+  int get F_SETLKW64 => throw UnsupportedError('F_SETLKW64');
   @override
   int get F_SETLKWTIMEOUT => ffi.F_SETLKWTIMEOUT;
   @override
   int get F_SETNOSIGPIPE => ffi.F_SETNOSIGPIPE;
   @override
+  int get F_SETOWN => ffi.F_SETOWN;
+  @override
+  int get F_SETOWN => ffi.F_SETOWN;
+  @override
   int get F_SETPROTECTIONCLASS => ffi.F_SETPROTECTIONCLASS;
   @override
   int get F_SETSIZE => ffi.F_SETSIZE;
+  @override
+  int get F_SHLCK => throw UnsupportedError('F_SHLCK');
   @override
   int get F_SINGLE_WRITER => ffi.F_SINGLE_WRITER;
   @override
   int get F_SPECULATIVE_READ => ffi.F_SPECULATIVE_READ;
   @override
+  int get F_TEST => ffi.F_TEST;
+  @override
+  int get F_TEST => ffi.F_TEST;
+  @override
   int get F_THAW_FS => ffi.F_THAW_FS;
+  @override
+  int get F_TLOCK => ffi.F_TLOCK;
+  @override
+  int get F_TLOCK => ffi.F_TLOCK;
   @override
   int get F_TRANSCODEKEY => ffi.F_TRANSCODEKEY;
   @override
   int get F_TRIM_ACTIVE_FILE => ffi.F_TRIM_ACTIVE_FILE;
   @override
+  int get F_ULOCK => ffi.F_ULOCK;
+  @override
+  int get F_ULOCK => ffi.F_ULOCK;
+  @override
+  int get F_UNLCK => ffi.F_UNLCK;
+  @override
+  int get F_UNLCK => ffi.F_UNLCK;
+  @override
   int get F_VOLPOSMODE => ffi.F_VOLPOSMODE;
+  @override
+  int get F_WRLCK => ffi.F_WRLCK;
+  @override
+  int get F_WRLCK => ffi.F_WRLCK;
   @override
   int get GETSIGSINFO_PLATFORM_BINARY => ffi.GETSIGSINFO_PLATFORM_BINARY;
   @override
@@ -1037,6 +994,38 @@ mixin BsdMacroMixin on LibC {
   @override
   int get IOPOL_VFS_TRIGGER_RESOLVE_OFF => ffi.IOPOL_VFS_TRIGGER_RESOLVE_OFF;
   @override
+  int get LITTLE_ENDIAN => ffi.LITTLE_ENDIAN;
+  @override
+  int get LITTLE_ENDIAN => ffi.LITTLE_ENDIAN;
+  @override
+  int get LOCK_EX => ffi.LOCK_EX;
+  @override
+  int get LOCK_EX => ffi.LOCK_EX;
+  @override
+  int get LOCK_NB => ffi.LOCK_NB;
+  @override
+  int get LOCK_NB => ffi.LOCK_NB;
+  @override
+  int get LOCK_SH => ffi.LOCK_SH;
+  @override
+  int get LOCK_SH => ffi.LOCK_SH;
+  @override
+  int get LOCK_UN => ffi.LOCK_UN;
+  @override
+  int get LOCK_UN => ffi.LOCK_UN;
+  @override
+  int get L_INCR => ffi.L_INCR;
+  @override
+  int get L_INCR => ffi.L_INCR;
+  @override
+  int get L_SET => ffi.L_SET;
+  @override
+  int get L_SET => ffi.L_SET;
+  @override
+  int get L_XTND => ffi.L_XTND;
+  @override
+  int get L_XTND => ffi.L_XTND;
+  @override
   int get MAC_OS_VERSION_11_0 => ffi.MAC_OS_VERSION_11_0;
   @override
   int get MAC_OS_VERSION_12_0 => ffi.MAC_OS_VERSION_12_0;
@@ -1107,23 +1096,117 @@ mixin BsdMacroMixin on LibC {
   @override
   int get MADV_CAN_REUSE => ffi.MADV_CAN_REUSE;
   @override
+  int get MADV_DODUMP => throw UnsupportedError('MADV_DODUMP');
+  @override
+  int get MADV_DOFORK => throw UnsupportedError('MADV_DOFORK');
+  @override
+  int get MADV_DONTDUMP => throw UnsupportedError('MADV_DONTDUMP');
+  @override
+  int get MADV_DONTFORK => throw UnsupportedError('MADV_DONTFORK');
+  @override
+  int get MADV_DONTNEED => ffi.MADV_DONTNEED;
+  @override
+  int get MADV_DONTNEED => ffi.MADV_DONTNEED;
+  @override
+  int get MADV_FREE => ffi.MADV_FREE;
+  @override
+  int get MADV_FREE => ffi.MADV_FREE;
+  @override
   int get MADV_FREE_REUSABLE => ffi.MADV_FREE_REUSABLE;
   @override
   int get MADV_FREE_REUSE => ffi.MADV_FREE_REUSE;
   @override
+  int get MADV_HUGEPAGE => throw UnsupportedError('MADV_HUGEPAGE');
+  @override
+  int get MADV_HWPOISON => throw UnsupportedError('MADV_HWPOISON');
+  @override
+  int get MADV_KEEPONFORK => throw UnsupportedError('MADV_KEEPONFORK');
+  @override
+  int get MADV_MERGEABLE => throw UnsupportedError('MADV_MERGEABLE');
+  @override
+  int get MADV_NOHUGEPAGE => throw UnsupportedError('MADV_NOHUGEPAGE');
+  @override
+  int get MADV_NORMAL => ffi.MADV_NORMAL;
+  @override
+  int get MADV_NORMAL => ffi.MADV_NORMAL;
+  @override
   int get MADV_PAGEOUT => ffi.MADV_PAGEOUT;
+  @override
+  int get MADV_RANDOM => ffi.MADV_RANDOM;
+  @override
+  int get MADV_RANDOM => ffi.MADV_RANDOM;
+  @override
+  int get MADV_REMOVE => throw UnsupportedError('MADV_REMOVE');
+  @override
+  int get MADV_SEQUENTIAL => ffi.MADV_SEQUENTIAL;
+  @override
+  int get MADV_SEQUENTIAL => ffi.MADV_SEQUENTIAL;
+  @override
+  int get MADV_UNMERGEABLE => throw UnsupportedError('MADV_UNMERGEABLE');
+  @override
+  int get MADV_WILLNEED => ffi.MADV_WILLNEED;
+  @override
+  int get MADV_WILLNEED => ffi.MADV_WILLNEED;
+  @override
+  int get MADV_WIPEONFORK => throw UnsupportedError('MADV_WIPEONFORK');
   @override
   int get MADV_ZERO_WIRED_PAGES => ffi.MADV_ZERO_WIRED_PAGES;
   @override
+  int get MAP_32BIT => ffi.MAP_32BIT;
+  @override
+  int get MAP_32BIT => ffi.MAP_32BIT;
+  @override
+  int get MAP_ANON => ffi.MAP_ANON;
+  @override
+  int get MAP_ANON => ffi.MAP_ANON;
+  @override
+  int get MAP_ANONYMOUS => ffi.MAP_ANONYMOUS;
+  @override
+  int get MAP_ANONYMOUS => ffi.MAP_ANONYMOUS;
+  @override
   int get MAP_COPY => ffi.MAP_COPY;
+  @override
+  int get MAP_DENYWRITE => throw UnsupportedError('MAP_DENYWRITE');
+  @override
+  int get MAP_EXECUTABLE => throw UnsupportedError('MAP_EXECUTABLE');
+  @override
+  int get MAP_FILE => ffi.MAP_FILE;
+  @override
+  int get MAP_FILE => ffi.MAP_FILE;
+  @override
+  int get MAP_FIXED => ffi.MAP_FIXED;
+  @override
+  int get MAP_FIXED => ffi.MAP_FIXED;
+  @override
+  int get MAP_GROWSDOWN => throw UnsupportedError('MAP_GROWSDOWN');
   @override
   int get MAP_HASSEMAPHORE => ffi.MAP_HASSEMAPHORE;
   @override
+  int get MAP_HUGETLB => throw UnsupportedError('MAP_HUGETLB');
+  @override
+  int get MAP_HUGE_MASK => throw UnsupportedError('MAP_HUGE_MASK');
+  @override
+  int get MAP_HUGE_SHIFT => throw UnsupportedError('MAP_HUGE_SHIFT');
+  @override
   int get MAP_JIT => ffi.MAP_JIT;
+  @override
+  int get MAP_LOCKED => throw UnsupportedError('MAP_LOCKED');
   @override
   int get MAP_NOCACHE => ffi.MAP_NOCACHE;
   @override
   int get MAP_NOEXTEND => ffi.MAP_NOEXTEND;
+  @override
+  int get MAP_NONBLOCK => throw UnsupportedError('MAP_NONBLOCK');
+  @override
+  int get MAP_NORESERVE => ffi.MAP_NORESERVE;
+  @override
+  int get MAP_NORESERVE => ffi.MAP_NORESERVE;
+  @override
+  int get MAP_POPULATE => throw UnsupportedError('MAP_POPULATE');
+  @override
+  int get MAP_PRIVATE => ffi.MAP_PRIVATE;
+  @override
+  int get MAP_PRIVATE => ffi.MAP_PRIVATE;
   @override
   int get MAP_RENAME => ffi.MAP_RENAME;
   @override
@@ -1133,9 +1216,27 @@ mixin BsdMacroMixin on LibC {
   @override
   int get MAP_RESILIENT_MEDIA => ffi.MAP_RESILIENT_MEDIA;
   @override
+  int get MAP_SHARED => ffi.MAP_SHARED;
+  @override
+  int get MAP_SHARED => ffi.MAP_SHARED;
+  @override
+  int get MAP_STACK => throw UnsupportedError('MAP_STACK');
+  @override
   int get MAP_TRANSLATED_ALLOW_EXECUTE => ffi.MAP_TRANSLATED_ALLOW_EXECUTE;
   @override
+  int get MAP_TYPE => throw UnsupportedError('MAP_TYPE');
+  @override
   int get MAP_UNIX03 => ffi.MAP_UNIX03;
+  @override
+  int get MCL_CURRENT => ffi.MCL_CURRENT;
+  @override
+  int get MCL_CURRENT => ffi.MCL_CURRENT;
+  @override
+  int get MCL_FUTURE => ffi.MCL_FUTURE;
+  @override
+  int get MCL_FUTURE => ffi.MCL_FUTURE;
+  @override
+  int get MCL_ONFAULT => throw UnsupportedError('MCL_ONFAULT');
   @override
   int get MINCORE_ANONYMOUS => ffi.MINCORE_ANONYMOUS;
   @override
@@ -1155,29 +1256,125 @@ mixin BsdMacroMixin on LibC {
   @override
   int get MINSIGSTKSZ => ffi.MINSIGSTKSZ;
   @override
+  int get MS_ASYNC => ffi.MS_ASYNC;
+  @override
+  int get MS_ASYNC => ffi.MS_ASYNC;
+  @override
   int get MS_DEACTIVATE => ffi.MS_DEACTIVATE;
+  @override
+  int get MS_INVALIDATE => ffi.MS_INVALIDATE;
+  @override
+  int get MS_INVALIDATE => ffi.MS_INVALIDATE;
   @override
   int get MS_KILLPAGES => ffi.MS_KILLPAGES;
   @override
+  int get MS_SYNC => ffi.MS_SYNC;
+  @override
+  int get MS_SYNC => ffi.MS_SYNC;
+  @override
+  int get NFDBITS => throw UnsupportedError('NFDBITS');
+  @override
   int get NSIG => ffi.NSIG;
   @override
+  int get NULL => ffi.NULL;
+  @override
+  int get NULL => ffi.NULL;
+  @override
+  int get O_ACCMODE => ffi.O_ACCMODE;
+  @override
+  int get O_ACCMODE => ffi.O_ACCMODE;
+  @override
   int get O_ALERT => ffi.O_ALERT;
+  @override
+  int get O_APPEND => ffi.O_APPEND;
+  @override
+  int get O_APPEND => ffi.O_APPEND;
+  @override
+  int get O_ASYNC => ffi.O_ASYNC;
+  @override
+  int get O_ASYNC => ffi.O_ASYNC;
+  @override
+  int get O_CLOEXEC => ffi.O_CLOEXEC;
+  @override
+  int get O_CLOEXEC => ffi.O_CLOEXEC;
+  @override
+  int get O_CREAT => ffi.O_CREAT;
+  @override
+  int get O_CREAT => ffi.O_CREAT;
+  @override
+  int get O_DIRECTORY => ffi.O_DIRECTORY;
+  @override
+  int get O_DIRECTORY => ffi.O_DIRECTORY;
   @override
   int get O_DP_GETRAWENCRYPTED => ffi.O_DP_GETRAWENCRYPTED;
   @override
   int get O_DP_GETRAWUNENCRYPTED => ffi.O_DP_GETRAWUNENCRYPTED;
   @override
+  int get O_DSYNC => ffi.O_DSYNC;
+  @override
+  int get O_DSYNC => ffi.O_DSYNC;
+  @override
   int get O_EVTONLY => ffi.O_EVTONLY;
+  @override
+  int get O_EXCL => ffi.O_EXCL;
+  @override
+  int get O_EXCL => ffi.O_EXCL;
   @override
   int get O_EXLOCK => ffi.O_EXLOCK;
   @override
+  int get O_FSYNC => ffi.O_FSYNC;
+  @override
+  int get O_FSYNC => ffi.O_FSYNC;
+  @override
+  int get O_NDELAY => ffi.O_NDELAY;
+  @override
+  int get O_NDELAY => ffi.O_NDELAY;
+  @override
+  int get O_NOCTTY => ffi.O_NOCTTY;
+  @override
+  int get O_NOCTTY => ffi.O_NOCTTY;
+  @override
+  int get O_NOFOLLOW => ffi.O_NOFOLLOW;
+  @override
+  int get O_NOFOLLOW => ffi.O_NOFOLLOW;
+  @override
   int get O_NOFOLLOW_ANY => ffi.O_NOFOLLOW_ANY;
   @override
+  int get O_NONBLOCK => ffi.O_NONBLOCK;
+  @override
+  int get O_NONBLOCK => ffi.O_NONBLOCK;
+  @override
   int get O_POPUP => ffi.O_POPUP;
+  @override
+  int get O_RDONLY => ffi.O_RDONLY;
+  @override
+  int get O_RDONLY => ffi.O_RDONLY;
+  @override
+  int get O_RDWR => ffi.O_RDWR;
+  @override
+  int get O_RDWR => ffi.O_RDWR;
+  @override
+  int get O_RSYNC => throw UnsupportedError('O_RSYNC');
   @override
   int get O_SHLOCK => ffi.O_SHLOCK;
   @override
   int get O_SYMLINK => ffi.O_SYMLINK;
+  @override
+  int get O_SYNC => ffi.O_SYNC;
+  @override
+  int get O_SYNC => ffi.O_SYNC;
+  @override
+  int get O_TRUNC => ffi.O_TRUNC;
+  @override
+  int get O_TRUNC => ffi.O_TRUNC;
+  @override
+  int get O_WRONLY => ffi.O_WRONLY;
+  @override
+  int get O_WRONLY => ffi.O_WRONLY;
+  @override
+  int get PDP_ENDIAN => ffi.PDP_ENDIAN;
+  @override
+  int get PDP_ENDIAN => ffi.PDP_ENDIAN;
   @override
   int get POLL_ERR => ffi.POLL_ERR;
   @override
@@ -1190,6 +1387,39 @@ mixin BsdMacroMixin on LibC {
   int get POLL_OUT => ffi.POLL_OUT;
   @override
   int get POLL_PRI => ffi.POLL_PRI;
+  @override
+  int get POSIX_FADV_DONTNEED => throw UnsupportedError('POSIX_FADV_DONTNEED');
+  @override
+  int get POSIX_FADV_NOREUSE => throw UnsupportedError('POSIX_FADV_NOREUSE');
+  @override
+  int get POSIX_FADV_NORMAL => throw UnsupportedError('POSIX_FADV_NORMAL');
+  @override
+  int get POSIX_FADV_RANDOM => throw UnsupportedError('POSIX_FADV_RANDOM');
+  @override
+  int get POSIX_FADV_SEQUENTIAL =>
+      throw UnsupportedError('POSIX_FADV_SEQUENTIAL');
+  @override
+  int get POSIX_FADV_WILLNEED => throw UnsupportedError('POSIX_FADV_WILLNEED');
+  @override
+  int get POSIX_MADV_DONTNEED => ffi.POSIX_MADV_DONTNEED;
+  @override
+  int get POSIX_MADV_DONTNEED => ffi.POSIX_MADV_DONTNEED;
+  @override
+  int get POSIX_MADV_NORMAL => ffi.POSIX_MADV_NORMAL;
+  @override
+  int get POSIX_MADV_NORMAL => ffi.POSIX_MADV_NORMAL;
+  @override
+  int get POSIX_MADV_RANDOM => ffi.POSIX_MADV_RANDOM;
+  @override
+  int get POSIX_MADV_RANDOM => ffi.POSIX_MADV_RANDOM;
+  @override
+  int get POSIX_MADV_SEQUENTIAL => ffi.POSIX_MADV_SEQUENTIAL;
+  @override
+  int get POSIX_MADV_SEQUENTIAL => ffi.POSIX_MADV_SEQUENTIAL;
+  @override
+  int get POSIX_MADV_WILLNEED => ffi.POSIX_MADV_WILLNEED;
+  @override
+  int get POSIX_MADV_WILLNEED => ffi.POSIX_MADV_WILLNEED;
   @override
   int get PRIO_DARWIN_BG => ffi.PRIO_DARWIN_BG;
   @override
@@ -1209,9 +1439,33 @@ mixin BsdMacroMixin on LibC {
   @override
   int get PRIO_USER => ffi.PRIO_USER;
   @override
+  int get PROT_EXEC => ffi.PROT_EXEC;
+  @override
+  int get PROT_EXEC => ffi.PROT_EXEC;
+  @override
+  int get PROT_GROWSDOWN => throw UnsupportedError('PROT_GROWSDOWN');
+  @override
+  int get PROT_GROWSUP => throw UnsupportedError('PROT_GROWSUP');
+  @override
+  int get PROT_NONE => ffi.PROT_NONE;
+  @override
+  int get PROT_NONE => ffi.PROT_NONE;
+  @override
+  int get PROT_READ => ffi.PROT_READ;
+  @override
+  int get PROT_READ => ffi.PROT_READ;
+  @override
+  int get PROT_WRITE => ffi.PROT_WRITE;
+  @override
+  int get PROT_WRITE => ffi.PROT_WRITE;
+  @override
   int get PTRDIFF_MAX => ffi.PTRDIFF_MAX;
   @override
   int get PTRDIFF_MIN => ffi.PTRDIFF_MIN;
+  @override
+  int get RAND_MAX => ffi.RAND_MAX;
+  @override
+  int get RAND_MAX => ffi.RAND_MAX;
   @override
   int get RLIMIT_AS => ffi.RLIMIT_AS;
   @override
@@ -1271,6 +1525,10 @@ mixin BsdMacroMixin on LibC {
   @override
   int get RU_PROC_RUNS_RESLIDE => ffi.RU_PROC_RUNS_RESLIDE;
   @override
+  int get R_OK => ffi.R_OK;
+  @override
+  int get R_OK => ffi.R_OK;
+  @override
   int get SA_64REGSET => ffi.SA_64REGSET;
   @override
   int get SA_NOCLDSTOP => ffi.SA_NOCLDSTOP;
@@ -1291,9 +1549,21 @@ mixin BsdMacroMixin on LibC {
   @override
   int get SA_USERTRAMP => ffi.SA_USERTRAMP;
   @override
+  int get SEEK_CUR => ffi.SEEK_CUR;
+  @override
+  int get SEEK_CUR => ffi.SEEK_CUR;
+  @override
   int get SEEK_DATA => ffi.SEEK_DATA;
   @override
+  int get SEEK_END => ffi.SEEK_END;
+  @override
+  int get SEEK_END => ffi.SEEK_END;
+  @override
   int get SEEK_HOLE => ffi.SEEK_HOLE;
+  @override
+  int get SEEK_SET => ffi.SEEK_SET;
+  @override
+  int get SEEK_SET => ffi.SEEK_SET;
   @override
   int get SEGV_ACCERR => ffi.SEGV_ACCERR;
   @override
@@ -1407,6 +1677,8 @@ mixin BsdMacroMixin on LibC {
   @override
   int get SI_ASYNCIO => ffi.SI_ASYNCIO;
   @override
+  int get SI_LOAD_SHIFT => throw UnsupportedError('SI_LOAD_SHIFT');
+  @override
   int get SI_MESGQ => ffi.SI_MESGQ;
   @override
   int get SI_QUEUE => ffi.SI_QUEUE;
@@ -1418,6 +1690,20 @@ mixin BsdMacroMixin on LibC {
   int get SS_DISABLE => ffi.SS_DISABLE;
   @override
   int get SS_ONSTACK => ffi.SS_ONSTACK;
+  @override
+  int get STAT_VER => throw UnsupportedError('STAT_VER');
+  @override
+  int get STDERR_FILENO => ffi.STDERR_FILENO;
+  @override
+  int get STDERR_FILENO => ffi.STDERR_FILENO;
+  @override
+  int get STDIN_FILENO => ffi.STDIN_FILENO;
+  @override
+  int get STDIN_FILENO => ffi.STDIN_FILENO;
+  @override
+  int get STDOUT_FILENO => ffi.STDOUT_FILENO;
+  @override
+  int get STDOUT_FILENO => ffi.STDOUT_FILENO;
   @override
   int get SV_INTERRUPT => ffi.SV_INTERRUPT;
   @override
@@ -1437,9 +1723,119 @@ mixin BsdMacroMixin on LibC {
   @override
   int get SYS_NAMELEN => ffi.SYS_NAMELEN;
   @override
+  int get SYS_NMLN => throw UnsupportedError('SYS_NMLN');
+  @override
+  int get S_BLKSIZE => ffi.S_BLKSIZE;
+  @override
+  int get S_BLKSIZE => ffi.S_BLKSIZE;
+  @override
+  int get S_IEXEC => ffi.S_IEXEC;
+  @override
+  int get S_IEXEC => ffi.S_IEXEC;
+  @override
+  int get S_IFBLK => ffi.S_IFBLK;
+  @override
+  int get S_IFBLK => ffi.S_IFBLK;
+  @override
+  int get S_IFCHR => ffi.S_IFCHR;
+  @override
+  int get S_IFCHR => ffi.S_IFCHR;
+  @override
+  int get S_IFDIR => ffi.S_IFDIR;
+  @override
+  int get S_IFDIR => ffi.S_IFDIR;
+  @override
+  int get S_IFIFO => ffi.S_IFIFO;
+  @override
+  int get S_IFIFO => ffi.S_IFIFO;
+  @override
+  int get S_IFLNK => ffi.S_IFLNK;
+  @override
+  int get S_IFLNK => ffi.S_IFLNK;
+  @override
+  int get S_IFMT => ffi.S_IFMT;
+  @override
+  int get S_IFMT => ffi.S_IFMT;
+  @override
+  int get S_IFREG => ffi.S_IFREG;
+  @override
+  int get S_IFREG => ffi.S_IFREG;
+  @override
+  int get S_IFSOCK => ffi.S_IFSOCK;
+  @override
+  int get S_IFSOCK => ffi.S_IFSOCK;
+  @override
   int get S_IFWHT => ffi.S_IFWHT;
   @override
+  int get S_IREAD => ffi.S_IREAD;
+  @override
+  int get S_IREAD => ffi.S_IREAD;
+  @override
+  int get S_IRGRP => ffi.S_IRGRP;
+  @override
+  int get S_IRGRP => ffi.S_IRGRP;
+  @override
+  int get S_IROTH => ffi.S_IROTH;
+  @override
+  int get S_IROTH => ffi.S_IROTH;
+  @override
+  int get S_IRUSR => ffi.S_IRUSR;
+  @override
+  int get S_IRUSR => ffi.S_IRUSR;
+  @override
+  int get S_IRWXG => ffi.S_IRWXG;
+  @override
+  int get S_IRWXG => ffi.S_IRWXG;
+  @override
+  int get S_IRWXO => ffi.S_IRWXO;
+  @override
+  int get S_IRWXO => ffi.S_IRWXO;
+  @override
+  int get S_IRWXU => ffi.S_IRWXU;
+  @override
+  int get S_IRWXU => ffi.S_IRWXU;
+  @override
+  int get S_ISGID => ffi.S_ISGID;
+  @override
+  int get S_ISGID => ffi.S_ISGID;
+  @override
   int get S_ISTXT => ffi.S_ISTXT;
+  @override
+  int get S_ISUID => ffi.S_ISUID;
+  @override
+  int get S_ISUID => ffi.S_ISUID;
+  @override
+  int get S_ISVTX => ffi.S_ISVTX;
+  @override
+  int get S_ISVTX => ffi.S_ISVTX;
+  @override
+  int get S_IWGRP => ffi.S_IWGRP;
+  @override
+  int get S_IWGRP => ffi.S_IWGRP;
+  @override
+  int get S_IWOTH => ffi.S_IWOTH;
+  @override
+  int get S_IWOTH => ffi.S_IWOTH;
+  @override
+  int get S_IWRITE => ffi.S_IWRITE;
+  @override
+  int get S_IWRITE => ffi.S_IWRITE;
+  @override
+  int get S_IWUSR => ffi.S_IWUSR;
+  @override
+  int get S_IWUSR => ffi.S_IWUSR;
+  @override
+  int get S_IXGRP => ffi.S_IXGRP;
+  @override
+  int get S_IXGRP => ffi.S_IXGRP;
+  @override
+  int get S_IXOTH => ffi.S_IXOTH;
+  @override
+  int get S_IXOTH => ffi.S_IXOTH;
+  @override
+  int get S_IXUSR => ffi.S_IXUSR;
+  @override
+  int get S_IXUSR => ffi.S_IXUSR;
   @override
   int get TRAP_BRKPT => ffi.TRAP_BRKPT;
   @override
@@ -1495,6 +1891,34 @@ mixin BsdMacroMixin on LibC {
   @override
   int get USER_FSIGNATURES_CDHASH_LEN => ffi.USER_FSIGNATURES_CDHASH_LEN;
   @override
+  int get UTIME_NOW => ffi.UTIME_NOW;
+  @override
+  int get UTIME_NOW => ffi.UTIME_NOW;
+  @override
+  int get UTIME_OMIT => ffi.UTIME_OMIT;
+  @override
+  int get UTIME_OMIT => ffi.UTIME_OMIT;
+  @override
+  int get UTSNAME_DOMAIN_LENGTH =>
+      throw UnsupportedError('UTSNAME_DOMAIN_LENGTH');
+  @override
+  int get UTSNAME_LENGTH => throw UnsupportedError('UTSNAME_LENGTH');
+  @override
+  int get UTSNAME_MACHINE_LENGTH =>
+      throw UnsupportedError('UTSNAME_MACHINE_LENGTH');
+  @override
+  int get UTSNAME_NODENAME_LENGTH =>
+      throw UnsupportedError('UTSNAME_NODENAME_LENGTH');
+  @override
+  int get UTSNAME_RELEASE_LENGTH =>
+      throw UnsupportedError('UTSNAME_RELEASE_LENGTH');
+  @override
+  int get UTSNAME_SYSNAME_LENGTH =>
+      throw UnsupportedError('UTSNAME_SYSNAME_LENGTH');
+  @override
+  int get UTSNAME_VERSION_LENGTH =>
+      throw UnsupportedError('UTSNAME_VERSION_LENGTH');
+  @override
   int get WAIT_ANY => ffi.WAIT_ANY;
   @override
   int get WAIT_MYPGRP => ffi.WAIT_MYPGRP;
@@ -1513,9 +1937,41 @@ mixin BsdMacroMixin on LibC {
   @override
   int get WCHAR_MIN => ffi.WCHAR_MIN;
   @override
+  int get WCONTINUED => ffi.WCONTINUED;
+  @override
+  int get WCONTINUED => ffi.WCONTINUED;
+  @override
   int get WCOREFLAG => ffi.WCOREFLAG;
+  @override
+  int get WEXITED => ffi.WEXITED;
+  @override
+  int get WEXITED => ffi.WEXITED;
   @override
   int get WINT_MAX => ffi.WINT_MAX;
   @override
   int get WINT_MIN => ffi.WINT_MIN;
+  @override
+  int get WNOHANG => ffi.WNOHANG;
+  @override
+  int get WNOHANG => ffi.WNOHANG;
+  @override
+  int get WNOWAIT => ffi.WNOWAIT;
+  @override
+  int get WNOWAIT => ffi.WNOWAIT;
+  @override
+  int get WSTOPPED => ffi.WSTOPPED;
+  @override
+  int get WSTOPPED => ffi.WSTOPPED;
+  @override
+  int get WUNTRACED => ffi.WUNTRACED;
+  @override
+  int get WUNTRACED => ffi.WUNTRACED;
+  @override
+  int get W_OK => ffi.W_OK;
+  @override
+  int get W_OK => ffi.W_OK;
+  @override
+  int get X_OK => ffi.X_OK;
+  @override
+  int get X_OK => ffi.X_OK;
 }
