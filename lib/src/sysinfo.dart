@@ -79,7 +79,7 @@ class Sysinfo {
   int get hashCode {
     return Object.hash(
       uptime,
-      loads,
+      Object.hashAll(loads),
       totalram,
       sharedram,
       bufferram,

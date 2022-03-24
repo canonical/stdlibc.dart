@@ -8,7 +8,7 @@ set errno(int errno) => libc.errno = errno;
 
 @immutable
 class Errno implements Exception {
-  Errno(this.id, this.errno);
+  const Errno(this.id, this.errno);
 
   final int errno;
   final String id;
