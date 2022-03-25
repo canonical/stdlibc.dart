@@ -685,6 +685,90 @@ mixin GnuMacroMixin on LibC {
   @override
   int get LOCK_UN => ffi.LOCK_UN;
   @override
+  int get LOG_ALERT => ffi.LOG_ALERT;
+  @override
+  int get LOG_AUTH => ffi.LOG_AUTH;
+  @override
+  int get LOG_AUTHPRIV => ffi.LOG_AUTHPRIV;
+  @override
+  int get LOG_CONS => ffi.LOG_CONS;
+  @override
+  int get LOG_CRIT => ffi.LOG_CRIT;
+  @override
+  int get LOG_CRON => ffi.LOG_CRON;
+  @override
+  int get LOG_DAEMON => ffi.LOG_DAEMON;
+  @override
+  int get LOG_DEBUG => ffi.LOG_DEBUG;
+  @override
+  int get LOG_EMERG => ffi.LOG_EMERG;
+  @override
+  int get LOG_ERR => ffi.LOG_ERR;
+  @override
+  int get LOG_FACMASK => ffi.LOG_FACMASK;
+  @override
+  int get LOG_FTP => ffi.LOG_FTP;
+  @override
+  int get LOG_INFO => ffi.LOG_INFO;
+  @override
+  int get LOG_INSTALL => throw UnsupportedError('LOG_INSTALL');
+  @override
+  int get LOG_KERN => ffi.LOG_KERN;
+  @override
+  int get LOG_LAUNCHD => throw UnsupportedError('LOG_LAUNCHD');
+  @override
+  int get LOG_LOCAL0 => ffi.LOG_LOCAL0;
+  @override
+  int get LOG_LOCAL1 => ffi.LOG_LOCAL1;
+  @override
+  int get LOG_LOCAL2 => ffi.LOG_LOCAL2;
+  @override
+  int get LOG_LOCAL3 => ffi.LOG_LOCAL3;
+  @override
+  int get LOG_LOCAL4 => ffi.LOG_LOCAL4;
+  @override
+  int get LOG_LOCAL5 => ffi.LOG_LOCAL5;
+  @override
+  int get LOG_LOCAL6 => ffi.LOG_LOCAL6;
+  @override
+  int get LOG_LOCAL7 => ffi.LOG_LOCAL7;
+  @override
+  int get LOG_LPR => ffi.LOG_LPR;
+  @override
+  int get LOG_MAIL => ffi.LOG_MAIL;
+  @override
+  int get LOG_NDELAY => ffi.LOG_NDELAY;
+  @override
+  int get LOG_NETINFO => throw UnsupportedError('LOG_NETINFO');
+  @override
+  int get LOG_NEWS => ffi.LOG_NEWS;
+  @override
+  int get LOG_NFACILITIES => ffi.LOG_NFACILITIES;
+  @override
+  int get LOG_NOTICE => ffi.LOG_NOTICE;
+  @override
+  int get LOG_NOWAIT => ffi.LOG_NOWAIT;
+  @override
+  int get LOG_ODELAY => ffi.LOG_ODELAY;
+  @override
+  int get LOG_PERROR => ffi.LOG_PERROR;
+  @override
+  int get LOG_PID => ffi.LOG_PID;
+  @override
+  int get LOG_PRIMASK => ffi.LOG_PRIMASK;
+  @override
+  int get LOG_RAS => throw UnsupportedError('LOG_RAS');
+  @override
+  int get LOG_REMOTEAUTH => throw UnsupportedError('LOG_REMOTEAUTH');
+  @override
+  int get LOG_SYSLOG => ffi.LOG_SYSLOG;
+  @override
+  int get LOG_USER => ffi.LOG_USER;
+  @override
+  int get LOG_UUCP => ffi.LOG_UUCP;
+  @override
+  int get LOG_WARNING => ffi.LOG_WARNING;
+  @override
   int get L_INCR => ffi.L_INCR;
   @override
   int get L_SET => ffi.L_SET;
