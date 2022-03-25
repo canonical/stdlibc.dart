@@ -821,6 +821,22 @@ const int FPE_INTOVF = 8;
 
 const int FPE_NOOP = 0;
 
+const int FP_CHOP = 3;
+
+const int FP_PREC_24B = 0;
+
+const int FP_PREC_53B = 2;
+
+const int FP_PREC_64B = 3;
+
+const int FP_RND_DOWN = 1;
+
+const int FP_RND_NEAR = 0;
+
+const int FP_RND_UP = 2;
+
+const int FP_STATE_BYTES = 512;
+
 const int FREAD = 1;
 
 const int FWRITE = 2;
@@ -1033,80 +1049,6 @@ const int INT_LEAST8_MAX = 127;
 
 const int INT_LEAST8_MIN = -128;
 
-const int IOPOL_APPLICATION = 5;
-
-const int IOPOL_ATIME_UPDATES_DEFAULT = 0;
-
-const int IOPOL_ATIME_UPDATES_OFF = 1;
-
-const int IOPOL_DEFAULT = 0;
-
-const int IOPOL_IMPORTANT = 1;
-
-const int IOPOL_MATERIALIZE_DATALESS_FILES_DEFAULT = 0;
-
-const int IOPOL_MATERIALIZE_DATALESS_FILES_OFF = 1;
-
-const int IOPOL_MATERIALIZE_DATALESS_FILES_ON = 2;
-
-const int IOPOL_NORMAL = 1;
-
-const int IOPOL_PASSIVE = 2;
-
-const int IOPOL_SCOPE_DARWIN_BG = 2;
-
-const int IOPOL_SCOPE_PROCESS = 0;
-
-const int IOPOL_SCOPE_THREAD = 1;
-
-const int IOPOL_STANDARD = 5;
-
-const int IOPOL_THROTTLE = 3;
-
-const int IOPOL_TYPE_DISK = 0;
-
-const int IOPOL_TYPE_VFS_ALLOW_LOW_SPACE_WRITES = 9;
-
-const int IOPOL_TYPE_VFS_ATIME_UPDATES = 2;
-
-const int IOPOL_TYPE_VFS_IGNORE_CONTENT_PROTECTION = 6;
-
-const int IOPOL_TYPE_VFS_IGNORE_PERMISSIONS = 7;
-
-const int IOPOL_TYPE_VFS_MATERIALIZE_DATALESS_FILES = 3;
-
-const int IOPOL_TYPE_VFS_SKIP_MTIME_UPDATE = 8;
-
-const int IOPOL_TYPE_VFS_STATFS_NO_DATA_VOLUME = 4;
-
-const int IOPOL_TYPE_VFS_TRIGGER_RESOLVE = 5;
-
-const int IOPOL_UTILITY = 4;
-
-const int IOPOL_VFS_ALLOW_LOW_SPACE_WRITES_OFF = 0;
-
-const int IOPOL_VFS_ALLOW_LOW_SPACE_WRITES_ON = 1;
-
-const int IOPOL_VFS_CONTENT_PROTECTION_DEFAULT = 0;
-
-const int IOPOL_VFS_CONTENT_PROTECTION_IGNORE = 1;
-
-const int IOPOL_VFS_IGNORE_PERMISSIONS_OFF = 0;
-
-const int IOPOL_VFS_IGNORE_PERMISSIONS_ON = 1;
-
-const int IOPOL_VFS_SKIP_MTIME_UPDATE_OFF = 0;
-
-const int IOPOL_VFS_SKIP_MTIME_UPDATE_ON = 1;
-
-const int IOPOL_VFS_STATFS_FORCE_NO_DATA_VOLUME = 1;
-
-const int IOPOL_VFS_STATFS_NO_DATA_VOLUME_DEFAULT = 0;
-
-const int IOPOL_VFS_TRIGGER_RESOLVE_DEFAULT = 0;
-
-const int IOPOL_VFS_TRIGGER_RESOLVE_OFF = 1;
-
 const int LITTLE_ENDIAN = 1234;
 
 const int LOCK_EX = 2;
@@ -1122,74 +1064,6 @@ const int L_INCR = 1;
 const int L_SET = 0;
 
 const int L_XTND = 2;
-
-const int MAC_OS_VERSION_11_0 = 110000;
-
-const int MAC_OS_VERSION_12_0 = 120000;
-
-const int MAC_OS_X_VERSION_10_0 = 1000;
-
-const int MAC_OS_X_VERSION_10_1 = 1010;
-
-const int MAC_OS_X_VERSION_10_10 = 101000;
-
-const int MAC_OS_X_VERSION_10_10_2 = 101002;
-
-const int MAC_OS_X_VERSION_10_10_3 = 101003;
-
-const int MAC_OS_X_VERSION_10_11 = 101100;
-
-const int MAC_OS_X_VERSION_10_11_2 = 101102;
-
-const int MAC_OS_X_VERSION_10_11_3 = 101103;
-
-const int MAC_OS_X_VERSION_10_11_4 = 101104;
-
-const int MAC_OS_X_VERSION_10_12 = 101200;
-
-const int MAC_OS_X_VERSION_10_12_1 = 101201;
-
-const int MAC_OS_X_VERSION_10_12_2 = 101202;
-
-const int MAC_OS_X_VERSION_10_12_4 = 101204;
-
-const int MAC_OS_X_VERSION_10_13 = 101300;
-
-const int MAC_OS_X_VERSION_10_13_1 = 101301;
-
-const int MAC_OS_X_VERSION_10_13_2 = 101302;
-
-const int MAC_OS_X_VERSION_10_13_4 = 101304;
-
-const int MAC_OS_X_VERSION_10_14 = 101400;
-
-const int MAC_OS_X_VERSION_10_14_1 = 101401;
-
-const int MAC_OS_X_VERSION_10_14_4 = 101404;
-
-const int MAC_OS_X_VERSION_10_14_6 = 101406;
-
-const int MAC_OS_X_VERSION_10_15 = 101500;
-
-const int MAC_OS_X_VERSION_10_15_1 = 101501;
-
-const int MAC_OS_X_VERSION_10_16 = 101600;
-
-const int MAC_OS_X_VERSION_10_2 = 1020;
-
-const int MAC_OS_X_VERSION_10_3 = 1030;
-
-const int MAC_OS_X_VERSION_10_4 = 1040;
-
-const int MAC_OS_X_VERSION_10_5 = 1050;
-
-const int MAC_OS_X_VERSION_10_6 = 1060;
-
-const int MAC_OS_X_VERSION_10_7 = 1070;
-
-const int MAC_OS_X_VERSION_10_8 = 1080;
-
-const int MAC_OS_X_VERSION_10_9 = 1090;
 
 const int MADV_CAN_REUSE = 9;
 
@@ -1364,14 +1238,6 @@ const int POSIX_MADV_RANDOM = 1;
 const int POSIX_MADV_SEQUENTIAL = 2;
 
 const int POSIX_MADV_WILLNEED = 3;
-
-const int PRIO_DARWIN_BG = 4096;
-
-const int PRIO_DARWIN_NONUI = 4097;
-
-const int PRIO_DARWIN_PROCESS = 4;
-
-const int PRIO_DARWIN_THREAD = 3;
 
 const int PRIO_MAX = 20;
 
