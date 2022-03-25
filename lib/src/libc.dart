@@ -10,6 +10,7 @@ import 'stat.dart';
 import 'stdlib.dart';
 import 'string.dart';
 import 'sysinfo.dart';
+import 'syslog.dart';
 import 'uname.dart';
 import 'unistd.dart';
 
@@ -25,5 +26,6 @@ abstract class LibC
         StdlibMixin,
         StringMixin,
         SysinfoMixin,
+        SyslogMixin,
         UnameMixin,
         UnistdMixin {}

@@ -30,6 +30,14 @@ class BsdLibC {
       _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32)>>('close');
   late final _close = _closePtr.asFunction<int Function(int)>();
 
+  void closelog() {
+    return _closelog();
+  }
+
+  late final _closelogPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('closelog');
+  late final _closelog = _closelogPtr.asFunction<void Function()>();
+
   ffi.Pointer<ffi.Int32> errno() {
     return _errno();
   }
@@ -259,6 +267,25 @@ class BsdLibC {
   late final _open =
       _openPtr.asFunction<int Function(ffi.Pointer<ffi.Int8>, int)>();
 
+  void openlog(
+    ffi.Pointer<ffi.Int8> arg0,
+    int arg1,
+    int arg2,
+  ) {
+    return _openlog(
+      arg0,
+      arg1,
+      arg2,
+    );
+  }
+
+  late final _openlogPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<ffi.Int8>, ffi.Int32, ffi.Int32)>>('openlog');
+  late final _openlog =
+      _openlogPtr.asFunction<void Function(ffi.Pointer<ffi.Int8>, int, int)>();
+
   int putenv(
     ffi.Pointer<ffi.Int8> arg0,
   ) {
@@ -339,6 +366,18 @@ class BsdLibC {
   late final _sethostidPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int64)>>('sethostid');
   late final _sethostid = _sethostidPtr.asFunction<void Function(int)>();
+
+  int setlogmask(
+    int arg0,
+  ) {
+    return _setlogmask(
+      arg0,
+    );
+  }
+
+  late final _setlogmaskPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32)>>('setlogmask');
+  late final _setlogmask = _setlogmaskPtr.asFunction<int Function(int)>();
 
   int setpgid(
     int arg0,
@@ -459,6 +498,22 @@ class BsdLibC {
           'strerror');
   late final _strerror =
       _strerrorPtr.asFunction<ffi.Pointer<ffi.Int8> Function(int)>();
+
+  void syslog(
+    int arg0,
+    ffi.Pointer<ffi.Int8> arg1,
+  ) {
+    return _syslog(
+      arg0,
+      arg1,
+    );
+  }
+
+  late final _syslogPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int32, ffi.Pointer<ffi.Int8>)>>('syslog');
+  late final _syslog =
+      _syslogPtr.asFunction<void Function(int, ffi.Pointer<ffi.Int8>)>();
 
   int uname(
     ffi.Pointer<utsname_t> arg0,
@@ -1058,6 +1113,90 @@ const int LOCK_NB = 4;
 const int LOCK_SH = 1;
 
 const int LOCK_UN = 8;
+
+const int LOG_ALERT = 1;
+
+const int LOG_AUTH = 32;
+
+const int LOG_AUTHPRIV = 80;
+
+const int LOG_CONS = 2;
+
+const int LOG_CRIT = 2;
+
+const int LOG_CRON = 72;
+
+const int LOG_DAEMON = 24;
+
+const int LOG_DEBUG = 7;
+
+const int LOG_EMERG = 0;
+
+const int LOG_ERR = 3;
+
+const int LOG_FACMASK = 1016;
+
+const int LOG_FTP = 88;
+
+const int LOG_INFO = 6;
+
+const int LOG_INSTALL = 112;
+
+const int LOG_KERN = 0;
+
+const int LOG_LAUNCHD = 192;
+
+const int LOG_LOCAL0 = 128;
+
+const int LOG_LOCAL1 = 136;
+
+const int LOG_LOCAL2 = 144;
+
+const int LOG_LOCAL3 = 152;
+
+const int LOG_LOCAL4 = 160;
+
+const int LOG_LOCAL5 = 168;
+
+const int LOG_LOCAL6 = 176;
+
+const int LOG_LOCAL7 = 184;
+
+const int LOG_LPR = 48;
+
+const int LOG_MAIL = 16;
+
+const int LOG_NDELAY = 8;
+
+const int LOG_NETINFO = 96;
+
+const int LOG_NEWS = 56;
+
+const int LOG_NFACILITIES = 25;
+
+const int LOG_NOTICE = 5;
+
+const int LOG_NOWAIT = 16;
+
+const int LOG_ODELAY = 4;
+
+const int LOG_PERROR = 32;
+
+const int LOG_PID = 1;
+
+const int LOG_PRIMASK = 7;
+
+const int LOG_RAS = 120;
+
+const int LOG_REMOTEAUTH = 104;
+
+const int LOG_SYSLOG = 40;
+
+const int LOG_USER = 8;
+
+const int LOG_UUCP = 64;
+
+const int LOG_WARNING = 4;
 
 const int L_INCR = 1;
 
