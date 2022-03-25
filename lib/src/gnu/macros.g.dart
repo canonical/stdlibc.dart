@@ -430,6 +430,22 @@ mixin GnuMacroMixin on LibC {
   @override
   int get FPE_NOOP => throw UnsupportedError('FPE_NOOP');
   @override
+  int get FP_CHOP => throw UnsupportedError('FP_CHOP');
+  @override
+  int get FP_PREC_24B => throw UnsupportedError('FP_PREC_24B');
+  @override
+  int get FP_PREC_53B => throw UnsupportedError('FP_PREC_53B');
+  @override
+  int get FP_PREC_64B => throw UnsupportedError('FP_PREC_64B');
+  @override
+  int get FP_RND_DOWN => throw UnsupportedError('FP_RND_DOWN');
+  @override
+  int get FP_RND_NEAR => throw UnsupportedError('FP_RND_NEAR');
+  @override
+  int get FP_RND_UP => throw UnsupportedError('FP_RND_UP');
+  @override
+  int get FP_STATE_BYTES => throw UnsupportedError('FP_STATE_BYTES');
+  @override
   int get FREAD => throw UnsupportedError('FREAD');
   @override
   int get FWRITE => throw UnsupportedError('FWRITE');
@@ -659,106 +675,6 @@ mixin GnuMacroMixin on LibC {
   @override
   int get INT_LEAST8_MIN => throw UnsupportedError('INT_LEAST8_MIN');
   @override
-  int get IOPOL_APPLICATION => throw UnsupportedError('IOPOL_APPLICATION');
-  @override
-  int get IOPOL_ATIME_UPDATES_DEFAULT =>
-      throw UnsupportedError('IOPOL_ATIME_UPDATES_DEFAULT');
-  @override
-  int get IOPOL_ATIME_UPDATES_OFF =>
-      throw UnsupportedError('IOPOL_ATIME_UPDATES_OFF');
-  @override
-  int get IOPOL_DEFAULT => throw UnsupportedError('IOPOL_DEFAULT');
-  @override
-  int get IOPOL_IMPORTANT => throw UnsupportedError('IOPOL_IMPORTANT');
-  @override
-  int get IOPOL_MATERIALIZE_DATALESS_FILES_DEFAULT =>
-      throw UnsupportedError('IOPOL_MATERIALIZE_DATALESS_FILES_DEFAULT');
-  @override
-  int get IOPOL_MATERIALIZE_DATALESS_FILES_OFF =>
-      throw UnsupportedError('IOPOL_MATERIALIZE_DATALESS_FILES_OFF');
-  @override
-  int get IOPOL_MATERIALIZE_DATALESS_FILES_ON =>
-      throw UnsupportedError('IOPOL_MATERIALIZE_DATALESS_FILES_ON');
-  @override
-  int get IOPOL_NORMAL => throw UnsupportedError('IOPOL_NORMAL');
-  @override
-  int get IOPOL_PASSIVE => throw UnsupportedError('IOPOL_PASSIVE');
-  @override
-  int get IOPOL_SCOPE_DARWIN_BG =>
-      throw UnsupportedError('IOPOL_SCOPE_DARWIN_BG');
-  @override
-  int get IOPOL_SCOPE_PROCESS => throw UnsupportedError('IOPOL_SCOPE_PROCESS');
-  @override
-  int get IOPOL_SCOPE_THREAD => throw UnsupportedError('IOPOL_SCOPE_THREAD');
-  @override
-  int get IOPOL_STANDARD => throw UnsupportedError('IOPOL_STANDARD');
-  @override
-  int get IOPOL_THROTTLE => throw UnsupportedError('IOPOL_THROTTLE');
-  @override
-  int get IOPOL_TYPE_DISK => throw UnsupportedError('IOPOL_TYPE_DISK');
-  @override
-  int get IOPOL_TYPE_VFS_ALLOW_LOW_SPACE_WRITES =>
-      throw UnsupportedError('IOPOL_TYPE_VFS_ALLOW_LOW_SPACE_WRITES');
-  @override
-  int get IOPOL_TYPE_VFS_ATIME_UPDATES =>
-      throw UnsupportedError('IOPOL_TYPE_VFS_ATIME_UPDATES');
-  @override
-  int get IOPOL_TYPE_VFS_IGNORE_CONTENT_PROTECTION =>
-      throw UnsupportedError('IOPOL_TYPE_VFS_IGNORE_CONTENT_PROTECTION');
-  @override
-  int get IOPOL_TYPE_VFS_IGNORE_PERMISSIONS =>
-      throw UnsupportedError('IOPOL_TYPE_VFS_IGNORE_PERMISSIONS');
-  @override
-  int get IOPOL_TYPE_VFS_MATERIALIZE_DATALESS_FILES =>
-      throw UnsupportedError('IOPOL_TYPE_VFS_MATERIALIZE_DATALESS_FILES');
-  @override
-  int get IOPOL_TYPE_VFS_SKIP_MTIME_UPDATE =>
-      throw UnsupportedError('IOPOL_TYPE_VFS_SKIP_MTIME_UPDATE');
-  @override
-  int get IOPOL_TYPE_VFS_STATFS_NO_DATA_VOLUME =>
-      throw UnsupportedError('IOPOL_TYPE_VFS_STATFS_NO_DATA_VOLUME');
-  @override
-  int get IOPOL_TYPE_VFS_TRIGGER_RESOLVE =>
-      throw UnsupportedError('IOPOL_TYPE_VFS_TRIGGER_RESOLVE');
-  @override
-  int get IOPOL_UTILITY => throw UnsupportedError('IOPOL_UTILITY');
-  @override
-  int get IOPOL_VFS_ALLOW_LOW_SPACE_WRITES_OFF =>
-      throw UnsupportedError('IOPOL_VFS_ALLOW_LOW_SPACE_WRITES_OFF');
-  @override
-  int get IOPOL_VFS_ALLOW_LOW_SPACE_WRITES_ON =>
-      throw UnsupportedError('IOPOL_VFS_ALLOW_LOW_SPACE_WRITES_ON');
-  @override
-  int get IOPOL_VFS_CONTENT_PROTECTION_DEFAULT =>
-      throw UnsupportedError('IOPOL_VFS_CONTENT_PROTECTION_DEFAULT');
-  @override
-  int get IOPOL_VFS_CONTENT_PROTECTION_IGNORE =>
-      throw UnsupportedError('IOPOL_VFS_CONTENT_PROTECTION_IGNORE');
-  @override
-  int get IOPOL_VFS_IGNORE_PERMISSIONS_OFF =>
-      throw UnsupportedError('IOPOL_VFS_IGNORE_PERMISSIONS_OFF');
-  @override
-  int get IOPOL_VFS_IGNORE_PERMISSIONS_ON =>
-      throw UnsupportedError('IOPOL_VFS_IGNORE_PERMISSIONS_ON');
-  @override
-  int get IOPOL_VFS_SKIP_MTIME_UPDATE_OFF =>
-      throw UnsupportedError('IOPOL_VFS_SKIP_MTIME_UPDATE_OFF');
-  @override
-  int get IOPOL_VFS_SKIP_MTIME_UPDATE_ON =>
-      throw UnsupportedError('IOPOL_VFS_SKIP_MTIME_UPDATE_ON');
-  @override
-  int get IOPOL_VFS_STATFS_FORCE_NO_DATA_VOLUME =>
-      throw UnsupportedError('IOPOL_VFS_STATFS_FORCE_NO_DATA_VOLUME');
-  @override
-  int get IOPOL_VFS_STATFS_NO_DATA_VOLUME_DEFAULT =>
-      throw UnsupportedError('IOPOL_VFS_STATFS_NO_DATA_VOLUME_DEFAULT');
-  @override
-  int get IOPOL_VFS_TRIGGER_RESOLVE_DEFAULT =>
-      throw UnsupportedError('IOPOL_VFS_TRIGGER_RESOLVE_DEFAULT');
-  @override
-  int get IOPOL_VFS_TRIGGER_RESOLVE_OFF =>
-      throw UnsupportedError('IOPOL_VFS_TRIGGER_RESOLVE_OFF');
-  @override
   int get LITTLE_ENDIAN => ffi.LITTLE_ENDIAN;
   @override
   int get LOCK_EX => ffi.LOCK_EX;
@@ -774,106 +690,6 @@ mixin GnuMacroMixin on LibC {
   int get L_SET => ffi.L_SET;
   @override
   int get L_XTND => ffi.L_XTND;
-  @override
-  int get MAC_OS_VERSION_11_0 => throw UnsupportedError('MAC_OS_VERSION_11_0');
-  @override
-  int get MAC_OS_VERSION_12_0 => throw UnsupportedError('MAC_OS_VERSION_12_0');
-  @override
-  int get MAC_OS_X_VERSION_10_0 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_0');
-  @override
-  int get MAC_OS_X_VERSION_10_1 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_1');
-  @override
-  int get MAC_OS_X_VERSION_10_10 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_10');
-  @override
-  int get MAC_OS_X_VERSION_10_10_2 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_10_2');
-  @override
-  int get MAC_OS_X_VERSION_10_10_3 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_10_3');
-  @override
-  int get MAC_OS_X_VERSION_10_11 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_11');
-  @override
-  int get MAC_OS_X_VERSION_10_11_2 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_11_2');
-  @override
-  int get MAC_OS_X_VERSION_10_11_3 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_11_3');
-  @override
-  int get MAC_OS_X_VERSION_10_11_4 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_11_4');
-  @override
-  int get MAC_OS_X_VERSION_10_12 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_12');
-  @override
-  int get MAC_OS_X_VERSION_10_12_1 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_12_1');
-  @override
-  int get MAC_OS_X_VERSION_10_12_2 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_12_2');
-  @override
-  int get MAC_OS_X_VERSION_10_12_4 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_12_4');
-  @override
-  int get MAC_OS_X_VERSION_10_13 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_13');
-  @override
-  int get MAC_OS_X_VERSION_10_13_1 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_13_1');
-  @override
-  int get MAC_OS_X_VERSION_10_13_2 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_13_2');
-  @override
-  int get MAC_OS_X_VERSION_10_13_4 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_13_4');
-  @override
-  int get MAC_OS_X_VERSION_10_14 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_14');
-  @override
-  int get MAC_OS_X_VERSION_10_14_1 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_14_1');
-  @override
-  int get MAC_OS_X_VERSION_10_14_4 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_14_4');
-  @override
-  int get MAC_OS_X_VERSION_10_14_6 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_14_6');
-  @override
-  int get MAC_OS_X_VERSION_10_15 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_15');
-  @override
-  int get MAC_OS_X_VERSION_10_15_1 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_15_1');
-  @override
-  int get MAC_OS_X_VERSION_10_16 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_16');
-  @override
-  int get MAC_OS_X_VERSION_10_2 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_2');
-  @override
-  int get MAC_OS_X_VERSION_10_3 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_3');
-  @override
-  int get MAC_OS_X_VERSION_10_4 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_4');
-  @override
-  int get MAC_OS_X_VERSION_10_5 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_5');
-  @override
-  int get MAC_OS_X_VERSION_10_6 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_6');
-  @override
-  int get MAC_OS_X_VERSION_10_7 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_7');
-  @override
-  int get MAC_OS_X_VERSION_10_8 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_8');
-  @override
-  int get MAC_OS_X_VERSION_10_9 =>
-      throw UnsupportedError('MAC_OS_X_VERSION_10_9');
   @override
   int get MADV_CAN_REUSE => throw UnsupportedError('MADV_CAN_REUSE');
   @override
@@ -1119,14 +935,6 @@ mixin GnuMacroMixin on LibC {
   int get POSIX_MADV_SEQUENTIAL => ffi.POSIX_MADV_SEQUENTIAL;
   @override
   int get POSIX_MADV_WILLNEED => ffi.POSIX_MADV_WILLNEED;
-  @override
-  int get PRIO_DARWIN_BG => throw UnsupportedError('PRIO_DARWIN_BG');
-  @override
-  int get PRIO_DARWIN_NONUI => throw UnsupportedError('PRIO_DARWIN_NONUI');
-  @override
-  int get PRIO_DARWIN_PROCESS => throw UnsupportedError('PRIO_DARWIN_PROCESS');
-  @override
-  int get PRIO_DARWIN_THREAD => throw UnsupportedError('PRIO_DARWIN_THREAD');
   @override
   int get PRIO_MAX => throw UnsupportedError('PRIO_MAX');
   @override

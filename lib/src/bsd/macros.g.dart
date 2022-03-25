@@ -425,6 +425,22 @@ mixin BsdMacroMixin on LibC {
   @override
   int get FPE_NOOP => ffi.FPE_NOOP;
   @override
+  int get FP_CHOP => ffi.FP_CHOP;
+  @override
+  int get FP_PREC_24B => ffi.FP_PREC_24B;
+  @override
+  int get FP_PREC_53B => ffi.FP_PREC_53B;
+  @override
+  int get FP_PREC_64B => ffi.FP_PREC_64B;
+  @override
+  int get FP_RND_DOWN => ffi.FP_RND_DOWN;
+  @override
+  int get FP_RND_NEAR => ffi.FP_RND_NEAR;
+  @override
+  int get FP_RND_UP => ffi.FP_RND_UP;
+  @override
+  int get FP_STATE_BYTES => ffi.FP_STATE_BYTES;
+  @override
   int get FREAD => ffi.FREAD;
   @override
   int get FWRITE => ffi.FWRITE;
@@ -647,99 +663,6 @@ mixin BsdMacroMixin on LibC {
   @override
   int get INT_LEAST8_MIN => ffi.INT_LEAST8_MIN;
   @override
-  int get IOPOL_APPLICATION => ffi.IOPOL_APPLICATION;
-  @override
-  int get IOPOL_ATIME_UPDATES_DEFAULT => ffi.IOPOL_ATIME_UPDATES_DEFAULT;
-  @override
-  int get IOPOL_ATIME_UPDATES_OFF => ffi.IOPOL_ATIME_UPDATES_OFF;
-  @override
-  int get IOPOL_DEFAULT => ffi.IOPOL_DEFAULT;
-  @override
-  int get IOPOL_IMPORTANT => ffi.IOPOL_IMPORTANT;
-  @override
-  int get IOPOL_MATERIALIZE_DATALESS_FILES_DEFAULT =>
-      ffi.IOPOL_MATERIALIZE_DATALESS_FILES_DEFAULT;
-  @override
-  int get IOPOL_MATERIALIZE_DATALESS_FILES_OFF =>
-      ffi.IOPOL_MATERIALIZE_DATALESS_FILES_OFF;
-  @override
-  int get IOPOL_MATERIALIZE_DATALESS_FILES_ON =>
-      ffi.IOPOL_MATERIALIZE_DATALESS_FILES_ON;
-  @override
-  int get IOPOL_NORMAL => ffi.IOPOL_NORMAL;
-  @override
-  int get IOPOL_PASSIVE => ffi.IOPOL_PASSIVE;
-  @override
-  int get IOPOL_SCOPE_DARWIN_BG => ffi.IOPOL_SCOPE_DARWIN_BG;
-  @override
-  int get IOPOL_SCOPE_PROCESS => ffi.IOPOL_SCOPE_PROCESS;
-  @override
-  int get IOPOL_SCOPE_THREAD => ffi.IOPOL_SCOPE_THREAD;
-  @override
-  int get IOPOL_STANDARD => ffi.IOPOL_STANDARD;
-  @override
-  int get IOPOL_THROTTLE => ffi.IOPOL_THROTTLE;
-  @override
-  int get IOPOL_TYPE_DISK => ffi.IOPOL_TYPE_DISK;
-  @override
-  int get IOPOL_TYPE_VFS_ALLOW_LOW_SPACE_WRITES =>
-      ffi.IOPOL_TYPE_VFS_ALLOW_LOW_SPACE_WRITES;
-  @override
-  int get IOPOL_TYPE_VFS_ATIME_UPDATES => ffi.IOPOL_TYPE_VFS_ATIME_UPDATES;
-  @override
-  int get IOPOL_TYPE_VFS_IGNORE_CONTENT_PROTECTION =>
-      ffi.IOPOL_TYPE_VFS_IGNORE_CONTENT_PROTECTION;
-  @override
-  int get IOPOL_TYPE_VFS_IGNORE_PERMISSIONS =>
-      ffi.IOPOL_TYPE_VFS_IGNORE_PERMISSIONS;
-  @override
-  int get IOPOL_TYPE_VFS_MATERIALIZE_DATALESS_FILES =>
-      ffi.IOPOL_TYPE_VFS_MATERIALIZE_DATALESS_FILES;
-  @override
-  int get IOPOL_TYPE_VFS_SKIP_MTIME_UPDATE =>
-      ffi.IOPOL_TYPE_VFS_SKIP_MTIME_UPDATE;
-  @override
-  int get IOPOL_TYPE_VFS_STATFS_NO_DATA_VOLUME =>
-      ffi.IOPOL_TYPE_VFS_STATFS_NO_DATA_VOLUME;
-  @override
-  int get IOPOL_TYPE_VFS_TRIGGER_RESOLVE => ffi.IOPOL_TYPE_VFS_TRIGGER_RESOLVE;
-  @override
-  int get IOPOL_UTILITY => ffi.IOPOL_UTILITY;
-  @override
-  int get IOPOL_VFS_ALLOW_LOW_SPACE_WRITES_OFF =>
-      ffi.IOPOL_VFS_ALLOW_LOW_SPACE_WRITES_OFF;
-  @override
-  int get IOPOL_VFS_ALLOW_LOW_SPACE_WRITES_ON =>
-      ffi.IOPOL_VFS_ALLOW_LOW_SPACE_WRITES_ON;
-  @override
-  int get IOPOL_VFS_CONTENT_PROTECTION_DEFAULT =>
-      ffi.IOPOL_VFS_CONTENT_PROTECTION_DEFAULT;
-  @override
-  int get IOPOL_VFS_CONTENT_PROTECTION_IGNORE =>
-      ffi.IOPOL_VFS_CONTENT_PROTECTION_IGNORE;
-  @override
-  int get IOPOL_VFS_IGNORE_PERMISSIONS_OFF =>
-      ffi.IOPOL_VFS_IGNORE_PERMISSIONS_OFF;
-  @override
-  int get IOPOL_VFS_IGNORE_PERMISSIONS_ON =>
-      ffi.IOPOL_VFS_IGNORE_PERMISSIONS_ON;
-  @override
-  int get IOPOL_VFS_SKIP_MTIME_UPDATE_OFF =>
-      ffi.IOPOL_VFS_SKIP_MTIME_UPDATE_OFF;
-  @override
-  int get IOPOL_VFS_SKIP_MTIME_UPDATE_ON => ffi.IOPOL_VFS_SKIP_MTIME_UPDATE_ON;
-  @override
-  int get IOPOL_VFS_STATFS_FORCE_NO_DATA_VOLUME =>
-      ffi.IOPOL_VFS_STATFS_FORCE_NO_DATA_VOLUME;
-  @override
-  int get IOPOL_VFS_STATFS_NO_DATA_VOLUME_DEFAULT =>
-      ffi.IOPOL_VFS_STATFS_NO_DATA_VOLUME_DEFAULT;
-  @override
-  int get IOPOL_VFS_TRIGGER_RESOLVE_DEFAULT =>
-      ffi.IOPOL_VFS_TRIGGER_RESOLVE_DEFAULT;
-  @override
-  int get IOPOL_VFS_TRIGGER_RESOLVE_OFF => ffi.IOPOL_VFS_TRIGGER_RESOLVE_OFF;
-  @override
   int get LITTLE_ENDIAN => ffi.LITTLE_ENDIAN;
   @override
   int get LOCK_EX => ffi.LOCK_EX;
@@ -755,74 +678,6 @@ mixin BsdMacroMixin on LibC {
   int get L_SET => ffi.L_SET;
   @override
   int get L_XTND => ffi.L_XTND;
-  @override
-  int get MAC_OS_VERSION_11_0 => ffi.MAC_OS_VERSION_11_0;
-  @override
-  int get MAC_OS_VERSION_12_0 => ffi.MAC_OS_VERSION_12_0;
-  @override
-  int get MAC_OS_X_VERSION_10_0 => ffi.MAC_OS_X_VERSION_10_0;
-  @override
-  int get MAC_OS_X_VERSION_10_1 => ffi.MAC_OS_X_VERSION_10_1;
-  @override
-  int get MAC_OS_X_VERSION_10_10 => ffi.MAC_OS_X_VERSION_10_10;
-  @override
-  int get MAC_OS_X_VERSION_10_10_2 => ffi.MAC_OS_X_VERSION_10_10_2;
-  @override
-  int get MAC_OS_X_VERSION_10_10_3 => ffi.MAC_OS_X_VERSION_10_10_3;
-  @override
-  int get MAC_OS_X_VERSION_10_11 => ffi.MAC_OS_X_VERSION_10_11;
-  @override
-  int get MAC_OS_X_VERSION_10_11_2 => ffi.MAC_OS_X_VERSION_10_11_2;
-  @override
-  int get MAC_OS_X_VERSION_10_11_3 => ffi.MAC_OS_X_VERSION_10_11_3;
-  @override
-  int get MAC_OS_X_VERSION_10_11_4 => ffi.MAC_OS_X_VERSION_10_11_4;
-  @override
-  int get MAC_OS_X_VERSION_10_12 => ffi.MAC_OS_X_VERSION_10_12;
-  @override
-  int get MAC_OS_X_VERSION_10_12_1 => ffi.MAC_OS_X_VERSION_10_12_1;
-  @override
-  int get MAC_OS_X_VERSION_10_12_2 => ffi.MAC_OS_X_VERSION_10_12_2;
-  @override
-  int get MAC_OS_X_VERSION_10_12_4 => ffi.MAC_OS_X_VERSION_10_12_4;
-  @override
-  int get MAC_OS_X_VERSION_10_13 => ffi.MAC_OS_X_VERSION_10_13;
-  @override
-  int get MAC_OS_X_VERSION_10_13_1 => ffi.MAC_OS_X_VERSION_10_13_1;
-  @override
-  int get MAC_OS_X_VERSION_10_13_2 => ffi.MAC_OS_X_VERSION_10_13_2;
-  @override
-  int get MAC_OS_X_VERSION_10_13_4 => ffi.MAC_OS_X_VERSION_10_13_4;
-  @override
-  int get MAC_OS_X_VERSION_10_14 => ffi.MAC_OS_X_VERSION_10_14;
-  @override
-  int get MAC_OS_X_VERSION_10_14_1 => ffi.MAC_OS_X_VERSION_10_14_1;
-  @override
-  int get MAC_OS_X_VERSION_10_14_4 => ffi.MAC_OS_X_VERSION_10_14_4;
-  @override
-  int get MAC_OS_X_VERSION_10_14_6 => ffi.MAC_OS_X_VERSION_10_14_6;
-  @override
-  int get MAC_OS_X_VERSION_10_15 => ffi.MAC_OS_X_VERSION_10_15;
-  @override
-  int get MAC_OS_X_VERSION_10_15_1 => ffi.MAC_OS_X_VERSION_10_15_1;
-  @override
-  int get MAC_OS_X_VERSION_10_16 => ffi.MAC_OS_X_VERSION_10_16;
-  @override
-  int get MAC_OS_X_VERSION_10_2 => ffi.MAC_OS_X_VERSION_10_2;
-  @override
-  int get MAC_OS_X_VERSION_10_3 => ffi.MAC_OS_X_VERSION_10_3;
-  @override
-  int get MAC_OS_X_VERSION_10_4 => ffi.MAC_OS_X_VERSION_10_4;
-  @override
-  int get MAC_OS_X_VERSION_10_5 => ffi.MAC_OS_X_VERSION_10_5;
-  @override
-  int get MAC_OS_X_VERSION_10_6 => ffi.MAC_OS_X_VERSION_10_6;
-  @override
-  int get MAC_OS_X_VERSION_10_7 => ffi.MAC_OS_X_VERSION_10_7;
-  @override
-  int get MAC_OS_X_VERSION_10_8 => ffi.MAC_OS_X_VERSION_10_8;
-  @override
-  int get MAC_OS_X_VERSION_10_9 => ffi.MAC_OS_X_VERSION_10_9;
   @override
   int get MADV_CAN_REUSE => ffi.MADV_CAN_REUSE;
   @override
@@ -1062,14 +917,6 @@ mixin BsdMacroMixin on LibC {
   int get POSIX_MADV_SEQUENTIAL => ffi.POSIX_MADV_SEQUENTIAL;
   @override
   int get POSIX_MADV_WILLNEED => ffi.POSIX_MADV_WILLNEED;
-  @override
-  int get PRIO_DARWIN_BG => ffi.PRIO_DARWIN_BG;
-  @override
-  int get PRIO_DARWIN_NONUI => ffi.PRIO_DARWIN_NONUI;
-  @override
-  int get PRIO_DARWIN_PROCESS => ffi.PRIO_DARWIN_PROCESS;
-  @override
-  int get PRIO_DARWIN_THREAD => ffi.PRIO_DARWIN_THREAD;
   @override
   int get PRIO_MAX => ffi.PRIO_MAX;
   @override
