@@ -10,6 +10,7 @@ import 'stat.dart';
 import 'stdlib.dart';
 import 'string.dart';
 import 'sysinfo.dart';
+import 'syslog.dart';
 import 'uname.dart';
 import 'unistd.dart';
 
@@ -30,5 +31,6 @@ class BsdLibC extends LibC
         BsdStdlibMixin,
         BsdStringMixin,
         BsdSysinfoMixin,
+        BsdSyslogMixin,
         BsdUnameMixin,
         BsdUnistdMixin {}

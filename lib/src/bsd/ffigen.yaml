@@ -10,6 +10,7 @@ headers:
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/fcntl.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdlib.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/string.h"
+    - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/syslog.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/unistd.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/mman.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/stat.h"
@@ -20,6 +21,7 @@ globals:
 functions:
   include:
     - "close"
+    - "closelog"
     - "__error"
     - "fstat"
     - "lstat"
@@ -28,11 +30,14 @@ functions:
     - "mmap"
     - "munmap"
     - "open"
+    - "openlog"
     - "putenv"
     - "setenv"
     - "set.*id"
+    - "setlogmask"
     - "stat"
     - "strerror"
+    - "syslog"
     - "uname"
     - "unsetenv"
   rename:
