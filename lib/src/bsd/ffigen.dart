@@ -566,8 +566,6 @@ const int AT_SYMLINK_FOLLOW = 64;
 
 const int AT_SYMLINK_NOFOLLOW = 32;
 
-const int AT_SYMLINK_NOFOLLOW_ANY = 2048;
-
 const int BIG_ENDIAN = 4321;
 
 const int BUS_ADRALN = 1;
@@ -927,8 +925,6 @@ const int F_FINDSIGS = 78;
 const int F_FLUSH_DATA = 40;
 
 const int F_FREEZE_FS = 53;
-
-const int F_FSRESERVED = 106;
 
 const int F_FULLFSYNC = 51;
 
