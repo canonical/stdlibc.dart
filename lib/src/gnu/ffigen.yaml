@@ -9,6 +9,7 @@ headers:
     - "/usr/include/errno.h"
     - "/usr/include/fcntl.h"
     - "/usr/include/fnmatch.h"
+    - "/usr/include/glob.h"
     - "/usr/include/stdlib.h"
     - "/usr/include/string.h"
     - "/usr/include/syslog.h"
@@ -28,6 +29,9 @@ functions:
     - "open"
     # fnmatch.h
     - "fnmatch"
+    # glob.h
+    - "glob"
+    - "globfree"
     # mman.h
     - "mmap"
     - "munmap"
@@ -76,6 +80,7 @@ unnamed-enums:
     - ".*"
 structs:
   include:
+    - "glob_t"
     - "stat"
     - "sysinfo"
     - "timespec"

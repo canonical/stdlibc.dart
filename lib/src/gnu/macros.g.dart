@@ -616,6 +616,52 @@ mixin GnuMacroMixin on LibC {
   int get GETSIGSINFO_PLATFORM_BINARY =>
       throw UnsupportedError('GETSIGSINFO_PLATFORM_BINARY');
   @override
+  int get GLOB_ABEND => throw UnsupportedError('GLOB_ABEND');
+  @override
+  int get GLOB_ABORTED => ffi.GLOB_ABORTED;
+  @override
+  int get GLOB_ALTDIRFUNC => ffi.GLOB_ALTDIRFUNC;
+  @override
+  int get GLOB_APPEND => ffi.GLOB_APPEND;
+  @override
+  int get GLOB_BRACE => ffi.GLOB_BRACE;
+  @override
+  int get GLOB_DOOFFS => ffi.GLOB_DOOFFS;
+  @override
+  int get GLOB_ERR => ffi.GLOB_ERR;
+  @override
+  int get GLOB_LIMIT => throw UnsupportedError('GLOB_LIMIT');
+  @override
+  int get GLOB_MAGCHAR => ffi.GLOB_MAGCHAR;
+  @override
+  int get GLOB_MARK => ffi.GLOB_MARK;
+  @override
+  int get GLOB_MAXPATH => throw UnsupportedError('GLOB_MAXPATH');
+  @override
+  int get GLOB_NOCHECK => ffi.GLOB_NOCHECK;
+  @override
+  int get GLOB_NOESCAPE => ffi.GLOB_NOESCAPE;
+  @override
+  int get GLOB_NOMAGIC => ffi.GLOB_NOMAGIC;
+  @override
+  int get GLOB_NOMATCH => ffi.GLOB_NOMATCH;
+  @override
+  int get GLOB_NOSORT => ffi.GLOB_NOSORT;
+  @override
+  int get GLOB_NOSPACE => ffi.GLOB_NOSPACE;
+  @override
+  int get GLOB_NOSYS => ffi.GLOB_NOSYS;
+  @override
+  int get GLOB_ONLYDIR => ffi.GLOB_ONLYDIR;
+  @override
+  int get GLOB_PERIOD => ffi.GLOB_PERIOD;
+  @override
+  int get GLOB_QUOTE => throw UnsupportedError('GLOB_QUOTE');
+  @override
+  int get GLOB_TILDE => ffi.GLOB_TILDE;
+  @override
+  int get GLOB_TILDE_CHECK => ffi.GLOB_TILDE_CHECK;
+  @override
   int get ILL_BADSTK => throw UnsupportedError('ILL_BADSTK');
   @override
   int get ILL_COPROC => throw UnsupportedError('ILL_COPROC');
