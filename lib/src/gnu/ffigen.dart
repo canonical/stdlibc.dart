@@ -47,6 +47,25 @@ class GnuLibC {
           '__errno_location');
   late final _errno = _errnoPtr.asFunction<ffi.Pointer<ffi.Int32> Function()>();
 
+  int fnmatch(
+    ffi.Pointer<ffi.Int8> __pattern,
+    ffi.Pointer<ffi.Int8> __name,
+    int __flags,
+  ) {
+    return _fnmatch(
+      __pattern,
+      __name,
+      __flags,
+    );
+  }
+
+  late final _fnmatchPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<ffi.Int8>, ffi.Pointer<ffi.Int8>,
+              ffi.Int32)>>('fnmatch');
+  late final _fnmatch = _fnmatchPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Int8>, ffi.Pointer<ffi.Int8>, int)>();
+
   int fstat(
     int __ver,
     int __fildes,
@@ -809,6 +828,22 @@ const int FD_SETSIZE = 1024;
 const int FFSYNC = 1052672;
 
 const int FNDELAY = 2048;
+
+const int FNM_CASEFOLD = 16;
+
+const int FNM_EXTMATCH = 32;
+
+const int FNM_FILE_NAME = 1;
+
+const int FNM_LEADING_DIR = 8;
+
+const int FNM_NOESCAPE = 2;
+
+const int FNM_NOMATCH = 1;
+
+const int FNM_PATHNAME = 1;
+
+const int FNM_PERIOD = 4;
 
 const int FNONBLOCK = 2048;
 

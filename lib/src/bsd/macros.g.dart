@@ -401,6 +401,26 @@ mixin BsdMacroMixin on LibC {
   @override
   int get FNDELAY => ffi.FNDELAY;
   @override
+  int get FNM_CASEFOLD => ffi.FNM_CASEFOLD;
+  @override
+  int get FNM_EXTMATCH => throw UnsupportedError('FNM_EXTMATCH');
+  @override
+  int get FNM_FILE_NAME => ffi.FNM_FILE_NAME;
+  @override
+  int get FNM_IGNORECASE => ffi.FNM_IGNORECASE;
+  @override
+  int get FNM_LEADING_DIR => ffi.FNM_LEADING_DIR;
+  @override
+  int get FNM_NOESCAPE => ffi.FNM_NOESCAPE;
+  @override
+  int get FNM_NOMATCH => ffi.FNM_NOMATCH;
+  @override
+  int get FNM_NOSYS => ffi.FNM_NOSYS;
+  @override
+  int get FNM_PATHNAME => ffi.FNM_PATHNAME;
+  @override
+  int get FNM_PERIOD => ffi.FNM_PERIOD;
+  @override
   int get FNONBLOCK => ffi.FNONBLOCK;
   @override
   int get FOOTPRINT_INTERVAL_RESET => ffi.FOOTPRINT_INTERVAL_RESET;

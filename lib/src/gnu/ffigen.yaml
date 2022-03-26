@@ -8,6 +8,7 @@ headers:
   entry-points:
     - "/usr/include/errno.h"
     - "/usr/include/fcntl.h"
+    - "/usr/include/fnmatch.h"
     - "/usr/include/stdlib.h"
     - "/usr/include/string.h"
     - "/usr/include/syslog.h"
@@ -25,6 +26,8 @@ functions:
     - "__errno_location"
     # fcntl.h
     - "open"
+    # fnmatch.h
+    - "fnmatch"
     # mman.h
     - "mmap"
     - "munmap"
