@@ -14,7 +14,7 @@ void main() {
     file.writeAsStringSync('libc.dart');
     addTearDown(file.deleteSync);
 
-    final fd = open(path, O_RDONLY);
+    final fd = open(path, flags: O_RDONLY);
     expect(fd, isNonNegative);
 
     final map = mmap(fd: fd, length: 9, prot: PROT_READ, flags: MAP_PRIVATE);
