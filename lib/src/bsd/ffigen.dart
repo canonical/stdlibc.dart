@@ -211,6 +211,55 @@ class BsdLibC {
       _lookup<ffi.NativeFunction<ffi.Uint32 Function()>>('getuid');
   late final _getuid = _getuidPtr.asFunction<int Function()>();
 
+  int glob(
+    ffi.Pointer<ffi.Int8> arg0,
+    int arg1,
+    ffi.Pointer<
+            ffi.NativeFunction<
+                ffi.Int32 Function(ffi.Pointer<ffi.Int8>, ffi.Int32)>>
+        arg2,
+    ffi.Pointer<glob_t> arg3,
+  ) {
+    return _glob(
+      arg0,
+      arg1,
+      arg2,
+      arg3,
+    );
+  }
+
+  late final _globPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<ffi.Int8>,
+              ffi.Int32,
+              ffi.Pointer<
+                  ffi.NativeFunction<
+                      ffi.Int32 Function(ffi.Pointer<ffi.Int8>, ffi.Int32)>>,
+              ffi.Pointer<glob_t>)>>('glob');
+  late final _glob = _globPtr.asFunction<
+      int Function(
+          ffi.Pointer<ffi.Int8>,
+          int,
+          ffi.Pointer<
+              ffi.NativeFunction<
+                  ffi.Int32 Function(ffi.Pointer<ffi.Int8>, ffi.Int32)>>,
+          ffi.Pointer<glob_t>)>();
+
+  void globfree(
+    ffi.Pointer<glob_t> arg0,
+  ) {
+    return _globfree(
+      arg0,
+    );
+  }
+
+  late final _globfreePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<glob_t>)>>(
+          'globfree');
+  late final _globfree =
+      _globfreePtr.asFunction<void Function(ffi.Pointer<glob_t>)>();
+
   int lstat(
     ffi.Pointer<ffi.Int8> arg0,
     ffi.Pointer<stat_t> arg1,
@@ -585,6 +634,8 @@ const int AT_SYMLINK_FOLLOW = 64;
 
 const int AT_SYMLINK_NOFOLLOW = 32;
 
+const int AT_SYMLINK_NOFOLLOW_ANY = 2048;
+
 const int BIG_ENDIAN = 4321;
 
 const int BUS_ADRALN = 1;
@@ -911,22 +962,6 @@ const int FPE_INTOVF = 8;
 
 const int FPE_NOOP = 0;
 
-const int FP_CHOP = 3;
-
-const int FP_PREC_24B = 0;
-
-const int FP_PREC_53B = 2;
-
-const int FP_PREC_64B = 3;
-
-const int FP_RND_DOWN = 1;
-
-const int FP_RND_NEAR = 0;
-
-const int FP_RND_UP = 2;
-
-const int FP_STATE_BYTES = 512;
-
 const int FREAD = 1;
 
 const int FWRITE = 2;
@@ -962,6 +997,8 @@ const int F_FINDSIGS = 78;
 const int F_FLUSH_DATA = 40;
 
 const int F_FREEZE_FS = 53;
+
+const int F_FSRESERVED = 106;
 
 const int F_FULLFSYNC = 51;
 
@@ -1062,6 +1099,46 @@ const int F_VOLPOSMODE = 4;
 const int F_WRLCK = 3;
 
 const int GETSIGSINFO_PLATFORM_BINARY = 1;
+
+const int GLOB_ABEND = -2;
+
+const int GLOB_ABORTED = -2;
+
+const int GLOB_ALTDIRFUNC = 64;
+
+const int GLOB_APPEND = 1;
+
+const int GLOB_BRACE = 128;
+
+const int GLOB_DOOFFS = 2;
+
+const int GLOB_ERR = 4;
+
+const int GLOB_LIMIT = 4096;
+
+const int GLOB_MAGCHAR = 256;
+
+const int GLOB_MARK = 8;
+
+const int GLOB_MAXPATH = 4096;
+
+const int GLOB_NOCHECK = 16;
+
+const int GLOB_NOESCAPE = 8192;
+
+const int GLOB_NOMAGIC = 512;
+
+const int GLOB_NOMATCH = -3;
+
+const int GLOB_NOSORT = 32;
+
+const int GLOB_NOSPACE = -1;
+
+const int GLOB_NOSYS = -4;
+
+const int GLOB_QUOTE = 1024;
+
+const int GLOB_TILDE = 2048;
 
 const int ILL_BADSTK = 8;
 
@@ -1828,6 +1905,46 @@ const int WUNTRACED = 2;
 const int W_OK = 2;
 
 const int X_OK = 1;
+
+class dirent extends ffi.Opaque {}
+
+class glob_t extends ffi.Struct {
+  @ffi.Uint64()
+  external int gl_pathc;
+
+  @ffi.Int32()
+  external int gl_matchc;
+
+  @ffi.Uint64()
+  external int gl_offs;
+
+  @ffi.Int32()
+  external int gl_flags;
+
+  external ffi.Pointer<ffi.Pointer<ffi.Int8>> gl_pathv;
+
+  external ffi
+          .Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>
+      gl_closedir;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Pointer<dirent> Function(ffi.Pointer<ffi.Void>)>> gl_readdir;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Int8>)>> gl_opendir;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int32 Function(ffi.Pointer<ffi.Int8>, ffi.Pointer<stat_t>)>>
+      gl_lstat;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int32 Function(ffi.Pointer<ffi.Int8>, ffi.Pointer<stat_t>)>>
+      gl_stat;
+}
 
 class stat_t extends ffi.Struct {
   @ffi.Int32()
