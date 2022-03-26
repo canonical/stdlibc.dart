@@ -27,9 +27,6 @@ mixin GnuMacroMixin on LibC {
   @override
   int get AT_SYMLINK_NOFOLLOW => ffi.AT_SYMLINK_NOFOLLOW;
   @override
-  int get AT_SYMLINK_NOFOLLOW_ANY =>
-      throw UnsupportedError('AT_SYMLINK_NOFOLLOW_ANY');
-  @override
   int get BIG_ENDIAN => ffi.BIG_ENDIAN;
   @override
   int get BUS_ADRALN => throw UnsupportedError('BUS_ADRALN');
@@ -450,6 +447,22 @@ mixin GnuMacroMixin on LibC {
   @override
   int get FPE_NOOP => throw UnsupportedError('FPE_NOOP');
   @override
+  int get FP_CHOP => throw UnsupportedError('FP_CHOP');
+  @override
+  int get FP_PREC_24B => throw UnsupportedError('FP_PREC_24B');
+  @override
+  int get FP_PREC_53B => throw UnsupportedError('FP_PREC_53B');
+  @override
+  int get FP_PREC_64B => throw UnsupportedError('FP_PREC_64B');
+  @override
+  int get FP_RND_DOWN => throw UnsupportedError('FP_RND_DOWN');
+  @override
+  int get FP_RND_NEAR => throw UnsupportedError('FP_RND_NEAR');
+  @override
+  int get FP_RND_UP => throw UnsupportedError('FP_RND_UP');
+  @override
+  int get FP_STATE_BYTES => throw UnsupportedError('FP_STATE_BYTES');
+  @override
   int get FREAD => throw UnsupportedError('FREAD');
   @override
   int get FWRITE => throw UnsupportedError('FWRITE');
@@ -489,8 +502,6 @@ mixin GnuMacroMixin on LibC {
   int get F_FLUSH_DATA => throw UnsupportedError('F_FLUSH_DATA');
   @override
   int get F_FREEZE_FS => throw UnsupportedError('F_FREEZE_FS');
-  @override
-  int get F_FSRESERVED => throw UnsupportedError('F_FSRESERVED');
   @override
   int get F_FULLFSYNC => throw UnsupportedError('F_FULLFSYNC');
   @override
