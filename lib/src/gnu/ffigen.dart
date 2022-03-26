@@ -179,6 +179,55 @@ class GnuLibC {
       _lookup<ffi.NativeFunction<ffi.Uint32 Function()>>('getuid');
   late final _getuid = _getuidPtr.asFunction<int Function()>();
 
+  int glob(
+    ffi.Pointer<ffi.Int8> __pattern,
+    int __flags,
+    ffi.Pointer<
+            ffi.NativeFunction<
+                ffi.Int32 Function(ffi.Pointer<ffi.Int8>, ffi.Int32)>>
+        __errfunc,
+    ffi.Pointer<glob_t> __pglob,
+  ) {
+    return _glob(
+      __pattern,
+      __flags,
+      __errfunc,
+      __pglob,
+    );
+  }
+
+  late final _globPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<ffi.Int8>,
+              ffi.Int32,
+              ffi.Pointer<
+                  ffi.NativeFunction<
+                      ffi.Int32 Function(ffi.Pointer<ffi.Int8>, ffi.Int32)>>,
+              ffi.Pointer<glob_t>)>>('glob');
+  late final _glob = _globPtr.asFunction<
+      int Function(
+          ffi.Pointer<ffi.Int8>,
+          int,
+          ffi.Pointer<
+              ffi.NativeFunction<
+                  ffi.Int32 Function(ffi.Pointer<ffi.Int8>, ffi.Int32)>>,
+          ffi.Pointer<glob_t>)>();
+
+  void globfree(
+    ffi.Pointer<glob_t> __pglob,
+  ) {
+    return _globfree(
+      __pglob,
+    );
+  }
+
+  late final _globfreePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<glob_t>)>>(
+          'globfree');
+  late final _globfree =
+      _globfreePtr.asFunction<void Function(ffi.Pointer<glob_t>)>();
+
   int lstat(
     int __ver,
     ffi.Pointer<ffi.Int8> __filename,
@@ -895,6 +944,44 @@ const int F_UNLCK = 2;
 
 const int F_WRLCK = 1;
 
+const int GLOB_ABORTED = 2;
+
+const int GLOB_ALTDIRFUNC = 512;
+
+const int GLOB_APPEND = 32;
+
+const int GLOB_BRACE = 1024;
+
+const int GLOB_DOOFFS = 8;
+
+const int GLOB_ERR = 1;
+
+const int GLOB_MAGCHAR = 256;
+
+const int GLOB_MARK = 2;
+
+const int GLOB_NOCHECK = 16;
+
+const int GLOB_NOESCAPE = 64;
+
+const int GLOB_NOMAGIC = 2048;
+
+const int GLOB_NOMATCH = 3;
+
+const int GLOB_NOSORT = 4;
+
+const int GLOB_NOSPACE = 1;
+
+const int GLOB_NOSYS = 4;
+
+const int GLOB_ONLYDIR = 8192;
+
+const int GLOB_PERIOD = 128;
+
+const int GLOB_TILDE = 4096;
+
+const int GLOB_TILDE_CHECK = 16384;
+
 const int LITTLE_ENDIAN = 1234;
 
 const int LOCK_EX = 2;
@@ -1258,6 +1345,41 @@ const int WUNTRACED = 2;
 const int W_OK = 2;
 
 const int X_OK = 1;
+
+class glob_t extends ffi.Struct {
+  @ffi.Uint64()
+  external int gl_pathc;
+
+  external ffi.Pointer<ffi.Pointer<ffi.Int8>> gl_pathv;
+
+  @ffi.Uint64()
+  external int gl_offs;
+
+  @ffi.Int32()
+  external int gl_flags;
+
+  external ffi
+          .Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>
+      gl_closedir;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>> gl_readdir;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Int8>)>> gl_opendir;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int32 Function(ffi.Pointer<ffi.Int8>, ffi.Pointer<ffi.Void>)>>
+      gl_lstat;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int32 Function(ffi.Pointer<ffi.Int8>, ffi.Pointer<ffi.Void>)>>
+      gl_stat;
+}
 
 class stat_t extends ffi.Struct {
   @ffi.Uint64()
