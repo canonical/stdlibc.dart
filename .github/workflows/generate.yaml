@@ -22,6 +22,7 @@ jobs:
       with:
         title: 'Regenerate BSD bindings'
         commit-message: 'Regenerate BSD bindings'
+        branch: regenerate/bsd
 
   gnu:
     runs-on: ubuntu-18.04
@@ -39,6 +40,7 @@ jobs:
       with:
         title: 'Regenerate GNU bindings'
         commit-message: 'Regenerate GNU bindings'
+        branch: regenerate/gnu
 
   macros:
     runs-on: ubuntu-20.04
@@ -54,3 +56,4 @@ jobs:
       with:
         title: 'Regenerate macros'
         commit-message: 'Regenerate macros'
+        branch: regenerate/macros
