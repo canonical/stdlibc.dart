@@ -25,8 +25,6 @@ mixin BsdMacroMixin on LibC {
   @override
   int get AT_SYMLINK_NOFOLLOW => ffi.AT_SYMLINK_NOFOLLOW;
   @override
-  int get AT_SYMLINK_NOFOLLOW_ANY => ffi.AT_SYMLINK_NOFOLLOW_ANY;
-  @override
   int get BIG_ENDIAN => ffi.BIG_ENDIAN;
   @override
   int get BUS_ADRALN => ffi.BUS_ADRALN;
@@ -478,8 +476,6 @@ mixin BsdMacroMixin on LibC {
   int get F_FLUSH_DATA => ffi.F_FLUSH_DATA;
   @override
   int get F_FREEZE_FS => ffi.F_FREEZE_FS;
-  @override
-  int get F_FSRESERVED => ffi.F_FSRESERVED;
   @override
   int get F_FULLFSYNC => ffi.F_FULLFSYNC;
   @override

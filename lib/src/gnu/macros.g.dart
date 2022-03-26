@@ -27,9 +27,6 @@ mixin GnuMacroMixin on LibC {
   @override
   int get AT_SYMLINK_NOFOLLOW => ffi.AT_SYMLINK_NOFOLLOW;
   @override
-  int get AT_SYMLINK_NOFOLLOW_ANY =>
-      throw UnsupportedError('AT_SYMLINK_NOFOLLOW_ANY');
-  @override
   int get BIG_ENDIAN => ffi.BIG_ENDIAN;
   @override
   int get BUS_ADRALN => throw UnsupportedError('BUS_ADRALN');
@@ -485,8 +482,6 @@ mixin GnuMacroMixin on LibC {
   int get F_FLUSH_DATA => throw UnsupportedError('F_FLUSH_DATA');
   @override
   int get F_FREEZE_FS => throw UnsupportedError('F_FREEZE_FS');
-  @override
-  int get F_FSRESERVED => throw UnsupportedError('F_FSRESERVED');
   @override
   int get F_FULLFSYNC => throw UnsupportedError('F_FULLFSYNC');
   @override
