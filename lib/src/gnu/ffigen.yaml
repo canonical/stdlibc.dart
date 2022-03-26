@@ -21,27 +21,37 @@ globals:
     - ".*"
 functions:
   include:
-    - "close"
-    - "closelog"
+    # errno.h
     - "__errno_location"
-    - "__fxstat"
-    - "getenv"
-    - "get.*id"
-    - "__lxstat"
+    # fcntl.h
+    - "open"
+    # mman.h
     - "mmap"
     - "munmap"
-    - "open"
-    - "openlog"
+    # stdlib.h
+    - "getenv"
     - "putenv"
     - "setenv"
-    - "set.*id"
-    - "setlogmask"
-    - "strerror"
-    - "sysinfo"
-    - "syslog"
-    - "uname"
     - "unsetenv"
+    # stat.h
+    - "__fxstat"
+    - "__lxstat"
     - "__xstat"
+    # string.h
+    - "strerror"
+    # sysinfo.h
+    - "sysinfo"
+    # syslog.h
+    - "closelog"
+    - "openlog"
+    - "setlogmask"
+    - "syslog"
+    # unistd.h
+    - "close"
+    - "get.*id"
+    - "set.*id"
+    # utsname.h
+    - "uname"
   rename:
     "__errno_location": "errno"
     "__fxstat": "fstat"

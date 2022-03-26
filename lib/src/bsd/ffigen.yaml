@@ -20,26 +20,35 @@ globals:
     - ".*"
 functions:
   include:
-    - "close"
-    - "closelog"
+    # errno.h
     - "__error"
-    - "fstat"
-    - "lstat"
-    - "getenv"
-    - "get.*id"
+    # fcntl.h
+    - "open"
+    # mman.h
     - "mmap"
     - "munmap"
-    - "open"
-    - "openlog"
+    # stdlib.h
+    - "getenv"
     - "putenv"
     - "setenv"
-    - "set.*id"
-    - "setlogmask"
-    - "stat"
-    - "strerror"
-    - "syslog"
-    - "uname"
     - "unsetenv"
+    # stat.h
+    - "fstat"
+    - "lstat"
+    - "stat"
+    # string.h
+    - "strerror"
+    # syslog.h
+    - "closelog"
+    - "openlog"
+    - "setlogmask"
+    - "syslog"
+    # unistd.h
+    - "close"
+    - "get.*id"
+    - "set.*id"
+    # utsname.h
+    - "uname"
   rename:
     "__error": "errno"
 macros:
