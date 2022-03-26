@@ -15,6 +15,7 @@ import 'sysinfo.dart';
 import 'syslog.dart';
 import 'uname.dart';
 import 'unistd.dart';
+import 'wordexp.dart';
 
 final dylib = ffi.GnuLibC(ffi.DynamicLibrary.process());
 
@@ -32,4 +33,5 @@ class GnuLibC extends LibC
         GnuSysinfoMixin,
         GnuSyslogMixin,
         GnuUnameMixin,
-        GnuUnistdMixin {}
+        GnuUnistdMixin,
+        GnuWordexpMixin {}

@@ -15,6 +15,7 @@ import 'sysinfo.dart';
 import 'syslog.dart';
 import 'uname.dart';
 import 'unistd.dart';
+import 'wordexp.dart';
 
 final libc = Platform.isMacOS ? BsdLibC() : GnuLibC();
 
@@ -32,4 +33,5 @@ abstract class LibC
         SysinfoMixin,
         SyslogMixin,
         UnameMixin,
-        UnistdMixin {}
+        UnistdMixin,
+        WordexpMixin {}
