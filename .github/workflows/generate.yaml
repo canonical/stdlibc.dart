@@ -22,7 +22,9 @@ jobs:
       with:
         title: 'Regenerate BSD bindings'
         commit-message: 'Regenerate BSD bindings'
+        add-paths: lib/src/bsd/ffigen.dart
         branch: regenerate/bsd
+        delete-branch: true
 
   gnu:
     runs-on: ubuntu-18.04
@@ -40,7 +42,9 @@ jobs:
       with:
         title: 'Regenerate GNU bindings'
         commit-message: 'Regenerate GNU bindings'
+        add-paths: lib/src/gnu/ffigen.dart
         branch: regenerate/gnu
+        delete-branch: true
 
   macros:
     runs-on: ubuntu-20.04
@@ -56,4 +60,6 @@ jobs:
       with:
         title: 'Regenerate macros'
         commit-message: 'Regenerate macros'
+        add-paths: '**/*.g.dart'
         branch: regenerate/macros
+        delete-branch: true
