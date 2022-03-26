@@ -15,6 +15,7 @@ import 'sysinfo.dart';
 import 'syslog.dart';
 import 'uname.dart';
 import 'unistd.dart';
+import 'wordexp.dart';
 
 final dylib = ffi.BsdLibC(ffi.DynamicLibrary.process());
 final inode64 = ffi.BsdLibC.fromLookup(inode64Lookup);
@@ -37,4 +38,5 @@ class BsdLibC extends LibC
         BsdSysinfoMixin,
         BsdSyslogMixin,
         BsdUnameMixin,
-        BsdUnistdMixin {}
+        BsdUnistdMixin,
+        BsdWordexpMixin {}

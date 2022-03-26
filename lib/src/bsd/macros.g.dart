@@ -1504,6 +1504,30 @@ mixin BsdMacroMixin on LibC {
   @override
   int get WNOWAIT => ffi.WNOWAIT;
   @override
+  int get WRDE_APPEND => ffi.WRDE_APPEND;
+  @override
+  int get WRDE_BADCHAR => ffi.WRDE_BADCHAR;
+  @override
+  int get WRDE_BADVAL => ffi.WRDE_BADVAL;
+  @override
+  int get WRDE_CMDSUB => ffi.WRDE_CMDSUB;
+  @override
+  int get WRDE_DOOFFS => ffi.WRDE_DOOFFS;
+  @override
+  int get WRDE_NOCMD => ffi.WRDE_NOCMD;
+  @override
+  int get WRDE_NOSPACE => ffi.WRDE_NOSPACE;
+  @override
+  int get WRDE_NOSYS => ffi.WRDE_NOSYS;
+  @override
+  int get WRDE_REUSE => ffi.WRDE_REUSE;
+  @override
+  int get WRDE_SHOWERR => ffi.WRDE_SHOWERR;
+  @override
+  int get WRDE_SYNTAX => ffi.WRDE_SYNTAX;
+  @override
+  int get WRDE_UNDEF => ffi.WRDE_UNDEF;
+  @override
   int get WSTOPPED => ffi.WSTOPPED;
   @override
   int get WUNTRACED => ffi.WUNTRACED;

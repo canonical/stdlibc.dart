@@ -610,6 +610,39 @@ class BsdLibC {
           'unsetenv');
   late final _unsetenv =
       _unsetenvPtr.asFunction<int Function(ffi.Pointer<ffi.Int8>)>();
+
+  int wordexp(
+    ffi.Pointer<ffi.Int8> arg0,
+    ffi.Pointer<wordexp_t> arg1,
+    int arg2,
+  ) {
+    return _wordexp(
+      arg0,
+      arg1,
+      arg2,
+    );
+  }
+
+  late final _wordexpPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<ffi.Int8>, ffi.Pointer<wordexp_t>,
+              ffi.Int32)>>('wordexp');
+  late final _wordexp = _wordexpPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Int8>, ffi.Pointer<wordexp_t>, int)>();
+
+  void wordfree(
+    ffi.Pointer<wordexp_t> arg0,
+  ) {
+    return _wordfree(
+      arg0,
+    );
+  }
+
+  late final _wordfreePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<wordexp_t>)>>(
+          'wordfree');
+  late final _wordfree =
+      _wordfreePtr.asFunction<void Function(ffi.Pointer<wordexp_t>)>();
 }
 
 const int ACCESSPERMS = 511;
@@ -1910,6 +1943,30 @@ const int WNOHANG = 1;
 
 const int WNOWAIT = 32;
 
+const int WRDE_APPEND = 1;
+
+const int WRDE_BADCHAR = 1;
+
+const int WRDE_BADVAL = 2;
+
+const int WRDE_CMDSUB = 3;
+
+const int WRDE_DOOFFS = 2;
+
+const int WRDE_NOCMD = 4;
+
+const int WRDE_NOSPACE = 4;
+
+const int WRDE_NOSYS = 5;
+
+const int WRDE_REUSE = 8;
+
+const int WRDE_SHOWERR = 16;
+
+const int WRDE_SYNTAX = 6;
+
+const int WRDE_UNDEF = 32;
+
 const int WSTOPPED = 8;
 
 const int WUNTRACED = 2;
@@ -2033,4 +2090,14 @@ class utsname_t extends ffi.Struct {
 
   @ffi.Array.multi([256])
   external ffi.Array<ffi.Int8> machine;
+}
+
+class wordexp_t extends ffi.Struct {
+  @ffi.Uint64()
+  external int we_wordc;
+
+  external ffi.Pointer<ffi.Pointer<ffi.Int8>> we_wordv;
+
+  @ffi.Uint64()
+  external int we_offs;
 }

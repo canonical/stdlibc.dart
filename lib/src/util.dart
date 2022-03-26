@@ -27,6 +27,12 @@ extension Int8PointerString on ffi.Pointer<ffi.Int8> {
   }
 }
 
+extension Int8PointerPointerString on ffi.Pointer<ffi.Pointer<ffi.Int8>> {
+  List<String> toDartStrings({required int length}) {
+    return <String>[for (var i = 0; i < length; ++i) this[i].toDartString()!];
+  }
+}
+
 extension Int8ArrayString on ffi.Array<ffi.Int8> {
   String toDartString(int maxLength) {
     final codeUnits = asTypedList(maxLength).takeWhile((c) => c != 0);

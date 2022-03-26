@@ -14,3 +14,4 @@ export 'src/sysinfo.dart' hide SysinfoMixin;
 export 'src/syslog.dart' hide SyslogMixin;
 export 'src/uname.dart' hide UnameMixin;
 export 'src/unistd.dart' hide UnistdMixin;
+export 'src/wordexp.dart' hide WordexpMixin;
