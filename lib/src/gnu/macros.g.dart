@@ -27,6 +27,9 @@ mixin GnuMacroMixin on LibC {
   @override
   int get AT_SYMLINK_NOFOLLOW => ffi.AT_SYMLINK_NOFOLLOW;
   @override
+  int get AT_SYMLINK_NOFOLLOW_ANY =>
+      throw UnsupportedError('AT_SYMLINK_NOFOLLOW_ANY');
+  @override
   int get BIG_ENDIAN => ffi.BIG_ENDIAN;
   @override
   int get BUS_ADRALN => throw UnsupportedError('BUS_ADRALN');
@@ -447,22 +450,6 @@ mixin GnuMacroMixin on LibC {
   @override
   int get FPE_NOOP => throw UnsupportedError('FPE_NOOP');
   @override
-  int get FP_CHOP => throw UnsupportedError('FP_CHOP');
-  @override
-  int get FP_PREC_24B => throw UnsupportedError('FP_PREC_24B');
-  @override
-  int get FP_PREC_53B => throw UnsupportedError('FP_PREC_53B');
-  @override
-  int get FP_PREC_64B => throw UnsupportedError('FP_PREC_64B');
-  @override
-  int get FP_RND_DOWN => throw UnsupportedError('FP_RND_DOWN');
-  @override
-  int get FP_RND_NEAR => throw UnsupportedError('FP_RND_NEAR');
-  @override
-  int get FP_RND_UP => throw UnsupportedError('FP_RND_UP');
-  @override
-  int get FP_STATE_BYTES => throw UnsupportedError('FP_STATE_BYTES');
-  @override
   int get FREAD => throw UnsupportedError('FREAD');
   @override
   int get FWRITE => throw UnsupportedError('FWRITE');
@@ -502,6 +489,8 @@ mixin GnuMacroMixin on LibC {
   int get F_FLUSH_DATA => throw UnsupportedError('F_FLUSH_DATA');
   @override
   int get F_FREEZE_FS => throw UnsupportedError('F_FREEZE_FS');
+  @override
+  int get F_FSRESERVED => throw UnsupportedError('F_FSRESERVED');
   @override
   int get F_FULLFSYNC => throw UnsupportedError('F_FULLFSYNC');
   @override
@@ -615,6 +604,52 @@ mixin GnuMacroMixin on LibC {
   @override
   int get GETSIGSINFO_PLATFORM_BINARY =>
       throw UnsupportedError('GETSIGSINFO_PLATFORM_BINARY');
+  @override
+  int get GLOB_ABEND => throw UnsupportedError('GLOB_ABEND');
+  @override
+  int get GLOB_ABORTED => ffi.GLOB_ABORTED;
+  @override
+  int get GLOB_ALTDIRFUNC => ffi.GLOB_ALTDIRFUNC;
+  @override
+  int get GLOB_APPEND => ffi.GLOB_APPEND;
+  @override
+  int get GLOB_BRACE => ffi.GLOB_BRACE;
+  @override
+  int get GLOB_DOOFFS => ffi.GLOB_DOOFFS;
+  @override
+  int get GLOB_ERR => ffi.GLOB_ERR;
+  @override
+  int get GLOB_LIMIT => throw UnsupportedError('GLOB_LIMIT');
+  @override
+  int get GLOB_MAGCHAR => ffi.GLOB_MAGCHAR;
+  @override
+  int get GLOB_MARK => ffi.GLOB_MARK;
+  @override
+  int get GLOB_MAXPATH => throw UnsupportedError('GLOB_MAXPATH');
+  @override
+  int get GLOB_NOCHECK => ffi.GLOB_NOCHECK;
+  @override
+  int get GLOB_NOESCAPE => ffi.GLOB_NOESCAPE;
+  @override
+  int get GLOB_NOMAGIC => ffi.GLOB_NOMAGIC;
+  @override
+  int get GLOB_NOMATCH => ffi.GLOB_NOMATCH;
+  @override
+  int get GLOB_NOSORT => ffi.GLOB_NOSORT;
+  @override
+  int get GLOB_NOSPACE => ffi.GLOB_NOSPACE;
+  @override
+  int get GLOB_NOSYS => ffi.GLOB_NOSYS;
+  @override
+  int get GLOB_ONLYDIR => ffi.GLOB_ONLYDIR;
+  @override
+  int get GLOB_PERIOD => ffi.GLOB_PERIOD;
+  @override
+  int get GLOB_QUOTE => throw UnsupportedError('GLOB_QUOTE');
+  @override
+  int get GLOB_TILDE => ffi.GLOB_TILDE;
+  @override
+  int get GLOB_TILDE_CHECK => ffi.GLOB_TILDE_CHECK;
   @override
   int get ILL_BADSTK => throw UnsupportedError('ILL_BADSTK');
   @override

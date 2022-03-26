@@ -16,6 +16,7 @@ headers:
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/mman.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/stat.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/utsname.h"
+    - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/glob.h" # after stat.h
 globals:
   exclude:
     - ".*"
@@ -27,6 +28,9 @@ functions:
     - "open"
     # fnmatch.h
     - "fnmatch"
+    # glob.h
+    - "glob"
+    - "globfree"
     # mman.h
     - "mmap"
     - "munmap"
@@ -72,6 +76,7 @@ unnamed-enums:
     - ".*"
 structs:
   include:
+    - "glob_t"
     - "stat"
     - "timespec"
     - "utsname"
