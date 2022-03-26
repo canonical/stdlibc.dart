@@ -46,6 +46,25 @@ class BsdLibC {
       _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Int32> Function()>>('__error');
   late final _errno = _errnoPtr.asFunction<ffi.Pointer<ffi.Int32> Function()>();
 
+  int fnmatch(
+    ffi.Pointer<ffi.Int8> arg0,
+    ffi.Pointer<ffi.Int8> arg1,
+    int arg2,
+  ) {
+    return _fnmatch(
+      arg0,
+      arg1,
+      arg2,
+    );
+  }
+
+  late final _fnmatchPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<ffi.Int8>, ffi.Pointer<ffi.Int8>,
+              ffi.Int32)>>('fnmatch');
+  late final _fnmatch = _fnmatchPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Int8>, ffi.Pointer<ffi.Int8>, int)>();
+
   int fstat(
     int arg0,
     ffi.Pointer<stat_t> arg1,
@@ -851,6 +870,24 @@ const int FFSYNC = 128;
 const int FILESEC_GUID = 3;
 
 const int FNDELAY = 4;
+
+const int FNM_CASEFOLD = 16;
+
+const int FNM_FILE_NAME = 2;
+
+const int FNM_IGNORECASE = 16;
+
+const int FNM_LEADING_DIR = 8;
+
+const int FNM_NOESCAPE = 1;
+
+const int FNM_NOMATCH = 1;
+
+const int FNM_NOSYS = -1;
+
+const int FNM_PATHNAME = 2;
+
+const int FNM_PERIOD = 4;
 
 const int FNONBLOCK = 4;
 
