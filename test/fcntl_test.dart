@@ -8,7 +8,7 @@ void main() {
   test('open', () {
     final path = p.join(Directory.systemTemp.path, 'libc.dart');
 
-    final fd = open(path, O_RDWR | O_CREAT);
+    final fd = open(path, flags: O_RDWR | O_CREAT);
     expect(fd, isNonNegative);
     close(fd);
 
