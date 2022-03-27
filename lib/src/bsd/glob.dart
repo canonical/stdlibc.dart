@@ -2,7 +2,7 @@ import 'dart:ffi' as ffi;
 
 import 'package:ffi/ffi.dart' as ffi;
 
-import '../errno.dart';
+import '../glob.dart';
 import '../libc.dart';
 import '../util.dart';
 import 'bsd.dart';
@@ -19,20 +19,10 @@ mixin BsdGlobMixin on LibC {
         ffi.nullptr,
         ptr,
       );
-      switch (res) {
-        case ffi.GLOB_NOSPACE:
-          throw const OutOfMemoryError();
-        case ffi.GLOB_ABORTED:
-          throw Errno('glob', errno);
-        case ffi.GLOB_NOMATCH:
-          return const <String>[];
-        default:
-          break;
+      if (res != 0) {
+        throw GlobException(res);
       }
-      final paths = <String>[
-        for (var i = 0; i < ptr.ref.gl_pathc; ++i)
-          ptr.ref.gl_pathv[i].toDartString()!
-      ];
+      final paths = ptr.ref.gl_pathv.toDartStrings(length: ptr.ref.gl_pathc);
       dylib.globfree(ptr);
       return paths;
     });
