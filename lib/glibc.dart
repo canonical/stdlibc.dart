@@ -1,5 +1,5 @@
-/// C Standard Library
-library libc;
+/// Glibc - The GNU C Library for Dart
+library glibc;
 
 export 'src/errno.dart' hide ErrnoMixin;
 export 'src/fcntl.dart' hide FcntlMixin;

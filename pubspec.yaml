@@ -1,5 +1,5 @@
-name: libc
-description: C Standard Library
+name: glibc
+description: Glibc - The GNU C Library for Dart
 
 environment:
   sdk: '>=2.16.0 <3.0.0'

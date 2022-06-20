@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:libc/libc.dart';
+import 'package:glibc/glibc.dart';
 import 'package:path/path.dart' as p;
 import 'package:test/test.dart';
 

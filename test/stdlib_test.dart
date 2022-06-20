@@ -1,4 +1,4 @@
-import 'package:libc/libc.dart';
+import 'package:glibc/glibc.dart';
 import 'package:test/test.dart';
 
 void main() {
