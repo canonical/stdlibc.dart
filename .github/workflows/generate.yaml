@@ -8,24 +8,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  bsd:
-    runs-on: macos-10.15
-    steps:
-    - uses: actions/checkout@v2
-    - uses: dart-lang/setup-dart@v1
-    - run: dart pub get
-    - run: dart run ffigen --config lib/src/bsd/ffigen.yaml
-    - run: ./.github/scripts/check-outdated-files.sh
-      continue-on-error: true
-    - uses: peter-evans/create-pull-request@v3
-      if: github.event_name != 'pull_request'
-      with:
-        title: 'Regenerate BSD bindings'
-        commit-message: 'Regenerate BSD bindings'
-        add-paths: lib/src/bsd/ffigen.dart
-        branch: regenerate/bsd
-        delete-branch: true
-
   gnu:
     runs-on: ubuntu-18.04
     steps:

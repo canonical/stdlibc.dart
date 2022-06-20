@@ -19,7 +19,6 @@ class MacroBuilder implements Builder {
   Map<String, List<String>> get buildExtensions {
     return const {
       r'$lib$': [
-        'src/bsd/macros.g.dart', // ### FIXME
         'src/gnu/macros.g.dart', // ### FIXME
         'src/macros.g.dart',
       ],

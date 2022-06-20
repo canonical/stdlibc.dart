@@ -1,6 +1,3 @@
-import 'dart:io';
-
-import 'bsd/bsd.dart';
 import 'errno.dart';
 import 'fcntl.dart';
 import 'fnmatch.dart';
@@ -17,7 +14,7 @@ import 'uname.dart';
 import 'unistd.dart';
 import 'wordexp.dart';
 
-final libc = Platform.isMacOS ? BsdLibC() : GnuLibC();
+final libc = GnuLibC();
 
 abstract class LibC
     with
