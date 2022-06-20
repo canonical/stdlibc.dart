@@ -27,7 +27,7 @@ class GnuLibC {
   }
 
   late final _closePtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32)>>('close');
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('close');
   late final _close = _closePtr.asFunction<int Function(int)>();
 
   void closelog() {
@@ -38,18 +38,18 @@ class GnuLibC {
       _lookup<ffi.NativeFunction<ffi.Void Function()>>('closelog');
   late final _closelog = _closelogPtr.asFunction<void Function()>();
 
-  ffi.Pointer<ffi.Int32> errno() {
+  ffi.Pointer<ffi.Int> errno() {
     return _errno();
   }
 
   late final _errnoPtr =
-      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Int32> Function()>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Int> Function()>>(
           '__errno_location');
-  late final _errno = _errnoPtr.asFunction<ffi.Pointer<ffi.Int32> Function()>();
+  late final _errno = _errnoPtr.asFunction<ffi.Pointer<ffi.Int> Function()>();
 
   int fnmatch(
-    ffi.Pointer<ffi.Int8> __pattern,
-    ffi.Pointer<ffi.Int8> __name,
+    ffi.Pointer<ffi.Char> __pattern,
+    ffi.Pointer<ffi.Char> __name,
     int __flags,
   ) {
     return _fnmatch(
@@ -61,10 +61,10 @@ class GnuLibC {
 
   late final _fnmatchPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int32 Function(ffi.Pointer<ffi.Int8>, ffi.Pointer<ffi.Int8>,
-              ffi.Int32)>>('fnmatch');
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+              ffi.Int)>>('fnmatch');
   late final _fnmatch = _fnmatchPtr.asFunction<
-      int Function(ffi.Pointer<ffi.Int8>, ffi.Pointer<ffi.Int8>, int)>();
+      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
   int fstat(
     int __ver,
@@ -80,8 +80,7 @@ class GnuLibC {
 
   late final _fstatPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int32 Function(
-              ffi.Int32, ffi.Int32, ffi.Pointer<stat_t>)>>('__fxstat');
+          ffi.Int Function(ffi.Int, ffi.Int, ffi.Pointer<stat_t>)>>('__fxstat');
   late final _fstat =
       _fstatPtr.asFunction<int Function(int, int, ffi.Pointer<stat_t>)>();
 
@@ -90,11 +89,11 @@ class GnuLibC {
   }
 
   late final _getegidPtr =
-      _lookup<ffi.NativeFunction<ffi.Uint32 Function()>>('getegid');
+      _lookup<ffi.NativeFunction<ffi.UnsignedInt Function()>>('getegid');
   late final _getegid = _getegidPtr.asFunction<int Function()>();
 
-  ffi.Pointer<ffi.Int8> getenv(
-    ffi.Pointer<ffi.Int8> __name,
+  ffi.Pointer<ffi.Char> getenv(
+    ffi.Pointer<ffi.Char> __name,
   ) {
     return _getenv(
       __name,
@@ -103,16 +102,16 @@ class GnuLibC {
 
   late final _getenvPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<ffi.Int8> Function(ffi.Pointer<ffi.Int8>)>>('getenv');
+          ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>>('getenv');
   late final _getenv = _getenvPtr
-      .asFunction<ffi.Pointer<ffi.Int8> Function(ffi.Pointer<ffi.Int8>)>();
+      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
 
   int geteuid() {
     return _geteuid();
   }
 
   late final _geteuidPtr =
-      _lookup<ffi.NativeFunction<ffi.Uint32 Function()>>('geteuid');
+      _lookup<ffi.NativeFunction<ffi.UnsignedInt Function()>>('geteuid');
   late final _geteuid = _geteuidPtr.asFunction<int Function()>();
 
   int getgid() {
@@ -120,7 +119,7 @@ class GnuLibC {
   }
 
   late final _getgidPtr =
-      _lookup<ffi.NativeFunction<ffi.Uint32 Function()>>('getgid');
+      _lookup<ffi.NativeFunction<ffi.UnsignedInt Function()>>('getgid');
   late final _getgid = _getgidPtr.asFunction<int Function()>();
 
   int gethostid() {
@@ -128,7 +127,7 @@ class GnuLibC {
   }
 
   late final _gethostidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int64 Function()>>('gethostid');
+      _lookup<ffi.NativeFunction<ffi.Long Function()>>('gethostid');
   late final _gethostid = _gethostidPtr.asFunction<int Function()>();
 
   int getpgid(
@@ -140,7 +139,7 @@ class GnuLibC {
   }
 
   late final _getpgidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32)>>('getpgid');
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('getpgid');
   late final _getpgid = _getpgidPtr.asFunction<int Function(int)>();
 
   int getpid() {
@@ -148,7 +147,7 @@ class GnuLibC {
   }
 
   late final _getpidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function()>>('getpid');
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('getpid');
   late final _getpid = _getpidPtr.asFunction<int Function()>();
 
   int getppid() {
@@ -156,7 +155,7 @@ class GnuLibC {
   }
 
   late final _getppidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function()>>('getppid');
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('getppid');
   late final _getppid = _getppidPtr.asFunction<int Function()>();
 
   int getsid(
@@ -168,7 +167,7 @@ class GnuLibC {
   }
 
   late final _getsidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32)>>('getsid');
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('getsid');
   late final _getsid = _getsidPtr.asFunction<int Function(int)>();
 
   int getuid() {
@@ -176,15 +175,15 @@ class GnuLibC {
   }
 
   late final _getuidPtr =
-      _lookup<ffi.NativeFunction<ffi.Uint32 Function()>>('getuid');
+      _lookup<ffi.NativeFunction<ffi.UnsignedInt Function()>>('getuid');
   late final _getuid = _getuidPtr.asFunction<int Function()>();
 
   int glob(
-    ffi.Pointer<ffi.Int8> __pattern,
+    ffi.Pointer<ffi.Char> __pattern,
     int __flags,
     ffi.Pointer<
             ffi.NativeFunction<
-                ffi.Int32 Function(ffi.Pointer<ffi.Int8>, ffi.Int32)>>
+                ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Int)>>
         __errfunc,
     ffi.Pointer<glob_t> __pglob,
   ) {
@@ -198,20 +197,20 @@ class GnuLibC {
 
   late final _globPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int32 Function(
-              ffi.Pointer<ffi.Int8>,
-              ffi.Int32,
+          ffi.Int Function(
+              ffi.Pointer<ffi.Char>,
+              ffi.Int,
               ffi.Pointer<
                   ffi.NativeFunction<
-                      ffi.Int32 Function(ffi.Pointer<ffi.Int8>, ffi.Int32)>>,
+                      ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Int)>>,
               ffi.Pointer<glob_t>)>>('glob');
   late final _glob = _globPtr.asFunction<
       int Function(
-          ffi.Pointer<ffi.Int8>,
+          ffi.Pointer<ffi.Char>,
           int,
           ffi.Pointer<
               ffi.NativeFunction<
-                  ffi.Int32 Function(ffi.Pointer<ffi.Int8>, ffi.Int32)>>,
+                  ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Int)>>,
           ffi.Pointer<glob_t>)>();
 
   void globfree(
@@ -230,7 +229,7 @@ class GnuLibC {
 
   int lstat(
     int __ver,
-    ffi.Pointer<ffi.Int8> __filename,
+    ffi.Pointer<ffi.Char> __filename,
     ffi.Pointer<stat_t> __stat_buf,
   ) {
     return _lstat(
@@ -242,10 +241,10 @@ class GnuLibC {
 
   late final _lstatPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int32 Function(ffi.Int32, ffi.Pointer<ffi.Int8>,
+          ffi.Int Function(ffi.Int, ffi.Pointer<ffi.Char>,
               ffi.Pointer<stat_t>)>>('__lxstat');
   late final _lstat = _lstatPtr.asFunction<
-      int Function(int, ffi.Pointer<ffi.Int8>, ffi.Pointer<stat_t>)>();
+      int Function(int, ffi.Pointer<ffi.Char>, ffi.Pointer<stat_t>)>();
 
   ffi.Pointer<ffi.Void> mmap(
     ffi.Pointer<ffi.Void> __addr,
@@ -267,8 +266,8 @@ class GnuLibC {
 
   late final _mmapPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, ffi.Uint64,
-              ffi.Int32, ffi.Int32, ffi.Int32, ffi.Int64)>>('mmap');
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, ffi.Size,
+              ffi.Int, ffi.Int, ffi.Int, ffi.Long)>>('mmap');
   late final _mmap = _mmapPtr.asFunction<
       ffi.Pointer<ffi.Void> Function(
           ffi.Pointer<ffi.Void>, int, int, int, int, int)>();
@@ -285,12 +284,12 @@ class GnuLibC {
 
   late final _munmapPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int32 Function(ffi.Pointer<ffi.Void>, ffi.Uint64)>>('munmap');
+          ffi.Int Function(ffi.Pointer<ffi.Void>, ffi.Size)>>('munmap');
   late final _munmap =
       _munmapPtr.asFunction<int Function(ffi.Pointer<ffi.Void>, int)>();
 
   int open(
-    ffi.Pointer<ffi.Int8> __file,
+    ffi.Pointer<ffi.Char> __file,
     int __oflag,
   ) {
     return _open(
@@ -300,13 +299,13 @@ class GnuLibC {
   }
 
   late final _openPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int32 Function(ffi.Pointer<ffi.Int8>, ffi.Int32)>>('open');
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Int)>>(
+      'open');
   late final _open =
-      _openPtr.asFunction<int Function(ffi.Pointer<ffi.Int8>, int)>();
+      _openPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, int)>();
 
   void openlog(
-    ffi.Pointer<ffi.Int8> __ident,
+    ffi.Pointer<ffi.Char> __ident,
     int __option,
     int __facility,
   ) {
@@ -320,12 +319,12 @@ class GnuLibC {
   late final _openlogPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(
-              ffi.Pointer<ffi.Int8>, ffi.Int32, ffi.Int32)>>('openlog');
+              ffi.Pointer<ffi.Char>, ffi.Int, ffi.Int)>>('openlog');
   late final _openlog =
-      _openlogPtr.asFunction<void Function(ffi.Pointer<ffi.Int8>, int, int)>();
+      _openlogPtr.asFunction<void Function(ffi.Pointer<ffi.Char>, int, int)>();
 
   int putenv(
-    ffi.Pointer<ffi.Int8> __string,
+    ffi.Pointer<ffi.Char> __string,
   ) {
     return _putenv(
       __string,
@@ -333,10 +332,10 @@ class GnuLibC {
   }
 
   late final _putenvPtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<ffi.Int8>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>)>>(
           'putenv');
   late final _putenv =
-      _putenvPtr.asFunction<int Function(ffi.Pointer<ffi.Int8>)>();
+      _putenvPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
   int setegid(
     int __gid,
@@ -347,12 +346,12 @@ class GnuLibC {
   }
 
   late final _setegidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Uint32)>>('setegid');
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.UnsignedInt)>>('setegid');
   late final _setegid = _setegidPtr.asFunction<int Function(int)>();
 
   int setenv(
-    ffi.Pointer<ffi.Int8> __name,
-    ffi.Pointer<ffi.Int8> __value,
+    ffi.Pointer<ffi.Char> __name,
+    ffi.Pointer<ffi.Char> __value,
     int __replace,
   ) {
     return _setenv(
@@ -364,10 +363,10 @@ class GnuLibC {
 
   late final _setenvPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int32 Function(ffi.Pointer<ffi.Int8>, ffi.Pointer<ffi.Int8>,
-              ffi.Int32)>>('setenv');
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+              ffi.Int)>>('setenv');
   late final _setenv = _setenvPtr.asFunction<
-      int Function(ffi.Pointer<ffi.Int8>, ffi.Pointer<ffi.Int8>, int)>();
+      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
   int seteuid(
     int __uid,
@@ -378,7 +377,7 @@ class GnuLibC {
   }
 
   late final _seteuidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Uint32)>>('seteuid');
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.UnsignedInt)>>('seteuid');
   late final _seteuid = _seteuidPtr.asFunction<int Function(int)>();
 
   int setgid(
@@ -390,7 +389,7 @@ class GnuLibC {
   }
 
   late final _setgidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Uint32)>>('setgid');
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.UnsignedInt)>>('setgid');
   late final _setgid = _setgidPtr.asFunction<int Function(int)>();
 
   int sethostid(
@@ -402,7 +401,7 @@ class GnuLibC {
   }
 
   late final _sethostidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int64)>>('sethostid');
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Long)>>('sethostid');
   late final _sethostid = _sethostidPtr.asFunction<int Function(int)>();
 
   int setlogmask(
@@ -414,7 +413,7 @@ class GnuLibC {
   }
 
   late final _setlogmaskPtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32)>>('setlogmask');
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('setlogmask');
   late final _setlogmask = _setlogmaskPtr.asFunction<int Function(int)>();
 
   int setpgid(
@@ -428,7 +427,7 @@ class GnuLibC {
   }
 
   late final _setpgidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32, ffi.Int32)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Int)>>(
           'setpgid');
   late final _setpgid = _setpgidPtr.asFunction<int Function(int, int)>();
 
@@ -442,9 +441,9 @@ class GnuLibC {
     );
   }
 
-  late final _setregidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Uint32, ffi.Uint32)>>(
-          'setregid');
+  late final _setregidPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.UnsignedInt, ffi.UnsignedInt)>>('setregid');
   late final _setregid = _setregidPtr.asFunction<int Function(int, int)>();
 
   int setreuid(
@@ -457,9 +456,9 @@ class GnuLibC {
     );
   }
 
-  late final _setreuidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Uint32, ffi.Uint32)>>(
-          'setreuid');
+  late final _setreuidPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.UnsignedInt, ffi.UnsignedInt)>>('setreuid');
   late final _setreuid = _setreuidPtr.asFunction<int Function(int, int)>();
 
   int setsid() {
@@ -467,7 +466,7 @@ class GnuLibC {
   }
 
   late final _setsidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function()>>('setsid');
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('setsid');
   late final _setsid = _setsidPtr.asFunction<int Function()>();
 
   int setuid(
@@ -479,12 +478,12 @@ class GnuLibC {
   }
 
   late final _setuidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Uint32)>>('setuid');
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.UnsignedInt)>>('setuid');
   late final _setuid = _setuidPtr.asFunction<int Function(int)>();
 
   int stat(
     int __ver,
-    ffi.Pointer<ffi.Int8> __filename,
+    ffi.Pointer<ffi.Char> __filename,
     ffi.Pointer<stat_t> __stat_buf,
   ) {
     return _stat(
@@ -496,12 +495,12 @@ class GnuLibC {
 
   late final _statPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int32 Function(ffi.Int32, ffi.Pointer<ffi.Int8>,
-              ffi.Pointer<stat_t>)>>('__xstat');
+          ffi.Int Function(
+              ffi.Int, ffi.Pointer<ffi.Char>, ffi.Pointer<stat_t>)>>('__xstat');
   late final _stat = _statPtr.asFunction<
-      int Function(int, ffi.Pointer<ffi.Int8>, ffi.Pointer<stat_t>)>();
+      int Function(int, ffi.Pointer<ffi.Char>, ffi.Pointer<stat_t>)>();
 
-  ffi.Pointer<ffi.Int8> strerror(
+  ffi.Pointer<ffi.Char> strerror(
     int __errnum,
   ) {
     return _strerror(
@@ -510,10 +509,10 @@ class GnuLibC {
   }
 
   late final _strerrorPtr =
-      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Int8> Function(ffi.Int32)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int)>>(
           'strerror');
   late final _strerror =
-      _strerrorPtr.asFunction<ffi.Pointer<ffi.Int8> Function(int)>();
+      _strerrorPtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
 
   int sysinfo(
     ffi.Pointer<sysinfo_t> __info,
@@ -524,14 +523,14 @@ class GnuLibC {
   }
 
   late final _sysinfoPtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<sysinfo_t>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<sysinfo_t>)>>(
           'sysinfo');
   late final _sysinfo =
       _sysinfoPtr.asFunction<int Function(ffi.Pointer<sysinfo_t>)>();
 
   void syslog(
     int __pri,
-    ffi.Pointer<ffi.Int8> __fmt,
+    ffi.Pointer<ffi.Char> __fmt,
   ) {
     return _syslog(
       __pri,
@@ -541,9 +540,9 @@ class GnuLibC {
 
   late final _syslogPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Int32, ffi.Pointer<ffi.Int8>)>>('syslog');
+          ffi.Void Function(ffi.Int, ffi.Pointer<ffi.Char>)>>('syslog');
   late final _syslog =
-      _syslogPtr.asFunction<void Function(int, ffi.Pointer<ffi.Int8>)>();
+      _syslogPtr.asFunction<void Function(int, ffi.Pointer<ffi.Char>)>();
 
   int uname(
     ffi.Pointer<utsname_t> __name,
@@ -554,13 +553,13 @@ class GnuLibC {
   }
 
   late final _unamePtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<utsname_t>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<utsname_t>)>>(
           'uname');
   late final _uname =
       _unamePtr.asFunction<int Function(ffi.Pointer<utsname_t>)>();
 
   int unsetenv(
-    ffi.Pointer<ffi.Int8> __name,
+    ffi.Pointer<ffi.Char> __name,
   ) {
     return _unsetenv(
       __name,
@@ -568,13 +567,13 @@ class GnuLibC {
   }
 
   late final _unsetenvPtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<ffi.Int8>)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>)>>(
           'unsetenv');
   late final _unsetenv =
-      _unsetenvPtr.asFunction<int Function(ffi.Pointer<ffi.Int8>)>();
+      _unsetenvPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
   int wordexp(
-    ffi.Pointer<ffi.Int8> __words,
+    ffi.Pointer<ffi.Char> __words,
     ffi.Pointer<wordexp_t> __pwordexp,
     int __flags,
   ) {
@@ -587,10 +586,10 @@ class GnuLibC {
 
   late final _wordexpPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int32 Function(ffi.Pointer<ffi.Int8>, ffi.Pointer<wordexp_t>,
-              ffi.Int32)>>('wordexp');
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<wordexp_t>,
+              ffi.Int)>>('wordexp');
   late final _wordexp = _wordexpPtr.asFunction<
-      int Function(ffi.Pointer<ffi.Int8>, ffi.Pointer<wordexp_t>, int)>();
+      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<wordexp_t>, int)>();
 
   void wordfree(
     ffi.Pointer<wordexp_t> __wordexp,
@@ -1402,15 +1401,15 @@ const int W_OK = 2;
 const int X_OK = 1;
 
 class glob_t extends ffi.Struct {
-  @ffi.Uint64()
+  @ffi.UnsignedLong()
   external int gl_pathc;
 
-  external ffi.Pointer<ffi.Pointer<ffi.Int8>> gl_pathv;
+  external ffi.Pointer<ffi.Pointer<ffi.Char>> gl_pathv;
 
-  @ffi.Uint64()
+  @ffi.UnsignedLong()
   external int gl_offs;
 
-  @ffi.Int32()
+  @ffi.Int()
   external int gl_flags;
 
   external ffi
@@ -1423,51 +1422,51 @@ class glob_t extends ffi.Struct {
 
   external ffi.Pointer<
       ffi.NativeFunction<
-          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Int8>)>> gl_opendir;
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Char>)>> gl_opendir;
 
   external ffi.Pointer<
           ffi.NativeFunction<
-              ffi.Int32 Function(ffi.Pointer<ffi.Int8>, ffi.Pointer<ffi.Void>)>>
+              ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>)>>
       gl_lstat;
 
   external ffi.Pointer<
           ffi.NativeFunction<
-              ffi.Int32 Function(ffi.Pointer<ffi.Int8>, ffi.Pointer<ffi.Void>)>>
+              ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>)>>
       gl_stat;
 }
 
 class stat_t extends ffi.Struct {
-  @ffi.Uint64()
+  @ffi.UnsignedLong()
   external int st_dev;
 
-  @ffi.Uint64()
+  @ffi.UnsignedLong()
   external int st_ino;
 
-  @ffi.Uint64()
+  @ffi.UnsignedLong()
   external int st_nlink;
 
-  @ffi.Uint32()
+  @ffi.UnsignedInt()
   external int st_mode;
 
-  @ffi.Uint32()
+  @ffi.UnsignedInt()
   external int st_uid;
 
-  @ffi.Uint32()
+  @ffi.UnsignedInt()
   external int st_gid;
 
-  @ffi.Int32()
+  @ffi.Int()
   external int __pad0;
 
-  @ffi.Uint64()
+  @ffi.UnsignedLong()
   external int st_rdev;
 
-  @ffi.Int64()
+  @ffi.Long()
   external int st_size;
 
-  @ffi.Int64()
+  @ffi.Long()
   external int st_blksize;
 
-  @ffi.Int64()
+  @ffi.Long()
   external int st_blocks;
 
   external timespec_t st_atim;
@@ -1477,87 +1476,87 @@ class stat_t extends ffi.Struct {
   external timespec_t st_ctim;
 
   @ffi.Array.multi([3])
-  external ffi.Array<ffi.Int64> __glibc_reserved;
+  external ffi.Array<ffi.Long> __glibc_reserved;
 }
 
 class sysinfo_t extends ffi.Struct {
-  @ffi.Int64()
+  @ffi.Long()
   external int uptime;
 
   @ffi.Array.multi([3])
-  external ffi.Array<ffi.Uint64> loads;
+  external ffi.Array<ffi.UnsignedLong> loads;
 
-  @ffi.Uint64()
+  @ffi.UnsignedLong()
   external int totalram;
 
-  @ffi.Uint64()
+  @ffi.UnsignedLong()
   external int freeram;
 
-  @ffi.Uint64()
+  @ffi.UnsignedLong()
   external int sharedram;
 
-  @ffi.Uint64()
+  @ffi.UnsignedLong()
   external int bufferram;
 
-  @ffi.Uint64()
+  @ffi.UnsignedLong()
   external int totalswap;
 
-  @ffi.Uint64()
+  @ffi.UnsignedLong()
   external int freeswap;
 
-  @ffi.Uint16()
+  @ffi.UnsignedShort()
   external int procs;
 
-  @ffi.Uint16()
+  @ffi.UnsignedShort()
   external int pad;
 
-  @ffi.Uint64()
+  @ffi.UnsignedLong()
   external int totalhigh;
 
-  @ffi.Uint64()
+  @ffi.UnsignedLong()
   external int freehigh;
 
-  @ffi.Uint32()
+  @ffi.UnsignedInt()
   external int mem_unit;
 
   @ffi.Array.multi([0])
-  external ffi.Array<ffi.Int8> _f;
+  external ffi.Array<ffi.Char> _f;
 }
 
 class timespec_t extends ffi.Struct {
-  @ffi.Int64()
+  @ffi.Long()
   external int tv_sec;
 
-  @ffi.Int64()
+  @ffi.Long()
   external int tv_nsec;
 }
 
 class utsname_t extends ffi.Struct {
   @ffi.Array.multi([65])
-  external ffi.Array<ffi.Int8> sysname;
+  external ffi.Array<ffi.Char> sysname;
 
   @ffi.Array.multi([65])
-  external ffi.Array<ffi.Int8> nodename;
+  external ffi.Array<ffi.Char> nodename;
 
   @ffi.Array.multi([65])
-  external ffi.Array<ffi.Int8> release;
+  external ffi.Array<ffi.Char> release;
 
   @ffi.Array.multi([65])
-  external ffi.Array<ffi.Int8> version;
+  external ffi.Array<ffi.Char> version;
 
   @ffi.Array.multi([65])
-  external ffi.Array<ffi.Int8> machine;
+  external ffi.Array<ffi.Char> machine;
 
   @ffi.Array.multi([65])
-  external ffi.Array<ffi.Int8> __domainname;
+  external ffi.Array<ffi.Char> __domainname;
 }
 
 class wordexp_t extends ffi.Struct {
-  @ffi.Uint64()
+  @ffi.Size()
   external int we_wordc;
 
-  external ffi.Pointer<ffi.Pointer<ffi.Int8>> we_wordv;
+  external ffi.Pointer<ffi.Pointer<ffi.Char>> we_wordv;
 
-  @ffi.Uint64()
+  @ffi.Size()
   external int we_offs;
 }
