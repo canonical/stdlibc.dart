@@ -8,10 +8,10 @@ void main() {
   test('mmap', () {
     final dir = Directory.systemTemp;
     dir.createSync();
-    final path = p.join(dir.path, 'libc.dart');
+    final path = p.join(dir.path, 'glibc.dart');
     final file = File(path);
     file.createSync();
-    file.writeAsStringSync('libc.dart');
+    file.writeAsStringSync('glibc.dart');
     addTearDown(file.deleteSync);
 
     final fd = open(path, flags: O_RDONLY);
@@ -19,7 +19,7 @@ void main() {
 
     final map = mmap(fd: fd, length: 9, prot: PROT_READ, flags: MAP_PRIVATE);
     expect(map.address, isNonNegative);
-    expect(String.fromCharCodes(map.data.asInt8List()), equals('libc.dart'));
+    expect(String.fromCharCodes(map.data.asInt8List()), equals('glibc.dart'));
 
     close(fd);
     munmap(map);
