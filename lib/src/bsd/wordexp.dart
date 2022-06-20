@@ -8,7 +8,7 @@ import '../wordexp.dart';
 import 'bsd.dart';
 import 'ffigen.dart' as ffi;
 
-mixin BsdWordexpMixin on LibC {
+mixin BsdWordexpMixin on StdLibC {
   @override
   List<String> wordexp(String words, int flags) {
     return ffi.using((arena) {

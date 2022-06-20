@@ -3,7 +3,7 @@ import 'dart:ffi';
 import '../libc.dart';
 import 'gnu.dart';
 
-mixin GnuErrnoMixin on LibC {
+mixin GnuErrnoMixin on StdLibC {
   @override
   int get errno => dylib.errno().value;
 

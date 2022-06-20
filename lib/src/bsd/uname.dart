@@ -8,7 +8,7 @@ import '../util.dart';
 import 'bsd.dart';
 import 'ffigen.dart' as ffi;
 
-mixin BsdUnameMixin on LibC {
+mixin BsdUnameMixin on StdLibC {
   @override
   Utsname uname() {
     return ffi.using((arena) {

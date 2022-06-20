@@ -8,7 +8,7 @@ import '../util.dart';
 import 'ffigen.dart' as ffi;
 import 'gnu.dart';
 
-mixin GnuSysinfoMixin on LibC {
+mixin GnuSysinfoMixin on StdLibC {
   @override
   Sysinfo sysinfo() {
     return ffi.using((arena) {

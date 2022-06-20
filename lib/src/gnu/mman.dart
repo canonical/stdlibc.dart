@@ -5,7 +5,7 @@ import '../mman.dart';
 import '../util.dart';
 import 'gnu.dart';
 
-mixin GnuMmanMixin on LibC {
+mixin GnuMmanMixin on StdLibC {
   @override
   Mmap mmap(
     int addr,

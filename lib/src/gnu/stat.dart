@@ -8,7 +8,7 @@ import '../util.dart';
 import 'ffigen.dart' as ffi;
 import 'gnu.dart';
 
-mixin GnuStatMixin on LibC {
+mixin GnuStatMixin on StdLibC {
   @override
   Stat stat(String file) {
     return ffi.using((arena) {

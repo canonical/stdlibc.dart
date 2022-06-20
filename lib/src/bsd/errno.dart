@@ -3,7 +3,7 @@ import 'dart:ffi' as ffi;
 import '../libc.dart';
 import 'bsd.dart';
 
-mixin BsdErrnoMixin on LibC {
+mixin BsdErrnoMixin on StdLibC {
   @override
   int get errno => dylib.errno().value;
 

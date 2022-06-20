@@ -17,9 +17,9 @@ import 'uname.dart';
 import 'unistd.dart';
 import 'wordexp.dart';
 
-final libc = Platform.isMacOS ? BsdLibC() : GnuLibC();
+final StdLibC libc = Platform.isMacOS ? BsdLibC() : GnuLibC();
 
-abstract class LibC
+abstract class StdLibC
     with
         ErrnoMixin,
         FcntlMixin,

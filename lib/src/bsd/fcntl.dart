@@ -4,7 +4,7 @@ import '../libc.dart';
 import '../util.dart';
 import 'bsd.dart';
 
-mixin BsdFcntlMixin on LibC {
+mixin BsdFcntlMixin on StdLibC {
   @override
   int open(String file, int flags) {
     return ffi.using((arena) {

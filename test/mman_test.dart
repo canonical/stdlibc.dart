@@ -1,25 +1,25 @@
 import 'dart:io';
 
-import 'package:libc/libc.dart';
 import 'package:path/path.dart' as p;
+import 'package:stdlibc/stdlibc.dart';
 import 'package:test/test.dart';
 
 void main() {
   test('mmap', () {
     final dir = Directory.systemTemp;
     dir.createSync();
-    final path = p.join(dir.path, 'libc.dart');
+    final path = p.join(dir.path, 'stdlibc.dart');
     final file = File(path);
     file.createSync();
-    file.writeAsStringSync('libc.dart');
+    file.writeAsStringSync('stdlibc.dart');
     addTearDown(file.deleteSync);
 
     final fd = open(path, flags: O_RDONLY);
     expect(fd, isNonNegative);
 
-    final map = mmap(fd: fd, length: 9, prot: PROT_READ, flags: MAP_PRIVATE);
+    final map = mmap(fd: fd, length: 12, prot: PROT_READ, flags: MAP_PRIVATE);
     expect(map.address, isNonNegative);
-    expect(String.fromCharCodes(map.data.asInt8List()), equals('libc.dart'));
+    expect(String.fromCharCodes(map.data.asInt8List()), equals('stdlibc.dart'));
 
     close(fd);
     munmap(map);

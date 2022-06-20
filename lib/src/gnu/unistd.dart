@@ -2,7 +2,7 @@ import '../libc.dart';
 import '../util.dart';
 import 'gnu.dart';
 
-mixin GnuUnistdMixin on LibC {
+mixin GnuUnistdMixin on StdLibC {
   @override
   void close(int fd) => checkErrno('close', dylib.close(fd));
   @override
