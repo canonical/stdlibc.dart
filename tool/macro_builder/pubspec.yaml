@@ -1,4 +1,5 @@
 name: macro_builder
+publish_to: 'none'
 
 environment:
   sdk: '>=2.16.0 <3.0.0'
