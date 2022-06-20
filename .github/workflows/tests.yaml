@@ -16,8 +16,6 @@ jobs:
         os:
           - ubuntu-20.04
           - ubuntu-18.04
-          - macos-11
-          - macos-10.15
     steps:
       - uses: actions/checkout@v2
       - uses: dart-lang/setup-dart@v1

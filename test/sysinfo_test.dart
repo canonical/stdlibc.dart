@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:glibc/glibc.dart';
 import 'package:test/test.dart';
 
@@ -22,7 +20,7 @@ void main() {
     expect(info.totalhigh, isNonNegative);
     expect(info.freehigh, isNonNegative);
     expect(info.mem_unit, isPositive);
-  }, skip: Platform.isMacOS);
+  });
 
   test('data class', () {
     final epoch = DateTime.fromMillisecondsSinceEpoch(0);
