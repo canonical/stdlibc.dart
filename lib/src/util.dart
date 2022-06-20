@@ -15,32 +15,32 @@ void checkErrno(String id, int res) {
 }
 
 extension CString on String {
-  ffi.Pointer<ffi.Int8> toCString(ffi.Allocator alloc) {
+  ffi.Pointer<ffi.Char> toCString(ffi.Allocator alloc) {
     return toNativeUtf8(allocator: alloc).cast();
   }
 }
 
-extension Int8PointerString on ffi.Pointer<ffi.Int8> {
+extension CharPointerString on ffi.Pointer<ffi.Char> {
   String? toDartString({int? length}) {
     if (this == ffi.nullptr) return null;
     return cast<ffi.Utf8>().toDartString(length: length);
   }
 }
 
-extension Int8PointerPointerString on ffi.Pointer<ffi.Pointer<ffi.Int8>> {
+extension CharPointerPointerString on ffi.Pointer<ffi.Pointer<ffi.Char>> {
   List<String> toDartStrings({required int length}) {
     return <String>[for (var i = 0; i < length; ++i) this[i].toDartString()!];
   }
 }
 
-extension Int8ArrayString on ffi.Array<ffi.Int8> {
+extension CharArrayString on ffi.Array<ffi.Char> {
   String toDartString(int maxLength) {
     final codeUnits = asTypedList(maxLength).takeWhile((c) => c != 0);
     return utf8.decode(codeUnits.toList());
   }
 }
 
-extension Int8TypedList on ffi.Array<ffi.Int8> {
+extension CharTypedList on ffi.Array<ffi.Char> {
   // https://github.com/dart-lang/sdk/issues/45508
   List<int> asTypedList(int length) {
     return <int>[
