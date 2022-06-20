@@ -47,7 +47,7 @@ jobs:
         delete-branch: true
 
   macros:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v2
     - uses: dart-lang/setup-dart@v1
