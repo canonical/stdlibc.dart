@@ -19,7 +19,7 @@ import 'wordexp.dart';
 
 final dylib = ffi.GnuLibC(ffi.DynamicLibrary.process());
 
-class GnuLibC extends LibC
+class GnuLibC extends StdLibC
     with
         GnuErrnoMixin,
         GnuFcntlMixin,

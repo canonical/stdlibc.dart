@@ -92,7 +92,7 @@ class MacroBuilder implements Builder {
         ..body.addAll([
           Mixin((b) => b
             ..name = '${impl.key.capitalized}MacroMixin'
-            ..on = refer('LibC')
+            ..on = refer('StdLibC')
             ..methods.addAll([
               for (final m in macros)
                 Method((b) => b

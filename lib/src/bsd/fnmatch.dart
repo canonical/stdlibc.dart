@@ -4,7 +4,7 @@ import '../libc.dart';
 import '../util.dart';
 import 'bsd.dart';
 
-mixin BsdFnmatchMixin on LibC {
+mixin BsdFnmatchMixin on StdLibC {
   @override
   int fnmatch(String pattern, String name, int flags) {
     return ffi.using((arena) {

@@ -2,7 +2,7 @@ import '../libc.dart';
 import '../util.dart';
 import 'bsd.dart';
 
-mixin BsdUnistdMixin on LibC {
+mixin BsdUnistdMixin on StdLibC {
   @override
   void close(int fd) => checkErrno('close', dylib.close(fd));
   @override

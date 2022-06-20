@@ -8,7 +8,7 @@ import '../util.dart';
 import 'bsd.dart';
 import 'ffigen.dart' as ffi;
 
-mixin BsdStatMixin on LibC {
+mixin BsdStatMixin on StdLibC {
   @override
   Stat stat(String file) {
     return ffi.using((arena) {

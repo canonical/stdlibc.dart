@@ -1,4 +1,4 @@
-name: libc
+name: stdlibc
 description: C Standard Library
 
 environment:

@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:libc/libc.dart';
+import 'package:stdlibc/stdlibc.dart';
 import 'package:test/test.dart';
 
 void main() {

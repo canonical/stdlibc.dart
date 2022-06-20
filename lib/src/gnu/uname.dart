@@ -8,7 +8,7 @@ import '../util.dart';
 import 'ffigen.dart' as ffi;
 import 'gnu.dart';
 
-mixin GnuUnameMixin on LibC {
+mixin GnuUnameMixin on StdLibC {
   @override
   Utsname uname() {
     return ffi.using((arena) {

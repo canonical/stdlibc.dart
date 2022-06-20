@@ -24,7 +24,7 @@ ffi.Pointer<T> inode64Lookup<T extends ffi.NativeType>(String symbolName) {
   return ffi.DynamicLibrary.process().lookup('$symbolName\$INODE64');
 }
 
-class BsdLibC extends LibC
+class BsdLibC extends StdLibC
     with
         BsdErrnoMixin,
         BsdFcntlMixin,

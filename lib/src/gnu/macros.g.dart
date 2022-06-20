@@ -1,7 +1,7 @@
 import '../libc.dart';
 import 'ffigen.dart' as ffi;
 
-mixin GnuMacroMixin on LibC {
+mixin GnuMacroMixin on StdLibC {
   @override
   int get ACCESSPERMS => ffi.ACCESSPERMS;
   @override

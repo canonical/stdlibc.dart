@@ -1,7 +1,7 @@
 import '../libc.dart';
 import 'ffigen.dart' as ffi;
 
-mixin BsdMacroMixin on LibC {
+mixin BsdMacroMixin on StdLibC {
   @override
   int get ACCESSPERMS => ffi.ACCESSPERMS;
   @override
