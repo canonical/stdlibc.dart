@@ -8,6 +8,7 @@ import 'fnmatch.dart';
 import 'glob.dart';
 import 'macros.g.dart';
 import 'mman.dart';
+import 'select.dart';
 import 'stat.dart';
 import 'stdlib.dart';
 import 'string.dart';
@@ -32,6 +33,7 @@ class BsdLibC extends StdLibC
         BsdGlobMixin,
         BsdMacroMixin,
         BsdMmanMixin,
+        BsdSelectMixin,
         BsdStatMixin,
         BsdStdlibMixin,
         BsdStringMixin,

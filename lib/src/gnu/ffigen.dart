@@ -337,6 +337,30 @@ class GnuLibC {
   late final _putenv =
       _putenvPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
+  int select(
+    int __nfds,
+    ffi.Pointer<fd_set> __readfds,
+    ffi.Pointer<fd_set> __writefds,
+    ffi.Pointer<fd_set> __exceptfds,
+    ffi.Pointer<timeval_t> __timeout,
+  ) {
+    return _select(
+      __nfds,
+      __readfds,
+      __writefds,
+      __exceptfds,
+      __timeout,
+    );
+  }
+
+  late final _selectPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Int, ffi.Pointer<fd_set>, ffi.Pointer<fd_set>,
+              ffi.Pointer<fd_set>, ffi.Pointer<timeval_t>)>>('select');
+  late final _select = _selectPtr.asFunction<
+      int Function(int, ffi.Pointer<fd_set>, ffi.Pointer<fd_set>,
+          ffi.Pointer<fd_set>, ffi.Pointer<timeval_t>)>();
+
   int setegid(
     int __gid,
   ) {
@@ -1400,6 +1424,11 @@ const int W_OK = 2;
 
 const int X_OK = 1;
 
+class fd_set extends ffi.Struct {
+  @ffi.Array.multi([16])
+  external ffi.Array<ffi.Long> __fds_bits;
+}
+
 class glob_t extends ffi.Struct {
   @ffi.UnsignedLong()
   external int gl_pathc;
@@ -1529,6 +1558,14 @@ class timespec_t extends ffi.Struct {
 
   @ffi.Long()
   external int tv_nsec;
+}
+
+class timeval_t extends ffi.Struct {
+  @ffi.Long()
+  external int tv_sec;
+
+  @ffi.Long()
+  external int tv_usec;
 }
 
 class utsname_t extends ffi.Struct {

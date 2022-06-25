@@ -8,6 +8,7 @@ import 'fnmatch.dart';
 import 'glob.dart';
 import 'macros.g.dart';
 import 'mman.dart';
+import 'select.dart';
 import 'stat.dart';
 import 'stdlib.dart';
 import 'string.dart';
@@ -27,6 +28,7 @@ class GnuLibC extends StdLibC
         GnuGlobMixin,
         GnuMacroMixin,
         GnuMmanMixin,
+        GnuSelectMixin,
         GnuStatMixin,
         GnuStdlibMixin,
         GnuStringMixin,

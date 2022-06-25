@@ -36,6 +36,8 @@ functions:
     # mman.h
     - "mmap"
     - "munmap"
+    # select.h
+    - "select"
     # stdlib.h
     - "getenv"
     - "putenv"
@@ -84,16 +86,20 @@ unnamed-enums:
     - "[A-Z].*"
 structs:
   include:
+    - "fdset"
     - "glob_t"
     - "stat"
     - "sysinfo"
     - "timespec"
+    - "timeval"
     - "utsname"
     - "wordexp_t"
   rename:
+    "fdset": "fdset_t"
     "stat": "stat_t"
     "sysinfo": "sysinfo_t"
     "timespec": "timespec_t"
+    "timeval": "timeval_t"
     "utsname": "utsname_t"
 unions:
   exclude:

@@ -7,6 +7,7 @@ export 'src/fnmatch.dart' hide FnmatchMixin;
 export 'src/glob.dart' hide GlobMixin;
 export 'src/macros.g.dart' hide MacroMixin;
 export 'src/mman.dart' hide MmanMixin;
+export 'src/select.dart' hide SelectMixin;
 export 'src/stat.dart' hide StatMixin;
 export 'src/stdlib.dart' hide StdlibMixin;
 export 'src/string.dart' hide StringMixin;

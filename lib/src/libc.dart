@@ -8,6 +8,7 @@ import 'glob.dart';
 import 'gnu/gnu.dart';
 import 'macros.g.dart';
 import 'mman.dart';
+import 'select.dart';
 import 'stat.dart';
 import 'stdlib.dart';
 import 'string.dart';
@@ -27,6 +28,7 @@ abstract class StdLibC
         GlobMixin,
         MacroMixin,
         MmanMixin,
+        SelectMixin,
         StatMixin,
         StdlibMixin,
         StringMixin,
