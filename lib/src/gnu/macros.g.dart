@@ -1047,6 +1047,36 @@ mixin GnuMacroMixin on StdLibC {
   @override
   int get PDP_ENDIAN => ffi.PDP_ENDIAN;
   @override
+  int get POLLATTRIB => throw UnsupportedError('POLLATTRIB');
+  @override
+  int get POLLERR => ffi.POLLERR;
+  @override
+  int get POLLEXTEND => throw UnsupportedError('POLLEXTEND');
+  @override
+  int get POLLHUP => ffi.POLLHUP;
+  @override
+  int get POLLIN => ffi.POLLIN;
+  @override
+  int get POLLNLINK => throw UnsupportedError('POLLNLINK');
+  @override
+  int get POLLNVAL => ffi.POLLNVAL;
+  @override
+  int get POLLOUT => ffi.POLLOUT;
+  @override
+  int get POLLPRI => ffi.POLLPRI;
+  @override
+  int get POLLRDBAND => ffi.POLLRDBAND;
+  @override
+  int get POLLRDNORM => ffi.POLLRDNORM;
+  @override
+  int get POLLSTANDARD => throw UnsupportedError('POLLSTANDARD');
+  @override
+  int get POLLWRBAND => ffi.POLLWRBAND;
+  @override
+  int get POLLWRITE => throw UnsupportedError('POLLWRITE');
+  @override
+  int get POLLWRNORM => ffi.POLLWRNORM;
+  @override
   int get POLL_ERR => throw UnsupportedError('POLL_ERR');
   @override
   int get POLL_HUP => throw UnsupportedError('POLL_HUP');

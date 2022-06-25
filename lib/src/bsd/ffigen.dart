@@ -355,6 +355,25 @@ class BsdLibC {
   late final _openlog =
       _openlogPtr.asFunction<void Function(ffi.Pointer<ffi.Char>, int, int)>();
 
+  int poll(
+    ffi.Pointer<pollfd_t> arg0,
+    int arg1,
+    int arg2,
+  ) {
+    return _poll(
+      arg0,
+      arg1,
+      arg2,
+    );
+  }
+
+  late final _pollPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<pollfd_t>, ffi.UnsignedInt, ffi.Int)>>('poll');
+  late final _poll =
+      _pollPtr.asFunction<int Function(ffi.Pointer<pollfd_t>, int, int)>();
+
   int putenv(
     ffi.Pointer<ffi.Char> arg0,
   ) {
@@ -1512,6 +1531,36 @@ const int O_WRONLY = 1;
 
 const int PDP_ENDIAN = 3412;
 
+const int POLLATTRIB = 1024;
+
+const int POLLERR = 8;
+
+const int POLLEXTEND = 512;
+
+const int POLLHUP = 16;
+
+const int POLLIN = 1;
+
+const int POLLNLINK = 2048;
+
+const int POLLNVAL = 32;
+
+const int POLLOUT = 4;
+
+const int POLLPRI = 2;
+
+const int POLLRDBAND = 128;
+
+const int POLLRDNORM = 64;
+
+const int POLLSTANDARD = 511;
+
+const int POLLWRBAND = 256;
+
+const int POLLWRITE = 4096;
+
+const int POLLWRNORM = 4;
+
 const int POLL_ERR = 4;
 
 const int POLL_HUP = 6;
@@ -2014,6 +2063,17 @@ class glob_t extends ffi.Struct {
           ffi.NativeFunction<
               ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<stat_t>)>>
       gl_stat;
+}
+
+class pollfd_t extends ffi.Struct {
+  @ffi.Int()
+  external int fd;
+
+  @ffi.Short()
+  external int events;
+
+  @ffi.Short()
+  external int revents;
 }
 
 class stat_t extends ffi.Struct {
