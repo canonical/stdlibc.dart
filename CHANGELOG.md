@@ -1,3 +1,8 @@
+## 0.0.2+1
+
+* Tweak lints.
+* Declare supported platforms.
+
 ## 0.0.2
 
 * Add poll().
