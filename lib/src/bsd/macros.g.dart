@@ -1029,6 +1029,36 @@ mixin BsdMacroMixin on StdLibC {
   @override
   int get PDP_ENDIAN => ffi.PDP_ENDIAN;
   @override
+  int get POLLATTRIB => ffi.POLLATTRIB;
+  @override
+  int get POLLERR => ffi.POLLERR;
+  @override
+  int get POLLEXTEND => ffi.POLLEXTEND;
+  @override
+  int get POLLHUP => ffi.POLLHUP;
+  @override
+  int get POLLIN => ffi.POLLIN;
+  @override
+  int get POLLNLINK => ffi.POLLNLINK;
+  @override
+  int get POLLNVAL => ffi.POLLNVAL;
+  @override
+  int get POLLOUT => ffi.POLLOUT;
+  @override
+  int get POLLPRI => ffi.POLLPRI;
+  @override
+  int get POLLRDBAND => ffi.POLLRDBAND;
+  @override
+  int get POLLRDNORM => ffi.POLLRDNORM;
+  @override
+  int get POLLSTANDARD => ffi.POLLSTANDARD;
+  @override
+  int get POLLWRBAND => ffi.POLLWRBAND;
+  @override
+  int get POLLWRITE => ffi.POLLWRITE;
+  @override
+  int get POLLWRNORM => ffi.POLLWRNORM;
+  @override
   int get POLL_ERR => ffi.POLL_ERR;
   @override
   int get POLL_HUP => ffi.POLL_HUP;
