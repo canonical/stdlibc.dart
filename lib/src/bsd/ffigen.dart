@@ -369,6 +369,34 @@ class BsdLibC {
   late final _putenv =
       _putenvPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
+  int select(
+    int arg0,
+    ffi.Pointer<fd_set_t> arg1,
+    ffi.Pointer<fd_set_t> arg2,
+    ffi.Pointer<fd_set_t> arg3,
+    ffi.Pointer<timeval_t> arg4,
+  ) {
+    return _select(
+      arg0,
+      arg1,
+      arg2,
+      arg3,
+      arg4,
+    );
+  }
+
+  late final _selectPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Int,
+              ffi.Pointer<fd_set_t>,
+              ffi.Pointer<fd_set_t>,
+              ffi.Pointer<fd_set_t>,
+              ffi.Pointer<timeval_t>)>>('select');
+  late final _select = _selectPtr.asFunction<
+      int Function(int, ffi.Pointer<fd_set_t>, ffi.Pointer<fd_set_t>,
+          ffi.Pointer<fd_set_t>, ffi.Pointer<timeval_t>)>();
+
   int setegid(
     int arg0,
   ) {
@@ -1978,6 +2006,11 @@ const int X_OK = 1;
 
 class dirent extends ffi.Opaque {}
 
+class fd_set_t extends ffi.Struct {
+  @ffi.Array.multi([32])
+  external ffi.Array<ffi.Int> fds_bits;
+}
+
 class glob_t extends ffi.Struct {
   @ffi.Size()
   external int gl_pathc;
@@ -2074,6 +2107,14 @@ class timespec_t extends ffi.Struct {
 
   @ffi.Long()
   external int tv_nsec;
+}
+
+class timeval_t extends ffi.Struct {
+  @ffi.Long()
+  external int tv_sec;
+
+  @ffi.Int()
+  external int tv_usec;
 }
 
 class utsname_t extends ffi.Struct {
