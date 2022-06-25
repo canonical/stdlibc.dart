@@ -1,5 +1,7 @@
 name: stdlibc
-description: C Standard Library
+description: |
+  C Standard Library - FFI bindings to the GNU C Library on Linux, and the BSD
+  C Library on macOS.
 homepage: https://github.com/ubuntu-flutter-community/stdlibc.dart
 repository: https://github.com/ubuntu-flutter-community/stdlibc.dart
 issue_tracker: https://github.com/ubuntu-flutter-community/stdlibc.dart/issues
