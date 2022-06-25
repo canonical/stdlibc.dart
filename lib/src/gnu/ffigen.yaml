@@ -2,7 +2,7 @@ name: GnuLibC
 description: "GNU C Library"
 output: "lib/src/gnu/ffigen.dart"
 preamble: |
-  // ignore_for_file: non_positive_array_dimension
+  // ignore_for_file: non_positive_array_dimension, unused_field, type=lint
 sort: true
 llvm-path:
   - "/usr/lib/llvm-9"
