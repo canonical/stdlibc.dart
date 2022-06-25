@@ -36,8 +36,8 @@ extension GnuTimeval on Duration {
 }
 
 extension GnuFdSet on Int64List {
-  ffi.Pointer<ffi.fd_set> toFdSet(ffi.Allocator alloc) {
-    final fds = alloc<ffi.fd_set>();
+  ffi.Pointer<ffi.fd_set_t> toFdSet(ffi.Allocator alloc) {
+    final fds = alloc<ffi.fd_set_t>();
     fds.cast<ffi.Int64>().asTypedList(length).setAll(0, this);
     return fds;
   }

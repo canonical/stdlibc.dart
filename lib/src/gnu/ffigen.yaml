@@ -86,7 +86,7 @@ unnamed-enums:
     - "[A-Z].*"
 structs:
   include:
-    - "fdset"
+    - "fd_set"
     - "glob_t"
     - "stat"
     - "sysinfo"
@@ -95,7 +95,7 @@ structs:
     - "utsname"
     - "wordexp_t"
   rename:
-    "fdset": "fdset_t"
+    "fd_set": "fd_set_t"
     "stat": "stat_t"
     "sysinfo": "sysinfo_t"
     "timespec": "timespec_t"

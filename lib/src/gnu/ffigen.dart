@@ -339,9 +339,9 @@ class GnuLibC {
 
   int select(
     int __nfds,
-    ffi.Pointer<fd_set> __readfds,
-    ffi.Pointer<fd_set> __writefds,
-    ffi.Pointer<fd_set> __exceptfds,
+    ffi.Pointer<fd_set_t> __readfds,
+    ffi.Pointer<fd_set_t> __writefds,
+    ffi.Pointer<fd_set_t> __exceptfds,
     ffi.Pointer<timeval_t> __timeout,
   ) {
     return _select(
@@ -355,11 +355,15 @@ class GnuLibC {
 
   late final _selectPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int Function(ffi.Int, ffi.Pointer<fd_set>, ffi.Pointer<fd_set>,
-              ffi.Pointer<fd_set>, ffi.Pointer<timeval_t>)>>('select');
+          ffi.Int Function(
+              ffi.Int,
+              ffi.Pointer<fd_set_t>,
+              ffi.Pointer<fd_set_t>,
+              ffi.Pointer<fd_set_t>,
+              ffi.Pointer<timeval_t>)>>('select');
   late final _select = _selectPtr.asFunction<
-      int Function(int, ffi.Pointer<fd_set>, ffi.Pointer<fd_set>,
-          ffi.Pointer<fd_set>, ffi.Pointer<timeval_t>)>();
+      int Function(int, ffi.Pointer<fd_set_t>, ffi.Pointer<fd_set_t>,
+          ffi.Pointer<fd_set_t>, ffi.Pointer<timeval_t>)>();
 
   int setegid(
     int __gid,
@@ -1424,7 +1428,7 @@ const int W_OK = 2;
 
 const int X_OK = 1;
 
-class fd_set extends ffi.Struct {
+class fd_set_t extends ffi.Struct {
   @ffi.Array.multi([16])
   external ffi.Array<ffi.Long> __fds_bits;
 }
