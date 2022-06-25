@@ -1,3 +1,7 @@
+## 0.0.2+2
+
+* Ignore lints for pub.
+
 ## 0.0.2+1
 
 * Tweak lints.
