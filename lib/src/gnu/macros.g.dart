@@ -1,5 +1,5 @@
 import '../libc.dart';
-import 'ffigen.dart' as ffi;
+import 'ffigen.dart' as ffi; // ignore_for_file: type=lint
 
 mixin GnuMacroMixin on StdLibC {
   @override
