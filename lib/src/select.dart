@@ -5,6 +5,7 @@ import 'package:meta/meta.dart';
 
 import 'libc.dart';
 import 'macros.g.dart';
+import 'util.dart';
 
 bool FD_ISSET(int d, FdSet s) => s.isSet(d);
 void FD_SET(int d, FdSet s) => s.set(d);
@@ -18,13 +19,15 @@ int select(
   FdSet? exceptfds,
   Duration? timeout,
 }) {
-  return libc.select(
+  final res = libc.select(
     nfds,
     readfds: readfds?._bits,
     writefds: writefds?._bits,
     exceptfds: exceptfds?._bits,
     timeout: timeout,
   );
+  checkErrno('select', res);
+  return res;
 }
 
 @immutable
