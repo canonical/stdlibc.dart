@@ -10,6 +10,10 @@ version: 0.0.2
 environment:
   sdk: '>=2.17.0 <3.0.0'
 
+platforms:
+  linux:
+  macos:
+
 dependencies:
   collection: ^1.16.0
   ffi: ^2.0.1
