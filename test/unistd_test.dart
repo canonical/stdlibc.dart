@@ -19,4 +19,13 @@ void main() {
   test('sid', () {
     expect(getsid(getpid()), isNonNegative);
   });
+
+  test('pipe', () {
+    final fds = pipe();
+    expect(fds, hasLength(2));
+    expect(fds.first, isPositive);
+    expect(fds.last, isPositive);
+    close(fds.first);
+    close(fds.last);
+  });
 }

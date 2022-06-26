@@ -26,6 +26,8 @@ int getsid(int pid) => libc.getsid(pid);
 /// Returns the real user ID of the calling process.
 int getuid() => libc.getuid();
 
+List<int> pipe() => libc.pipe();
+
 /// Sets the effective group ID of the calling process.
 int setegid(int gid) => libc.setegid(gid);
 
@@ -60,6 +62,7 @@ mixin UnistdMixin {
   int getppid();
   int getsid(int pid);
   int getuid();
+  List<int> pipe();
   int setegid(int gid);
   int seteuid(int uid);
   int setgid(int gid);
