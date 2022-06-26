@@ -1,3 +1,7 @@
+import 'dart:ffi' as ffi;
+
+import 'package:ffi/ffi.dart' as ffi;
+
 import '../libc.dart';
 import '../util.dart';
 import 'gnu.dart';
@@ -21,6 +25,16 @@ mixin GnuUnistdMixin on StdLibC {
   int getsid(int pid) => dylib.getsid(pid);
   @override
   int getuid() => dylib.getuid();
+  @override
+  List<int> pipe() {
+    return ffi.using((arena) {
+      final fds = arena<ffi.Int>(2);
+      final res = dylib.pipe(fds);
+      checkErrno('pipe', res);
+      return [fds[0], fds[1]];
+    });
+  }
+
   @override
   int setegid(int gid) => dylib.setegid(gid);
   @override

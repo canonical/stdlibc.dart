@@ -325,6 +325,19 @@ class GnuLibC {
   late final _openlog =
       _openlogPtr.asFunction<void Function(ffi.Pointer<ffi.Char>, int, int)>();
 
+  int pipe(
+    ffi.Pointer<ffi.Int> __pipedes,
+  ) {
+    return _pipe(
+      __pipedes,
+    );
+  }
+
+  late final _pipePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>>(
+          'pipe');
+  late final _pipe = _pipePtr.asFunction<int Function(ffi.Pointer<ffi.Int>)>();
+
   int poll(
     ffi.Pointer<pollfd_t> __fds,
     int __nfds,

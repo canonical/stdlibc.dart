@@ -59,6 +59,7 @@ functions:
     # unistd.h
     - "close"
     - "get.*id"
+    - "pipe"
     - "set.*id"
     # utsname.h
     - "uname"
