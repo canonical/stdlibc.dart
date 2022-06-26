@@ -1,3 +1,7 @@
+## 0.0.4
+
+* Add read() and write().
+
 ## 0.0.3
 
 * Add pipe().
