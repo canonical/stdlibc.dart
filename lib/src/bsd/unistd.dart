@@ -37,7 +37,7 @@ mixin BsdUnistdMixin on StdLibC {
   }
 
   @override
-  Int8List read(int fd, int count) {
+  List<int> read(int fd, int count) {
     return ffi.using((arena) {
       final buf = arena<ffi.Int8>(count);
       final res = dylib.read(fd, buf.cast(), count);
@@ -63,7 +63,7 @@ mixin BsdUnistdMixin on StdLibC {
   @override
   int setuid(int uid) => dylib.setuid(uid);
   @override
-  int write(int fd, Int8List buffer) {
+  int write(int fd, List<int> buffer) {
     return ffi.using((arena) {
       final buf = arena<ffi.Int8>(buffer.length);
       buf.asTypedList(buffer.length).setAll(0, buffer);

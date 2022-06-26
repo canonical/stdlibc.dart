@@ -1,5 +1,3 @@
-import 'dart:typed_data';
-
 import 'libc.dart';
 
 void close(int fd) => libc.close(fd);
@@ -30,7 +28,7 @@ int getuid() => libc.getuid();
 
 List<int> pipe() => libc.pipe();
 
-Int8List read(int fd, int count) => libc.read(fd, count);
+List<int> read(int fd, int count) => libc.read(fd, count);
 
 /// Sets the effective group ID of the calling process.
 int setegid(int gid) => libc.setegid(gid);
@@ -56,7 +54,7 @@ int setsid() => libc.setsid();
 /// Sets the effective user ID of the calling process.
 int setuid(int uid) => libc.setuid(uid);
 
-int write(int fd, Int8List buffer) => libc.write(fd, buffer);
+int write(int fd, List<int> buffer) => libc.write(fd, buffer);
 
 mixin UnistdMixin {
   void close(int fd);
@@ -69,7 +67,7 @@ mixin UnistdMixin {
   int getsid(int pid);
   int getuid();
   List<int> pipe();
-  Int8List read(int fd, int count);
+  List<int> read(int fd, int count);
   int setegid(int gid);
   int seteuid(int uid);
   int setgid(int gid);
@@ -78,5 +76,5 @@ mixin UnistdMixin {
   int setreuid(int ruid, int euid);
   int setsid();
   int setuid(int uid);
-  int write(int fd, Int8List buffer);
+  int write(int fd, List<int> buffer);
 }

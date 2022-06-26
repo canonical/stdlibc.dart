@@ -1,5 +1,3 @@
-import 'dart:typed_data';
-
 import 'package:stdlibc/stdlibc.dart';
 import 'package:test/test.dart';
 
@@ -27,7 +25,7 @@ void main() {
     expect(fds, hasLength(2));
     expect(fds.first, isPositive);
     expect(fds.last, isPositive);
-    expect(write(fds.last, Int8List.fromList([1, 2, 3])), 3);
+    expect(write(fds.last, [1, 2, 3]), 3);
     expect(read(fds.first, 3), [1, 2, 3]);
     close(fds.first);
     close(fds.last);
