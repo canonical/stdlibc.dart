@@ -66,6 +66,7 @@ class MacroBuilder implements Builder {
             ..body = Code('libc.$m')),
         Mixin((b) => b
           ..name = 'MacroMixin'
+          ..docs.add('\n\n// ignore_for_file: type=lint\n')
           ..methods.addAll([
             for (final m in macros)
               Method((b) => b
@@ -91,7 +92,7 @@ class MacroBuilder implements Builder {
         ])
         ..body.addAll([
           Mixin((b) => b
-            ..docs.add('// ignore_for_file: type=lint')
+            ..docs.add('\n\n// ignore_for_file: type=lint\n')
             ..name = '${impl.key.capitalized}MacroMixin'
             ..on = refer('StdLibC')
             ..methods.addAll([

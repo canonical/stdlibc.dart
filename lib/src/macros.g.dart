@@ -778,6 +778,9 @@ int get WSTOPPED => libc.WSTOPPED;
 int get WUNTRACED => libc.WUNTRACED;
 int get W_OK => libc.W_OK;
 int get X_OK => libc.X_OK;
+
+// ignore_for_file: type=lint
+
 mixin MacroMixin {
   int get ACCESSPERMS;
   int get ACCESSX_MAX_DESCRIPTORS;

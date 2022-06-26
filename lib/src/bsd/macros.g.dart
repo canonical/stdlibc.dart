@@ -1,5 +1,7 @@
 import '../libc.dart';
-import 'ffigen.dart' as ffi; // ignore_for_file: type=lint
+import 'ffigen.dart' as ffi;
+
+// ignore_for_file: type=lint
 
 mixin BsdMacroMixin on StdLibC {
   @override
