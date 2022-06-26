@@ -1,4 +1,5 @@
 import 'dart:ffi' as ffi;
+import 'dart:typed_data';
 
 import 'package:ffi/ffi.dart' as ffi;
 
@@ -36,6 +37,16 @@ mixin GnuUnistdMixin on StdLibC {
   }
 
   @override
+  Int8List read(int fd, int count) {
+    return ffi.using((arena) {
+      final buf = arena<ffi.Int8>(count);
+      final res = dylib.read(fd, buf.cast(), count);
+      checkErrno('read', res);
+      return Int8List.fromList(buf.asTypedList(res));
+    });
+  }
+
+  @override
   int setegid(int gid) => dylib.setegid(gid);
   @override
   int seteuid(int uid) => dylib.seteuid(uid);
@@ -51,4 +62,14 @@ mixin GnuUnistdMixin on StdLibC {
   int setsid() => dylib.setsid();
   @override
   int setuid(int uid) => dylib.setuid(uid);
+  @override
+  int write(int fd, Int8List buffer) {
+    return ffi.using((arena) {
+      final buf = arena<ffi.Int8>(buffer.length);
+      buf.asTypedList(buffer.length).setAll(0, buffer);
+      final res = dylib.write(fd, buf.cast(), buffer.length);
+      checkErrno('write', res);
+      return res;
+    });
+  }
 }
