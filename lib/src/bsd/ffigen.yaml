@@ -60,7 +60,9 @@ functions:
     - "close"
     - "get.*id"
     - "pipe"
+    - "read"
     - "set.*id"
+    - "write"
     # utsname.h
     - "uname"
     # wordexp.h

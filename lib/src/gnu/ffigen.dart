@@ -371,6 +371,24 @@ class GnuLibC {
   late final _putenv =
       _putenvPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
+  int read(
+    int __fd,
+    ffi.Pointer<ffi.Void> __buf,
+    int __nbytes,
+  ) {
+    return _read(
+      __fd,
+      __buf,
+      __nbytes,
+    );
+  }
+
+  late final _readPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Long Function(ffi.Int, ffi.Pointer<ffi.Void>, ffi.Size)>>('read');
+  late final _read =
+      _readPtr.asFunction<int Function(int, ffi.Pointer<ffi.Void>, int)>();
+
   int setegid(
     int __gid,
   ) {
@@ -638,6 +656,25 @@ class GnuLibC {
           'wordfree');
   late final _wordfree =
       _wordfreePtr.asFunction<void Function(ffi.Pointer<wordexp_t>)>();
+
+  int write(
+    int __fd,
+    ffi.Pointer<ffi.Void> __buf,
+    int __n,
+  ) {
+    return _write(
+      __fd,
+      __buf,
+      __n,
+    );
+  }
+
+  late final _writePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Long Function(
+              ffi.Int, ffi.Pointer<ffi.Void>, ffi.Size)>>('write');
+  late final _write =
+      _writePtr.asFunction<int Function(int, ffi.Pointer<ffi.Void>, int)>();
 }
 
 const int ACCESSPERMS = 511;

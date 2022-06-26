@@ -403,6 +403,24 @@ class BsdLibC {
   late final _putenv =
       _putenvPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
+  int read(
+    int arg0,
+    ffi.Pointer<ffi.Void> arg1,
+    int arg2,
+  ) {
+    return _read(
+      arg0,
+      arg1,
+      arg2,
+    );
+  }
+
+  late final _readPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Long Function(ffi.Int, ffi.Pointer<ffi.Void>, ffi.Size)>>('read');
+  late final _read =
+      _readPtr.asFunction<int Function(int, ffi.Pointer<ffi.Void>, int)>();
+
   int setegid(
     int arg0,
   ) {
@@ -678,6 +696,25 @@ class BsdLibC {
           'wordfree');
   late final _wordfree =
       _wordfreePtr.asFunction<void Function(ffi.Pointer<wordexp_t>)>();
+
+  int write(
+    int __fd,
+    ffi.Pointer<ffi.Void> __buf,
+    int __nbyte,
+  ) {
+    return _write(
+      __fd,
+      __buf,
+      __nbyte,
+    );
+  }
+
+  late final _writePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Long Function(
+              ffi.Int, ffi.Pointer<ffi.Void>, ffi.Size)>>('write');
+  late final _write =
+      _writePtr.asFunction<int Function(int, ffi.Pointer<ffi.Void>, int)>();
 }
 
 const int ACCESSPERMS = 511;
