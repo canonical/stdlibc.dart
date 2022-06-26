@@ -1,3 +1,7 @@
+## 0.0.3
+
+* Add pipe().
+
 ## 0.0.2+2
 
 * Ignore lints for pub.
