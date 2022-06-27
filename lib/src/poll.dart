@@ -2,7 +2,7 @@ import 'package:meta/meta.dart';
 
 import 'libc.dart';
 
-List<Pollfd> poll(List<Pollfd> fds, {int timeout = 0}) {
+List<Pollfd> poll(List<Pollfd> fds, {int timeout = -1}) {
   return libc.poll(fds, timeout);
 }
 
