@@ -1,3 +1,7 @@
+## 0.0.5
+
+* Fix poll() default timeout -1.
+
 ## 0.0.4
 
 * Add read() and write().
