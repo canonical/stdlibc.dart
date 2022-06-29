@@ -60,6 +60,8 @@ functions:
     - "close"
     - "get.*id"
     - "pipe"
+    - "pread"
+    - "pwrite"
     - "read"
     - "set.*id"
     - "write"

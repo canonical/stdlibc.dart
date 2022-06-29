@@ -28,6 +28,11 @@ int getuid() => libc.getuid();
 
 List<int> pipe() => libc.pipe();
 
+List<int> pread(int fd, int count, int offset) => libc.pread(fd, count, offset);
+
+int pwrite(int fd, List<int> buffer, int offset) =>
+    libc.pwrite(fd, buffer, offset);
+
 List<int> read(int fd, int count) => libc.read(fd, count);
 
 /// Sets the effective group ID of the calling process.
@@ -67,6 +72,8 @@ mixin UnistdMixin {
   int getsid(int pid);
   int getuid();
   List<int> pipe();
+  List<int> pread(int fd, int count, int offset);
+  int pwrite(int fd, List<int> buffer, int offset);
   List<int> read(int fd, int count);
   int setegid(int gid);
   int seteuid(int uid);
