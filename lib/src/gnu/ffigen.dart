@@ -357,6 +357,27 @@ class GnuLibC {
   late final _poll =
       _pollPtr.asFunction<int Function(ffi.Pointer<pollfd_t>, int, int)>();
 
+  int pread(
+    int __fd,
+    ffi.Pointer<ffi.Void> __buf,
+    int __nbytes,
+    int __offset,
+  ) {
+    return _pread(
+      __fd,
+      __buf,
+      __nbytes,
+      __offset,
+    );
+  }
+
+  late final _preadPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Long Function(
+              ffi.Int, ffi.Pointer<ffi.Void>, ffi.Size, ffi.Long)>>('pread');
+  late final _pread = _preadPtr
+      .asFunction<int Function(int, ffi.Pointer<ffi.Void>, int, int)>();
+
   int putenv(
     ffi.Pointer<ffi.Char> __string,
   ) {
@@ -370,6 +391,27 @@ class GnuLibC {
           'putenv');
   late final _putenv =
       _putenvPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
+
+  int pwrite(
+    int __fd,
+    ffi.Pointer<ffi.Void> __buf,
+    int __n,
+    int __offset,
+  ) {
+    return _pwrite(
+      __fd,
+      __buf,
+      __n,
+      __offset,
+    );
+  }
+
+  late final _pwritePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Long Function(
+              ffi.Int, ffi.Pointer<ffi.Void>, ffi.Size, ffi.Long)>>('pwrite');
+  late final _pwrite = _pwritePtr
+      .asFunction<int Function(int, ffi.Pointer<ffi.Void>, int, int)>();
 
   int read(
     int __fd,

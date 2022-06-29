@@ -26,6 +26,7 @@ mixin GnuUnistdMixin on StdLibC {
   int getsid(int pid) => dylib.getsid(pid);
   @override
   int getuid() => dylib.getuid();
+
   @override
   List<int> pipe() {
     return ffi.using((arena) {
@@ -33,6 +34,27 @@ mixin GnuUnistdMixin on StdLibC {
       final res = dylib.pipe(fds);
       checkErrno('pipe', res);
       return [fds[0], fds[1]];
+    });
+  }
+
+  @override
+  List<int> pread(int fd, int count, int offset) {
+    return ffi.using((arena) {
+      final buf = arena<ffi.Int8>(count);
+      final res = dylib.pread(fd, buf.cast(), count, offset);
+      checkErrno('pread', res);
+      return Int8List.fromList(buf.asTypedList(res));
+    });
+  }
+
+  @override
+  int pwrite(int fd, List<int> buffer, int offset) {
+    return ffi.using((arena) {
+      final buf = arena<ffi.Int8>(buffer.length);
+      buf.asTypedList(buffer.length).setAll(0, buffer);
+      final res = dylib.pwrite(fd, buf.cast(), buffer.length, offset);
+      checkErrno('pwrite', res);
+      return res;
     });
   }
 
@@ -62,6 +84,7 @@ mixin GnuUnistdMixin on StdLibC {
   int setsid() => dylib.setsid();
   @override
   int setuid(int uid) => dylib.setuid(uid);
+
   @override
   int write(int fd, List<int> buffer) {
     return ffi.using((arena) {
