@@ -9,6 +9,7 @@ import 'gnu/gnu.dart';
 import 'macros.g.dart';
 import 'mman.dart';
 import 'poll.dart';
+import 'pwd.dart';
 import 'stat.dart';
 import 'stdlib.dart';
 import 'string.dart';
@@ -29,6 +30,7 @@ abstract class StdLibC
         MacroMixin,
         MmanMixin,
         PollMixin,
+        PwdMixin,
         StatMixin,
         StdlibMixin,
         StringMixin,

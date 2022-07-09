@@ -12,6 +12,7 @@ headers:
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/fcntl.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/fnmatch.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/poll.h"
+    - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pwd.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdlib.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/string.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/syslog.h"
@@ -40,6 +41,9 @@ functions:
     - "munmap"
     # poll.h
     - "poll"
+    # pwd.h
+    - "getpwuid"
+    - "getpwnam"
     # stdlib.h
     - "getenv"
     - "putenv"
@@ -91,12 +95,14 @@ unnamed-enums:
 structs:
   include:
     - "glob_t"
+    - "passwd"
     - "pollfd"
     - "stat"
     - "timespec"
     - "utsname"
     - "wordexp_t"
   rename:
+    "passwd": "passwd_t"
     "pollfd": "pollfd_t"
     "stat": "stat_t"
     "timespec": "timespec_t"

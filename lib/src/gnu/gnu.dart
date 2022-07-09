@@ -9,6 +9,7 @@ import 'glob.dart';
 import 'macros.g.dart';
 import 'mman.dart';
 import 'poll.dart';
+import 'pwd.dart';
 import 'stat.dart';
 import 'stdlib.dart';
 import 'string.dart';
@@ -29,6 +30,7 @@ class GnuLibC extends StdLibC
         GnuMacroMixin,
         GnuMmanMixin,
         GnuPollMixin,
+        GnuPwdMixin,
         GnuStatMixin,
         GnuStdlibMixin,
         GnuStringMixin,
