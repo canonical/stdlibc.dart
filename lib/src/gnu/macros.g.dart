@@ -987,6 +987,8 @@ mixin GnuMacroMixin on StdLibC {
   @override
   int get NSIG => throw UnsupportedError('NSIG');
   @override
+  int get NSS_BUFLEN_PASSWD => ffi.NSS_BUFLEN_PASSWD;
+  @override
   int get NULL => ffi.NULL;
   @override
   int get O_ACCMODE => ffi.O_ACCMODE;

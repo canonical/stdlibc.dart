@@ -483,6 +483,7 @@ int get MS_KILLPAGES => libc.MS_KILLPAGES;
 int get MS_SYNC => libc.MS_SYNC;
 int get NFDBITS => libc.NFDBITS;
 int get NSIG => libc.NSIG;
+int get NSS_BUFLEN_PASSWD => libc.NSS_BUFLEN_PASSWD;
 int get NULL => libc.NULL;
 int get O_ACCMODE => libc.O_ACCMODE;
 int get O_ALERT => libc.O_ALERT;
@@ -1265,6 +1266,7 @@ mixin MacroMixin {
   int get MS_SYNC;
   int get NFDBITS;
   int get NSIG;
+  int get NSS_BUFLEN_PASSWD;
   int get NULL;
   int get O_ACCMODE;
   int get O_ALERT;

@@ -971,6 +971,8 @@ mixin BsdMacroMixin on StdLibC {
   @override
   int get NSIG => ffi.NSIG;
   @override
+  int get NSS_BUFLEN_PASSWD => throw UnsupportedError('NSS_BUFLEN_PASSWD');
+  @override
   int get NULL => ffi.NULL;
   @override
   int get O_ACCMODE => ffi.O_ACCMODE;
