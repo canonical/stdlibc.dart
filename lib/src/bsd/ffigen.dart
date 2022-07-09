@@ -194,6 +194,49 @@ class BsdLibC {
       _lookup<ffi.NativeFunction<ffi.Int Function()>>('getppid');
   late final _getppid = _getppidPtr.asFunction<int Function()>();
 
+  ffi.Pointer<passwd_t> getpwnam(
+    ffi.Pointer<ffi.Char> arg0,
+  ) {
+    return _getpwnam(
+      arg0,
+    );
+  }
+
+  late final _getpwnamPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<passwd_t> Function(ffi.Pointer<ffi.Char>)>>('getpwnam');
+  late final _getpwnam = _getpwnamPtr
+      .asFunction<ffi.Pointer<passwd_t> Function(ffi.Pointer<ffi.Char>)>();
+
+  ffi.Pointer<passwd_t> getpwuid(
+    int arg0,
+  ) {
+    return _getpwuid(
+      arg0,
+    );
+  }
+
+  late final _getpwuidPtr = _lookup<
+          ffi.NativeFunction<ffi.Pointer<passwd_t> Function(ffi.UnsignedInt)>>(
+      'getpwuid');
+  late final _getpwuid =
+      _getpwuidPtr.asFunction<ffi.Pointer<passwd_t> Function(int)>();
+
+  ffi.Pointer<passwd_t> getpwuuid(
+    ffi.Pointer<ffi.UnsignedChar> arg0,
+  ) {
+    return _getpwuuid(
+      arg0,
+    );
+  }
+
+  late final _getpwuuidPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<passwd_t> Function(
+              ffi.Pointer<ffi.UnsignedChar>)>>('getpwuuid');
+  late final _getpwuuid = _getpwuuidPtr.asFunction<
+      ffi.Pointer<passwd_t> Function(ffi.Pointer<ffi.UnsignedChar>)>();
+
   int getsid(
     int arg0,
   ) {
@@ -2157,6 +2200,32 @@ class glob_t extends ffi.Struct {
           ffi.NativeFunction<
               ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<stat_t>)>>
       gl_stat;
+}
+
+class passwd_t extends ffi.Struct {
+  external ffi.Pointer<ffi.Char> pw_name;
+
+  external ffi.Pointer<ffi.Char> pw_passwd;
+
+  @ffi.UnsignedInt()
+  external int pw_uid;
+
+  @ffi.UnsignedInt()
+  external int pw_gid;
+
+  @ffi.Long()
+  external int pw_change;
+
+  external ffi.Pointer<ffi.Char> pw_class;
+
+  external ffi.Pointer<ffi.Char> pw_gecos;
+
+  external ffi.Pointer<ffi.Char> pw_dir;
+
+  external ffi.Pointer<ffi.Char> pw_shell;
+
+  @ffi.Long()
+  external int pw_expire;
 }
 
 class pollfd_t extends ffi.Struct {

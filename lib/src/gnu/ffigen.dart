@@ -160,6 +160,34 @@ class GnuLibC {
       _lookup<ffi.NativeFunction<ffi.Int Function()>>('getppid');
   late final _getppid = _getppidPtr.asFunction<int Function()>();
 
+  ffi.Pointer<passwd_t> getpwnam(
+    ffi.Pointer<ffi.Char> __name,
+  ) {
+    return _getpwnam(
+      __name,
+    );
+  }
+
+  late final _getpwnamPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<passwd_t> Function(ffi.Pointer<ffi.Char>)>>('getpwnam');
+  late final _getpwnam = _getpwnamPtr
+      .asFunction<ffi.Pointer<passwd_t> Function(ffi.Pointer<ffi.Char>)>();
+
+  ffi.Pointer<passwd_t> getpwuid(
+    int __uid,
+  ) {
+    return _getpwuid(
+      __uid,
+    );
+  }
+
+  late final _getpwuidPtr = _lookup<
+          ffi.NativeFunction<ffi.Pointer<passwd_t> Function(ffi.UnsignedInt)>>(
+      'getpwuid');
+  late final _getpwuid =
+      _getpwuidPtr.asFunction<ffi.Pointer<passwd_t> Function(int)>();
+
   int getsid(
     int __pid,
   ) {
@@ -1305,6 +1333,8 @@ const int MS_SYNC = 4;
 
 const int NFDBITS = 64;
 
+const int NSS_BUFLEN_PASSWD = 1024;
+
 const int NULL = 0;
 
 const int O_ACCMODE = 3;
@@ -1566,6 +1596,24 @@ class glob_t extends ffi.Struct {
           ffi.NativeFunction<
               ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>)>>
       gl_stat;
+}
+
+class passwd_t extends ffi.Struct {
+  external ffi.Pointer<ffi.Char> pw_name;
+
+  external ffi.Pointer<ffi.Char> pw_passwd;
+
+  @ffi.UnsignedInt()
+  external int pw_uid;
+
+  @ffi.UnsignedInt()
+  external int pw_gid;
+
+  external ffi.Pointer<ffi.Char> pw_gecos;
+
+  external ffi.Pointer<ffi.Char> pw_dir;
+
+  external ffi.Pointer<ffi.Char> pw_shell;
 }
 
 class pollfd_t extends ffi.Struct {

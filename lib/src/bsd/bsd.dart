@@ -9,6 +9,7 @@ import 'glob.dart';
 import 'macros.g.dart';
 import 'mman.dart';
 import 'poll.dart';
+import 'pwd.dart';
 import 'stat.dart';
 import 'stdlib.dart';
 import 'string.dart';
@@ -34,6 +35,7 @@ class BsdLibC extends StdLibC
         BsdMacroMixin,
         BsdMmanMixin,
         BsdPollMixin,
+        BsdPwdMixin,
         BsdStatMixin,
         BsdStdlibMixin,
         BsdStringMixin,

@@ -13,6 +13,7 @@ headers:
     - "/usr/include/fnmatch.h"
     - "/usr/include/glob.h"
     - "/usr/include/poll.h"
+    - "/usr/include/pwd.h"
     - "/usr/include/stdlib.h"
     - "/usr/include/string.h"
     - "/usr/include/syslog.h"
@@ -41,6 +42,9 @@ functions:
     - "munmap"
     # poll.h
     - "poll"
+    # pwd.h
+    - "getpwuid"
+    - "getpwnam"
     # stdlib.h
     - "getenv"
     - "putenv"
@@ -95,6 +99,7 @@ unnamed-enums:
 structs:
   include:
     - "glob_t"
+    - "passwd"
     - "pollfd"
     - "stat"
     - "sysinfo"
@@ -102,6 +107,7 @@ structs:
     - "utsname"
     - "wordexp_t"
   rename:
+    "passwd": "passwd_t"
     "pollfd": "pollfd_t"
     "stat": "stat_t"
     "sysinfo": "sysinfo_t"
