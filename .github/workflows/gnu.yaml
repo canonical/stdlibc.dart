@@ -1,0 +1,28 @@
+name: GNU
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  ffigen:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v2
+    - run: sudo apt update
+    - run: sudo apt install -y libclang-9-dev
+    - uses: dart-lang/setup-dart@v1
+    - run: dart pub get
+    - run: dart run ffigen --config lib/src/gnu/ffigen.yaml
+    - uses: peter-evans/create-pull-request@v3
+      if: github.event_name != 'pull_request'
+      with:
+        title: 'Regenerate GNU bindings'
+        commit-message: 'Regenerate GNU bindings'
+        add-paths: lib/src/gnu/ffigen.dart
+        branch: regenerate/gnu
+        delete-branch: true
+    - run: ./.github/scripts/check-outdated-files.sh

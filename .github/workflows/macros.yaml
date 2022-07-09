@@ -1,0 +1,26 @@
+name: Macros
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v2
+    - uses: dart-lang/setup-dart@v1
+    - run: dart pub get
+    - run: dart run build_runner build --delete-conflicting-outputs
+    - uses: peter-evans/create-pull-request@v3
+      if: github.event_name != 'pull_request'
+      with:
+        title: 'Regenerate macros'
+        commit-message: 'Regenerate macros'
+        add-paths: '**/*.g.dart'
+        branch: regenerate/macros
+        delete-branch: true
+    - run: ./.github/scripts/check-outdated-files.sh
