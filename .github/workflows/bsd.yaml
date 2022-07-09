@@ -23,4 +23,12 @@ jobs:
         add-paths: lib/src/bsd/ffigen.dart
         branch: regenerate/bsd
         delete-branch: true
+    - run: |
+        git diff > lib_src_bsd_ffigen.dart.diff
+        [ -s lib_src_bsd_ffigen.dart.diff ] || rm lib_src_bsd_ffigen.dart.diff
+    - uses: actions/upload-artifact@v3
+      with:
+        name: lib_src_bsd_ffigen.dart
+        path: lib_src_bsd_ffigen.dart.diff
+        if-no-files-found: ignore
     - run: ./.github/scripts/check-outdated-files.sh

@@ -23,4 +23,12 @@ jobs:
         add-paths: '**/*.g.dart'
         branch: regenerate/macros
         delete-branch: true
+    - run: |
+        git diff > lib_src_macros.g.dart.diff
+        [ -s lib_src_macros.g.dart.diff ] || rm lib_src_macros.g.dart.diff
+    - uses: actions/upload-artifact@v3
+      with:
+        name: lib_src_macros.g.dart
+        path: lib_src_macros.g.dart.diff
+        if-no-files-found: ignore
     - run: ./.github/scripts/check-outdated-files.sh
