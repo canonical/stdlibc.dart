@@ -25,4 +25,12 @@ jobs:
         add-paths: lib/src/gnu/ffigen.dart
         branch: regenerate/gnu
         delete-branch: true
+    - run: |
+        git diff > lib_src_gnu_ffigen.dart.diff
+        [ -s lib_src_gnu_ffigen.dart.diff ] || rm lib_src_gnu_ffigen.dart.diff
+    - uses: actions/upload-artifact@v3
+      with:
+        name: lib_src_gnu_ffigen.dart
+        path: lib_src_gnu_ffigen.dart.diff
+        if-no-files-found: ignore
     - run: ./.github/scripts/check-outdated-files.sh
