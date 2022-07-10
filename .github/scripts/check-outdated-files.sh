@@ -5,7 +5,7 @@ if [ -n "$(git status --porcelain)" ]; then
   for f in $(git ls-files --modified); do
     echo "::warning ::$f may be outdated"
   done
-  for f in $(git ls-files --others --exclude-standard); do
+  for f in $(git ls-files --others --exclude-standard --exclude '*.diff'); do
     echo "::warning ::$f may be untracked"
   done
   exit 1
