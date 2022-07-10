@@ -65,6 +65,8 @@ functions:
     - "syslog"
     # unistd.h
     - "close"
+    - "dup"
+    - "dup2"
     - "get.*id"
     - "pipe"
     - "pread"

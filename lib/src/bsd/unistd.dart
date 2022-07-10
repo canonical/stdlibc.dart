@@ -11,6 +11,10 @@ mixin BsdUnistdMixin on StdLibC {
   @override
   void close(int fd) => checkErrno('close', dylib.close(fd));
   @override
+  int dup(int oldfd) => dylib.dup(oldfd);
+  @override
+  int dup2(int oldfd, int newfd) => dylib.dup2(oldfd, newfd);
+  @override
   int getegid() => dylib.getegid();
   @override
   int geteuid() => dylib.geteuid();
