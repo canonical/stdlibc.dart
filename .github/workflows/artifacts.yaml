@@ -18,3 +18,9 @@ jobs:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       with:
         addTo: pull
+        format: name
+        prefix: >
+          The PR may have outdated generated files. Check the CI job or download
+          and apply the following diff:
+        errorNoArtifacts: 'false'
+      continue-on-error: true
