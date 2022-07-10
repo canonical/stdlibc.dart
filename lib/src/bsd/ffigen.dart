@@ -40,6 +40,32 @@ class BsdLibC {
       _lookup<ffi.NativeFunction<ffi.Void Function()>>('closelog');
   late final _closelog = _closelogPtr.asFunction<void Function()>();
 
+  int dup(
+    int arg0,
+  ) {
+    return _dup(
+      arg0,
+    );
+  }
+
+  late final _dupPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('dup');
+  late final _dup = _dupPtr.asFunction<int Function(int)>();
+
+  int dup2(
+    int arg0,
+    int arg1,
+  ) {
+    return _dup2(
+      arg0,
+      arg1,
+    );
+  }
+
+  late final _dup2Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Int)>>('dup2');
+  late final _dup2 = _dup2Ptr.asFunction<int Function(int, int)>();
+
   ffi.Pointer<ffi.Int> errno() {
     return _errno();
   }
