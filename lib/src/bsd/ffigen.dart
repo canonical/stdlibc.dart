@@ -109,6 +109,18 @@ class BsdLibC {
   late final _fstat =
       _fstatPtr.asFunction<int Function(int, ffi.Pointer<stat_t>)>();
 
+  int fsync(
+    int arg0,
+  ) {
+    return _fsync(
+      arg0,
+    );
+  }
+
+  late final _fsyncPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('fsync');
+  late final _fsync = _fsyncPtr.asFunction<int Function(int)>();
+
   int getegid() {
     return _getegid();
   }
@@ -730,6 +742,14 @@ class BsdLibC {
           'strerror');
   late final _strerror =
       _strerrorPtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
+
+  void sync1() {
+    return _sync1();
+  }
+
+  late final _sync1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('sync');
+  late final _sync1 = _sync1Ptr.asFunction<void Function()>();
 
   void syslog(
     int arg0,

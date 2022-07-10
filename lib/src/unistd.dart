@@ -3,6 +3,7 @@ import 'libc.dart';
 void close(int fd) => libc.close(fd);
 int dup(int oldfd) => libc.dup(oldfd);
 int dup2(int oldfd, int newfd) => libc.dup2(oldfd, newfd);
+void fsync(int fd) => libc.fsync(fd);
 
 /// Returns the effective group ID of the calling process.
 int getegid() => libc.getegid();
@@ -61,12 +62,15 @@ int setsid() => libc.setsid();
 /// Sets the effective user ID of the calling process.
 int setuid(int uid) => libc.setuid(uid);
 
+void sync() => libc.sync();
+
 int write(int fd, List<int> buffer) => libc.write(fd, buffer);
 
 mixin UnistdMixin {
   void close(int fd);
   int dup(int oldfd);
   int dup2(int oldfd, int newfd);
+  void fsync(int fd);
   int getegid();
   int geteuid();
   int getgid();
@@ -87,5 +91,6 @@ mixin UnistdMixin {
   int setreuid(int ruid, int euid);
   int setsid();
   int setuid(int uid);
+  void sync();
   int write(int fd, List<int> buffer);
 }
