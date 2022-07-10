@@ -15,6 +15,9 @@ mixin GnuUnistdMixin on StdLibC {
   @override
   int dup2(int oldfd, int newfd) => dylib.dup2(oldfd, newfd);
   @override
+  void fsync(int fd) => checkErrno('fsync', dylib.fsync(fd));
+
+  @override
   int getegid() => dylib.getegid();
   @override
   int geteuid() => dylib.geteuid();
@@ -88,6 +91,9 @@ mixin GnuUnistdMixin on StdLibC {
   int setsid() => dylib.setsid();
   @override
   int setuid(int uid) => dylib.setuid(uid);
+
+  @override
+  void sync() => dylib.sync1();
 
   @override
   int write(int fd, List<int> buffer) {
