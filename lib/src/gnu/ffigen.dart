@@ -1370,8 +1370,6 @@ const int L_SET = 0;
 
 const int L_XTND = 2;
 
-const int MADV_COLD = 20;
-
 const int MADV_DODUMP = 17;
 
 const int MADV_DOFORK = 11;
@@ -1395,8 +1393,6 @@ const int MADV_MERGEABLE = 12;
 const int MADV_NOHUGEPAGE = 15;
 
 const int MADV_NORMAL = 0;
-
-const int MADV_PAGEOUT = 21;
 
 const int MADV_RANDOM = 1;
 
@@ -1424,8 +1420,6 @@ const int MAP_FILE = 0;
 
 const int MAP_FIXED = 16;
 
-const int MAP_FIXED_NOREPLACE = 1048576;
-
 const int MAP_GROWSDOWN = 256;
 
 const int MAP_HUGETLB = 262144;
@@ -1446,11 +1440,7 @@ const int MAP_PRIVATE = 2;
 
 const int MAP_SHARED = 1;
 
-const int MAP_SHARED_VALIDATE = 3;
-
 const int MAP_STACK = 131072;
-
-const int MAP_SYNC = 524288;
 
 const int MAP_TYPE = 15;
 
