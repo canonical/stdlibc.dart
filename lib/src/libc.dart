@@ -6,6 +6,7 @@ import 'fcntl.dart';
 import 'fnmatch.dart';
 import 'glob.dart';
 import 'gnu/gnu.dart';
+import 'ioctl.dart';
 import 'macros.g.dart';
 import 'mman.dart';
 import 'poll.dart';
@@ -27,6 +28,7 @@ abstract class StdLibC
         FcntlMixin,
         FnmatchMixin,
         GlobMixin,
+        IoctlMixin,
         MacroMixin,
         MmanMixin,
         PollMixin,

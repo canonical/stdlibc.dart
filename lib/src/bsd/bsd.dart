@@ -6,6 +6,7 @@ import 'fcntl.dart';
 import 'ffigen.dart' as ffi;
 import 'fnmatch.dart';
 import 'glob.dart';
+import 'ioctl.dart';
 import 'macros.g.dart';
 import 'mman.dart';
 import 'poll.dart';
@@ -32,6 +33,7 @@ class BsdLibC extends StdLibC
         BsdFcntlMixin,
         BsdFnmatchMixin,
         BsdGlobMixin,
+        BsdIoctlMixin,
         BsdMacroMixin,
         BsdMmanMixin,
         BsdPollMixin,
