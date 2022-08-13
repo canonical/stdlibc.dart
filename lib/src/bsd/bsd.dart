@@ -11,7 +11,6 @@ import 'pwd.dart';
 import 'stat.dart';
 import 'sysinfo.dart';
 import 'uname.dart';
-import 'wordexp.dart';
 
 final dylib = ffi.BsdLibC(ffi.DynamicLibrary.process());
 final inode64 = ffi.BsdLibC.fromLookup(inode64Lookup);
@@ -30,5 +29,4 @@ class BsdLibC extends StdLibC
         BsdPwdMixin,
         BsdStatMixin,
         BsdSysinfoMixin,
-        BsdUnameMixin,
-        BsdWordexpMixin {}
+        BsdUnameMixin {}

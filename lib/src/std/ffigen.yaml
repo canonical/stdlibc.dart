@@ -14,6 +14,7 @@ headers:
     - "/usr/include/string.h"
     - "/usr/include/syslog.h"
     - "/usr/include/unistd.h"
+    - "/usr/include/wordexp.h"
 globals:
   exclude:
     - ".*"
@@ -48,6 +49,9 @@ functions:
     - "set.*id"
     - "sync"
     - "write"
+    # wordexp.h
+    - "wordexp"
+    - "wordfree"
 macros:
   exclude:
     - ".*"
@@ -58,8 +62,8 @@ unnamed-enums:
   exclude:
     - ".*"
 structs:
-  exclude:
-    - ".*"
+  include:
+    - "wordexp_t"
 unions:
   exclude:
     - ".*"
