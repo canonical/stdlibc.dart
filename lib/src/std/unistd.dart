@@ -3,22 +3,35 @@ import 'dart:typed_data';
 
 import 'package:ffi/ffi.dart' as ffi;
 
-import 'std.dart';
+import '../libc.dart';
 import '../util.dart';
+import 'std.dart';
 
-mixin StdUnistdMixin {
+mixin StdUnistdMixin on LibC {
+  @override
   void close(int fd) => checkErrno('close', dylib.close(fd));
+  @override
   int dup(int oldfd) => dylib.dup(oldfd);
+  @override
   int dup2(int oldfd, int newfd) => dylib.dup2(oldfd, newfd);
+  @override
   void fsync(int fd) => checkErrno('fsync', dylib.fsync(fd));
 
+  @override
   int getegid() => dylib.getegid();
+  @override
   int geteuid() => dylib.geteuid();
+  @override
   int getgid() => dylib.getgid();
+  @override
   int getpgid(int pid) => dylib.getpgid(pid);
+  @override
   int getpid() => dylib.getpid();
+  @override
   int getppid() => dylib.getppid();
+  @override
   int getsid(int pid) => dylib.getsid(pid);
+  @override
   int getuid() => dylib.getuid();
 
   @override
