@@ -221,22 +221,6 @@ class BsdLibC {
   late final _munmap =
       _munmapPtr.asFunction<int Function(ffi.Pointer<ffi.Void>, int)>();
 
-  int open(
-    ffi.Pointer<ffi.Char> arg0,
-    int arg1,
-  ) {
-    return _open(
-      arg0,
-      arg1,
-    );
-  }
-
-  late final _openPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Int)>>(
-      'open');
-  late final _open =
-      _openPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, int)>();
-
   void openlog(
     ffi.Pointer<ffi.Char> arg0,
     int arg1,

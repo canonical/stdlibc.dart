@@ -2,7 +2,7 @@ import 'dart:ffi' as ffi;
 
 import '../std/std.dart';
 import 'errno.dart';
-import 'fcntl.dart';
+import '../std/fcntl.dart';
 import 'ffigen.dart' as ffi;
 import 'fnmatch.dart';
 import 'glob.dart';
@@ -23,7 +23,6 @@ final dylib = ffi.GnuLibC(ffi.DynamicLibrary.process());
 class GnuLibC extends StdLibC
     with
         GnuErrnoMixin,
-        GnuFcntlMixin,
         GnuFnmatchMixin,
         GnuGlobMixin,
         GnuMacroMixin,
