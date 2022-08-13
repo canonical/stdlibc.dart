@@ -43,11 +43,6 @@ functions:
     # pwd.h
     - "getpwuid"
     - "getpwnam"
-    # stdlib.h
-    - "getenv"
-    - "putenv"
-    - "setenv"
-    - "unsetenv"
     # stat.h
     - "__fxstat"
     - "__lxstat"

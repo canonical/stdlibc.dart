@@ -78,6 +78,20 @@ class StdLibC {
       _lookup<ffi.NativeFunction<ffi.UnsignedInt Function()>>('getegid');
   late final _getegid = _getegidPtr.asFunction<int Function()>();
 
+  ffi.Pointer<ffi.Char> getenv(
+    ffi.Pointer<ffi.Char> __name,
+  ) {
+    return _getenv(
+      __name,
+    );
+  }
+
+  late final _getenvPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>>('getenv');
+  late final _getenv = _getenvPtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
+
   int geteuid() {
     return _geteuid();
   }
@@ -200,6 +214,20 @@ class StdLibC {
   late final _pread = _preadPtr
       .asFunction<int Function(int, ffi.Pointer<ffi.Void>, int, int)>();
 
+  int putenv(
+    ffi.Pointer<ffi.Char> __string,
+  ) {
+    return _putenv(
+      __string,
+    );
+  }
+
+  late final _putenvPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>)>>(
+          'putenv');
+  late final _putenv =
+      _putenvPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
+
   int pwrite(
     int __fd,
     ffi.Pointer<ffi.Void> __buf,
@@ -250,6 +278,25 @@ class StdLibC {
   late final _setegidPtr =
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.UnsignedInt)>>('setegid');
   late final _setegid = _setegidPtr.asFunction<int Function(int)>();
+
+  int setenv(
+    ffi.Pointer<ffi.Char> __name,
+    ffi.Pointer<ffi.Char> __value,
+    int __replace,
+  ) {
+    return _setenv(
+      __name,
+      __value,
+      __replace,
+    );
+  }
+
+  late final _setenvPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+              ffi.Int)>>('setenv');
+  late final _setenv = _setenvPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
   int seteuid(
     int __uid,
@@ -359,6 +406,20 @@ class StdLibC {
   late final _sync1Ptr =
       _lookup<ffi.NativeFunction<ffi.Void Function()>>('sync');
   late final _sync1 = _sync1Ptr.asFunction<void Function()>();
+
+  int unsetenv(
+    ffi.Pointer<ffi.Char> __name,
+  ) {
+    return _unsetenv(
+      __name,
+    );
+  }
+
+  late final _unsetenvPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>)>>(
+          'unsetenv');
+  late final _unsetenv =
+      _unsetenvPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
   int write(
     int __fd,
