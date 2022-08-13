@@ -555,6 +555,18 @@ const int FNM_PERIOD = 4;
 
 const int FNONBLOCK = 2048;
 
+const String FSTAB = '/etc/fstab';
+
+const String FSTAB_RO = 'ro';
+
+const String FSTAB_RQ = 'rq';
+
+const String FSTAB_RW = 'rw';
+
+const String FSTAB_SW = 'sw';
+
+const String FSTAB_XX = 'xx';
+
 const int F_DUPFD = 0;
 
 const int F_DUPFD_CLOEXEC = 1030;

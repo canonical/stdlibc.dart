@@ -4,6 +4,7 @@ import '../libc.dart';
 import 'fcntl.dart';
 import 'ffigen.dart' as ffi;
 import 'fnmatch.dart';
+import 'fstab.dart';
 import 'poll.dart';
 import 'stdlib.dart';
 import 'string.dart';
@@ -17,6 +18,7 @@ abstract class StdLibC extends LibC
     with
         StdFcntlMixin,
         StdFnmatchMixin,
+        StdFstabMixin,
         StdPollMixin,
         StdStdlibMixin,
         StdStringMixin,

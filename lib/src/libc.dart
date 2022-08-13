@@ -4,6 +4,7 @@ import 'bsd/bsd.dart';
 import 'errno.dart';
 import 'fcntl.dart';
 import 'fnmatch.dart';
+import 'fstab.dart';
 import 'glob.dart';
 import 'gnu/gnu.dart';
 import 'macros.g.dart';
@@ -26,6 +27,7 @@ abstract class LibC
         ErrnoMixin,
         FcntlMixin,
         FnmatchMixin,
+        FstabMixin,
         GlobMixin,
         MacroMixin,
         MmanMixin,

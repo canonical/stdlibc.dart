@@ -463,6 +463,18 @@ mixin BsdMacroMixin on LibC {
   @override
   int get FREAD => ffi.FREAD;
   @override
+  String get FSTAB => ffi.FSTAB;
+  @override
+  String get FSTAB_RO => ffi.FSTAB_RO;
+  @override
+  String get FSTAB_RQ => ffi.FSTAB_RQ;
+  @override
+  String get FSTAB_RW => ffi.FSTAB_RW;
+  @override
+  String get FSTAB_SW => ffi.FSTAB_SW;
+  @override
+  String get FSTAB_XX => ffi.FSTAB_XX;
+  @override
   int get FWRITE => ffi.FWRITE;
   @override
   int get F_ADDFILESIGS => ffi.F_ADDFILESIGS;
