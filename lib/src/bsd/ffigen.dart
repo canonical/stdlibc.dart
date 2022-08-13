@@ -71,20 +71,6 @@ class BsdLibC {
   late final _fstat =
       _fstatPtr.asFunction<int Function(int, ffi.Pointer<stat_t>)>();
 
-  ffi.Pointer<ffi.Char> getenv(
-    ffi.Pointer<ffi.Char> arg0,
-  ) {
-    return _getenv(
-      arg0,
-    );
-  }
-
-  late final _getenvPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>>('getenv');
-  late final _getenv = _getenvPtr
-      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
-
   ffi.Pointer<passwd_t> getpwnam(
     ffi.Pointer<ffi.Char> arg0,
   ) {
@@ -259,39 +245,6 @@ class BsdLibC {
   late final _poll =
       _pollPtr.asFunction<int Function(ffi.Pointer<pollfd_t>, int, int)>();
 
-  int putenv(
-    ffi.Pointer<ffi.Char> arg0,
-  ) {
-    return _putenv(
-      arg0,
-    );
-  }
-
-  late final _putenvPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>)>>(
-          'putenv');
-  late final _putenv =
-      _putenvPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
-
-  int setenv(
-    ffi.Pointer<ffi.Char> __name,
-    ffi.Pointer<ffi.Char> __value,
-    int __overwrite,
-  ) {
-    return _setenv(
-      __name,
-      __value,
-      __overwrite,
-    );
-  }
-
-  late final _setenvPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-              ffi.Int)>>('setenv');
-  late final _setenv = _setenvPtr.asFunction<
-      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
-
   int setlogmask(
     int arg0,
   ) {
@@ -364,20 +317,6 @@ class BsdLibC {
           'uname');
   late final _uname =
       _unamePtr.asFunction<int Function(ffi.Pointer<utsname_t>)>();
-
-  int unsetenv(
-    ffi.Pointer<ffi.Char> arg0,
-  ) {
-    return _unsetenv(
-      arg0,
-    );
-  }
-
-  late final _unsetenvPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>)>>(
-          'unsetenv');
-  late final _unsetenv =
-      _unsetenvPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
   int wordexp(
     ffi.Pointer<ffi.Char> arg0,

@@ -9,6 +9,7 @@ llvm-path:
 headers:
   entry-points:
     - "/usr/include/fcntl.h"
+    - "/usr/include/stdlib.h"
     - "/usr/include/unistd.h"
 globals:
   exclude:
@@ -17,6 +18,11 @@ functions:
   include:
     # fcntl.h
     - "open"
+    # stdlib.h
+    - "getenv"
+    - "putenv"
+    - "setenv"
+    - "unsetenv"
     # unistd.h
     - "close"
     - "dup"
