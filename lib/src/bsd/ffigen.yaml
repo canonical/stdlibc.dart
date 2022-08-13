@@ -29,8 +29,6 @@ functions:
   include:
     # errno.h
     - "__error"
-    # fcntl.h
-    - "open"
     # fnmatch.h
     - "fnmatch"
     # glob.h

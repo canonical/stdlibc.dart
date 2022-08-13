@@ -2,9 +2,9 @@ import 'package:ffi/ffi.dart' as ffi;
 
 import '../libc.dart';
 import '../util.dart';
-import 'gnu.dart';
+import 'std.dart';
 
-mixin GnuFcntlMixin on LibC {
+mixin StdFcntlMixin on LibC {
   @override
   int open(String file, int flags) {
     return ffi.using((arena) {

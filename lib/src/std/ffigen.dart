@@ -150,6 +150,22 @@ class StdLibC {
       _lookup<ffi.NativeFunction<ffi.UnsignedInt Function()>>('getuid');
   late final _getuid = _getuidPtr.asFunction<int Function()>();
 
+  int open(
+    ffi.Pointer<ffi.Char> __file,
+    int __oflag,
+  ) {
+    return _open(
+      __file,
+      __oflag,
+    );
+  }
+
+  late final _openPtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Int)>>(
+      'open');
+  late final _open =
+      _openPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, int)>();
+
   int pipe(
     ffi.Pointer<ffi.Int> __pipedes,
   ) {

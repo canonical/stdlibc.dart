@@ -8,12 +8,15 @@ llvm-path:
   - "/usr/lib/llvm-9"
 headers:
   entry-points:
+    - "/usr/include/fcntl.h"
     - "/usr/include/unistd.h"
 globals:
   exclude:
     - ".*"
 functions:
   include:
+    # fcntl.h
+    - "open"
     # unistd.h
     - "close"
     - "dup"
