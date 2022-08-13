@@ -70,12 +70,14 @@ unnamed-enums:
 structs:
   include:
     - "glob_t"
+    - "flock"
     - "passwd"
     - "stat"
     - "sysinfo"
     - "timespec"
     - "utsname"
   rename:
+    "flock": "flock_t"
     "passwd": "passwd_t"
     "stat": "stat_t"
     "sysinfo": "sysinfo_t"
