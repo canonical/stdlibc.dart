@@ -2,7 +2,6 @@ import 'dart:ffi' as ffi;
 
 import '../std/std.dart';
 import 'errno.dart';
-import '../std/fcntl.dart';
 import 'ffigen.dart' as ffi;
 import 'fnmatch.dart';
 import 'glob.dart';
