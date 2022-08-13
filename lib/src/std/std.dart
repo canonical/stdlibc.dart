@@ -5,6 +5,7 @@ import 'fcntl.dart';
 import 'ffigen.dart' as ffi;
 import 'fnmatch.dart';
 import 'stdlib.dart';
+import 'string.dart';
 import 'syslog.dart';
 import 'unistd.dart';
 
@@ -15,5 +16,6 @@ abstract class StdLibC extends LibC
         StdFcntlMixin,
         StdFnmatchMixin,
         StdStdlibMixin,
+        StdStringMixin,
         StdSyslogMixin,
         StdUnistdMixin {}

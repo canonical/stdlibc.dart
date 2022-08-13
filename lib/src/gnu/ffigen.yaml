@@ -45,8 +45,6 @@ functions:
     - "__fxstat"
     - "__lxstat"
     - "__xstat"
-    # string.h
-    - "strerror"
     # sysinfo.h
     - "sysinfo"
     # utsname.h

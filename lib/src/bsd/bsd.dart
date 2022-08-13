@@ -9,7 +9,6 @@ import 'mman.dart';
 import 'poll.dart';
 import 'pwd.dart';
 import 'stat.dart';
-import 'string.dart';
 import 'sysinfo.dart';
 import 'uname.dart';
 import 'wordexp.dart';
@@ -30,7 +29,6 @@ class BsdLibC extends StdLibC
         BsdPollMixin,
         BsdPwdMixin,
         BsdStatMixin,
-        BsdStringMixin,
         BsdSysinfoMixin,
         BsdUnameMixin,
         BsdWordexpMixin {}

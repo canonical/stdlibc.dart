@@ -44,8 +44,6 @@ functions:
     - "fstat"
     - "lstat"
     - "stat"
-    # string.h
-    - "strerror"
     # utsname.h
     - "uname"
     # wordexp.h

@@ -11,6 +11,7 @@ headers:
     - "/usr/include/fcntl.h"
     - "/usr/include/fnmatch.h"
     - "/usr/include/stdlib.h"
+    - "/usr/include/string.h"
     - "/usr/include/syslog.h"
     - "/usr/include/unistd.h"
 globals:
@@ -27,6 +28,8 @@ functions:
     - "putenv"
     - "setenv"
     - "unsetenv"
+    # string.h
+    - "strerror"
     # syslog.h
     - "closelog"
     - "openlog"
