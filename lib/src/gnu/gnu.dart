@@ -11,7 +11,6 @@ import 'pwd.dart';
 import 'stat.dart';
 import 'string.dart';
 import 'sysinfo.dart';
-import 'syslog.dart';
 import 'uname.dart';
 import 'wordexp.dart';
 
@@ -28,6 +27,5 @@ class GnuLibC extends StdLibC
         GnuStatMixin,
         GnuStringMixin,
         GnuSysinfoMixin,
-        GnuSyslogMixin,
         GnuUnameMixin,
         GnuWordexpMixin {}

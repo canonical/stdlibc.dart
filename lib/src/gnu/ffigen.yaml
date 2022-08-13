@@ -49,11 +49,6 @@ functions:
     - "strerror"
     # sysinfo.h
     - "sysinfo"
-    # syslog.h
-    - "closelog"
-    - "openlog"
-    - "setlogmask"
-    - "syslog"
     # utsname.h
     - "uname"
     # wordexp.h

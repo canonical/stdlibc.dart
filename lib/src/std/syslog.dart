@@ -4,9 +4,9 @@ import 'package:ffi/ffi.dart' as ffi;
 
 import '../libc.dart';
 import '../util.dart';
-import 'gnu.dart';
+import 'std.dart';
 
-mixin GnuSyslogMixin on LibC {
+mixin StdSyslogMixin on LibC {
   @override
   void openlog(String? ident, int option, int facility) {
     // ident must not be free'd

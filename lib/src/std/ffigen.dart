@@ -32,6 +32,14 @@ class StdLibC {
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('close');
   late final _close = _closePtr.asFunction<int Function(int)>();
 
+  void closelog() {
+    return _closelog();
+  }
+
+  late final _closelogPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('closelog');
+  late final _closelog = _closelogPtr.asFunction<void Function()>();
+
   int dup(
     int __fd,
   ) {
@@ -199,6 +207,25 @@ class StdLibC {
   late final _open =
       _openPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, int)>();
 
+  void openlog(
+    ffi.Pointer<ffi.Char> __ident,
+    int __option,
+    int __facility,
+  ) {
+    return _openlog(
+      __ident,
+      __option,
+      __facility,
+    );
+  }
+
+  late final _openlogPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<ffi.Char>, ffi.Int, ffi.Int)>>('openlog');
+  late final _openlog =
+      _openlogPtr.asFunction<void Function(ffi.Pointer<ffi.Char>, int, int)>();
+
   int pipe(
     ffi.Pointer<ffi.Int> __pipedes,
   ) {
@@ -353,6 +380,18 @@ class StdLibC {
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Long)>>('sethostid');
   late final _sethostid = _sethostidPtr.asFunction<int Function(int)>();
 
+  int setlogmask(
+    int __mask,
+  ) {
+    return _setlogmask(
+      __mask,
+    );
+  }
+
+  late final _setlogmaskPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('setlogmask');
+  late final _setlogmask = _setlogmaskPtr.asFunction<int Function(int)>();
+
   int setpgid(
     int __pid,
     int __pgid,
@@ -425,6 +464,22 @@ class StdLibC {
   late final _sync1Ptr =
       _lookup<ffi.NativeFunction<ffi.Void Function()>>('sync');
   late final _sync1 = _sync1Ptr.asFunction<void Function()>();
+
+  void syslog(
+    int __pri,
+    ffi.Pointer<ffi.Char> __fmt,
+  ) {
+    return _syslog(
+      __pri,
+      __fmt,
+    );
+  }
+
+  late final _syslogPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Pointer<ffi.Char>)>>('syslog');
+  late final _syslog =
+      _syslogPtr.asFunction<void Function(int, ffi.Pointer<ffi.Char>)>();
 
   int unsetenv(
     ffi.Pointer<ffi.Char> __name,
