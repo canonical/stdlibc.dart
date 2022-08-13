@@ -1,6 +1,6 @@
 import 'dart:ffi' as ffi;
 
-import '../libc.dart';
+import '../std/std.dart';
 import 'errno.dart';
 import 'fcntl.dart';
 import 'ffigen.dart' as ffi;
@@ -16,7 +16,6 @@ import 'string.dart';
 import 'sysinfo.dart';
 import 'syslog.dart';
 import 'uname.dart';
-import 'unistd.dart';
 import 'wordexp.dart';
 
 final dylib = ffi.BsdLibC(ffi.DynamicLibrary.process());
@@ -42,5 +41,4 @@ class BsdLibC extends StdLibC
         BsdSysinfoMixin,
         BsdSyslogMixin,
         BsdUnameMixin,
-        BsdUnistdMixin,
         BsdWordexpMixin {}

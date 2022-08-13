@@ -4,7 +4,7 @@ import '../libc.dart';
 import '../util.dart';
 import 'gnu.dart';
 
-mixin GnuFcntlMixin on StdLibC {
+mixin GnuFcntlMixin on LibC {
   @override
   int open(String file, int flags) {
     return ffi.using((arena) {

@@ -3,7 +3,7 @@ import 'ffigen.dart' as ffi;
 
 // ignore_for_file: type=lint
 
-mixin BsdMacroMixin on StdLibC {
+mixin BsdMacroMixin on LibC {
   @override
   int get ACCESSPERMS => ffi.ACCESSPERMS;
   @override

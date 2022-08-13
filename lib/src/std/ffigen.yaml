@@ -1,0 +1,47 @@
+name: StdLibC
+description: "Standard C Library"
+output: "lib/src/std/ffigen.dart"
+preamble: |
+  // ignore_for_file: non_positive_array_dimension, unused_field, type=lint
+sort: true
+llvm-path:
+  - "/usr/lib/llvm-9"
+headers:
+  entry-points:
+    - "/usr/include/unistd.h"
+globals:
+  exclude:
+    - ".*"
+functions:
+  include:
+    # unistd.h
+    - "close"
+    - "dup"
+    - "dup2"
+    - "fsync"
+    - "get.*id"
+    - "pipe"
+    - "pread"
+    - "pwrite"
+    - "read"
+    - "set.*id"
+    - "sync"
+    - "write"
+macros:
+  exclude:
+    - ".*"
+enums:
+  exclude:
+    - ".*"
+unnamed-enums:
+  exclude:
+    - ".*"
+structs:
+  exclude:
+    - ".*"
+unions:
+  exclude:
+    - ".*"
+typedefs:
+  exclude:
+    - ".*"

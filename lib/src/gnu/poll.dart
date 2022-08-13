@@ -8,7 +8,7 @@ import '../util.dart';
 import 'ffigen.dart' as ffi;
 import 'gnu.dart';
 
-mixin GnuPollMixin on StdLibC {
+mixin GnuPollMixin on LibC {
   @override
   List<Pollfd> poll(List<Pollfd> fds, int timeout) {
     return ffi.using((arena) {

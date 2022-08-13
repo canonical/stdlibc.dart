@@ -5,7 +5,7 @@ import '../mman.dart';
 import '../util.dart';
 import 'bsd.dart';
 
-mixin BsdMmanMixin on StdLibC {
+mixin BsdMmanMixin on LibC {
   @override
   Mmap mmap(
     int addr,
