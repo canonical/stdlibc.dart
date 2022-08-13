@@ -28,7 +28,7 @@ jobs:
         [ -s lib_src_macros.g.dart.diff ] || rm lib_src_macros.g.dart.diff
     - uses: actions/upload-artifact@v3
       with:
-        name: lib_src_macros.g.dart
+        name: lib_src_macros.g.dart.diff
         path: lib_src_macros.g.dart.diff
         if-no-files-found: ignore
     - run: ./.github/scripts/check-outdated-files.sh
