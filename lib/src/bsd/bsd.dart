@@ -3,7 +3,6 @@ import 'dart:ffi' as ffi;
 import '../std/std.dart';
 import 'errno.dart';
 import 'ffigen.dart' as ffi;
-import 'fnmatch.dart';
 import 'glob.dart';
 import 'macros.g.dart';
 import 'mman.dart';
@@ -26,7 +25,6 @@ ffi.Pointer<T> inode64Lookup<T extends ffi.NativeType>(String symbolName) {
 class BsdLibC extends StdLibC
     with
         BsdErrnoMixin,
-        BsdFnmatchMixin,
         BsdGlobMixin,
         BsdMacroMixin,
         BsdMmanMixin,

@@ -37,25 +37,6 @@ class GnuLibC {
           '__errno_location');
   late final _errno = _errnoPtr.asFunction<ffi.Pointer<ffi.Int> Function()>();
 
-  int fnmatch(
-    ffi.Pointer<ffi.Char> __pattern,
-    ffi.Pointer<ffi.Char> __name,
-    int __flags,
-  ) {
-    return _fnmatch(
-      __pattern,
-      __name,
-      __flags,
-    );
-  }
-
-  late final _fnmatchPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-              ffi.Int)>>('fnmatch');
-  late final _fnmatch = _fnmatchPtr.asFunction<
-      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
-
   int fstat(
     int __ver,
     int __fildes,

@@ -30,8 +30,6 @@ functions:
   include:
     # errno.h
     - "__errno_location"
-    # fnmatch.h
-    - "fnmatch"
     # glob.h
     - "glob"
     - "globfree"
