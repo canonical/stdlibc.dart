@@ -20,18 +20,6 @@ class BsdLibC {
           lookup)
       : _lookup = lookup;
 
-  int close(
-    int arg0,
-  ) {
-    return _close(
-      arg0,
-    );
-  }
-
-  late final _closePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('close');
-  late final _close = _closePtr.asFunction<int Function(int)>();
-
   void closelog() {
     return _closelog();
   }
@@ -39,32 +27,6 @@ class BsdLibC {
   late final _closelogPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function()>>('closelog');
   late final _closelog = _closelogPtr.asFunction<void Function()>();
-
-  int dup(
-    int arg0,
-  ) {
-    return _dup(
-      arg0,
-    );
-  }
-
-  late final _dupPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('dup');
-  late final _dup = _dupPtr.asFunction<int Function(int)>();
-
-  int dup2(
-    int arg0,
-    int arg1,
-  ) {
-    return _dup2(
-      arg0,
-      arg1,
-    );
-  }
-
-  late final _dup2Ptr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Int)>>('dup2');
-  late final _dup2 = _dup2Ptr.asFunction<int Function(int, int)>();
 
   ffi.Pointer<ffi.Int> errno() {
     return _errno();
@@ -109,26 +71,6 @@ class BsdLibC {
   late final _fstat =
       _fstatPtr.asFunction<int Function(int, ffi.Pointer<stat_t>)>();
 
-  int fsync(
-    int arg0,
-  ) {
-    return _fsync(
-      arg0,
-    );
-  }
-
-  late final _fsyncPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('fsync');
-  late final _fsync = _fsyncPtr.asFunction<int Function(int)>();
-
-  int getegid() {
-    return _getegid();
-  }
-
-  late final _getegidPtr =
-      _lookup<ffi.NativeFunction<ffi.UnsignedInt Function()>>('getegid');
-  late final _getegid = _getegidPtr.asFunction<int Function()>();
-
   ffi.Pointer<ffi.Char> getenv(
     ffi.Pointer<ffi.Char> arg0,
   ) {
@@ -142,95 +84,6 @@ class BsdLibC {
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>>('getenv');
   late final _getenv = _getenvPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
-
-  int geteuid() {
-    return _geteuid();
-  }
-
-  late final _geteuidPtr =
-      _lookup<ffi.NativeFunction<ffi.UnsignedInt Function()>>('geteuid');
-  late final _geteuid = _geteuidPtr.asFunction<int Function()>();
-
-  int getgid() {
-    return _getgid();
-  }
-
-  late final _getgidPtr =
-      _lookup<ffi.NativeFunction<ffi.UnsignedInt Function()>>('getgid');
-  late final _getgid = _getgidPtr.asFunction<int Function()>();
-
-  int gethostid() {
-    return _gethostid();
-  }
-
-  late final _gethostidPtr =
-      _lookup<ffi.NativeFunction<ffi.Long Function()>>('gethostid');
-  late final _gethostid = _gethostidPtr.asFunction<int Function()>();
-
-  int gethostuuid(
-    ffi.Pointer<ffi.UnsignedChar> arg0,
-    ffi.Pointer<timespec_t> arg1,
-  ) {
-    return _gethostuuid(
-      arg0,
-      arg1,
-    );
-  }
-
-  late final _gethostuuidPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.Pointer<ffi.UnsignedChar>,
-              ffi.Pointer<timespec_t>)>>('gethostuuid');
-  late final _gethostuuid = _gethostuuidPtr.asFunction<
-      int Function(ffi.Pointer<ffi.UnsignedChar>, ffi.Pointer<timespec_t>)>();
-
-  int getpeereid(
-    int arg0,
-    ffi.Pointer<ffi.UnsignedInt> arg1,
-    ffi.Pointer<ffi.UnsignedInt> arg2,
-  ) {
-    return _getpeereid(
-      arg0,
-      arg1,
-      arg2,
-    );
-  }
-
-  late final _getpeereidPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.Int, ffi.Pointer<ffi.UnsignedInt>,
-              ffi.Pointer<ffi.UnsignedInt>)>>('getpeereid');
-  late final _getpeereid = _getpeereidPtr.asFunction<
-      int Function(
-          int, ffi.Pointer<ffi.UnsignedInt>, ffi.Pointer<ffi.UnsignedInt>)>();
-
-  int getpgid(
-    int arg0,
-  ) {
-    return _getpgid(
-      arg0,
-    );
-  }
-
-  late final _getpgidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('getpgid');
-  late final _getpgid = _getpgidPtr.asFunction<int Function(int)>();
-
-  int getpid() {
-    return _getpid();
-  }
-
-  late final _getpidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function()>>('getpid');
-  late final _getpid = _getpidPtr.asFunction<int Function()>();
-
-  int getppid() {
-    return _getppid();
-  }
-
-  late final _getppidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function()>>('getppid');
-  late final _getppid = _getppidPtr.asFunction<int Function()>();
 
   ffi.Pointer<passwd_t> getpwnam(
     ffi.Pointer<ffi.Char> arg0,
@@ -259,41 +112,6 @@ class BsdLibC {
       'getpwuid');
   late final _getpwuid =
       _getpwuidPtr.asFunction<ffi.Pointer<passwd_t> Function(int)>();
-
-  ffi.Pointer<passwd_t> getpwuuid(
-    ffi.Pointer<ffi.UnsignedChar> arg0,
-  ) {
-    return _getpwuuid(
-      arg0,
-    );
-  }
-
-  late final _getpwuuidPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<passwd_t> Function(
-              ffi.Pointer<ffi.UnsignedChar>)>>('getpwuuid');
-  late final _getpwuuid = _getpwuuidPtr.asFunction<
-      ffi.Pointer<passwd_t> Function(ffi.Pointer<ffi.UnsignedChar>)>();
-
-  int getsid(
-    int arg0,
-  ) {
-    return _getsid(
-      arg0,
-    );
-  }
-
-  late final _getsidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('getsid');
-  late final _getsid = _getsidPtr.asFunction<int Function(int)>();
-
-  int getuid() {
-    return _getuid();
-  }
-
-  late final _getuidPtr =
-      _lookup<ffi.NativeFunction<ffi.UnsignedInt Function()>>('getuid');
-  late final _getuid = _getuidPtr.asFunction<int Function()>();
 
   int glob(
     ffi.Pointer<ffi.Char> arg0,
@@ -438,19 +256,6 @@ class BsdLibC {
   late final _openlog =
       _openlogPtr.asFunction<void Function(ffi.Pointer<ffi.Char>, int, int)>();
 
-  int pipe(
-    ffi.Pointer<ffi.Int> arg0,
-  ) {
-    return _pipe(
-      arg0,
-    );
-  }
-
-  late final _pipePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>>(
-          'pipe');
-  late final _pipe = _pipePtr.asFunction<int Function(ffi.Pointer<ffi.Int>)>();
-
   int poll(
     ffi.Pointer<pollfd_t> arg0,
     int arg1,
@@ -470,27 +275,6 @@ class BsdLibC {
   late final _poll =
       _pollPtr.asFunction<int Function(ffi.Pointer<pollfd_t>, int, int)>();
 
-  int pread(
-    int __fd,
-    ffi.Pointer<ffi.Void> __buf,
-    int __nbyte,
-    int __offset,
-  ) {
-    return _pread(
-      __fd,
-      __buf,
-      __nbyte,
-      __offset,
-    );
-  }
-
-  late final _preadPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Long Function(ffi.Int, ffi.Pointer<ffi.Void>, ffi.Size,
-              ffi.LongLong)>>('pread');
-  late final _pread = _preadPtr
-      .asFunction<int Function(int, ffi.Pointer<ffi.Void>, int, int)>();
-
   int putenv(
     ffi.Pointer<ffi.Char> arg0,
   ) {
@@ -504,57 +288,6 @@ class BsdLibC {
           'putenv');
   late final _putenv =
       _putenvPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
-
-  int pwrite(
-    int __fd,
-    ffi.Pointer<ffi.Void> __buf,
-    int __nbyte,
-    int __offset,
-  ) {
-    return _pwrite(
-      __fd,
-      __buf,
-      __nbyte,
-      __offset,
-    );
-  }
-
-  late final _pwritePtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Long Function(ffi.Int, ffi.Pointer<ffi.Void>, ffi.Size,
-              ffi.LongLong)>>('pwrite');
-  late final _pwrite = _pwritePtr
-      .asFunction<int Function(int, ffi.Pointer<ffi.Void>, int, int)>();
-
-  int read(
-    int arg0,
-    ffi.Pointer<ffi.Void> arg1,
-    int arg2,
-  ) {
-    return _read(
-      arg0,
-      arg1,
-      arg2,
-    );
-  }
-
-  late final _readPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Long Function(ffi.Int, ffi.Pointer<ffi.Void>, ffi.Size)>>('read');
-  late final _read =
-      _readPtr.asFunction<int Function(int, ffi.Pointer<ffi.Void>, int)>();
-
-  int setegid(
-    int arg0,
-  ) {
-    return _setegid(
-      arg0,
-    );
-  }
-
-  late final _setegidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.UnsignedInt)>>('setegid');
-  late final _setegid = _setegidPtr.asFunction<int Function(int)>();
 
   int setenv(
     ffi.Pointer<ffi.Char> __name,
@@ -575,42 +308,6 @@ class BsdLibC {
   late final _setenv = _setenvPtr.asFunction<
       int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
-  int seteuid(
-    int arg0,
-  ) {
-    return _seteuid(
-      arg0,
-    );
-  }
-
-  late final _seteuidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.UnsignedInt)>>('seteuid');
-  late final _seteuid = _seteuidPtr.asFunction<int Function(int)>();
-
-  int setgid(
-    int arg0,
-  ) {
-    return _setgid(
-      arg0,
-    );
-  }
-
-  late final _setgidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.UnsignedInt)>>('setgid');
-  late final _setgid = _setgidPtr.asFunction<int Function(int)>();
-
-  void sethostid(
-    int arg0,
-  ) {
-    return _sethostid(
-      arg0,
-    );
-  }
-
-  late final _sethostidPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Long)>>('sethostid');
-  late final _sethostid = _sethostidPtr.asFunction<void Function(int)>();
-
   int setlogmask(
     int arg0,
   ) {
@@ -622,95 +319,6 @@ class BsdLibC {
   late final _setlogmaskPtr =
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('setlogmask');
   late final _setlogmask = _setlogmaskPtr.asFunction<int Function(int)>();
-
-  int setpgid(
-    int arg0,
-    int arg1,
-  ) {
-    return _setpgid(
-      arg0,
-      arg1,
-    );
-  }
-
-  late final _setpgidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Int)>>(
-          'setpgid');
-  late final _setpgid = _setpgidPtr.asFunction<int Function(int, int)>();
-
-  int setregid(
-    int arg0,
-    int arg1,
-  ) {
-    return _setregid(
-      arg0,
-      arg1,
-    );
-  }
-
-  late final _setregidPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.UnsignedInt, ffi.UnsignedInt)>>('setregid');
-  late final _setregid = _setregidPtr.asFunction<int Function(int, int)>();
-
-  int setreuid(
-    int arg0,
-    int arg1,
-  ) {
-    return _setreuid(
-      arg0,
-      arg1,
-    );
-  }
-
-  late final _setreuidPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.UnsignedInt, ffi.UnsignedInt)>>('setreuid');
-  late final _setreuid = _setreuidPtr.asFunction<int Function(int, int)>();
-
-  int setrgid(
-    int arg0,
-  ) {
-    return _setrgid(
-      arg0,
-    );
-  }
-
-  late final _setrgidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.UnsignedInt)>>('setrgid');
-  late final _setrgid = _setrgidPtr.asFunction<int Function(int)>();
-
-  int setruid(
-    int arg0,
-  ) {
-    return _setruid(
-      arg0,
-    );
-  }
-
-  late final _setruidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.UnsignedInt)>>('setruid');
-  late final _setruid = _setruidPtr.asFunction<int Function(int)>();
-
-  int setsid() {
-    return _setsid();
-  }
-
-  late final _setsidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function()>>('setsid');
-  late final _setsid = _setsidPtr.asFunction<int Function()>();
-
-  int setuid(
-    int arg0,
-  ) {
-    return _setuid(
-      arg0,
-    );
-  }
-
-  late final _setuidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.UnsignedInt)>>('setuid');
-  late final _setuid = _setuidPtr.asFunction<int Function(int)>();
 
   int stat(
     ffi.Pointer<ffi.Char> arg0,
@@ -742,14 +350,6 @@ class BsdLibC {
           'strerror');
   late final _strerror =
       _strerrorPtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
-
-  void sync1() {
-    return _sync1();
-  }
-
-  late final _sync1Ptr =
-      _lookup<ffi.NativeFunction<ffi.Void Function()>>('sync');
-  late final _sync1 = _sync1Ptr.asFunction<void Function()>();
 
   void syslog(
     int arg0,
@@ -827,25 +427,6 @@ class BsdLibC {
           'wordfree');
   late final _wordfree =
       _wordfreePtr.asFunction<void Function(ffi.Pointer<wordexp_t>)>();
-
-  int write(
-    int __fd,
-    ffi.Pointer<ffi.Void> __buf,
-    int __nbyte,
-  ) {
-    return _write(
-      __fd,
-      __buf,
-      __nbyte,
-    );
-  }
-
-  late final _writePtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Long Function(
-              ffi.Int, ffi.Pointer<ffi.Void>, ffi.Size)>>('write');
-  late final _write =
-      _writePtr.asFunction<int Function(int, ffi.Pointer<ffi.Void>, int)>();
 }
 
 const int ACCESSPERMS = 511;

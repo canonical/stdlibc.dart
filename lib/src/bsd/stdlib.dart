@@ -6,7 +6,7 @@ import '../libc.dart';
 import '../util.dart';
 import 'bsd.dart';
 
-mixin BsdStdlibMixin on StdLibC {
+mixin BsdStdlibMixin on LibC {
   @override
   String? getenv(String name) {
     return ffi.using((arena) {

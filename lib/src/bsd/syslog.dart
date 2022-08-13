@@ -6,7 +6,7 @@ import '../libc.dart';
 import '../util.dart';
 import 'bsd.dart';
 
-mixin BsdSyslogMixin on StdLibC {
+mixin BsdSyslogMixin on LibC {
   @override
   void openlog(String? ident, int option, int facility) {
     // ident must not be free'd

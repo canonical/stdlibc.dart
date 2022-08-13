@@ -6,7 +6,7 @@ import '../libc.dart';
 import '../util.dart';
 import 'gnu.dart';
 
-mixin GnuSyslogMixin on StdLibC {
+mixin GnuSyslogMixin on LibC {
   @override
   void openlog(String? ident, int option, int facility) {
     // ident must not be free'd

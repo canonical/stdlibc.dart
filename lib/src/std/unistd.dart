@@ -5,9 +5,9 @@ import 'package:ffi/ffi.dart' as ffi;
 
 import '../libc.dart';
 import '../util.dart';
-import 'bsd.dart';
+import 'std.dart';
 
-mixin BsdUnistdMixin on StdLibC {
+mixin StdUnistdMixin on LibC {
   @override
   void close(int fd) => checkErrno('close', dylib.close(fd));
   @override

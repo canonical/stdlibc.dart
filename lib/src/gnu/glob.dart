@@ -8,7 +8,7 @@ import '../util.dart';
 import 'ffigen.dart' as ffi;
 import 'gnu.dart';
 
-mixin GnuGlobMixin on StdLibC {
+mixin GnuGlobMixin on LibC {
   @override
   List<String> glob(String pattern, int flags) {
     return ffi.using((arena) {

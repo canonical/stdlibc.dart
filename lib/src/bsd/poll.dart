@@ -8,7 +8,7 @@ import '../util.dart';
 import 'bsd.dart';
 import 'ffigen.dart' as ffi;
 
-mixin BsdPollMixin on StdLibC {
+mixin BsdPollMixin on LibC {
   @override
   List<Pollfd> poll(List<Pollfd> fds, int timeout) {
     return ffi.using((arena) {

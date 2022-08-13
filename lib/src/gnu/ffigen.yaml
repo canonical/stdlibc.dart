@@ -63,19 +63,6 @@ functions:
     - "openlog"
     - "setlogmask"
     - "syslog"
-    # unistd.h
-    - "close"
-    - "dup"
-    - "dup2"
-    - "fsync"
-    - "get.*id"
-    - "pipe"
-    - "pread"
-    - "pwrite"
-    - "read"
-    - "set.*id"
-    - "sync"
-    - "write"
     # utsname.h
     - "uname"
     # wordexp.h
