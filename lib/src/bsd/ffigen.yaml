@@ -46,11 +46,6 @@ functions:
     - "stat"
     # string.h
     - "strerror"
-    # syslog.h
-    - "closelog"
-    - "openlog"
-    - "setlogmask"
-    - "syslog"
     # utsname.h
     - "uname"
     # wordexp.h

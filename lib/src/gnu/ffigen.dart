@@ -20,14 +20,6 @@ class GnuLibC {
           lookup)
       : _lookup = lookup;
 
-  void closelog() {
-    return _closelog();
-  }
-
-  late final _closelogPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function()>>('closelog');
-  late final _closelog = _closelogPtr.asFunction<void Function()>();
-
   ffi.Pointer<ffi.Int> errno() {
     return _errno();
   }
@@ -193,25 +185,6 @@ class GnuLibC {
   late final _munmap =
       _munmapPtr.asFunction<int Function(ffi.Pointer<ffi.Void>, int)>();
 
-  void openlog(
-    ffi.Pointer<ffi.Char> __ident,
-    int __option,
-    int __facility,
-  ) {
-    return _openlog(
-      __ident,
-      __option,
-      __facility,
-    );
-  }
-
-  late final _openlogPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Void Function(
-              ffi.Pointer<ffi.Char>, ffi.Int, ffi.Int)>>('openlog');
-  late final _openlog =
-      _openlogPtr.asFunction<void Function(ffi.Pointer<ffi.Char>, int, int)>();
-
   int poll(
     ffi.Pointer<pollfd_t> __fds,
     int __nfds,
@@ -230,18 +203,6 @@ class GnuLibC {
               ffi.Pointer<pollfd_t>, ffi.UnsignedLong, ffi.Int)>>('poll');
   late final _poll =
       _pollPtr.asFunction<int Function(ffi.Pointer<pollfd_t>, int, int)>();
-
-  int setlogmask(
-    int __mask,
-  ) {
-    return _setlogmask(
-      __mask,
-    );
-  }
-
-  late final _setlogmaskPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('setlogmask');
-  late final _setlogmask = _setlogmaskPtr.asFunction<int Function(int)>();
 
   int stat(
     int __ver,
@@ -289,22 +250,6 @@ class GnuLibC {
           'sysinfo');
   late final _sysinfo =
       _sysinfoPtr.asFunction<int Function(ffi.Pointer<sysinfo_t>)>();
-
-  void syslog(
-    int __pri,
-    ffi.Pointer<ffi.Char> __fmt,
-  ) {
-    return _syslog(
-      __pri,
-      __fmt,
-    );
-  }
-
-  late final _syslogPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Void Function(ffi.Int, ffi.Pointer<ffi.Char>)>>('syslog');
-  late final _syslog =
-      _syslogPtr.asFunction<void Function(int, ffi.Pointer<ffi.Char>)>();
 
   int uname(
     ffi.Pointer<utsname_t> __name,

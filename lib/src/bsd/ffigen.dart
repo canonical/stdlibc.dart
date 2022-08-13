@@ -20,14 +20,6 @@ class BsdLibC {
           lookup)
       : _lookup = lookup;
 
-  void closelog() {
-    return _closelog();
-  }
-
-  late final _closelogPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function()>>('closelog');
-  late final _closelog = _closelogPtr.asFunction<void Function()>();
-
   ffi.Pointer<ffi.Int> errno() {
     return _errno();
   }
@@ -188,25 +180,6 @@ class BsdLibC {
   late final _munmap =
       _munmapPtr.asFunction<int Function(ffi.Pointer<ffi.Void>, int)>();
 
-  void openlog(
-    ffi.Pointer<ffi.Char> arg0,
-    int arg1,
-    int arg2,
-  ) {
-    return _openlog(
-      arg0,
-      arg1,
-      arg2,
-    );
-  }
-
-  late final _openlogPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Void Function(
-              ffi.Pointer<ffi.Char>, ffi.Int, ffi.Int)>>('openlog');
-  late final _openlog =
-      _openlogPtr.asFunction<void Function(ffi.Pointer<ffi.Char>, int, int)>();
-
   int poll(
     ffi.Pointer<pollfd_t> arg0,
     int arg1,
@@ -225,18 +198,6 @@ class BsdLibC {
               ffi.Pointer<pollfd_t>, ffi.UnsignedInt, ffi.Int)>>('poll');
   late final _poll =
       _pollPtr.asFunction<int Function(ffi.Pointer<pollfd_t>, int, int)>();
-
-  int setlogmask(
-    int arg0,
-  ) {
-    return _setlogmask(
-      arg0,
-    );
-  }
-
-  late final _setlogmaskPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('setlogmask');
-  late final _setlogmask = _setlogmaskPtr.asFunction<int Function(int)>();
 
   int stat(
     ffi.Pointer<ffi.Char> arg0,
@@ -268,22 +229,6 @@ class BsdLibC {
           'strerror');
   late final _strerror =
       _strerrorPtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
-
-  void syslog(
-    int arg0,
-    ffi.Pointer<ffi.Char> arg1,
-  ) {
-    return _syslog(
-      arg0,
-      arg1,
-    );
-  }
-
-  late final _syslogPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Void Function(ffi.Int, ffi.Pointer<ffi.Char>)>>('syslog');
-  late final _syslog =
-      _syslogPtr.asFunction<void Function(int, ffi.Pointer<ffi.Char>)>();
 
   int uname(
     ffi.Pointer<utsname_t> arg0,
