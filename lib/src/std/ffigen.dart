@@ -509,6 +509,39 @@ class StdLibC {
   late final _unsetenv =
       _unsetenvPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
+  int wordexp(
+    ffi.Pointer<ffi.Char> __words,
+    ffi.Pointer<wordexp_t> __pwordexp,
+    int __flags,
+  ) {
+    return _wordexp(
+      __words,
+      __pwordexp,
+      __flags,
+    );
+  }
+
+  late final _wordexpPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<wordexp_t>,
+              ffi.Int)>>('wordexp');
+  late final _wordexp = _wordexpPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<wordexp_t>, int)>();
+
+  void wordfree(
+    ffi.Pointer<wordexp_t> __wordexp,
+  ) {
+    return _wordfree(
+      __wordexp,
+    );
+  }
+
+  late final _wordfreePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<wordexp_t>)>>(
+          'wordfree');
+  late final _wordfree =
+      _wordfreePtr.asFunction<void Function(ffi.Pointer<wordexp_t>)>();
+
   int write(
     int __fd,
     ffi.Pointer<ffi.Void> __buf,
@@ -527,4 +560,14 @@ class StdLibC {
               ffi.Int, ffi.Pointer<ffi.Void>, ffi.Size)>>('write');
   late final _write =
       _writePtr.asFunction<int Function(int, ffi.Pointer<ffi.Void>, int)>();
+}
+
+class wordexp_t extends ffi.Struct {
+  @ffi.Size()
+  external int we_wordc;
+
+  external ffi.Pointer<ffi.Pointer<ffi.Char>> we_wordv;
+
+  @ffi.Size()
+  external int we_offs;
 }

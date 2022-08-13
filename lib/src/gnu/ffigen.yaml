@@ -49,9 +49,6 @@ functions:
     - "sysinfo"
     # utsname.h
     - "uname"
-    # wordexp.h
-    - "wordexp"
-    - "wordfree"
   rename:
     "__errno_location": "errno"
     "__fxstat": "fstat"
@@ -80,7 +77,6 @@ structs:
     - "sysinfo"
     - "timespec"
     - "utsname"
-    - "wordexp_t"
   rename:
     "passwd": "passwd_t"
     "pollfd": "pollfd_t"

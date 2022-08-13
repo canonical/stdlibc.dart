@@ -229,39 +229,6 @@ class BsdLibC {
           'uname');
   late final _uname =
       _unamePtr.asFunction<int Function(ffi.Pointer<utsname_t>)>();
-
-  int wordexp(
-    ffi.Pointer<ffi.Char> arg0,
-    ffi.Pointer<wordexp_t> arg1,
-    int arg2,
-  ) {
-    return _wordexp(
-      arg0,
-      arg1,
-      arg2,
-    );
-  }
-
-  late final _wordexpPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<wordexp_t>,
-              ffi.Int)>>('wordexp');
-  late final _wordexp = _wordexpPtr.asFunction<
-      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<wordexp_t>, int)>();
-
-  void wordfree(
-    ffi.Pointer<wordexp_t> arg0,
-  ) {
-    return _wordfree(
-      arg0,
-    );
-  }
-
-  late final _wordfreePtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<wordexp_t>)>>(
-          'wordfree');
-  late final _wordfree =
-      _wordfreePtr.asFunction<void Function(ffi.Pointer<wordexp_t>)>();
 }
 
 const int ACCESSPERMS = 511;
@@ -1776,14 +1743,4 @@ class utsname_t extends ffi.Struct {
 
   @ffi.Array.multi([256])
   external ffi.Array<ffi.Char> machine;
-}
-
-class wordexp_t extends ffi.Struct {
-  @ffi.Size()
-  external int we_wordc;
-
-  external ffi.Pointer<ffi.Pointer<ffi.Char>> we_wordv;
-
-  @ffi.Size()
-  external int we_offs;
 }

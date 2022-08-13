@@ -250,39 +250,6 @@ class GnuLibC {
           'uname');
   late final _uname =
       _unamePtr.asFunction<int Function(ffi.Pointer<utsname_t>)>();
-
-  int wordexp(
-    ffi.Pointer<ffi.Char> __words,
-    ffi.Pointer<wordexp_t> __pwordexp,
-    int __flags,
-  ) {
-    return _wordexp(
-      __words,
-      __pwordexp,
-      __flags,
-    );
-  }
-
-  late final _wordexpPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<wordexp_t>,
-              ffi.Int)>>('wordexp');
-  late final _wordexp = _wordexpPtr.asFunction<
-      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<wordexp_t>, int)>();
-
-  void wordfree(
-    ffi.Pointer<wordexp_t> __wordexp,
-  ) {
-    return _wordfree(
-      __wordexp,
-    );
-  }
-
-  late final _wordfreePtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<wordexp_t>)>>(
-          'wordfree');
-  late final _wordfree =
-      _wordfreePtr.asFunction<void Function(ffi.Pointer<wordexp_t>)>();
 }
 
 const int ACCESSPERMS = 511;
@@ -1279,14 +1246,4 @@ class utsname_t extends ffi.Struct {
 
   @ffi.Array.multi([65])
   external ffi.Array<ffi.Char> __domainname;
-}
-
-class wordexp_t extends ffi.Struct {
-  @ffi.Size()
-  external int we_wordc;
-
-  external ffi.Pointer<ffi.Pointer<ffi.Char>> we_wordv;
-
-  @ffi.Size()
-  external int we_offs;
 }

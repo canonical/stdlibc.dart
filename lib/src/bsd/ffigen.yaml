@@ -46,9 +46,6 @@ functions:
     - "stat"
     # utsname.h
     - "uname"
-    # wordexp.h
-    - "wordexp"
-    - "wordfree"
   rename:
     "__error": "errno"
 macros:
@@ -75,7 +72,6 @@ structs:
     - "stat"
     - "timespec"
     - "utsname"
-    - "wordexp_t"
   rename:
     "passwd": "passwd_t"
     "pollfd": "pollfd_t"
