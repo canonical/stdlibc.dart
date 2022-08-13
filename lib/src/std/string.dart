@@ -1,8 +1,8 @@
 import '../libc.dart';
 import '../util.dart';
-import 'bsd.dart';
+import 'std.dart';
 
-mixin BsdStringMixin on LibC {
+mixin StdStringMixin on LibC {
   @override
   String? strerror(int errnum) => dylib.strerror(errnum).toDartString();
 }
