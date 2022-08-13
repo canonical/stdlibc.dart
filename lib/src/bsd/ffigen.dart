@@ -180,25 +180,6 @@ class BsdLibC {
   late final _munmap =
       _munmapPtr.asFunction<int Function(ffi.Pointer<ffi.Void>, int)>();
 
-  int poll(
-    ffi.Pointer<pollfd_t> arg0,
-    int arg1,
-    int arg2,
-  ) {
-    return _poll(
-      arg0,
-      arg1,
-      arg2,
-    );
-  }
-
-  late final _pollPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(
-              ffi.Pointer<pollfd_t>, ffi.UnsignedInt, ffi.Int)>>('poll');
-  late final _poll =
-      _pollPtr.asFunction<int Function(ffi.Pointer<pollfd_t>, int, int)>();
-
   int stat(
     ffi.Pointer<ffi.Char> arg0,
     ffi.Pointer<stat_t> arg1,
@@ -1655,17 +1636,6 @@ class passwd_t extends ffi.Struct {
 
   @ffi.Long()
   external int pw_expire;
-}
-
-class pollfd_t extends ffi.Struct {
-  @ffi.Int()
-  external int fd;
-
-  @ffi.Short()
-  external int events;
-
-  @ffi.Short()
-  external int revents;
 }
 
 class stat_t extends ffi.Struct {

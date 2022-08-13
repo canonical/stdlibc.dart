@@ -35,8 +35,6 @@ functions:
     # mman.h
     - "mmap"
     - "munmap"
-    # poll.h
-    - "poll"
     # pwd.h
     - "getpwuid"
     - "getpwnam"
@@ -68,13 +66,11 @@ structs:
   include:
     - "glob_t"
     - "passwd"
-    - "pollfd"
     - "stat"
     - "timespec"
     - "utsname"
   rename:
     "passwd": "passwd_t"
-    "pollfd": "pollfd_t"
     "stat": "stat_t"
     "timespec": "timespec_t"
     "utsname": "utsname_t"

@@ -185,25 +185,6 @@ class GnuLibC {
   late final _munmap =
       _munmapPtr.asFunction<int Function(ffi.Pointer<ffi.Void>, int)>();
 
-  int poll(
-    ffi.Pointer<pollfd_t> __fds,
-    int __nfds,
-    int __timeout,
-  ) {
-    return _poll(
-      __fds,
-      __nfds,
-      __timeout,
-    );
-  }
-
-  late final _pollPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(
-              ffi.Pointer<pollfd_t>, ffi.UnsignedLong, ffi.Int)>>('poll');
-  late final _poll =
-      _pollPtr.asFunction<int Function(ffi.Pointer<pollfd_t>, int, int)>();
-
   int stat(
     int __ver,
     ffi.Pointer<ffi.Char> __filename,
@@ -1119,17 +1100,6 @@ class passwd_t extends ffi.Struct {
   external ffi.Pointer<ffi.Char> pw_dir;
 
   external ffi.Pointer<ffi.Char> pw_shell;
-}
-
-class pollfd_t extends ffi.Struct {
-  @ffi.Int()
-  external int fd;
-
-  @ffi.Short()
-  external int events;
-
-  @ffi.Short()
-  external int revents;
 }
 
 class stat_t extends ffi.Struct {
