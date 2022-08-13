@@ -113,21 +113,6 @@ class BsdLibC {
   late final _getpwuid =
       _getpwuidPtr.asFunction<ffi.Pointer<passwd_t> Function(int)>();
 
-  ffi.Pointer<passwd_t> getpwuuid(
-    ffi.Pointer<ffi.UnsignedChar> arg0,
-  ) {
-    return _getpwuuid(
-      arg0,
-    );
-  }
-
-  late final _getpwuuidPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<passwd_t> Function(
-              ffi.Pointer<ffi.UnsignedChar>)>>('getpwuuid');
-  late final _getpwuuid = _getpwuuidPtr.asFunction<
-      ffi.Pointer<passwd_t> Function(ffi.Pointer<ffi.UnsignedChar>)>();
-
   int glob(
     ffi.Pointer<ffi.Char> arg0,
     int arg1,
@@ -365,14 +350,6 @@ class BsdLibC {
           'strerror');
   late final _strerror =
       _strerrorPtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
-
-  void sync1() {
-    return _sync1();
-  }
-
-  late final _sync1Ptr =
-      _lookup<ffi.NativeFunction<ffi.Void Function()>>('sync');
-  late final _sync1 = _sync1Ptr.asFunction<void Function()>();
 
   void syslog(
     int arg0,
