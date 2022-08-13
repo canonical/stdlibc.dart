@@ -6,7 +6,6 @@ import 'ffigen.dart' as ffi;
 import 'glob.dart';
 import 'macros.g.dart';
 import 'mman.dart';
-import 'poll.dart';
 import 'pwd.dart';
 import 'stat.dart';
 import 'sysinfo.dart';
@@ -25,7 +24,6 @@ class BsdLibC extends StdLibC
         BsdGlobMixin,
         BsdMacroMixin,
         BsdMmanMixin,
-        BsdPollMixin,
         BsdPwdMixin,
         BsdStatMixin,
         BsdSysinfoMixin,

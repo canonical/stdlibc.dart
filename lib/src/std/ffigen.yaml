@@ -10,6 +10,7 @@ headers:
   entry-points:
     - "/usr/include/fcntl.h"
     - "/usr/include/fnmatch.h"
+    - "/usr/include/poll.h"
     - "/usr/include/stdlib.h"
     - "/usr/include/string.h"
     - "/usr/include/syslog.h"
@@ -24,6 +25,8 @@ functions:
     - "open"
     # fnmatch.h
     - "fnmatch"
+    # poll.h
+    - "poll"
     # stdlib.h
     - "getenv"
     - "putenv"
@@ -63,7 +66,10 @@ unnamed-enums:
     - ".*"
 structs:
   include:
+    - "pollfd"
     - "wordexp_t"
+  rename:
+    "pollfd": "pollfd_t"
 unions:
   exclude:
     - ".*"

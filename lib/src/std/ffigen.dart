@@ -239,6 +239,25 @@ class StdLibC {
           'pipe');
   late final _pipe = _pipePtr.asFunction<int Function(ffi.Pointer<ffi.Int>)>();
 
+  int poll(
+    ffi.Pointer<pollfd_t> __fds,
+    int __nfds,
+    int __timeout,
+  ) {
+    return _poll(
+      __fds,
+      __nfds,
+      __timeout,
+    );
+  }
+
+  late final _pollPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<pollfd_t>, ffi.UnsignedLong, ffi.Int)>>('poll');
+  late final _poll =
+      _pollPtr.asFunction<int Function(ffi.Pointer<pollfd_t>, int, int)>();
+
   int pread(
     int __fd,
     ffi.Pointer<ffi.Void> __buf,
@@ -560,6 +579,17 @@ class StdLibC {
               ffi.Int, ffi.Pointer<ffi.Void>, ffi.Size)>>('write');
   late final _write =
       _writePtr.asFunction<int Function(int, ffi.Pointer<ffi.Void>, int)>();
+}
+
+class pollfd_t extends ffi.Struct {
+  @ffi.Int()
+  external int fd;
+
+  @ffi.Short()
+  external int events;
+
+  @ffi.Short()
+  external int revents;
 }
 
 class wordexp_t extends ffi.Struct {

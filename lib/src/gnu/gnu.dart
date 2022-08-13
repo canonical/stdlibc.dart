@@ -6,7 +6,6 @@ import 'ffigen.dart' as ffi;
 import 'glob.dart';
 import 'macros.g.dart';
 import 'mman.dart';
-import 'poll.dart';
 import 'pwd.dart';
 import 'stat.dart';
 import 'sysinfo.dart';
@@ -20,7 +19,6 @@ class GnuLibC extends StdLibC
         GnuGlobMixin,
         GnuMacroMixin,
         GnuMmanMixin,
-        GnuPollMixin,
         GnuPwdMixin,
         GnuStatMixin,
         GnuSysinfoMixin,
