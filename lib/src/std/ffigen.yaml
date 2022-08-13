@@ -10,6 +10,7 @@ headers:
   entry-points:
     - "/usr/include/fcntl.h"
     - "/usr/include/fnmatch.h"
+    - "/usr/include/fstab.h"
     - "/usr/include/poll.h"
     - "/usr/include/stdlib.h"
     - "/usr/include/string.h"
@@ -25,6 +26,12 @@ functions:
     - "open"
     # fnmatch.h
     - "fnmatch"
+    # fstab.h
+    - "getfsent"
+    - "getfsspec"
+    - "getfsfile"
+    - "setfsent"
+    - "endfsent"
     # poll.h
     - "poll"
     # stdlib.h
@@ -66,9 +73,11 @@ unnamed-enums:
     - ".*"
 structs:
   include:
+    - "fstab"
     - "pollfd"
     - "wordexp_t"
   rename:
+    "fstab": "fstab_t"
     "pollfd": "pollfd_t"
 unions:
   exclude:

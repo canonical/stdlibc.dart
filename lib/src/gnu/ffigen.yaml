@@ -11,6 +11,7 @@ headers:
     - "/usr/include/errno.h"
     - "/usr/include/fcntl.h"
     - "/usr/include/fnmatch.h"
+    - "/usr/include/fstab.h"
     - "/usr/include/glob.h"
     - "/usr/include/poll.h"
     - "/usr/include/pwd.h"

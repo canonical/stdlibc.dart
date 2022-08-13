@@ -66,6 +66,14 @@ class StdLibC {
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Int)>>('dup2');
   late final _dup2 = _dup2Ptr.asFunction<int Function(int, int)>();
 
+  void endfsent() {
+    return _endfsent();
+  }
+
+  late final _endfsentPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('endfsent');
+  late final _endfsent = _endfsentPtr.asFunction<void Function()>();
+
   int fnmatch(
     ffi.Pointer<ffi.Char> __pattern,
     ffi.Pointer<ffi.Char> __name,
@@ -126,6 +134,43 @@ class StdLibC {
   late final _geteuidPtr =
       _lookup<ffi.NativeFunction<ffi.UnsignedInt Function()>>('geteuid');
   late final _geteuid = _geteuidPtr.asFunction<int Function()>();
+
+  ffi.Pointer<fstab_t> getfsent() {
+    return _getfsent();
+  }
+
+  late final _getfsentPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<fstab_t> Function()>>('getfsent');
+  late final _getfsent =
+      _getfsentPtr.asFunction<ffi.Pointer<fstab_t> Function()>();
+
+  ffi.Pointer<fstab_t> getfsfile(
+    ffi.Pointer<ffi.Char> __name,
+  ) {
+    return _getfsfile(
+      __name,
+    );
+  }
+
+  late final _getfsfilePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<fstab_t> Function(ffi.Pointer<ffi.Char>)>>('getfsfile');
+  late final _getfsfile = _getfsfilePtr
+      .asFunction<ffi.Pointer<fstab_t> Function(ffi.Pointer<ffi.Char>)>();
+
+  ffi.Pointer<fstab_t> getfsspec(
+    ffi.Pointer<ffi.Char> __name,
+  ) {
+    return _getfsspec(
+      __name,
+    );
+  }
+
+  late final _getfsspecPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<fstab_t> Function(ffi.Pointer<ffi.Char>)>>('getfsspec');
+  late final _getfsspec = _getfsspecPtr
+      .asFunction<ffi.Pointer<fstab_t> Function(ffi.Pointer<ffi.Char>)>();
 
   int getgid() {
     return _getgid();
@@ -375,6 +420,14 @@ class StdLibC {
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.UnsignedInt)>>('seteuid');
   late final _seteuid = _seteuidPtr.asFunction<int Function(int)>();
 
+  int setfsent() {
+    return _setfsent();
+  }
+
+  late final _setfsentPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('setfsent');
+  late final _setfsent = _setfsentPtr.asFunction<int Function()>();
+
   int setgid(
     int __gid,
   ) {
@@ -579,6 +632,24 @@ class StdLibC {
               ffi.Int, ffi.Pointer<ffi.Void>, ffi.Size)>>('write');
   late final _write =
       _writePtr.asFunction<int Function(int, ffi.Pointer<ffi.Void>, int)>();
+}
+
+class fstab_t extends ffi.Struct {
+  external ffi.Pointer<ffi.Char> fs_spec;
+
+  external ffi.Pointer<ffi.Char> fs_file;
+
+  external ffi.Pointer<ffi.Char> fs_vfstype;
+
+  external ffi.Pointer<ffi.Char> fs_mntops;
+
+  external ffi.Pointer<ffi.Char> fs_type;
+
+  @ffi.Int()
+  external int fs_freq;
+
+  @ffi.Int()
+  external int fs_passno;
 }
 
 class pollfd_t extends ffi.Struct {
