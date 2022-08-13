@@ -463,17 +463,17 @@ mixin BsdMacroMixin on LibC {
   @override
   int get FREAD => ffi.FREAD;
   @override
-  String get FSTAB => throw UnsupportedError('FSTAB');
+  String get FSTAB => ffi.FSTAB;
   @override
-  String get FSTAB_RO => throw UnsupportedError('FSTAB_RO');
+  String get FSTAB_RO => ffi.FSTAB_RO;
   @override
-  String get FSTAB_RQ => throw UnsupportedError('FSTAB_RQ');
+  String get FSTAB_RQ => ffi.FSTAB_RQ;
   @override
-  String get FSTAB_RW => throw UnsupportedError('FSTAB_RW');
+  String get FSTAB_RW => ffi.FSTAB_RW;
   @override
-  String get FSTAB_SW => throw UnsupportedError('FSTAB_SW');
+  String get FSTAB_SW => ffi.FSTAB_SW;
   @override
-  String get FSTAB_XX => throw UnsupportedError('FSTAB_XX');
+  String get FSTAB_XX => ffi.FSTAB_XX;
   @override
   int get FWRITE => ffi.FWRITE;
   @override
