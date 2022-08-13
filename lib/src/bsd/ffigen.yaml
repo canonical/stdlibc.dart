@@ -65,12 +65,14 @@ unnamed-enums:
     - ".*"
 structs:
   include:
+    - "flock"
     - "glob_t"
     - "passwd"
     - "stat"
     - "timespec"
     - "utsname"
   rename:
+    "flock": "flock_t"
     "passwd": "passwd_t"
     "stat": "stat_t"
     "timespec": "timespec_t"

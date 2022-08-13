@@ -2,6 +2,7 @@ import 'dart:ffi' as ffi;
 
 import '../std/std.dart';
 import 'errno.dart';
+import 'fcntl.dart';
 import 'ffigen.dart' as ffi;
 import 'glob.dart';
 import 'macros.g.dart';
@@ -17,6 +18,7 @@ class GnuLibC extends StdLibC
     with
         GnuErrnoMixin,
         GnuGlobMixin,
+        GnuFcntlMixin,
         GnuMacroMixin,
         GnuMmanMixin,
         GnuPwdMixin,

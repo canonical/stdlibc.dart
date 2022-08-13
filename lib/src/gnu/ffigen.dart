@@ -1061,6 +1061,23 @@ const int W_OK = 2;
 
 const int X_OK = 1;
 
+class flock_t extends ffi.Struct {
+  @ffi.Short()
+  external int l_type;
+
+  @ffi.Short()
+  external int l_whence;
+
+  @ffi.Long()
+  external int l_start;
+
+  @ffi.Long()
+  external int l_len;
+
+  @ffi.Int()
+  external int l_pid;
+}
+
 class glob_t extends ffi.Struct {
   @ffi.UnsignedLong()
   external int gl_pathc;

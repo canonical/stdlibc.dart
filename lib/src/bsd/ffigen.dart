@@ -1586,6 +1586,23 @@ const int X_OK = 1;
 
 class dirent extends ffi.Opaque {}
 
+class flock_t extends ffi.Struct {
+  @ffi.LongLong()
+  external int l_start;
+
+  @ffi.LongLong()
+  external int l_len;
+
+  @ffi.Int()
+  external int l_pid;
+
+  @ffi.Short()
+  external int l_type;
+
+  @ffi.Short()
+  external int l_whence;
+}
+
 class glob_t extends ffi.Struct {
   @ffi.Size()
   external int gl_pathc;
