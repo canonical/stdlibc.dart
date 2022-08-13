@@ -578,6 +578,18 @@ const int FP_STATE_BYTES = 512;
 
 const int FREAD = 1;
 
+const String FSTAB = '/etc/fstab';
+
+const String FSTAB_RO = 'ro';
+
+const String FSTAB_RQ = 'rq';
+
+const String FSTAB_RW = 'rw';
+
+const String FSTAB_SW = 'sw';
+
+const String FSTAB_XX = 'xx';
+
 const int FWRITE = 2;
 
 const int F_ADDFILESIGS = 61;
