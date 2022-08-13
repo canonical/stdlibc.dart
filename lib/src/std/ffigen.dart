@@ -58,6 +58,25 @@ class StdLibC {
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Int)>>('dup2');
   late final _dup2 = _dup2Ptr.asFunction<int Function(int, int)>();
 
+  int fnmatch(
+    ffi.Pointer<ffi.Char> __pattern,
+    ffi.Pointer<ffi.Char> __name,
+    int __flags,
+  ) {
+    return _fnmatch(
+      __pattern,
+      __name,
+      __flags,
+    );
+  }
+
+  late final _fnmatchPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+              ffi.Int)>>('fnmatch');
+  late final _fnmatch = _fnmatchPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
+
   int fsync(
     int __fd,
   ) {

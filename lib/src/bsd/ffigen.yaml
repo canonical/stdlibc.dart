@@ -29,8 +29,6 @@ functions:
   include:
     # errno.h
     - "__error"
-    # fnmatch.h
-    - "fnmatch"
     # glob.h
     - "glob"
     - "globfree"

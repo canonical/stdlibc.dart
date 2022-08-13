@@ -36,25 +36,6 @@ class BsdLibC {
       _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Int> Function()>>('__error');
   late final _errno = _errnoPtr.asFunction<ffi.Pointer<ffi.Int> Function()>();
 
-  int fnmatch(
-    ffi.Pointer<ffi.Char> arg0,
-    ffi.Pointer<ffi.Char> arg1,
-    int arg2,
-  ) {
-    return _fnmatch(
-      arg0,
-      arg1,
-      arg2,
-    );
-  }
-
-  late final _fnmatchPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-              ffi.Int)>>('fnmatch');
-  late final _fnmatch = _fnmatchPtr.asFunction<
-      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
-
   int fstat(
     int arg0,
     ffi.Pointer<stat_t> arg1,
