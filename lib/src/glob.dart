@@ -1,8 +1,9 @@
 import 'package:meta/meta.dart';
 
-import 'libc.dart';
+import 'platform.dart';
 
-List<String> glob(String pattern, {int flags = 0}) => libc.glob(pattern, flags);
+List<String> glob(String pattern, {int flags = 0}) =>
+    platform.glob(pattern, flags);
 
 @immutable
 class GlobException implements Exception {

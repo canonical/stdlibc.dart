@@ -1,9 +1,9 @@
 import 'dart:ffi';
 
-import '../libc.dart';
+import '../platform.dart';
 import 'gnu.dart';
 
-mixin GnuErrnoMixin on LibC {
+mixin GnuErrnoMixin on PlatformLibC {
   @override
   int get errno => dylib.errno().value;
 

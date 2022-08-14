@@ -2,11 +2,11 @@ import 'dart:ffi' as ffi;
 
 import 'package:ffi/ffi.dart' as ffi;
 
-import '../libc.dart';
+import '../platform.dart';
 import '../util.dart';
 import 'std.dart';
 
-mixin StdSyslogMixin on LibC {
+mixin StdSyslogMixin on PlatformLibC {
   @override
   void openlog(String? ident, int option, int facility) {
     // ident must not be free'd

@@ -1,6 +1,6 @@
 import 'dart:ffi' as ffi;
 
-import '../libc.dart';
+import '../platform.dart';
 import 'fcntl.dart';
 import 'ffigen.dart' as ffi;
 import 'fnmatch.dart';
@@ -16,7 +16,7 @@ import 'wordexp.dart';
 
 final dylib = ffi.StdLibC(ffi.DynamicLibrary.process());
 
-abstract class StdLibC extends LibC
+abstract class StdLibC extends PlatformLibC
     with
         StdFcntlMixin,
         StdFnmatchMixin,

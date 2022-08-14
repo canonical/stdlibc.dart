@@ -3,12 +3,12 @@ import 'dart:ffi' as ffi;
 import 'package:ffi/ffi.dart' as ffi;
 
 import '../fstab.dart';
-import '../libc.dart';
+import '../platform.dart';
 import '../util.dart';
 import 'ffigen.dart' as ffi;
 import 'std.dart';
 
-mixin StdFstabMixin on LibC {
+mixin StdFstabMixin on PlatformLibC {
   @override
   List<Fstab> getfsent() {
     dylib.setfsent();

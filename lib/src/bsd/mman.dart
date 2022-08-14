@@ -1,11 +1,11 @@
 import 'dart:ffi' as ffi;
 
-import '../libc.dart';
 import '../mman.dart';
+import '../platform.dart';
 import '../util.dart';
 import 'bsd.dart';
 
-mixin BsdMmanMixin on LibC {
+mixin BsdMmanMixin on PlatformLibC {
   @override
   Mmap mmap(
     int addr,

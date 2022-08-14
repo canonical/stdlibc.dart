@@ -1,9 +1,9 @@
-import '../libc.dart';
+import '../platform.dart';
 import 'ffigen.dart' as ffi;
 
 // ignore_for_file: type=lint
 
-mixin GnuMacroMixin on LibC {
+mixin GnuMacroMixin on PlatformLibC {
   @override
   int get ACCESSPERMS => ffi.ACCESSPERMS;
   @override

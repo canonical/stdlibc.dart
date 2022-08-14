@@ -1,9 +1,9 @@
 import 'dart:ffi' as ffi;
 
-import '../libc.dart';
+import '../platform.dart';
 import 'std.dart';
 
-mixin StdIoctlMixin on LibC {
+mixin StdIoctlMixin on PlatformLibC {
   @override
   int ioctl(int fd, int request, dynamic arg) {
     if (arg == null) {

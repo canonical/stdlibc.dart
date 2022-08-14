@@ -2,13 +2,13 @@ import 'dart:ffi' as ffi;
 
 import 'package:ffi/ffi.dart' as ffi;
 
-import '../libc.dart';
+import '../platform.dart';
 import '../poll.dart';
 import '../util.dart';
 import 'ffigen.dart' as ffi;
 import 'std.dart';
 
-mixin StdPollMixin on LibC {
+mixin StdPollMixin on PlatformLibC {
   @override
   List<Pollfd> poll(List<Pollfd> fds, int timeout) {
     return ffi.using((arena) {

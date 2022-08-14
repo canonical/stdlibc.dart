@@ -3,11 +3,11 @@ import 'dart:typed_data';
 
 import 'package:ffi/ffi.dart' as ffi;
 
-import '../libc.dart';
+import '../platform.dart';
 import '../util.dart';
 import 'std.dart';
 
-mixin StdUnistdMixin on LibC {
+mixin StdUnistdMixin on PlatformLibC {
   @override
   void close(int fd) => checkErrno('close', dylib.close(fd));
   @override

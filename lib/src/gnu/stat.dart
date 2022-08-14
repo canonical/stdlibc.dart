@@ -2,13 +2,13 @@ import 'dart:ffi' as ffi;
 
 import 'package:ffi/ffi.dart' as ffi;
 
-import '../libc.dart';
+import '../platform.dart';
 import '../stat.dart';
 import '../util.dart';
 import 'ffigen.dart' as ffi;
 import 'gnu.dart';
 
-mixin GnuStatMixin on LibC {
+mixin GnuStatMixin on PlatformLibC {
   @override
   Stat stat(String file) {
     return ffi.using((arena) {

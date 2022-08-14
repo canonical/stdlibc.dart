@@ -2,11 +2,11 @@ import 'dart:ffi' as ffi;
 
 import 'package:ffi/ffi.dart' as ffi;
 
-import '../libc.dart';
+import '../platform.dart';
 import '../util.dart';
 import 'std.dart';
 
-mixin StdStdlibMixin on LibC {
+mixin StdStdlibMixin on PlatformLibC {
   @override
   String? getenv(String name) {
     return ffi.using((arena) {
