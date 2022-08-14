@@ -518,6 +518,22 @@ const int FFSYNC = 128;
 
 const int FILESEC_GUID = 3;
 
+const int FIOASYNC = 2147772029;
+
+const int FIOCLEX = 536897025;
+
+const int FIODTYPE = 1074030202;
+
+const int FIOGETOWN = 1074030203;
+
+const int FIONBIO = 2147772030;
+
+const int FIONCLEX = 536897026;
+
+const int FIONREAD = 1074030207;
+
+const int FIOSETOWN = 2147772028;
+
 const int FNDELAY = 4;
 
 const int FNM_CASEFOLD = 16;
@@ -838,6 +854,20 @@ const int INT_LEAST8_MAX = 127;
 
 const int INT_LEAST8_MIN = -128;
 
+const int IOCPARM_MASK = 8191;
+
+const int IOCPARM_MAX = 8192;
+
+const int IOC_DIRMASK = 3758096384;
+
+const int IOC_IN = 2147483648;
+
+const int IOC_INOUT = 3221225472;
+
+const int IOC_OUT = 1073741824;
+
+const int IOC_VOID = 536870912;
+
 const int LITTLE_ENDIAN = 1234;
 
 const int LOCK_EX = 2;
@@ -1142,6 +1172,8 @@ const int POSIX_MADV_SEQUENTIAL = 2;
 
 const int POSIX_MADV_WILLNEED = 3;
 
+const int PPPDISC = 5;
+
 const int PRIO_MAX = 20;
 
 const int PRIO_MIN = -20;
@@ -1364,6 +1396,20 @@ const int SIG_SETMASK = 3;
 
 const int SIG_UNBLOCK = 2;
 
+const int SIOCATMARK = 1074033415;
+
+const int SIOCGHIWAT = 1074033409;
+
+const int SIOCGLOWAT = 1074033411;
+
+const int SIOCGPGRP = 1074033417;
+
+const int SIOCSHIWAT = 2147775232;
+
+const int SIOCSLOWAT = 2147775234;
+
+const int SIOCSPGRP = 2147775240;
+
 const int SIZE_MAX = -1;
 
 const int SI_ASYNCIO = 65540;
@@ -1375,6 +1421,8 @@ const int SI_QUEUE = 65538;
 const int SI_TIMER = 65539;
 
 const int SI_USER = 65537;
+
+const int SLIPDISC = 4;
 
 const int SS_DISABLE = 4;
 
@@ -1462,9 +1510,147 @@ const int S_IXOTH = 1;
 
 const int S_IXUSR = 64;
 
+const int TABLDISC = 3;
+
+const int TIOCCBRK = 536900730;
+
+const int TIOCCDTR = 536900728;
+
+const int TIOCCONS = 2147775586;
+
+const int TIOCDCDTIMESTAMP = 1074820184;
+
+const int TIOCDRAIN = 536900702;
+
+const int TIOCDSIMICROCODE = 536900693;
+
+const int TIOCEXCL = 536900621;
+
+const int TIOCEXT = 2147775584;
+
+const int TIOCFLUSH = 2147775504;
+
+const int TIOCGDRAINWAIT = 1074033750;
+
+const int TIOCGETD = 1074033690;
+
+const int TIOCGPGRP = 1074033783;
+
+const int TIOCGSIZE = 1074295912;
+
+const int TIOCGWINSZ = 1074295912;
+
+const int TIOCIXOFF = 536900736;
+
+const int TIOCIXON = 536900737;
+
+const int TIOCMBIC = 2147775595;
+
+const int TIOCMBIS = 2147775596;
+
+const int TIOCMGDTRWAIT = 1074033754;
+
+const int TIOCMGET = 1074033770;
+
+const int TIOCMODG = 1074033667;
+
+const int TIOCMODS = 2147775492;
+
+const int TIOCMSDTRWAIT = 2147775579;
+
+const int TIOCMSET = 2147775597;
+
+const int TIOCM_CAR = 64;
+
+const int TIOCM_CD = 64;
+
+const int TIOCM_CTS = 32;
+
+const int TIOCM_DSR = 256;
+
+const int TIOCM_DTR = 2;
+
+const int TIOCM_LE = 1;
+
+const int TIOCM_RI = 128;
+
+const int TIOCM_RNG = 128;
+
+const int TIOCM_RTS = 4;
+
+const int TIOCM_SR = 16;
+
+const int TIOCM_ST = 8;
+
+const int TIOCNOTTY = 536900721;
+
+const int TIOCNXCL = 536900622;
+
+const int TIOCOUTQ = 1074033779;
+
+const int TIOCPKT = 2147775600;
+
+const int TIOCPKT_DATA = 0;
+
+const int TIOCPKT_DOSTOP = 32;
+
+const int TIOCPKT_FLUSHREAD = 1;
+
+const int TIOCPKT_FLUSHWRITE = 2;
+
+const int TIOCPKT_IOCTL = 64;
+
+const int TIOCPKT_NOSTOP = 16;
+
+const int TIOCPKT_START = 8;
+
+const int TIOCPKT_STOP = 4;
+
+const int TIOCPTYGNAME = 1082160211;
+
+const int TIOCPTYGRANT = 536900692;
+
+const int TIOCPTYUNLK = 536900690;
+
+const int TIOCREMOTE = 2147775593;
+
+const int TIOCSBRK = 536900731;
+
+const int TIOCSCONS = 536900707;
+
+const int TIOCSCTTY = 536900705;
+
+const int TIOCSDRAINWAIT = 2147775575;
+
+const int TIOCSDTR = 536900729;
+
+const int TIOCSETD = 2147775515;
+
+const int TIOCSIG = 536900703;
+
+const int TIOCSPGRP = 2147775606;
+
+const int TIOCSSIZE = 2148037735;
+
+const int TIOCSTART = 536900718;
+
+const int TIOCSTAT = 536900709;
+
+const int TIOCSTI = 2147578994;
+
+const int TIOCSTOP = 536900719;
+
+const int TIOCSWINSZ = 2148037735;
+
+const int TIOCTIMESTAMP = 1074820185;
+
+const int TIOCUCNTL = 2147775590;
+
 const int TRAP_BRKPT = 1;
 
 const int TRAP_TRACE = 2;
+
+const int TTYDISC = 0;
 
 const int UF_APPEND = 4;
 

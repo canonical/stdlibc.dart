@@ -7,6 +7,7 @@ import 'fnmatch.dart';
 import 'fstab.dart';
 import 'glob.dart';
 import 'gnu/gnu.dart';
+import 'ioctl.dart';
 import 'macros.g.dart';
 import 'mman.dart';
 import 'poll.dart';
@@ -29,6 +30,7 @@ abstract class LibC
         FnmatchMixin,
         FstabMixin,
         GlobMixin,
+        IoctlMixin,
         MacroMixin,
         MmanMixin,
         PollMixin,

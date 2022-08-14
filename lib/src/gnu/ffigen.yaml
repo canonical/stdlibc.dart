@@ -20,6 +20,7 @@ headers:
     - "/usr/include/syslog.h"
     - "/usr/include/unistd.h"
     - "/usr/include/wordexp.h"
+    - "/usr/include/x86_64-linux-gnu/sys/ioctl.h"
     - "/usr/include/x86_64-linux-gnu/sys/mman.h"
     - "/usr/include/x86_64-linux-gnu/sys/stat.h"
     - "/usr/include/x86_64-linux-gnu/sys/sysinfo.h"

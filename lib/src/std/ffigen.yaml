@@ -15,6 +15,7 @@ headers:
     - "/usr/include/stdlib.h"
     - "/usr/include/string.h"
     - "/usr/include/syslog.h"
+    - "/usr/include/sys/ioctl.h"
     - "/usr/include/unistd.h"
     - "/usr/include/wordexp.h"
 globals:
@@ -47,6 +48,8 @@ functions:
     - "openlog"
     - "setlogmask"
     - "syslog"
+    # sys/ioctl.h
+    - "ioctl"
     # unistd.h
     - "close"
     - "dup"

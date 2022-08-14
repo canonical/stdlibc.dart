@@ -251,6 +251,48 @@ const int BIG_ENDIAN = 4321;
 
 const int BYTE_ORDER = 1234;
 
+const int CBRK = 0;
+
+const int CDISCARD = 15;
+
+const int CDSUSP = 25;
+
+const int CEOF = 4;
+
+const int CEOL = 0;
+
+const int CEOT = 4;
+
+const int CERASE = 127;
+
+const int CFLUSH = 15;
+
+const int CINTR = 3;
+
+const int CKILL = 21;
+
+const int CLNEXT = 22;
+
+const int CMIN = 1;
+
+const int CQUIT = 28;
+
+const int CREPRINT = 18;
+
+const int CRPRNT = 18;
+
+const int CSTART = 17;
+
+const int CSTATUS = 0;
+
+const int CSTOP = 19;
+
+const int CSUSP = 26;
+
+const int CTIME = 0;
+
+const int CWERASE = 23;
+
 const int DEFFILEMODE = 438;
 
 const int E2BIG = 7;
@@ -535,6 +577,18 @@ const int FD_SETSIZE = 1024;
 
 const int FFSYNC = 1052672;
 
+const int FIOASYNC = 21586;
+
+const int FIOCLEX = 21585;
+
+const int FIONBIO = 21537;
+
+const int FIONCLEX = 21584;
+
+const int FIONREAD = 21531;
+
+const int FIOQSIZE = 21600;
+
 const int FNDELAY = 2048;
 
 const int FNM_CASEFOLD = 16;
@@ -652,6 +706,16 @@ const int GLOB_PERIOD = 128;
 const int GLOB_TILDE = 4096;
 
 const int GLOB_TILDE_CHECK = 16384;
+
+const int IOCSIZE_MASK = 1073676288;
+
+const int IOCSIZE_SHIFT = 16;
+
+const int IOC_IN = 1073741824;
+
+const int IOC_INOUT = 3221225472;
+
+const int IOC_OUT = 2147483648;
 
 const int LITTLE_ENDIAN = 1234;
 
@@ -829,11 +893,45 @@ const int MS_INVALIDATE = 2;
 
 const int MS_SYNC = 4;
 
+const int NCC = 8;
+
 const int NFDBITS = 64;
 
 const int NSS_BUFLEN_PASSWD = 1024;
 
 const int NULL = 0;
+
+const int N_6PACK = 7;
+
+const int N_AX25 = 5;
+
+const int N_HCI = 15;
+
+const int N_HDLC = 13;
+
+const int N_IRDA = 11;
+
+const int N_MASC = 8;
+
+const int N_MOUSE = 2;
+
+const int N_PPP = 3;
+
+const int N_PROFIBUS_FDL = 10;
+
+const int N_R3964 = 9;
+
+const int N_SLIP = 1;
+
+const int N_SMSBLOCK = 12;
+
+const int N_STRIP = 4;
+
+const int N_SYNC_PPP = 14;
+
+const int N_TTY = 0;
+
+const int N_X25 = 6;
 
 const int O_ACCMODE = 3;
 
@@ -939,6 +1037,114 @@ const int SEEK_END = 2;
 
 const int SEEK_SET = 0;
 
+const int SIOCADDDLCI = 35200;
+
+const int SIOCADDMULTI = 35121;
+
+const int SIOCADDRT = 35083;
+
+const int SIOCDARP = 35155;
+
+const int SIOCDELDLCI = 35201;
+
+const int SIOCDELMULTI = 35122;
+
+const int SIOCDELRT = 35084;
+
+const int SIOCDEVPRIVATE = 35312;
+
+const int SIOCDIFADDR = 35126;
+
+const int SIOCDRARP = 35168;
+
+const int SIOCGARP = 35156;
+
+const int SIOCGIFADDR = 35093;
+
+const int SIOCGIFBR = 35136;
+
+const int SIOCGIFBRDADDR = 35097;
+
+const int SIOCGIFCONF = 35090;
+
+const int SIOCGIFCOUNT = 35128;
+
+const int SIOCGIFDSTADDR = 35095;
+
+const int SIOCGIFENCAP = 35109;
+
+const int SIOCGIFFLAGS = 35091;
+
+const int SIOCGIFHWADDR = 35111;
+
+const int SIOCGIFINDEX = 35123;
+
+const int SIOCGIFMAP = 35184;
+
+const int SIOCGIFMEM = 35103;
+
+const int SIOCGIFMETRIC = 35101;
+
+const int SIOCGIFMTU = 35105;
+
+const int SIOCGIFNAME = 35088;
+
+const int SIOCGIFNETMASK = 35099;
+
+const int SIOCGIFPFLAGS = 35125;
+
+const int SIOCGIFSLAVE = 35113;
+
+const int SIOCGIFTXQLEN = 35138;
+
+const int SIOCGRARP = 35169;
+
+const int SIOCPROTOPRIVATE = 35296;
+
+const int SIOCRTMSG = 35085;
+
+const int SIOCSARP = 35157;
+
+const int SIOCSIFADDR = 35094;
+
+const int SIOCSIFBR = 35137;
+
+const int SIOCSIFBRDADDR = 35098;
+
+const int SIOCSIFDSTADDR = 35096;
+
+const int SIOCSIFENCAP = 35110;
+
+const int SIOCSIFFLAGS = 35092;
+
+const int SIOCSIFHWADDR = 35108;
+
+const int SIOCSIFHWBROADCAST = 35127;
+
+const int SIOCSIFLINK = 35089;
+
+const int SIOCSIFMAP = 35185;
+
+const int SIOCSIFMEM = 35104;
+
+const int SIOCSIFMETRIC = 35102;
+
+const int SIOCSIFMTU = 35106;
+
+const int SIOCSIFNAME = 35107;
+
+const int SIOCSIFNETMASK = 35100;
+
+const int SIOCSIFPFLAGS = 35124;
+
+const int SIOCSIFSLAVE = 35120;
+
+const int SIOCSIFTXQLEN = 35139;
+
+const int SIOCSRARP = 35170;
+
+const int SIOGIFINDEX = 35123;
+
 const int SI_LOAD_SHIFT = 16;
 
 const int STAT_VER = 1;
@@ -1004,6 +1210,176 @@ const int S_IXGRP = 8;
 const int S_IXOTH = 1;
 
 const int S_IXUSR = 64;
+
+const int TCFLSH = 21515;
+
+const int TCGETA = 21509;
+
+const int TCGETS = 21505;
+
+const int TCGETX = 21554;
+
+const int TCSBRK = 21513;
+
+const int TCSBRKP = 21541;
+
+const int TCSETA = 21510;
+
+const int TCSETAF = 21512;
+
+const int TCSETAW = 21511;
+
+const int TCSETS = 21506;
+
+const int TCSETSF = 21508;
+
+const int TCSETSW = 21507;
+
+const int TCSETX = 21555;
+
+const int TCSETXF = 21556;
+
+const int TCSETXW = 21557;
+
+const int TCXONC = 21514;
+
+const int TIOCCBRK = 21544;
+
+const int TIOCCONS = 21533;
+
+const int TIOCEXCL = 21516;
+
+const int TIOCGDEV = 2147767346;
+
+const int TIOCGETD = 21540;
+
+const int TIOCGEXCL = 2147767360;
+
+const int TIOCGICOUNT = 21597;
+
+const int TIOCGLCKTRMIOS = 21590;
+
+const int TIOCGPGRP = 21519;
+
+const int TIOCGPKT = 2147767352;
+
+const int TIOCGPTLCK = 2147767353;
+
+const int TIOCGPTN = 2147767344;
+
+const int TIOCGPTPEER = 21569;
+
+const int TIOCGRS485 = 21550;
+
+const int TIOCGSERIAL = 21534;
+
+const int TIOCGSID = 21545;
+
+const int TIOCGSOFTCAR = 21529;
+
+const int TIOCGWINSZ = 21523;
+
+const int TIOCINQ = 21531;
+
+const int TIOCLINUX = 21532;
+
+const int TIOCMBIC = 21527;
+
+const int TIOCMBIS = 21526;
+
+const int TIOCMGET = 21525;
+
+const int TIOCMIWAIT = 21596;
+
+const int TIOCMSET = 21528;
+
+const int TIOCM_CAR = 64;
+
+const int TIOCM_CD = 64;
+
+const int TIOCM_CTS = 32;
+
+const int TIOCM_DSR = 256;
+
+const int TIOCM_DTR = 2;
+
+const int TIOCM_LE = 1;
+
+const int TIOCM_RI = 128;
+
+const int TIOCM_RNG = 128;
+
+const int TIOCM_RTS = 4;
+
+const int TIOCM_SR = 16;
+
+const int TIOCM_ST = 8;
+
+const int TIOCNOTTY = 21538;
+
+const int TIOCNXCL = 21517;
+
+const int TIOCOUTQ = 21521;
+
+const int TIOCPKT = 21536;
+
+const int TIOCPKT_DATA = 0;
+
+const int TIOCPKT_DOSTOP = 32;
+
+const int TIOCPKT_FLUSHREAD = 1;
+
+const int TIOCPKT_FLUSHWRITE = 2;
+
+const int TIOCPKT_IOCTL = 64;
+
+const int TIOCPKT_NOSTOP = 16;
+
+const int TIOCPKT_START = 8;
+
+const int TIOCPKT_STOP = 4;
+
+const int TIOCSBRK = 21543;
+
+const int TIOCSCTTY = 21518;
+
+const int TIOCSERCONFIG = 21587;
+
+const int TIOCSERGETLSR = 21593;
+
+const int TIOCSERGETMULTI = 21594;
+
+const int TIOCSERGSTRUCT = 21592;
+
+const int TIOCSERGWILD = 21588;
+
+const int TIOCSERSETMULTI = 21595;
+
+const int TIOCSERSWILD = 21589;
+
+const int TIOCSER_TEMT = 1;
+
+const int TIOCSETD = 21539;
+
+const int TIOCSIG = 1074025526;
+
+const int TIOCSLCKTRMIOS = 21591;
+
+const int TIOCSPGRP = 21520;
+
+const int TIOCSPTLCK = 1074025521;
+
+const int TIOCSRS485 = 21551;
+
+const int TIOCSSERIAL = 21535;
+
+const int TIOCSSOFTCAR = 21530;
+
+const int TIOCSTI = 21522;
+
+const int TIOCSWINSZ = 21524;
+
+const int TIOCVHANGUP = 21559;
 
 const int UTIME_NOW = 1073741823;
 
