@@ -1,9 +1,9 @@
 import 'package:meta/meta.dart';
 
-import 'libc.dart';
+import 'platform.dart';
 
 List<String> wordexp(String words, {int flags = 0}) {
-  return libc.wordexp(words, flags);
+  return platform.wordexp(words, flags);
 }
 
 @immutable

@@ -3,12 +3,12 @@ import 'dart:ffi' as ffi;
 import 'package:ffi/ffi.dart' as ffi;
 
 import '../glob.dart';
-import '../libc.dart';
+import '../platform.dart';
 import '../util.dart';
 import 'ffigen.dart' as ffi;
 import 'gnu.dart';
 
-mixin GnuGlobMixin on LibC {
+mixin GnuGlobMixin on PlatformLibC {
   @override
   List<String> glob(String pattern, int flags) {
     return ffi.using((arena) {

@@ -3,12 +3,12 @@ import 'dart:ffi' as ffi;
 import 'package:ffi/ffi.dart' as ffi;
 
 import '../errno.dart';
-import '../libc.dart';
+import '../platform.dart';
 import '../pwd.dart';
 import '../util.dart';
 import 'std.dart';
 
-mixin StdPwdMixin on LibC {
+mixin StdPwdMixin on PlatformLibC {
   @override
   Passwd getpwnam(String name) {
     return ffi.using((arena) {

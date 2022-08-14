@@ -1,17 +1,17 @@
-import 'libc.dart';
+import 'platform.dart';
 
 int LOG_MASK(int pri) => 1 << pri;
 int LOG_UPTO(int pri) => (1 << (pri + 1)) - 1;
 
 void openlog([String? ident, int option = 0, int facility = 0]) {
-  libc.openlog(ident, option, facility);
+  platform.openlog(ident, option, facility);
 }
 
-int setlogmask(int mask) => libc.setlogmask(mask);
+int setlogmask(int mask) => platform.setlogmask(mask);
 
-void syslog(int priority, String message) => libc.syslog(priority, message);
+void syslog(int priority, String message) => platform.syslog(priority, message);
 
-void closelog() => libc.closelog();
+void closelog() => platform.closelog();
 
 mixin SyslogMixin {
   void openlog(String? ident, int option, int facility);

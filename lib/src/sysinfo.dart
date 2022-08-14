@@ -1,10 +1,10 @@
 import 'package:meta/meta.dart';
 
-import 'libc.dart';
+import 'platform.dart';
 import 'util.dart';
 
 /// Return system information.
-Sysinfo sysinfo() => libc.sysinfo();
+Sysinfo sysinfo() => platform.sysinfo();
 
 /// Certain statistics on memory and swap usage, as well as the load average.
 @immutable

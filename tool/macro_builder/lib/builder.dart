@@ -60,7 +60,7 @@ class MacroBuilder implements Builder {
     }
 
     final lib = Library((b) => b
-      ..directives.addAll([Directive.import('libc.dart')])
+      ..directives.addAll([Directive.import('platform.dart')])
       ..body.addAll([
         for (final m in macros)
           Method((b) => b
@@ -68,7 +68,7 @@ class MacroBuilder implements Builder {
             ..type = MethodType.getter
             ..returns = getType(m)
             ..lambda = true
-            ..body = Code('libc.$m')),
+            ..body = Code('platform.$m')),
         Mixin((b) => b
           ..name = 'MacroMixin'
           ..docs.add('\n\n// ignore_for_file: type=lint\n')
@@ -92,14 +92,14 @@ class MacroBuilder implements Builder {
     for (final impl in libs.entries) {
       final lib = Library((b) => b
         ..directives.addAll([
-          Directive.import('../libc.dart'),
+          Directive.import('../platform.dart'),
           Directive.import('ffigen.dart', as: 'ffi'),
         ])
         ..body.addAll([
           Mixin((b) => b
             ..docs.add('\n\n// ignore_for_file: type=lint\n')
             ..name = '${impl.key.capitalized}MacroMixin'
-            ..on = refer('LibC')
+            ..on = refer('PlatformLibC')
             ..methods.addAll([
               for (final m in macros)
                 Method((b) => b

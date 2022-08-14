@@ -1,14 +1,14 @@
-import 'libc.dart';
+import 'platform.dart';
 
-String? getenv(String name) => libc.getenv(name);
+String? getenv(String name) => platform.getenv(name);
 
-void putenv(String str) => libc.putenv(str);
+void putenv(String str) => platform.putenv(str);
 
 void setenv(String name, String value, {bool overwrite = true}) {
-  libc.setenv(name, value, overwrite);
+  platform.setenv(name, value, overwrite);
 }
 
-void unsetenv(String name) => libc.unsetenv(name);
+void unsetenv(String name) => platform.unsetenv(name);
 
 mixin StdlibMixin {
   String? getenv(String name);

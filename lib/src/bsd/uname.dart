@@ -2,13 +2,13 @@ import 'dart:ffi' as ffi;
 
 import 'package:ffi/ffi.dart' as ffi;
 
-import '../libc.dart';
+import '../platform.dart';
 import '../uname.dart';
 import '../util.dart';
 import 'bsd.dart';
 import 'ffigen.dart' as ffi;
 
-mixin BsdUnameMixin on LibC {
+mixin BsdUnameMixin on PlatformLibC {
   @override
   Utsname uname() {
     return ffi.using((arena) {

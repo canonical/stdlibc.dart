@@ -1,70 +1,71 @@
-import 'libc.dart';
+import 'platform.dart';
 
-void close(int fd) => libc.close(fd);
-int dup(int oldfd) => libc.dup(oldfd);
-int dup2(int oldfd, int newfd) => libc.dup2(oldfd, newfd);
-void fsync(int fd) => libc.fsync(fd);
+void close(int fd) => platform.close(fd);
+int dup(int oldfd) => platform.dup(oldfd);
+int dup2(int oldfd, int newfd) => platform.dup2(oldfd, newfd);
+void fsync(int fd) => platform.fsync(fd);
 
 /// Returns the effective group ID of the calling process.
-int getegid() => libc.getegid();
+int getegid() => platform.getegid();
 
 /// Returns the effective user ID of the calling process.
-int geteuid() => libc.geteuid();
+int geteuid() => platform.geteuid();
 
 /// Returns the real group ID of the calling process.
-int getgid() => libc.getgid();
+int getgid() => platform.getgid();
 
 /// Returns the process group ID of the specified process.
-int getpgid(int pid) => libc.getpgid(pid);
+int getpgid(int pid) => platform.getpgid(pid);
 
 /// Returns the process ID (PID) of the calling process.
-int getpid() => libc.getpid();
+int getpid() => platform.getpid();
 
 /// Returns the process ID of the parent of the calling process.
-int getppid() => libc.getppid();
+int getppid() => platform.getppid();
 
 /// Returns the session ID of the calling process.
-int getsid(int pid) => libc.getsid(pid);
+int getsid(int pid) => platform.getsid(pid);
 
 /// Returns the real user ID of the calling process.
-int getuid() => libc.getuid();
+int getuid() => platform.getuid();
 
-List<int> pipe() => libc.pipe();
+List<int> pipe() => platform.pipe();
 
-List<int> pread(int fd, int count, int offset) => libc.pread(fd, count, offset);
+List<int> pread(int fd, int count, int offset) =>
+    platform.pread(fd, count, offset);
 
 int pwrite(int fd, List<int> buffer, int offset) =>
-    libc.pwrite(fd, buffer, offset);
+    platform.pwrite(fd, buffer, offset);
 
-List<int> read(int fd, int count) => libc.read(fd, count);
+List<int> read(int fd, int count) => platform.read(fd, count);
 
 /// Sets the effective group ID of the calling process.
-int setegid(int gid) => libc.setegid(gid);
+int setegid(int gid) => platform.setegid(gid);
 
 /// Sets the effective user ID of the calling process.
-int seteuid(int uid) => libc.seteuid(uid);
+int seteuid(int uid) => platform.seteuid(uid);
 
 /// Sets the group ID of the calling process.
-int setgid(int gid) => libc.setgid(gid);
+int setgid(int gid) => platform.setgid(gid);
 
 /// Sets the process group ID of the specified process.
-int setpgid(int pid, int pgid) => libc.setpgid(pid, pgid);
+int setpgid(int pid, int pgid) => platform.setpgid(pid, pgid);
 
 /// Sets the real group ID of the calling process.
-int setregid(int rgid, int egid) => libc.setregid(rgid, egid);
+int setregid(int rgid, int egid) => platform.setregid(rgid, egid);
 
 /// Sets the real user ID of the calling process.
-int setreuid(int ruid, int euid) => libc.setreuid(ruid, euid);
+int setreuid(int ruid, int euid) => platform.setreuid(ruid, euid);
 
 /// Creates a session and sets the process group ID.
-int setsid() => libc.setsid();
+int setsid() => platform.setsid();
 
 /// Sets the effective user ID of the calling process.
-int setuid(int uid) => libc.setuid(uid);
+int setuid(int uid) => platform.setuid(uid);
 
-void sync() => libc.sync();
+void sync() => platform.sync();
 
-int write(int fd, List<int> buffer) => libc.write(fd, buffer);
+int write(int fd, List<int> buffer) => platform.write(fd, buffer);
 
 mixin UnistdMixin {
   void close(int fd);

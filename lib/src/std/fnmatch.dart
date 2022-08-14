@@ -1,10 +1,10 @@
 import 'package:ffi/ffi.dart' as ffi;
 
-import '../libc.dart';
+import '../platform.dart';
 import '../util.dart';
 import 'std.dart';
 
-mixin StdFnmatchMixin on LibC {
+mixin StdFnmatchMixin on PlatformLibC {
   @override
   int fnmatch(String pattern, String name, int flags) {
     return ffi.using((arena) {

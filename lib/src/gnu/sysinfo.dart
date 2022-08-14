@@ -2,13 +2,13 @@ import 'dart:ffi' as ffi;
 
 import 'package:ffi/ffi.dart' as ffi;
 
-import '../libc.dart';
+import '../platform.dart';
 import '../sysinfo.dart';
 import '../util.dart';
 import 'ffigen.dart' as ffi;
 import 'gnu.dart';
 
-mixin GnuSysinfoMixin on LibC {
+mixin GnuSysinfoMixin on PlatformLibC {
   @override
   Sysinfo sysinfo() {
     return ffi.using((arena) {

@@ -2,7 +2,7 @@ import 'dart:typed_data';
 
 import 'package:meta/meta.dart';
 
-import 'libc.dart';
+import 'platform.dart';
 
 Mmap mmap({
   int? address,
@@ -12,10 +12,10 @@ Mmap mmap({
   required int fd,
   int offset = 0,
 }) {
-  return libc.mmap(address ?? 0, length, prot, flags, fd, offset);
+  return platform.mmap(address ?? 0, length, prot, flags, fd, offset);
 }
 
-void munmap(Mmap map) => libc.munmap(map);
+void munmap(Mmap map) => platform.munmap(map);
 
 @immutable
 class Mmap {

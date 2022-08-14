@@ -1,10 +1,10 @@
 import 'package:meta/meta.dart';
 
-import 'libc.dart';
+import 'platform.dart';
 
-Stat stat(String file) => libc.stat(file);
-Stat fstat(int fd) => libc.fstat(fd);
-Stat lstat(String file) => libc.lstat(file);
+Stat stat(String file) => platform.stat(file);
+Stat fstat(int fd) => platform.fstat(fd);
+Stat lstat(String file) => platform.lstat(file);
 
 @immutable
 class Stat {

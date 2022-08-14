@@ -2,11 +2,11 @@ import 'dart:ffi' as ffi;
 
 import 'package:ffi/ffi.dart' as ffi;
 
-import '../libc.dart';
+import '../platform.dart';
 import '../util.dart';
 import 'std.dart';
 
-mixin StdFcntlMixin on LibC {
+mixin StdFcntlMixin on PlatformLibC {
   @override
   int fcntl(int fd, int cmd, dynamic arg) {
     if (arg == null) {

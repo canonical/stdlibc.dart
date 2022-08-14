@@ -1,11 +1,11 @@
 import 'package:meta/meta.dart';
 
-import 'libc.dart';
 import 'macros.g.dart';
+import 'platform.dart';
 
-int fcntl(int fd, int cmd, [dynamic arg]) => libc.fcntl(fd, cmd, arg);
+int fcntl(int fd, int cmd, [dynamic arg]) => platform.fcntl(fd, cmd, arg);
 
-int open(String file, {int? flags}) => libc.open(file, flags ?? O_RDONLY);
+int open(String file, {int? flags}) => platform.open(file, flags ?? O_RDONLY);
 
 mixin FcntlMixin {
   int fcntl(int fd, int cmd, dynamic arg);

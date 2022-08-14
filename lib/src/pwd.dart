@@ -1,9 +1,9 @@
 import 'package:meta/meta.dart';
 
-import 'libc.dart';
+import 'platform.dart';
 
-Passwd getpwnam(String name) => libc.getpwnam(name);
-Passwd getpwuid(int uid) => libc.getpwuid(uid);
+Passwd getpwnam(String name) => platform.getpwnam(name);
+Passwd getpwuid(int uid) => platform.getpwuid(uid);
 
 @immutable
 class Passwd {

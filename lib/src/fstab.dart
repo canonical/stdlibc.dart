@@ -1,10 +1,10 @@
 import 'package:meta/meta.dart';
 
-import 'libc.dart';
+import 'platform.dart';
 
-List<Fstab> getfsent() => libc.getfsent();
-Fstab? getfsspec(String spec) => libc.getfsspec(spec);
-Fstab? getfsfile(String file) => libc.getfsfile(file);
+List<Fstab> getfsent() => platform.getfsent();
+Fstab? getfsspec(String spec) => platform.getfsspec(spec);
+Fstab? getfsfile(String file) => platform.getfsfile(file);
 
 @immutable
 class Fstab {
