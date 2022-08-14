@@ -12,6 +12,7 @@ import 'stdlib.dart';
 import 'string.dart';
 import 'syslog.dart';
 import 'unistd.dart';
+import 'utmpx.dart';
 import 'wordexp.dart';
 
 final dylib = ffi.StdLibC(ffi.DynamicLibrary.process());
@@ -28,4 +29,5 @@ abstract class StdLibC extends PlatformLibC
         StdStringMixin,
         StdSyslogMixin,
         StdUnistdMixin,
+        StdUtmpxMixin,
         StdWordexpMixin {}

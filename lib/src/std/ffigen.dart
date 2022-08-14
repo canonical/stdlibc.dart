@@ -74,6 +74,14 @@ class StdLibC {
       _lookup<ffi.NativeFunction<ffi.Void Function()>>('endfsent');
   late final _endfsent = _endfsentPtr.asFunction<void Function()>();
 
+  void endutxent() {
+    return _endutxent();
+  }
+
+  late final _endutxentPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('endutxent');
+  late final _endutxent = _endutxentPtr.asFunction<void Function()>();
+
   int fcntl(
     int __fd,
     int __cmd,
@@ -277,6 +285,29 @@ class StdLibC {
   late final _getuidPtr =
       _lookup<ffi.NativeFunction<ffi.UnsignedInt Function()>>('getuid');
   late final _getuid = _getuidPtr.asFunction<int Function()>();
+
+  ffi.Pointer<utmpx_t> getutxent() {
+    return _getutxent();
+  }
+
+  late final _getutxentPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<utmpx_t> Function()>>('getutxent');
+  late final _getutxent =
+      _getutxentPtr.asFunction<ffi.Pointer<utmpx_t> Function()>();
+
+  ffi.Pointer<utmpx_t> getutxid(
+    ffi.Pointer<utmpx_t> __id,
+  ) {
+    return _getutxid(
+      __id,
+    );
+  }
+
+  late final _getutxidPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<utmpx_t> Function(ffi.Pointer<utmpx_t>)>>('getutxid');
+  late final _getutxid = _getutxidPtr
+      .asFunction<ffi.Pointer<utmpx_t> Function(ffi.Pointer<utmpx_t>)>();
 
   int ioctl(
     int __fd,
@@ -586,6 +617,14 @@ class StdLibC {
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.UnsignedInt)>>('setuid');
   late final _setuid = _setuidPtr.asFunction<int Function(int)>();
 
+  void setutxent() {
+    return _setutxent();
+  }
+
+  late final _setutxentPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('setutxent');
+  late final _setutxent = _setutxentPtr.asFunction<void Function()>();
+
   ffi.Pointer<ffi.Char> strerror(
     int __errnum,
   ) {
@@ -691,6 +730,22 @@ class StdLibC {
       _writePtr.asFunction<int Function(int, ffi.Pointer<ffi.Void>, int)>();
 }
 
+class UnnamedStruct1 extends ffi.Struct {
+  @ffi.Int()
+  external int tv_sec;
+
+  @ffi.Int()
+  external int tv_usec;
+}
+
+class __exit_status extends ffi.Struct {
+  @ffi.Short()
+  external int __e_termination;
+
+  @ffi.Short()
+  external int __e_exit;
+}
+
 class fstab_t extends ffi.Struct {
   external ffi.Pointer<ffi.Char> fs_spec;
 
@@ -736,6 +791,39 @@ class pollfd_t extends ffi.Struct {
 
   @ffi.Short()
   external int revents;
+}
+
+class utmpx_t extends ffi.Struct {
+  @ffi.Short()
+  external int ut_type;
+
+  @ffi.Int()
+  external int ut_pid;
+
+  @ffi.Array.multi([32])
+  external ffi.Array<ffi.Char> ut_line;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Char> ut_id;
+
+  @ffi.Array.multi([32])
+  external ffi.Array<ffi.Char> ut_user;
+
+  @ffi.Array.multi([256])
+  external ffi.Array<ffi.Char> ut_host;
+
+  external __exit_status ut_exit;
+
+  @ffi.Int()
+  external int ut_session;
+
+  external UnnamedStruct1 ut_tv;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Int> ut_addr_v6;
+
+  @ffi.Array.multi([20])
+  external ffi.Array<ffi.Char> __glibc_reserved;
 }
 
 class wordexp_t extends ffi.Struct {

@@ -190,6 +190,8 @@ const int ACCESSX_MAX_DESCRIPTORS = 100;
 
 const int ACCESSX_MAX_TABLESIZE = 16384;
 
+const int ACCOUNTING = 9;
+
 const int ALLPERMS = 4095;
 
 const int AT_EACCESS = 16;
@@ -207,6 +209,8 @@ const int AT_SYMLINK_FOLLOW = 64;
 const int AT_SYMLINK_NOFOLLOW = 32;
 
 const int BIG_ENDIAN = 4321;
+
+const int BOOT_TIME = 2;
 
 const int BUS_ADRALN = 1;
 
@@ -232,6 +236,24 @@ const int CLD_STOPPED = 5;
 
 const int CLD_TRAPPED = 4;
 
+const int CLOCKS_PER_SEC = 1000000;
+
+const int CLOCK_MONOTONIC = 6;
+
+const int CLOCK_MONOTONIC_RAW = 4;
+
+const int CLOCK_MONOTONIC_RAW_APPROX = 5;
+
+const int CLOCK_PROCESS_CPUTIME_ID = 12;
+
+const int CLOCK_REALTIME = 0;
+
+const int CLOCK_THREAD_CPUTIME_ID = 16;
+
+const int CLOCK_UPTIME_RAW = 8;
+
+const int CLOCK_UPTIME_RAW_APPROX = 9;
+
 const int CPF_IGNORE_MODE = 2;
 
 const int CPF_MASK = 3;
@@ -240,7 +262,23 @@ const int CPF_OVERWRITE = 1;
 
 const int CPUMON_MAKE_FATAL = 4096;
 
+const int DEAD_PROCESS = 8;
+
 const int DEFFILEMODE = 438;
+
+const int DST_AUST = 2;
+
+const int DST_CAN = 6;
+
+const int DST_EET = 5;
+
+const int DST_MET = 4;
+
+const int DST_NONE = 0;
+
+const int DST_USA = 1;
+
+const int DST_WET = 3;
 
 const int E2BIG = 7;
 
@@ -339,6 +377,8 @@ const int ELOOP = 62;
 const int EMFILE = 24;
 
 const int EMLINK = 31;
+
+const int EMPTY = 0;
 
 const int EMSGSIZE = 40;
 
@@ -770,6 +810,8 @@ const int ILL_PRVOPC = 3;
 
 const int ILL_PRVREG = 6;
 
+const int INIT_PROCESS = 5;
+
 const int INT16_MAX = 32767;
 
 const int INT16_MIN = -32768;
@@ -840,6 +882,12 @@ const int IOC_OUT = 1073741824;
 
 const int IOC_VOID = 536870912;
 
+const int ITIMER_PROF = 2;
+
+const int ITIMER_REAL = 0;
+
+const int ITIMER_VIRTUAL = 1;
+
 const int LITTLE_ENDIAN = 1234;
 
 const int LOCK_EX = 2;
@@ -849,6 +897,8 @@ const int LOCK_NB = 4;
 const int LOCK_SH = 1;
 
 const int LOCK_UN = 8;
+
+const int LOGIN_PROCESS = 6;
 
 const int LOG_ALERT = 1;
 
@@ -1032,9 +1082,13 @@ const int MS_KILLPAGES = 4;
 
 const int MS_SYNC = 16;
 
+const int NEW_TIME = 4;
+
 const int NSIG = 32;
 
 const int NULL = 0;
+
+const int OLD_TIME = 3;
 
 const int O_ACCMODE = 3;
 
@@ -1208,6 +1262,8 @@ const int RLIM_SAVED_MAX = 9223372036854775807;
 
 const int RSIZE_MAX = 9223372036854775807;
 
+const int RUN_LVL = 1;
+
 const int RUSAGE_CHILDREN = -1;
 
 const int RUSAGE_INFO_CURRENT = 5;
@@ -1286,6 +1342,8 @@ const int SF_SUPPORTED = 10420224;
 
 const int SF_SYNTHETIC = 3221225472;
 
+const int SHUTDOWN_TIME = 11;
+
 const int SIGABRT = 6;
 
 const int SIGALRM = 14;
@@ -1319,6 +1377,8 @@ const int SIGIO = 23;
 const int SIGIOT = 6;
 
 const int SIGKILL = 9;
+
+const int SIGNATURE = 10;
 
 const int SIGPIPE = 13;
 
@@ -1674,9 +1734,25 @@ const int USER_ADDR_NULL = 0;
 
 const int USER_FSIGNATURES_CDHASH_LEN = 20;
 
+const int USER_PROCESS = 7;
+
 const int UTIME_NOW = -1;
 
 const int UTIME_OMIT = -2;
+
+const int UTMPX_AUTOFILL_MASK = 32768;
+
+const String UTMPX_CHANGE_NOTIFICATION = 'com.apple.system.utmpx';
+
+const int UTMPX_DEAD_IF_CORRESPONDING_MASK = 16384;
+
+const String UTMPX_FILE = '/var/run/utmpx';
+
+const int UT_HOSTSIZE = 16;
+
+const int UT_LINESIZE = 8;
+
+const int UT_NAMESIZE = 8;
 
 const int WAIT_ANY = -1;
 
@@ -1883,6 +1959,39 @@ class timespec_t extends ffi.Struct {
 
   @ffi.Long()
   external int tv_nsec;
+}
+
+class timeval_t extends ffi.Struct {
+  @ffi.Long()
+  external int tv_sec;
+
+  @ffi.Int()
+  external int tv_usec;
+}
+
+class utmpx_t extends ffi.Struct {
+  @ffi.Array.multi([256])
+  external ffi.Array<ffi.Char> ut_user;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Char> ut_id;
+
+  @ffi.Array.multi([32])
+  external ffi.Array<ffi.Char> ut_line;
+
+  @ffi.Int()
+  external int ut_pid;
+
+  @ffi.Short()
+  external int ut_type;
+
+  external timeval_t ut_tv;
+
+  @ffi.Array.multi([256])
+  external ffi.Array<ffi.Char> ut_host;
+
+  @ffi.Array.multi([16])
+  external ffi.Array<ffi.UnsignedInt> ut_pad;
 }
 
 class utsname_t extends ffi.Struct {

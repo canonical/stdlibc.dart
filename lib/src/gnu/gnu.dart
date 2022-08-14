@@ -11,6 +11,7 @@ import 'pwd.dart';
 import 'stat.dart';
 import 'sysinfo.dart';
 import 'uname.dart';
+import 'utmpx.dart';
 
 final dylib = ffi.GnuLibC(ffi.DynamicLibrary.process());
 
@@ -24,4 +25,5 @@ class GnuLibC extends StdLibC
         GnuPwdMixin,
         GnuStatMixin,
         GnuSysinfoMixin,
-        GnuUnameMixin {}
+        GnuUnameMixin,
+        GnuUtmpxMixin {}

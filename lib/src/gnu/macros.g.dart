@@ -13,6 +13,8 @@ mixin GnuMacroMixin on PlatformLibC {
   int get ACCESSX_MAX_TABLESIZE =>
       throw UnsupportedError('ACCESSX_MAX_TABLESIZE');
   @override
+  int get ACCOUNTING => ffi.ACCOUNTING;
+  @override
   int get ALLPERMS => ffi.ALLPERMS;
   @override
   int get AT_EACCESS => ffi.AT_EACCESS;
@@ -30,6 +32,8 @@ mixin GnuMacroMixin on PlatformLibC {
   int get AT_SYMLINK_NOFOLLOW => ffi.AT_SYMLINK_NOFOLLOW;
   @override
   int get BIG_ENDIAN => ffi.BIG_ENDIAN;
+  @override
+  int get BOOT_TIME => ffi.BOOT_TIME;
   @override
   int get BUS_ADRALN => throw UnsupportedError('BUS_ADRALN');
   @override
@@ -77,6 +81,28 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get CLNEXT => ffi.CLNEXT;
   @override
+  int get CLOCKS_PER_SEC => throw UnsupportedError('CLOCKS_PER_SEC');
+  @override
+  int get CLOCK_MONOTONIC => throw UnsupportedError('CLOCK_MONOTONIC');
+  @override
+  int get CLOCK_MONOTONIC_RAW => throw UnsupportedError('CLOCK_MONOTONIC_RAW');
+  @override
+  int get CLOCK_MONOTONIC_RAW_APPROX =>
+      throw UnsupportedError('CLOCK_MONOTONIC_RAW_APPROX');
+  @override
+  int get CLOCK_PROCESS_CPUTIME_ID =>
+      throw UnsupportedError('CLOCK_PROCESS_CPUTIME_ID');
+  @override
+  int get CLOCK_REALTIME => throw UnsupportedError('CLOCK_REALTIME');
+  @override
+  int get CLOCK_THREAD_CPUTIME_ID =>
+      throw UnsupportedError('CLOCK_THREAD_CPUTIME_ID');
+  @override
+  int get CLOCK_UPTIME_RAW => throw UnsupportedError('CLOCK_UPTIME_RAW');
+  @override
+  int get CLOCK_UPTIME_RAW_APPROX =>
+      throw UnsupportedError('CLOCK_UPTIME_RAW_APPROX');
+  @override
   int get CMIN => ffi.CMIN;
   @override
   int get CPF_IGNORE_MODE => throw UnsupportedError('CPF_IGNORE_MODE');
@@ -105,7 +131,23 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get CWERASE => ffi.CWERASE;
   @override
+  int get DEAD_PROCESS => ffi.DEAD_PROCESS;
+  @override
   int get DEFFILEMODE => ffi.DEFFILEMODE;
+  @override
+  int get DST_AUST => throw UnsupportedError('DST_AUST');
+  @override
+  int get DST_CAN => throw UnsupportedError('DST_CAN');
+  @override
+  int get DST_EET => throw UnsupportedError('DST_EET');
+  @override
+  int get DST_MET => throw UnsupportedError('DST_MET');
+  @override
+  int get DST_NONE => throw UnsupportedError('DST_NONE');
+  @override
+  int get DST_USA => throw UnsupportedError('DST_USA');
+  @override
+  int get DST_WET => throw UnsupportedError('DST_WET');
   @override
   int get E2BIG => ffi.E2BIG;
   @override
@@ -258,6 +300,8 @@ mixin GnuMacroMixin on PlatformLibC {
   int get EMFILE => ffi.EMFILE;
   @override
   int get EMLINK => ffi.EMLINK;
+  @override
+  int get EMPTY => ffi.EMPTY;
   @override
   int get EMSGSIZE => ffi.EMSGSIZE;
   @override
@@ -754,6 +798,8 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get ILL_PRVREG => throw UnsupportedError('ILL_PRVREG');
   @override
+  int get INIT_PROCESS => ffi.INIT_PROCESS;
+  @override
   int get INT16_MAX => throw UnsupportedError('INT16_MAX');
   @override
   int get INT16_MIN => throw UnsupportedError('INT16_MIN');
@@ -828,6 +874,12 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get IOC_VOID => throw UnsupportedError('IOC_VOID');
   @override
+  int get ITIMER_PROF => ffi.ITIMER_PROF;
+  @override
+  int get ITIMER_REAL => ffi.ITIMER_REAL;
+  @override
+  int get ITIMER_VIRTUAL => ffi.ITIMER_VIRTUAL;
+  @override
   int get LITTLE_ENDIAN => ffi.LITTLE_ENDIAN;
   @override
   int get LOCK_EX => ffi.LOCK_EX;
@@ -837,6 +889,8 @@ mixin GnuMacroMixin on PlatformLibC {
   int get LOCK_SH => ffi.LOCK_SH;
   @override
   int get LOCK_UN => ffi.LOCK_UN;
+  @override
+  int get LOGIN_PROCESS => ffi.LOGIN_PROCESS;
   @override
   int get LOG_ALERT => ffi.LOG_ALERT;
   @override
@@ -1075,6 +1129,8 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get NCC => ffi.NCC;
   @override
+  int get NEW_TIME => ffi.NEW_TIME;
+  @override
   int get NFDBITS => ffi.NFDBITS;
   @override
   int get NSIG => throw UnsupportedError('NSIG');
@@ -1114,6 +1170,8 @@ mixin GnuMacroMixin on PlatformLibC {
   int get N_TTY => ffi.N_TTY;
   @override
   int get N_X25 => ffi.N_X25;
+  @override
+  int get OLD_TIME => ffi.OLD_TIME;
   @override
   int get O_ACCMODE => ffi.O_ACCMODE;
   @override
@@ -1311,6 +1369,8 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get RSIZE_MAX => throw UnsupportedError('RSIZE_MAX');
   @override
+  int get RUN_LVL => ffi.RUN_LVL;
+  @override
   int get RUSAGE_CHILDREN => throw UnsupportedError('RUSAGE_CHILDREN');
   @override
   int get RUSAGE_INFO_CURRENT => throw UnsupportedError('RUSAGE_INFO_CURRENT');
@@ -1390,6 +1450,8 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get SF_SYNTHETIC => throw UnsupportedError('SF_SYNTHETIC');
   @override
+  int get SHUTDOWN_TIME => throw UnsupportedError('SHUTDOWN_TIME');
+  @override
   int get SIGABRT => throw UnsupportedError('SIGABRT');
   @override
   int get SIGALRM => throw UnsupportedError('SIGALRM');
@@ -1423,6 +1485,8 @@ mixin GnuMacroMixin on PlatformLibC {
   int get SIGIOT => throw UnsupportedError('SIGIOT');
   @override
   int get SIGKILL => throw UnsupportedError('SIGKILL');
+  @override
+  int get SIGNATURE => throw UnsupportedError('SIGNATURE');
   @override
   int get SIGPIPE => throw UnsupportedError('SIGPIPE');
   @override
@@ -1984,9 +2048,25 @@ mixin GnuMacroMixin on PlatformLibC {
   int get USER_FSIGNATURES_CDHASH_LEN =>
       throw UnsupportedError('USER_FSIGNATURES_CDHASH_LEN');
   @override
+  int get USER_PROCESS => ffi.USER_PROCESS;
+  @override
   int get UTIME_NOW => ffi.UTIME_NOW;
   @override
   int get UTIME_OMIT => ffi.UTIME_OMIT;
+  @override
+  int get UTMPX_AUTOFILL_MASK => throw UnsupportedError('UTMPX_AUTOFILL_MASK');
+  @override
+  String get UTMPX_CHANGE_NOTIFICATION =>
+      throw UnsupportedError('UTMPX_CHANGE_NOTIFICATION');
+  @override
+  int get UTMPX_DEAD_IF_CORRESPONDING_MASK =>
+      throw UnsupportedError('UTMPX_DEAD_IF_CORRESPONDING_MASK');
+  @override
+  String get UTMPX_FILE => throw UnsupportedError('UTMPX_FILE');
+  @override
+  String get UTMP_FILE => ffi.UTMP_FILE;
+  @override
+  String get UTMP_FILENAME => ffi.UTMP_FILENAME;
   @override
   int get UTSNAME_DOMAIN_LENGTH => ffi.UTSNAME_DOMAIN_LENGTH;
   @override
@@ -2001,6 +2081,14 @@ mixin GnuMacroMixin on PlatformLibC {
   int get UTSNAME_SYSNAME_LENGTH => ffi.UTSNAME_SYSNAME_LENGTH;
   @override
   int get UTSNAME_VERSION_LENGTH => ffi.UTSNAME_VERSION_LENGTH;
+  @override
+  int get UT_HOSTSIZE => ffi.UT_HOSTSIZE;
+  @override
+  int get UT_LINESIZE => ffi.UT_LINESIZE;
+  @override
+  int get UT_NAMESIZE => ffi.UT_NAMESIZE;
+  @override
+  int get UT_UNKNOWN => ffi.UT_UNKNOWN;
   @override
   int get WAIT_ANY => throw UnsupportedError('WAIT_ANY');
   @override
@@ -2060,6 +2148,10 @@ mixin GnuMacroMixin on PlatformLibC {
   int get WRDE_UNDEF => ffi.WRDE_UNDEF;
   @override
   int get WSTOPPED => ffi.WSTOPPED;
+  @override
+  String get WTMP_FILE => ffi.WTMP_FILE;
+  @override
+  String get WTMP_FILENAME => ffi.WTMP_FILENAME;
   @override
   int get WUNTRACED => ffi.WUNTRACED;
   @override
