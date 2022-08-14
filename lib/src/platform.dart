@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:meta/meta.dart';
+
 import 'bsd/bsd.dart';
 import 'errno.dart';
 import 'fcntl.dart';
@@ -22,7 +24,12 @@ import 'unistd.dart';
 import 'utmpx.dart';
 import 'wordexp.dart';
 
-final PlatformLibC platform = Platform.isMacOS ? BsdLibC() : GnuLibC();
+PlatformLibC? _platform;
+PlatformLibC get platform =>
+    _platform ??= Platform.isMacOS ? BsdLibC() : GnuLibC();
+
+@visibleForTesting
+void overridePlatformForTesting(PlatformLibC platform) => _platform = platform;
 
 abstract class PlatformLibC
     with
