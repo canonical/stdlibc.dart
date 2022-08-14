@@ -10,20 +10,19 @@ mixin StdSyslogMixin on PlatformLibC {
   @override
   void openlog(String? ident, int option, int facility) {
     // ident must not be free'd
-    dylib.openlog(
-        ident?.toCString(ffi.calloc) ?? ffi.nullptr, option, facility);
+    std.openlog(ident?.toCString(ffi.calloc) ?? ffi.nullptr, option, facility);
   }
 
   @override
-  int setlogmask(int mask) => dylib.setlogmask(mask);
+  int setlogmask(int mask) => std.setlogmask(mask);
 
   @override
   void syslog(int priority, String message) {
     ffi.using((arena) {
-      dylib.syslog(priority, message.toCString(arena));
+      std.syslog(priority, message.toCString(arena));
     });
   }
 
   @override
-  void closelog() => dylib.closelog();
+  void closelog() => std.closelog();
 }

@@ -11,21 +11,21 @@ import 'std.dart';
 mixin StdFstabMixin on PlatformLibC {
   @override
   List<Fstab> getfsent() {
-    dylib.setfsent();
+    std.setfsent();
     final res = <Fstab>[];
-    var ent = dylib.getfsent();
+    var ent = std.getfsent();
     while (ent != ffi.nullptr) {
       res.add(ent.toFstab());
-      ent = dylib.getfsent();
+      ent = std.getfsent();
     }
-    dylib.endfsent();
+    std.endfsent();
     return res;
   }
 
   @override
   Fstab? getfsspec(String spec) {
     return ffi.using((arena) {
-      final res = dylib.getfsspec(spec.toCString(arena));
+      final res = std.getfsspec(spec.toCString(arena));
       if (res == ffi.nullptr) return null;
       return res.toFstab();
     });
@@ -34,7 +34,7 @@ mixin StdFstabMixin on PlatformLibC {
   @override
   Fstab? getfsfile(String file) {
     return ffi.using((arena) {
-      final res = dylib.getfsfile(file.toCString(arena));
+      final res = std.getfsfile(file.toCString(arena));
       if (res == ffi.nullptr) return null;
       return res.toFstab();
     });

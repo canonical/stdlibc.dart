@@ -13,7 +13,7 @@ mixin GnuGlobMixin on PlatformLibC {
   List<String> glob(String pattern, int flags) {
     return ffi.using((arena) {
       final ptr = arena<ffi.glob_t>();
-      final res = dylib.glob(
+      final res = gnu.glob(
         pattern.toCString(arena),
         flags,
         ffi.nullptr,
@@ -23,7 +23,7 @@ mixin GnuGlobMixin on PlatformLibC {
         throw GlobException(res);
       }
       final paths = ptr.ref.gl_pathv.toDartStrings(length: ptr.ref.gl_pathc);
-      dylib.globfree(ptr);
+      gnu.globfree(ptr);
       return paths;
     });
   }

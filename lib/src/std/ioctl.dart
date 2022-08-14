@@ -7,7 +7,7 @@ mixin StdIoctlMixin on PlatformLibC {
   @override
   int ioctl(int fd, int request, dynamic arg) {
     if (arg == null) {
-      return dylib.ioctl(fd, request);
+      return std.ioctl(fd, request);
     } else if (arg is int) {
       return _ioctlInt(fd, request, arg);
     } else if (arg is ffi.Pointer) {
@@ -18,13 +18,13 @@ mixin StdIoctlMixin on PlatformLibC {
   }
 }
 
-final _ioctlInt = ffi.DynamicLibrary.process()
+final _ioctlInt = dylib
     .lookup<
         ffi.NativeFunction<
             ffi.Int Function(ffi.Int, ffi.UnsignedLong, ffi.Int)>>('ioctl')
     .asFunction<int Function(int, int, int)>();
 
-final _ioctlPtr = ffi.DynamicLibrary.process()
+final _ioctlPtr = dylib
     .lookup<
         ffi.NativeFunction<
             ffi.Int Function(ffi.Int, ffi.UnsignedLong, ffi.Pointer)>>('ioctl')

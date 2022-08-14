@@ -15,7 +15,7 @@ mixin GnuMmanMixin on PlatformLibC {
     int fd,
     int offset,
   ) {
-    final res = dylib.mmap(
+    final res = gnu.mmap(
       ffi.Pointer.fromAddress(addr),
       length,
       prot,
@@ -33,7 +33,7 @@ mixin GnuMmanMixin on PlatformLibC {
   @override
   void munmap(Mmap map) {
     final ptr = ffi.Pointer.fromAddress(map.address);
-    final res = dylib.munmap(ptr.cast(), map.data.lengthInBytes);
+    final res = gnu.munmap(ptr.cast(), map.data.lengthInBytes);
     checkErrno('munmap', res);
   }
 }

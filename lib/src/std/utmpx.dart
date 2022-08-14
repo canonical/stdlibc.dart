@@ -7,14 +7,14 @@ import 'std.dart';
 mixin StdUtmpxMixin on PlatformLibC {
   @override
   List<Utmpx> getutxent() {
-    dylib.setutxent();
+    std.setutxent();
     final res = <Utmpx>[];
-    var ent = dylib.getutxent();
+    var ent = std.getutxent();
     while (ent != ffi.nullptr) {
       res.add(toUtmpx(ent));
-      ent = dylib.getutxent();
+      ent = std.getutxent();
     }
-    dylib.endutxent();
+    std.endutxent();
     return res;
   }
 

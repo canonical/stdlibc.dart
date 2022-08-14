@@ -13,7 +13,7 @@ mixin GnuUnameMixin on PlatformLibC {
   Utsname uname() {
     return ffi.using((arena) {
       final buf = arena<ffi.utsname_t>();
-      final res = dylib.uname(buf);
+      final res = gnu.uname(buf);
       checkErrno('uname', res);
       return buf.toUtsname();
     });

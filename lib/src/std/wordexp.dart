@@ -13,12 +13,12 @@ mixin StdWordexpMixin on PlatformLibC {
   List<String> wordexp(String words, int flags) {
     return ffi.using((arena) {
       final buf = arena<ffi.wordexp_t>();
-      final res = dylib.wordexp(words.toCString(arena), buf, flags);
+      final res = std.wordexp(words.toCString(arena), buf, flags);
       if (res != 0) {
         throw WordexpException(res);
       }
       final exp = buf.ref.we_wordv.toDartStrings(length: buf.ref.we_wordc);
-      dylib.wordfree(buf);
+      std.wordfree(buf);
       return exp;
     });
   }

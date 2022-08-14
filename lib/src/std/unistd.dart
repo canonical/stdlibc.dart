@@ -9,36 +9,36 @@ import 'std.dart';
 
 mixin StdUnistdMixin on PlatformLibC {
   @override
-  void close(int fd) => checkErrno('close', dylib.close(fd));
+  void close(int fd) => checkErrno('close', std.close(fd));
   @override
-  int dup(int oldfd) => dylib.dup(oldfd);
+  int dup(int oldfd) => std.dup(oldfd);
   @override
-  int dup2(int oldfd, int newfd) => dylib.dup2(oldfd, newfd);
+  int dup2(int oldfd, int newfd) => std.dup2(oldfd, newfd);
   @override
-  void fsync(int fd) => checkErrno('fsync', dylib.fsync(fd));
+  void fsync(int fd) => checkErrno('fsync', std.fsync(fd));
 
   @override
-  int getegid() => dylib.getegid();
+  int getegid() => std.getegid();
   @override
-  int geteuid() => dylib.geteuid();
+  int geteuid() => std.geteuid();
   @override
-  int getgid() => dylib.getgid();
+  int getgid() => std.getgid();
   @override
-  int getpgid(int pid) => dylib.getpgid(pid);
+  int getpgid(int pid) => std.getpgid(pid);
   @override
-  int getpid() => dylib.getpid();
+  int getpid() => std.getpid();
   @override
-  int getppid() => dylib.getppid();
+  int getppid() => std.getppid();
   @override
-  int getsid(int pid) => dylib.getsid(pid);
+  int getsid(int pid) => std.getsid(pid);
   @override
-  int getuid() => dylib.getuid();
+  int getuid() => std.getuid();
 
   @override
   List<int> pipe() {
     return ffi.using((arena) {
       final fds = arena<ffi.Int>(2);
-      final res = dylib.pipe(fds);
+      final res = std.pipe(fds);
       checkErrno('pipe', res);
       return [fds[0], fds[1]];
     });
@@ -48,7 +48,7 @@ mixin StdUnistdMixin on PlatformLibC {
   List<int> pread(int fd, int count, int offset) {
     return ffi.using((arena) {
       final buf = arena<ffi.Int8>(count);
-      final res = dylib.pread(fd, buf.cast(), count, offset);
+      final res = std.pread(fd, buf.cast(), count, offset);
       checkErrno('pread', res);
       return Int8List.fromList(buf.asTypedList(res));
     });
@@ -59,7 +59,7 @@ mixin StdUnistdMixin on PlatformLibC {
     return ffi.using((arena) {
       final buf = arena<ffi.Int8>(buffer.length);
       buf.asTypedList(buffer.length).setAll(0, buffer);
-      final res = dylib.pwrite(fd, buf.cast(), buffer.length, offset);
+      final res = std.pwrite(fd, buf.cast(), buffer.length, offset);
       checkErrno('pwrite', res);
       return res;
     });
@@ -69,38 +69,38 @@ mixin StdUnistdMixin on PlatformLibC {
   List<int> read(int fd, int count) {
     return ffi.using((arena) {
       final buf = arena<ffi.Int8>(count);
-      final res = dylib.read(fd, buf.cast(), count);
+      final res = std.read(fd, buf.cast(), count);
       checkErrno('read', res);
       return Int8List.fromList(buf.asTypedList(res));
     });
   }
 
   @override
-  int setegid(int gid) => dylib.setegid(gid);
+  int setegid(int gid) => std.setegid(gid);
   @override
-  int seteuid(int uid) => dylib.seteuid(uid);
+  int seteuid(int uid) => std.seteuid(uid);
   @override
-  int setgid(int gid) => dylib.setgid(gid);
+  int setgid(int gid) => std.setgid(gid);
   @override
-  int setpgid(int pid, int pgid) => dylib.setpgid(pid, pgid);
+  int setpgid(int pid, int pgid) => std.setpgid(pid, pgid);
   @override
-  int setregid(int rgid, int egid) => dylib.setregid(rgid, egid);
+  int setregid(int rgid, int egid) => std.setregid(rgid, egid);
   @override
-  int setreuid(int ruid, int euid) => dylib.setreuid(ruid, euid);
+  int setreuid(int ruid, int euid) => std.setreuid(ruid, euid);
   @override
-  int setsid() => dylib.setsid();
+  int setsid() => std.setsid();
   @override
-  int setuid(int uid) => dylib.setuid(uid);
+  int setuid(int uid) => std.setuid(uid);
 
   @override
-  void sync() => dylib.sync1();
+  void sync() => std.sync1();
 
   @override
   int write(int fd, List<int> buffer) {
     return ffi.using((arena) {
       final buf = arena<ffi.Int8>(buffer.length);
       buf.asTypedList(buffer.length).setAll(0, buffer);
-      final res = dylib.write(fd, buf.cast(), buffer.length);
+      final res = std.write(fd, buf.cast(), buffer.length);
       checkErrno('write', res);
       return res;
     });

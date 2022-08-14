@@ -13,7 +13,7 @@ mixin GnuStatMixin on PlatformLibC {
   Stat stat(String file) {
     return ffi.using((arena) {
       final buf = arena<ffi.stat_t>();
-      final res = dylib.stat(ffi.STAT_VER, file.toCString(arena), buf);
+      final res = gnu.stat(ffi.STAT_VER, file.toCString(arena), buf);
       checkErrno('stat', res);
       return buf.toStat();
     });
@@ -23,7 +23,7 @@ mixin GnuStatMixin on PlatformLibC {
   Stat fstat(int fd) {
     return ffi.using((arena) {
       final buf = arena<ffi.stat_t>();
-      final res = dylib.fstat(ffi.STAT_VER, fd, buf);
+      final res = gnu.fstat(ffi.STAT_VER, fd, buf);
       checkErrno('fstat', res);
       return buf.toStat();
     });
@@ -33,7 +33,7 @@ mixin GnuStatMixin on PlatformLibC {
   Stat lstat(String file) {
     return ffi.using((arena) {
       final buf = arena<ffi.stat_t>();
-      final res = dylib.lstat(ffi.STAT_VER, file.toCString(arena), buf);
+      final res = gnu.lstat(ffi.STAT_VER, file.toCString(arena), buf);
       checkErrno('lstat', res);
       return buf.toStat();
     });

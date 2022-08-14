@@ -13,7 +13,7 @@ mixin BsdGlobMixin on PlatformLibC {
   List<String> glob(String pattern, int flags) {
     return ffi.using((arena) {
       final ptr = arena<ffi.glob_t>();
-      final res = dylib.glob(
+      final res = bsd.glob(
         pattern.toCString(arena),
         flags,
         ffi.nullptr,
@@ -23,7 +23,7 @@ mixin BsdGlobMixin on PlatformLibC {
         throw GlobException(res);
       }
       final paths = ptr.ref.gl_pathv.toDartStrings(length: ptr.ref.gl_pathc);
-      dylib.globfree(ptr);
+      bsd.globfree(ptr);
       return paths;
     });
   }

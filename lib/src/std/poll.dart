@@ -18,7 +18,7 @@ mixin StdPollMixin on PlatformLibC {
         cfds[i].fd = p.fd;
         cfds[i].events = p.events;
       }
-      final res = dylib.poll(cfds, fds.length, timeout);
+      final res = std.poll(cfds, fds.length, timeout);
       checkErrno('poll', res);
       return List.generate(fds.length, (i) {
         return Pollfd(cfds[i].fd, cfds[i].revents);

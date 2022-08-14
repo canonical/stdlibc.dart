@@ -15,7 +15,7 @@ mixin BsdMmanMixin on PlatformLibC {
     int fd,
     int offset,
   ) {
-    final res = dylib.mmap(
+    final res = bsd.mmap(
       ffi.Pointer.fromAddress(addr),
       length,
       prot,
@@ -33,7 +33,7 @@ mixin BsdMmanMixin on PlatformLibC {
   @override
   void munmap(Mmap map) {
     final ptr = ffi.Pointer.fromAddress(map.address);
-    final res = dylib.munmap(ptr.cast(), map.data.lengthInBytes);
+    final res = bsd.munmap(ptr.cast(), map.data.lengthInBytes);
     checkErrno('munmap', res);
   }
 }

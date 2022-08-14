@@ -13,7 +13,8 @@ import 'sysinfo.dart';
 import 'uname.dart';
 import 'utmpx.dart';
 
-final dylib = ffi.GnuLibC(ffi.DynamicLibrary.process());
+final dylib = ffi.DynamicLibrary.process();
+final gnu = ffi.GnuLibC(dylib);
 
 class GnuLibC extends StdLibC
     with

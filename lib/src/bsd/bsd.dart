@@ -13,11 +13,12 @@ import 'sysinfo.dart';
 import 'uname.dart';
 import 'utmpx.dart';
 
-final dylib = ffi.BsdLibC(ffi.DynamicLibrary.process());
+final dylib = ffi.DynamicLibrary.process();
+final bsd = ffi.BsdLibC(dylib);
 final inode64 = ffi.BsdLibC.fromLookup(inode64Lookup);
 
 ffi.Pointer<T> inode64Lookup<T extends ffi.NativeType>(String symbolName) {
-  return ffi.DynamicLibrary.process().lookup('$symbolName\$INODE64');
+  return dylib.lookup('$symbolName\$INODE64');
 }
 
 class BsdLibC extends StdLibC

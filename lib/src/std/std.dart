@@ -15,7 +15,8 @@ import 'unistd.dart';
 import 'utmpx.dart';
 import 'wordexp.dart';
 
-final dylib = ffi.StdLibC(ffi.DynamicLibrary.process());
+final dylib = ffi.DynamicLibrary.process();
+final std = ffi.StdLibC(dylib);
 
 abstract class StdLibC extends PlatformLibC
     with

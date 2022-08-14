@@ -10,7 +10,7 @@ mixin StdFcntlMixin on PlatformLibC {
   @override
   int fcntl(int fd, int cmd, dynamic arg) {
     if (arg == null) {
-      return dylib.fcntl(fd, cmd);
+      return std.fcntl(fd, cmd);
     } else if (arg is int) {
       return _fcntlInt(fd, cmd, arg);
     } else if (arg is ffi.Pointer) {
@@ -23,19 +23,19 @@ mixin StdFcntlMixin on PlatformLibC {
   @override
   int open(String file, int flags) {
     return ffi.using((arena) {
-      final fd = dylib.open(file.toCString(arena), flags);
+      final fd = std.open(file.toCString(arena), flags);
       checkErrno('open', fd);
       return fd;
     });
   }
 }
 
-final _fcntlInt = ffi.DynamicLibrary.process()
+final _fcntlInt = dylib
     .lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Int, ffi.Int)>>(
         'fcntl')
     .asFunction<int Function(int, int, int)>();
 
-final _fcntlPtr = ffi.DynamicLibrary.process()
+final _fcntlPtr = dylib
     .lookup<
         ffi.NativeFunction<
             ffi.Int Function(ffi.Int, ffi.Int, ffi.Pointer)>>('fcntl')

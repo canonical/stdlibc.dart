@@ -12,7 +12,7 @@ mixin StdPwdMixin on PlatformLibC {
   @override
   Passwd getpwnam(String name) {
     return ffi.using((arena) {
-      final res = dylib.getpwnam(name.toCString(arena));
+      final res = std.getpwnam(name.toCString(arena));
       if (res == ffi.nullptr) {
         throw Errno('getpwnam', errno);
       }
@@ -22,7 +22,7 @@ mixin StdPwdMixin on PlatformLibC {
 
   @override
   Passwd getpwuid(int uid) {
-    final res = dylib.getpwuid(uid);
+    final res = std.getpwuid(uid);
     if (res == ffi.nullptr) {
       throw Errno('getpwuid', errno);
     }

@@ -17,7 +17,7 @@ mixin BsdStatMixin on PlatformLibC {
       try {
         res = inode64.stat(file.toCString(arena), buf);
       } on ArgumentError catch (_) {
-        res = dylib.stat(file.toCString(arena), buf);
+        res = bsd.stat(file.toCString(arena), buf);
       }
       checkErrno('stat', res);
       return buf.toStat();
@@ -32,7 +32,7 @@ mixin BsdStatMixin on PlatformLibC {
       try {
         res = inode64.fstat(fd, buf);
       } on ArgumentError catch (_) {
-        res = dylib.fstat(fd, buf);
+        res = bsd.fstat(fd, buf);
       }
       checkErrno('fstat', res);
       return buf.toStat();
@@ -47,7 +47,7 @@ mixin BsdStatMixin on PlatformLibC {
       try {
         res = inode64.lstat(file.toCString(arena), buf);
       } on ArgumentError catch (_) {
-        res = dylib.lstat(file.toCString(arena), buf);
+        res = bsd.lstat(file.toCString(arena), buf);
       }
       checkErrno('lstat', res);
       return buf.toStat();

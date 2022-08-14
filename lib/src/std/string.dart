@@ -4,5 +4,5 @@ import 'std.dart';
 
 mixin StdStringMixin on PlatformLibC {
   @override
-  String? strerror(int errnum) => dylib.strerror(errnum).toDartString();
+  String? strerror(int errnum) => std.strerror(errnum).toDartString();
 }

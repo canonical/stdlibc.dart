@@ -10,7 +10,7 @@ mixin StdStdlibMixin on PlatformLibC {
   @override
   String? getenv(String name) {
     return ffi.using((arena) {
-      final ptr = dylib.getenv(name.toCString(arena));
+      final ptr = std.getenv(name.toCString(arena));
       return ptr == ffi.nullptr ? null : ptr.toDartString();
     });
   }
@@ -18,7 +18,7 @@ mixin StdStdlibMixin on PlatformLibC {
   @override
   void putenv(String str) {
     final res = ffi.using((arena) {
-      return dylib.putenv(str.toCString(arena));
+      return std.putenv(str.toCString(arena));
     });
     checkErrno('putenv', res);
   }
@@ -26,7 +26,7 @@ mixin StdStdlibMixin on PlatformLibC {
   @override
   void setenv(String name, String value, bool overwrite) {
     final res = ffi.using((arena) {
-      return dylib.setenv(
+      return std.setenv(
         name.toCString(arena),
         value.toCString(arena),
         overwrite ? 1 : 0,
@@ -38,7 +38,7 @@ mixin StdStdlibMixin on PlatformLibC {
   @override
   void unsetenv(String name) {
     final res = ffi.using((arena) {
-      return dylib.unsetenv(name.toCString(arena));
+      return std.unsetenv(name.toCString(arena));
     });
     checkErrno('unsetenv', res);
   }

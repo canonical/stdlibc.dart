@@ -13,7 +13,7 @@ mixin GnuSysinfoMixin on PlatformLibC {
   Sysinfo sysinfo() {
     return ffi.using((arena) {
       final buf = arena<ffi.sysinfo_t>();
-      final res = dylib.sysinfo(buf);
+      final res = gnu.sysinfo(buf);
       checkErrno('sysinfo', res);
       return buf.toSysinfo();
     });
