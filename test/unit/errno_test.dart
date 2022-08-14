@@ -1,14 +1,12 @@
 import 'package:mocktail/mocktail.dart';
-import 'package:stdlibc/src/platform.dart';
 import 'package:stdlibc/stdlibc.dart';
 import 'package:test/test.dart';
 
-class MockLibC extends Mock implements PlatformLibC {}
+import 'mock_libc.dart';
 
 void main() {
   test('errno', () {
-    final libc = MockLibC();
-    overridePlatformForTesting(libc);
+    final libc = mockLibC();
 
     when(() => libc.errno).thenReturn(123);
     expect(errno, 123);
