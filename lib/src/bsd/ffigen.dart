@@ -121,21 +121,6 @@ class BsdLibC {
   late final _globfree =
       _globfreePtr.asFunction<void Function(ffi.Pointer<glob_t>)>();
 
-  int ioctl(
-    int arg0,
-    int arg1,
-  ) {
-    return _ioctl(
-      arg0,
-      arg1,
-    );
-  }
-
-  late final _ioctlPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.UnsignedLong)>>(
-          'ioctl');
-  late final _ioctl = _ioctlPtr.asFunction<int Function(int, int)>();
-
   int lstat(
     ffi.Pointer<ffi.Char> arg0,
     ffi.Pointer<stat_t> arg1,

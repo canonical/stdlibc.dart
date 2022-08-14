@@ -124,21 +124,6 @@ class GnuLibC {
   late final _globfree =
       _globfreePtr.asFunction<void Function(ffi.Pointer<glob_t>)>();
 
-  int ioctl(
-    int __fd,
-    int __request,
-  ) {
-    return _ioctl(
-      __fd,
-      __request,
-    );
-  }
-
-  late final _ioctlPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.UnsignedLong)>>(
-          'ioctl');
-  late final _ioctl = _ioctlPtr.asFunction<int Function(int, int)>();
-
   int lstat(
     int __ver,
     ffi.Pointer<ffi.Char> __filename,

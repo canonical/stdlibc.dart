@@ -1,7 +1,7 @@
 import '../libc.dart';
-import 'gnu.dart';
+import 'std.dart';
 
-mixin GnuIoctlMixin on StdLibC {
+mixin StdIoctlMixin on LibC {
   @override
   int ioctl(int fd, int request) => dylib.ioctl(fd, request);
 }
