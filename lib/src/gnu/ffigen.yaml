@@ -11,6 +11,7 @@ headers:
     - "/usr/include/errno.h"
     - "/usr/include/fcntl.h"
     - "/usr/include/fnmatch.h"
+    - "/usr/include/fstab.h"
     - "/usr/include/glob.h"
     - "/usr/include/poll.h"
     - "/usr/include/pwd.h"
@@ -31,10 +32,6 @@ functions:
   include:
     # errno.h
     - "__errno_location"
-    # fcntl.h
-    - "open"
-    # fnmatch.h
-    - "fnmatch"
     # glob.h
     - "glob"
     - "globfree"
@@ -43,47 +40,17 @@ functions:
     # mman.h
     - "mmap"
     - "munmap"
-    # poll.h
-    - "poll"
     # pwd.h
     - "getpwuid"
     - "getpwnam"
-    # stdlib.h
-    - "getenv"
-    - "putenv"
-    - "setenv"
-    - "unsetenv"
     # stat.h
     - "__fxstat"
     - "__lxstat"
     - "__xstat"
-    # string.h
-    - "strerror"
     # sysinfo.h
     - "sysinfo"
-    # syslog.h
-    - "closelog"
-    - "openlog"
-    - "setlogmask"
-    - "syslog"
-    # unistd.h
-    - "close"
-    - "dup"
-    - "dup2"
-    - "fsync"
-    - "get.*id"
-    - "pipe"
-    - "pread"
-    - "pwrite"
-    - "read"
-    - "set.*id"
-    - "sync"
-    - "write"
     # utsname.h
     - "uname"
-    # wordexp.h
-    - "wordexp"
-    - "wordfree"
   rename:
     "__errno_location": "errno"
     "__fxstat": "fstat"
@@ -106,16 +73,15 @@ unnamed-enums:
 structs:
   include:
     - "glob_t"
+    - "flock"
     - "passwd"
-    - "pollfd"
     - "stat"
     - "sysinfo"
     - "timespec"
     - "utsname"
-    - "wordexp_t"
   rename:
+    "flock": "flock_t"
     "passwd": "passwd_t"
-    "pollfd": "pollfd_t"
     "stat": "stat_t"
     "sysinfo": "sysinfo_t"
     "timespec": "timespec_t"

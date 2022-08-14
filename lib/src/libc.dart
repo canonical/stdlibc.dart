@@ -4,6 +4,7 @@ import 'bsd/bsd.dart';
 import 'errno.dart';
 import 'fcntl.dart';
 import 'fnmatch.dart';
+import 'fstab.dart';
 import 'glob.dart';
 import 'gnu/gnu.dart';
 import 'ioctl.dart';
@@ -20,13 +21,14 @@ import 'uname.dart';
 import 'unistd.dart';
 import 'wordexp.dart';
 
-final StdLibC libc = Platform.isMacOS ? BsdLibC() : GnuLibC();
+final LibC libc = Platform.isMacOS ? BsdLibC() : GnuLibC();
 
-abstract class StdLibC
+abstract class LibC
     with
         ErrnoMixin,
         FcntlMixin,
         FnmatchMixin,
+        FstabMixin,
         GlobMixin,
         IoctlMixin,
         MacroMixin,

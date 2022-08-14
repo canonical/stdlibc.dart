@@ -3,7 +3,7 @@ import 'ffigen.dart' as ffi;
 
 // ignore_for_file: type=lint
 
-mixin BsdMacroMixin on StdLibC {
+mixin BsdMacroMixin on LibC {
   @override
   int get ACCESSPERMS => ffi.ACCESSPERMS;
   @override
@@ -522,6 +522,18 @@ mixin BsdMacroMixin on StdLibC {
   int get FP_STATE_BYTES => ffi.FP_STATE_BYTES;
   @override
   int get FREAD => ffi.FREAD;
+  @override
+  String get FSTAB => ffi.FSTAB;
+  @override
+  String get FSTAB_RO => ffi.FSTAB_RO;
+  @override
+  String get FSTAB_RQ => ffi.FSTAB_RQ;
+  @override
+  String get FSTAB_RW => ffi.FSTAB_RW;
+  @override
+  String get FSTAB_SW => ffi.FSTAB_SW;
+  @override
+  String get FSTAB_XX => ffi.FSTAB_XX;
   @override
   int get FWRITE => ffi.FWRITE;
   @override

@@ -9,7 +9,7 @@ import '../util.dart';
 import 'bsd.dart';
 import 'ffigen.dart' as ffi;
 
-mixin BsdPwdMixin on StdLibC {
+mixin BsdPwdMixin on LibC {
   @override
   Passwd getpwnam(String name) {
     return ffi.using((arena) {

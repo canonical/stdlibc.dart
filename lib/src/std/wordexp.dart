@@ -5,10 +5,10 @@ import 'package:ffi/ffi.dart' as ffi;
 import '../libc.dart';
 import '../util.dart';
 import '../wordexp.dart';
-import 'bsd.dart';
 import 'ffigen.dart' as ffi;
+import 'std.dart';
 
-mixin BsdWordexpMixin on StdLibC {
+mixin StdWordexpMixin on LibC {
   @override
   List<String> wordexp(String words, int flags) {
     return ffi.using((arena) {

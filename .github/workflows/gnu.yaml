@@ -30,7 +30,7 @@ jobs:
         [ -s lib_src_gnu_ffigen.dart.diff ] || rm lib_src_gnu_ffigen.dart.diff
     - uses: actions/upload-artifact@v3
       with:
-        name: lib_src_gnu_ffigen.dart
+        name: lib_src_gnu_ffigen.dart.diff
         path: lib_src_gnu_ffigen.dart.diff
         if-no-files-found: ignore
     - run: ./.github/scripts/check-outdated-files.sh

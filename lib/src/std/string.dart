@@ -1,8 +1,8 @@
 import '../libc.dart';
 import '../util.dart';
-import 'gnu.dart';
+import 'std.dart';
 
-mixin GnuStringMixin on StdLibC {
+mixin StdStringMixin on LibC {
   @override
   String? strerror(int errnum) => dylib.strerror(errnum).toDartString();
 }
