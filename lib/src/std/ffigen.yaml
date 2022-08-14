@@ -12,6 +12,7 @@ headers:
     - "/usr/include/fnmatch.h"
     - "/usr/include/fstab.h"
     - "/usr/include/poll.h"
+    - "/usr/include/pwd.h"
     - "/usr/include/stdlib.h"
     - "/usr/include/string.h"
     - "/usr/include/syslog.h"
@@ -36,6 +37,9 @@ functions:
     - "endfsent"
     # poll.h
     - "poll"
+    # pwd.h
+    - "getpwuid"
+    - "getpwnam"
     # stdlib.h
     - "getenv"
     - "putenv"
@@ -78,10 +82,12 @@ unnamed-enums:
 structs:
   include:
     - "fstab"
+    - "passwd_t"
     - "pollfd"
     - "wordexp_t"
   rename:
     "fstab": "fstab_t"
+    "passwd": "passwd_t" # bsd != gnu
     "pollfd": "pollfd_t"
 unions:
   exclude:

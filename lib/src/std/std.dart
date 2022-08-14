@@ -7,6 +7,7 @@ import 'fnmatch.dart';
 import 'fstab.dart';
 import 'ioctl.dart';
 import 'poll.dart';
+import 'pwd.dart';
 import 'stdlib.dart';
 import 'string.dart';
 import 'syslog.dart';
@@ -22,6 +23,7 @@ abstract class StdLibC extends LibC
         StdFstabMixin,
         StdIoctlMixin,
         StdPollMixin,
+        StdPwdMixin,
         StdStdlibMixin,
         StdStringMixin,
         StdSyslogMixin,

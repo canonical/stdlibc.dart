@@ -38,9 +38,6 @@ functions:
     # mman.h
     - "mmap"
     - "munmap"
-    # pwd.h
-    - "getpwuid"
-    - "getpwnam"
     # stat.h
     - "__fxstat"
     - "__lxstat"
