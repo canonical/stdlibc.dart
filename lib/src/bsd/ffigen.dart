@@ -44,34 +44,6 @@ class BsdLibC {
   late final _fstat =
       _fstatPtr.asFunction<int Function(int, ffi.Pointer<stat_t>)>();
 
-  ffi.Pointer<passwd_t> getpwnam(
-    ffi.Pointer<ffi.Char> arg0,
-  ) {
-    return _getpwnam(
-      arg0,
-    );
-  }
-
-  late final _getpwnamPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<passwd_t> Function(ffi.Pointer<ffi.Char>)>>('getpwnam');
-  late final _getpwnam = _getpwnamPtr
-      .asFunction<ffi.Pointer<passwd_t> Function(ffi.Pointer<ffi.Char>)>();
-
-  ffi.Pointer<passwd_t> getpwuid(
-    int arg0,
-  ) {
-    return _getpwuid(
-      arg0,
-    );
-  }
-
-  late final _getpwuidPtr = _lookup<
-          ffi.NativeFunction<ffi.Pointer<passwd_t> Function(ffi.UnsignedInt)>>(
-      'getpwuid');
-  late final _getpwuid =
-      _getpwuidPtr.asFunction<ffi.Pointer<passwd_t> Function(int)>();
-
   int glob(
     ffi.Pointer<ffi.Char> arg0,
     int arg1,

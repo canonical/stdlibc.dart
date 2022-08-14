@@ -1,35 +1,14 @@
 import 'dart:ffi' as ffi;
 
-import 'package:ffi/ffi.dart' as ffi;
-
-import '../errno.dart';
-import '../libc.dart';
 import '../pwd.dart';
+import '../std/pwd.dart';
 import '../util.dart';
-import 'bsd.dart';
 import 'ffigen.dart' as ffi;
 
-mixin BsdPwdMixin on LibC {
+mixin BsdPwdMixin on StdPwdMixin {
   @override
-  Passwd getpwnam(String name) {
-    return ffi.using((arena) {
-      final res = dylib.getpwnam(name.toCString(arena));
-      if (res == ffi.nullptr) {
-        throw Errno('getpwnam', errno);
-      }
-      return res.toPasswd();
-    });
-  }
-
-  @override
-  Passwd getpwuid(int uid) {
-    return ffi.using((arena) {
-      final res = dylib.getpwuid(uid);
-      if (res == ffi.nullptr) {
-        throw Errno('getpwuid', errno);
-      }
-      return res.toPasswd();
-    });
+  Passwd toPasswd(ffi.Pointer ptr) {
+    return ptr.cast<ffi.passwd_t>().toPasswd();
   }
 }
 
