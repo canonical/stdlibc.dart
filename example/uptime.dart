@@ -5,7 +5,7 @@ void main() {
 
   final info = sysinfo();
   final uptime = [
-    if (info.uptime.inDays > 0) '${info.uptime.inDays} days',
+    if (info.uptime.inDays > 0) '${info.uptime.inDays} day(s)',
     [
       info.uptime.inHours % 24,
       info.uptime.inMinutes % 60,
