@@ -61,5 +61,8 @@ extension GnuStat on ffi.Pointer<ffi.stat_t> {
 }
 
 extension _GnuTimespec on ffi.timespec_t {
-  DateTime toDateTime() => fromTimespec(tv_sec, tv_nsec);
+  DateTime toDateTime() {
+    final tv = Duration(seconds: tv_sec, microseconds: tv_nsec ~/ 1000);
+    return DateTime.fromMicrosecondsSinceEpoch(tv.inMicroseconds);
+  }
 }
