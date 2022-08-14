@@ -23,6 +23,7 @@ globals:
 functions:
   include:
     # fcntl.h
+    - "fcntl"
     - "open"
     # fnmatch.h
     - "fnmatch"

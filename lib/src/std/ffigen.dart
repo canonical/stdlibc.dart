@@ -74,6 +74,20 @@ class StdLibC {
       _lookup<ffi.NativeFunction<ffi.Void Function()>>('endfsent');
   late final _endfsent = _endfsentPtr.asFunction<void Function()>();
 
+  int fcntl(
+    int __fd,
+    int __cmd,
+  ) {
+    return _fcntl(
+      __fd,
+      __cmd,
+    );
+  }
+
+  late final _fcntlPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Int)>>('fcntl');
+  late final _fcntl = _fcntlPtr.asFunction<int Function(int, int)>();
+
   int fnmatch(
     ffi.Pointer<ffi.Char> __pattern,
     ffi.Pointer<ffi.Char> __name,

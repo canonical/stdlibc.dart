@@ -10,7 +10,7 @@ mixin StdFcntlMixin on LibC {
   @override
   int fcntl(int fd, int cmd, dynamic arg) {
     if (arg == null) {
-      return _fcntl(fd, cmd);
+      return dylib.fcntl(fd, cmd);
     } else if (arg is int) {
       return _fcntlInt(fd, cmd, arg);
     } else if (arg is ffi.Pointer) {
@@ -29,10 +29,6 @@ mixin StdFcntlMixin on LibC {
     });
   }
 }
-
-final _fcntl = ffi.DynamicLibrary.process()
-    .lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Int)>>('fcntl')
-    .asFunction<int Function(int, int)>();
 
 final _fcntlInt = ffi.DynamicLibrary.process()
     .lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Int, ffi.Int)>>(
