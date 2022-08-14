@@ -19,6 +19,8 @@ headers:
     - "/usr/include/string.h"
     - "/usr/include/syslog.h"
     - "/usr/include/unistd.h"
+    - "/usr/include/utmp.h"
+    - "/usr/include/utmpx.h"
     - "/usr/include/wordexp.h"
     - "/usr/include/x86_64-linux-gnu/sys/ioctl.h"
     - "/usr/include/x86_64-linux-gnu/sys/mman.h"
@@ -73,6 +75,7 @@ structs:
     - "stat"
     - "sysinfo"
     - "timespec"
+    - "utmpx"
     - "utsname"
   rename:
     "flock": "flock_t"
@@ -80,6 +83,8 @@ structs:
     "stat": "stat_t"
     "sysinfo": "sysinfo_t"
     "timespec": "timespec_t"
+    "UnnamedStruct1": "timeval_t"
+    "utmpx": "utmpx_t"
     "utsname": "utsname_t"
 unions:
   exclude:

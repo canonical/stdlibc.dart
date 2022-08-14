@@ -207,6 +207,8 @@ class GnuLibC {
 
 const int ACCESSPERMS = 511;
 
+const int ACCOUNTING = 9;
+
 const int ALLPERMS = 4095;
 
 const int AT_EACCESS = 512;
@@ -220,6 +222,8 @@ const int AT_SYMLINK_FOLLOW = 1024;
 const int AT_SYMLINK_NOFOLLOW = 256;
 
 const int BIG_ENDIAN = 4321;
+
+const int BOOT_TIME = 2;
 
 const int BYTE_ORDER = 1234;
 
@@ -264,6 +268,8 @@ const int CSUSP = 26;
 const int CTIME = 0;
 
 const int CWERASE = 23;
+
+const int DEAD_PROCESS = 8;
 
 const int DEFFILEMODE = 438;
 
@@ -390,6 +396,8 @@ const int EMEDIUMTYPE = 124;
 const int EMFILE = 24;
 
 const int EMLINK = 31;
+
+const int EMPTY = 0;
 
 const int EMSGSIZE = 90;
 
@@ -679,6 +687,8 @@ const int GLOB_TILDE = 4096;
 
 const int GLOB_TILDE_CHECK = 16384;
 
+const int INIT_PROCESS = 5;
+
 const int IOCSIZE_MASK = 1073676288;
 
 const int IOCSIZE_SHIFT = 16;
@@ -689,6 +699,12 @@ const int IOC_INOUT = 3221225472;
 
 const int IOC_OUT = 2147483648;
 
+const int ITIMER_PROF = 2;
+
+const int ITIMER_REAL = 0;
+
+const int ITIMER_VIRTUAL = 1;
+
 const int LITTLE_ENDIAN = 1234;
 
 const int LOCK_EX = 2;
@@ -698,6 +714,8 @@ const int LOCK_NB = 4;
 const int LOCK_SH = 1;
 
 const int LOCK_UN = 8;
+
+const int LOGIN_PROCESS = 6;
 
 const int LOG_ALERT = 1;
 
@@ -867,6 +885,8 @@ const int MS_SYNC = 4;
 
 const int NCC = 8;
 
+const int NEW_TIME = 3;
+
 const int NFDBITS = 64;
 
 const int NSS_BUFLEN_PASSWD = 1024;
@@ -904,6 +924,8 @@ const int N_SYNC_PPP = 14;
 const int N_TTY = 0;
 
 const int N_X25 = 6;
+
+const int OLD_TIME = 4;
 
 const int O_ACCMODE = 3;
 
@@ -1000,6 +1022,8 @@ const int PROT_READ = 1;
 const int PROT_WRITE = 2;
 
 const int RAND_MAX = 2147483647;
+
+const int RUN_LVL = 1;
 
 const int R_OK = 4;
 
@@ -1353,9 +1377,15 @@ const int TIOCSWINSZ = 21524;
 
 const int TIOCVHANGUP = 21559;
 
+const int USER_PROCESS = 7;
+
 const int UTIME_NOW = 1073741823;
 
 const int UTIME_OMIT = 1073741822;
+
+const String UTMP_FILE = '/var/run/utmp';
+
+const String UTMP_FILENAME = '/var/run/utmp';
 
 const int UTSNAME_DOMAIN_LENGTH = 65;
 
@@ -1370,6 +1400,22 @@ const int UTSNAME_RELEASE_LENGTH = 65;
 const int UTSNAME_SYSNAME_LENGTH = 65;
 
 const int UTSNAME_VERSION_LENGTH = 65;
+
+const int UT_HOSTSIZE = 256;
+
+const int UT_LINESIZE = 32;
+
+const int UT_NAMESIZE = 32;
+
+const int UT_UNKNOWN = 0;
+
+class UnnamedStruct1 extends ffi.Struct {
+  @ffi.Int()
+  external int tv_sec;
+
+  @ffi.Int()
+  external int tv_usec;
+}
 
 const int WCONTINUED = 8;
 
@@ -1403,11 +1449,23 @@ const int WRDE_UNDEF = 32;
 
 const int WSTOPPED = 2;
 
+const String WTMP_FILE = '/var/log/wtmp';
+
+const String WTMP_FILENAME = '/var/log/wtmp';
+
 const int WUNTRACED = 2;
 
 const int W_OK = 2;
 
 const int X_OK = 1;
+
+class __exit_status extends ffi.Struct {
+  @ffi.Short()
+  external int __e_termination;
+
+  @ffi.Short()
+  external int __e_exit;
+}
 
 class flock_t extends ffi.Struct {
   @ffi.Short()
@@ -1573,6 +1631,39 @@ class timespec_t extends ffi.Struct {
 
   @ffi.Long()
   external int tv_nsec;
+}
+
+class utmpx_t extends ffi.Struct {
+  @ffi.Short()
+  external int ut_type;
+
+  @ffi.Int()
+  external int ut_pid;
+
+  @ffi.Array.multi([32])
+  external ffi.Array<ffi.Char> ut_line;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Char> ut_id;
+
+  @ffi.Array.multi([32])
+  external ffi.Array<ffi.Char> ut_user;
+
+  @ffi.Array.multi([256])
+  external ffi.Array<ffi.Char> ut_host;
+
+  external __exit_status ut_exit;
+
+  @ffi.Int()
+  external int ut_session;
+
+  external UnnamedStruct1 ut_tv;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Int> ut_addr_v6;
+
+  @ffi.Array.multi([20])
+  external ffi.Array<ffi.Char> __glibc_reserved;
 }
 
 class utsname_t extends ffi.Struct {

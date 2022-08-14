@@ -11,6 +11,8 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get ACCESSX_MAX_TABLESIZE => ffi.ACCESSX_MAX_TABLESIZE;
   @override
+  int get ACCOUNTING => ffi.ACCOUNTING;
+  @override
   int get ALLPERMS => ffi.ALLPERMS;
   @override
   int get AT_EACCESS => ffi.AT_EACCESS;
@@ -28,6 +30,8 @@ mixin BsdMacroMixin on PlatformLibC {
   int get AT_SYMLINK_NOFOLLOW => ffi.AT_SYMLINK_NOFOLLOW;
   @override
   int get BIG_ENDIAN => ffi.BIG_ENDIAN;
+  @override
+  int get BOOT_TIME => ffi.BOOT_TIME;
   @override
   int get BUS_ADRALN => ffi.BUS_ADRALN;
   @override
@@ -75,6 +79,24 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get CLNEXT => throw UnsupportedError('CLNEXT');
   @override
+  int get CLOCKS_PER_SEC => ffi.CLOCKS_PER_SEC;
+  @override
+  int get CLOCK_MONOTONIC => ffi.CLOCK_MONOTONIC;
+  @override
+  int get CLOCK_MONOTONIC_RAW => ffi.CLOCK_MONOTONIC_RAW;
+  @override
+  int get CLOCK_MONOTONIC_RAW_APPROX => ffi.CLOCK_MONOTONIC_RAW_APPROX;
+  @override
+  int get CLOCK_PROCESS_CPUTIME_ID => ffi.CLOCK_PROCESS_CPUTIME_ID;
+  @override
+  int get CLOCK_REALTIME => ffi.CLOCK_REALTIME;
+  @override
+  int get CLOCK_THREAD_CPUTIME_ID => ffi.CLOCK_THREAD_CPUTIME_ID;
+  @override
+  int get CLOCK_UPTIME_RAW => ffi.CLOCK_UPTIME_RAW;
+  @override
+  int get CLOCK_UPTIME_RAW_APPROX => ffi.CLOCK_UPTIME_RAW_APPROX;
+  @override
   int get CMIN => throw UnsupportedError('CMIN');
   @override
   int get CPF_IGNORE_MODE => ffi.CPF_IGNORE_MODE;
@@ -103,7 +125,23 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get CWERASE => throw UnsupportedError('CWERASE');
   @override
+  int get DEAD_PROCESS => ffi.DEAD_PROCESS;
+  @override
   int get DEFFILEMODE => ffi.DEFFILEMODE;
+  @override
+  int get DST_AUST => ffi.DST_AUST;
+  @override
+  int get DST_CAN => ffi.DST_CAN;
+  @override
+  int get DST_EET => ffi.DST_EET;
+  @override
+  int get DST_MET => ffi.DST_MET;
+  @override
+  int get DST_NONE => ffi.DST_NONE;
+  @override
+  int get DST_USA => ffi.DST_USA;
+  @override
+  int get DST_WET => ffi.DST_WET;
   @override
   int get E2BIG => ffi.E2BIG;
   @override
@@ -256,6 +294,8 @@ mixin BsdMacroMixin on PlatformLibC {
   int get EMFILE => ffi.EMFILE;
   @override
   int get EMLINK => ffi.EMLINK;
+  @override
+  int get EMPTY => ffi.EMPTY;
   @override
   int get EMSGSIZE => ffi.EMSGSIZE;
   @override
@@ -743,6 +783,8 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get ILL_PRVREG => ffi.ILL_PRVREG;
   @override
+  int get INIT_PROCESS => ffi.INIT_PROCESS;
+  @override
   int get INT16_MAX => ffi.INT16_MAX;
   @override
   int get INT16_MIN => ffi.INT16_MIN;
@@ -817,6 +859,12 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get IOC_VOID => ffi.IOC_VOID;
   @override
+  int get ITIMER_PROF => ffi.ITIMER_PROF;
+  @override
+  int get ITIMER_REAL => ffi.ITIMER_REAL;
+  @override
+  int get ITIMER_VIRTUAL => ffi.ITIMER_VIRTUAL;
+  @override
   int get LITTLE_ENDIAN => ffi.LITTLE_ENDIAN;
   @override
   int get LOCK_EX => ffi.LOCK_EX;
@@ -826,6 +874,8 @@ mixin BsdMacroMixin on PlatformLibC {
   int get LOCK_SH => ffi.LOCK_SH;
   @override
   int get LOCK_UN => ffi.LOCK_UN;
+  @override
+  int get LOGIN_PROCESS => ffi.LOGIN_PROCESS;
   @override
   int get LOG_ALERT => ffi.LOG_ALERT;
   @override
@@ -1059,6 +1109,8 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get NCC => throw UnsupportedError('NCC');
   @override
+  int get NEW_TIME => ffi.NEW_TIME;
+  @override
   int get NFDBITS => throw UnsupportedError('NFDBITS');
   @override
   int get NSIG => ffi.NSIG;
@@ -1098,6 +1150,8 @@ mixin BsdMacroMixin on PlatformLibC {
   int get N_TTY => throw UnsupportedError('N_TTY');
   @override
   int get N_X25 => throw UnsupportedError('N_X25');
+  @override
+  int get OLD_TIME => ffi.OLD_TIME;
   @override
   int get O_ACCMODE => ffi.O_ACCMODE;
   @override
@@ -1290,6 +1344,8 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get RSIZE_MAX => ffi.RSIZE_MAX;
   @override
+  int get RUN_LVL => ffi.RUN_LVL;
+  @override
   int get RUSAGE_CHILDREN => ffi.RUSAGE_CHILDREN;
   @override
   int get RUSAGE_INFO_CURRENT => ffi.RUSAGE_INFO_CURRENT;
@@ -1368,6 +1424,8 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get SF_SYNTHETIC => ffi.SF_SYNTHETIC;
   @override
+  int get SHUTDOWN_TIME => ffi.SHUTDOWN_TIME;
+  @override
   int get SIGABRT => ffi.SIGABRT;
   @override
   int get SIGALRM => ffi.SIGALRM;
@@ -1401,6 +1459,8 @@ mixin BsdMacroMixin on PlatformLibC {
   int get SIGIOT => ffi.SIGIOT;
   @override
   int get SIGKILL => ffi.SIGKILL;
+  @override
+  int get SIGNATURE => ffi.SIGNATURE;
   @override
   int get SIGPIPE => ffi.SIGPIPE;
   @override
@@ -1960,9 +2020,24 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get USER_FSIGNATURES_CDHASH_LEN => ffi.USER_FSIGNATURES_CDHASH_LEN;
   @override
+  int get USER_PROCESS => ffi.USER_PROCESS;
+  @override
   int get UTIME_NOW => ffi.UTIME_NOW;
   @override
   int get UTIME_OMIT => ffi.UTIME_OMIT;
+  @override
+  int get UTMPX_AUTOFILL_MASK => ffi.UTMPX_AUTOFILL_MASK;
+  @override
+  String get UTMPX_CHANGE_NOTIFICATION => ffi.UTMPX_CHANGE_NOTIFICATION;
+  @override
+  int get UTMPX_DEAD_IF_CORRESPONDING_MASK =>
+      ffi.UTMPX_DEAD_IF_CORRESPONDING_MASK;
+  @override
+  String get UTMPX_FILE => ffi.UTMPX_FILE;
+  @override
+  String get UTMP_FILE => throw UnsupportedError('UTMP_FILE');
+  @override
+  String get UTMP_FILENAME => throw UnsupportedError('UTMP_FILENAME');
   @override
   int get UTSNAME_DOMAIN_LENGTH =>
       throw UnsupportedError('UTSNAME_DOMAIN_LENGTH');
@@ -1983,6 +2058,14 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get UTSNAME_VERSION_LENGTH =>
       throw UnsupportedError('UTSNAME_VERSION_LENGTH');
+  @override
+  int get UT_HOSTSIZE => ffi.UT_HOSTSIZE;
+  @override
+  int get UT_LINESIZE => ffi.UT_LINESIZE;
+  @override
+  int get UT_NAMESIZE => ffi.UT_NAMESIZE;
+  @override
+  int get UT_UNKNOWN => throw UnsupportedError('UT_UNKNOWN');
   @override
   int get WAIT_ANY => ffi.WAIT_ANY;
   @override
@@ -2041,6 +2124,10 @@ mixin BsdMacroMixin on PlatformLibC {
   int get WRDE_UNDEF => ffi.WRDE_UNDEF;
   @override
   int get WSTOPPED => ffi.WSTOPPED;
+  @override
+  String get WTMP_FILE => throw UnsupportedError('WTMP_FILE');
+  @override
+  String get WTMP_FILENAME => throw UnsupportedError('WTMP_FILENAME');
   @override
   int get WUNTRACED => ffi.WUNTRACED;
   @override

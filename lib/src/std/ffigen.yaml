@@ -18,6 +18,7 @@ headers:
     - "/usr/include/syslog.h"
     - "/usr/include/sys/ioctl.h"
     - "/usr/include/unistd.h"
+    - "/usr/include/utmpx.h"
     - "/usr/include/wordexp.h"
 globals:
   exclude:
@@ -67,6 +68,11 @@ functions:
     - "set.*id"
     - "sync"
     - "write"
+    # utmpx.h
+    - "endutxent"
+    - "getutxent"
+    - "getutxid"
+    - "setutxent"
     # wordexp.h
     - "wordexp"
     - "wordfree"
@@ -84,11 +90,13 @@ structs:
     - "fstab"
     - "passwd_t"
     - "pollfd"
+    - "utmpx"
     - "wordexp_t"
   rename:
     "fstab": "fstab_t"
     "passwd": "passwd_t" # bsd != gnu
     "pollfd": "pollfd_t"
+    "utmpx": "utmpx_t"
 unions:
   exclude:
     - ".*"

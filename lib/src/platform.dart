@@ -19,6 +19,7 @@ import 'sysinfo.dart';
 import 'syslog.dart';
 import 'uname.dart';
 import 'unistd.dart';
+import 'utmpx.dart';
 import 'wordexp.dart';
 
 final PlatformLibC platform = Platform.isMacOS ? BsdLibC() : GnuLibC();
@@ -42,4 +43,5 @@ abstract class PlatformLibC
         SyslogMixin,
         UnameMixin,
         UnistdMixin,
+        UtmpxMixin,
         WordexpMixin {}
