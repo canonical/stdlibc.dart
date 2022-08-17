@@ -1,44 +1,35 @@
 import 'dart:ffi' as ffi;
 
-import '../libc.dart';
+import '../std/std.dart';
 import 'errno.dart';
 import 'fcntl.dart';
 import 'ffigen.dart' as ffi;
-import 'fnmatch.dart';
 import 'glob.dart';
 import 'macros.g.dart';
 import 'mman.dart';
-import 'poll.dart';
+import 'pwd.dart';
 import 'stat.dart';
-import 'stdlib.dart';
-import 'string.dart';
 import 'sysinfo.dart';
-import 'syslog.dart';
 import 'uname.dart';
-import 'unistd.dart';
-import 'wordexp.dart';
+import 'utmpx.dart';
 
-final dylib = ffi.BsdLibC(ffi.DynamicLibrary.process());
+final dylib = ffi.DynamicLibrary.process();
+final bsd = ffi.BsdLibC(dylib);
 final inode64 = ffi.BsdLibC.fromLookup(inode64Lookup);
 
 ffi.Pointer<T> inode64Lookup<T extends ffi.NativeType>(String symbolName) {
-  return ffi.DynamicLibrary.process().lookup('$symbolName\$INODE64');
+  return dylib.lookup('$symbolName\$INODE64');
 }
 
 class BsdLibC extends StdLibC
     with
         BsdErrnoMixin,
-        BsdFcntlMixin,
-        BsdFnmatchMixin,
         BsdGlobMixin,
+        BsdFcntlMixin,
         BsdMacroMixin,
         BsdMmanMixin,
-        BsdPollMixin,
+        BsdPwdMixin,
         BsdStatMixin,
-        BsdStdlibMixin,
-        BsdStringMixin,
         BsdSysinfoMixin,
-        BsdSyslogMixin,
         BsdUnameMixin,
-        BsdUnistdMixin,
-        BsdWordexpMixin {}
+        BsdUtmpxMixin {}

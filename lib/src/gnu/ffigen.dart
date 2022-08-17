@@ -20,26 +20,6 @@ class GnuLibC {
           lookup)
       : _lookup = lookup;
 
-  int close(
-    int __fd,
-  ) {
-    return _close(
-      __fd,
-    );
-  }
-
-  late final _closePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('close');
-  late final _close = _closePtr.asFunction<int Function(int)>();
-
-  void closelog() {
-    return _closelog();
-  }
-
-  late final _closelogPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function()>>('closelog');
-  late final _closelog = _closelogPtr.asFunction<void Function()>();
-
   ffi.Pointer<ffi.Int> errno() {
     return _errno();
   }
@@ -48,25 +28,6 @@ class GnuLibC {
       _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Int> Function()>>(
           '__errno_location');
   late final _errno = _errnoPtr.asFunction<ffi.Pointer<ffi.Int> Function()>();
-
-  int fnmatch(
-    ffi.Pointer<ffi.Char> __pattern,
-    ffi.Pointer<ffi.Char> __name,
-    int __flags,
-  ) {
-    return _fnmatch(
-      __pattern,
-      __name,
-      __flags,
-    );
-  }
-
-  late final _fnmatchPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-              ffi.Int)>>('fnmatch');
-  late final _fnmatch = _fnmatchPtr.asFunction<
-      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
   int fstat(
     int __ver,
@@ -85,100 +46,6 @@ class GnuLibC {
           ffi.Int Function(ffi.Int, ffi.Int, ffi.Pointer<stat_t>)>>('__fxstat');
   late final _fstat =
       _fstatPtr.asFunction<int Function(int, int, ffi.Pointer<stat_t>)>();
-
-  int getegid() {
-    return _getegid();
-  }
-
-  late final _getegidPtr =
-      _lookup<ffi.NativeFunction<ffi.UnsignedInt Function()>>('getegid');
-  late final _getegid = _getegidPtr.asFunction<int Function()>();
-
-  ffi.Pointer<ffi.Char> getenv(
-    ffi.Pointer<ffi.Char> __name,
-  ) {
-    return _getenv(
-      __name,
-    );
-  }
-
-  late final _getenvPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>>('getenv');
-  late final _getenv = _getenvPtr
-      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
-
-  int geteuid() {
-    return _geteuid();
-  }
-
-  late final _geteuidPtr =
-      _lookup<ffi.NativeFunction<ffi.UnsignedInt Function()>>('geteuid');
-  late final _geteuid = _geteuidPtr.asFunction<int Function()>();
-
-  int getgid() {
-    return _getgid();
-  }
-
-  late final _getgidPtr =
-      _lookup<ffi.NativeFunction<ffi.UnsignedInt Function()>>('getgid');
-  late final _getgid = _getgidPtr.asFunction<int Function()>();
-
-  int gethostid() {
-    return _gethostid();
-  }
-
-  late final _gethostidPtr =
-      _lookup<ffi.NativeFunction<ffi.Long Function()>>('gethostid');
-  late final _gethostid = _gethostidPtr.asFunction<int Function()>();
-
-  int getpgid(
-    int __pid,
-  ) {
-    return _getpgid(
-      __pid,
-    );
-  }
-
-  late final _getpgidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('getpgid');
-  late final _getpgid = _getpgidPtr.asFunction<int Function(int)>();
-
-  int getpid() {
-    return _getpid();
-  }
-
-  late final _getpidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function()>>('getpid');
-  late final _getpid = _getpidPtr.asFunction<int Function()>();
-
-  int getppid() {
-    return _getppid();
-  }
-
-  late final _getppidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function()>>('getppid');
-  late final _getppid = _getppidPtr.asFunction<int Function()>();
-
-  int getsid(
-    int __pid,
-  ) {
-    return _getsid(
-      __pid,
-    );
-  }
-
-  late final _getsidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('getsid');
-  late final _getsid = _getsidPtr.asFunction<int Function(int)>();
-
-  int getuid() {
-    return _getuid();
-  }
-
-  late final _getuidPtr =
-      _lookup<ffi.NativeFunction<ffi.UnsignedInt Function()>>('getuid');
-  late final _getuid = _getuidPtr.asFunction<int Function()>();
 
   int glob(
     ffi.Pointer<ffi.Char> __pattern,
@@ -290,249 +157,6 @@ class GnuLibC {
   late final _munmap =
       _munmapPtr.asFunction<int Function(ffi.Pointer<ffi.Void>, int)>();
 
-  int open(
-    ffi.Pointer<ffi.Char> __file,
-    int __oflag,
-  ) {
-    return _open(
-      __file,
-      __oflag,
-    );
-  }
-
-  late final _openPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Int)>>(
-      'open');
-  late final _open =
-      _openPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, int)>();
-
-  void openlog(
-    ffi.Pointer<ffi.Char> __ident,
-    int __option,
-    int __facility,
-  ) {
-    return _openlog(
-      __ident,
-      __option,
-      __facility,
-    );
-  }
-
-  late final _openlogPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Void Function(
-              ffi.Pointer<ffi.Char>, ffi.Int, ffi.Int)>>('openlog');
-  late final _openlog =
-      _openlogPtr.asFunction<void Function(ffi.Pointer<ffi.Char>, int, int)>();
-
-  int pipe(
-    ffi.Pointer<ffi.Int> __pipedes,
-  ) {
-    return _pipe(
-      __pipedes,
-    );
-  }
-
-  late final _pipePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Int>)>>(
-          'pipe');
-  late final _pipe = _pipePtr.asFunction<int Function(ffi.Pointer<ffi.Int>)>();
-
-  int poll(
-    ffi.Pointer<pollfd_t> __fds,
-    int __nfds,
-    int __timeout,
-  ) {
-    return _poll(
-      __fds,
-      __nfds,
-      __timeout,
-    );
-  }
-
-  late final _pollPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(
-              ffi.Pointer<pollfd_t>, ffi.UnsignedLong, ffi.Int)>>('poll');
-  late final _poll =
-      _pollPtr.asFunction<int Function(ffi.Pointer<pollfd_t>, int, int)>();
-
-  int putenv(
-    ffi.Pointer<ffi.Char> __string,
-  ) {
-    return _putenv(
-      __string,
-    );
-  }
-
-  late final _putenvPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>)>>(
-          'putenv');
-  late final _putenv =
-      _putenvPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
-
-  int read(
-    int __fd,
-    ffi.Pointer<ffi.Void> __buf,
-    int __nbytes,
-  ) {
-    return _read(
-      __fd,
-      __buf,
-      __nbytes,
-    );
-  }
-
-  late final _readPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Long Function(ffi.Int, ffi.Pointer<ffi.Void>, ffi.Size)>>('read');
-  late final _read =
-      _readPtr.asFunction<int Function(int, ffi.Pointer<ffi.Void>, int)>();
-
-  int setegid(
-    int __gid,
-  ) {
-    return _setegid(
-      __gid,
-    );
-  }
-
-  late final _setegidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.UnsignedInt)>>('setegid');
-  late final _setegid = _setegidPtr.asFunction<int Function(int)>();
-
-  int setenv(
-    ffi.Pointer<ffi.Char> __name,
-    ffi.Pointer<ffi.Char> __value,
-    int __replace,
-  ) {
-    return _setenv(
-      __name,
-      __value,
-      __replace,
-    );
-  }
-
-  late final _setenvPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-              ffi.Int)>>('setenv');
-  late final _setenv = _setenvPtr.asFunction<
-      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
-
-  int seteuid(
-    int __uid,
-  ) {
-    return _seteuid(
-      __uid,
-    );
-  }
-
-  late final _seteuidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.UnsignedInt)>>('seteuid');
-  late final _seteuid = _seteuidPtr.asFunction<int Function(int)>();
-
-  int setgid(
-    int __gid,
-  ) {
-    return _setgid(
-      __gid,
-    );
-  }
-
-  late final _setgidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.UnsignedInt)>>('setgid');
-  late final _setgid = _setgidPtr.asFunction<int Function(int)>();
-
-  int sethostid(
-    int __id,
-  ) {
-    return _sethostid(
-      __id,
-    );
-  }
-
-  late final _sethostidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Long)>>('sethostid');
-  late final _sethostid = _sethostidPtr.asFunction<int Function(int)>();
-
-  int setlogmask(
-    int __mask,
-  ) {
-    return _setlogmask(
-      __mask,
-    );
-  }
-
-  late final _setlogmaskPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('setlogmask');
-  late final _setlogmask = _setlogmaskPtr.asFunction<int Function(int)>();
-
-  int setpgid(
-    int __pid,
-    int __pgid,
-  ) {
-    return _setpgid(
-      __pid,
-      __pgid,
-    );
-  }
-
-  late final _setpgidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Int)>>(
-          'setpgid');
-  late final _setpgid = _setpgidPtr.asFunction<int Function(int, int)>();
-
-  int setregid(
-    int __rgid,
-    int __egid,
-  ) {
-    return _setregid(
-      __rgid,
-      __egid,
-    );
-  }
-
-  late final _setregidPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.UnsignedInt, ffi.UnsignedInt)>>('setregid');
-  late final _setregid = _setregidPtr.asFunction<int Function(int, int)>();
-
-  int setreuid(
-    int __ruid,
-    int __euid,
-  ) {
-    return _setreuid(
-      __ruid,
-      __euid,
-    );
-  }
-
-  late final _setreuidPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.UnsignedInt, ffi.UnsignedInt)>>('setreuid');
-  late final _setreuid = _setreuidPtr.asFunction<int Function(int, int)>();
-
-  int setsid() {
-    return _setsid();
-  }
-
-  late final _setsidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function()>>('setsid');
-  late final _setsid = _setsidPtr.asFunction<int Function()>();
-
-  int setuid(
-    int __uid,
-  ) {
-    return _setuid(
-      __uid,
-    );
-  }
-
-  late final _setuidPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.UnsignedInt)>>('setuid');
-  late final _setuid = _setuidPtr.asFunction<int Function(int)>();
-
   int stat(
     int __ver,
     ffi.Pointer<ffi.Char> __filename,
@@ -552,20 +176,6 @@ class GnuLibC {
   late final _stat = _statPtr.asFunction<
       int Function(int, ffi.Pointer<ffi.Char>, ffi.Pointer<stat_t>)>();
 
-  ffi.Pointer<ffi.Char> strerror(
-    int __errnum,
-  ) {
-    return _strerror(
-      __errnum,
-    );
-  }
-
-  late final _strerrorPtr =
-      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int)>>(
-          'strerror');
-  late final _strerror =
-      _strerrorPtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
-
   int sysinfo(
     ffi.Pointer<sysinfo_t> __info,
   ) {
@@ -580,22 +190,6 @@ class GnuLibC {
   late final _sysinfo =
       _sysinfoPtr.asFunction<int Function(ffi.Pointer<sysinfo_t>)>();
 
-  void syslog(
-    int __pri,
-    ffi.Pointer<ffi.Char> __fmt,
-  ) {
-    return _syslog(
-      __pri,
-      __fmt,
-    );
-  }
-
-  late final _syslogPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Void Function(ffi.Int, ffi.Pointer<ffi.Char>)>>('syslog');
-  late final _syslog =
-      _syslogPtr.asFunction<void Function(int, ffi.Pointer<ffi.Char>)>();
-
   int uname(
     ffi.Pointer<utsname_t> __name,
   ) {
@@ -609,75 +203,11 @@ class GnuLibC {
           'uname');
   late final _uname =
       _unamePtr.asFunction<int Function(ffi.Pointer<utsname_t>)>();
-
-  int unsetenv(
-    ffi.Pointer<ffi.Char> __name,
-  ) {
-    return _unsetenv(
-      __name,
-    );
-  }
-
-  late final _unsetenvPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>)>>(
-          'unsetenv');
-  late final _unsetenv =
-      _unsetenvPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
-
-  int wordexp(
-    ffi.Pointer<ffi.Char> __words,
-    ffi.Pointer<wordexp_t> __pwordexp,
-    int __flags,
-  ) {
-    return _wordexp(
-      __words,
-      __pwordexp,
-      __flags,
-    );
-  }
-
-  late final _wordexpPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<wordexp_t>,
-              ffi.Int)>>('wordexp');
-  late final _wordexp = _wordexpPtr.asFunction<
-      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<wordexp_t>, int)>();
-
-  void wordfree(
-    ffi.Pointer<wordexp_t> __wordexp,
-  ) {
-    return _wordfree(
-      __wordexp,
-    );
-  }
-
-  late final _wordfreePtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<wordexp_t>)>>(
-          'wordfree');
-  late final _wordfree =
-      _wordfreePtr.asFunction<void Function(ffi.Pointer<wordexp_t>)>();
-
-  int write(
-    int __fd,
-    ffi.Pointer<ffi.Void> __buf,
-    int __n,
-  ) {
-    return _write(
-      __fd,
-      __buf,
-      __n,
-    );
-  }
-
-  late final _writePtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Long Function(
-              ffi.Int, ffi.Pointer<ffi.Void>, ffi.Size)>>('write');
-  late final _write =
-      _writePtr.asFunction<int Function(int, ffi.Pointer<ffi.Void>, int)>();
 }
 
 const int ACCESSPERMS = 511;
+
+const int ACCOUNTING = 9;
 
 const int ALLPERMS = 4095;
 
@@ -693,7 +223,53 @@ const int AT_SYMLINK_NOFOLLOW = 256;
 
 const int BIG_ENDIAN = 4321;
 
+const int BOOT_TIME = 2;
+
 const int BYTE_ORDER = 1234;
+
+const int CBRK = 0;
+
+const int CDISCARD = 15;
+
+const int CDSUSP = 25;
+
+const int CEOF = 4;
+
+const int CEOL = 0;
+
+const int CEOT = 4;
+
+const int CERASE = 127;
+
+const int CFLUSH = 15;
+
+const int CINTR = 3;
+
+const int CKILL = 21;
+
+const int CLNEXT = 22;
+
+const int CMIN = 1;
+
+const int CQUIT = 28;
+
+const int CREPRINT = 18;
+
+const int CRPRNT = 18;
+
+const int CSTART = 17;
+
+const int CSTATUS = 0;
+
+const int CSTOP = 19;
+
+const int CSUSP = 26;
+
+const int CTIME = 0;
+
+const int CWERASE = 23;
+
+const int DEAD_PROCESS = 8;
 
 const int DEFFILEMODE = 438;
 
@@ -820,6 +396,8 @@ const int EMEDIUMTYPE = 124;
 const int EMFILE = 24;
 
 const int EMLINK = 31;
+
+const int EMPTY = 0;
 
 const int EMSGSIZE = 90;
 
@@ -979,6 +557,18 @@ const int FD_SETSIZE = 1024;
 
 const int FFSYNC = 1052672;
 
+const int FIOASYNC = 21586;
+
+const int FIOCLEX = 21585;
+
+const int FIONBIO = 21537;
+
+const int FIONCLEX = 21584;
+
+const int FIONREAD = 21531;
+
+const int FIOQSIZE = 21600;
+
 const int FNDELAY = 2048;
 
 const int FNM_CASEFOLD = 16;
@@ -998,6 +588,18 @@ const int FNM_PATHNAME = 1;
 const int FNM_PERIOD = 4;
 
 const int FNONBLOCK = 2048;
+
+const String FSTAB = '/etc/fstab';
+
+const String FSTAB_RO = 'ro';
+
+const String FSTAB_RQ = 'rq';
+
+const String FSTAB_RW = 'rw';
+
+const String FSTAB_SW = 'sw';
+
+const String FSTAB_XX = 'xx';
 
 const int F_DUPFD = 0;
 
@@ -1085,6 +687,24 @@ const int GLOB_TILDE = 4096;
 
 const int GLOB_TILDE_CHECK = 16384;
 
+const int INIT_PROCESS = 5;
+
+const int IOCSIZE_MASK = 1073676288;
+
+const int IOCSIZE_SHIFT = 16;
+
+const int IOC_IN = 1073741824;
+
+const int IOC_INOUT = 3221225472;
+
+const int IOC_OUT = 2147483648;
+
+const int ITIMER_PROF = 2;
+
+const int ITIMER_REAL = 0;
+
+const int ITIMER_VIRTUAL = 1;
+
 const int LITTLE_ENDIAN = 1234;
 
 const int LOCK_EX = 2;
@@ -1094,6 +714,8 @@ const int LOCK_NB = 4;
 const int LOCK_SH = 1;
 
 const int LOCK_UN = 8;
+
+const int LOGIN_PROCESS = 6;
 
 const int LOG_ALERT = 1;
 
@@ -1261,9 +883,49 @@ const int MS_INVALIDATE = 2;
 
 const int MS_SYNC = 4;
 
+const int NCC = 8;
+
+const int NEW_TIME = 3;
+
 const int NFDBITS = 64;
 
+const int NSS_BUFLEN_PASSWD = 1024;
+
 const int NULL = 0;
+
+const int N_6PACK = 7;
+
+const int N_AX25 = 5;
+
+const int N_HCI = 15;
+
+const int N_HDLC = 13;
+
+const int N_IRDA = 11;
+
+const int N_MASC = 8;
+
+const int N_MOUSE = 2;
+
+const int N_PPP = 3;
+
+const int N_PROFIBUS_FDL = 10;
+
+const int N_R3964 = 9;
+
+const int N_SLIP = 1;
+
+const int N_SMSBLOCK = 12;
+
+const int N_STRIP = 4;
+
+const int N_SYNC_PPP = 14;
+
+const int N_TTY = 0;
+
+const int N_X25 = 6;
+
+const int OLD_TIME = 4;
 
 const int O_ACCMODE = 3;
 
@@ -1361,6 +1023,8 @@ const int PROT_WRITE = 2;
 
 const int RAND_MAX = 2147483647;
 
+const int RUN_LVL = 1;
+
 const int R_OK = 4;
 
 const int SEEK_CUR = 1;
@@ -1368,6 +1032,114 @@ const int SEEK_CUR = 1;
 const int SEEK_END = 2;
 
 const int SEEK_SET = 0;
+
+const int SIOCADDDLCI = 35200;
+
+const int SIOCADDMULTI = 35121;
+
+const int SIOCADDRT = 35083;
+
+const int SIOCDARP = 35155;
+
+const int SIOCDELDLCI = 35201;
+
+const int SIOCDELMULTI = 35122;
+
+const int SIOCDELRT = 35084;
+
+const int SIOCDEVPRIVATE = 35312;
+
+const int SIOCDIFADDR = 35126;
+
+const int SIOCDRARP = 35168;
+
+const int SIOCGARP = 35156;
+
+const int SIOCGIFADDR = 35093;
+
+const int SIOCGIFBR = 35136;
+
+const int SIOCGIFBRDADDR = 35097;
+
+const int SIOCGIFCONF = 35090;
+
+const int SIOCGIFCOUNT = 35128;
+
+const int SIOCGIFDSTADDR = 35095;
+
+const int SIOCGIFENCAP = 35109;
+
+const int SIOCGIFFLAGS = 35091;
+
+const int SIOCGIFHWADDR = 35111;
+
+const int SIOCGIFINDEX = 35123;
+
+const int SIOCGIFMAP = 35184;
+
+const int SIOCGIFMEM = 35103;
+
+const int SIOCGIFMETRIC = 35101;
+
+const int SIOCGIFMTU = 35105;
+
+const int SIOCGIFNAME = 35088;
+
+const int SIOCGIFNETMASK = 35099;
+
+const int SIOCGIFPFLAGS = 35125;
+
+const int SIOCGIFSLAVE = 35113;
+
+const int SIOCGIFTXQLEN = 35138;
+
+const int SIOCGRARP = 35169;
+
+const int SIOCPROTOPRIVATE = 35296;
+
+const int SIOCRTMSG = 35085;
+
+const int SIOCSARP = 35157;
+
+const int SIOCSIFADDR = 35094;
+
+const int SIOCSIFBR = 35137;
+
+const int SIOCSIFBRDADDR = 35098;
+
+const int SIOCSIFDSTADDR = 35096;
+
+const int SIOCSIFENCAP = 35110;
+
+const int SIOCSIFFLAGS = 35092;
+
+const int SIOCSIFHWADDR = 35108;
+
+const int SIOCSIFHWBROADCAST = 35127;
+
+const int SIOCSIFLINK = 35089;
+
+const int SIOCSIFMAP = 35185;
+
+const int SIOCSIFMEM = 35104;
+
+const int SIOCSIFMETRIC = 35102;
+
+const int SIOCSIFMTU = 35106;
+
+const int SIOCSIFNAME = 35107;
+
+const int SIOCSIFNETMASK = 35100;
+
+const int SIOCSIFPFLAGS = 35124;
+
+const int SIOCSIFSLAVE = 35120;
+
+const int SIOCSIFTXQLEN = 35139;
+
+const int SIOCSRARP = 35170;
+
+const int SIOGIFINDEX = 35123;
 
 const int SI_LOAD_SHIFT = 16;
 
@@ -1435,9 +1207,185 @@ const int S_IXOTH = 1;
 
 const int S_IXUSR = 64;
 
+const int TCFLSH = 21515;
+
+const int TCGETA = 21509;
+
+const int TCGETS = 21505;
+
+const int TCGETX = 21554;
+
+const int TCSBRK = 21513;
+
+const int TCSBRKP = 21541;
+
+const int TCSETA = 21510;
+
+const int TCSETAF = 21512;
+
+const int TCSETAW = 21511;
+
+const int TCSETS = 21506;
+
+const int TCSETSF = 21508;
+
+const int TCSETSW = 21507;
+
+const int TCSETX = 21555;
+
+const int TCSETXF = 21556;
+
+const int TCSETXW = 21557;
+
+const int TCXONC = 21514;
+
+const int TIOCCBRK = 21544;
+
+const int TIOCCONS = 21533;
+
+const int TIOCEXCL = 21516;
+
+const int TIOCGDEV = 2147767346;
+
+const int TIOCGETD = 21540;
+
+const int TIOCGEXCL = 2147767360;
+
+const int TIOCGICOUNT = 21597;
+
+const int TIOCGLCKTRMIOS = 21590;
+
+const int TIOCGPGRP = 21519;
+
+const int TIOCGPKT = 2147767352;
+
+const int TIOCGPTLCK = 2147767353;
+
+const int TIOCGPTN = 2147767344;
+
+const int TIOCGPTPEER = 21569;
+
+const int TIOCGRS485 = 21550;
+
+const int TIOCGSERIAL = 21534;
+
+const int TIOCGSID = 21545;
+
+const int TIOCGSOFTCAR = 21529;
+
+const int TIOCGWINSZ = 21523;
+
+const int TIOCINQ = 21531;
+
+const int TIOCLINUX = 21532;
+
+const int TIOCMBIC = 21527;
+
+const int TIOCMBIS = 21526;
+
+const int TIOCMGET = 21525;
+
+const int TIOCMIWAIT = 21596;
+
+const int TIOCMSET = 21528;
+
+const int TIOCM_CAR = 64;
+
+const int TIOCM_CD = 64;
+
+const int TIOCM_CTS = 32;
+
+const int TIOCM_DSR = 256;
+
+const int TIOCM_DTR = 2;
+
+const int TIOCM_LE = 1;
+
+const int TIOCM_RI = 128;
+
+const int TIOCM_RNG = 128;
+
+const int TIOCM_RTS = 4;
+
+const int TIOCM_SR = 16;
+
+const int TIOCM_ST = 8;
+
+const int TIOCNOTTY = 21538;
+
+const int TIOCNXCL = 21517;
+
+const int TIOCOUTQ = 21521;
+
+const int TIOCPKT = 21536;
+
+const int TIOCPKT_DATA = 0;
+
+const int TIOCPKT_DOSTOP = 32;
+
+const int TIOCPKT_FLUSHREAD = 1;
+
+const int TIOCPKT_FLUSHWRITE = 2;
+
+const int TIOCPKT_IOCTL = 64;
+
+const int TIOCPKT_NOSTOP = 16;
+
+const int TIOCPKT_START = 8;
+
+const int TIOCPKT_STOP = 4;
+
+const int TIOCSBRK = 21543;
+
+const int TIOCSCTTY = 21518;
+
+const int TIOCSERCONFIG = 21587;
+
+const int TIOCSERGETLSR = 21593;
+
+const int TIOCSERGETMULTI = 21594;
+
+const int TIOCSERGSTRUCT = 21592;
+
+const int TIOCSERGWILD = 21588;
+
+const int TIOCSERSETMULTI = 21595;
+
+const int TIOCSERSWILD = 21589;
+
+const int TIOCSER_TEMT = 1;
+
+const int TIOCSETD = 21539;
+
+const int TIOCSIG = 1074025526;
+
+const int TIOCSLCKTRMIOS = 21591;
+
+const int TIOCSPGRP = 21520;
+
+const int TIOCSPTLCK = 1074025521;
+
+const int TIOCSRS485 = 21551;
+
+const int TIOCSSERIAL = 21535;
+
+const int TIOCSSOFTCAR = 21530;
+
+const int TIOCSTI = 21522;
+
+const int TIOCSWINSZ = 21524;
+
+const int TIOCVHANGUP = 21559;
+
+const int USER_PROCESS = 7;
+
 const int UTIME_NOW = 1073741823;
 
 const int UTIME_OMIT = 1073741822;
+
+const String UTMP_FILE = '/var/run/utmp';
+
+const String UTMP_FILENAME = '/var/run/utmp';
 
 const int UTSNAME_DOMAIN_LENGTH = 65;
 
@@ -1452,6 +1400,22 @@ const int UTSNAME_RELEASE_LENGTH = 65;
 const int UTSNAME_SYSNAME_LENGTH = 65;
 
 const int UTSNAME_VERSION_LENGTH = 65;
+
+const int UT_HOSTSIZE = 256;
+
+const int UT_LINESIZE = 32;
+
+const int UT_NAMESIZE = 32;
+
+const int UT_UNKNOWN = 0;
+
+class UnnamedStruct1 extends ffi.Struct {
+  @ffi.Int()
+  external int tv_sec;
+
+  @ffi.Int()
+  external int tv_usec;
+}
 
 const int WCONTINUED = 8;
 
@@ -1485,11 +1449,40 @@ const int WRDE_UNDEF = 32;
 
 const int WSTOPPED = 2;
 
+const String WTMP_FILE = '/var/log/wtmp';
+
+const String WTMP_FILENAME = '/var/log/wtmp';
+
 const int WUNTRACED = 2;
 
 const int W_OK = 2;
 
 const int X_OK = 1;
+
+class __exit_status extends ffi.Struct {
+  @ffi.Short()
+  external int __e_termination;
+
+  @ffi.Short()
+  external int __e_exit;
+}
+
+class flock_t extends ffi.Struct {
+  @ffi.Short()
+  external int l_type;
+
+  @ffi.Short()
+  external int l_whence;
+
+  @ffi.Long()
+  external int l_start;
+
+  @ffi.Long()
+  external int l_len;
+
+  @ffi.Int()
+  external int l_pid;
+}
 
 class glob_t extends ffi.Struct {
   @ffi.UnsignedLong()
@@ -1526,15 +1519,22 @@ class glob_t extends ffi.Struct {
       gl_stat;
 }
 
-class pollfd_t extends ffi.Struct {
-  @ffi.Int()
-  external int fd;
+class passwd_t extends ffi.Struct {
+  external ffi.Pointer<ffi.Char> pw_name;
 
-  @ffi.Short()
-  external int events;
+  external ffi.Pointer<ffi.Char> pw_passwd;
 
-  @ffi.Short()
-  external int revents;
+  @ffi.UnsignedInt()
+  external int pw_uid;
+
+  @ffi.UnsignedInt()
+  external int pw_gid;
+
+  external ffi.Pointer<ffi.Char> pw_gecos;
+
+  external ffi.Pointer<ffi.Char> pw_dir;
+
+  external ffi.Pointer<ffi.Char> pw_shell;
 }
 
 class stat_t extends ffi.Struct {
@@ -1633,6 +1633,39 @@ class timespec_t extends ffi.Struct {
   external int tv_nsec;
 }
 
+class utmpx_t extends ffi.Struct {
+  @ffi.Short()
+  external int ut_type;
+
+  @ffi.Int()
+  external int ut_pid;
+
+  @ffi.Array.multi([32])
+  external ffi.Array<ffi.Char> ut_line;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Char> ut_id;
+
+  @ffi.Array.multi([32])
+  external ffi.Array<ffi.Char> ut_user;
+
+  @ffi.Array.multi([256])
+  external ffi.Array<ffi.Char> ut_host;
+
+  external __exit_status ut_exit;
+
+  @ffi.Int()
+  external int ut_session;
+
+  external UnnamedStruct1 ut_tv;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Int> ut_addr_v6;
+
+  @ffi.Array.multi([20])
+  external ffi.Array<ffi.Char> __glibc_reserved;
+}
+
 class utsname_t extends ffi.Struct {
   @ffi.Array.multi([65])
   external ffi.Array<ffi.Char> sysname;
@@ -1651,14 +1684,4 @@ class utsname_t extends ffi.Struct {
 
   @ffi.Array.multi([65])
   external ffi.Array<ffi.Char> __domainname;
-}
-
-class wordexp_t extends ffi.Struct {
-  @ffi.Size()
-  external int we_wordc;
-
-  external ffi.Pointer<ffi.Pointer<ffi.Char>> we_wordv;
-
-  @ffi.Size()
-  external int we_offs;
 }

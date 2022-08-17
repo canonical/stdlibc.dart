@@ -2,13 +2,13 @@ import 'dart:ffi' as ffi;
 
 import 'package:ffi/ffi.dart' as ffi;
 
-import '../libc.dart';
+import '../platform.dart';
 import '../stat.dart';
 import '../util.dart';
 import 'bsd.dart';
 import 'ffigen.dart' as ffi;
 
-mixin BsdStatMixin on StdLibC {
+mixin BsdStatMixin on PlatformLibC {
   @override
   Stat stat(String file) {
     return ffi.using((arena) {
@@ -17,7 +17,7 @@ mixin BsdStatMixin on StdLibC {
       try {
         res = inode64.stat(file.toCString(arena), buf);
       } on ArgumentError catch (_) {
-        res = dylib.stat(file.toCString(arena), buf);
+        res = bsd.stat(file.toCString(arena), buf);
       }
       checkErrno('stat', res);
       return buf.toStat();
@@ -32,7 +32,7 @@ mixin BsdStatMixin on StdLibC {
       try {
         res = inode64.fstat(fd, buf);
       } on ArgumentError catch (_) {
-        res = dylib.fstat(fd, buf);
+        res = bsd.fstat(fd, buf);
       }
       checkErrno('fstat', res);
       return buf.toStat();
@@ -47,7 +47,7 @@ mixin BsdStatMixin on StdLibC {
       try {
         res = inode64.lstat(file.toCString(arena), buf);
       } on ArgumentError catch (_) {
-        res = dylib.lstat(file.toCString(arena), buf);
+        res = bsd.lstat(file.toCString(arena), buf);
       }
       checkErrno('lstat', res);
       return buf.toStat();
@@ -76,5 +76,8 @@ extension BsdStat on ffi.Pointer<ffi.stat_t> {
 }
 
 extension _BsdTimespec on ffi.timespec_t {
-  DateTime toDateTime() => fromTimespec(tv_sec, tv_nsec);
+  DateTime toDateTime() {
+    final tv = Duration(seconds: tv_sec, microseconds: tv_nsec ~/ 1000);
+    return DateTime.fromMicrosecondsSinceEpoch(tv.inMicroseconds);
+  }
 }

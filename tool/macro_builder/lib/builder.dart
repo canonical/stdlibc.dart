@@ -6,6 +6,8 @@ import 'package:dart_style/dart_style.dart';
 import 'package:glob/glob.dart';
 import 'package:path/path.dart' as p;
 
+const kPlatforms = ['bsd', 'gnu'];
+
 Builder macroBuilder(BuilderOptions options) {
   return MacroBuilder();
 }
@@ -17,10 +19,9 @@ extension Capitalize on String {
 class MacroBuilder implements Builder {
   @override
   Map<String, List<String>> get buildExtensions {
-    return const {
+    return {
       r'$lib$': [
-        'src/bsd/macros.g.dart', // ### FIXME
-        'src/gnu/macros.g.dart', // ### FIXME
+        for (final platform in kPlatforms) 'src/$platform/macros.g.dart',
         'src/macros.g.dart',
       ],
     };
@@ -31,8 +32,12 @@ class MacroBuilder implements Builder {
     final types = <String, DartType>{};
     final libs = <String, Map<String, TopLevelVariableElement>>{};
 
-    final glob = Glob('lib/**/ffigen.dart');
-    final assets = await buildStep.findAssets(glob).toList();
+    final assets = [
+      for (final platform in kPlatforms)
+        ...await buildStep
+            .findAssets(Glob('lib/src/$platform/ffigen.dart'))
+            .toList()
+    ];
 
     for (final asset in assets) {
       final lib = await buildStep.resolver.libraryFor(asset);
@@ -55,7 +60,7 @@ class MacroBuilder implements Builder {
     }
 
     final lib = Library((b) => b
-      ..directives.addAll([Directive.import('libc.dart')])
+      ..directives.addAll([Directive.import('platform.dart')])
       ..body.addAll([
         for (final m in macros)
           Method((b) => b
@@ -63,7 +68,7 @@ class MacroBuilder implements Builder {
             ..type = MethodType.getter
             ..returns = getType(m)
             ..lambda = true
-            ..body = Code('libc.$m')),
+            ..body = Code('platform.$m')),
         Mixin((b) => b
           ..name = 'MacroMixin'
           ..docs.add('\n\n// ignore_for_file: type=lint\n')
@@ -87,14 +92,14 @@ class MacroBuilder implements Builder {
     for (final impl in libs.entries) {
       final lib = Library((b) => b
         ..directives.addAll([
-          Directive.import('../libc.dart'),
+          Directive.import('../platform.dart'),
           Directive.import('ffigen.dart', as: 'ffi'),
         ])
         ..body.addAll([
           Mixin((b) => b
             ..docs.add('\n\n// ignore_for_file: type=lint\n')
             ..name = '${impl.key.capitalized}MacroMixin'
-            ..on = refer('StdLibC')
+            ..on = refer('PlatformLibC')
             ..methods.addAll([
               for (final m in macros)
                 Method((b) => b

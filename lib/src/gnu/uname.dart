@@ -2,18 +2,18 @@ import 'dart:ffi' as ffi;
 
 import 'package:ffi/ffi.dart' as ffi;
 
-import '../libc.dart';
+import '../platform.dart';
 import '../uname.dart';
 import '../util.dart';
 import 'ffigen.dart' as ffi;
 import 'gnu.dart';
 
-mixin GnuUnameMixin on StdLibC {
+mixin GnuUnameMixin on PlatformLibC {
   @override
   Utsname uname() {
     return ffi.using((arena) {
       final buf = arena<ffi.utsname_t>();
-      final res = dylib.uname(buf);
+      final res = gnu.uname(buf);
       checkErrno('uname', res);
       return buf.toUtsname();
     });

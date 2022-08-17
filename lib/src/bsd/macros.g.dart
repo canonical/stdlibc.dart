@@ -1,15 +1,17 @@
-import '../libc.dart';
+import '../platform.dart';
 import 'ffigen.dart' as ffi;
 
 // ignore_for_file: type=lint
 
-mixin BsdMacroMixin on StdLibC {
+mixin BsdMacroMixin on PlatformLibC {
   @override
   int get ACCESSPERMS => ffi.ACCESSPERMS;
   @override
   int get ACCESSX_MAX_DESCRIPTORS => ffi.ACCESSX_MAX_DESCRIPTORS;
   @override
   int get ACCESSX_MAX_TABLESIZE => ffi.ACCESSX_MAX_TABLESIZE;
+  @override
+  int get ACCOUNTING => ffi.ACCOUNTING;
   @override
   int get ALLPERMS => ffi.ALLPERMS;
   @override
@@ -29,6 +31,8 @@ mixin BsdMacroMixin on StdLibC {
   @override
   int get BIG_ENDIAN => ffi.BIG_ENDIAN;
   @override
+  int get BOOT_TIME => ffi.BOOT_TIME;
+  @override
   int get BUS_ADRALN => ffi.BUS_ADRALN;
   @override
   int get BUS_ADRERR => ffi.BUS_ADRERR;
@@ -38,6 +42,26 @@ mixin BsdMacroMixin on StdLibC {
   int get BUS_OBJERR => ffi.BUS_OBJERR;
   @override
   int get BYTE_ORDER => ffi.BYTE_ORDER;
+  @override
+  int get CBRK => throw UnsupportedError('CBRK');
+  @override
+  int get CDISCARD => throw UnsupportedError('CDISCARD');
+  @override
+  int get CDSUSP => throw UnsupportedError('CDSUSP');
+  @override
+  int get CEOF => throw UnsupportedError('CEOF');
+  @override
+  int get CEOL => throw UnsupportedError('CEOL');
+  @override
+  int get CEOT => throw UnsupportedError('CEOT');
+  @override
+  int get CERASE => throw UnsupportedError('CERASE');
+  @override
+  int get CFLUSH => throw UnsupportedError('CFLUSH');
+  @override
+  int get CINTR => throw UnsupportedError('CINTR');
+  @override
+  int get CKILL => throw UnsupportedError('CKILL');
   @override
   int get CLD_CONTINUED => ffi.CLD_CONTINUED;
   @override
@@ -53,6 +77,28 @@ mixin BsdMacroMixin on StdLibC {
   @override
   int get CLD_TRAPPED => ffi.CLD_TRAPPED;
   @override
+  int get CLNEXT => throw UnsupportedError('CLNEXT');
+  @override
+  int get CLOCKS_PER_SEC => ffi.CLOCKS_PER_SEC;
+  @override
+  int get CLOCK_MONOTONIC => ffi.CLOCK_MONOTONIC;
+  @override
+  int get CLOCK_MONOTONIC_RAW => ffi.CLOCK_MONOTONIC_RAW;
+  @override
+  int get CLOCK_MONOTONIC_RAW_APPROX => ffi.CLOCK_MONOTONIC_RAW_APPROX;
+  @override
+  int get CLOCK_PROCESS_CPUTIME_ID => ffi.CLOCK_PROCESS_CPUTIME_ID;
+  @override
+  int get CLOCK_REALTIME => ffi.CLOCK_REALTIME;
+  @override
+  int get CLOCK_THREAD_CPUTIME_ID => ffi.CLOCK_THREAD_CPUTIME_ID;
+  @override
+  int get CLOCK_UPTIME_RAW => ffi.CLOCK_UPTIME_RAW;
+  @override
+  int get CLOCK_UPTIME_RAW_APPROX => ffi.CLOCK_UPTIME_RAW_APPROX;
+  @override
+  int get CMIN => throw UnsupportedError('CMIN');
+  @override
   int get CPF_IGNORE_MODE => ffi.CPF_IGNORE_MODE;
   @override
   int get CPF_MASK => ffi.CPF_MASK;
@@ -61,7 +107,41 @@ mixin BsdMacroMixin on StdLibC {
   @override
   int get CPUMON_MAKE_FATAL => ffi.CPUMON_MAKE_FATAL;
   @override
+  int get CQUIT => throw UnsupportedError('CQUIT');
+  @override
+  int get CREPRINT => throw UnsupportedError('CREPRINT');
+  @override
+  int get CRPRNT => throw UnsupportedError('CRPRNT');
+  @override
+  int get CSTART => throw UnsupportedError('CSTART');
+  @override
+  int get CSTATUS => throw UnsupportedError('CSTATUS');
+  @override
+  int get CSTOP => throw UnsupportedError('CSTOP');
+  @override
+  int get CSUSP => throw UnsupportedError('CSUSP');
+  @override
+  int get CTIME => throw UnsupportedError('CTIME');
+  @override
+  int get CWERASE => throw UnsupportedError('CWERASE');
+  @override
+  int get DEAD_PROCESS => ffi.DEAD_PROCESS;
+  @override
   int get DEFFILEMODE => ffi.DEFFILEMODE;
+  @override
+  int get DST_AUST => ffi.DST_AUST;
+  @override
+  int get DST_CAN => ffi.DST_CAN;
+  @override
+  int get DST_EET => ffi.DST_EET;
+  @override
+  int get DST_MET => ffi.DST_MET;
+  @override
+  int get DST_NONE => ffi.DST_NONE;
+  @override
+  int get DST_USA => ffi.DST_USA;
+  @override
+  int get DST_WET => ffi.DST_WET;
   @override
   int get E2BIG => ffi.E2BIG;
   @override
@@ -214,6 +294,8 @@ mixin BsdMacroMixin on StdLibC {
   int get EMFILE => ffi.EMFILE;
   @override
   int get EMLINK => ffi.EMLINK;
+  @override
+  int get EMPTY => ffi.EMPTY;
   @override
   int get EMSGSIZE => ffi.EMSGSIZE;
   @override
@@ -401,6 +483,24 @@ mixin BsdMacroMixin on StdLibC {
   @override
   int get FILESEC_GUID => ffi.FILESEC_GUID;
   @override
+  int get FIOASYNC => ffi.FIOASYNC;
+  @override
+  int get FIOCLEX => ffi.FIOCLEX;
+  @override
+  int get FIODTYPE => ffi.FIODTYPE;
+  @override
+  int get FIOGETOWN => ffi.FIOGETOWN;
+  @override
+  int get FIONBIO => ffi.FIONBIO;
+  @override
+  int get FIONCLEX => ffi.FIONCLEX;
+  @override
+  int get FIONREAD => ffi.FIONREAD;
+  @override
+  int get FIOQSIZE => throw UnsupportedError('FIOQSIZE');
+  @override
+  int get FIOSETOWN => ffi.FIOSETOWN;
+  @override
   int get FNDELAY => ffi.FNDELAY;
   @override
   int get FNM_CASEFOLD => ffi.FNM_CASEFOLD;
@@ -462,6 +562,18 @@ mixin BsdMacroMixin on StdLibC {
   int get FP_STATE_BYTES => ffi.FP_STATE_BYTES;
   @override
   int get FREAD => ffi.FREAD;
+  @override
+  String get FSTAB => ffi.FSTAB;
+  @override
+  String get FSTAB_RO => ffi.FSTAB_RO;
+  @override
+  String get FSTAB_RQ => ffi.FSTAB_RQ;
+  @override
+  String get FSTAB_RW => ffi.FSTAB_RW;
+  @override
+  String get FSTAB_SW => ffi.FSTAB_SW;
+  @override
+  String get FSTAB_XX => ffi.FSTAB_XX;
   @override
   int get FWRITE => ffi.FWRITE;
   @override
@@ -671,6 +783,8 @@ mixin BsdMacroMixin on StdLibC {
   @override
   int get ILL_PRVREG => ffi.ILL_PRVREG;
   @override
+  int get INIT_PROCESS => ffi.INIT_PROCESS;
+  @override
   int get INT16_MAX => ffi.INT16_MAX;
   @override
   int get INT16_MIN => ffi.INT16_MIN;
@@ -727,6 +841,30 @@ mixin BsdMacroMixin on StdLibC {
   @override
   int get INT_LEAST8_MIN => ffi.INT_LEAST8_MIN;
   @override
+  int get IOCPARM_MASK => ffi.IOCPARM_MASK;
+  @override
+  int get IOCPARM_MAX => ffi.IOCPARM_MAX;
+  @override
+  int get IOCSIZE_MASK => throw UnsupportedError('IOCSIZE_MASK');
+  @override
+  int get IOCSIZE_SHIFT => throw UnsupportedError('IOCSIZE_SHIFT');
+  @override
+  int get IOC_DIRMASK => ffi.IOC_DIRMASK;
+  @override
+  int get IOC_IN => ffi.IOC_IN;
+  @override
+  int get IOC_INOUT => ffi.IOC_INOUT;
+  @override
+  int get IOC_OUT => ffi.IOC_OUT;
+  @override
+  int get IOC_VOID => ffi.IOC_VOID;
+  @override
+  int get ITIMER_PROF => ffi.ITIMER_PROF;
+  @override
+  int get ITIMER_REAL => ffi.ITIMER_REAL;
+  @override
+  int get ITIMER_VIRTUAL => ffi.ITIMER_VIRTUAL;
+  @override
   int get LITTLE_ENDIAN => ffi.LITTLE_ENDIAN;
   @override
   int get LOCK_EX => ffi.LOCK_EX;
@@ -736,6 +874,8 @@ mixin BsdMacroMixin on StdLibC {
   int get LOCK_SH => ffi.LOCK_SH;
   @override
   int get LOCK_UN => ffi.LOCK_UN;
+  @override
+  int get LOGIN_PROCESS => ffi.LOGIN_PROCESS;
   @override
   int get LOG_ALERT => ffi.LOG_ALERT;
   @override
@@ -967,11 +1107,51 @@ mixin BsdMacroMixin on StdLibC {
   @override
   int get MS_SYNC => ffi.MS_SYNC;
   @override
+  int get NCC => throw UnsupportedError('NCC');
+  @override
+  int get NEW_TIME => ffi.NEW_TIME;
+  @override
   int get NFDBITS => throw UnsupportedError('NFDBITS');
   @override
   int get NSIG => ffi.NSIG;
   @override
+  int get NSS_BUFLEN_PASSWD => throw UnsupportedError('NSS_BUFLEN_PASSWD');
+  @override
   int get NULL => ffi.NULL;
+  @override
+  int get N_6PACK => throw UnsupportedError('N_6PACK');
+  @override
+  int get N_AX25 => throw UnsupportedError('N_AX25');
+  @override
+  int get N_HCI => throw UnsupportedError('N_HCI');
+  @override
+  int get N_HDLC => throw UnsupportedError('N_HDLC');
+  @override
+  int get N_IRDA => throw UnsupportedError('N_IRDA');
+  @override
+  int get N_MASC => throw UnsupportedError('N_MASC');
+  @override
+  int get N_MOUSE => throw UnsupportedError('N_MOUSE');
+  @override
+  int get N_PPP => throw UnsupportedError('N_PPP');
+  @override
+  int get N_PROFIBUS_FDL => throw UnsupportedError('N_PROFIBUS_FDL');
+  @override
+  int get N_R3964 => throw UnsupportedError('N_R3964');
+  @override
+  int get N_SLIP => throw UnsupportedError('N_SLIP');
+  @override
+  int get N_SMSBLOCK => throw UnsupportedError('N_SMSBLOCK');
+  @override
+  int get N_STRIP => throw UnsupportedError('N_STRIP');
+  @override
+  int get N_SYNC_PPP => throw UnsupportedError('N_SYNC_PPP');
+  @override
+  int get N_TTY => throw UnsupportedError('N_TTY');
+  @override
+  int get N_X25 => throw UnsupportedError('N_X25');
+  @override
+  int get OLD_TIME => ffi.OLD_TIME;
   @override
   int get O_ACCMODE => ffi.O_ACCMODE;
   @override
@@ -1096,6 +1276,8 @@ mixin BsdMacroMixin on StdLibC {
   @override
   int get POSIX_MADV_WILLNEED => ffi.POSIX_MADV_WILLNEED;
   @override
+  int get PPPDISC => ffi.PPPDISC;
+  @override
   int get PRIO_MAX => ffi.PRIO_MAX;
   @override
   int get PRIO_MIN => ffi.PRIO_MIN;
@@ -1161,6 +1343,8 @@ mixin BsdMacroMixin on StdLibC {
   int get RLIM_SAVED_MAX => ffi.RLIM_SAVED_MAX;
   @override
   int get RSIZE_MAX => ffi.RSIZE_MAX;
+  @override
+  int get RUN_LVL => ffi.RUN_LVL;
   @override
   int get RUSAGE_CHILDREN => ffi.RUSAGE_CHILDREN;
   @override
@@ -1240,6 +1424,8 @@ mixin BsdMacroMixin on StdLibC {
   @override
   int get SF_SYNTHETIC => ffi.SF_SYNTHETIC;
   @override
+  int get SHUTDOWN_TIME => ffi.SHUTDOWN_TIME;
+  @override
   int get SIGABRT => ffi.SIGABRT;
   @override
   int get SIGALRM => ffi.SIGALRM;
@@ -1273,6 +1459,8 @@ mixin BsdMacroMixin on StdLibC {
   int get SIGIOT => ffi.SIGIOT;
   @override
   int get SIGKILL => ffi.SIGKILL;
+  @override
+  int get SIGNATURE => ffi.SIGNATURE;
   @override
   int get SIGPIPE => ffi.SIGPIPE;
   @override
@@ -1322,6 +1510,128 @@ mixin BsdMacroMixin on StdLibC {
   @override
   int get SIG_UNBLOCK => ffi.SIG_UNBLOCK;
   @override
+  int get SIOCADDDLCI => throw UnsupportedError('SIOCADDDLCI');
+  @override
+  int get SIOCADDMULTI => throw UnsupportedError('SIOCADDMULTI');
+  @override
+  int get SIOCADDRT => throw UnsupportedError('SIOCADDRT');
+  @override
+  int get SIOCATMARK => ffi.SIOCATMARK;
+  @override
+  int get SIOCDARP => throw UnsupportedError('SIOCDARP');
+  @override
+  int get SIOCDELDLCI => throw UnsupportedError('SIOCDELDLCI');
+  @override
+  int get SIOCDELMULTI => throw UnsupportedError('SIOCDELMULTI');
+  @override
+  int get SIOCDELRT => throw UnsupportedError('SIOCDELRT');
+  @override
+  int get SIOCDEVPRIVATE => throw UnsupportedError('SIOCDEVPRIVATE');
+  @override
+  int get SIOCDIFADDR => throw UnsupportedError('SIOCDIFADDR');
+  @override
+  int get SIOCDRARP => throw UnsupportedError('SIOCDRARP');
+  @override
+  int get SIOCGARP => throw UnsupportedError('SIOCGARP');
+  @override
+  int get SIOCGHIWAT => ffi.SIOCGHIWAT;
+  @override
+  int get SIOCGIFADDR => throw UnsupportedError('SIOCGIFADDR');
+  @override
+  int get SIOCGIFBR => throw UnsupportedError('SIOCGIFBR');
+  @override
+  int get SIOCGIFBRDADDR => throw UnsupportedError('SIOCGIFBRDADDR');
+  @override
+  int get SIOCGIFCONF => throw UnsupportedError('SIOCGIFCONF');
+  @override
+  int get SIOCGIFCOUNT => throw UnsupportedError('SIOCGIFCOUNT');
+  @override
+  int get SIOCGIFDSTADDR => throw UnsupportedError('SIOCGIFDSTADDR');
+  @override
+  int get SIOCGIFENCAP => throw UnsupportedError('SIOCGIFENCAP');
+  @override
+  int get SIOCGIFFLAGS => throw UnsupportedError('SIOCGIFFLAGS');
+  @override
+  int get SIOCGIFHWADDR => throw UnsupportedError('SIOCGIFHWADDR');
+  @override
+  int get SIOCGIFINDEX => throw UnsupportedError('SIOCGIFINDEX');
+  @override
+  int get SIOCGIFMAP => throw UnsupportedError('SIOCGIFMAP');
+  @override
+  int get SIOCGIFMEM => throw UnsupportedError('SIOCGIFMEM');
+  @override
+  int get SIOCGIFMETRIC => throw UnsupportedError('SIOCGIFMETRIC');
+  @override
+  int get SIOCGIFMTU => throw UnsupportedError('SIOCGIFMTU');
+  @override
+  int get SIOCGIFNAME => throw UnsupportedError('SIOCGIFNAME');
+  @override
+  int get SIOCGIFNETMASK => throw UnsupportedError('SIOCGIFNETMASK');
+  @override
+  int get SIOCGIFPFLAGS => throw UnsupportedError('SIOCGIFPFLAGS');
+  @override
+  int get SIOCGIFSLAVE => throw UnsupportedError('SIOCGIFSLAVE');
+  @override
+  int get SIOCGIFTXQLEN => throw UnsupportedError('SIOCGIFTXQLEN');
+  @override
+  int get SIOCGLOWAT => ffi.SIOCGLOWAT;
+  @override
+  int get SIOCGPGRP => ffi.SIOCGPGRP;
+  @override
+  int get SIOCGRARP => throw UnsupportedError('SIOCGRARP');
+  @override
+  int get SIOCPROTOPRIVATE => throw UnsupportedError('SIOCPROTOPRIVATE');
+  @override
+  int get SIOCRTMSG => throw UnsupportedError('SIOCRTMSG');
+  @override
+  int get SIOCSARP => throw UnsupportedError('SIOCSARP');
+  @override
+  int get SIOCSHIWAT => ffi.SIOCSHIWAT;
+  @override
+  int get SIOCSIFADDR => throw UnsupportedError('SIOCSIFADDR');
+  @override
+  int get SIOCSIFBR => throw UnsupportedError('SIOCSIFBR');
+  @override
+  int get SIOCSIFBRDADDR => throw UnsupportedError('SIOCSIFBRDADDR');
+  @override
+  int get SIOCSIFDSTADDR => throw UnsupportedError('SIOCSIFDSTADDR');
+  @override
+  int get SIOCSIFENCAP => throw UnsupportedError('SIOCSIFENCAP');
+  @override
+  int get SIOCSIFFLAGS => throw UnsupportedError('SIOCSIFFLAGS');
+  @override
+  int get SIOCSIFHWADDR => throw UnsupportedError('SIOCSIFHWADDR');
+  @override
+  int get SIOCSIFHWBROADCAST => throw UnsupportedError('SIOCSIFHWBROADCAST');
+  @override
+  int get SIOCSIFLINK => throw UnsupportedError('SIOCSIFLINK');
+  @override
+  int get SIOCSIFMAP => throw UnsupportedError('SIOCSIFMAP');
+  @override
+  int get SIOCSIFMEM => throw UnsupportedError('SIOCSIFMEM');
+  @override
+  int get SIOCSIFMETRIC => throw UnsupportedError('SIOCSIFMETRIC');
+  @override
+  int get SIOCSIFMTU => throw UnsupportedError('SIOCSIFMTU');
+  @override
+  int get SIOCSIFNAME => throw UnsupportedError('SIOCSIFNAME');
+  @override
+  int get SIOCSIFNETMASK => throw UnsupportedError('SIOCSIFNETMASK');
+  @override
+  int get SIOCSIFPFLAGS => throw UnsupportedError('SIOCSIFPFLAGS');
+  @override
+  int get SIOCSIFSLAVE => throw UnsupportedError('SIOCSIFSLAVE');
+  @override
+  int get SIOCSIFTXQLEN => throw UnsupportedError('SIOCSIFTXQLEN');
+  @override
+  int get SIOCSLOWAT => ffi.SIOCSLOWAT;
+  @override
+  int get SIOCSPGRP => ffi.SIOCSPGRP;
+  @override
+  int get SIOCSRARP => throw UnsupportedError('SIOCSRARP');
+  @override
+  int get SIOGIFINDEX => throw UnsupportedError('SIOGIFINDEX');
+  @override
   int get SIZE_MAX => ffi.SIZE_MAX;
   @override
   int get SI_ASYNCIO => ffi.SI_ASYNCIO;
@@ -1335,6 +1645,8 @@ mixin BsdMacroMixin on StdLibC {
   int get SI_TIMER => ffi.SI_TIMER;
   @override
   int get SI_USER => ffi.SI_USER;
+  @override
+  int get SLIPDISC => ffi.SLIPDISC;
   @override
   int get SS_DISABLE => ffi.SS_DISABLE;
   @override
@@ -1426,9 +1738,237 @@ mixin BsdMacroMixin on StdLibC {
   @override
   int get S_IXUSR => ffi.S_IXUSR;
   @override
+  int get TABLDISC => ffi.TABLDISC;
+  @override
+  int get TCFLSH => throw UnsupportedError('TCFLSH');
+  @override
+  int get TCGETA => throw UnsupportedError('TCGETA');
+  @override
+  int get TCGETS => throw UnsupportedError('TCGETS');
+  @override
+  int get TCGETX => throw UnsupportedError('TCGETX');
+  @override
+  int get TCSBRK => throw UnsupportedError('TCSBRK');
+  @override
+  int get TCSBRKP => throw UnsupportedError('TCSBRKP');
+  @override
+  int get TCSETA => throw UnsupportedError('TCSETA');
+  @override
+  int get TCSETAF => throw UnsupportedError('TCSETAF');
+  @override
+  int get TCSETAW => throw UnsupportedError('TCSETAW');
+  @override
+  int get TCSETS => throw UnsupportedError('TCSETS');
+  @override
+  int get TCSETSF => throw UnsupportedError('TCSETSF');
+  @override
+  int get TCSETSW => throw UnsupportedError('TCSETSW');
+  @override
+  int get TCSETX => throw UnsupportedError('TCSETX');
+  @override
+  int get TCSETXF => throw UnsupportedError('TCSETXF');
+  @override
+  int get TCSETXW => throw UnsupportedError('TCSETXW');
+  @override
+  int get TCXONC => throw UnsupportedError('TCXONC');
+  @override
+  int get TIOCCBRK => ffi.TIOCCBRK;
+  @override
+  int get TIOCCDTR => ffi.TIOCCDTR;
+  @override
+  int get TIOCCONS => ffi.TIOCCONS;
+  @override
+  int get TIOCDCDTIMESTAMP => ffi.TIOCDCDTIMESTAMP;
+  @override
+  int get TIOCDRAIN => ffi.TIOCDRAIN;
+  @override
+  int get TIOCDSIMICROCODE => ffi.TIOCDSIMICROCODE;
+  @override
+  int get TIOCEXCL => ffi.TIOCEXCL;
+  @override
+  int get TIOCEXT => ffi.TIOCEXT;
+  @override
+  int get TIOCFLUSH => ffi.TIOCFLUSH;
+  @override
+  int get TIOCGDEV => throw UnsupportedError('TIOCGDEV');
+  @override
+  int get TIOCGDRAINWAIT => ffi.TIOCGDRAINWAIT;
+  @override
+  int get TIOCGETD => ffi.TIOCGETD;
+  @override
+  int get TIOCGEXCL => throw UnsupportedError('TIOCGEXCL');
+  @override
+  int get TIOCGICOUNT => throw UnsupportedError('TIOCGICOUNT');
+  @override
+  int get TIOCGLCKTRMIOS => throw UnsupportedError('TIOCGLCKTRMIOS');
+  @override
+  int get TIOCGPGRP => ffi.TIOCGPGRP;
+  @override
+  int get TIOCGPKT => throw UnsupportedError('TIOCGPKT');
+  @override
+  int get TIOCGPTLCK => throw UnsupportedError('TIOCGPTLCK');
+  @override
+  int get TIOCGPTN => throw UnsupportedError('TIOCGPTN');
+  @override
+  int get TIOCGPTPEER => throw UnsupportedError('TIOCGPTPEER');
+  @override
+  int get TIOCGRS485 => throw UnsupportedError('TIOCGRS485');
+  @override
+  int get TIOCGSERIAL => throw UnsupportedError('TIOCGSERIAL');
+  @override
+  int get TIOCGSID => throw UnsupportedError('TIOCGSID');
+  @override
+  int get TIOCGSIZE => ffi.TIOCGSIZE;
+  @override
+  int get TIOCGSOFTCAR => throw UnsupportedError('TIOCGSOFTCAR');
+  @override
+  int get TIOCGWINSZ => ffi.TIOCGWINSZ;
+  @override
+  int get TIOCINQ => throw UnsupportedError('TIOCINQ');
+  @override
+  int get TIOCIXOFF => ffi.TIOCIXOFF;
+  @override
+  int get TIOCIXON => ffi.TIOCIXON;
+  @override
+  int get TIOCLINUX => throw UnsupportedError('TIOCLINUX');
+  @override
+  int get TIOCMBIC => ffi.TIOCMBIC;
+  @override
+  int get TIOCMBIS => ffi.TIOCMBIS;
+  @override
+  int get TIOCMGDTRWAIT => ffi.TIOCMGDTRWAIT;
+  @override
+  int get TIOCMGET => ffi.TIOCMGET;
+  @override
+  int get TIOCMIWAIT => throw UnsupportedError('TIOCMIWAIT');
+  @override
+  int get TIOCMODG => ffi.TIOCMODG;
+  @override
+  int get TIOCMODS => ffi.TIOCMODS;
+  @override
+  int get TIOCMSDTRWAIT => ffi.TIOCMSDTRWAIT;
+  @override
+  int get TIOCMSET => ffi.TIOCMSET;
+  @override
+  int get TIOCM_CAR => ffi.TIOCM_CAR;
+  @override
+  int get TIOCM_CD => ffi.TIOCM_CD;
+  @override
+  int get TIOCM_CTS => ffi.TIOCM_CTS;
+  @override
+  int get TIOCM_DSR => ffi.TIOCM_DSR;
+  @override
+  int get TIOCM_DTR => ffi.TIOCM_DTR;
+  @override
+  int get TIOCM_LE => ffi.TIOCM_LE;
+  @override
+  int get TIOCM_RI => ffi.TIOCM_RI;
+  @override
+  int get TIOCM_RNG => ffi.TIOCM_RNG;
+  @override
+  int get TIOCM_RTS => ffi.TIOCM_RTS;
+  @override
+  int get TIOCM_SR => ffi.TIOCM_SR;
+  @override
+  int get TIOCM_ST => ffi.TIOCM_ST;
+  @override
+  int get TIOCNOTTY => ffi.TIOCNOTTY;
+  @override
+  int get TIOCNXCL => ffi.TIOCNXCL;
+  @override
+  int get TIOCOUTQ => ffi.TIOCOUTQ;
+  @override
+  int get TIOCPKT => ffi.TIOCPKT;
+  @override
+  int get TIOCPKT_DATA => ffi.TIOCPKT_DATA;
+  @override
+  int get TIOCPKT_DOSTOP => ffi.TIOCPKT_DOSTOP;
+  @override
+  int get TIOCPKT_FLUSHREAD => ffi.TIOCPKT_FLUSHREAD;
+  @override
+  int get TIOCPKT_FLUSHWRITE => ffi.TIOCPKT_FLUSHWRITE;
+  @override
+  int get TIOCPKT_IOCTL => ffi.TIOCPKT_IOCTL;
+  @override
+  int get TIOCPKT_NOSTOP => ffi.TIOCPKT_NOSTOP;
+  @override
+  int get TIOCPKT_START => ffi.TIOCPKT_START;
+  @override
+  int get TIOCPKT_STOP => ffi.TIOCPKT_STOP;
+  @override
+  int get TIOCPTYGNAME => ffi.TIOCPTYGNAME;
+  @override
+  int get TIOCPTYGRANT => ffi.TIOCPTYGRANT;
+  @override
+  int get TIOCPTYUNLK => ffi.TIOCPTYUNLK;
+  @override
+  int get TIOCREMOTE => ffi.TIOCREMOTE;
+  @override
+  int get TIOCSBRK => ffi.TIOCSBRK;
+  @override
+  int get TIOCSCONS => ffi.TIOCSCONS;
+  @override
+  int get TIOCSCTTY => ffi.TIOCSCTTY;
+  @override
+  int get TIOCSDRAINWAIT => ffi.TIOCSDRAINWAIT;
+  @override
+  int get TIOCSDTR => ffi.TIOCSDTR;
+  @override
+  int get TIOCSERCONFIG => throw UnsupportedError('TIOCSERCONFIG');
+  @override
+  int get TIOCSERGETLSR => throw UnsupportedError('TIOCSERGETLSR');
+  @override
+  int get TIOCSERGETMULTI => throw UnsupportedError('TIOCSERGETMULTI');
+  @override
+  int get TIOCSERGSTRUCT => throw UnsupportedError('TIOCSERGSTRUCT');
+  @override
+  int get TIOCSERGWILD => throw UnsupportedError('TIOCSERGWILD');
+  @override
+  int get TIOCSERSETMULTI => throw UnsupportedError('TIOCSERSETMULTI');
+  @override
+  int get TIOCSERSWILD => throw UnsupportedError('TIOCSERSWILD');
+  @override
+  int get TIOCSER_TEMT => throw UnsupportedError('TIOCSER_TEMT');
+  @override
+  int get TIOCSETD => ffi.TIOCSETD;
+  @override
+  int get TIOCSIG => ffi.TIOCSIG;
+  @override
+  int get TIOCSLCKTRMIOS => throw UnsupportedError('TIOCSLCKTRMIOS');
+  @override
+  int get TIOCSPGRP => ffi.TIOCSPGRP;
+  @override
+  int get TIOCSPTLCK => throw UnsupportedError('TIOCSPTLCK');
+  @override
+  int get TIOCSRS485 => throw UnsupportedError('TIOCSRS485');
+  @override
+  int get TIOCSSERIAL => throw UnsupportedError('TIOCSSERIAL');
+  @override
+  int get TIOCSSIZE => ffi.TIOCSSIZE;
+  @override
+  int get TIOCSSOFTCAR => throw UnsupportedError('TIOCSSOFTCAR');
+  @override
+  int get TIOCSTART => ffi.TIOCSTART;
+  @override
+  int get TIOCSTAT => ffi.TIOCSTAT;
+  @override
+  int get TIOCSTI => ffi.TIOCSTI;
+  @override
+  int get TIOCSTOP => ffi.TIOCSTOP;
+  @override
+  int get TIOCSWINSZ => ffi.TIOCSWINSZ;
+  @override
+  int get TIOCTIMESTAMP => ffi.TIOCTIMESTAMP;
+  @override
+  int get TIOCUCNTL => ffi.TIOCUCNTL;
+  @override
+  int get TIOCVHANGUP => throw UnsupportedError('TIOCVHANGUP');
+  @override
   int get TRAP_BRKPT => ffi.TRAP_BRKPT;
   @override
   int get TRAP_TRACE => ffi.TRAP_TRACE;
+  @override
+  int get TTYDISC => ffi.TTYDISC;
   @override
   int get UF_APPEND => ffi.UF_APPEND;
   @override
@@ -1480,9 +2020,24 @@ mixin BsdMacroMixin on StdLibC {
   @override
   int get USER_FSIGNATURES_CDHASH_LEN => ffi.USER_FSIGNATURES_CDHASH_LEN;
   @override
+  int get USER_PROCESS => ffi.USER_PROCESS;
+  @override
   int get UTIME_NOW => ffi.UTIME_NOW;
   @override
   int get UTIME_OMIT => ffi.UTIME_OMIT;
+  @override
+  int get UTMPX_AUTOFILL_MASK => ffi.UTMPX_AUTOFILL_MASK;
+  @override
+  String get UTMPX_CHANGE_NOTIFICATION => ffi.UTMPX_CHANGE_NOTIFICATION;
+  @override
+  int get UTMPX_DEAD_IF_CORRESPONDING_MASK =>
+      ffi.UTMPX_DEAD_IF_CORRESPONDING_MASK;
+  @override
+  String get UTMPX_FILE => ffi.UTMPX_FILE;
+  @override
+  String get UTMP_FILE => throw UnsupportedError('UTMP_FILE');
+  @override
+  String get UTMP_FILENAME => throw UnsupportedError('UTMP_FILENAME');
   @override
   int get UTSNAME_DOMAIN_LENGTH =>
       throw UnsupportedError('UTSNAME_DOMAIN_LENGTH');
@@ -1503,6 +2058,14 @@ mixin BsdMacroMixin on StdLibC {
   @override
   int get UTSNAME_VERSION_LENGTH =>
       throw UnsupportedError('UTSNAME_VERSION_LENGTH');
+  @override
+  int get UT_HOSTSIZE => ffi.UT_HOSTSIZE;
+  @override
+  int get UT_LINESIZE => ffi.UT_LINESIZE;
+  @override
+  int get UT_NAMESIZE => ffi.UT_NAMESIZE;
+  @override
+  int get UT_UNKNOWN => throw UnsupportedError('UT_UNKNOWN');
   @override
   int get WAIT_ANY => ffi.WAIT_ANY;
   @override
@@ -1561,6 +2124,10 @@ mixin BsdMacroMixin on StdLibC {
   int get WRDE_UNDEF => ffi.WRDE_UNDEF;
   @override
   int get WSTOPPED => ffi.WSTOPPED;
+  @override
+  String get WTMP_FILE => throw UnsupportedError('WTMP_FILE');
+  @override
+  String get WTMP_FILENAME => throw UnsupportedError('WTMP_FILENAME');
   @override
   int get WUNTRACED => ffi.WUNTRACED;
   @override

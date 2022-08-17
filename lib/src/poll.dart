@@ -1,9 +1,9 @@
 import 'package:meta/meta.dart';
 
-import 'libc.dart';
+import 'platform.dart';
 
 List<Pollfd> poll(List<Pollfd> fds, {int timeout = -1}) {
-  return libc.poll(fds, timeout);
+  return platform.poll(fds, timeout);
 }
 
 @immutable

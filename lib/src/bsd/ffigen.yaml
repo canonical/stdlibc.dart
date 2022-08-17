@@ -11,12 +11,17 @@ headers:
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/errno.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/fcntl.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/fnmatch.h"
+    - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/fstab.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/poll.h"
+    - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pwd.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdlib.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/string.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/syslog.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/unistd.h"
+    - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/utmp.h"
+    - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/utmpx.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/wordexp.h"
+    - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/ioctl.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/mman.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/stat.h"
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/utsname.h"
@@ -28,46 +33,18 @@ functions:
   include:
     # errno.h
     - "__error"
-    # fcntl.h
-    - "open"
-    # fnmatch.h
-    - "fnmatch"
     # glob.h
     - "glob"
     - "globfree"
     # mman.h
     - "mmap"
     - "munmap"
-    # poll.h
-    - "poll"
-    # stdlib.h
-    - "getenv"
-    - "putenv"
-    - "setenv"
-    - "unsetenv"
     # stat.h
     - "fstat"
     - "lstat"
     - "stat"
-    # string.h
-    - "strerror"
-    # syslog.h
-    - "closelog"
-    - "openlog"
-    - "setlogmask"
-    - "syslog"
-    # unistd.h
-    - "close"
-    - "get.*id"
-    - "pipe"
-    - "read"
-    - "set.*id"
-    - "write"
     # utsname.h
     - "uname"
-    # wordexp.h
-    - "wordexp"
-    - "wordfree"
   rename:
     "__error": "errno"
 macros:
@@ -88,16 +65,20 @@ unnamed-enums:
     - ".*"
 structs:
   include:
+    - "flock"
     - "glob_t"
-    - "pollfd"
+    - "passwd"
     - "stat"
     - "timespec"
+    - "utmpx"
     - "utsname"
-    - "wordexp_t"
   rename:
-    "pollfd": "pollfd_t"
+    "flock": "flock_t"
+    "passwd": "passwd_t"
     "stat": "stat_t"
     "timespec": "timespec_t"
+    "timeval": "timeval_t"
+    "utmpx": "utmpx_t"
     "utsname": "utsname_t"
 unions:
   exclude:

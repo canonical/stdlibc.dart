@@ -11,13 +11,18 @@ headers:
     - "/usr/include/errno.h"
     - "/usr/include/fcntl.h"
     - "/usr/include/fnmatch.h"
+    - "/usr/include/fstab.h"
     - "/usr/include/glob.h"
     - "/usr/include/poll.h"
+    - "/usr/include/pwd.h"
     - "/usr/include/stdlib.h"
     - "/usr/include/string.h"
     - "/usr/include/syslog.h"
     - "/usr/include/unistd.h"
+    - "/usr/include/utmp.h"
+    - "/usr/include/utmpx.h"
     - "/usr/include/wordexp.h"
+    - "/usr/include/x86_64-linux-gnu/sys/ioctl.h"
     - "/usr/include/x86_64-linux-gnu/sys/mman.h"
     - "/usr/include/x86_64-linux-gnu/sys/stat.h"
     - "/usr/include/x86_64-linux-gnu/sys/sysinfo.h"
@@ -29,48 +34,20 @@ functions:
   include:
     # errno.h
     - "__errno_location"
-    # fcntl.h
-    - "open"
-    # fnmatch.h
-    - "fnmatch"
     # glob.h
     - "glob"
     - "globfree"
     # mman.h
     - "mmap"
     - "munmap"
-    # poll.h
-    - "poll"
-    # stdlib.h
-    - "getenv"
-    - "putenv"
-    - "setenv"
-    - "unsetenv"
     # stat.h
     - "__fxstat"
     - "__lxstat"
     - "__xstat"
-    # string.h
-    - "strerror"
     # sysinfo.h
     - "sysinfo"
-    # syslog.h
-    - "closelog"
-    - "openlog"
-    - "setlogmask"
-    - "syslog"
-    # unistd.h
-    - "close"
-    - "get.*id"
-    - "pipe"
-    - "read"
-    - "set.*id"
-    - "write"
     # utsname.h
     - "uname"
-    # wordexp.h
-    - "wordexp"
-    - "wordfree"
   rename:
     "__errno_location": "errno"
     "__fxstat": "fstat"
@@ -93,17 +70,21 @@ unnamed-enums:
 structs:
   include:
     - "glob_t"
-    - "pollfd"
+    - "flock"
+    - "passwd"
     - "stat"
     - "sysinfo"
     - "timespec"
+    - "utmpx"
     - "utsname"
-    - "wordexp_t"
   rename:
-    "pollfd": "pollfd_t"
+    "flock": "flock_t"
+    "passwd": "passwd_t"
     "stat": "stat_t"
     "sysinfo": "sysinfo_t"
     "timespec": "timespec_t"
+    "UnnamedStruct1": "timeval_t"
+    "utmpx": "utmpx_t"
     "utsname": "utsname_t"
 unions:
   exclude:

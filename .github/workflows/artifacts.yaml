@@ -1,0 +1,26 @@
+name: Artifacts
+
+on:
+  workflow_run:
+    workflows:
+    - bsd
+    - gnu
+    - macros
+    types:
+    - completed
+
+jobs:
+  urls:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: tonyhallett/artifacts-url-comments@v1.1.0
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      with:
+        addTo: pull
+        format: name
+        prefix: >
+          This PR may have outdated generated files. Check the CI job or
+          download and `git apply` the following diff:
+        errorNoArtifacts: 'false'
+      continue-on-error: true

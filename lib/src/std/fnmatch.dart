@@ -1,14 +1,14 @@
 import 'package:ffi/ffi.dart' as ffi;
 
-import '../libc.dart';
+import '../platform.dart';
 import '../util.dart';
-import 'gnu.dart';
+import 'std.dart';
 
-mixin GnuFnmatchMixin on StdLibC {
+mixin StdFnmatchMixin on PlatformLibC {
   @override
   int fnmatch(String pattern, String name, int flags) {
     return ffi.using((arena) {
-      return dylib.fnmatch(
+      return std.fnmatch(
         pattern.toCString(arena),
         name.toCString(arena),
         flags,

@@ -2,18 +2,18 @@ import 'dart:ffi' as ffi;
 
 import 'package:ffi/ffi.dart' as ffi;
 
-import '../libc.dart';
+import '../platform.dart';
 import '../stat.dart';
 import '../util.dart';
 import 'ffigen.dart' as ffi;
 import 'gnu.dart';
 
-mixin GnuStatMixin on StdLibC {
+mixin GnuStatMixin on PlatformLibC {
   @override
   Stat stat(String file) {
     return ffi.using((arena) {
       final buf = arena<ffi.stat_t>();
-      final res = dylib.stat(ffi.STAT_VER, file.toCString(arena), buf);
+      final res = gnu.stat(ffi.STAT_VER, file.toCString(arena), buf);
       checkErrno('stat', res);
       return buf.toStat();
     });
@@ -23,7 +23,7 @@ mixin GnuStatMixin on StdLibC {
   Stat fstat(int fd) {
     return ffi.using((arena) {
       final buf = arena<ffi.stat_t>();
-      final res = dylib.fstat(ffi.STAT_VER, fd, buf);
+      final res = gnu.fstat(ffi.STAT_VER, fd, buf);
       checkErrno('fstat', res);
       return buf.toStat();
     });
@@ -33,7 +33,7 @@ mixin GnuStatMixin on StdLibC {
   Stat lstat(String file) {
     return ffi.using((arena) {
       final buf = arena<ffi.stat_t>();
-      final res = dylib.lstat(ffi.STAT_VER, file.toCString(arena), buf);
+      final res = gnu.lstat(ffi.STAT_VER, file.toCString(arena), buf);
       checkErrno('lstat', res);
       return buf.toStat();
     });
@@ -61,5 +61,8 @@ extension GnuStat on ffi.Pointer<ffi.stat_t> {
 }
 
 extension _GnuTimespec on ffi.timespec_t {
-  DateTime toDateTime() => fromTimespec(tv_sec, tv_nsec);
+  DateTime toDateTime() {
+    final tv = Duration(seconds: tv_sec, microseconds: tv_nsec ~/ 1000);
+    return DateTime.fromMicrosecondsSinceEpoch(tv.inMicroseconds);
+  }
 }

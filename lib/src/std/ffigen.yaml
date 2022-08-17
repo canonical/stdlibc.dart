@@ -1,0 +1,105 @@
+name: StdLibC
+description: "Standard C Library"
+output: "lib/src/std/ffigen.dart"
+preamble: |
+  // ignore_for_file: non_positive_array_dimension, unused_field, type=lint
+sort: true
+llvm-path:
+  - "/usr/lib/llvm-9"
+headers:
+  entry-points:
+    - "/usr/include/fcntl.h"
+    - "/usr/include/fnmatch.h"
+    - "/usr/include/fstab.h"
+    - "/usr/include/poll.h"
+    - "/usr/include/pwd.h"
+    - "/usr/include/stdlib.h"
+    - "/usr/include/string.h"
+    - "/usr/include/syslog.h"
+    - "/usr/include/sys/ioctl.h"
+    - "/usr/include/unistd.h"
+    - "/usr/include/utmpx.h"
+    - "/usr/include/wordexp.h"
+globals:
+  exclude:
+    - ".*"
+functions:
+  include:
+    # fcntl.h
+    - "fcntl"
+    - "open"
+    # fnmatch.h
+    - "fnmatch"
+    # fstab.h
+    - "getfsent"
+    - "getfsspec"
+    - "getfsfile"
+    - "setfsent"
+    - "endfsent"
+    # poll.h
+    - "poll"
+    # pwd.h
+    - "getpwuid"
+    - "getpwnam"
+    # stdlib.h
+    - "getenv"
+    - "putenv"
+    - "setenv"
+    - "unsetenv"
+    # string.h
+    - "strerror"
+    # syslog.h
+    - "closelog"
+    - "openlog"
+    - "setlogmask"
+    - "syslog"
+    # sys/ioctl.h
+    - "ioctl"
+    # unistd.h
+    - "close"
+    - "dup"
+    - "dup2"
+    - "fsync"
+    - "get.*id"
+    - "pipe"
+    - "pread"
+    - "pwrite"
+    - "read"
+    - "set.*id"
+    - "sync"
+    - "write"
+    # utmpx.h
+    - "endutxent"
+    - "getutxent"
+    - "getutxid"
+    - "setutxent"
+    # wordexp.h
+    - "wordexp"
+    - "wordfree"
+macros:
+  exclude:
+    - ".*"
+enums:
+  exclude:
+    - ".*"
+unnamed-enums:
+  exclude:
+    - ".*"
+structs:
+  include:
+    - "fstab"
+    - "passwd_t"
+    - "pollfd"
+    - "utmpx"
+    - "wordexp_t"
+  rename:
+    "fstab": "fstab_t"
+    "passwd": "passwd_t" # bsd != gnu
+    "pollfd": "pollfd_t"
+    "utmpx": "utmpx_t"
+unions:
+  exclude:
+    - ".*"
+typedefs:
+  exclude:
+    - ".*"

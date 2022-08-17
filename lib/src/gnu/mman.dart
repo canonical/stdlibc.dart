@@ -1,11 +1,11 @@
 import 'dart:ffi' as ffi;
 
-import '../libc.dart';
 import '../mman.dart';
+import '../platform.dart';
 import '../util.dart';
 import 'gnu.dart';
 
-mixin GnuMmanMixin on StdLibC {
+mixin GnuMmanMixin on PlatformLibC {
   @override
   Mmap mmap(
     int addr,
@@ -15,7 +15,7 @@ mixin GnuMmanMixin on StdLibC {
     int fd,
     int offset,
   ) {
-    final res = dylib.mmap(
+    final res = gnu.mmap(
       ffi.Pointer.fromAddress(addr),
       length,
       prot,
@@ -33,7 +33,7 @@ mixin GnuMmanMixin on StdLibC {
   @override
   void munmap(Mmap map) {
     final ptr = ffi.Pointer.fromAddress(map.address);
-    final res = dylib.munmap(ptr.cast(), map.data.lengthInBytes);
+    final res = gnu.munmap(ptr.cast(), map.data.lengthInBytes);
     checkErrno('munmap', res);
   }
 }

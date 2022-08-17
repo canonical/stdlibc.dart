@@ -1,12 +1,12 @@
 import 'dart:ffi' as ffi;
 
-import '../libc.dart';
+import '../platform.dart';
 import 'bsd.dart';
 
-mixin BsdErrnoMixin on StdLibC {
+mixin BsdErrnoMixin on PlatformLibC {
   @override
-  int get errno => dylib.errno().value;
+  int get errno => bsd.errno().value;
 
   @override
-  set errno(int errno) => dylib.errno().value = errno;
+  set errno(int errno) => bsd.errno().value = errno;
 }

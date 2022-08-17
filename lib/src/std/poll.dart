@@ -2,13 +2,13 @@ import 'dart:ffi' as ffi;
 
 import 'package:ffi/ffi.dart' as ffi;
 
-import '../libc.dart';
+import '../platform.dart';
 import '../poll.dart';
 import '../util.dart';
 import 'ffigen.dart' as ffi;
-import 'gnu.dart';
+import 'std.dart';
 
-mixin GnuPollMixin on StdLibC {
+mixin StdPollMixin on PlatformLibC {
   @override
   List<Pollfd> poll(List<Pollfd> fds, int timeout) {
     return ffi.using((arena) {
@@ -18,7 +18,7 @@ mixin GnuPollMixin on StdLibC {
         cfds[i].fd = p.fd;
         cfds[i].events = p.events;
       }
-      final res = dylib.poll(cfds, fds.length, timeout);
+      final res = std.poll(cfds, fds.length, timeout);
       checkErrno('poll', res);
       return List.generate(fds.length, (i) {
         return Pollfd(cfds[i].fd, cfds[i].revents);

@@ -1,10 +1,10 @@
 import 'package:meta/meta.dart';
 
-import 'libc.dart';
+import 'platform.dart';
 import 'string.dart';
 
-int get errno => libc.errno;
-set errno(int errno) => libc.errno = errno;
+int get errno => platform.errno;
+set errno(int errno) => platform.errno = errno;
 
 @immutable
 class Errno implements Exception {
