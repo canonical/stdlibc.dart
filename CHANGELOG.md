@@ -1,3 +1,13 @@
+## 0.0.6
+
+* Add pread(), pwrite()
+* Add getpwnam() & getpwuid()
+* add dup(), sync(), fsync()
+* Add getfsent(), getfsspec(), getfsfile()
+* Add fcntl(), ioctl()
+* Add getutxent()
+* Add examples: uptime, whoami, uname
+
 ## 0.0.5
 
 * Fix poll() default timeout -1.
