@@ -4,18 +4,17 @@ import 'dart:typed_data';
 import 'package:ffi/ffi.dart' as ffi;
 
 import '../platform.dart';
-import '../util.dart';
 import 'std.dart';
 
 mixin StdUnistdMixin on PlatformLibC {
   @override
-  void close(int fd) => checkErrno('close', std.close(fd));
+  int close(int fd) => std.close(fd);
   @override
   int dup(int oldfd) => std.dup(oldfd);
   @override
   int dup2(int oldfd, int newfd) => std.dup2(oldfd, newfd);
   @override
-  void fsync(int fd) => checkErrno('fsync', std.fsync(fd));
+  int fsync(int fd) => std.fsync(fd);
 
   @override
   int getegid() => std.getegid();
@@ -39,8 +38,7 @@ mixin StdUnistdMixin on PlatformLibC {
     return ffi.using((arena) {
       final fds = arena<ffi.Int>(2);
       final res = std.pipe(fds);
-      checkErrno('pipe', res);
-      return [fds[0], fds[1]];
+      return res == 0 ? [fds[0], fds[1]] : [];
     });
   }
 
@@ -49,8 +47,7 @@ mixin StdUnistdMixin on PlatformLibC {
     return ffi.using((arena) {
       final buf = arena<ffi.Int8>(count);
       final res = std.pread(fd, buf.cast(), count, offset);
-      checkErrno('pread', res);
-      return Int8List.fromList(buf.asTypedList(res));
+      return res <= 0 ? [] : Int8List.fromList(buf.asTypedList(res));
     });
   }
 
@@ -59,9 +56,7 @@ mixin StdUnistdMixin on PlatformLibC {
     return ffi.using((arena) {
       final buf = arena<ffi.Int8>(buffer.length);
       buf.asTypedList(buffer.length).setAll(0, buffer);
-      final res = std.pwrite(fd, buf.cast(), buffer.length, offset);
-      checkErrno('pwrite', res);
-      return res;
+      return std.pwrite(fd, buf.cast(), buffer.length, offset);
     });
   }
 
@@ -70,8 +65,7 @@ mixin StdUnistdMixin on PlatformLibC {
     return ffi.using((arena) {
       final buf = arena<ffi.Int8>(count);
       final res = std.read(fd, buf.cast(), count);
-      checkErrno('read', res);
-      return Int8List.fromList(buf.asTypedList(res));
+      return res <= 0 ? [] : Int8List.fromList(buf.asTypedList(res));
     });
   }
 
@@ -100,9 +94,7 @@ mixin StdUnistdMixin on PlatformLibC {
     return ffi.using((arena) {
       final buf = arena<ffi.Int8>(buffer.length);
       buf.asTypedList(buffer.length).setAll(0, buffer);
-      final res = std.write(fd, buf.cast(), buffer.length);
-      checkErrno('write', res);
-      return res;
+      return std.write(fd, buf.cast(), buffer.length);
     });
   }
 }

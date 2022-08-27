@@ -22,12 +22,12 @@ void main() {
 
   test('pipe', () {
     final fds = pipe();
+    expect(fds, hasLength(2));
     addTearDown(() {
       close(fds[0]);
       close(fds[1]);
     });
 
-    expect(fds, hasLength(2));
     expect(fds[0], isPositive);
     expect(fds[1], isPositive);
 
@@ -37,6 +37,7 @@ void main() {
 
   test('dup', () {
     final fds = pipe();
+    expect(fds, hasLength(2));
     addTearDown(() {
       close(fds[0]);
       close(fds[1]);
