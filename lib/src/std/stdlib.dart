@@ -16,30 +16,27 @@ mixin StdStdlibMixin on PlatformLibC {
   }
 
   @override
-  void putenv(String str) {
-    final res = ffi.using((arena) {
+  int putenv(String str) {
+    return ffi.using((arena) {
       return std.putenv(str.toCString(arena));
     });
-    checkErrno('putenv', res);
   }
 
   @override
-  void setenv(String name, String value, bool overwrite) {
-    final res = ffi.using((arena) {
+  int setenv(String name, String value, bool overwrite) {
+    return ffi.using((arena) {
       return std.setenv(
         name.toCString(arena),
         value.toCString(arena),
         overwrite ? 1 : 0,
       );
     });
-    checkErrno('setenv', res);
   }
 
   @override
-  void unsetenv(String name) {
-    final res = ffi.using((arena) {
+  int unsetenv(String name) {
+    return ffi.using((arena) {
       return std.unsetenv(name.toCString(arena));
     });
-    checkErrno('unsetenv', res);
   }
 }
