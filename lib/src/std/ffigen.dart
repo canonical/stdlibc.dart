@@ -324,6 +324,41 @@ class StdLibC {
           'ioctl');
   late final _ioctl = _ioctlPtr.asFunction<int Function(int, int)>();
 
+  int mkfifo(
+    ffi.Pointer<ffi.Char> __path,
+    int __mode,
+  ) {
+    return _mkfifo(
+      __path,
+      __mode,
+    );
+  }
+
+  late final _mkfifoPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.UnsignedInt)>>('mkfifo');
+  late final _mkfifo =
+      _mkfifoPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, int)>();
+
+  int mkfifoat(
+    int __fd,
+    ffi.Pointer<ffi.Char> __path,
+    int __mode,
+  ) {
+    return _mkfifoat(
+      __fd,
+      __path,
+      __mode,
+    );
+  }
+
+  late final _mkfifoatPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Int, ffi.Pointer<ffi.Char>, ffi.UnsignedInt)>>('mkfifoat');
+  late final _mkfifoat =
+      _mkfifoatPtr.asFunction<int Function(int, ffi.Pointer<ffi.Char>, int)>();
+
   int open(
     ffi.Pointer<ffi.Char> __file,
     int __oflag,
