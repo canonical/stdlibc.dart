@@ -4,7 +4,7 @@ import 'package:meta/meta.dart';
 
 import 'platform.dart';
 
-Mmap mmap({
+Mmap? mmap({
   int? address,
   required int length,
   int prot = 0, // PROT_NONE
@@ -15,7 +15,7 @@ Mmap mmap({
   return platform.mmap(address ?? 0, length, prot, flags, fd, offset);
 }
 
-void munmap(Mmap map) => platform.munmap(map);
+int munmap(Mmap map) => platform.munmap(map);
 
 @immutable
 class Mmap {
@@ -26,6 +26,6 @@ class Mmap {
 }
 
 mixin MmanMixin {
-  Mmap mmap(int address, int length, int prot, int flags, int fd, int offset);
-  void munmap(Mmap map);
+  Mmap? mmap(int address, int length, int prot, int flags, int fd, int offset);
+  int munmap(Mmap map);
 }

@@ -18,10 +18,15 @@ void main() {
     expect(fd, isNonNegative);
 
     final map = mmap(fd: fd, length: 12, prot: PROT_READ, flags: MAP_PRIVATE);
-    expect(map.address, isNonNegative);
+    expect(map, isNotNull);
+    expect(map!.address, isNonNegative);
     expect(String.fromCharCodes(map.data.asInt8List()), equals('stdlibc.dart'));
 
     close(fd);
-    munmap(map);
+    expect(munmap(map), isZero);
+  });
+
+  test('error', () {
+    expect(mmap(fd: -1, length: 0), isNull);
   });
 }

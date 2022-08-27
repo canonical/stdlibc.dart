@@ -2,12 +2,11 @@ import 'dart:ffi' as ffi;
 
 import '../mman.dart';
 import '../platform.dart';
-import '../util.dart';
 import 'bsd.dart';
 
 mixin BsdMmanMixin on PlatformLibC {
   @override
-  Mmap mmap(
+  Mmap? mmap(
     int addr,
     int length,
     int prot,
@@ -25,15 +24,14 @@ mixin BsdMmanMixin on PlatformLibC {
     );
     // TODO: #define MAP_FAILED	((void *) -1)
     if (res.address == -1) {
-      checkErrno('mmap', errno);
+      return null;
     }
     return Mmap(res.address, res.cast<ffi.Uint8>().asTypedList(length).buffer);
   }
 
   @override
-  void munmap(Mmap map) {
+  int munmap(Mmap map) {
     final ptr = ffi.Pointer.fromAddress(map.address);
-    final res = bsd.munmap(ptr.cast(), map.data.lengthInBytes);
-    checkErrno('munmap', res);
+    return bsd.munmap(ptr.cast(), map.data.lengthInBytes);
   }
 }
