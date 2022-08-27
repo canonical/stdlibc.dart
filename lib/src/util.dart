@@ -4,15 +4,7 @@ import 'dart:ffi' as ffi;
 import 'package:collection/collection.dart';
 import 'package:ffi/ffi.dart' as ffi;
 
-import 'errno.dart';
-
 final listEquals = const DeepCollectionEquality().equals;
-
-void checkErrno(String id, int res) {
-  if (res < 0) {
-    throw Errno(id, errno);
-  }
-}
 
 extension CString on String {
   ffi.Pointer<ffi.Char> toCString(ffi.Allocator alloc) {
