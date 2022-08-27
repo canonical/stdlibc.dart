@@ -115,6 +115,13 @@ class StdLibC {
   late final _fnmatch = _fnmatchPtr.asFunction<
       int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
+  int fork() {
+    return _fork();
+  }
+
+  late final _forkPtr = _lookup<ffi.NativeFunction<ffi.Int Function()>>('fork');
+  late final _fork = _forkPtr.asFunction<int Function()>();
+
   int fsync(
     int __fd,
   ) {

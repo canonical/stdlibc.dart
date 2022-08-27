@@ -64,6 +64,7 @@ functions:
     - "close"
     - "dup"
     - "dup2"
+    - "fork"
     - "fsync"
     - "get.*id"
     - "pipe"

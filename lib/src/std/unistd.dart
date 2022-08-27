@@ -17,6 +17,9 @@ mixin StdUnistdMixin on PlatformLibC {
   int fsync(int fd) => std.fsync(fd);
 
   @override
+  int fork() => std.fork();
+
+  @override
   int getegid() => std.getegid();
   @override
   int geteuid() => std.geteuid();

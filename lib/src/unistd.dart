@@ -3,6 +3,9 @@ import 'platform.dart';
 void close(int fd) => platform.close(fd);
 int dup(int oldfd) => platform.dup(oldfd);
 int dup2(int oldfd, int newfd) => platform.dup2(oldfd, newfd);
+
+int fork() => platform.fork();
+
 void fsync(int fd) => platform.fsync(fd);
 
 /// Returns the effective group ID of the calling process.
@@ -71,6 +74,7 @@ mixin UnistdMixin {
   void close(int fd);
   int dup(int oldfd);
   int dup2(int oldfd, int newfd);
+  int fork();
   void fsync(int fd);
   int getegid();
   int geteuid();
