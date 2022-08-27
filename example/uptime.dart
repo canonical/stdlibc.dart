@@ -4,6 +4,11 @@ void main() {
   final time = DateTime.now().toIso8601String().substring(11, 19);
 
   final info = sysinfo();
+  if (info == null) {
+    print(strerror(errno));
+    return;
+  }
+
   final uptime = [
     if (info.uptime.inDays > 0) '${info.uptime.inDays} day(s)',
     [

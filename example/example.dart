@@ -6,10 +6,14 @@ void main() {
   }
 
   final utsname = uname();
-  print('System: ${utsname?.sysname} (${utsname?.nodename})');
-  print('Version: ${utsname?.release} (${utsname?.machine})');
+  if (utsname != null) {
+    print('System: ${utsname.sysname} (${utsname.nodename})');
+    print('Version: ${utsname.release} (${utsname.machine})');
+  }
 
   final info = sysinfo();
-  print('Uptime: ${info.uptime}');
-  print('Load average: ${info.loads[0] / (1 << SI_LOAD_SHIFT)}');
+  if (info != null) {
+    print('Uptime: ${info.uptime}');
+    print('Load average: ${info.loads[0] / (1 << SI_LOAD_SHIFT)}');
+  }
 }
