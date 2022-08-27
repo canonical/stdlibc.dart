@@ -2,7 +2,6 @@ import 'dart:ffi' as ffi;
 
 import '../mman.dart';
 import '../platform.dart';
-import '../util.dart';
 import 'gnu.dart';
 
 mixin GnuMmanMixin on PlatformLibC {
