@@ -9,7 +9,8 @@ void main() {
     final actual = stat(Platform.resolvedExecutable);
     final expected = FileStat.statSync(Platform.resolvedExecutable);
 
-    expect(actual.st_dev, isNonNegative);
+    expect(actual, isNotNull);
+    expect(actual!.st_dev, isNonNegative);
     expect(actual.st_ino, isNonNegative);
     expect(actual.st_nlink, isNonNegative);
     expect(actual.st_mode, expected.mode);
@@ -27,7 +28,8 @@ void main() {
   test('fstat', () {
     final actual = fstat(1);
 
-    expect(actual.st_nlink, isNonNegative);
+    expect(actual, isNotNull);
+    expect(actual!.st_nlink, isNonNegative);
     expect(actual.st_mode & S_IRUSR, isNonZero);
     expect(actual.st_uid, isNonNegative);
     expect(actual.st_gid, isNonNegative);
@@ -48,7 +50,8 @@ void main() {
 
     final actual = lstat(link.path);
 
-    expect(actual.st_dev, isNonNegative);
+    expect(actual, isNotNull);
+    expect(actual!.st_dev, isNonNegative);
     expect(actual.st_ino, isNonNegative);
     expect(actual.st_nlink, isNonNegative);
     expect(actual.st_mode & S_IWUSR, isNonZero);

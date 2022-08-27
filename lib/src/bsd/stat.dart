@@ -10,7 +10,7 @@ import 'ffigen.dart' as ffi;
 
 mixin BsdStatMixin on PlatformLibC {
   @override
-  Stat stat(String file) {
+  Stat? stat(String file) {
     return ffi.using((arena) {
       final buf = arena<ffi.stat_t>();
       late int res;
@@ -19,13 +19,12 @@ mixin BsdStatMixin on PlatformLibC {
       } on ArgumentError catch (_) {
         res = bsd.stat(file.toCString(arena), buf);
       }
-      checkErrno('stat', res);
-      return buf.toStat();
+      return res == 0 ? buf.toStat() : null;
     });
   }
 
   @override
-  Stat fstat(int fd) {
+  Stat? fstat(int fd) {
     return ffi.using((arena) {
       final buf = arena<ffi.stat_t>();
       late int res;
@@ -34,13 +33,12 @@ mixin BsdStatMixin on PlatformLibC {
       } on ArgumentError catch (_) {
         res = bsd.fstat(fd, buf);
       }
-      checkErrno('fstat', res);
-      return buf.toStat();
+      return res == 0 ? buf.toStat() : null;
     });
   }
 
   @override
-  Stat lstat(String file) {
+  Stat? lstat(String file) {
     return ffi.using((arena) {
       final buf = arena<ffi.stat_t>();
       late int res;
@@ -49,8 +47,7 @@ mixin BsdStatMixin on PlatformLibC {
       } on ArgumentError catch (_) {
         res = bsd.lstat(file.toCString(arena), buf);
       }
-      checkErrno('lstat', res);
-      return buf.toStat();
+      return res == 0 ? buf.toStat() : null;
     });
   }
 }

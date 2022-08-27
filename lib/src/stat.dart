@@ -2,9 +2,9 @@ import 'package:meta/meta.dart';
 
 import 'platform.dart';
 
-Stat stat(String file) => platform.stat(file);
-Stat fstat(int fd) => platform.fstat(fd);
-Stat lstat(String file) => platform.lstat(file);
+Stat? stat(String file) => platform.stat(file);
+Stat? fstat(int fd) => platform.fstat(fd);
+Stat? lstat(String file) => platform.lstat(file);
 
 @immutable
 class Stat {
@@ -109,7 +109,7 @@ class Stat {
 }
 
 mixin StatMixin {
-  Stat fstat(int fd);
-  Stat lstat(String file);
-  Stat stat(String file);
+  Stat? fstat(int fd);
+  Stat? lstat(String file);
+  Stat? stat(String file);
 }

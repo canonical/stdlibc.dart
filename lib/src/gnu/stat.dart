@@ -10,32 +10,29 @@ import 'gnu.dart';
 
 mixin GnuStatMixin on PlatformLibC {
   @override
-  Stat stat(String file) {
+  Stat? stat(String file) {
     return ffi.using((arena) {
       final buf = arena<ffi.stat_t>();
       final res = gnu.stat(ffi.STAT_VER, file.toCString(arena), buf);
-      checkErrno('stat', res);
-      return buf.toStat();
+      return res == 0 ? buf.toStat() : null;
     });
   }
 
   @override
-  Stat fstat(int fd) {
+  Stat? fstat(int fd) {
     return ffi.using((arena) {
       final buf = arena<ffi.stat_t>();
       final res = gnu.fstat(ffi.STAT_VER, fd, buf);
-      checkErrno('fstat', res);
-      return buf.toStat();
+      return res == 0 ? buf.toStat() : null;
     });
   }
 
   @override
-  Stat lstat(String file) {
+  Stat? lstat(String file) {
     return ffi.using((arena) {
       final buf = arena<ffi.stat_t>();
       final res = gnu.lstat(ffi.STAT_VER, file.toCString(arena), buf);
-      checkErrno('lstat', res);
-      return buf.toStat();
+      return res == 0 ? buf.toStat() : null;
     });
   }
 }
