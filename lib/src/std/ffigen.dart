@@ -705,6 +705,39 @@ class StdLibC {
   late final _syslog =
       _syslogPtr.asFunction<void Function(int, ffi.Pointer<ffi.Char>)>();
 
+  int unlink(
+    ffi.Pointer<ffi.Char> __name,
+  ) {
+    return _unlink(
+      __name,
+    );
+  }
+
+  late final _unlinkPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>)>>(
+          'unlink');
+  late final _unlink =
+      _unlinkPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
+
+  int unlinkat(
+    int __fd,
+    ffi.Pointer<ffi.Char> __name,
+    int __flag,
+  ) {
+    return _unlinkat(
+      __fd,
+      __name,
+      __flag,
+    );
+  }
+
+  late final _unlinkatPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Int, ffi.Pointer<ffi.Char>, ffi.Int)>>('unlinkat');
+  late final _unlinkat =
+      _unlinkatPtr.asFunction<int Function(int, ffi.Pointer<ffi.Char>, int)>();
+
   int unsetenv(
     ffi.Pointer<ffi.Char> __name,
   ) {

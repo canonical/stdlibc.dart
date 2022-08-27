@@ -68,6 +68,11 @@ int setuid(int uid) => platform.setuid(uid);
 
 void sync() => platform.sync();
 
+int unlink(String path) => platform.unlink(path);
+
+int unlinkat(int dirfd, String path, int flags) =>
+    platform.unlinkat(dirfd, path, flags);
+
 int write(int fd, List<int> buffer) => platform.write(fd, buffer);
 
 mixin UnistdMixin {
@@ -97,5 +102,7 @@ mixin UnistdMixin {
   int setsid();
   int setuid(int uid);
   void sync();
+  int unlink(String path);
+  int unlinkat(int dirfd, String path, int flags);
   int write(int fd, List<int> buffer);
 }

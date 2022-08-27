@@ -73,6 +73,8 @@ functions:
     - "read"
     - "set.*id"
     - "sync"
+    - "unlink"
+    - "unlinkat"
     - "write"
     # utmpx.h
     - "endutxent"

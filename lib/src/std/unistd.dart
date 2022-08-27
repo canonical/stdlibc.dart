@@ -4,6 +4,7 @@ import 'dart:typed_data';
 import 'package:ffi/ffi.dart' as ffi;
 
 import '../platform.dart';
+import '../util.dart';
 import 'std.dart';
 
 mixin StdUnistdMixin on PlatformLibC {
@@ -91,6 +92,20 @@ mixin StdUnistdMixin on PlatformLibC {
 
   @override
   void sync() => std.sync1();
+
+  @override
+  int unlink(String path) {
+    return ffi.using((arena) {
+      return std.unlink(path.toCString(arena));
+    });
+  }
+
+  @override
+  int unlinkat(int dirfd, String path, int flags) {
+    return ffi.using((arena) {
+      return std.unlinkat(dirfd, path.toCString(arena), flags);
+    });
+  }
 
   @override
   int write(int fd, List<int> buffer) {
