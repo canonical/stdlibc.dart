@@ -11,7 +11,8 @@ void main() {
 
   test('getpwnam', () {
     final passwd = getpwnam('root');
-    expect(passwd.name, equals('root'));
+    expect(passwd, isNotNull);
+    expect(passwd!.name, equals('root'));
     expect(passwd.uid, isZero);
     expect(passwd.gid, isZero);
     expect(passwd.dir, startsWith('/'));
@@ -19,7 +20,8 @@ void main() {
 
   test('getpwuid', () {
     final passwd = getpwuid(0);
-    expect(passwd.name, equals('root'));
+    expect(passwd, isNotNull);
+    expect(passwd!.name, equals('root'));
     expect(passwd.uid, isZero);
     expect(passwd.gid, isZero);
     expect(passwd.dir, startsWith('/'));

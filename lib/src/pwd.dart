@@ -2,8 +2,8 @@ import 'package:meta/meta.dart';
 
 import 'platform.dart';
 
-Passwd getpwnam(String name) => platform.getpwnam(name);
-Passwd getpwuid(int uid) => platform.getpwuid(uid);
+Passwd? getpwnam(String name) => platform.getpwnam(name);
+Passwd? getpwuid(int uid) => platform.getpwuid(uid);
 
 @immutable
 class Passwd {
@@ -72,6 +72,6 @@ class Passwd {
 }
 
 mixin PwdMixin {
-  Passwd getpwnam(String name);
-  Passwd getpwuid(int uid);
+  Passwd? getpwnam(String name);
+  Passwd? getpwuid(int uid);
 }
