@@ -10,12 +10,11 @@ import 'gnu.dart';
 
 mixin GnuUnameMixin on PlatformLibC {
   @override
-  Utsname uname() {
+  Utsname? uname() {
     return ffi.using((arena) {
       final buf = arena<ffi.utsname_t>();
       final res = gnu.uname(buf);
-      checkErrno('uname', res);
-      return buf.toUtsname();
+      return res == 0 ? buf.toUtsname() : null;
     });
   }
 }

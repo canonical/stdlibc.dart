@@ -6,7 +6,8 @@ void main() {
     final utsname = uname();
     print(utsname);
 
-    expect(utsname.sysname, isNotEmpty);
+    expect(utsname, isNotNull);
+    expect(utsname!.sysname, isNotEmpty);
     expect(utsname.nodename, isNotEmpty);
     expect(utsname.release, isNotEmpty);
     expect(utsname.version, isNotEmpty);

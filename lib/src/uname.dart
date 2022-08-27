@@ -3,7 +3,7 @@ import 'package:meta/meta.dart';
 import 'platform.dart';
 
 /// Returns name and information about current kernel.
-Utsname uname() => platform.uname();
+Utsname? uname() => platform.uname();
 
 /// Name and information about current kernel.
 @immutable
@@ -62,5 +62,5 @@ class Utsname {
 }
 
 mixin UnameMixin {
-  Utsname uname();
+  Utsname? uname();
 }

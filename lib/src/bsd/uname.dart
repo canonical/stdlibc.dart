@@ -10,12 +10,11 @@ import 'ffigen.dart' as ffi;
 
 mixin BsdUnameMixin on PlatformLibC {
   @override
-  Utsname uname() {
+  Utsname? uname() {
     return ffi.using((arena) {
       final buf = arena<ffi.utsname_t>();
       final res = bsd.uname(buf);
-      checkErrno('uname', res);
-      return buf.toUtsname();
+      return res == 0 ? buf.toUtsname() : null;
     });
   }
 }
