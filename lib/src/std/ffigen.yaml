@@ -17,6 +17,8 @@ headers:
     - "/usr/include/string.h"
     - "/usr/include/syslog.h"
     - "/usr/include/sys/ioctl.h"
+    - "/usr/include/sys/stat.h"
+    - "/usr/include/sys/types.h"
     - "/usr/include/unistd.h"
     - "/usr/include/utmpx.h"
     - "/usr/include/wordexp.h"
@@ -55,6 +57,9 @@ functions:
     - "syslog"
     # sys/ioctl.h
     - "ioctl"
+    # sys/stat.h
+    - "mkfifo"
+    - "mkfifoat"
     # unistd.h
     - "close"
     - "dup"

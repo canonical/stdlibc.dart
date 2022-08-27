@@ -2,6 +2,10 @@ import 'package:meta/meta.dart';
 
 import 'platform.dart';
 
+int mkfifo(String path, int mode) => platform.mkfifo(path, mode);
+int mkfifoat(int dirfd, String path, int mode) =>
+    platform.mkfifoat(dirfd, path, mode);
+
 Stat? stat(String file) => platform.stat(file);
 Stat? fstat(int fd) => platform.fstat(fd);
 Stat? lstat(String file) => platform.lstat(file);
@@ -109,6 +113,9 @@ class Stat {
 }
 
 mixin StatMixin {
+  int mkfifo(String path, int mode);
+  int mkfifoat(int dirfd, String path, int mode);
+
   Stat? fstat(int fd);
   Stat? lstat(String file);
   Stat? stat(String file);
