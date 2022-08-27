@@ -4,7 +4,7 @@ import 'platform.dart';
 import 'util.dart';
 
 /// Return system information.
-Sysinfo sysinfo() => platform.sysinfo();
+Sysinfo? sysinfo() => platform.sysinfo();
 
 /// Certain statistics on memory and swap usage, as well as the load average.
 @immutable
@@ -99,5 +99,5 @@ class Sysinfo {
 }
 
 mixin SysinfoMixin {
-  Sysinfo sysinfo();
+  Sysinfo? sysinfo();
 }

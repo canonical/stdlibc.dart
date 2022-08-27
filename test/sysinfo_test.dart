@@ -8,7 +8,8 @@ void main() {
     final info = sysinfo();
     print(info);
 
-    expect(info.uptime, isNot(equals(Duration.zero)));
+    expect(info, isNotNull);
+    expect(info!.uptime, isNot(equals(Duration.zero)));
     expect(info.loads, hasLength(3));
     for (final load in info.loads) {
       expect(load, isPositive);

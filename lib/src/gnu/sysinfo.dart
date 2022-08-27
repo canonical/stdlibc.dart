@@ -4,18 +4,16 @@ import 'package:ffi/ffi.dart' as ffi;
 
 import '../platform.dart';
 import '../sysinfo.dart';
-import '../util.dart';
 import 'ffigen.dart' as ffi;
 import 'gnu.dart';
 
 mixin GnuSysinfoMixin on PlatformLibC {
   @override
-  Sysinfo sysinfo() {
+  Sysinfo? sysinfo() {
     return ffi.using((arena) {
       final buf = arena<ffi.sysinfo_t>();
       final res = gnu.sysinfo(buf);
-      checkErrno('sysinfo', res);
-      return buf.toSysinfo();
+      return res == 0 ? buf.toSysinfo() : null;
     });
   }
 }
