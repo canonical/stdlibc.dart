@@ -1,3 +1,9 @@
+## 0.1.0
+
+* Follow the standard C-library API closer and return errno or null where
+  appropriate instead of doing internal errno checks and throwing
+* Add mkfifo(), fork(), unlink()
+
 ## 0.0.6
 
 * Add pread(), pwrite()
