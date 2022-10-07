@@ -1,4 +1,4 @@
-/// C Standard Library
+/// Standard C Library
 library stdlibc;
 
 export 'src/errno.dart' hide ErrnoMixin;
