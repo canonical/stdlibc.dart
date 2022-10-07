@@ -5,7 +5,7 @@
 [![Tests](https://github.com/ubuntu-flutter-community/stdlibc.dart/actions/workflows/tests.yaml/badge.svg)](https://github.com/ubuntu-flutter-community/stdlibc.dart/actions/workflows/tests.yaml)
 [![codecov](https://codecov.io/gh/ubuntu-flutter-community/stdlibc.dart/branch/main/graph/badge.svg?token=S5C0vwcYUe)](https://codecov.io/gh/ubuntu-flutter-community/stdlibc.dart)
 
-C Standard Library - FFI bindings to the GNU C Library on Linux, and the BSD
+Standard C Library - FFI bindings to the GNU C Library on Linux, and the BSD
 C Library on macOS.
 
 ```dart
