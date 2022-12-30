@@ -1,6 +1,6 @@
 name: BsdLibC
 description: "BSD C Library"
-output: "lib/src/bsd/ffigen.dart"
+output: ffigen.dart
 preamble: |
   // ignore_for_file: non_positive_array_dimension, unused_field, type=lint
 sort: true
