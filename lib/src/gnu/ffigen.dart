@@ -136,7 +136,7 @@ class GnuLibC {
   late final _mmapPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, ffi.Size,
-              ffi.Int, ffi.Int, ffi.Int, __off_t)>>('mmap');
+              ffi.Int, ffi.Int, ffi.Int, ffi.Long)>>('mmap');
   late final _mmap = _mmapPtr.asFunction<
       ffi.Pointer<ffi.Void> Function(
           ffi.Pointer<ffi.Void>, int, int, int, int, int)>();
@@ -1410,10 +1410,10 @@ const int UT_NAMESIZE = 32;
 const int UT_UNKNOWN = 0;
 
 class UnnamedStruct1 extends ffi.Struct {
-  @__int32_t()
+  @ffi.Int()
   external int tv_sec;
 
-  @__int32_t()
+  @ffi.Int()
   external int tv_usec;
 }
 
@@ -1459,10 +1459,6 @@ const int W_OK = 2;
 
 const int X_OK = 1;
 
-typedef __blkcnt_t = ffi.Long;
-typedef __blksize_t = ffi.Long;
-typedef __dev_t = ffi.UnsignedLong;
-
 class __exit_status extends ffi.Struct {
   @ffi.Short()
   external int __e_termination;
@@ -1471,22 +1467,6 @@ class __exit_status extends ffi.Struct {
   external int __e_exit;
 }
 
-typedef __gid_t = ffi.UnsignedInt;
-typedef __ino_t = ffi.UnsignedLong;
-typedef __int32_t = ffi.Int;
-typedef __kernel_long_t = ffi.Long;
-typedef __kernel_ulong_t = ffi.UnsignedLong;
-typedef __mode_t = ffi.UnsignedInt;
-typedef __nlink_t = ffi.UnsignedLong;
-typedef __off_t = ffi.Long;
-typedef __pid_t = ffi.Int;
-typedef __size_t = ffi.UnsignedLong;
-typedef __syscall_slong_t = ffi.Long;
-typedef __time_t = ffi.Long;
-typedef __u16 = ffi.UnsignedShort;
-typedef __u32 = ffi.UnsignedInt;
-typedef __uid_t = ffi.UnsignedInt;
-
 class flock_t extends ffi.Struct {
   @ffi.Short()
   external int l_type;
@@ -1494,23 +1474,23 @@ class flock_t extends ffi.Struct {
   @ffi.Short()
   external int l_whence;
 
-  @__off_t()
+  @ffi.Long()
   external int l_start;
 
-  @__off_t()
+  @ffi.Long()
   external int l_len;
 
-  @__pid_t()
+  @ffi.Int()
   external int l_pid;
 }
 
 class glob_t extends ffi.Struct {
-  @__size_t()
+  @ffi.UnsignedLong()
   external int gl_pathc;
 
   external ffi.Pointer<ffi.Pointer<ffi.Char>> gl_pathv;
 
-  @__size_t()
+  @ffi.UnsignedLong()
   external int gl_offs;
 
   @ffi.Int()
@@ -1544,10 +1524,10 @@ class passwd_t extends ffi.Struct {
 
   external ffi.Pointer<ffi.Char> pw_passwd;
 
-  @__uid_t()
+  @ffi.UnsignedInt()
   external int pw_uid;
 
-  @__gid_t()
+  @ffi.UnsignedInt()
   external int pw_gid;
 
   external ffi.Pointer<ffi.Char> pw_gecos;
@@ -1558,37 +1538,37 @@ class passwd_t extends ffi.Struct {
 }
 
 class stat_t extends ffi.Struct {
-  @__dev_t()
+  @ffi.UnsignedLong()
   external int st_dev;
 
-  @__ino_t()
+  @ffi.UnsignedLong()
   external int st_ino;
 
-  @__nlink_t()
+  @ffi.UnsignedLong()
   external int st_nlink;
 
-  @__mode_t()
+  @ffi.UnsignedInt()
   external int st_mode;
 
-  @__uid_t()
+  @ffi.UnsignedInt()
   external int st_uid;
 
-  @__gid_t()
+  @ffi.UnsignedInt()
   external int st_gid;
 
   @ffi.Int()
   external int __pad0;
 
-  @__dev_t()
+  @ffi.UnsignedLong()
   external int st_rdev;
 
-  @__off_t()
+  @ffi.Long()
   external int st_size;
 
-  @__blksize_t()
+  @ffi.Long()
   external int st_blksize;
 
-  @__blkcnt_t()
+  @ffi.Long()
   external int st_blocks;
 
   external timespec_t st_atim;
@@ -1598,47 +1578,47 @@ class stat_t extends ffi.Struct {
   external timespec_t st_ctim;
 
   @ffi.Array.multi([3])
-  external ffi.Array<__syscall_slong_t> __glibc_reserved;
+  external ffi.Array<ffi.Long> __glibc_reserved;
 }
 
 class sysinfo_t extends ffi.Struct {
-  @__kernel_long_t()
+  @ffi.Long()
   external int uptime;
 
   @ffi.Array.multi([3])
-  external ffi.Array<__kernel_ulong_t> loads;
+  external ffi.Array<ffi.UnsignedLong> loads;
 
-  @__kernel_ulong_t()
+  @ffi.UnsignedLong()
   external int totalram;
 
-  @__kernel_ulong_t()
+  @ffi.UnsignedLong()
   external int freeram;
 
-  @__kernel_ulong_t()
+  @ffi.UnsignedLong()
   external int sharedram;
 
-  @__kernel_ulong_t()
+  @ffi.UnsignedLong()
   external int bufferram;
 
-  @__kernel_ulong_t()
+  @ffi.UnsignedLong()
   external int totalswap;
 
-  @__kernel_ulong_t()
+  @ffi.UnsignedLong()
   external int freeswap;
 
-  @__u16()
+  @ffi.UnsignedShort()
   external int procs;
 
-  @__u16()
+  @ffi.UnsignedShort()
   external int pad;
 
-  @__kernel_ulong_t()
+  @ffi.UnsignedLong()
   external int totalhigh;
 
-  @__kernel_ulong_t()
+  @ffi.UnsignedLong()
   external int freehigh;
 
-  @__u32()
+  @ffi.UnsignedInt()
   external int mem_unit;
 
   @ffi.Array.multi([0])
@@ -1646,10 +1626,10 @@ class sysinfo_t extends ffi.Struct {
 }
 
 class timespec_t extends ffi.Struct {
-  @__time_t()
+  @ffi.Long()
   external int tv_sec;
 
-  @__syscall_slong_t()
+  @ffi.Long()
   external int tv_nsec;
 }
 
@@ -1657,7 +1637,7 @@ class utmpx_t extends ffi.Struct {
   @ffi.Short()
   external int ut_type;
 
-  @__pid_t()
+  @ffi.Int()
   external int ut_pid;
 
   @ffi.Array.multi([32])
@@ -1674,13 +1654,13 @@ class utmpx_t extends ffi.Struct {
 
   external __exit_status ut_exit;
 
-  @__int32_t()
+  @ffi.Int()
   external int ut_session;
 
   external UnnamedStruct1 ut_tv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<__int32_t> ut_addr_v6;
+  external ffi.Array<ffi.Int> ut_addr_v6;
 
   @ffi.Array.multi([20])
   external ffi.Array<ffi.Char> __glibc_reserved;
