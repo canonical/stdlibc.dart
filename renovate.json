@@ -1,11 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
-    ":semanticCommitsDisabled"
-  ],
-  "enabledManagers": [
-    "github-actions",
-    "pub"
+    "local>ubuntu-flutter-community/renovate-config"
   ]
 }
