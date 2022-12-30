@@ -131,7 +131,7 @@ class BsdLibC {
   late final _mmapPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, ffi.Size,
-              ffi.Int, ffi.Int, ffi.Int, ffi.LongLong)>>('mmap');
+              ffi.Int, ffi.Int, ffi.Int, off_t)>>('mmap');
   late final _mmap = _mmapPtr.asFunction<
       ffi.Pointer<ffi.Void> Function(
           ffi.Pointer<ffi.Void>, int, int, int, int, int)>();
@@ -1818,16 +1818,36 @@ const int W_OK = 2;
 
 const int X_OK = 1;
 
+typedef __darwin_blkcnt_t = __int64_t;
+typedef __darwin_blksize_t = __int32_t;
+typedef __darwin_dev_t = __int32_t;
+typedef __darwin_gid_t = __uint32_t;
+typedef __darwin_ino64_t = __uint64_t;
+typedef __darwin_mode_t = __uint16_t;
+typedef __darwin_off_t = __int64_t;
+typedef __darwin_pid_t = __int32_t;
+typedef __darwin_suseconds_t = __int32_t;
+typedef __darwin_time_t = ffi.Long;
+typedef __darwin_uid_t = __uint32_t;
+typedef __int32_t = ffi.Int;
+typedef __int64_t = ffi.LongLong;
+typedef __uint16_t = ffi.UnsignedShort;
+typedef __uint32_t = ffi.UnsignedInt;
+typedef __uint64_t = ffi.UnsignedLongLong;
+typedef blkcnt_t = __darwin_blkcnt_t;
+typedef blksize_t = __darwin_blksize_t;
+typedef dev_t = __darwin_dev_t;
+
 class dirent extends ffi.Opaque {}
 
 class flock_t extends ffi.Struct {
-  @ffi.LongLong()
+  @off_t()
   external int l_start;
 
-  @ffi.LongLong()
+  @off_t()
   external int l_len;
 
-  @ffi.Int()
+  @pid_t()
   external int l_pid;
 
   @ffi.Short()
@@ -1836,6 +1856,8 @@ class flock_t extends ffi.Struct {
   @ffi.Short()
   external int l_whence;
 }
+
+typedef gid_t = __darwin_gid_t;
 
 class glob_t extends ffi.Struct {
   @ffi.Size()
@@ -1875,18 +1897,22 @@ class glob_t extends ffi.Struct {
       gl_stat;
 }
 
+typedef mode_t = __darwin_mode_t;
+typedef nlink_t = __uint16_t;
+typedef off_t = __darwin_off_t;
+
 class passwd_t extends ffi.Struct {
   external ffi.Pointer<ffi.Char> pw_name;
 
   external ffi.Pointer<ffi.Char> pw_passwd;
 
-  @ffi.UnsignedInt()
+  @uid_t()
   external int pw_uid;
 
-  @ffi.UnsignedInt()
+  @gid_t()
   external int pw_gid;
 
-  @ffi.Long()
+  @__darwin_time_t()
   external int pw_change;
 
   external ffi.Pointer<ffi.Char> pw_class;
@@ -1897,30 +1923,32 @@ class passwd_t extends ffi.Struct {
 
   external ffi.Pointer<ffi.Char> pw_shell;
 
-  @ffi.Long()
+  @__darwin_time_t()
   external int pw_expire;
 }
 
+typedef pid_t = __darwin_pid_t;
+
 class stat_t extends ffi.Struct {
-  @ffi.Int()
+  @dev_t()
   external int st_dev;
 
-  @ffi.UnsignedShort()
+  @mode_t()
   external int st_mode;
 
-  @ffi.UnsignedShort()
+  @nlink_t()
   external int st_nlink;
 
-  @ffi.UnsignedLongLong()
+  @__darwin_ino64_t()
   external int st_ino;
 
-  @ffi.UnsignedInt()
+  @uid_t()
   external int st_uid;
 
-  @ffi.UnsignedInt()
+  @gid_t()
   external int st_gid;
 
-  @ffi.Int()
+  @dev_t()
   external int st_rdev;
 
   external timespec_t st_atimespec;
@@ -1931,30 +1959,30 @@ class stat_t extends ffi.Struct {
 
   external timespec_t st_birthtimespec;
 
-  @ffi.LongLong()
+  @off_t()
   external int st_size;
 
-  @ffi.LongLong()
+  @blkcnt_t()
   external int st_blocks;
 
-  @ffi.Int()
+  @blksize_t()
   external int st_blksize;
 
-  @ffi.UnsignedInt()
+  @__uint32_t()
   external int st_flags;
 
-  @ffi.UnsignedInt()
+  @__uint32_t()
   external int st_gen;
 
-  @ffi.Int()
+  @__int32_t()
   external int st_lspare;
 
   @ffi.Array.multi([2])
-  external ffi.Array<ffi.LongLong> st_qspare;
+  external ffi.Array<__int64_t> st_qspare;
 }
 
 class timespec_t extends ffi.Struct {
-  @ffi.Long()
+  @__darwin_time_t()
   external int tv_sec;
 
   @ffi.Long()
@@ -1962,12 +1990,14 @@ class timespec_t extends ffi.Struct {
 }
 
 class timeval_t extends ffi.Struct {
-  @ffi.Long()
+  @__darwin_time_t()
   external int tv_sec;
 
-  @ffi.Int()
+  @__darwin_suseconds_t()
   external int tv_usec;
 }
+
+typedef uid_t = __darwin_uid_t;
 
 class utmpx_t extends ffi.Struct {
   @ffi.Array.multi([256])
@@ -1979,7 +2009,7 @@ class utmpx_t extends ffi.Struct {
   @ffi.Array.multi([32])
   external ffi.Array<ffi.Char> ut_line;
 
-  @ffi.Int()
+  @pid_t()
   external int ut_pid;
 
   @ffi.Short()
@@ -1991,7 +2021,7 @@ class utmpx_t extends ffi.Struct {
   external ffi.Array<ffi.Char> ut_host;
 
   @ffi.Array.multi([16])
-  external ffi.Array<ffi.UnsignedInt> ut_pad;
+  external ffi.Array<__uint32_t> ut_pad;
 }
 
 class utsname_t extends ffi.Struct {
