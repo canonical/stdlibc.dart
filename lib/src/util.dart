@@ -12,6 +12,30 @@ extension CString on String {
   }
 }
 
+extension CStringArray on List<String> {
+  ffi.Pointer<ffi.Pointer<ffi.Char>> toCStringArray(ffi.Allocator alloc) {
+    final array = alloc<ffi.Pointer<ffi.Char>>(length + 1);
+    for (var i = 0; i < length; ++i) {
+      array[i] = this[i].toCString(alloc);
+    }
+    array[length] = ffi.nullptr;
+    return array;
+  }
+}
+
+extension CStringMap on Map<String, String> {
+  ffi.Pointer<ffi.Pointer<ffi.Char>> toCStringMap(ffi.Allocator alloc) {
+    final array = alloc<ffi.Pointer<ffi.Char>>(length + 1);
+    final entries = this.entries.toList();
+    for (var i = 0; i < entries.length; ++i) {
+      final element = '${entries[i].key}=${entries[i].value}';
+      array[i] = element.toCString(alloc);
+    }
+    array[length] = ffi.nullptr;
+    return array;
+  }
+}
+
 extension CharPointerString on ffi.Pointer<ffi.Char> {
   String? toDartString({int? length}) {
     if (this == ffi.nullptr) return null;

@@ -4,6 +4,11 @@ void close(int fd) => platform.close(fd);
 int dup(int oldfd) => platform.dup(oldfd);
 int dup2(int oldfd, int newfd) => platform.dup2(oldfd, newfd);
 
+int execv(String path, List<String> args) => platform.execv(path, args);
+int execve(String path, List<String> args, Map<String, String> env) =>
+    platform.execve(path, args, env);
+int execvp(String path, List<String> args) => platform.execvp(path, args);
+
 int fork() => platform.fork();
 
 void fsync(int fd) => platform.fsync(fd);
@@ -79,6 +84,9 @@ mixin UnistdMixin {
   void close(int fd);
   int dup(int oldfd);
   int dup2(int oldfd, int newfd);
+  int execv(String path, List<String> args);
+  int execve(String path, List<String> args, Map<String, String> env);
+  int execvp(String path, List<String> args);
   int fork();
   void fsync(int fd);
   int getegid();

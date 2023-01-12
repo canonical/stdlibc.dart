@@ -14,6 +14,35 @@ mixin StdUnistdMixin on PlatformLibC {
   int dup(int oldfd) => std.dup(oldfd);
   @override
   int dup2(int oldfd, int newfd) => std.dup2(oldfd, newfd);
+
+  @override
+  int execv(String path, List<String> args) {
+    return ffi.using((arena) {
+      return std.execv(path.toCString(arena), args.toCStringArray(arena));
+    });
+  }
+
+  @override
+  int execve(String path, List<String> args, Map<String, String> env) {
+    return ffi.using((arena) {
+      return std.execve(
+        path.toCString(arena),
+        args.toCStringArray(arena),
+        env.toCStringMap(arena),
+      );
+    });
+  }
+
+  @override
+  int execvp(String path, List<String> args) {
+    return ffi.using((arena) {
+      return std.execvp(
+        path.toCString(arena),
+        args.toCStringArray(arena),
+      );
+    });
+  }
+
   @override
   int fsync(int fd) => std.fsync(fd);
 
