@@ -1,3 +1,7 @@
+## 0.1.1
+
+* Add execv(), execve(), execvp()
+
 ## 0.1.0
 
 * Follow the standard C-library API closer and return errno or null where
