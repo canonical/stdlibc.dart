@@ -1754,6 +1754,8 @@ const int UT_LINESIZE = 8;
 
 const int UT_NAMESIZE = 8;
 
+class UnnamedUnion1 extends ffi.Opaque {}
+
 const int WAIT_ANY = -1;
 
 const int WAIT_MYPGRP = 0;
@@ -1851,6 +1853,8 @@ class glob_t extends ffi.Struct {
   external int gl_flags;
 
   external ffi.Pointer<ffi.Pointer<ffi.Char>> gl_pathv;
+
+  external UnnamedUnion1 unnamed;
 
   external ffi
           .Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>
