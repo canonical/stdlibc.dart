@@ -984,6 +984,8 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get MADV_CAN_REUSE => throw UnsupportedError('MADV_CAN_REUSE');
   @override
+  int get MADV_COLD => ffi.MADV_COLD;
+  @override
   int get MADV_DODUMP => ffi.MADV_DODUMP;
   @override
   int get MADV_DOFORK => ffi.MADV_DOFORK;
@@ -1012,7 +1014,7 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get MADV_NORMAL => ffi.MADV_NORMAL;
   @override
-  int get MADV_PAGEOUT => throw UnsupportedError('MADV_PAGEOUT');
+  int get MADV_PAGEOUT => ffi.MADV_PAGEOUT;
   @override
   int get MADV_RANDOM => ffi.MADV_RANDOM;
   @override
@@ -1044,6 +1046,8 @@ mixin GnuMacroMixin on PlatformLibC {
   int get MAP_FILE => ffi.MAP_FILE;
   @override
   int get MAP_FIXED => ffi.MAP_FIXED;
+  @override
+  int get MAP_FIXED_NOREPLACE => ffi.MAP_FIXED_NOREPLACE;
   @override
   int get MAP_GROWSDOWN => ffi.MAP_GROWSDOWN;
   @override
@@ -1082,7 +1086,11 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get MAP_SHARED => ffi.MAP_SHARED;
   @override
+  int get MAP_SHARED_VALIDATE => ffi.MAP_SHARED_VALIDATE;
+  @override
   int get MAP_STACK => ffi.MAP_STACK;
+  @override
+  int get MAP_SYNC => ffi.MAP_SYNC;
   @override
   int get MAP_TRANSLATED_ALLOW_EXECUTE =>
       throw UnsupportedError('MAP_TRANSLATED_ALLOW_EXECUTE');

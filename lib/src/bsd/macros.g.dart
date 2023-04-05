@@ -969,6 +969,8 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get MADV_CAN_REUSE => ffi.MADV_CAN_REUSE;
   @override
+  int get MADV_COLD => throw UnsupportedError('MADV_COLD');
+  @override
   int get MADV_DODUMP => throw UnsupportedError('MADV_DODUMP');
   @override
   int get MADV_DOFORK => throw UnsupportedError('MADV_DOFORK');
@@ -1029,6 +1031,8 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get MAP_FIXED => ffi.MAP_FIXED;
   @override
+  int get MAP_FIXED_NOREPLACE => throw UnsupportedError('MAP_FIXED_NOREPLACE');
+  @override
   int get MAP_GROWSDOWN => throw UnsupportedError('MAP_GROWSDOWN');
   @override
   int get MAP_HASSEMAPHORE => ffi.MAP_HASSEMAPHORE;
@@ -1065,7 +1069,11 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get MAP_SHARED => ffi.MAP_SHARED;
   @override
+  int get MAP_SHARED_VALIDATE => throw UnsupportedError('MAP_SHARED_VALIDATE');
+  @override
   int get MAP_STACK => throw UnsupportedError('MAP_STACK');
+  @override
+  int get MAP_SYNC => throw UnsupportedError('MAP_SYNC');
   @override
   int get MAP_TRANSLATED_ALLOW_EXECUTE => ffi.MAP_TRANSLATED_ALLOW_EXECUTE;
   @override
