@@ -15,7 +15,7 @@ jobs:
     - uses: dart-lang/setup-dart@v1
     - run: dart pub get
     - run: dart run build_runner build --delete-conflicting-outputs
-    - uses: peter-evans/create-pull-request@v4
+    - uses: peter-evans/create-pull-request@v5
       if: github.event_name != 'pull_request'
       with:
         title: 'Regenerate macros'
