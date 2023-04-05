@@ -15,7 +15,7 @@ jobs:
     - uses: dart-lang/setup-dart@v1
     - run: dart pub get
     - run: dart run ffigen --config lib/src/bsd/ffigen.yaml
-    - uses: peter-evans/create-pull-request@v4
+    - uses: peter-evans/create-pull-request@v5
       if: github.event_name != 'pull_request'
       with:
         title: 'Regenerate BSD bindings'
