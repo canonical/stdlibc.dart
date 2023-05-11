@@ -1807,6 +1807,8 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get TCXONC => ffi.TCXONC;
   @override
+  int get TIME_UTC => throw UnsupportedError('TIME_UTC');
+  @override
   int get TIOCCBRK => ffi.TIOCCBRK;
   @override
   int get TIOCCDTR => throw UnsupportedError('TIOCCDTR');
@@ -1936,8 +1938,6 @@ mixin GnuMacroMixin on PlatformLibC {
   int get TIOCPTYGRANT => throw UnsupportedError('TIOCPTYGRANT');
   @override
   int get TIOCPTYUNLK => throw UnsupportedError('TIOCPTYUNLK');
-  @override
-  int get TIOCREMOTE => throw UnsupportedError('TIOCREMOTE');
   @override
   int get TIOCSBRK => ffi.TIOCSBRK;
   @override

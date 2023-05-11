@@ -1544,6 +1544,8 @@ const int S_IXUSR = 64;
 
 const int TABLDISC = 3;
 
+const int TIME_UTC = 1;
+
 const int TIOCCBRK = 536900730;
 
 const int TIOCCDTR = 536900728;
@@ -1643,8 +1645,6 @@ const int TIOCPTYGNAME = 1082160211;
 const int TIOCPTYGRANT = 536900692;
 
 const int TIOCPTYUNLK = 536900690;
-
-const int TIOCREMOTE = 2147775593;
 
 const int TIOCSBRK = 536900731;
 

@@ -1780,6 +1780,8 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get TCXONC => throw UnsupportedError('TCXONC');
   @override
+  int get TIME_UTC => ffi.TIME_UTC;
+  @override
   int get TIOCCBRK => ffi.TIOCCBRK;
   @override
   int get TIOCCDTR => ffi.TIOCCDTR;
@@ -1909,8 +1911,6 @@ mixin BsdMacroMixin on PlatformLibC {
   int get TIOCPTYGRANT => ffi.TIOCPTYGRANT;
   @override
   int get TIOCPTYUNLK => ffi.TIOCPTYUNLK;
-  @override
-  int get TIOCREMOTE => ffi.TIOCREMOTE;
   @override
   int get TIOCSBRK => ffi.TIOCSBRK;
   @override
