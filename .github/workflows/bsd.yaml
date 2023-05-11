@@ -9,7 +9,7 @@ on:
 
 jobs:
   ffigen:
-    runs-on: macos-10.15
+    runs-on: macos-11
     steps:
     - uses: actions/checkout@v3
     - uses: dart-lang/setup-dart@v1
