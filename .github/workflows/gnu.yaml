@@ -15,6 +15,8 @@ jobs:
     - run: sudo apt update
     - run: sudo apt install -y libclang-9-dev
     - uses: dart-lang/setup-dart@v1
+      with:
+        sdk: 2.19.6
     - run: dart pub get
     - run: dart run ffigen --config lib/src/gnu/ffigen.yaml
     - uses: peter-evans/create-pull-request@v5

@@ -13,6 +13,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: dart-lang/setup-dart@v1
+      with:
+        sdk: 2.19.6
     - run: dart pub get
     - run: dart run ffigen --config lib/src/bsd/ffigen.yaml
     - uses: peter-evans/create-pull-request@v5
