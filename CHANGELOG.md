@@ -1,3 +1,7 @@
+## 0.1.2
+
+* Migrate to Dart 3
+
 ## 0.1.1
 
 * Add execv(), execve(), execvp()
