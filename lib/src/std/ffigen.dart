@@ -863,7 +863,7 @@ class StdLibC {
       _writePtr.asFunction<int Function(int, ffi.Pointer<ffi.Void>, int)>();
 }
 
-class UnnamedStruct1 extends ffi.Struct {
+final class UnnamedStruct1 extends ffi.Struct {
   @ffi.Int()
   external int tv_sec;
 
@@ -871,7 +871,7 @@ class UnnamedStruct1 extends ffi.Struct {
   external int tv_usec;
 }
 
-class __exit_status extends ffi.Struct {
+final class __exit_status extends ffi.Struct {
   @ffi.Short()
   external int __e_termination;
 
@@ -879,7 +879,7 @@ class __exit_status extends ffi.Struct {
   external int __e_exit;
 }
 
-class fstab_t extends ffi.Struct {
+final class fstab_t extends ffi.Struct {
   external ffi.Pointer<ffi.Char> fs_spec;
 
   external ffi.Pointer<ffi.Char> fs_file;
@@ -897,7 +897,7 @@ class fstab_t extends ffi.Struct {
   external int fs_passno;
 }
 
-class passwd_t extends ffi.Struct {
+final class passwd_t extends ffi.Struct {
   external ffi.Pointer<ffi.Char> pw_name;
 
   external ffi.Pointer<ffi.Char> pw_passwd;
@@ -915,7 +915,7 @@ class passwd_t extends ffi.Struct {
   external ffi.Pointer<ffi.Char> pw_shell;
 }
 
-class pollfd_t extends ffi.Struct {
+final class pollfd_t extends ffi.Struct {
   @ffi.Int()
   external int fd;
 
@@ -926,7 +926,7 @@ class pollfd_t extends ffi.Struct {
   external int revents;
 }
 
-class utmpx_t extends ffi.Struct {
+final class utmpx_t extends ffi.Struct {
   @ffi.Short()
   external int ut_type;
 
@@ -959,7 +959,7 @@ class utmpx_t extends ffi.Struct {
   external ffi.Array<ffi.Char> __glibc_reserved;
 }
 
-class wordexp_t extends ffi.Struct {
+final class wordexp_t extends ffi.Struct {
   @ffi.Size()
   external int we_wordc;
 

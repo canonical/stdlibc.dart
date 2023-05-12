@@ -1818,9 +1818,9 @@ const int W_OK = 2;
 
 const int X_OK = 1;
 
-class dirent extends ffi.Opaque {}
+final class dirent extends ffi.Opaque {}
 
-class flock_t extends ffi.Struct {
+final class flock_t extends ffi.Struct {
   @ffi.LongLong()
   external int l_start;
 
@@ -1837,7 +1837,7 @@ class flock_t extends ffi.Struct {
   external int l_whence;
 }
 
-class glob_t extends ffi.Struct {
+final class glob_t extends ffi.Struct {
   @ffi.Size()
   external int gl_pathc;
 
@@ -1875,7 +1875,7 @@ class glob_t extends ffi.Struct {
       gl_stat;
 }
 
-class passwd_t extends ffi.Struct {
+final class passwd_t extends ffi.Struct {
   external ffi.Pointer<ffi.Char> pw_name;
 
   external ffi.Pointer<ffi.Char> pw_passwd;
@@ -1901,7 +1901,7 @@ class passwd_t extends ffi.Struct {
   external int pw_expire;
 }
 
-class stat_t extends ffi.Struct {
+final class stat_t extends ffi.Struct {
   @ffi.Int()
   external int st_dev;
 
@@ -1953,7 +1953,7 @@ class stat_t extends ffi.Struct {
   external ffi.Array<ffi.LongLong> st_qspare;
 }
 
-class timespec_t extends ffi.Struct {
+final class timespec_t extends ffi.Struct {
   @ffi.Long()
   external int tv_sec;
 
@@ -1961,7 +1961,7 @@ class timespec_t extends ffi.Struct {
   external int tv_nsec;
 }
 
-class timeval_t extends ffi.Struct {
+final class timeval_t extends ffi.Struct {
   @ffi.Long()
   external int tv_sec;
 
@@ -1969,7 +1969,7 @@ class timeval_t extends ffi.Struct {
   external int tv_usec;
 }
 
-class utmpx_t extends ffi.Struct {
+final class utmpx_t extends ffi.Struct {
   @ffi.Array.multi([256])
   external ffi.Array<ffi.Char> ut_user;
 
@@ -1994,7 +1994,7 @@ class utmpx_t extends ffi.Struct {
   external ffi.Array<ffi.UnsignedInt> ut_pad;
 }
 
-class utsname_t extends ffi.Struct {
+final class utsname_t extends ffi.Struct {
   @ffi.Array.multi([256])
   external ffi.Array<ffi.Char> sysname;
 
