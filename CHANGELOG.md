@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.4 (2023-06-13)
+
+## What's Changed
+* ci: auto-publish on release by @jpnurmi in https://github.com/ubuntu-flutter-community/stdlibc.dart/pull/91
+
+
+**Full Changelog**: https://github.com/ubuntu-flutter-community/stdlibc.dart/compare/v0.1.3...v0.1.4
+
 ## 0.1.3 (2023-06-13)
 
 ## What's Changed
