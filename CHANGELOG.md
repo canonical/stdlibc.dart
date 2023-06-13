@@ -1,3 +1,5 @@
+# Changelog
+
 ## 0.1.2
 
 * Migrate to Dart 3
