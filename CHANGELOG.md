@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.1.3 (2023-06-13)
+
+## What's Changed
+* ci: release please by @jpnurmi in https://github.com/ubuntu-flutter-community/stdlibc.dart/pull/85
+* fix: nothing (testing release-please) by @jpnurmi in https://github.com/ubuntu-flutter-community/stdlibc.dart/pull/86
+* chore: github style changelog by @jpnurmi in https://github.com/ubuntu-flutter-community/stdlibc.dart/pull/88
+* ci: auto-publish by @jpnurmi in https://github.com/ubuntu-flutter-community/stdlibc.dart/pull/89
+
+
+**Full Changelog**: https://github.com/ubuntu-flutter-community/stdlibc.dart/compare/v0.1.2...v0.1.3
+
 ## 0.1.2
 
 * Migrate to Dart 3
