@@ -17,4 +17,4 @@ jobs:
         with:
           release-type: dart
           changelog-notes-type: github
-          pull-request-title-pattern: 'chore: release${component} v${version}'
+          pull-request-title-pattern: 'chore: release v${version}'
