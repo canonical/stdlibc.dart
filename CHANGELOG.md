@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.5 (2023-06-14)
+
+## What's Changed
+* fix: nothing (yet another release-please test, sorry) by @jpnurmi in https://github.com/ubuntu-flutter-community/stdlibc.dart/pull/95
+
+
+**Full Changelog**: https://github.com/ubuntu-flutter-community/stdlibc.dart/compare/v0.1.4...v0.1.5
+
 ## 0.1.4 (2023-06-13)
 
 ## What's Changed
