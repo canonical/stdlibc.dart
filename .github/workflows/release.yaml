@@ -1,4 +1,4 @@
-name: Changelog
+name: Release
 
 on:
   push:
@@ -10,7 +10,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  release-please:
+  please:
     runs-on: ubuntu-latest
     steps:
       - uses: google-github-actions/release-please-action@v3
