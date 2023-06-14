@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 jobs:
-  publish:
+  pub-dev:
     if: |
       ${{github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'autorelease: pending')}}
     runs-on: ubuntu-latest
