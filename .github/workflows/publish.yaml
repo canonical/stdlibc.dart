@@ -1,15 +1,21 @@
 name: Publish
 
 on:
-  release:
-    types: [published]
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+
+permissions:
+  id-token: write
 
 jobs:
   publish:
+    if: |
+      ${{github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'autorelease: pending')}}
     runs-on: ubuntu-latest
     environment: pub.dev
-    permissions:
-      id-token: write
     steps:
       - uses: actions/checkout@v3
       - uses: dart-lang/setup-dart@v1
