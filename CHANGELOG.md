@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.6 (2023-07-17)
+
+**Full Changelog**: https://github.com/canonical/stdlibc.dart/compare/v0.1.5...v0.1.6
+
 ## 0.1.5 (2023-06-14)
 
 ## What's Changed
