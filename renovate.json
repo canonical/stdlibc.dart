@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "local>ubuntu-flutter-community/renovate-config"
+    "github>canonical/ubuntu-flutter-plugins"
   ]
 }
