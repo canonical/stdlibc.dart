@@ -23,6 +23,7 @@ void main() {
     expect(actual.st_atim, isTime(expected.accessed));
     expect(actual.st_mtim, isTime(expected.modified));
     expect(actual.st_ctim, isTime(expected.changed));
+    expect(actual.st_flags, Platform.isMacOS ? isNotNull : isNull);
   });
 
   test('fstat', () {
@@ -39,6 +40,7 @@ void main() {
     expect(actual.st_blocks, isNonNegative);
     expect(actual.st_atim, anyOf(isEpoch, isRecent));
     expect(actual.st_mtim, anyOf(isEpoch, isRecent));
+    expect(actual.st_flags, Platform.isMacOS ? isNotNull : isNull);
   });
 
   test('lstat', () {
@@ -64,6 +66,7 @@ void main() {
     expect(actual.st_atim, isRecent);
     expect(actual.st_mtim, isRecent);
     expect(actual.st_ctim, isRecent);
+    expect(actual.st_flags, Platform.isMacOS ? isNotNull : isNull);
   });
 
   test('data class', () {
@@ -81,6 +84,7 @@ void main() {
       st_atim: DateTime(2001, 2, 3),
       st_mtim: DateTime(2002, 3, 4),
       st_ctim: DateTime(2003, 4, 5),
+      st_flags: 11,
     );
 
     final stat1b = Stat(
@@ -97,6 +101,7 @@ void main() {
       st_atim: DateTime(2001, 2, 3),
       st_mtim: DateTime(2002, 3, 4),
       st_ctim: DateTime(2003, 4, 5),
+      st_flags: 11,
     );
 
     final stat2 = Stat(
@@ -113,6 +118,7 @@ void main() {
       st_atim: DateTime(2001, 2, 3),
       st_mtim: DateTime(2002, 3, 4),
       st_ctim: DateTime(2003, 4, 5),
+      st_flags: 12,
     );
 
     expect(stat1, equals(stat1));

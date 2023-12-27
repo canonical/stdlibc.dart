@@ -26,6 +26,7 @@ class Stat {
     required this.st_atim,
     required this.st_mtim,
     required this.st_ctim,
+    this.st_flags,
   });
 
   /// ID of device containing file
@@ -67,6 +68,11 @@ class Stat {
   /// Time of last status change
   final DateTime st_ctim;
 
+  /// User defined flags
+  ///
+  /// Only available on macOS.
+  final int? st_flags;
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
@@ -84,7 +90,8 @@ class Stat {
         other.st_blocks == st_blocks &&
         other.st_atim == st_atim &&
         other.st_mtim == st_mtim &&
-        other.st_ctim == st_ctim;
+        other.st_ctim == st_ctim &&
+        other.st_flags == st_flags;
   }
 
   @override
@@ -102,13 +109,14 @@ class Stat {
       st_blocks,
       st_atim,
       st_mtim,
-      st_ctim.hashCode,
+      st_ctim,
+      st_flags,
     );
   }
 
   @override
   String toString() {
-    return 'Stat(st_dev: $st_dev, st_ino: $st_ino, st_nlink: $st_nlink, st_mode: $st_mode, st_uid: $st_uid, st_gid: $st_gid, st_rdev: $st_rdev, st_size: $st_size, st_blksize: $st_blksize, st_blocks: $st_blocks, st_atim: $st_atim, st_mtim: $st_mtim, st_ctim: $st_ctim)';
+    return 'Stat(st_dev: $st_dev, st_ino: $st_ino, st_nlink: $st_nlink, st_mode: $st_mode, st_uid: $st_uid, st_gid: $st_gid, st_rdev: $st_rdev, st_size: $st_size, st_blksize: $st_blksize, st_blocks: $st_blocks, st_atim: $st_atim, st_mtim: $st_mtim, st_ctim: $st_ctim, st_flags: $st_flags)';
   }
 }
 
