@@ -29,12 +29,15 @@ mixin StdFcntlMixin on PlatformLibC {
 }
 
 final _fcntlInt = dylib
-    .lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Int, ffi.Int)>>(
-        'fcntl')
+    .lookup<
+        ffi.NativeFunction<
+            ffi.Int Function(
+                ffi.Int, ffi.Int, ffi.VarArgs<(ffi.Int,)>)>>('fcntl')
     .asFunction<int Function(int, int, int)>();
 
 final _fcntlPtr = dylib
     .lookup<
         ffi.NativeFunction<
-            ffi.Int Function(ffi.Int, ffi.Int, ffi.Pointer)>>('fcntl')
+            ffi.Int Function(
+                ffi.Int, ffi.Int, ffi.VarArgs<(ffi.Pointer,)>)>>('fcntl')
     .asFunction<int Function(int, int, ffi.Pointer)>();
