@@ -39,8 +39,8 @@ class BsdLibC {
   }
 
   late final _fstatPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<stat_t>)>>(
-      'fstat');
+      ffi
+      .NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<stat_t>)>>('fstat');
   late final _fstat =
       _fstatPtr.asFunction<int Function(int, ffi.Pointer<stat_t>)>();
 
@@ -48,8 +48,8 @@ class BsdLibC {
     ffi.Pointer<ffi.Char> arg0,
     int arg1,
     ffi.Pointer<
-            ffi.NativeFunction<
-                ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Int)>>
+            ffi
+            .NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Int)>>
         arg2,
     ffi.Pointer<glob_t> arg3,
   ) {
@@ -1853,12 +1853,13 @@ final class glob_t extends ffi.Struct {
   external ffi.Pointer<ffi.Pointer<ffi.Char>> gl_pathv;
 
   external ffi
-          .Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>
+      .Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>
       gl_closedir;
 
   external ffi.Pointer<
-      ffi.NativeFunction<
-          ffi.Pointer<dirent> Function(ffi.Pointer<ffi.Void>)>> gl_readdir;
+          ffi
+          .NativeFunction<ffi.Pointer<dirent> Function(ffi.Pointer<ffi.Void>)>>
+      gl_readdir;
 
   external ffi.Pointer<
       ffi.NativeFunction<
