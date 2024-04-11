@@ -51,8 +51,8 @@ class GnuLibC {
     ffi.Pointer<ffi.Char> __pattern,
     int __flags,
     ffi.Pointer<
-            ffi.NativeFunction<
-                ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Int)>>
+            ffi
+            .NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Int)>>
         __errfunc,
     ffi.Pointer<glob_t> __pglob,
   ) {
@@ -1507,7 +1507,7 @@ final class glob_t extends ffi.Struct {
   external int gl_flags;
 
   external ffi
-          .Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>
+      .Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>
       gl_closedir;
 
   external ffi.Pointer<
