@@ -52,7 +52,6 @@ functions:
     # stdio.h
     - "rename"
     - "renameat"
-    - "renameat2"
     # string.h
     - "strerror"
     # syslog.h
