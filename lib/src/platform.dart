@@ -13,6 +13,7 @@ import 'mman.dart';
 import 'poll.dart';
 import 'pwd.dart';
 import 'stat.dart';
+import 'stdio.dart';
 import 'stdlib.dart';
 import 'string.dart';
 import 'sysinfo.dart';
@@ -38,6 +39,7 @@ abstract class PlatformLibC
         PwdMixin,
         StatMixin,
         StdlibMixin,
+        StdioMixin,
         StringMixin,
         SysinfoMixin,
         SyslogMixin,

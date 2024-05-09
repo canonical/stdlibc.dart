@@ -12,6 +12,7 @@ export 'src/mman.dart' hide MmanMixin;
 export 'src/poll.dart' hide PollMixin;
 export 'src/pwd.dart' hide PwdMixin;
 export 'src/stat.dart' hide StatMixin;
+export 'src/stdio.dart' hide StdioMixin;
 export 'src/stdlib.dart' hide StdlibMixin;
 export 'src/string.dart' hide StringMixin;
 export 'src/sysinfo.dart' hide SysinfoMixin;
