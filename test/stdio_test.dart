@@ -4,7 +4,7 @@ import 'package:stdlibc/stdlibc.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('rename', () {
+  group('stdio', () {
     late Directory tmp;
 
     setUp(() {
