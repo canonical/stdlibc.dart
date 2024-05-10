@@ -29,7 +29,10 @@ void main() {
       expect(fd, isNonNegative);
       close(fd);
       expect(File(path).existsSync(), isTrue);
-      expect(File(path).statSync().mode & 511, 384);
+      expect(
+          File(path).statSync().mode & 511 // 0777
+          ,
+          384);
     });
   });
 
