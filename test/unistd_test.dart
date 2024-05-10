@@ -1,6 +1,17 @@
 import 'package:stdlibc/stdlibc.dart';
 import 'package:test/test.dart';
 
+class Fd implements Finalizable {
+  static final _finalizer =
+      NativeFinalizer(closePtr.cast());
+
+  final int _fd;
+
+  Fd(this._fd) {
+    _finalizer.attach(this, _fd);
+  }
+}
+
 void main() {
   test('uid', () {
     expect(getuid(), isNonNegative);
@@ -33,6 +44,12 @@ void main() {
 
     expect(write(fds[1], [1, 2, 3]), 3);
     expect(read(fds[0], 3), [1, 2, 3]);
+  });
+
+  test('closePtr', () {
+    final fds = pipe();
+    Fd(fds[0]);
+    Fd(fds[1]);
   });
 
   test('dup', () {
