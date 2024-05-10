@@ -10,7 +10,7 @@ int open(String file, {int? flags, int? mode}) =>
 
 mixin FcntlMixin {
   int fcntl(int fd, int cmd, dynamic arg);
-  int open(String file, int flags);
+  int open(String file, int flags, int mode);
 }
 
 @immutable
