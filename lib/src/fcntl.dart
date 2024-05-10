@@ -5,14 +5,12 @@ import 'platform.dart';
 
 int fcntl(int fd, int cmd, [dynamic arg]) => platform.fcntl(fd, cmd, arg);
 
-int open(String file, {int? flags, int? mode}) => mode == null
-    ? platform.open(file, flags ?? O_RDONLY)
-    : platform.openWithMode(file, flags ?? O_RDONLY, mode);
+int open(String file, {int? flags, int? mode}) =>
+    ? platform.open(file, flags ?? O_RDONLY, mode ?? 0);
 
 mixin FcntlMixin {
   int fcntl(int fd, int cmd, dynamic arg);
   int open(String file, int flags);
-  int openWithMode(String file, int flags, int mode);
 }
 
 @immutable

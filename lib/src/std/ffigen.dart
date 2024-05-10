@@ -427,37 +427,21 @@ class StdLibC {
   int open(
     ffi.Pointer<ffi.Char> __file,
     int __oflag,
-  ) {
-    return _open(
-      __file,
-      __oflag,
-    );
-  }
-
-  late final _openPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Int)>>(
-      'open');
-  late final _open =
-      _openPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, int)>();
-
-  int openUnsignedint(
-    ffi.Pointer<ffi.Char> __file,
-    int __oflag,
     int va,
   ) {
-    return _openUnsignedint(
+    return _open(
       __file,
       __oflag,
       va,
     );
   }
 
-  late final _openUnsignedintPtr = _lookup<
+  late final _openPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Int,
               ffi.VarArgs<(ffi.UnsignedInt,)>)>>('open');
-  late final _openUnsignedint = _openUnsignedintPtr
-      .asFunction<int Function(ffi.Pointer<ffi.Char>, int, int)>();
+  late final _open =
+      _openPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, int, int)>();
 
   void openlog(
     ffi.Pointer<ffi.Char> __ident,

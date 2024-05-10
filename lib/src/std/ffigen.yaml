@@ -93,7 +93,6 @@ functions:
     - "wordfree"
   variadic-arguments:
     open:
-      - []
       - [unsigned int]
 
 macros:
