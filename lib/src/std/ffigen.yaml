@@ -91,6 +91,11 @@ functions:
     # wordexp.h
     - "wordexp"
     - "wordfree"
+  variadic-arguments:
+    open:
+      - []
+      - [unsigned int]
+
 macros:
   exclude:
     - ".*"

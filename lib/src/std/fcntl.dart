@@ -26,6 +26,13 @@ mixin StdFcntlMixin on PlatformLibC {
       return std.open(file.toCString(arena), flags);
     });
   }
+
+  @override
+  int openWithMode(String file, int flags, int mode) {
+    return ffi.using((arena) {
+      return std.openUnsignedint(file.toCString(arena), flags, mode);
+    });
+  }
 }
 
 final _fcntlInt = dylib
