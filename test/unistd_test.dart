@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:stdlibc/stdlibc.dart';
 import 'package:test/test.dart';
 
