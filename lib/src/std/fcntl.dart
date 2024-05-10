@@ -21,9 +21,9 @@ mixin StdFcntlMixin on PlatformLibC {
   }
 
   @override
-  int open(String file, int flags) {
+  int open(String file, int flags, int mode) {
     return ffi.using((arena) {
-      return std.open(file.toCString(arena), flags);
+      return std.open(file.toCString(arena), flags, mode);
     });
   }
 }
