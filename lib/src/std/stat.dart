@@ -6,6 +6,13 @@ import 'std.dart';
 
 mixin StdStatMixin on PlatformLibC {
   @override
+  int mkdir(String path, int mode) {
+    return ffi.using((arena) {
+      return std.mkdir(path.toCString(arena), mode);
+    });
+  }
+
+  @override
   int mkfifo(String path, int mode) {
     return ffi.using((arena) {
       return std.mkfifo(path.toCString(arena), mode);

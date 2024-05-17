@@ -69,6 +69,21 @@ void main() {
     expect(actual.st_flags, Platform.isMacOS ? isNotNull : isNull);
   });
 
+  test('mkdir', () {
+    final newDir = '${Directory.systemTemp.path}/dir';
+    addTearDown(() => Directory(newDir).deleteSync());
+
+    expect(
+        mkdir(newDir, 511 // 0777
+            ),
+        0);
+
+    final actual = lstat(newDir);
+
+    expect(actual, isNotNull);
+    expect(actual!.st_mode & S_IFDIR, isNonZero);
+  });
+
   test('data class', () {
     final stat1 = Stat(
       st_dev: 1,
