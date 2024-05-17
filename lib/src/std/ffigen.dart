@@ -389,6 +389,22 @@ class StdLibC {
           'ioctl');
   late final _ioctl = _ioctlPtr.asFunction<int Function(int, int)>();
 
+  int mkdir(
+    ffi.Pointer<ffi.Char> __path,
+    int __mode,
+  ) {
+    return _mkdir(
+      __path,
+      __mode,
+    );
+  }
+
+  late final _mkdirPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.UnsignedInt)>>('mkdir');
+  late final _mkdir =
+      _mkdirPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, int)>();
+
   int mkfifo(
     ffi.Pointer<ffi.Char> __path,
     int __mode,

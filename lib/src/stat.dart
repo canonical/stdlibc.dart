@@ -2,6 +2,7 @@ import 'package:meta/meta.dart';
 
 import 'platform.dart';
 
+int mkdir(String path, int mode) => platform.mkdir(path, mode);
 int mkfifo(String path, int mode) => platform.mkfifo(path, mode);
 int mkfifoat(int dirfd, String path, int mode) =>
     platform.mkfifoat(dirfd, path, mode);
@@ -121,6 +122,7 @@ class Stat {
 }
 
 mixin StatMixin {
+  int mkdir(String path, int mode);
   int mkfifo(String path, int mode);
   int mkfifoat(int dirfd, String path, int mode);
 

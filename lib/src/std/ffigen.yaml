@@ -62,6 +62,7 @@ functions:
     # sys/ioctl.h
     - "ioctl"
     # sys/stat.h
+    - "mkdir"
     - "mkfifo"
     - "mkfifoat"
     # unistd.h
