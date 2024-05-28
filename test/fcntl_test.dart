@@ -15,11 +15,25 @@ void main() {
     }
   });
 
-  test('open', () {
-    final fd = open(path, flags: O_RDWR | O_CREAT);
-    expect(fd, isNonNegative);
-    close(fd);
-    expect(File(path).existsSync(), isTrue);
+  group('open', () {
+    test('open', () {
+      final fd = open(path, flags: O_RDWR | O_CREAT);
+      expect(fd, isNonNegative);
+      close(fd);
+      expect(File(path).existsSync(), isTrue);
+    });
+
+    test('open with mode', () {
+      final fd = open(path, flags: O_RDWR | O_CREAT, mode: 384 // 0600
+          );
+      expect(fd, isNonNegative);
+      close(fd);
+      expect(File(path).existsSync(), isTrue);
+      expect(
+          File(path).statSync().mode & 511 // 0777
+          ,
+          384);
+    });
   });
 
   group('fcntl', () {

@@ -443,18 +443,21 @@ class StdLibC {
   int open(
     ffi.Pointer<ffi.Char> __file,
     int __oflag,
+    int va,
   ) {
     return _open(
       __file,
       __oflag,
+      va,
     );
   }
 
   late final _openPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Int)>>(
-      'open');
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Int,
+              ffi.VarArgs<(ffi.UnsignedInt,)>)>>('open');
   late final _open =
-      _openPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, int)>();
+      _openPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, int, int)>();
 
   void openlog(
     ffi.Pointer<ffi.Char> __ident,
