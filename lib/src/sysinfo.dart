@@ -69,7 +69,7 @@ class Sysinfo {
         other.uptime == uptime &&
         listEquals(other.loads, loads) &&
         other.totalram == totalram &&
-        other.freeram == other.freeram &&
+        other.freeram == freeram &&
         other.sharedram == sharedram &&
         other.bufferram == bufferram &&
         other.totalswap == totalswap &&
