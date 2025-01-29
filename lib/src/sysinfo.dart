@@ -69,6 +69,7 @@ class Sysinfo {
         other.uptime == uptime &&
         listEquals(other.loads, loads) &&
         other.totalram == totalram &&
+        other.freeram == other.freeram &&
         other.sharedram == sharedram &&
         other.bufferram == bufferram &&
         other.totalswap == totalswap &&
@@ -85,6 +86,7 @@ class Sysinfo {
       uptime,
       Object.hashAll(loads),
       totalram,
+      freeram,
       sharedram,
       bufferram,
       totalswap,
@@ -98,7 +100,7 @@ class Sysinfo {
 
   @override
   String toString() {
-    return 'Sysinfo(uptime: $uptime, loads: $loads, totalram: $totalram, sharedram: $sharedram, bufferram: $bufferram, totalswap: $totalswap, freeswap: $freeswap, procs: $procs, totalhigh: $totalhigh, freehigh: $freehigh, mem_unit: $mem_unit)';
+    return 'Sysinfo(uptime: $uptime, loads: $loads, totalram: $totalram, freeram: $freeram, sharedram: $sharedram, bufferram: $bufferram, totalswap: $totalswap, freeswap: $freeswap, procs: $procs, totalhigh: $totalhigh, freehigh: $freehigh, mem_unit: $mem_unit)';
   }
 }
 

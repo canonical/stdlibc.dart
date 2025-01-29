@@ -15,6 +15,7 @@ void main() {
       expect(load, isPositive);
     }
     expect(info.totalram, isPositive);
+    expect(info.freeram, isPositive);
     expect(info.sharedram, isPositive);
     expect(info.bufferram, isPositive);
     expect(info.totalswap, isPositive);
@@ -32,6 +33,7 @@ void main() {
       uptime: epoch.difference(DateTime.fromMillisecondsSinceEpoch(123456789)),
       loads: [1, 2, 3],
       totalram: 1,
+      freeram: 1,
       sharedram: 1,
       bufferram: 1,
       totalswap: 1,
@@ -46,6 +48,7 @@ void main() {
       uptime: epoch.difference(DateTime.fromMillisecondsSinceEpoch(123456789)),
       loads: [1, 2, 3],
       totalram: 1,
+      freeram: 1,
       sharedram: 1,
       bufferram: 1,
       totalswap: 1,
@@ -60,6 +63,7 @@ void main() {
       uptime: epoch.difference(DateTime.fromMillisecondsSinceEpoch(987654321)),
       loads: [4, 5, 6],
       totalram: 2,
+      freeram: 2,
       sharedram: 2,
       bufferram: 2,
       totalswap: 2,
