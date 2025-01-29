@@ -14,6 +14,7 @@ class Sysinfo {
     required this.uptime,
     required this.loads,
     required this.totalram,
+    required this.freeram,
     required this.sharedram,
     required this.bufferram,
     required this.totalswap,
@@ -30,8 +31,11 @@ class Sysinfo {
   /// 1, 5, and 15 minute load averages
   final List<int> loads;
 
-  /// Available memory size
+  /// Total usable main memory size
   final int totalram;
+
+  /// Available memory size
+  final int freeram;
 
   /// Amount of shared memory
   final int sharedram;
