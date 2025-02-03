@@ -15,12 +15,12 @@ jobs:
       matrix:
         os:
           - ubuntu-22.04
-          - macos-12
+          - macos-14
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
       - run: flutter test --coverage
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: ${{matrix.os}}
           path: coverage/lcov.info
@@ -29,8 +29,8 @@ jobs:
     runs-on: ubuntu-22.04
     needs: [collect]
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/download-artifact@v3
-      - uses: codecov/codecov-action@v3
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+      - uses: codecov/codecov-action@v5
         with:
           token: ${{secrets.CODECOV_TOKEN}}
