@@ -14,6 +14,7 @@ class Sysinfo {
     required this.uptime,
     required this.loads,
     required this.totalram,
+    required this.freeram,
     required this.sharedram,
     required this.bufferram,
     required this.totalswap,
@@ -30,8 +31,11 @@ class Sysinfo {
   /// 1, 5, and 15 minute load averages
   final List<int> loads;
 
-  /// Available memory size
+  /// Total usable main memory size
   final int totalram;
+
+  /// Available memory size
+  final int freeram;
 
   /// Amount of shared memory
   final int sharedram;
@@ -65,6 +69,7 @@ class Sysinfo {
         other.uptime == uptime &&
         listEquals(other.loads, loads) &&
         other.totalram == totalram &&
+        other.freeram == freeram &&
         other.sharedram == sharedram &&
         other.bufferram == bufferram &&
         other.totalswap == totalswap &&
@@ -81,6 +86,7 @@ class Sysinfo {
       uptime,
       Object.hashAll(loads),
       totalram,
+      freeram,
       sharedram,
       bufferram,
       totalswap,
@@ -94,7 +100,7 @@ class Sysinfo {
 
   @override
   String toString() {
-    return 'Sysinfo(uptime: $uptime, loads: $loads, totalram: $totalram, sharedram: $sharedram, bufferram: $bufferram, totalswap: $totalswap, freeswap: $freeswap, procs: $procs, totalhigh: $totalhigh, freehigh: $freehigh, mem_unit: $mem_unit)';
+    return 'Sysinfo(uptime: $uptime, loads: $loads, totalram: $totalram, freeram: $freeram, sharedram: $sharedram, bufferram: $bufferram, totalswap: $totalswap, freeswap: $freeswap, procs: $procs, totalhigh: $totalhigh, freehigh: $freehigh, mem_unit: $mem_unit)';
   }
 }
 

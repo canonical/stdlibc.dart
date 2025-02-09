@@ -24,6 +24,7 @@ extension GnuSysinfo on ffi.Pointer<ffi.sysinfo_t> {
       uptime: Duration(seconds: ref.uptime),
       loads: [ref.loads[0], ref.loads[1], ref.loads[2]],
       totalram: ref.totalram,
+      freeram: ref.freeram,
       sharedram: ref.sharedram,
       bufferram: ref.bufferram,
       totalswap: ref.totalswap,
