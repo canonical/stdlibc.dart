@@ -7,7 +7,7 @@ import 'bsd.dart';
 mixin BsdMmanMixin on PlatformLibC {
   @override
   Mmap? mmap(
-    int addr,
+    int address,
     int length,
     int prot,
     int flags,
@@ -15,7 +15,7 @@ mixin BsdMmanMixin on PlatformLibC {
     int offset,
   ) {
     final res = bsd.mmap(
-      ffi.Pointer.fromAddress(addr),
+      ffi.Pointer.fromAddress(address),
       length,
       prot,
       flags,
