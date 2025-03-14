@@ -7,7 +7,7 @@ import 'gnu.dart';
 mixin GnuMmanMixin on PlatformLibC {
   @override
   Mmap? mmap(
-    int addr,
+    int address,
     int length,
     int prot,
     int flags,
@@ -15,7 +15,7 @@ mixin GnuMmanMixin on PlatformLibC {
     int offset,
   ) {
     final res = gnu.mmap(
-      ffi.Pointer.fromAddress(addr),
+      ffi.Pointer.fromAddress(address),
       length,
       prot,
       flags,
