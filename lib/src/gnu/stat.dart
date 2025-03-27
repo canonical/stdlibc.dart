@@ -53,6 +53,7 @@ extension GnuStat on ffi.Pointer<ffi.stat_t> {
       st_atim: ref.st_atim.toDateTime(),
       st_mtim: ref.st_mtim.toDateTime(),
       st_ctim: ref.st_ctim.toDateTime(),
+      st_birthtim: ref.st_ctim.toDateTime(),
     );
   }
 }

@@ -68,6 +68,7 @@ extension BsdStat on ffi.Pointer<ffi.stat_t> {
       st_atim: ref.st_atimespec.toDateTime(),
       st_mtim: ref.st_mtimespec.toDateTime(),
       st_ctim: ref.st_ctimespec.toDateTime(),
+      st_birthtim: ref.st_birthtimespec.toDateTime(),
       st_flags: ref.st_flags,
     );
   }
