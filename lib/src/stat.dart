@@ -27,7 +27,7 @@ class Stat {
     required this.st_atim,
     required this.st_mtim,
     required this.st_ctim,
-    required this.st_birthtim,
+    this.st_birthtim,
     this.st_flags,
   });
 
@@ -65,13 +65,27 @@ class Stat {
   final DateTime st_atim;
 
   /// Time of last modification
+  ///
+  /// May be the date of the Unix epoch
+  /// (`DateTime.fromMicrosecondsSinceEpoch(0)`) if the file modification time
+  /// is not meaningful for the file (e.g. stdin).
   final DateTime st_mtim;
 
-  /// Time of last status change
+  /// Time of last status change.
+  ///
+  /// May be the date of the Unix epoch
+  /// (`DateTime.fromMicrosecondsSinceEpoch(0)`) if the file last status change
+  /// time is not meaningful for the file (e.g. stdin).
   final DateTime st_ctim;
 
-  /// Time when the file was created
-  final DateTime st_birthtim;
+  /// Time when the file was created.
+  ///
+  /// May be the date of the Unix epoch
+  /// (`DateTime.fromMicrosecondsSinceEpoch(0)`) if the file creation time is
+  /// not meaningful for the file (e.g. stdin).
+  ///
+  /// Only available on macOS.
+  final DateTime? st_birthtim;
 
   /// User defined flags
   ///
