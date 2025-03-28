@@ -27,6 +27,7 @@ class Stat {
     required this.st_atim,
     required this.st_mtim,
     required this.st_ctim,
+    required this.st_birthtim,
     this.st_flags,
   });
 
@@ -69,6 +70,9 @@ class Stat {
   /// Time of last status change
   final DateTime st_ctim;
 
+  /// Time when the file was created
+  final DateTime st_birthtim;
+
   /// User defined flags
   ///
   /// Only available on macOS.
@@ -92,6 +96,7 @@ class Stat {
         other.st_atim == st_atim &&
         other.st_mtim == st_mtim &&
         other.st_ctim == st_ctim &&
+        other.st_birthtim == st_birthtim &&
         other.st_flags == st_flags;
   }
 
@@ -111,13 +116,14 @@ class Stat {
       st_atim,
       st_mtim,
       st_ctim,
+      st_birthtim,
       st_flags,
     );
   }
 
   @override
   String toString() {
-    return 'Stat(st_dev: $st_dev, st_ino: $st_ino, st_nlink: $st_nlink, st_mode: $st_mode, st_uid: $st_uid, st_gid: $st_gid, st_rdev: $st_rdev, st_size: $st_size, st_blksize: $st_blksize, st_blocks: $st_blocks, st_atim: $st_atim, st_mtim: $st_mtim, st_ctim: $st_ctim, st_flags: $st_flags)';
+    return 'Stat(st_dev: $st_dev, st_ino: $st_ino, st_nlink: $st_nlink, st_mode: $st_mode, st_uid: $st_uid, st_gid: $st_gid, st_rdev: $st_rdev, st_size: $st_size, st_blksize: $st_blksize, st_blocks: $st_blocks, st_atim: $st_atim, st_mtim: $st_mtim, st_ctim: $st_ctim, st_birthtimespec: $st_birthtim, st_flags: $st_flags)';
   }
 }
 
