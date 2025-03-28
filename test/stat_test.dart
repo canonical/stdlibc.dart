@@ -23,6 +23,7 @@ void main() {
     expect(actual.st_atim, isTime(expected.accessed));
     expect(actual.st_mtim, isTime(expected.modified));
     expect(actual.st_ctim, isTime(expected.changed));
+    expect(actual.st_birthtim, Platform.isMacOS ? isNotNull : isNull);
     expect(actual.st_flags, Platform.isMacOS ? isNotNull : isNull);
   });
 
@@ -40,7 +41,7 @@ void main() {
     expect(actual.st_blocks, isNonNegative);
     expect(actual.st_atim, anyOf(isEpoch, isRecent));
     expect(actual.st_mtim, anyOf(isEpoch, isRecent));
-    expect(actual.st_birthtim, anyOf(isEpoch, isRecent));
+    expect(actual.st_birthtim, Platform.isMacOS ? isEpoch : isNull);
     expect(actual.st_flags, Platform.isMacOS ? isNotNull : isNull);
   });
 
@@ -67,7 +68,7 @@ void main() {
     expect(actual.st_atim, isRecent);
     expect(actual.st_mtim, isRecent);
     expect(actual.st_ctim, isRecent);
-    expect(actual.st_birthtim, isRecent);
+    expect(actual.st_birthtim, Platform.isMacOS ? isRecent : isNull);
     expect(actual.st_flags, Platform.isMacOS ? isNotNull : isNull);
   });
 
