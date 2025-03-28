@@ -66,21 +66,21 @@ class Stat {
 
   /// Time of last modification
   ///
-  /// May return the date of the Unix epoch
+  /// May be the date of the Unix epoch
   /// (`DateTime.fromMicrosecondsSinceEpoch(0)`) if the file creation time is
   /// not meaningful for the file (e.g. stdin).
   final DateTime st_mtim;
 
   /// Time of last status change.
   ///
-  /// May return the date of the Unix epoch
+  /// May be the date of the Unix epoch
   /// (`DateTime.fromMicrosecondsSinceEpoch(0)`) if the file creation time is
   /// not meaningful for the file (e.g. stdin).
   final DateTime st_ctim;
 
   /// Time when the file was created.
   ///
-  /// May return the date of the Unix epoch
+  /// May be the date of the Unix epoch
   /// (`DateTime.fromMicrosecondsSinceEpoch(0)`) if the file creation time is
   /// not meaningful for the file (e.g. stdin).
   ///
