@@ -4,8 +4,8 @@ output: ffigen.dart
 preamble: |
   // ignore_for_file: non_positive_array_dimension, unused_field, type=lint
 sort: true
-llvm-path:
-  - "/Library/Developer/CommandLineTools/usr/lib/libclang.dylib"
+# llvm-path:
+#  - "/Library/Developer/CommandLineTools/usr/lib/libclang.dylib"
 headers:
   entry-points:
     - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/errno.h"

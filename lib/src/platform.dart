@@ -23,7 +23,8 @@ import 'unistd.dart';
 import 'utmpx.dart';
 import 'wordexp.dart';
 
-final PlatformLibC platform = Platform.isMacOS ? BsdLibC() : GnuLibC();
+final PlatformLibC platform =
+    Platform.isMacOS || Platform.isIOS ? BsdLibC() : GnuLibC();
 
 abstract class PlatformLibC
     with
