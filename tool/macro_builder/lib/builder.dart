@@ -56,7 +56,7 @@ class MacroBuilder implements Builder {
     macros.sort();
 
     Reference getType(String macro) {
-      return refer(types[macro]!.getDisplayString(withNullability: true));
+      return refer(types[macro]!.getDisplayString());
     }
 
     final lib = Library((b) => b
