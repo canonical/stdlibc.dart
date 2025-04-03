@@ -6,6 +6,8 @@ preamble: |
 sort: true
 llvm-path:
   - "/usr/lib/llvm-9"
+library-imports:
+  sysinfo_t: 'sysinfo_t.dart'
 headers:
   entry-points:
     - "/usr/include/errno.h"
@@ -90,3 +92,10 @@ unions:
 typedefs:
   exclude:
     - ".*"
+
+type-map:
+  structs:
+    'sysinfo':
+      lib: 'sysinfo_t'
+      c-type: 'sysinfo'
+      dart-type: 'sysinfo_t'
