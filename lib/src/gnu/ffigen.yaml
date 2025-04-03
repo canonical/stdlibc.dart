@@ -92,7 +92,6 @@ unions:
 typedefs:
   exclude:
     - ".*"
-
 type-map:
   structs:
     'sysinfo':
