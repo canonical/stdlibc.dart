@@ -97,5 +97,5 @@ type-map:
   structs:
     'sysinfo':
       lib: 'sysinfo_t'
-      c-type: 'sysinfo'
+      c-type: 'sysinfo_t'
       dart-type: 'sysinfo_t'
