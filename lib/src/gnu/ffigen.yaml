@@ -82,7 +82,7 @@ structs:
   rename:
     "flock": "flock_t"
     "passwd": "passwd_t"
-    "stat64": "stat_t"
+    "stat": "stat_t"
     "timespec": "timespec_t"
     "UnnamedStruct1": "timeval_t"
     "utmpx": "utmpx_t"
