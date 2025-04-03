@@ -56,7 +56,7 @@ class MacroBuilder implements Builder {
     macros.sort();
 
     Reference getType(String macro) {
-      return refer(types[macro]!.getDisplayString(withNullability: true));
+      return refer(types[macro]!.getDisplayString());
     }
 
     final lib = Library((b) => b
@@ -86,7 +86,8 @@ class MacroBuilder implements Builder {
         buildStep.inputId.package,
         p.join('lib', 'src', 'macros.g.dart'),
       ),
-      DartFormatter().format('${lib.accept(DartEmitter.scoped())}'),
+      DartFormatter(languageVersion: DartFormatter.latestLanguageVersion)
+          .format('${lib.accept(DartEmitter.scoped())}'),
     );
 
     for (final impl in libs.entries) {
@@ -119,7 +120,8 @@ class MacroBuilder implements Builder {
           buildStep.inputId.package,
           p.join('lib', 'src', impl.key, 'macros.g.dart'),
         ),
-        DartFormatter().format('${lib.accept(DartEmitter.scoped())}'),
+        DartFormatter(languageVersion: DartFormatter.latestLanguageVersion)
+            .format('${lib.accept(DartEmitter.scoped())}'),
       );
     }
   }
