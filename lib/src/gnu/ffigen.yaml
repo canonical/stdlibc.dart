@@ -2,10 +2,12 @@ name: GnuLibC
 description: "GNU C Library"
 output: ffigen.dart
 preamble: |
-  // ignore_for_file: non_positive_array_dimension, unused_field, type=lint
+  // ignore_for_file: non_positive_array_dimension, unused_field
 sort: true
 llvm-path:
   - "/usr/lib/llvm-9"
+library-imports:
+  sysinfo_t: 'sysinfo_t.dart'
 headers:
   entry-points:
     - "/usr/include/errno.h"
@@ -74,7 +76,6 @@ structs:
     - "flock"
     - "passwd"
     - "stat"
-    - "sysinfo"
     - "timespec"
     - "utmpx"
     - "utsname"
@@ -82,7 +83,6 @@ structs:
     "flock": "flock_t"
     "passwd": "passwd_t"
     "stat": "stat_t"
-    "sysinfo": "sysinfo_t"
     "timespec": "timespec_t"
     "UnnamedStruct1": "timeval_t"
     "utmpx": "utmpx_t"
@@ -93,3 +93,9 @@ unions:
 typedefs:
   exclude:
     - ".*"
+type-map:
+  structs:
+    'sysinfo':
+      lib: 'sysinfo_t'
+      c-type: 'sysinfo_t'
+      dart-type: 'sysinfo_t'
