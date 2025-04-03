@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - run: sudo apt update
-    - run: sudo apt install -y libclang-9-dev
+    - run: sudo apt install -y libclang-16-dev
     - uses: dart-lang/setup-dart@v1
     - run: dart pub get
     - run: dart run ffigen --config lib/src/gnu/ffigen.yaml
