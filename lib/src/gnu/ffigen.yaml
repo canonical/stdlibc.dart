@@ -22,6 +22,7 @@ headers:
     - "/usr/include/utmp.h"
     - "/usr/include/utmpx.h"
     - "/usr/include/wordexp.h"
+    - "/usr/include/linux/sysinfo.h"
     - "/usr/include/x86_64-linux-gnu/sys/ioctl.h"
     - "/usr/include/x86_64-linux-gnu/sys/mman.h"
     - "/usr/include/x86_64-linux-gnu/sys/stat.h"
