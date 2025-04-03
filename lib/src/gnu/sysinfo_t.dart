@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'dart:ffi' as ffi;
 
 final class sysinfo_t extends ffi.Struct {

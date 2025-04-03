@@ -4,7 +4,6 @@ import 'package:ffi/ffi.dart' as ffi;
 
 import '../platform.dart';
 import '../sysinfo.dart';
-import 'ffigen.dart' as ffi;
 import 'gnu.dart';
 import 'sysinfo_t.dart' as ffi;
 
