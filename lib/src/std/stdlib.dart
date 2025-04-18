@@ -42,6 +42,9 @@ mixin StdStdlibMixin on PlatformLibC {
 
   @override
   String? mkdtemp(String template) {
-    return null;
+    return ffi.using((arena) {
+      final ptr = std.mkdtemp(template.toCString(arena));
+      return ptr == ffi.nullptr ? null : ptr.toDartString();
+    });
   }
 }
