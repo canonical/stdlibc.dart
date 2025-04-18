@@ -20,7 +20,7 @@ void main() {
 
   group('mkdtemp', () {
     test('invalid prefix', () {
-      expect(mkdtemp('invalidprefix'), isNull);
+      expect(mkdtemp(''), isNull);
     });
 
     test('success', () {
