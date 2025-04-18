@@ -39,4 +39,12 @@ mixin StdStdlibMixin on PlatformLibC {
       return std.unsetenv(name.toCString(arena));
     });
   }
+
+  @override
+  String? mkdtemp(String template) {
+    return ffi.using((arena) {
+      final ptr = std.mkdtemp(template.toCString(arena));
+      return ptr == ffi.nullptr ? null : ptr.toDartString();
+    });
+  }
 }

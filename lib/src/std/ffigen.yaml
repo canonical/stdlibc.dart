@@ -46,6 +46,7 @@ functions:
     - "getpwnam"
     # stdlib.h
     - "getenv"
+    - "mkdtemp"
     - "putenv"
     - "setenv"
     - "unsetenv"
