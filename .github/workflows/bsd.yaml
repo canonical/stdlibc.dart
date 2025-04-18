@@ -1,4 +1,4 @@
-name: BSD
+name: std
 
 on:
   push:
@@ -9,27 +9,27 @@ on:
 
 jobs:
   ffigen:
-    if: ${{false}}
+    if: ${{true}}
     runs-on: macos-14
     steps:
     - uses: actions/checkout@v4
     - uses: dart-lang/setup-dart@v1
     - run: dart pub get
-    - run: dart run ffigen --config lib/src/bsd/ffigen.yaml
+    - run: dart run ffigen --config lib/src/std/ffigen.yaml
     - uses: peter-evans/create-pull-request@v7
       if: github.event_name != 'pull_request'
       with:
-        title: 'Regenerate BSD bindings'
-        commit-message: 'Regenerate BSD bindings'
-        add-paths: lib/src/bsd/ffigen.dart
-        branch: regenerate/bsd
+        title: 'Regenerate std bindings'
+        commit-message: 'Regenerate std bindings'
+        add-paths: lib/src/std/ffigen.dart
+        branch: regenerate/std
         delete-branch: true
     - run: |
-        git diff > lib_src_bsd_ffigen.dart.diff
-        [ -s lib_src_bsd_ffigen.dart.diff ] || rm lib_src_bsd_ffigen.dart.diff
+        git diff > lib_src_std_ffigen.dart.diff
+        [ -s lib_src_std_ffigen.dart.diff ] || rm lib_src_std_ffigen.dart.diff
     - uses: actions/upload-artifact@v4
       with:
-        name: lib_src_bsd_ffigen.dart.diff
-        path: lib_src_bsd_ffigen.dart.diff
+        name: lib_src_std_ffigen.dart.diff
+        path: lib_src_std_ffigen.dart.diff
         if-no-files-found: ignore
     - run: ./.github/scripts/check-outdated-files.sh
