@@ -1,4 +1,4 @@
-name: GNU
+name: std
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 
 jobs:
   ffigen:
-    if: ${{false}}
+    if: ${{true}}
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v4
@@ -17,21 +17,21 @@ jobs:
     - run: sudo apt install -y libclang-9-dev
     - uses: dart-lang/setup-dart@v1
     - run: dart pub get
-    - run: dart run ffigen --config lib/src/gnu/ffigen.yaml
+    - run: dart run ffigen --config lib/src/std/ffigen.yaml
     - uses: peter-evans/create-pull-request@v7
       if: github.event_name != 'pull_request'
       with:
-        title: 'Regenerate GNU bindings'
-        commit-message: 'Regenerate GNU bindings'
-        add-paths: lib/src/gnu/ffigen.dart
-        branch: regenerate/gnu
+        title: 'Regenerate std bindings'
+        commit-message: 'Regenerate std bindings'
+        add-paths: lib/src/std/ffigen.dart
+        branch: regenerate/std
         delete-branch: true
     - run: |
-        git diff > lib_src_gnu_ffigen.dart.diff
-        [ -s lib_src_gnu_ffigen.dart.diff ] || rm lib_src_gnu_ffigen.dart.diff
+        git diff > lib_src_std_ffigen.dart.diff
+        [ -s lib_src_std_ffigen.dart.diff ] || rm lib_src_std_ffigen.dart.diff
     - uses: actions/upload-artifact@v4
       with:
-        name: lib_src_gnu_ffigen.dart.diff
-        path: lib_src_gnu_ffigen.dart.diff
+        name: lib_src_std_ffigen.dart.diff
+        path: lib_src_std_ffigen.dart.diff
         if-no-files-found: ignore
     - run: ./.github/scripts/check-outdated-files.sh
