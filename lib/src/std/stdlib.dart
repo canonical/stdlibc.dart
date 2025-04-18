@@ -39,4 +39,9 @@ mixin StdStdlibMixin on PlatformLibC {
       return std.unsetenv(name.toCString(arena));
     });
   }
+
+  @override
+  String? mkdtemp(String template) {
+    return null;
+  }
 }
