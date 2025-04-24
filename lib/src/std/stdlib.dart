@@ -41,6 +41,21 @@ mixin StdStdlibMixin on PlatformLibC {
   }
 
   @override
+  int link(String path1, String path2) {
+    return ffi.using((arena) {
+      return std.link(path1.toCString(arena), path2.toCString(arena));
+    });
+  }
+
+  @override
+  int linkat(int fd1, String path1, int fd2, String path2, int flag) {
+    return ffi.using((arena) {
+      return std.linkat(
+          fd1, path1.toCString(arena), fd2, path2.toCString(arena), flag);
+    });
+  }
+
+  @override
   String? mkdtemp(String template) {
     return ffi.using((arena) {
       final ptr = std.mkdtemp(template.toCString(arena));
