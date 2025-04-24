@@ -5,7 +5,7 @@ preamble: |
   // ignore_for_file: non_positive_array_dimension, unused_field
 sort: true
 llvm-path:
-  - "/usr/lib/llvm"
+  - "/usr/lib/llvm-9"
 library-imports:
   sysinfo_t: 'sysinfo_t.dart'
 headers:
