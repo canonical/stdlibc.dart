@@ -1,5 +1,5 @@
-name: STD
-
+name: std ffigen diff
+description: Verify that std's ffigen'd code is up-to-date.
 on:
   push:
     branches:
