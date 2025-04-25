@@ -2,10 +2,10 @@ name: StdLibC
 description: "Standard C Library"
 output: ffigen.dart
 preamble: |
-  // ignore_for_file: non_positive_array_dimension, unused_field, type=lint
+  // ignore_for_file: non_positive_array_dimension, unused_field
 sort: true
 llvm-path:
-  - "/usr/lib/llvm-9"
+  - "/usr/lib/llvm-19"
 headers:
   entry-points:
     - "/usr/include/fcntl.h"

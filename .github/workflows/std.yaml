@@ -1,0 +1,36 @@
+name: STD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  ffigen:
+    runs-on: ubuntu-24.04-arm
+    steps:
+    - uses: actions/checkout@v4
+    - run: sudo apt update
+    - run: sudo apt install -y libclang-19-dev
+    - uses: dart-lang/setup-dart@v1
+    - run: dart pub get
+    - run: dart run ffigen --config lib/src/std/ffigen.yaml
+    - uses: peter-evans/create-pull-request@v7
+      if: github.event_name != 'pull_request'
+      with:
+        title: 'Regenerate std bindings'
+        commit-message: 'Regenerate std bindings'
+        add-paths: lib/src/std/ffigen.dart
+        branch: regenerate/std
+        delete-branch: true
+    - run: |
+        git diff > lib_src_std_ffigen.dart.diff
+        [ -s lib_src_std_ffigen.dart.diff ] || rm lib_src_std_ffigen.dart.diff
+    - uses: actions/upload-artifact@v4
+      with:
+        name: lib_src_std_ffigen.dart.diff
+        path: lib_src_std_ffigen.dart.diff
+        if-no-files-found: ignore
+    - run: ./.github/scripts/check-outdated-files.sh
