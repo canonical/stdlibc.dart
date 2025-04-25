@@ -5,7 +5,7 @@ preamble: |
   // ignore_for_file: non_positive_array_dimension, unused_field
 sort: true
 llvm-path:
-  - "/usr/lib/llvm-19"
+  - "/usr/lib/llvm-16"
 headers:
   entry-points:
     - "/usr/include/fcntl.h"
