@@ -9,7 +9,7 @@ on:
 
 jobs:
   ffigen:
-    runs-on: ubuntu-24.04-arm
+    runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v4
     - run: sudo apt update
