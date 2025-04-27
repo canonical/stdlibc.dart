@@ -76,6 +76,8 @@ functions:
     - "fork"
     - "fsync"
     - "get.*id"
+    - "link"
+    - "linkat"
     - "pipe"
     - "pread"
     - "pwrite"
