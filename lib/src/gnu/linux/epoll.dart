@@ -39,14 +39,19 @@ mixin GnuLinuxEpollMixin on PlatformLibC {
   ///
   /// See also: https://man7.org/linux/man-pages/man2/epoll_ctl.2.html
   int epoll_ctl(int epollFd, EpollOp op, int fd, int eventFlags, int metadata) {
-    return ffi.using((arena) {
-      final event = arena<epoll_event>();
+    if (op == EpollOp.del) {
+      // event argument is ignored for EPOLL_CTL_DEL.
+      return gnu.epoll_ctl(epollFd, op.native, fd, ffi.nullptr);
+    } else {
+      return ffi.using((arena) {
+        final event = arena<epoll_event>();
 
-      event.ref.events = eventFlags;
-      event.ref.data.u64 = metadata;
+        event.ref.events = eventFlags;
+        event.ref.data.u64 = metadata;
 
-      return gnu.epoll_ctl(epollFd, op.native, fd, event);
-    });
+        return gnu.epoll_ctl(epollFd, op.native, fd, event);
+      });
+    }
   }
 
   /// Wait for I/O events on an epoll file descriptor.
