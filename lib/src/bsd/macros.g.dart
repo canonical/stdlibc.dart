@@ -343,6 +343,18 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get EFBIG => ffi.EFBIG;
   @override
+  int get EFD_CLOEXEC => throw UnsupportedError('EFD_CLOEXEC');
+  @override
+  int get EFD_CLOEXEC1 => throw UnsupportedError('EFD_CLOEXEC1');
+  @override
+  int get EFD_NONBLOCK => throw UnsupportedError('EFD_NONBLOCK');
+  @override
+  int get EFD_NONBLOCK1 => throw UnsupportedError('EFD_NONBLOCK1');
+  @override
+  int get EFD_SEMAPHORE => throw UnsupportedError('EFD_SEMAPHORE');
+  @override
+  int get EFD_SEMAPHORE1 => throw UnsupportedError('EFD_SEMAPHORE1');
+  @override
   int get EFTYPE => ffi.EFTYPE;
   @override
   int get EF_IS_PURGEABLE => ffi.EF_IS_PURGEABLE;
@@ -516,6 +528,46 @@ mixin BsdMacroMixin on PlatformLibC {
   int get EPFNOSUPPORT => ffi.EPFNOSUPPORT;
   @override
   int get EPIPE => ffi.EPIPE;
+  @override
+  int get EPOLLERR => throw UnsupportedError('EPOLLERR');
+  @override
+  int get EPOLLET => throw UnsupportedError('EPOLLET');
+  @override
+  int get EPOLLEXCLUSIVE => throw UnsupportedError('EPOLLEXCLUSIVE');
+  @override
+  int get EPOLLHUP => throw UnsupportedError('EPOLLHUP');
+  @override
+  int get EPOLLIN => throw UnsupportedError('EPOLLIN');
+  @override
+  int get EPOLLMSG => throw UnsupportedError('EPOLLMSG');
+  @override
+  int get EPOLLONESHOT => throw UnsupportedError('EPOLLONESHOT');
+  @override
+  int get EPOLLOUT => throw UnsupportedError('EPOLLOUT');
+  @override
+  int get EPOLLPRI => throw UnsupportedError('EPOLLPRI');
+  @override
+  int get EPOLLRDBAND => throw UnsupportedError('EPOLLRDBAND');
+  @override
+  int get EPOLLRDHUP => throw UnsupportedError('EPOLLRDHUP');
+  @override
+  int get EPOLLRDNORM => throw UnsupportedError('EPOLLRDNORM');
+  @override
+  int get EPOLLWAKEUP => throw UnsupportedError('EPOLLWAKEUP');
+  @override
+  int get EPOLLWRBAND => throw UnsupportedError('EPOLLWRBAND');
+  @override
+  int get EPOLLWRNORM => throw UnsupportedError('EPOLLWRNORM');
+  @override
+  int get EPOLL_CLOEXEC => throw UnsupportedError('EPOLL_CLOEXEC');
+  @override
+  int get EPOLL_CLOEXEC1 => throw UnsupportedError('EPOLL_CLOEXEC1');
+  @override
+  int get EPOLL_CTL_ADD => throw UnsupportedError('EPOLL_CTL_ADD');
+  @override
+  int get EPOLL_CTL_DEL => throw UnsupportedError('EPOLL_CTL_DEL');
+  @override
+  int get EPOLL_CTL_MOD => throw UnsupportedError('EPOLL_CTL_MOD');
   @override
   int get EPROCLIM => ffi.EPROCLIM;
   @override
