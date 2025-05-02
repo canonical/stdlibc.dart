@@ -20,7 +20,7 @@ int epoll_create({bool cloexec = true}) {
 /// See also: https://man7.org/linux/man-pages/man2/epoll_ctl.2.html
 int epoll_ctl(int epollFd, EpollOp op, int fd, int eventFlags, int metadata) {
   if (platform is! GnuLinuxEpollMixin) {
-    throw UnsupportedError('epoll_create is only supported on Linux');
+    throw UnsupportedError('epoll_ctl is only supported on Linux');
   }
 
   return (platform as GnuLinuxEpollMixin).epoll_ctl(
@@ -49,7 +49,7 @@ List<EpollEvent> epoll_wait(
   int? maxEvents,
 }) {
   if (platform is! GnuLinuxEpollMixin) {
-    throw UnsupportedError('epoll_create is only supported on Linux');
+    throw UnsupportedError('epoll_wait is only supported on Linux');
   }
 
   return (platform as GnuLinuxEpollMixin).epoll_wait(
