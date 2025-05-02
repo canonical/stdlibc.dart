@@ -1,4 +1,3 @@
-import 'dart:collection';
 import 'dart:ffi' as ffi;
 
 import 'package:ffi/ffi.dart' as ffi;
@@ -7,7 +6,6 @@ import '../../platform.dart';
 import '../ffigen.dart' as ffi;
 import '../ffigen.dart';
 import '../gnu.dart';
-import 'epoll_buffer.dart';
 
 /// The operation that epoll_ctl should perform.
 ///
@@ -22,7 +20,7 @@ enum EpollOp {
   final int native;
 }
 
-typedef EpollEvent = ({int event, int metadata});
+typedef EpollEvent = ({int events, int metadata});
 
 mixin GnuLinuxEpollMixin on PlatformLibC {
   /// Creates a new epoll instance.
@@ -58,52 +56,35 @@ mixin GnuLinuxEpollMixin on PlatformLibC {
   /// means to block indefinitely, while a [Duration.zero] means to return
   /// immediately.
   ///
-  /// If [into] is provided, it will be used to store the events, rather
-  /// than creating a new list and copying the events into it.
-  ///
   /// If [maxEvents] is provided, it will be used to limit the number of
   /// events returned.
   ///
-  /// Returns `null` on error.
-  ///
   /// See: https://man7.org/linux/man-pages/man2/epoll_wait.2.html
-  List<EpollEvent>? epoll_wait(
+  List<EpollEvent> epoll_wait(
     int epollFd, {
     Duration? timeout = Duration.zero,
-    EpollBuffer? into,
     int? maxEvents,
   }) {
     return ffi.using((arena) {
-      final memory = into ??
-          EpollBuffer.allocate(
-            maxEvents ?? 10,
-            allocator: arena,
-          );
+      maxEvents ??= 64;
+      final memory = arena<epoll_event>(maxEvents!);
 
-      try {
-        memory.useRaw((ptr, maxEvents) {
-          final result = gnu.epoll_wait(
-            epollFd,
-            ptr,
-            maxEvents,
-            timeout?.inMilliseconds ?? -1,
-          );
-          if (result < 0) {
-            throw Exception('epoll_wait failed');
-          } else {
-            return result;
-          }
-        });
-      } on Exception {
-        return null;
-      }
-
-      if (into == null) {
-        // Since we're free-ing the buffer again, copy the data to a new
-        // (gc-ed) List.
-        return List.of(memory);
+      final result = gnu.epoll_wait(
+        epollFd,
+        memory,
+        maxEvents!,
+        timeout?.inMilliseconds ?? -1,
+      );
+      if (result < 0) {
+        return [];
       } else {
-        return memory;
+        return List.generate(
+          result,
+          (i) {
+            final event = memory[i];
+            return (events: event.events, metadata: event.data.u64);
+          },
+        );
       }
     });
   }
