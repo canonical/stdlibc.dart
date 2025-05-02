@@ -1,6 +1,7 @@
 import '../gnu/linux/epoll.dart';
-import '../gnu/linux/epoll_buffer.dart';
 import '../platform.dart';
+
+export '../gnu/linux/epoll.dart';
 
 /// Creates a new epoll instance.
 ///
@@ -38,19 +39,13 @@ int epoll_ctl(int epollFd, EpollOp op, int fd, int eventFlags, int metadata) {
 /// means to block indefinitely, while a [Duration.zero] means to return
 /// immediately.
 ///
-/// If [into] is provided, it will be used to store the events, rather
-/// than creating a new list and copying the events into it.
-///
 /// If [maxEvents] is provided, it will be used to limit the number of
 /// events returned.
 ///
-/// Returns `null` on error.
-///
 /// See: https://man7.org/linux/man-pages/man2/epoll_wait.2.html
-List<EpollEvent>? epoll_wait(
+List<EpollEvent> epoll_wait(
   int epollFd, {
   Duration? timeout = Duration.zero,
-  EpollBuffer? into,
   int? maxEvents,
 }) {
   if (platform is! GnuLinuxEpollMixin) {
@@ -60,7 +55,6 @@ List<EpollEvent>? epoll_wait(
   return (platform as GnuLinuxEpollMixin).epoll_wait(
     epollFd,
     timeout: timeout,
-    into: into,
     maxEvents: maxEvents,
   );
 }

@@ -7,6 +7,8 @@ export 'src/fnmatch.dart' hide FnmatchMixin;
 export 'src/fstab.dart' hide FstabMixin;
 export 'src/glob.dart' hide GlobMixin;
 export 'src/ioctl.dart' hide IoctlMixin;
+export 'src/linux/epoll.dart';
+export 'src/linux/eventfd.dart';
 export 'src/macros.g.dart' hide MacroMixin;
 export 'src/mman.dart' hide MmanMixin;
 export 'src/poll.dart' hide PollMixin;

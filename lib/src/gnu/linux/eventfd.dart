@@ -1,7 +1,3 @@
-import 'dart:ffi' as ffi;
-
-import 'package:ffi/ffi.dart' as ffi;
-
 import '../../platform.dart';
 import '../ffigen.dart' as ffi;
 import '../gnu.dart';
