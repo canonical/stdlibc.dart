@@ -12,7 +12,7 @@ int eventfd(
   }
 
   return (platform as GnuLinuxEventFdMixin).eventfd(
-    0,
+    initialValue,
     cloexec: cloexec,
     nonblock: nonblock,
     semaphore: semaphore,
