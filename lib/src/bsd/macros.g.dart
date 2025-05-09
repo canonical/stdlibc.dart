@@ -971,6 +971,8 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get MADV_COLD => throw UnsupportedError('MADV_COLD');
   @override
+  int get MADV_COLLAPSE => throw UnsupportedError('MADV_COLLAPSE');
+  @override
   int get MADV_DODUMP => throw UnsupportedError('MADV_DODUMP');
   @override
   int get MADV_DOFORK => throw UnsupportedError('MADV_DOFORK');
@@ -980,6 +982,9 @@ mixin BsdMacroMixin on PlatformLibC {
   int get MADV_DONTFORK => throw UnsupportedError('MADV_DONTFORK');
   @override
   int get MADV_DONTNEED => ffi.MADV_DONTNEED;
+  @override
+  int get MADV_DONTNEED_LOCKED =>
+      throw UnsupportedError('MADV_DONTNEED_LOCKED');
   @override
   int get MADV_FREE => ffi.MADV_FREE;
   @override
@@ -1001,6 +1006,10 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get MADV_PAGEOUT => ffi.MADV_PAGEOUT;
   @override
+  int get MADV_POPULATE_READ => throw UnsupportedError('MADV_POPULATE_READ');
+  @override
+  int get MADV_POPULATE_WRITE => throw UnsupportedError('MADV_POPULATE_WRITE');
+  @override
   int get MADV_RANDOM => ffi.MADV_RANDOM;
   @override
   int get MADV_REMOVE => throw UnsupportedError('MADV_REMOVE');
@@ -1016,6 +1025,8 @@ mixin BsdMacroMixin on PlatformLibC {
   int get MADV_ZERO_WIRED_PAGES => ffi.MADV_ZERO_WIRED_PAGES;
   @override
   int get MAP_32BIT => ffi.MAP_32BIT;
+  @override
+  int get MAP_ABOVE4G => throw UnsupportedError('MAP_ABOVE4G');
   @override
   int get MAP_ANON => ffi.MAP_ANON;
   @override
@@ -1432,6 +1443,9 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get SF_SYNTHETIC => ffi.SF_SYNTHETIC;
   @override
+  int get SHADOW_STACK_SET_TOKEN =>
+      throw UnsupportedError('SHADOW_STACK_SET_TOKEN');
+  @override
   int get SHUTDOWN_TIME => ffi.SHUTDOWN_TIME;
   @override
   int get SIGABRT => ffi.SIGABRT;
@@ -1659,8 +1673,6 @@ mixin BsdMacroMixin on PlatformLibC {
   int get SS_DISABLE => ffi.SS_DISABLE;
   @override
   int get SS_ONSTACK => ffi.SS_ONSTACK;
-  @override
-  int get STAT_VER => throw UnsupportedError('STAT_VER');
   @override
   int get STDERR_FILENO => ffi.STDERR_FILENO;
   @override
