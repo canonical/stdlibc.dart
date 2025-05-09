@@ -8,12 +8,35 @@ import '../util.dart';
 import 'ffigen.dart' as ffi;
 import 'gnu.dart';
 
+const _STAT_VER = 1;
+
+final _statPtr = dylib.lookup<
+    ffi.NativeFunction<
+        ffi.Int Function(ffi.Int, ffi.Pointer<ffi.Char>,
+            ffi.Pointer<ffi.stat_t>)>>('__xstat');
+final _stat = _statPtr.asFunction<
+    int Function(int, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.stat_t>)>();
+
+final _fstatPtr = dylib.lookup<
+    ffi.NativeFunction<
+        ffi.Int Function(
+            ffi.Int, ffi.Int, ffi.Pointer<ffi.stat_t>)>>('__fxstat');
+final _fstat =
+    _fstatPtr.asFunction<int Function(int, int, ffi.Pointer<ffi.stat_t>)>();
+
+final _lstatPtr = dylib.lookup<
+    ffi.NativeFunction<
+        ffi.Int Function(ffi.Int, ffi.Pointer<ffi.Char>,
+            ffi.Pointer<ffi.stat_t>)>>('__lxstat');
+final _lstat = _lstatPtr.asFunction<
+    int Function(int, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.stat_t>)>();
+
 mixin GnuStatMixin on PlatformLibC {
   @override
   Stat? stat(String file) {
     return ffi.using((arena) {
       final buf = arena<ffi.stat_t>();
-      final res = gnu.stat(ffi.STAT_VER, file.toCString(arena), buf);
+      final res = _stat(_STAT_VER, file.toCString(arena), buf);
       return res == 0 ? buf.toStat() : null;
     });
   }
@@ -22,7 +45,7 @@ mixin GnuStatMixin on PlatformLibC {
   Stat? fstat(int fd) {
     return ffi.using((arena) {
       final buf = arena<ffi.stat_t>();
-      final res = gnu.fstat(ffi.STAT_VER, fd, buf);
+      final res = _fstat(_STAT_VER, fd, buf);
       return res == 0 ? buf.toStat() : null;
     });
   }
@@ -31,7 +54,7 @@ mixin GnuStatMixin on PlatformLibC {
   Stat? lstat(String file) {
     return ffi.using((arena) {
       final buf = arena<ffi.stat_t>();
-      final res = gnu.lstat(ffi.STAT_VER, file.toCString(arena), buf);
+      final res = _lstat(_STAT_VER, file.toCString(arena), buf);
       return res == 0 ? buf.toStat() : null;
     });
   }

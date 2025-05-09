@@ -42,10 +42,6 @@ functions:
     # mman.h
     - "mmap"
     - "munmap"
-    # stat.h
-    - "__fxstat"
-    - "__lxstat"
-    - "__xstat"
     # sysinfo.h
     - "sysinfo"
     # utsname.h
