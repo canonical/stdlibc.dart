@@ -31,24 +31,6 @@ class GnuLibC {
           '__errno_location');
   late final _errno = _errnoPtr.asFunction<ffi.Pointer<ffi.Int> Function()>();
 
-  int fstat(
-    int __ver,
-    int __fildes,
-    ffi.Pointer<stat_t> __stat_buf,
-  ) {
-    return _fstat(
-      __ver,
-      __fildes,
-      __stat_buf,
-    );
-  }
-
-  late final _fstatPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.Int, ffi.Int, ffi.Pointer<stat_t>)>>('__fxstat');
-  late final _fstat =
-      _fstatPtr.asFunction<int Function(int, int, ffi.Pointer<stat_t>)>();
-
   int glob(
     ffi.Pointer<ffi.Char> __pattern,
     int __flags,
@@ -98,25 +80,6 @@ class GnuLibC {
   late final _globfree =
       _globfreePtr.asFunction<void Function(ffi.Pointer<glob_t>)>();
 
-  int lstat(
-    int __ver,
-    ffi.Pointer<ffi.Char> __filename,
-    ffi.Pointer<stat_t> __stat_buf,
-  ) {
-    return _lstat(
-      __ver,
-      __filename,
-      __stat_buf,
-    );
-  }
-
-  late final _lstatPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.Int, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<stat_t>)>>('__lxstat');
-  late final _lstat = _lstatPtr.asFunction<
-      int Function(int, ffi.Pointer<ffi.Char>, ffi.Pointer<stat_t>)>();
-
   ffi.Pointer<ffi.Void> mmap(
     ffi.Pointer<ffi.Void> __addr,
     int __len,
@@ -158,25 +121,6 @@ class GnuLibC {
           ffi.Int Function(ffi.Pointer<ffi.Void>, ffi.Size)>>('munmap');
   late final _munmap =
       _munmapPtr.asFunction<int Function(ffi.Pointer<ffi.Void>, int)>();
-
-  int stat(
-    int __ver,
-    ffi.Pointer<ffi.Char> __filename,
-    ffi.Pointer<stat_t> __stat_buf,
-  ) {
-    return _stat(
-      __ver,
-      __filename,
-      __stat_buf,
-    );
-  }
-
-  late final _statPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(
-              ffi.Int, ffi.Pointer<ffi.Char>, ffi.Pointer<stat_t>)>>('__xstat');
-  late final _stat = _statPtr.asFunction<
-      int Function(int, ffi.Pointer<ffi.Char>, ffi.Pointer<stat_t>)>();
 
   int sysinfo(
     ffi.Pointer<sysinfo_t.sysinfo_t> __info,
@@ -801,6 +745,8 @@ const int L_XTND = 2;
 
 const int MADV_COLD = 20;
 
+const int MADV_COLLAPSE = 25;
+
 const int MADV_DODUMP = 17;
 
 const int MADV_DOFORK = 11;
@@ -810,6 +756,8 @@ const int MADV_DONTDUMP = 16;
 const int MADV_DONTFORK = 10;
 
 const int MADV_DONTNEED = 4;
+
+const int MADV_DONTNEED_LOCKED = 24;
 
 const int MADV_FREE = 8;
 
@@ -827,6 +775,10 @@ const int MADV_NORMAL = 0;
 
 const int MADV_PAGEOUT = 21;
 
+const int MADV_POPULATE_READ = 22;
+
+const int MADV_POPULATE_WRITE = 23;
+
 const int MADV_RANDOM = 1;
 
 const int MADV_REMOVE = 9;
@@ -840,6 +792,8 @@ const int MADV_WILLNEED = 3;
 const int MADV_WIPEONFORK = 18;
 
 const int MAP_32BIT = 64;
+
+const int MAP_ABOVE4G = 128;
 
 const int MAP_ANON = 32;
 
@@ -1045,6 +999,8 @@ const int SEEK_END = 2;
 
 const int SEEK_SET = 0;
 
+const int SHADOW_STACK_SET_TOKEN = 1;
+
 const int SIOCADDDLCI = 35200;
 
 const int SIOCADDMULTI = 35121;
@@ -1154,8 +1110,6 @@ const int SIOCSRARP = 35170;
 const int SIOGIFINDEX = 35123;
 
 const int SI_LOAD_SHIFT = 16;
-
-const int STAT_VER = 1;
 
 const int STDERR_FILENO = 2;
 
@@ -1421,7 +1375,7 @@ const int UT_NAMESIZE = 32;
 
 const int UT_UNKNOWN = 0;
 
-final class UnnamedStruct1 extends ffi.Struct {
+final class UnnamedStruct3 extends ffi.Struct {
   @ffi.Int()
   external int tv_sec;
 
@@ -1625,7 +1579,7 @@ final class utmpx_t extends ffi.Struct {
   @ffi.Int()
   external int ut_session;
 
-  external UnnamedStruct1 ut_tv;
+  external UnnamedStruct3 ut_tv;
 
   @ffi.Array.multi([4])
   external ffi.Array<ffi.Int> ut_addr_v6;

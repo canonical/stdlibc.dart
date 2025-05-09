@@ -1,5 +1,5 @@
 /// Standard C Library
-library stdlibc;
+library;
 
 export 'src/errno.dart' hide ErrnoMixin;
 export 'src/fcntl.dart' hide FcntlMixin;

@@ -986,6 +986,8 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get MADV_COLD => ffi.MADV_COLD;
   @override
+  int get MADV_COLLAPSE => ffi.MADV_COLLAPSE;
+  @override
   int get MADV_DODUMP => ffi.MADV_DODUMP;
   @override
   int get MADV_DOFORK => ffi.MADV_DOFORK;
@@ -995,6 +997,8 @@ mixin GnuMacroMixin on PlatformLibC {
   int get MADV_DONTFORK => ffi.MADV_DONTFORK;
   @override
   int get MADV_DONTNEED => ffi.MADV_DONTNEED;
+  @override
+  int get MADV_DONTNEED_LOCKED => ffi.MADV_DONTNEED_LOCKED;
   @override
   int get MADV_FREE => ffi.MADV_FREE;
   @override
@@ -1016,6 +1020,10 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get MADV_PAGEOUT => ffi.MADV_PAGEOUT;
   @override
+  int get MADV_POPULATE_READ => ffi.MADV_POPULATE_READ;
+  @override
+  int get MADV_POPULATE_WRITE => ffi.MADV_POPULATE_WRITE;
+  @override
   int get MADV_RANDOM => ffi.MADV_RANDOM;
   @override
   int get MADV_REMOVE => ffi.MADV_REMOVE;
@@ -1032,6 +1040,8 @@ mixin GnuMacroMixin on PlatformLibC {
       throw UnsupportedError('MADV_ZERO_WIRED_PAGES');
   @override
   int get MAP_32BIT => ffi.MAP_32BIT;
+  @override
+  int get MAP_ABOVE4G => ffi.MAP_ABOVE4G;
   @override
   int get MAP_ANON => ffi.MAP_ANON;
   @override
@@ -1458,6 +1468,8 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get SF_SYNTHETIC => throw UnsupportedError('SF_SYNTHETIC');
   @override
+  int get SHADOW_STACK_SET_TOKEN => ffi.SHADOW_STACK_SET_TOKEN;
+  @override
   int get SHUTDOWN_TIME => throw UnsupportedError('SHUTDOWN_TIME');
   @override
   int get SIGABRT => throw UnsupportedError('SIGABRT');
@@ -1685,8 +1697,6 @@ mixin GnuMacroMixin on PlatformLibC {
   int get SS_DISABLE => throw UnsupportedError('SS_DISABLE');
   @override
   int get SS_ONSTACK => throw UnsupportedError('SS_ONSTACK');
-  @override
-  int get STAT_VER => ffi.STAT_VER;
   @override
   int get STDERR_FILENO => ffi.STDERR_FILENO;
   @override
