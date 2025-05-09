@@ -1,4 +1,4 @@
-import 'package:analyzer/dart/element/element.dart';
+import 'package:analyzer/dart/element/element2.dart';
 import 'package:analyzer/dart/element/type.dart';
 import 'package:build/build.dart';
 import 'package:code_builder/code_builder.dart';
@@ -30,7 +30,7 @@ class MacroBuilder implements Builder {
   @override
   Future<void> build(BuildStep buildStep) async {
     final types = <String, DartType>{};
-    final libs = <String, Map<String, TopLevelVariableElement>>{};
+    final libs = <String, Map<String, TopLevelVariableElement2>>{};
 
     final assets = [
       for (final platform in kPlatforms)
@@ -42,21 +42,22 @@ class MacroBuilder implements Builder {
     for (final asset in assets) {
       final lib = await buildStep.resolver.libraryFor(asset);
       final name = p.basename(p.dirname(lib.source.uri.path));
+      late TopLevelVariableElement2 x;
       final elements = lib.topLevelElements
           .where((e) =>
-              e is TopLevelVariableElement &&
-              e.isConst &&
+              e is TopLevelVariableElement2 &&
+              (e as TopLevelVariableElement2).isConst &&
               e.displayName == e.displayName.toUpperCase())
-          .cast<TopLevelVariableElement>();
-      types.addAll({for (final e in elements) e.name: e.type});
-      libs[name] = {for (final e in elements) e.name: e};
+          .cast<TopLevelVariableElement2>();
+      types.addAll({for (final e in elements) e.displayName: e.type});
+      libs[name] = {for (final e in elements) e.displayName: e};
     }
 
     final macros = types.keys.toList();
     macros.sort();
 
     Reference getType(String macro) {
-      return refer(types[macro]!.getDisplayString(withNullability: true));
+      return refer(types[macro]!.getDisplayString());
     }
 
     final lib = Library((b) => b
