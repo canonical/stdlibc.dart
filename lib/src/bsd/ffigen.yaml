@@ -70,7 +70,6 @@ unnamed-enums:
     - ".*"
 structs:
   include:
-    - "DIR"
     - "flock"
     - "glob_t"
     - "passwd"
@@ -87,6 +86,8 @@ structs:
     "utmpx": "utmpx_t"
     "utsname": "utsname_t"
 unions:
+  include:
+    - "DIR"
   exclude:
     - ".*"
 typedefs:
