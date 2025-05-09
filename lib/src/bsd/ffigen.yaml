@@ -89,7 +89,5 @@ unions:
   exclude:
     - ".*"
 typedefs:
-  include:
-    - "DIR"
   exclude:
     - ".*"
