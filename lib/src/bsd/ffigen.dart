@@ -1,4 +1,4 @@
-// ignore_for_file: non_positive_array_dimension, unused_field, type=lint
+// ignore_for_file: non_positive_array_dimension, unused_field
 
 // AUTO GENERATED FILE, DO NOT EDIT.
 //
