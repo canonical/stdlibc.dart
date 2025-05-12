@@ -48,9 +48,6 @@ functions:
     - "uname"
   rename:
     "__errno_location": "errno"
-    "__fxstat": "fstat"
-    "__lxstat": "lstat"
-    "__xstat": "stat"
 macros:
   include:
     - "[A-Z].*"
