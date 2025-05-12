@@ -307,8 +307,6 @@ const int APPLE_IF_FAM_UTUN = 17;
 
 const int APPLE_IF_FAM_VLAN = 5;
 
-const int ARG_MAX = 1048576;
-
 const int ATTRIBUTION_NAME_MAX = 255;
 
 const int AT_EACCESS = 16;
@@ -329,14 +327,6 @@ const int AT_SYMLINK_NOFOLLOW_ANY = 2048;
 
 const int AUTH_OPEN_NOAUTHFD = -1;
 
-const int BC_BASE_MAX = 99;
-
-const int BC_DIM_MAX = 2048;
-
-const int BC_SCALE_MAX = 99;
-
-const int BC_STRING_MAX = 1000;
-
 const int BIG_ENDIAN = 4321;
 
 const int BOOT_TIME = 2;
@@ -350,10 +340,6 @@ const int BUS_NOOP = 0;
 const int BUS_OBJERR = 3;
 
 const int BYTE_ORDER = 1234;
-
-const int CHARCLASS_NAME_MAX = 14;
-
-const int CHILD_MAX = 266;
 
 const int CLD_CONTINUED = 6;
 
@@ -386,8 +372,6 @@ const int CLOCK_THREAD_CPUTIME_ID = 16;
 const int CLOCK_UPTIME_RAW = 8;
 
 const int CLOCK_UPTIME_RAW_APPROX = 9;
-
-const int COLL_WEIGHTS_MAX = 2;
 
 const int CONNECT_DATA_AUTHENTICATED = 4;
 
@@ -619,8 +603,6 @@ const int EPWROFF = 82;
 
 const int EQFULL = 106;
 
-const int EQUIV_CLASS_MAX = 2;
-
 const int ERANGE = 34;
 
 const int EREMOTE = 71;
@@ -658,8 +640,6 @@ const int EXDEV = 18;
 const int EXIT_FAILURE = 1;
 
 const int EXIT_SUCCESS = 0;
-
-const int EXPR_NEST_MAX = 32;
 
 const int FAPPEND = 8;
 
@@ -909,8 +889,6 @@ const int F_WRLCK = 3;
 
 const int GETSIGSINFO_PLATFORM_BINARY = 1;
 
-const int GID_MAX = 2147483647;
-
 const int GLOB_ABEND = -2;
 
 const int GLOB_ABORTED = -2;
@@ -983,7 +961,7 @@ const int IFCAP_TXCSUM = 2;
 
 const int IFCAP_TXSTATUS = 512;
 
-const int IFCAP_VALID = 65535;
+const int IFCAP_VALID = 32767;
 
 const int IFCAP_VLAN_HWTAGGING = 8;
 
@@ -1277,10 +1255,6 @@ const int KEV_INET_SIFNETMASK = 6;
 
 const int KEV_INET_SUBCLASS = 1;
 
-const int LINE_MAX = 2048;
-
-const int LINK_MAX = 32767;
-
 const int LITTLE_ENDIAN = 1234;
 
 const int LOCK_EX = 2;
@@ -1383,8 +1357,6 @@ const int L_SET = 0;
 
 const int L_XTND = 2;
 
-const int L_ctermid = 1024;
-
 const int MADV_CAN_REUSE = 9;
 
 const int MADV_DONTNEED = 4;
@@ -1448,10 +1420,6 @@ const int MAP_TPRO = 524288;
 const int MAP_TRANSLATED_ALLOW_EXECUTE = 131072;
 
 const int MAP_UNIX03 = 262144;
-
-const int MAX_CANON = 1024;
-
-const int MAX_INPUT = 1024;
 
 const int MCL_CURRENT = 1;
 
@@ -1519,8 +1487,6 @@ const int MS_KILLPAGES = 4;
 
 const int MS_SYNC = 16;
 
-const int NAME_MAX = 255;
-
 const int NBBY = 8;
 
 const int NETSVC_MRKNG_LVL_L2 = 1;
@@ -1573,17 +1539,11 @@ const int NEW_TIME = 4;
 
 const int NFDBITS = 32;
 
-const int NGROUPS_MAX = 16;
-
 const int NSIG = 32;
 
 const int NULL = 0;
 
-const int NZERO = 20;
-
 const int OLD_TIME = 3;
-
-const int OPEN_MAX = 10240;
 
 const int O_ACCMODE = 3;
 
@@ -1633,8 +1593,6 @@ const int O_RDONLY = 0;
 
 const int O_RDWR = 2;
 
-const int O_RESOLVE_BENEATH = 4096;
-
 const int O_SEARCH = 1074790400;
 
 const int O_SHLOCK = 16;
@@ -1646,8 +1604,6 @@ const int O_SYNC = 128;
 const int O_TRUNC = 1024;
 
 const int O_WRONLY = 1;
-
-const int PATH_MAX = 1024;
 
 const int PDP_ENDIAN = 3412;
 
@@ -1735,8 +1691,6 @@ const int PF_VSOCK = 40;
 
 const int PF_XTP = 19;
 
-const int PIPE_BUF = 512;
-
 const int POLLATTRIB = 1024;
 
 const int POLLERR = 8;
@@ -1814,8 +1768,6 @@ const int PTRDIFF_MAX = 9223372036854775807;
 const int PTRDIFF_MIN = -9223372036854775808;
 
 const int RAND_MAX = 2147483647;
-
-const int RE_DUP_MAX = 255;
 
 const int RLIMIT_AS = 5;
 
@@ -2548,8 +2500,6 @@ const int UF_OPAQUE = 8;
 const int UF_SETTABLE = 65535;
 
 const int UF_TRACKED = 64;
-
-const int UID_MAX = 2147483647;
 
 const int UINT16_MAX = 65535;
 
