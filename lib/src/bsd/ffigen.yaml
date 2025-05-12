@@ -86,3 +86,7 @@ unions:
 typedefs:
   exclude:
     - ".*"
+compiler-opts:
+  # Disable Objective-C blocks, which `ffigen` cannot process in the 'C'
+  # language mode.
+  - '-U__BLOCKS__'
