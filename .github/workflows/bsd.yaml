@@ -9,7 +9,6 @@ on:
 
 jobs:
   ffigen:
-    if: ${{true}}
     runs-on: macos-15
     steps:
     - uses: actions/checkout@v4

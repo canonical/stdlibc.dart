@@ -8,6 +8,14 @@ import '../util.dart';
 import 'ffigen.dart' as ffi;
 import 'gnu.dart';
 
+// For a description of the stat-related Linux source and binary standard, see:
+// http://refspecs.linux-foundation.org/LSB_4.1.0/LSB-Core-generic/LSB-Core-generic/baselib---xstat.html
+//
+// TL;DR: `stat`/`lstat`/`fstat` are not in the binary standard so those
+// symbols may not exist. Instead, we use the equivalent `__xstat()`,
+// `__lxstat()`, and `__fxstat()` functions (which are not in the source
+// standard).
+
 const _STAT_VER = 1;
 
 final _statPtr = dylib.lookup<
