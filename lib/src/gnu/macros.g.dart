@@ -15,7 +15,125 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get ACCOUNTING => ffi.ACCOUNTING;
   @override
+  int get AF_APPLETALK => throw UnsupportedError('AF_APPLETALK');
+  @override
+  int get AF_CCITT => throw UnsupportedError('AF_CCITT');
+  @override
+  int get AF_CHAOS => throw UnsupportedError('AF_CHAOS');
+  @override
+  int get AF_CNT => throw UnsupportedError('AF_CNT');
+  @override
+  int get AF_COIP => throw UnsupportedError('AF_COIP');
+  @override
+  int get AF_DATAKIT => throw UnsupportedError('AF_DATAKIT');
+  @override
+  int get AF_DLI => throw UnsupportedError('AF_DLI');
+  @override
+  int get AF_E164 => throw UnsupportedError('AF_E164');
+  @override
+  int get AF_ECMA => throw UnsupportedError('AF_ECMA');
+  @override
+  int get AF_HYLINK => throw UnsupportedError('AF_HYLINK');
+  @override
+  int get AF_IEEE80211 => throw UnsupportedError('AF_IEEE80211');
+  @override
+  int get AF_IMPLINK => throw UnsupportedError('AF_IMPLINK');
+  @override
+  int get AF_INET => throw UnsupportedError('AF_INET');
+  @override
+  int get AF_INET6 => throw UnsupportedError('AF_INET6');
+  @override
+  int get AF_IPX => throw UnsupportedError('AF_IPX');
+  @override
+  int get AF_ISDN => throw UnsupportedError('AF_ISDN');
+  @override
+  int get AF_ISO => throw UnsupportedError('AF_ISO');
+  @override
+  int get AF_LAT => throw UnsupportedError('AF_LAT');
+  @override
+  int get AF_LINK => throw UnsupportedError('AF_LINK');
+  @override
+  int get AF_LOCAL => throw UnsupportedError('AF_LOCAL');
+  @override
+  int get AF_MAX => throw UnsupportedError('AF_MAX');
+  @override
+  int get AF_NATM => throw UnsupportedError('AF_NATM');
+  @override
+  int get AF_NDRV => throw UnsupportedError('AF_NDRV');
+  @override
+  int get AF_NETBIOS => throw UnsupportedError('AF_NETBIOS');
+  @override
+  int get AF_NS => throw UnsupportedError('AF_NS');
+  @override
+  int get AF_OSI => throw UnsupportedError('AF_OSI');
+  @override
+  int get AF_PPP => throw UnsupportedError('AF_PPP');
+  @override
+  int get AF_PUP => throw UnsupportedError('AF_PUP');
+  @override
+  int get AF_RESERVED_36 => throw UnsupportedError('AF_RESERVED_36');
+  @override
+  int get AF_ROUTE => throw UnsupportedError('AF_ROUTE');
+  @override
+  int get AF_SIP => throw UnsupportedError('AF_SIP');
+  @override
+  int get AF_SNA => throw UnsupportedError('AF_SNA');
+  @override
+  int get AF_SYSTEM => throw UnsupportedError('AF_SYSTEM');
+  @override
+  int get AF_UNIX => throw UnsupportedError('AF_UNIX');
+  @override
+  int get AF_UNSPEC => throw UnsupportedError('AF_UNSPEC');
+  @override
+  int get AF_UTUN => throw UnsupportedError('AF_UTUN');
+  @override
+  int get AF_VSOCK => throw UnsupportedError('AF_VSOCK');
+  @override
   int get ALLPERMS => ffi.ALLPERMS;
+  @override
+  int get APPLE_IF_FAM_BOND => throw UnsupportedError('APPLE_IF_FAM_BOND');
+  @override
+  int get APPLE_IF_FAM_CELLULAR =>
+      throw UnsupportedError('APPLE_IF_FAM_CELLULAR');
+  @override
+  int get APPLE_IF_FAM_DISC => throw UnsupportedError('APPLE_IF_FAM_DISC');
+  @override
+  int get APPLE_IF_FAM_ETHERNET =>
+      throw UnsupportedError('APPLE_IF_FAM_ETHERNET');
+  @override
+  int get APPLE_IF_FAM_FAITH => throw UnsupportedError('APPLE_IF_FAM_FAITH');
+  @override
+  int get APPLE_IF_FAM_FIREWIRE =>
+      throw UnsupportedError('APPLE_IF_FAM_FIREWIRE');
+  @override
+  int get APPLE_IF_FAM_GIF => throw UnsupportedError('APPLE_IF_FAM_GIF');
+  @override
+  int get APPLE_IF_FAM_IPSEC => throw UnsupportedError('APPLE_IF_FAM_IPSEC');
+  @override
+  int get APPLE_IF_FAM_LOOPBACK =>
+      throw UnsupportedError('APPLE_IF_FAM_LOOPBACK');
+  @override
+  int get APPLE_IF_FAM_MDECAP => throw UnsupportedError('APPLE_IF_FAM_MDECAP');
+  @override
+  int get APPLE_IF_FAM_PPP => throw UnsupportedError('APPLE_IF_FAM_PPP');
+  @override
+  int get APPLE_IF_FAM_PVC => throw UnsupportedError('APPLE_IF_FAM_PVC');
+  @override
+  int get APPLE_IF_FAM_SLIP => throw UnsupportedError('APPLE_IF_FAM_SLIP');
+  @override
+  int get APPLE_IF_FAM_STF => throw UnsupportedError('APPLE_IF_FAM_STF');
+  @override
+  int get APPLE_IF_FAM_TUN => throw UnsupportedError('APPLE_IF_FAM_TUN');
+  @override
+  int get APPLE_IF_FAM_UNUSED_16 =>
+      throw UnsupportedError('APPLE_IF_FAM_UNUSED_16');
+  @override
+  int get APPLE_IF_FAM_UTUN => throw UnsupportedError('APPLE_IF_FAM_UTUN');
+  @override
+  int get APPLE_IF_FAM_VLAN => throw UnsupportedError('APPLE_IF_FAM_VLAN');
+  @override
+  int get ATTRIBUTION_NAME_MAX =>
+      throw UnsupportedError('ATTRIBUTION_NAME_MAX');
   @override
   int get AT_EACCESS => ffi.AT_EACCESS;
   @override
@@ -30,6 +148,11 @@ mixin GnuMacroMixin on PlatformLibC {
   int get AT_SYMLINK_FOLLOW => ffi.AT_SYMLINK_FOLLOW;
   @override
   int get AT_SYMLINK_NOFOLLOW => ffi.AT_SYMLINK_NOFOLLOW;
+  @override
+  int get AT_SYMLINK_NOFOLLOW_ANY =>
+      throw UnsupportedError('AT_SYMLINK_NOFOLLOW_ANY');
+  @override
+  int get AUTH_OPEN_NOAUTHFD => throw UnsupportedError('AUTH_OPEN_NOAUTHFD');
   @override
   int get BIG_ENDIAN => ffi.BIG_ENDIAN;
   @override
@@ -104,6 +227,15 @@ mixin GnuMacroMixin on PlatformLibC {
       throw UnsupportedError('CLOCK_UPTIME_RAW_APPROX');
   @override
   int get CMIN => ffi.CMIN;
+  @override
+  int get CONNECT_DATA_AUTHENTICATED =>
+      throw UnsupportedError('CONNECT_DATA_AUTHENTICATED');
+  @override
+  int get CONNECT_DATA_IDEMPOTENT =>
+      throw UnsupportedError('CONNECT_DATA_IDEMPOTENT');
+  @override
+  int get CONNECT_RESUME_ON_READ_WRITE =>
+      throw UnsupportedError('CONNECT_RESUME_ON_READ_WRITE');
   @override
   int get CPF_IGNORE_MODE => throw UnsupportedError('CPF_IGNORE_MODE');
   @override
@@ -240,6 +372,9 @@ mixin GnuMacroMixin on PlatformLibC {
   int get EF_MAY_SHARE_BLOCKS => throw UnsupportedError('EF_MAY_SHARE_BLOCKS');
   @override
   int get EF_NO_XATTRS => throw UnsupportedError('EF_NO_XATTRS');
+  @override
+  int get EF_SHARES_ALL_BLOCKS =>
+      throw UnsupportedError('EF_SHARES_ALL_BLOCKS');
   @override
   int get EHOSTDOWN => ffi.EHOSTDOWN;
   @override
@@ -553,22 +688,6 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get FPE_NOOP => throw UnsupportedError('FPE_NOOP');
   @override
-  int get FP_CHOP => throw UnsupportedError('FP_CHOP');
-  @override
-  int get FP_PREC_24B => throw UnsupportedError('FP_PREC_24B');
-  @override
-  int get FP_PREC_53B => throw UnsupportedError('FP_PREC_53B');
-  @override
-  int get FP_PREC_64B => throw UnsupportedError('FP_PREC_64B');
-  @override
-  int get FP_RND_DOWN => throw UnsupportedError('FP_RND_DOWN');
-  @override
-  int get FP_RND_NEAR => throw UnsupportedError('FP_RND_NEAR');
-  @override
-  int get FP_RND_UP => throw UnsupportedError('FP_RND_UP');
-  @override
-  int get FP_STATE_BYTES => throw UnsupportedError('FP_STATE_BYTES');
-  @override
   int get FREAD => throw UnsupportedError('FREAD');
   @override
   String get FSTAB => ffi.FSTAB;
@@ -599,15 +718,26 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get F_ADDSIGS => throw UnsupportedError('F_ADDSIGS');
   @override
+  int get F_ADDSIGS_MAIN_BINARY =>
+      throw UnsupportedError('F_ADDSIGS_MAIN_BINARY');
+  @override
   int get F_ALLOCATEALL => throw UnsupportedError('F_ALLOCATEALL');
   @override
   int get F_ALLOCATECONTIG => throw UnsupportedError('F_ALLOCATECONTIG');
+  @override
+  int get F_ALLOCATEPERSIST => throw UnsupportedError('F_ALLOCATEPERSIST');
+  @override
+  int get F_ATTRIBUTION_TAG => throw UnsupportedError('F_ATTRIBUTION_TAG');
   @override
   int get F_BARRIERFSYNC => throw UnsupportedError('F_BARRIERFSYNC');
   @override
   int get F_CHECK_LV => throw UnsupportedError('F_CHECK_LV');
   @override
   int get F_CHKCLEAN => throw UnsupportedError('F_CHKCLEAN');
+  @override
+  int get F_CREATE_TAG => throw UnsupportedError('F_CREATE_TAG');
+  @override
+  int get F_DELETE_TAG => throw UnsupportedError('F_DELETE_TAG');
   @override
   int get F_DUPFD => ffi.F_DUPFD;
   @override
@@ -628,6 +758,8 @@ mixin GnuMacroMixin on PlatformLibC {
   int get F_GETFD => ffi.F_GETFD;
   @override
   int get F_GETFL => ffi.F_GETFL;
+  @override
+  int get F_GETLEASE => throw UnsupportedError('F_GETLEASE');
   @override
   int get F_GETLK => ffi.F_GETLK;
   @override
@@ -666,6 +798,14 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get F_NODIRECT => throw UnsupportedError('F_NODIRECT');
   @override
+  int get F_OFD_GETLK => throw UnsupportedError('F_OFD_GETLK');
+  @override
+  int get F_OFD_SETLK => throw UnsupportedError('F_OFD_SETLK');
+  @override
+  int get F_OFD_SETLKW => throw UnsupportedError('F_OFD_SETLKW');
+  @override
+  int get F_OFD_SETLKWTIMEOUT => throw UnsupportedError('F_OFD_SETLKWTIMEOUT');
+  @override
   int get F_OK => ffi.F_OK;
   @override
   int get F_PATHPKG_CHECK => throw UnsupportedError('F_PATHPKG_CHECK');
@@ -675,6 +815,8 @@ mixin GnuMacroMixin on PlatformLibC {
   int get F_PREALLOCATE => throw UnsupportedError('F_PREALLOCATE');
   @override
   int get F_PUNCHHOLE => throw UnsupportedError('F_PUNCHHOLE');
+  @override
+  int get F_QUERY_TAG => throw UnsupportedError('F_QUERY_TAG');
   @override
   int get F_RDADVISE => throw UnsupportedError('F_RDADVISE');
   @override
@@ -687,6 +829,8 @@ mixin GnuMacroMixin on PlatformLibC {
   int get F_SETFD => ffi.F_SETFD;
   @override
   int get F_SETFL => ffi.F_SETFL;
+  @override
+  int get F_SETLEASE => throw UnsupportedError('F_SETLEASE');
   @override
   int get F_SETLK => ffi.F_SETLK;
   @override
@@ -720,6 +864,8 @@ mixin GnuMacroMixin on PlatformLibC {
   int get F_TLOCK => ffi.F_TLOCK;
   @override
   int get F_TRANSCODEKEY => throw UnsupportedError('F_TRANSCODEKEY');
+  @override
+  int get F_TRANSFEREXTENTS => throw UnsupportedError('F_TRANSFEREXTENTS');
   @override
   int get F_TRIM_ACTIVE_FILE => throw UnsupportedError('F_TRIM_ACTIVE_FILE');
   @override
@@ -779,6 +925,157 @@ mixin GnuMacroMixin on PlatformLibC {
   int get GLOB_TILDE => ffi.GLOB_TILDE;
   @override
   int get GLOB_TILDE_CHECK => ffi.GLOB_TILDE_CHECK;
+  @override
+  int get IFCAP_AV => throw UnsupportedError('IFCAP_AV');
+  @override
+  int get IFCAP_CSUM_PARTIAL => throw UnsupportedError('IFCAP_CSUM_PARTIAL');
+  @override
+  int get IFCAP_CSUM_ZERO_INVERT =>
+      throw UnsupportedError('IFCAP_CSUM_ZERO_INVERT');
+  @override
+  int get IFCAP_HWCSUM => throw UnsupportedError('IFCAP_HWCSUM');
+  @override
+  int get IFCAP_HW_TIMESTAMP => throw UnsupportedError('IFCAP_HW_TIMESTAMP');
+  @override
+  int get IFCAP_JUMBO_MTU => throw UnsupportedError('IFCAP_JUMBO_MTU');
+  @override
+  int get IFCAP_LRO => throw UnsupportedError('IFCAP_LRO');
+  @override
+  int get IFCAP_LRO_NUM_SEG => throw UnsupportedError('IFCAP_LRO_NUM_SEG');
+  @override
+  int get IFCAP_RXCSUM => throw UnsupportedError('IFCAP_RXCSUM');
+  @override
+  int get IFCAP_SKYWALK => throw UnsupportedError('IFCAP_SKYWALK');
+  @override
+  int get IFCAP_SW_TIMESTAMP => throw UnsupportedError('IFCAP_SW_TIMESTAMP');
+  @override
+  int get IFCAP_TSO => throw UnsupportedError('IFCAP_TSO');
+  @override
+  int get IFCAP_TSO4 => throw UnsupportedError('IFCAP_TSO4');
+  @override
+  int get IFCAP_TSO6 => throw UnsupportedError('IFCAP_TSO6');
+  @override
+  int get IFCAP_TXCSUM => throw UnsupportedError('IFCAP_TXCSUM');
+  @override
+  int get IFCAP_TXSTATUS => throw UnsupportedError('IFCAP_TXSTATUS');
+  @override
+  int get IFCAP_VALID => throw UnsupportedError('IFCAP_VALID');
+  @override
+  int get IFCAP_VLAN_HWTAGGING =>
+      throw UnsupportedError('IFCAP_VLAN_HWTAGGING');
+  @override
+  int get IFCAP_VLAN_MTU => throw UnsupportedError('IFCAP_VLAN_MTU');
+  @override
+  int get IFF_ALLMULTI => throw UnsupportedError('IFF_ALLMULTI');
+  @override
+  int get IFF_ALTPHYS => throw UnsupportedError('IFF_ALTPHYS');
+  @override
+  int get IFF_BROADCAST => throw UnsupportedError('IFF_BROADCAST');
+  @override
+  int get IFF_DEBUG => throw UnsupportedError('IFF_DEBUG');
+  @override
+  int get IFF_LINK0 => throw UnsupportedError('IFF_LINK0');
+  @override
+  int get IFF_LINK1 => throw UnsupportedError('IFF_LINK1');
+  @override
+  int get IFF_LINK2 => throw UnsupportedError('IFF_LINK2');
+  @override
+  int get IFF_LOOPBACK => throw UnsupportedError('IFF_LOOPBACK');
+  @override
+  int get IFF_MULTICAST => throw UnsupportedError('IFF_MULTICAST');
+  @override
+  int get IFF_NOARP => throw UnsupportedError('IFF_NOARP');
+  @override
+  int get IFF_NOTRAILERS => throw UnsupportedError('IFF_NOTRAILERS');
+  @override
+  int get IFF_OACTIVE => throw UnsupportedError('IFF_OACTIVE');
+  @override
+  int get IFF_POINTOPOINT => throw UnsupportedError('IFF_POINTOPOINT');
+  @override
+  int get IFF_PROMISC => throw UnsupportedError('IFF_PROMISC');
+  @override
+  int get IFF_RUNNING => throw UnsupportedError('IFF_RUNNING');
+  @override
+  int get IFF_SIMPLEX => throw UnsupportedError('IFF_SIMPLEX');
+  @override
+  int get IFF_UP => throw UnsupportedError('IFF_UP');
+  @override
+  int get IFNAMSIZ => throw UnsupportedError('IFNAMSIZ');
+  @override
+  int get IFNET_SLOWHZ => throw UnsupportedError('IFNET_SLOWHZ');
+  @override
+  int get IFQ_DEF_C_TARGET_DELAY =>
+      throw UnsupportedError('IFQ_DEF_C_TARGET_DELAY');
+  @override
+  int get IFQ_DEF_C_UPDATE_INTERVAL =>
+      throw UnsupportedError('IFQ_DEF_C_UPDATE_INTERVAL');
+  @override
+  int get IFQ_DEF_L4S_TARGET_DELAY =>
+      throw UnsupportedError('IFQ_DEF_L4S_TARGET_DELAY');
+  @override
+  int get IFQ_DEF_L4S_UPDATE_INTERVAL =>
+      throw UnsupportedError('IFQ_DEF_L4S_UPDATE_INTERVAL');
+  @override
+  int get IFQ_DEF_L4S_WIRELESS_TARGET_DELAY =>
+      throw UnsupportedError('IFQ_DEF_L4S_WIRELESS_TARGET_DELAY');
+  @override
+  int get IFQ_LL_C_TARGET_DELAY =>
+      throw UnsupportedError('IFQ_LL_C_TARGET_DELAY');
+  @override
+  int get IFQ_LL_C_UPDATE_INTERVAL =>
+      throw UnsupportedError('IFQ_LL_C_UPDATE_INTERVAL');
+  @override
+  int get IFQ_LL_L4S_TARGET_DELAY =>
+      throw UnsupportedError('IFQ_LL_L4S_TARGET_DELAY');
+  @override
+  int get IFQ_LL_L4S_UPDATE_INTERVAL =>
+      throw UnsupportedError('IFQ_LL_L4S_UPDATE_INTERVAL');
+  @override
+  int get IFQ_LL_L4S_WIRELESS_TARGET_DELAY =>
+      throw UnsupportedError('IFQ_LL_L4S_WIRELESS_TARGET_DELAY');
+  @override
+  int get IFQ_MAXLEN => throw UnsupportedError('IFQ_MAXLEN');
+  @override
+  int get IFRTYPE_FUNCTIONAL_CELLULAR =>
+      throw UnsupportedError('IFRTYPE_FUNCTIONAL_CELLULAR');
+  @override
+  int get IFRTYPE_FUNCTIONAL_COMPANIONLINK =>
+      throw UnsupportedError('IFRTYPE_FUNCTIONAL_COMPANIONLINK');
+  @override
+  int get IFRTYPE_FUNCTIONAL_INTCOPROC =>
+      throw UnsupportedError('IFRTYPE_FUNCTIONAL_INTCOPROC');
+  @override
+  int get IFRTYPE_FUNCTIONAL_LAST =>
+      throw UnsupportedError('IFRTYPE_FUNCTIONAL_LAST');
+  @override
+  int get IFRTYPE_FUNCTIONAL_LOOPBACK =>
+      throw UnsupportedError('IFRTYPE_FUNCTIONAL_LOOPBACK');
+  @override
+  int get IFRTYPE_FUNCTIONAL_MANAGEMENT =>
+      throw UnsupportedError('IFRTYPE_FUNCTIONAL_MANAGEMENT');
+  @override
+  int get IFRTYPE_FUNCTIONAL_UNKNOWN =>
+      throw UnsupportedError('IFRTYPE_FUNCTIONAL_UNKNOWN');
+  @override
+  int get IFRTYPE_FUNCTIONAL_WIFI_AWDL =>
+      throw UnsupportedError('IFRTYPE_FUNCTIONAL_WIFI_AWDL');
+  @override
+  int get IFRTYPE_FUNCTIONAL_WIFI_INFRA =>
+      throw UnsupportedError('IFRTYPE_FUNCTIONAL_WIFI_INFRA');
+  @override
+  int get IFRTYPE_FUNCTIONAL_WIRED =>
+      throw UnsupportedError('IFRTYPE_FUNCTIONAL_WIRED');
+  @override
+  int get IFSTATMAX => throw UnsupportedError('IFSTATMAX');
+  @override
+  int get IF_MAXMTU => throw UnsupportedError('IF_MAXMTU');
+  @override
+  int get IF_MINMTU => throw UnsupportedError('IF_MINMTU');
+  @override
+  int get IF_NAMESIZE => throw UnsupportedError('IF_NAMESIZE');
+  @override
+  int get IF_WAKE_ON_MAGIC_PACKET =>
+      throw UnsupportedError('IF_WAKE_ON_MAGIC_PACKET');
   @override
   int get ILL_BADSTK => throw UnsupportedError('ILL_BADSTK');
   @override
@@ -879,6 +1176,135 @@ mixin GnuMacroMixin on PlatformLibC {
   int get ITIMER_REAL => ffi.ITIMER_REAL;
   @override
   int get ITIMER_VIRTUAL => ffi.ITIMER_VIRTUAL;
+  @override
+  int get KEV_DL_ADDMULTI => throw UnsupportedError('KEV_DL_ADDMULTI');
+  @override
+  int get KEV_DL_AWDL_RESTRICTED =>
+      throw UnsupportedError('KEV_DL_AWDL_RESTRICTED');
+  @override
+  int get KEV_DL_AWDL_UNRESTRICTED =>
+      throw UnsupportedError('KEV_DL_AWDL_UNRESTRICTED');
+  @override
+  int get KEV_DL_DELMULTI => throw UnsupportedError('KEV_DL_DELMULTI');
+  @override
+  int get KEV_DL_IFCAP_CHANGED =>
+      throw UnsupportedError('KEV_DL_IFCAP_CHANGED');
+  @override
+  int get KEV_DL_IFDELEGATE_CHANGED =>
+      throw UnsupportedError('KEV_DL_IFDELEGATE_CHANGED');
+  @override
+  int get KEV_DL_IF_ATTACHED => throw UnsupportedError('KEV_DL_IF_ATTACHED');
+  @override
+  int get KEV_DL_IF_DETACHED => throw UnsupportedError('KEV_DL_IF_DETACHED');
+  @override
+  int get KEV_DL_IF_DETACHING => throw UnsupportedError('KEV_DL_IF_DETACHING');
+  @override
+  int get KEV_DL_IF_IDLE_ROUTE_REFCNT =>
+      throw UnsupportedError('KEV_DL_IF_IDLE_ROUTE_REFCNT');
+  @override
+  int get KEV_DL_ISSUES => throw UnsupportedError('KEV_DL_ISSUES');
+  @override
+  int get KEV_DL_LINK_ADDRESS_CHANGED =>
+      throw UnsupportedError('KEV_DL_LINK_ADDRESS_CHANGED');
+  @override
+  int get KEV_DL_LINK_OFF => throw UnsupportedError('KEV_DL_LINK_OFF');
+  @override
+  int get KEV_DL_LINK_ON => throw UnsupportedError('KEV_DL_LINK_ON');
+  @override
+  int get KEV_DL_LINK_QUALITY_METRIC_CHANGED =>
+      throw UnsupportedError('KEV_DL_LINK_QUALITY_METRIC_CHANGED');
+  @override
+  int get KEV_DL_LOW_POWER_MODE_CHANGED =>
+      throw UnsupportedError('KEV_DL_LOW_POWER_MODE_CHANGED');
+  @override
+  int get KEV_DL_MASTER_ELECTED =>
+      throw UnsupportedError('KEV_DL_MASTER_ELECTED');
+  @override
+  int get KEV_DL_NODE_ABSENCE => throw UnsupportedError('KEV_DL_NODE_ABSENCE');
+  @override
+  int get KEV_DL_NODE_PRESENCE =>
+      throw UnsupportedError('KEV_DL_NODE_PRESENCE');
+  @override
+  int get KEV_DL_PRIMARY_ELECTED =>
+      throw UnsupportedError('KEV_DL_PRIMARY_ELECTED');
+  @override
+  int get KEV_DL_PROTO_ATTACHED =>
+      throw UnsupportedError('KEV_DL_PROTO_ATTACHED');
+  @override
+  int get KEV_DL_PROTO_DETACHED =>
+      throw UnsupportedError('KEV_DL_PROTO_DETACHED');
+  @override
+  int get KEV_DL_QOS_MODE_CHANGED =>
+      throw UnsupportedError('KEV_DL_QOS_MODE_CHANGED');
+  @override
+  int get KEV_DL_RRC_STATE_CHANGED =>
+      throw UnsupportedError('KEV_DL_RRC_STATE_CHANGED');
+  @override
+  int get KEV_DL_SIFFLAGS => throw UnsupportedError('KEV_DL_SIFFLAGS');
+  @override
+  int get KEV_DL_SIFGENERIC => throw UnsupportedError('KEV_DL_SIFGENERIC');
+  @override
+  int get KEV_DL_SIFMEDIA => throw UnsupportedError('KEV_DL_SIFMEDIA');
+  @override
+  int get KEV_DL_SIFMETRICS => throw UnsupportedError('KEV_DL_SIFMETRICS');
+  @override
+  int get KEV_DL_SIFMTU => throw UnsupportedError('KEV_DL_SIFMTU');
+  @override
+  int get KEV_DL_SIFPHYS => throw UnsupportedError('KEV_DL_SIFPHYS');
+  @override
+  int get KEV_DL_SUBCLASS => throw UnsupportedError('KEV_DL_SUBCLASS');
+  @override
+  int get KEV_DL_WAKEFLAGS_CHANGED =>
+      throw UnsupportedError('KEV_DL_WAKEFLAGS_CHANGED');
+  @override
+  int get KEV_INET6_ADDR_DELETED =>
+      throw UnsupportedError('KEV_INET6_ADDR_DELETED');
+  @override
+  int get KEV_INET6_CHANGED_ADDR =>
+      throw UnsupportedError('KEV_INET6_CHANGED_ADDR');
+  @override
+  int get KEV_INET6_DEFROUTER => throw UnsupportedError('KEV_INET6_DEFROUTER');
+  @override
+  int get KEV_INET6_NEW_LL_ADDR =>
+      throw UnsupportedError('KEV_INET6_NEW_LL_ADDR');
+  @override
+  int get KEV_INET6_NEW_RTADV_ADDR =>
+      throw UnsupportedError('KEV_INET6_NEW_RTADV_ADDR');
+  @override
+  int get KEV_INET6_NEW_USER_ADDR =>
+      throw UnsupportedError('KEV_INET6_NEW_USER_ADDR');
+  @override
+  int get KEV_INET6_REQUEST_NAT64_PREFIX =>
+      throw UnsupportedError('KEV_INET6_REQUEST_NAT64_PREFIX');
+  @override
+  int get KEV_INET6_SUBCLASS => throw UnsupportedError('KEV_INET6_SUBCLASS');
+  @override
+  int get KEV_INET_ADDR_DELETED =>
+      throw UnsupportedError('KEV_INET_ADDR_DELETED');
+  @override
+  int get KEV_INET_ARPCOLLISION =>
+      throw UnsupportedError('KEV_INET_ARPCOLLISION');
+  @override
+  int get KEV_INET_ARPRTRALIVE =>
+      throw UnsupportedError('KEV_INET_ARPRTRALIVE');
+  @override
+  int get KEV_INET_ARPRTRFAILURE =>
+      throw UnsupportedError('KEV_INET_ARPRTRFAILURE');
+  @override
+  int get KEV_INET_CHANGED_ADDR =>
+      throw UnsupportedError('KEV_INET_CHANGED_ADDR');
+  @override
+  int get KEV_INET_NEW_ADDR => throw UnsupportedError('KEV_INET_NEW_ADDR');
+  @override
+  int get KEV_INET_PORTINUSE => throw UnsupportedError('KEV_INET_PORTINUSE');
+  @override
+  int get KEV_INET_SIFBRDADDR => throw UnsupportedError('KEV_INET_SIFBRDADDR');
+  @override
+  int get KEV_INET_SIFDSTADDR => throw UnsupportedError('KEV_INET_SIFDSTADDR');
+  @override
+  int get KEV_INET_SIFNETMASK => throw UnsupportedError('KEV_INET_SIFNETMASK');
+  @override
+  int get KEV_INET_SUBCLASS => throw UnsupportedError('KEV_INET_SUBCLASS');
   @override
   int get LITTLE_ENDIAN => ffi.LITTLE_ENDIAN;
   @override
@@ -1036,6 +1462,8 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get MADV_WIPEONFORK => ffi.MADV_WIPEONFORK;
   @override
+  int get MADV_ZERO => throw UnsupportedError('MADV_ZERO');
+  @override
   int get MADV_ZERO_WIRED_PAGES =>
       throw UnsupportedError('MADV_ZERO_WIRED_PAGES');
   @override
@@ -1102,6 +1530,8 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get MAP_SYNC => ffi.MAP_SYNC;
   @override
+  int get MAP_TPRO => throw UnsupportedError('MAP_TPRO');
+  @override
   int get MAP_TRANSLATED_ALLOW_EXECUTE =>
       throw UnsupportedError('MAP_TRANSLATED_ALLOW_EXECUTE');
   @override
@@ -1135,6 +1565,40 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get MINSIGSTKSZ => throw UnsupportedError('MINSIGSTKSZ');
   @override
+  int get MSG_CTRUNC => throw UnsupportedError('MSG_CTRUNC');
+  @override
+  int get MSG_DONTROUTE => throw UnsupportedError('MSG_DONTROUTE');
+  @override
+  int get MSG_DONTWAIT => throw UnsupportedError('MSG_DONTWAIT');
+  @override
+  int get MSG_EOF => throw UnsupportedError('MSG_EOF');
+  @override
+  int get MSG_EOR => throw UnsupportedError('MSG_EOR');
+  @override
+  int get MSG_FLUSH => throw UnsupportedError('MSG_FLUSH');
+  @override
+  int get MSG_HAVEMORE => throw UnsupportedError('MSG_HAVEMORE');
+  @override
+  int get MSG_HOLD => throw UnsupportedError('MSG_HOLD');
+  @override
+  int get MSG_NEEDSA => throw UnsupportedError('MSG_NEEDSA');
+  @override
+  int get MSG_NOSIGNAL => throw UnsupportedError('MSG_NOSIGNAL');
+  @override
+  int get MSG_OOB => throw UnsupportedError('MSG_OOB');
+  @override
+  int get MSG_PEEK => throw UnsupportedError('MSG_PEEK');
+  @override
+  int get MSG_RCVMORE => throw UnsupportedError('MSG_RCVMORE');
+  @override
+  int get MSG_SEND => throw UnsupportedError('MSG_SEND');
+  @override
+  int get MSG_TRUNC => throw UnsupportedError('MSG_TRUNC');
+  @override
+  int get MSG_WAITALL => throw UnsupportedError('MSG_WAITALL');
+  @override
+  int get MSG_WAITSTREAM => throw UnsupportedError('MSG_WAITSTREAM');
+  @override
   int get MS_ASYNC => ffi.MS_ASYNC;
   @override
   int get MS_DEACTIVATE => throw UnsupportedError('MS_DEACTIVATE');
@@ -1145,7 +1609,60 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get MS_SYNC => ffi.MS_SYNC;
   @override
+  int get NBBY => throw UnsupportedError('NBBY');
+  @override
   int get NCC => ffi.NCC;
+  @override
+  int get NETSVC_MRKNG_LVL_L2 => throw UnsupportedError('NETSVC_MRKNG_LVL_L2');
+  @override
+  int get NETSVC_MRKNG_LVL_L3L2_ALL =>
+      throw UnsupportedError('NETSVC_MRKNG_LVL_L3L2_ALL');
+  @override
+  int get NETSVC_MRKNG_LVL_L3L2_BK =>
+      throw UnsupportedError('NETSVC_MRKNG_LVL_L3L2_BK');
+  @override
+  int get NETSVC_MRKNG_UNKNOWN =>
+      throw UnsupportedError('NETSVC_MRKNG_UNKNOWN');
+  @override
+  int get NET_MAXID => throw UnsupportedError('NET_MAXID');
+  @override
+  int get NET_RT_DUMP => throw UnsupportedError('NET_RT_DUMP');
+  @override
+  int get NET_RT_DUMP2 => throw UnsupportedError('NET_RT_DUMP2');
+  @override
+  int get NET_RT_FLAGS => throw UnsupportedError('NET_RT_FLAGS');
+  @override
+  int get NET_RT_FLAGS_PRIV => throw UnsupportedError('NET_RT_FLAGS_PRIV');
+  @override
+  int get NET_RT_IFLIST => throw UnsupportedError('NET_RT_IFLIST');
+  @override
+  int get NET_RT_IFLIST2 => throw UnsupportedError('NET_RT_IFLIST2');
+  @override
+  int get NET_RT_MAXID => throw UnsupportedError('NET_RT_MAXID');
+  @override
+  int get NET_RT_STAT => throw UnsupportedError('NET_RT_STAT');
+  @override
+  int get NET_RT_TRASH => throw UnsupportedError('NET_RT_TRASH');
+  @override
+  int get NET_SERVICE_TYPE_AV => throw UnsupportedError('NET_SERVICE_TYPE_AV');
+  @override
+  int get NET_SERVICE_TYPE_BE => throw UnsupportedError('NET_SERVICE_TYPE_BE');
+  @override
+  int get NET_SERVICE_TYPE_BK => throw UnsupportedError('NET_SERVICE_TYPE_BK');
+  @override
+  int get NET_SERVICE_TYPE_OAM =>
+      throw UnsupportedError('NET_SERVICE_TYPE_OAM');
+  @override
+  int get NET_SERVICE_TYPE_RD => throw UnsupportedError('NET_SERVICE_TYPE_RD');
+  @override
+  int get NET_SERVICE_TYPE_RV => throw UnsupportedError('NET_SERVICE_TYPE_RV');
+  @override
+  int get NET_SERVICE_TYPE_SIG =>
+      throw UnsupportedError('NET_SERVICE_TYPE_SIG');
+  @override
+  int get NET_SERVICE_TYPE_VI => throw UnsupportedError('NET_SERVICE_TYPE_VI');
+  @override
+  int get NET_SERVICE_TYPE_VO => throw UnsupportedError('NET_SERVICE_TYPE_VO');
   @override
   int get NEW_TIME => ffi.NEW_TIME;
   @override
@@ -1205,6 +1722,8 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get O_DIRECTORY => ffi.O_DIRECTORY;
   @override
+  int get O_DP_AUTHENTICATE => throw UnsupportedError('O_DP_AUTHENTICATE');
+  @override
   int get O_DP_GETRAWENCRYPTED =>
       throw UnsupportedError('O_DP_GETRAWENCRYPTED');
   @override
@@ -1216,6 +1735,8 @@ mixin GnuMacroMixin on PlatformLibC {
   int get O_EVTONLY => throw UnsupportedError('O_EVTONLY');
   @override
   int get O_EXCL => ffi.O_EXCL;
+  @override
+  int get O_EXEC => throw UnsupportedError('O_EXEC');
   @override
   int get O_EXLOCK => throw UnsupportedError('O_EXLOCK');
   @override
@@ -1239,6 +1760,8 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get O_RSYNC => ffi.O_RSYNC;
   @override
+  int get O_SEARCH => throw UnsupportedError('O_SEARCH');
+  @override
   int get O_SHLOCK => throw UnsupportedError('O_SHLOCK');
   @override
   int get O_SYMLINK => throw UnsupportedError('O_SYMLINK');
@@ -1250,6 +1773,88 @@ mixin GnuMacroMixin on PlatformLibC {
   int get O_WRONLY => ffi.O_WRONLY;
   @override
   int get PDP_ENDIAN => ffi.PDP_ENDIAN;
+  @override
+  int get PF_APPLETALK => throw UnsupportedError('PF_APPLETALK');
+  @override
+  int get PF_BOND => throw UnsupportedError('PF_BOND');
+  @override
+  int get PF_CCITT => throw UnsupportedError('PF_CCITT');
+  @override
+  int get PF_CHAOS => throw UnsupportedError('PF_CHAOS');
+  @override
+  int get PF_CNT => throw UnsupportedError('PF_CNT');
+  @override
+  int get PF_COIP => throw UnsupportedError('PF_COIP');
+  @override
+  int get PF_DATAKIT => throw UnsupportedError('PF_DATAKIT');
+  @override
+  int get PF_DLI => throw UnsupportedError('PF_DLI');
+  @override
+  int get PF_ECMA => throw UnsupportedError('PF_ECMA');
+  @override
+  int get PF_HYLINK => throw UnsupportedError('PF_HYLINK');
+  @override
+  int get PF_IMPLINK => throw UnsupportedError('PF_IMPLINK');
+  @override
+  int get PF_INET => throw UnsupportedError('PF_INET');
+  @override
+  int get PF_INET6 => throw UnsupportedError('PF_INET6');
+  @override
+  int get PF_IPX => throw UnsupportedError('PF_IPX');
+  @override
+  int get PF_ISDN => throw UnsupportedError('PF_ISDN');
+  @override
+  int get PF_ISO => throw UnsupportedError('PF_ISO');
+  @override
+  int get PF_KEY => throw UnsupportedError('PF_KEY');
+  @override
+  int get PF_LAT => throw UnsupportedError('PF_LAT');
+  @override
+  int get PF_LINK => throw UnsupportedError('PF_LINK');
+  @override
+  int get PF_LOCAL => throw UnsupportedError('PF_LOCAL');
+  @override
+  int get PF_MAX => throw UnsupportedError('PF_MAX');
+  @override
+  int get PF_NATM => throw UnsupportedError('PF_NATM');
+  @override
+  int get PF_NDRV => throw UnsupportedError('PF_NDRV');
+  @override
+  int get PF_NETBIOS => throw UnsupportedError('PF_NETBIOS');
+  @override
+  int get PF_NS => throw UnsupportedError('PF_NS');
+  @override
+  int get PF_OSI => throw UnsupportedError('PF_OSI');
+  @override
+  int get PF_PIP => throw UnsupportedError('PF_PIP');
+  @override
+  int get PF_PPP => throw UnsupportedError('PF_PPP');
+  @override
+  int get PF_PUP => throw UnsupportedError('PF_PUP');
+  @override
+  int get PF_RESERVED_36 => throw UnsupportedError('PF_RESERVED_36');
+  @override
+  int get PF_ROUTE => throw UnsupportedError('PF_ROUTE');
+  @override
+  int get PF_RTIP => throw UnsupportedError('PF_RTIP');
+  @override
+  int get PF_SIP => throw UnsupportedError('PF_SIP');
+  @override
+  int get PF_SNA => throw UnsupportedError('PF_SNA');
+  @override
+  int get PF_SYSTEM => throw UnsupportedError('PF_SYSTEM');
+  @override
+  int get PF_UNIX => throw UnsupportedError('PF_UNIX');
+  @override
+  int get PF_UNSPEC => throw UnsupportedError('PF_UNSPEC');
+  @override
+  int get PF_UTUN => throw UnsupportedError('PF_UTUN');
+  @override
+  int get PF_VLAN => throw UnsupportedError('PF_VLAN');
+  @override
+  int get PF_VSOCK => throw UnsupportedError('PF_VSOCK');
+  @override
+  int get PF_XTP => throw UnsupportedError('PF_XTP');
   @override
   int get POLLATTRIB => throw UnsupportedError('POLLATTRIB');
   @override
@@ -1405,12 +2010,22 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get RUSAGE_INFO_V5 => throw UnsupportedError('RUSAGE_INFO_V5');
   @override
+  int get RUSAGE_INFO_V6 => throw UnsupportedError('RUSAGE_INFO_V6');
+  @override
   int get RUSAGE_SELF => throw UnsupportedError('RUSAGE_SELF');
   @override
   int get RU_PROC_RUNS_RESLIDE =>
       throw UnsupportedError('RU_PROC_RUNS_RESLIDE');
   @override
   int get R_OK => ffi.R_OK;
+  @override
+  int get SAE_ASSOCID_ALL => throw UnsupportedError('SAE_ASSOCID_ALL');
+  @override
+  int get SAE_ASSOCID_ANY => throw UnsupportedError('SAE_ASSOCID_ANY');
+  @override
+  int get SAE_CONNID_ALL => throw UnsupportedError('SAE_CONNID_ALL');
+  @override
+  int get SAE_CONNID_ANY => throw UnsupportedError('SAE_CONNID_ANY');
   @override
   int get SA_64REGSET => throw UnsupportedError('SA_64REGSET');
   @override
@@ -1431,6 +2046,15 @@ mixin GnuMacroMixin on PlatformLibC {
   int get SA_USERSPACE_MASK => throw UnsupportedError('SA_USERSPACE_MASK');
   @override
   int get SA_USERTRAMP => throw UnsupportedError('SA_USERTRAMP');
+  @override
+  int get SCM_CREDS => throw UnsupportedError('SCM_CREDS');
+  @override
+  int get SCM_RIGHTS => throw UnsupportedError('SCM_RIGHTS');
+  @override
+  int get SCM_TIMESTAMP => throw UnsupportedError('SCM_TIMESTAMP');
+  @override
+  int get SCM_TIMESTAMP_MONOTONIC =>
+      throw UnsupportedError('SCM_TIMESTAMP_MONOTONIC');
   @override
   int get SEEK_CUR => ffi.SEEK_CUR;
   @override
@@ -1471,6 +2095,12 @@ mixin GnuMacroMixin on PlatformLibC {
   int get SHADOW_STACK_SET_TOKEN => ffi.SHADOW_STACK_SET_TOKEN;
   @override
   int get SHUTDOWN_TIME => throw UnsupportedError('SHUTDOWN_TIME');
+  @override
+  int get SHUT_RD => throw UnsupportedError('SHUT_RD');
+  @override
+  int get SHUT_RDWR => throw UnsupportedError('SHUT_RDWR');
+  @override
+  int get SHUT_WR => throw UnsupportedError('SHUT_WR');
   @override
   int get SIGABRT => throw UnsupportedError('SIGABRT');
   @override
@@ -1562,7 +2192,15 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get SIOCADDRT => ffi.SIOCADDRT;
   @override
+  int get SIOCAIFADDR => throw UnsupportedError('SIOCAIFADDR');
+  @override
+  int get SIOCARPIPLL => throw UnsupportedError('SIOCARPIPLL');
+  @override
   int get SIOCATMARK => throw UnsupportedError('SIOCATMARK');
+  @override
+  int get SIOCAUTOADDR => throw UnsupportedError('SIOCAUTOADDR');
+  @override
+  int get SIOCAUTONETMASK => throw UnsupportedError('SIOCAUTONETMASK');
   @override
   int get SIOCDARP => ffi.SIOCDARP;
   @override
@@ -1576,21 +2214,41 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get SIOCDIFADDR => ffi.SIOCDIFADDR;
   @override
+  int get SIOCDIFPHYADDR => throw UnsupportedError('SIOCDIFPHYADDR');
+  @override
   int get SIOCDRARP => ffi.SIOCDRARP;
   @override
   int get SIOCGARP => ffi.SIOCGARP;
   @override
+  int get SIOCGDRVSPEC => throw UnsupportedError('SIOCGDRVSPEC');
+  @override
+  int get SIOCGETVLAN => throw UnsupportedError('SIOCGETVLAN');
+  @override
   int get SIOCGHIWAT => throw UnsupportedError('SIOCGHIWAT');
   @override
+  int get SIOCGIF6LOWPAN => throw UnsupportedError('SIOCGIF6LOWPAN');
+  @override
   int get SIOCGIFADDR => ffi.SIOCGIFADDR;
+  @override
+  int get SIOCGIFALTMTU => throw UnsupportedError('SIOCGIFALTMTU');
+  @override
+  int get SIOCGIFASYNCMAP => throw UnsupportedError('SIOCGIFASYNCMAP');
+  @override
+  int get SIOCGIFBOND => throw UnsupportedError('SIOCGIFBOND');
   @override
   int get SIOCGIFBR => ffi.SIOCGIFBR;
   @override
   int get SIOCGIFBRDADDR => ffi.SIOCGIFBRDADDR;
   @override
+  int get SIOCGIFCAP => throw UnsupportedError('SIOCGIFCAP');
+  @override
   int get SIOCGIFCONF => ffi.SIOCGIFCONF;
   @override
   int get SIOCGIFCOUNT => ffi.SIOCGIFCOUNT;
+  @override
+  int get SIOCGIFDEVMTU => throw UnsupportedError('SIOCGIFDEVMTU');
+  @override
+  int get SIOCGIFDIRECTLINK => throw UnsupportedError('SIOCGIFDIRECTLINK');
   @override
   int get SIOCGIFDSTADDR => ffi.SIOCGIFDSTADDR;
   @override
@@ -1598,11 +2256,22 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get SIOCGIFFLAGS => ffi.SIOCGIFFLAGS;
   @override
+  int get SIOCGIFFUNCTIONALTYPE =>
+      throw UnsupportedError('SIOCGIFFUNCTIONALTYPE');
+  @override
+  int get SIOCGIFGENERIC => throw UnsupportedError('SIOCGIFGENERIC');
+  @override
   int get SIOCGIFHWADDR => ffi.SIOCGIFHWADDR;
   @override
   int get SIOCGIFINDEX => ffi.SIOCGIFINDEX;
   @override
+  int get SIOCGIFKPI => throw UnsupportedError('SIOCGIFKPI');
+  @override
+  int get SIOCGIFMAC => throw UnsupportedError('SIOCGIFMAC');
+  @override
   int get SIOCGIFMAP => ffi.SIOCGIFMAP;
+  @override
+  int get SIOCGIFMEDIA => throw UnsupportedError('SIOCGIFMEDIA');
   @override
   int get SIOCGIFMEM => ffi.SIOCGIFMEM;
   @override
@@ -1614,11 +2283,25 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get SIOCGIFNETMASK => ffi.SIOCGIFNETMASK;
   @override
+  int get SIOCGIFPDSTADDR => throw UnsupportedError('SIOCGIFPDSTADDR');
+  @override
   int get SIOCGIFPFLAGS => ffi.SIOCGIFPFLAGS;
+  @override
+  int get SIOCGIFPHYS => throw UnsupportedError('SIOCGIFPHYS');
+  @override
+  int get SIOCGIFPSRCADDR => throw UnsupportedError('SIOCGIFPSRCADDR');
   @override
   int get SIOCGIFSLAVE => ffi.SIOCGIFSLAVE;
   @override
+  int get SIOCGIFSTATUS => throw UnsupportedError('SIOCGIFSTATUS');
+  @override
   int get SIOCGIFTXQLEN => ffi.SIOCGIFTXQLEN;
+  @override
+  int get SIOCGIFVLAN => throw UnsupportedError('SIOCGIFVLAN');
+  @override
+  int get SIOCGIFWAKEFLAGS => throw UnsupportedError('SIOCGIFWAKEFLAGS');
+  @override
+  int get SIOCGIFXMEDIA => throw UnsupportedError('SIOCGIFXMEDIA');
   @override
   int get SIOCGLOWAT => throw UnsupportedError('SIOCGLOWAT');
   @override
@@ -1626,19 +2309,43 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get SIOCGRARP => ffi.SIOCGRARP;
   @override
+  int get SIOCIFCREATE => throw UnsupportedError('SIOCIFCREATE');
+  @override
+  int get SIOCIFCREATE2 => throw UnsupportedError('SIOCIFCREATE2');
+  @override
+  int get SIOCIFDESTROY => throw UnsupportedError('SIOCIFDESTROY');
+  @override
+  int get SIOCIFGCLONERS => throw UnsupportedError('SIOCIFGCLONERS');
+  @override
   int get SIOCPROTOPRIVATE => ffi.SIOCPROTOPRIVATE;
+  @override
+  int get SIOCRSLVMULTI => throw UnsupportedError('SIOCRSLVMULTI');
   @override
   int get SIOCRTMSG => ffi.SIOCRTMSG;
   @override
   int get SIOCSARP => ffi.SIOCSARP;
   @override
+  int get SIOCSDRVSPEC => throw UnsupportedError('SIOCSDRVSPEC');
+  @override
+  int get SIOCSETVLAN => throw UnsupportedError('SIOCSETVLAN');
+  @override
   int get SIOCSHIWAT => throw UnsupportedError('SIOCSHIWAT');
   @override
+  int get SIOCSIF6LOWPAN => throw UnsupportedError('SIOCSIF6LOWPAN');
+  @override
   int get SIOCSIFADDR => ffi.SIOCSIFADDR;
+  @override
+  int get SIOCSIFALTMTU => throw UnsupportedError('SIOCSIFALTMTU');
+  @override
+  int get SIOCSIFASYNCMAP => throw UnsupportedError('SIOCSIFASYNCMAP');
+  @override
+  int get SIOCSIFBOND => throw UnsupportedError('SIOCSIFBOND');
   @override
   int get SIOCSIFBR => ffi.SIOCSIFBR;
   @override
   int get SIOCSIFBRDADDR => ffi.SIOCSIFBRDADDR;
+  @override
+  int get SIOCSIFCAP => throw UnsupportedError('SIOCSIFCAP');
   @override
   int get SIOCSIFDSTADDR => ffi.SIOCSIFDSTADDR;
   @override
@@ -1646,13 +2353,25 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get SIOCSIFFLAGS => ffi.SIOCSIFFLAGS;
   @override
+  int get SIOCSIFGENERIC => throw UnsupportedError('SIOCSIFGENERIC');
+  @override
   int get SIOCSIFHWADDR => ffi.SIOCSIFHWADDR;
   @override
   int get SIOCSIFHWBROADCAST => ffi.SIOCSIFHWBROADCAST;
   @override
+  int get SIOCSIFKPI => throw UnsupportedError('SIOCSIFKPI');
+  @override
   int get SIOCSIFLINK => ffi.SIOCSIFLINK;
   @override
+  int get SIOCSIFLLADDR => throw UnsupportedError('SIOCSIFLLADDR');
+  @override
+  int get SIOCSIFMAC => throw UnsupportedError('SIOCSIFMAC');
+  @override
+  int get SIOCSIFMANAGEMENT => throw UnsupportedError('SIOCSIFMANAGEMENT');
+  @override
   int get SIOCSIFMAP => ffi.SIOCSIFMAP;
+  @override
+  int get SIOCSIFMEDIA => throw UnsupportedError('SIOCSIFMEDIA');
   @override
   int get SIOCSIFMEM => ffi.SIOCSIFMEM;
   @override
@@ -1666,9 +2385,15 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get SIOCSIFPFLAGS => ffi.SIOCSIFPFLAGS;
   @override
+  int get SIOCSIFPHYADDR => throw UnsupportedError('SIOCSIFPHYADDR');
+  @override
+  int get SIOCSIFPHYS => throw UnsupportedError('SIOCSIFPHYS');
+  @override
   int get SIOCSIFSLAVE => ffi.SIOCSIFSLAVE;
   @override
   int get SIOCSIFTXQLEN => ffi.SIOCSIFTXQLEN;
+  @override
+  int get SIOCSIFVLAN => throw UnsupportedError('SIOCSIFVLAN');
   @override
   int get SIOCSLOWAT => throw UnsupportedError('SIOCSLOWAT');
   @override
@@ -1693,6 +2418,109 @@ mixin GnuMacroMixin on PlatformLibC {
   int get SI_USER => throw UnsupportedError('SI_USER');
   @override
   int get SLIPDISC => throw UnsupportedError('SLIPDISC');
+  @override
+  int get SOCK_DGRAM => throw UnsupportedError('SOCK_DGRAM');
+  @override
+  int get SOCK_MAXADDRLEN => throw UnsupportedError('SOCK_MAXADDRLEN');
+  @override
+  int get SOCK_RAW => throw UnsupportedError('SOCK_RAW');
+  @override
+  int get SOCK_RDM => throw UnsupportedError('SOCK_RDM');
+  @override
+  int get SOCK_SEQPACKET => throw UnsupportedError('SOCK_SEQPACKET');
+  @override
+  int get SOCK_STREAM => throw UnsupportedError('SOCK_STREAM');
+  @override
+  int get SOL_SOCKET => throw UnsupportedError('SOL_SOCKET');
+  @override
+  int get SOMAXCONN => throw UnsupportedError('SOMAXCONN');
+  @override
+  int get SONPX_SETOPTSHUT => throw UnsupportedError('SONPX_SETOPTSHUT');
+  @override
+  int get SO_ACCEPTCONN => throw UnsupportedError('SO_ACCEPTCONN');
+  @override
+  int get SO_BINDTODEVICE => throw UnsupportedError('SO_BINDTODEVICE');
+  @override
+  int get SO_BROADCAST => throw UnsupportedError('SO_BROADCAST');
+  @override
+  int get SO_DEBUG => throw UnsupportedError('SO_DEBUG');
+  @override
+  int get SO_DONTROUTE => throw UnsupportedError('SO_DONTROUTE');
+  @override
+  int get SO_DONTTRUNC => throw UnsupportedError('SO_DONTTRUNC');
+  @override
+  int get SO_ERROR => throw UnsupportedError('SO_ERROR');
+  @override
+  int get SO_KEEPALIVE => throw UnsupportedError('SO_KEEPALIVE');
+  @override
+  int get SO_LABEL => throw UnsupportedError('SO_LABEL');
+  @override
+  int get SO_LINGER => throw UnsupportedError('SO_LINGER');
+  @override
+  int get SO_LINGER_SEC => throw UnsupportedError('SO_LINGER_SEC');
+  @override
+  int get SO_NETSVC_MARKING_LEVEL =>
+      throw UnsupportedError('SO_NETSVC_MARKING_LEVEL');
+  @override
+  int get SO_NET_SERVICE_TYPE => throw UnsupportedError('SO_NET_SERVICE_TYPE');
+  @override
+  int get SO_NKE => throw UnsupportedError('SO_NKE');
+  @override
+  int get SO_NOADDRERR => throw UnsupportedError('SO_NOADDRERR');
+  @override
+  int get SO_NOSIGPIPE => throw UnsupportedError('SO_NOSIGPIPE');
+  @override
+  int get SO_NOTIFYCONFLICT => throw UnsupportedError('SO_NOTIFYCONFLICT');
+  @override
+  int get SO_NP_EXTENSIONS => throw UnsupportedError('SO_NP_EXTENSIONS');
+  @override
+  int get SO_NREAD => throw UnsupportedError('SO_NREAD');
+  @override
+  int get SO_NUMRCVPKT => throw UnsupportedError('SO_NUMRCVPKT');
+  @override
+  int get SO_NWRITE => throw UnsupportedError('SO_NWRITE');
+  @override
+  int get SO_OOBINLINE => throw UnsupportedError('SO_OOBINLINE');
+  @override
+  int get SO_PEERLABEL => throw UnsupportedError('SO_PEERLABEL');
+  @override
+  int get SO_RANDOMPORT => throw UnsupportedError('SO_RANDOMPORT');
+  @override
+  int get SO_RCVBUF => throw UnsupportedError('SO_RCVBUF');
+  @override
+  int get SO_RCVLOWAT => throw UnsupportedError('SO_RCVLOWAT');
+  @override
+  int get SO_RCVTIMEO => throw UnsupportedError('SO_RCVTIMEO');
+  @override
+  int get SO_RESOLVER_SIGNATURE =>
+      throw UnsupportedError('SO_RESOLVER_SIGNATURE');
+  @override
+  int get SO_REUSEADDR => throw UnsupportedError('SO_REUSEADDR');
+  @override
+  int get SO_REUSEPORT => throw UnsupportedError('SO_REUSEPORT');
+  @override
+  int get SO_REUSESHAREUID => throw UnsupportedError('SO_REUSESHAREUID');
+  @override
+  int get SO_SNDBUF => throw UnsupportedError('SO_SNDBUF');
+  @override
+  int get SO_SNDLOWAT => throw UnsupportedError('SO_SNDLOWAT');
+  @override
+  int get SO_SNDTIMEO => throw UnsupportedError('SO_SNDTIMEO');
+  @override
+  int get SO_TIMESTAMP => throw UnsupportedError('SO_TIMESTAMP');
+  @override
+  int get SO_TIMESTAMP_MONOTONIC =>
+      throw UnsupportedError('SO_TIMESTAMP_MONOTONIC');
+  @override
+  int get SO_TYPE => throw UnsupportedError('SO_TYPE');
+  @override
+  int get SO_UPCALLCLOSEWAIT => throw UnsupportedError('SO_UPCALLCLOSEWAIT');
+  @override
+  int get SO_USELOOPBACK => throw UnsupportedError('SO_USELOOPBACK');
+  @override
+  int get SO_WANTMORE => throw UnsupportedError('SO_WANTMORE');
+  @override
+  int get SO_WANTOOBFLAG => throw UnsupportedError('SO_WANTOOBFLAG');
   @override
   int get SS_DISABLE => throw UnsupportedError('SS_DISABLE');
   @override
