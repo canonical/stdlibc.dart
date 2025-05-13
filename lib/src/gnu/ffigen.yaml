@@ -51,10 +51,8 @@ functions:
 macros:
   include:
     - "[A-Z].*"
-    - "_STAT_VER"
     - "_UTSNAME_.*"
   rename:
-    "_STAT_VER": "STAT_VER"
     "_UTSNAME_(.*)": "UTSNAME_$1"
 enums:
   exclude:
