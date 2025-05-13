@@ -42,26 +42,17 @@ functions:
     # mman.h
     - "mmap"
     - "munmap"
-    # stat.h
-    - "__fxstat"
-    - "__lxstat"
-    - "__xstat"
     # sysinfo.h
     - "sysinfo"
     # utsname.h
     - "uname"
   rename:
     "__errno_location": "errno"
-    "__fxstat": "fstat"
-    "__lxstat": "lstat"
-    "__xstat": "stat"
 macros:
   include:
     - "[A-Z].*"
-    - "_STAT_VER"
     - "_UTSNAME_.*"
   rename:
-    "_STAT_VER": "STAT_VER"
     "_UTSNAME_(.*)": "UTSNAME_$1"
 enums:
   exclude:

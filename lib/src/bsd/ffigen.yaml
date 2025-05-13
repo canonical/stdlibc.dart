@@ -2,7 +2,7 @@ name: BsdLibC
 description: "BSD C Library"
 output: ffigen.dart
 preamble: |
-  // ignore_for_file: non_positive_array_dimension, unused_field, type=lint
+  // ignore_for_file: non_positive_array_dimension, unused_field
 sort: true
 llvm-path:
   - "/Library/Developer/CommandLineTools/usr/lib/libclang.dylib"
@@ -86,3 +86,7 @@ unions:
 typedefs:
   exclude:
     - ".*"
+compiler-opts:
+  # Disable Objective-C blocks, which `ffigen` cannot process in the 'C'
+  # language mode.
+  - '-U__BLOCKS__'

@@ -13,7 +13,119 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get ACCOUNTING => ffi.ACCOUNTING;
   @override
+  int get AF_APPLETALK => ffi.AF_APPLETALK;
+  @override
+  int get AF_CCITT => ffi.AF_CCITT;
+  @override
+  int get AF_CHAOS => ffi.AF_CHAOS;
+  @override
+  int get AF_CNT => ffi.AF_CNT;
+  @override
+  int get AF_COIP => ffi.AF_COIP;
+  @override
+  int get AF_DATAKIT => ffi.AF_DATAKIT;
+  @override
+  int get AF_DLI => ffi.AF_DLI;
+  @override
+  int get AF_E164 => ffi.AF_E164;
+  @override
+  int get AF_ECMA => ffi.AF_ECMA;
+  @override
+  int get AF_HYLINK => ffi.AF_HYLINK;
+  @override
+  int get AF_IEEE80211 => ffi.AF_IEEE80211;
+  @override
+  int get AF_IMPLINK => ffi.AF_IMPLINK;
+  @override
+  int get AF_INET => ffi.AF_INET;
+  @override
+  int get AF_INET6 => ffi.AF_INET6;
+  @override
+  int get AF_IPX => ffi.AF_IPX;
+  @override
+  int get AF_ISDN => ffi.AF_ISDN;
+  @override
+  int get AF_ISO => ffi.AF_ISO;
+  @override
+  int get AF_LAT => ffi.AF_LAT;
+  @override
+  int get AF_LINK => ffi.AF_LINK;
+  @override
+  int get AF_LOCAL => ffi.AF_LOCAL;
+  @override
+  int get AF_MAX => ffi.AF_MAX;
+  @override
+  int get AF_NATM => ffi.AF_NATM;
+  @override
+  int get AF_NDRV => ffi.AF_NDRV;
+  @override
+  int get AF_NETBIOS => ffi.AF_NETBIOS;
+  @override
+  int get AF_NS => ffi.AF_NS;
+  @override
+  int get AF_OSI => ffi.AF_OSI;
+  @override
+  int get AF_PPP => ffi.AF_PPP;
+  @override
+  int get AF_PUP => ffi.AF_PUP;
+  @override
+  int get AF_RESERVED_36 => ffi.AF_RESERVED_36;
+  @override
+  int get AF_ROUTE => ffi.AF_ROUTE;
+  @override
+  int get AF_SIP => ffi.AF_SIP;
+  @override
+  int get AF_SNA => ffi.AF_SNA;
+  @override
+  int get AF_SYSTEM => ffi.AF_SYSTEM;
+  @override
+  int get AF_UNIX => ffi.AF_UNIX;
+  @override
+  int get AF_UNSPEC => ffi.AF_UNSPEC;
+  @override
+  int get AF_UTUN => ffi.AF_UTUN;
+  @override
+  int get AF_VSOCK => ffi.AF_VSOCK;
+  @override
   int get ALLPERMS => ffi.ALLPERMS;
+  @override
+  int get APPLE_IF_FAM_BOND => ffi.APPLE_IF_FAM_BOND;
+  @override
+  int get APPLE_IF_FAM_CELLULAR => ffi.APPLE_IF_FAM_CELLULAR;
+  @override
+  int get APPLE_IF_FAM_DISC => ffi.APPLE_IF_FAM_DISC;
+  @override
+  int get APPLE_IF_FAM_ETHERNET => ffi.APPLE_IF_FAM_ETHERNET;
+  @override
+  int get APPLE_IF_FAM_FAITH => ffi.APPLE_IF_FAM_FAITH;
+  @override
+  int get APPLE_IF_FAM_FIREWIRE => ffi.APPLE_IF_FAM_FIREWIRE;
+  @override
+  int get APPLE_IF_FAM_GIF => ffi.APPLE_IF_FAM_GIF;
+  @override
+  int get APPLE_IF_FAM_IPSEC => ffi.APPLE_IF_FAM_IPSEC;
+  @override
+  int get APPLE_IF_FAM_LOOPBACK => ffi.APPLE_IF_FAM_LOOPBACK;
+  @override
+  int get APPLE_IF_FAM_MDECAP => ffi.APPLE_IF_FAM_MDECAP;
+  @override
+  int get APPLE_IF_FAM_PPP => ffi.APPLE_IF_FAM_PPP;
+  @override
+  int get APPLE_IF_FAM_PVC => ffi.APPLE_IF_FAM_PVC;
+  @override
+  int get APPLE_IF_FAM_SLIP => ffi.APPLE_IF_FAM_SLIP;
+  @override
+  int get APPLE_IF_FAM_STF => ffi.APPLE_IF_FAM_STF;
+  @override
+  int get APPLE_IF_FAM_TUN => ffi.APPLE_IF_FAM_TUN;
+  @override
+  int get APPLE_IF_FAM_UNUSED_16 => ffi.APPLE_IF_FAM_UNUSED_16;
+  @override
+  int get APPLE_IF_FAM_UTUN => ffi.APPLE_IF_FAM_UTUN;
+  @override
+  int get APPLE_IF_FAM_VLAN => ffi.APPLE_IF_FAM_VLAN;
+  @override
+  int get ATTRIBUTION_NAME_MAX => ffi.ATTRIBUTION_NAME_MAX;
   @override
   int get AT_EACCESS => ffi.AT_EACCESS;
   @override
@@ -28,6 +140,10 @@ mixin BsdMacroMixin on PlatformLibC {
   int get AT_SYMLINK_FOLLOW => ffi.AT_SYMLINK_FOLLOW;
   @override
   int get AT_SYMLINK_NOFOLLOW => ffi.AT_SYMLINK_NOFOLLOW;
+  @override
+  int get AT_SYMLINK_NOFOLLOW_ANY => ffi.AT_SYMLINK_NOFOLLOW_ANY;
+  @override
+  int get AUTH_OPEN_NOAUTHFD => ffi.AUTH_OPEN_NOAUTHFD;
   @override
   int get BIG_ENDIAN => ffi.BIG_ENDIAN;
   @override
@@ -98,6 +214,12 @@ mixin BsdMacroMixin on PlatformLibC {
   int get CLOCK_UPTIME_RAW_APPROX => ffi.CLOCK_UPTIME_RAW_APPROX;
   @override
   int get CMIN => throw UnsupportedError('CMIN');
+  @override
+  int get CONNECT_DATA_AUTHENTICATED => ffi.CONNECT_DATA_AUTHENTICATED;
+  @override
+  int get CONNECT_DATA_IDEMPOTENT => ffi.CONNECT_DATA_IDEMPOTENT;
+  @override
+  int get CONNECT_RESUME_ON_READ_WRITE => ffi.CONNECT_RESUME_ON_READ_WRITE;
   @override
   int get CPF_IGNORE_MODE => ffi.CPF_IGNORE_MODE;
   @override
@@ -234,6 +356,8 @@ mixin BsdMacroMixin on PlatformLibC {
   int get EF_MAY_SHARE_BLOCKS => ffi.EF_MAY_SHARE_BLOCKS;
   @override
   int get EF_NO_XATTRS => ffi.EF_NO_XATTRS;
+  @override
+  int get EF_SHARES_ALL_BLOCKS => ffi.EF_SHARES_ALL_BLOCKS;
   @override
   int get EHOSTDOWN => ffi.EHOSTDOWN;
   @override
@@ -545,22 +669,6 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get FPE_NOOP => ffi.FPE_NOOP;
   @override
-  int get FP_CHOP => ffi.FP_CHOP;
-  @override
-  int get FP_PREC_24B => ffi.FP_PREC_24B;
-  @override
-  int get FP_PREC_53B => ffi.FP_PREC_53B;
-  @override
-  int get FP_PREC_64B => ffi.FP_PREC_64B;
-  @override
-  int get FP_RND_DOWN => ffi.FP_RND_DOWN;
-  @override
-  int get FP_RND_NEAR => ffi.FP_RND_NEAR;
-  @override
-  int get FP_RND_UP => ffi.FP_RND_UP;
-  @override
-  int get FP_STATE_BYTES => ffi.FP_STATE_BYTES;
-  @override
   int get FREAD => ffi.FREAD;
   @override
   String get FSTAB => ffi.FSTAB;
@@ -589,15 +697,25 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get F_ADDSIGS => ffi.F_ADDSIGS;
   @override
+  int get F_ADDSIGS_MAIN_BINARY => ffi.F_ADDSIGS_MAIN_BINARY;
+  @override
   int get F_ALLOCATEALL => ffi.F_ALLOCATEALL;
   @override
   int get F_ALLOCATECONTIG => ffi.F_ALLOCATECONTIG;
+  @override
+  int get F_ALLOCATEPERSIST => ffi.F_ALLOCATEPERSIST;
+  @override
+  int get F_ATTRIBUTION_TAG => ffi.F_ATTRIBUTION_TAG;
   @override
   int get F_BARRIERFSYNC => ffi.F_BARRIERFSYNC;
   @override
   int get F_CHECK_LV => ffi.F_CHECK_LV;
   @override
   int get F_CHKCLEAN => ffi.F_CHKCLEAN;
+  @override
+  int get F_CREATE_TAG => ffi.F_CREATE_TAG;
+  @override
+  int get F_DELETE_TAG => ffi.F_DELETE_TAG;
   @override
   int get F_DUPFD => ffi.F_DUPFD;
   @override
@@ -618,6 +736,8 @@ mixin BsdMacroMixin on PlatformLibC {
   int get F_GETFD => ffi.F_GETFD;
   @override
   int get F_GETFL => ffi.F_GETFL;
+  @override
+  int get F_GETLEASE => ffi.F_GETLEASE;
   @override
   int get F_GETLK => ffi.F_GETLK;
   @override
@@ -653,6 +773,14 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get F_NODIRECT => ffi.F_NODIRECT;
   @override
+  int get F_OFD_GETLK => ffi.F_OFD_GETLK;
+  @override
+  int get F_OFD_SETLK => ffi.F_OFD_SETLK;
+  @override
+  int get F_OFD_SETLKW => ffi.F_OFD_SETLKW;
+  @override
+  int get F_OFD_SETLKWTIMEOUT => ffi.F_OFD_SETLKWTIMEOUT;
+  @override
   int get F_OK => ffi.F_OK;
   @override
   int get F_PATHPKG_CHECK => ffi.F_PATHPKG_CHECK;
@@ -662,6 +790,8 @@ mixin BsdMacroMixin on PlatformLibC {
   int get F_PREALLOCATE => ffi.F_PREALLOCATE;
   @override
   int get F_PUNCHHOLE => ffi.F_PUNCHHOLE;
+  @override
+  int get F_QUERY_TAG => ffi.F_QUERY_TAG;
   @override
   int get F_RDADVISE => ffi.F_RDADVISE;
   @override
@@ -674,6 +804,8 @@ mixin BsdMacroMixin on PlatformLibC {
   int get F_SETFD => ffi.F_SETFD;
   @override
   int get F_SETFL => ffi.F_SETFL;
+  @override
+  int get F_SETLEASE => ffi.F_SETLEASE;
   @override
   int get F_SETLK => ffi.F_SETLK;
   @override
@@ -706,6 +838,8 @@ mixin BsdMacroMixin on PlatformLibC {
   int get F_TLOCK => ffi.F_TLOCK;
   @override
   int get F_TRANSCODEKEY => ffi.F_TRANSCODEKEY;
+  @override
+  int get F_TRANSFEREXTENTS => ffi.F_TRANSFEREXTENTS;
   @override
   int get F_TRIM_ACTIVE_FILE => ffi.F_TRIM_ACTIVE_FILE;
   @override
@@ -764,6 +898,137 @@ mixin BsdMacroMixin on PlatformLibC {
   int get GLOB_TILDE => ffi.GLOB_TILDE;
   @override
   int get GLOB_TILDE_CHECK => throw UnsupportedError('GLOB_TILDE_CHECK');
+  @override
+  int get IFCAP_AV => ffi.IFCAP_AV;
+  @override
+  int get IFCAP_CSUM_PARTIAL => ffi.IFCAP_CSUM_PARTIAL;
+  @override
+  int get IFCAP_CSUM_ZERO_INVERT => ffi.IFCAP_CSUM_ZERO_INVERT;
+  @override
+  int get IFCAP_HWCSUM => ffi.IFCAP_HWCSUM;
+  @override
+  int get IFCAP_HW_TIMESTAMP => ffi.IFCAP_HW_TIMESTAMP;
+  @override
+  int get IFCAP_JUMBO_MTU => ffi.IFCAP_JUMBO_MTU;
+  @override
+  int get IFCAP_LRO => ffi.IFCAP_LRO;
+  @override
+  int get IFCAP_LRO_NUM_SEG => ffi.IFCAP_LRO_NUM_SEG;
+  @override
+  int get IFCAP_RXCSUM => ffi.IFCAP_RXCSUM;
+  @override
+  int get IFCAP_SKYWALK => ffi.IFCAP_SKYWALK;
+  @override
+  int get IFCAP_SW_TIMESTAMP => ffi.IFCAP_SW_TIMESTAMP;
+  @override
+  int get IFCAP_TSO => ffi.IFCAP_TSO;
+  @override
+  int get IFCAP_TSO4 => ffi.IFCAP_TSO4;
+  @override
+  int get IFCAP_TSO6 => ffi.IFCAP_TSO6;
+  @override
+  int get IFCAP_TXCSUM => ffi.IFCAP_TXCSUM;
+  @override
+  int get IFCAP_TXSTATUS => ffi.IFCAP_TXSTATUS;
+  @override
+  int get IFCAP_VALID => ffi.IFCAP_VALID;
+  @override
+  int get IFCAP_VLAN_HWTAGGING => ffi.IFCAP_VLAN_HWTAGGING;
+  @override
+  int get IFCAP_VLAN_MTU => ffi.IFCAP_VLAN_MTU;
+  @override
+  int get IFF_ALLMULTI => ffi.IFF_ALLMULTI;
+  @override
+  int get IFF_ALTPHYS => ffi.IFF_ALTPHYS;
+  @override
+  int get IFF_BROADCAST => ffi.IFF_BROADCAST;
+  @override
+  int get IFF_DEBUG => ffi.IFF_DEBUG;
+  @override
+  int get IFF_LINK0 => ffi.IFF_LINK0;
+  @override
+  int get IFF_LINK1 => ffi.IFF_LINK1;
+  @override
+  int get IFF_LINK2 => ffi.IFF_LINK2;
+  @override
+  int get IFF_LOOPBACK => ffi.IFF_LOOPBACK;
+  @override
+  int get IFF_MULTICAST => ffi.IFF_MULTICAST;
+  @override
+  int get IFF_NOARP => ffi.IFF_NOARP;
+  @override
+  int get IFF_NOTRAILERS => ffi.IFF_NOTRAILERS;
+  @override
+  int get IFF_OACTIVE => ffi.IFF_OACTIVE;
+  @override
+  int get IFF_POINTOPOINT => ffi.IFF_POINTOPOINT;
+  @override
+  int get IFF_PROMISC => ffi.IFF_PROMISC;
+  @override
+  int get IFF_RUNNING => ffi.IFF_RUNNING;
+  @override
+  int get IFF_SIMPLEX => ffi.IFF_SIMPLEX;
+  @override
+  int get IFF_UP => ffi.IFF_UP;
+  @override
+  int get IFNAMSIZ => ffi.IFNAMSIZ;
+  @override
+  int get IFNET_SLOWHZ => ffi.IFNET_SLOWHZ;
+  @override
+  int get IFQ_DEF_C_TARGET_DELAY => ffi.IFQ_DEF_C_TARGET_DELAY;
+  @override
+  int get IFQ_DEF_C_UPDATE_INTERVAL => ffi.IFQ_DEF_C_UPDATE_INTERVAL;
+  @override
+  int get IFQ_DEF_L4S_TARGET_DELAY => ffi.IFQ_DEF_L4S_TARGET_DELAY;
+  @override
+  int get IFQ_DEF_L4S_UPDATE_INTERVAL => ffi.IFQ_DEF_L4S_UPDATE_INTERVAL;
+  @override
+  int get IFQ_DEF_L4S_WIRELESS_TARGET_DELAY =>
+      ffi.IFQ_DEF_L4S_WIRELESS_TARGET_DELAY;
+  @override
+  int get IFQ_LL_C_TARGET_DELAY => ffi.IFQ_LL_C_TARGET_DELAY;
+  @override
+  int get IFQ_LL_C_UPDATE_INTERVAL => ffi.IFQ_LL_C_UPDATE_INTERVAL;
+  @override
+  int get IFQ_LL_L4S_TARGET_DELAY => ffi.IFQ_LL_L4S_TARGET_DELAY;
+  @override
+  int get IFQ_LL_L4S_UPDATE_INTERVAL => ffi.IFQ_LL_L4S_UPDATE_INTERVAL;
+  @override
+  int get IFQ_LL_L4S_WIRELESS_TARGET_DELAY =>
+      ffi.IFQ_LL_L4S_WIRELESS_TARGET_DELAY;
+  @override
+  int get IFQ_MAXLEN => ffi.IFQ_MAXLEN;
+  @override
+  int get IFRTYPE_FUNCTIONAL_CELLULAR => ffi.IFRTYPE_FUNCTIONAL_CELLULAR;
+  @override
+  int get IFRTYPE_FUNCTIONAL_COMPANIONLINK =>
+      ffi.IFRTYPE_FUNCTIONAL_COMPANIONLINK;
+  @override
+  int get IFRTYPE_FUNCTIONAL_INTCOPROC => ffi.IFRTYPE_FUNCTIONAL_INTCOPROC;
+  @override
+  int get IFRTYPE_FUNCTIONAL_LAST => ffi.IFRTYPE_FUNCTIONAL_LAST;
+  @override
+  int get IFRTYPE_FUNCTIONAL_LOOPBACK => ffi.IFRTYPE_FUNCTIONAL_LOOPBACK;
+  @override
+  int get IFRTYPE_FUNCTIONAL_MANAGEMENT => ffi.IFRTYPE_FUNCTIONAL_MANAGEMENT;
+  @override
+  int get IFRTYPE_FUNCTIONAL_UNKNOWN => ffi.IFRTYPE_FUNCTIONAL_UNKNOWN;
+  @override
+  int get IFRTYPE_FUNCTIONAL_WIFI_AWDL => ffi.IFRTYPE_FUNCTIONAL_WIFI_AWDL;
+  @override
+  int get IFRTYPE_FUNCTIONAL_WIFI_INFRA => ffi.IFRTYPE_FUNCTIONAL_WIFI_INFRA;
+  @override
+  int get IFRTYPE_FUNCTIONAL_WIRED => ffi.IFRTYPE_FUNCTIONAL_WIRED;
+  @override
+  int get IFSTATMAX => ffi.IFSTATMAX;
+  @override
+  int get IF_MAXMTU => ffi.IF_MAXMTU;
+  @override
+  int get IF_MINMTU => ffi.IF_MINMTU;
+  @override
+  int get IF_NAMESIZE => ffi.IF_NAMESIZE;
+  @override
+  int get IF_WAKE_ON_MAGIC_PACKET => ffi.IF_WAKE_ON_MAGIC_PACKET;
   @override
   int get ILL_BADSTK => ffi.ILL_BADSTK;
   @override
@@ -864,6 +1129,109 @@ mixin BsdMacroMixin on PlatformLibC {
   int get ITIMER_REAL => ffi.ITIMER_REAL;
   @override
   int get ITIMER_VIRTUAL => ffi.ITIMER_VIRTUAL;
+  @override
+  int get KEV_DL_ADDMULTI => ffi.KEV_DL_ADDMULTI;
+  @override
+  int get KEV_DL_AWDL_RESTRICTED => ffi.KEV_DL_AWDL_RESTRICTED;
+  @override
+  int get KEV_DL_AWDL_UNRESTRICTED => ffi.KEV_DL_AWDL_UNRESTRICTED;
+  @override
+  int get KEV_DL_DELMULTI => ffi.KEV_DL_DELMULTI;
+  @override
+  int get KEV_DL_IFCAP_CHANGED => ffi.KEV_DL_IFCAP_CHANGED;
+  @override
+  int get KEV_DL_IFDELEGATE_CHANGED => ffi.KEV_DL_IFDELEGATE_CHANGED;
+  @override
+  int get KEV_DL_IF_ATTACHED => ffi.KEV_DL_IF_ATTACHED;
+  @override
+  int get KEV_DL_IF_DETACHED => ffi.KEV_DL_IF_DETACHED;
+  @override
+  int get KEV_DL_IF_DETACHING => ffi.KEV_DL_IF_DETACHING;
+  @override
+  int get KEV_DL_IF_IDLE_ROUTE_REFCNT => ffi.KEV_DL_IF_IDLE_ROUTE_REFCNT;
+  @override
+  int get KEV_DL_ISSUES => ffi.KEV_DL_ISSUES;
+  @override
+  int get KEV_DL_LINK_ADDRESS_CHANGED => ffi.KEV_DL_LINK_ADDRESS_CHANGED;
+  @override
+  int get KEV_DL_LINK_OFF => ffi.KEV_DL_LINK_OFF;
+  @override
+  int get KEV_DL_LINK_ON => ffi.KEV_DL_LINK_ON;
+  @override
+  int get KEV_DL_LINK_QUALITY_METRIC_CHANGED =>
+      ffi.KEV_DL_LINK_QUALITY_METRIC_CHANGED;
+  @override
+  int get KEV_DL_LOW_POWER_MODE_CHANGED => ffi.KEV_DL_LOW_POWER_MODE_CHANGED;
+  @override
+  int get KEV_DL_MASTER_ELECTED => ffi.KEV_DL_MASTER_ELECTED;
+  @override
+  int get KEV_DL_NODE_ABSENCE => ffi.KEV_DL_NODE_ABSENCE;
+  @override
+  int get KEV_DL_NODE_PRESENCE => ffi.KEV_DL_NODE_PRESENCE;
+  @override
+  int get KEV_DL_PRIMARY_ELECTED => ffi.KEV_DL_PRIMARY_ELECTED;
+  @override
+  int get KEV_DL_PROTO_ATTACHED => ffi.KEV_DL_PROTO_ATTACHED;
+  @override
+  int get KEV_DL_PROTO_DETACHED => ffi.KEV_DL_PROTO_DETACHED;
+  @override
+  int get KEV_DL_QOS_MODE_CHANGED => ffi.KEV_DL_QOS_MODE_CHANGED;
+  @override
+  int get KEV_DL_RRC_STATE_CHANGED => ffi.KEV_DL_RRC_STATE_CHANGED;
+  @override
+  int get KEV_DL_SIFFLAGS => ffi.KEV_DL_SIFFLAGS;
+  @override
+  int get KEV_DL_SIFGENERIC => ffi.KEV_DL_SIFGENERIC;
+  @override
+  int get KEV_DL_SIFMEDIA => ffi.KEV_DL_SIFMEDIA;
+  @override
+  int get KEV_DL_SIFMETRICS => ffi.KEV_DL_SIFMETRICS;
+  @override
+  int get KEV_DL_SIFMTU => ffi.KEV_DL_SIFMTU;
+  @override
+  int get KEV_DL_SIFPHYS => ffi.KEV_DL_SIFPHYS;
+  @override
+  int get KEV_DL_SUBCLASS => ffi.KEV_DL_SUBCLASS;
+  @override
+  int get KEV_DL_WAKEFLAGS_CHANGED => ffi.KEV_DL_WAKEFLAGS_CHANGED;
+  @override
+  int get KEV_INET6_ADDR_DELETED => ffi.KEV_INET6_ADDR_DELETED;
+  @override
+  int get KEV_INET6_CHANGED_ADDR => ffi.KEV_INET6_CHANGED_ADDR;
+  @override
+  int get KEV_INET6_DEFROUTER => ffi.KEV_INET6_DEFROUTER;
+  @override
+  int get KEV_INET6_NEW_LL_ADDR => ffi.KEV_INET6_NEW_LL_ADDR;
+  @override
+  int get KEV_INET6_NEW_RTADV_ADDR => ffi.KEV_INET6_NEW_RTADV_ADDR;
+  @override
+  int get KEV_INET6_NEW_USER_ADDR => ffi.KEV_INET6_NEW_USER_ADDR;
+  @override
+  int get KEV_INET6_REQUEST_NAT64_PREFIX => ffi.KEV_INET6_REQUEST_NAT64_PREFIX;
+  @override
+  int get KEV_INET6_SUBCLASS => ffi.KEV_INET6_SUBCLASS;
+  @override
+  int get KEV_INET_ADDR_DELETED => ffi.KEV_INET_ADDR_DELETED;
+  @override
+  int get KEV_INET_ARPCOLLISION => ffi.KEV_INET_ARPCOLLISION;
+  @override
+  int get KEV_INET_ARPRTRALIVE => ffi.KEV_INET_ARPRTRALIVE;
+  @override
+  int get KEV_INET_ARPRTRFAILURE => ffi.KEV_INET_ARPRTRFAILURE;
+  @override
+  int get KEV_INET_CHANGED_ADDR => ffi.KEV_INET_CHANGED_ADDR;
+  @override
+  int get KEV_INET_NEW_ADDR => ffi.KEV_INET_NEW_ADDR;
+  @override
+  int get KEV_INET_PORTINUSE => ffi.KEV_INET_PORTINUSE;
+  @override
+  int get KEV_INET_SIFBRDADDR => ffi.KEV_INET_SIFBRDADDR;
+  @override
+  int get KEV_INET_SIFDSTADDR => ffi.KEV_INET_SIFDSTADDR;
+  @override
+  int get KEV_INET_SIFNETMASK => ffi.KEV_INET_SIFNETMASK;
+  @override
+  int get KEV_INET_SUBCLASS => ffi.KEV_INET_SUBCLASS;
   @override
   int get LITTLE_ENDIAN => ffi.LITTLE_ENDIAN;
   @override
@@ -971,6 +1339,8 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get MADV_COLD => throw UnsupportedError('MADV_COLD');
   @override
+  int get MADV_COLLAPSE => throw UnsupportedError('MADV_COLLAPSE');
+  @override
   int get MADV_DODUMP => throw UnsupportedError('MADV_DODUMP');
   @override
   int get MADV_DOFORK => throw UnsupportedError('MADV_DOFORK');
@@ -980,6 +1350,9 @@ mixin BsdMacroMixin on PlatformLibC {
   int get MADV_DONTFORK => throw UnsupportedError('MADV_DONTFORK');
   @override
   int get MADV_DONTNEED => ffi.MADV_DONTNEED;
+  @override
+  int get MADV_DONTNEED_LOCKED =>
+      throw UnsupportedError('MADV_DONTNEED_LOCKED');
   @override
   int get MADV_FREE => ffi.MADV_FREE;
   @override
@@ -1001,6 +1374,10 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get MADV_PAGEOUT => ffi.MADV_PAGEOUT;
   @override
+  int get MADV_POPULATE_READ => throw UnsupportedError('MADV_POPULATE_READ');
+  @override
+  int get MADV_POPULATE_WRITE => throw UnsupportedError('MADV_POPULATE_WRITE');
+  @override
   int get MADV_RANDOM => ffi.MADV_RANDOM;
   @override
   int get MADV_REMOVE => throw UnsupportedError('MADV_REMOVE');
@@ -1013,9 +1390,13 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get MADV_WIPEONFORK => throw UnsupportedError('MADV_WIPEONFORK');
   @override
+  int get MADV_ZERO => ffi.MADV_ZERO;
+  @override
   int get MADV_ZERO_WIRED_PAGES => ffi.MADV_ZERO_WIRED_PAGES;
   @override
   int get MAP_32BIT => ffi.MAP_32BIT;
+  @override
+  int get MAP_ABOVE4G => throw UnsupportedError('MAP_ABOVE4G');
   @override
   int get MAP_ANON => ffi.MAP_ANON;
   @override
@@ -1075,6 +1456,8 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get MAP_SYNC => throw UnsupportedError('MAP_SYNC');
   @override
+  int get MAP_TPRO => ffi.MAP_TPRO;
+  @override
   int get MAP_TRANSLATED_ALLOW_EXECUTE => ffi.MAP_TRANSLATED_ALLOW_EXECUTE;
   @override
   int get MAP_TYPE => throw UnsupportedError('MAP_TYPE');
@@ -1105,6 +1488,40 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get MINSIGSTKSZ => ffi.MINSIGSTKSZ;
   @override
+  int get MSG_CTRUNC => ffi.MSG_CTRUNC;
+  @override
+  int get MSG_DONTROUTE => ffi.MSG_DONTROUTE;
+  @override
+  int get MSG_DONTWAIT => ffi.MSG_DONTWAIT;
+  @override
+  int get MSG_EOF => ffi.MSG_EOF;
+  @override
+  int get MSG_EOR => ffi.MSG_EOR;
+  @override
+  int get MSG_FLUSH => ffi.MSG_FLUSH;
+  @override
+  int get MSG_HAVEMORE => ffi.MSG_HAVEMORE;
+  @override
+  int get MSG_HOLD => ffi.MSG_HOLD;
+  @override
+  int get MSG_NEEDSA => ffi.MSG_NEEDSA;
+  @override
+  int get MSG_NOSIGNAL => ffi.MSG_NOSIGNAL;
+  @override
+  int get MSG_OOB => ffi.MSG_OOB;
+  @override
+  int get MSG_PEEK => ffi.MSG_PEEK;
+  @override
+  int get MSG_RCVMORE => ffi.MSG_RCVMORE;
+  @override
+  int get MSG_SEND => ffi.MSG_SEND;
+  @override
+  int get MSG_TRUNC => ffi.MSG_TRUNC;
+  @override
+  int get MSG_WAITALL => ffi.MSG_WAITALL;
+  @override
+  int get MSG_WAITSTREAM => ffi.MSG_WAITSTREAM;
+  @override
   int get MS_ASYNC => ffi.MS_ASYNC;
   @override
   int get MS_DEACTIVATE => ffi.MS_DEACTIVATE;
@@ -1115,11 +1532,59 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get MS_SYNC => ffi.MS_SYNC;
   @override
+  int get NBBY => ffi.NBBY;
+  @override
   int get NCC => throw UnsupportedError('NCC');
+  @override
+  int get NETSVC_MRKNG_LVL_L2 => ffi.NETSVC_MRKNG_LVL_L2;
+  @override
+  int get NETSVC_MRKNG_LVL_L3L2_ALL => ffi.NETSVC_MRKNG_LVL_L3L2_ALL;
+  @override
+  int get NETSVC_MRKNG_LVL_L3L2_BK => ffi.NETSVC_MRKNG_LVL_L3L2_BK;
+  @override
+  int get NETSVC_MRKNG_UNKNOWN => ffi.NETSVC_MRKNG_UNKNOWN;
+  @override
+  int get NET_MAXID => ffi.NET_MAXID;
+  @override
+  int get NET_RT_DUMP => ffi.NET_RT_DUMP;
+  @override
+  int get NET_RT_DUMP2 => ffi.NET_RT_DUMP2;
+  @override
+  int get NET_RT_FLAGS => ffi.NET_RT_FLAGS;
+  @override
+  int get NET_RT_FLAGS_PRIV => ffi.NET_RT_FLAGS_PRIV;
+  @override
+  int get NET_RT_IFLIST => ffi.NET_RT_IFLIST;
+  @override
+  int get NET_RT_IFLIST2 => ffi.NET_RT_IFLIST2;
+  @override
+  int get NET_RT_MAXID => ffi.NET_RT_MAXID;
+  @override
+  int get NET_RT_STAT => ffi.NET_RT_STAT;
+  @override
+  int get NET_RT_TRASH => ffi.NET_RT_TRASH;
+  @override
+  int get NET_SERVICE_TYPE_AV => ffi.NET_SERVICE_TYPE_AV;
+  @override
+  int get NET_SERVICE_TYPE_BE => ffi.NET_SERVICE_TYPE_BE;
+  @override
+  int get NET_SERVICE_TYPE_BK => ffi.NET_SERVICE_TYPE_BK;
+  @override
+  int get NET_SERVICE_TYPE_OAM => ffi.NET_SERVICE_TYPE_OAM;
+  @override
+  int get NET_SERVICE_TYPE_RD => ffi.NET_SERVICE_TYPE_RD;
+  @override
+  int get NET_SERVICE_TYPE_RV => ffi.NET_SERVICE_TYPE_RV;
+  @override
+  int get NET_SERVICE_TYPE_SIG => ffi.NET_SERVICE_TYPE_SIG;
+  @override
+  int get NET_SERVICE_TYPE_VI => ffi.NET_SERVICE_TYPE_VI;
+  @override
+  int get NET_SERVICE_TYPE_VO => ffi.NET_SERVICE_TYPE_VO;
   @override
   int get NEW_TIME => ffi.NEW_TIME;
   @override
-  int get NFDBITS => throw UnsupportedError('NFDBITS');
+  int get NFDBITS => ffi.NFDBITS;
   @override
   int get NSIG => ffi.NSIG;
   @override
@@ -1175,6 +1640,8 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get O_DIRECTORY => ffi.O_DIRECTORY;
   @override
+  int get O_DP_AUTHENTICATE => ffi.O_DP_AUTHENTICATE;
+  @override
   int get O_DP_GETRAWENCRYPTED => ffi.O_DP_GETRAWENCRYPTED;
   @override
   int get O_DP_GETRAWUNENCRYPTED => ffi.O_DP_GETRAWUNENCRYPTED;
@@ -1184,6 +1651,8 @@ mixin BsdMacroMixin on PlatformLibC {
   int get O_EVTONLY => ffi.O_EVTONLY;
   @override
   int get O_EXCL => ffi.O_EXCL;
+  @override
+  int get O_EXEC => ffi.O_EXEC;
   @override
   int get O_EXLOCK => ffi.O_EXLOCK;
   @override
@@ -1207,6 +1676,8 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get O_RSYNC => throw UnsupportedError('O_RSYNC');
   @override
+  int get O_SEARCH => ffi.O_SEARCH;
+  @override
   int get O_SHLOCK => ffi.O_SHLOCK;
   @override
   int get O_SYMLINK => ffi.O_SYMLINK;
@@ -1218,6 +1689,88 @@ mixin BsdMacroMixin on PlatformLibC {
   int get O_WRONLY => ffi.O_WRONLY;
   @override
   int get PDP_ENDIAN => ffi.PDP_ENDIAN;
+  @override
+  int get PF_APPLETALK => ffi.PF_APPLETALK;
+  @override
+  int get PF_BOND => ffi.PF_BOND;
+  @override
+  int get PF_CCITT => ffi.PF_CCITT;
+  @override
+  int get PF_CHAOS => ffi.PF_CHAOS;
+  @override
+  int get PF_CNT => ffi.PF_CNT;
+  @override
+  int get PF_COIP => ffi.PF_COIP;
+  @override
+  int get PF_DATAKIT => ffi.PF_DATAKIT;
+  @override
+  int get PF_DLI => ffi.PF_DLI;
+  @override
+  int get PF_ECMA => ffi.PF_ECMA;
+  @override
+  int get PF_HYLINK => ffi.PF_HYLINK;
+  @override
+  int get PF_IMPLINK => ffi.PF_IMPLINK;
+  @override
+  int get PF_INET => ffi.PF_INET;
+  @override
+  int get PF_INET6 => ffi.PF_INET6;
+  @override
+  int get PF_IPX => ffi.PF_IPX;
+  @override
+  int get PF_ISDN => ffi.PF_ISDN;
+  @override
+  int get PF_ISO => ffi.PF_ISO;
+  @override
+  int get PF_KEY => ffi.PF_KEY;
+  @override
+  int get PF_LAT => ffi.PF_LAT;
+  @override
+  int get PF_LINK => ffi.PF_LINK;
+  @override
+  int get PF_LOCAL => ffi.PF_LOCAL;
+  @override
+  int get PF_MAX => ffi.PF_MAX;
+  @override
+  int get PF_NATM => ffi.PF_NATM;
+  @override
+  int get PF_NDRV => ffi.PF_NDRV;
+  @override
+  int get PF_NETBIOS => ffi.PF_NETBIOS;
+  @override
+  int get PF_NS => ffi.PF_NS;
+  @override
+  int get PF_OSI => ffi.PF_OSI;
+  @override
+  int get PF_PIP => ffi.PF_PIP;
+  @override
+  int get PF_PPP => ffi.PF_PPP;
+  @override
+  int get PF_PUP => ffi.PF_PUP;
+  @override
+  int get PF_RESERVED_36 => ffi.PF_RESERVED_36;
+  @override
+  int get PF_ROUTE => ffi.PF_ROUTE;
+  @override
+  int get PF_RTIP => ffi.PF_RTIP;
+  @override
+  int get PF_SIP => ffi.PF_SIP;
+  @override
+  int get PF_SNA => ffi.PF_SNA;
+  @override
+  int get PF_SYSTEM => ffi.PF_SYSTEM;
+  @override
+  int get PF_UNIX => ffi.PF_UNIX;
+  @override
+  int get PF_UNSPEC => ffi.PF_UNSPEC;
+  @override
+  int get PF_UTUN => ffi.PF_UTUN;
+  @override
+  int get PF_VLAN => ffi.PF_VLAN;
+  @override
+  int get PF_VSOCK => ffi.PF_VSOCK;
+  @override
+  int get PF_XTP => ffi.PF_XTP;
   @override
   int get POLLATTRIB => ffi.POLLATTRIB;
   @override
@@ -1370,11 +1923,21 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get RUSAGE_INFO_V5 => ffi.RUSAGE_INFO_V5;
   @override
+  int get RUSAGE_INFO_V6 => ffi.RUSAGE_INFO_V6;
+  @override
   int get RUSAGE_SELF => ffi.RUSAGE_SELF;
   @override
   int get RU_PROC_RUNS_RESLIDE => ffi.RU_PROC_RUNS_RESLIDE;
   @override
   int get R_OK => ffi.R_OK;
+  @override
+  int get SAE_ASSOCID_ALL => ffi.SAE_ASSOCID_ALL;
+  @override
+  int get SAE_ASSOCID_ANY => ffi.SAE_ASSOCID_ANY;
+  @override
+  int get SAE_CONNID_ALL => ffi.SAE_CONNID_ALL;
+  @override
+  int get SAE_CONNID_ANY => ffi.SAE_CONNID_ANY;
   @override
   int get SA_64REGSET => ffi.SA_64REGSET;
   @override
@@ -1395,6 +1958,14 @@ mixin BsdMacroMixin on PlatformLibC {
   int get SA_USERSPACE_MASK => ffi.SA_USERSPACE_MASK;
   @override
   int get SA_USERTRAMP => ffi.SA_USERTRAMP;
+  @override
+  int get SCM_CREDS => ffi.SCM_CREDS;
+  @override
+  int get SCM_RIGHTS => ffi.SCM_RIGHTS;
+  @override
+  int get SCM_TIMESTAMP => ffi.SCM_TIMESTAMP;
+  @override
+  int get SCM_TIMESTAMP_MONOTONIC => ffi.SCM_TIMESTAMP_MONOTONIC;
   @override
   int get SEEK_CUR => ffi.SEEK_CUR;
   @override
@@ -1432,7 +2003,16 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get SF_SYNTHETIC => ffi.SF_SYNTHETIC;
   @override
+  int get SHADOW_STACK_SET_TOKEN =>
+      throw UnsupportedError('SHADOW_STACK_SET_TOKEN');
+  @override
   int get SHUTDOWN_TIME => ffi.SHUTDOWN_TIME;
+  @override
+  int get SHUT_RD => ffi.SHUT_RD;
+  @override
+  int get SHUT_RDWR => ffi.SHUT_RDWR;
+  @override
+  int get SHUT_WR => ffi.SHUT_WR;
   @override
   int get SIGABRT => ffi.SIGABRT;
   @override
@@ -1520,67 +2100,119 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get SIOCADDDLCI => throw UnsupportedError('SIOCADDDLCI');
   @override
-  int get SIOCADDMULTI => throw UnsupportedError('SIOCADDMULTI');
+  int get SIOCADDMULTI => ffi.SIOCADDMULTI;
   @override
   int get SIOCADDRT => throw UnsupportedError('SIOCADDRT');
   @override
+  int get SIOCAIFADDR => ffi.SIOCAIFADDR;
+  @override
+  int get SIOCARPIPLL => ffi.SIOCARPIPLL;
+  @override
   int get SIOCATMARK => ffi.SIOCATMARK;
+  @override
+  int get SIOCAUTOADDR => ffi.SIOCAUTOADDR;
+  @override
+  int get SIOCAUTONETMASK => ffi.SIOCAUTONETMASK;
   @override
   int get SIOCDARP => throw UnsupportedError('SIOCDARP');
   @override
   int get SIOCDELDLCI => throw UnsupportedError('SIOCDELDLCI');
   @override
-  int get SIOCDELMULTI => throw UnsupportedError('SIOCDELMULTI');
+  int get SIOCDELMULTI => ffi.SIOCDELMULTI;
   @override
   int get SIOCDELRT => throw UnsupportedError('SIOCDELRT');
   @override
   int get SIOCDEVPRIVATE => throw UnsupportedError('SIOCDEVPRIVATE');
   @override
-  int get SIOCDIFADDR => throw UnsupportedError('SIOCDIFADDR');
+  int get SIOCDIFADDR => ffi.SIOCDIFADDR;
+  @override
+  int get SIOCDIFPHYADDR => ffi.SIOCDIFPHYADDR;
   @override
   int get SIOCDRARP => throw UnsupportedError('SIOCDRARP');
   @override
   int get SIOCGARP => throw UnsupportedError('SIOCGARP');
   @override
+  int get SIOCGDRVSPEC => ffi.SIOCGDRVSPEC;
+  @override
+  int get SIOCGETVLAN => ffi.SIOCGETVLAN;
+  @override
   int get SIOCGHIWAT => ffi.SIOCGHIWAT;
   @override
-  int get SIOCGIFADDR => throw UnsupportedError('SIOCGIFADDR');
+  int get SIOCGIF6LOWPAN => ffi.SIOCGIF6LOWPAN;
+  @override
+  int get SIOCGIFADDR => ffi.SIOCGIFADDR;
+  @override
+  int get SIOCGIFALTMTU => ffi.SIOCGIFALTMTU;
+  @override
+  int get SIOCGIFASYNCMAP => ffi.SIOCGIFASYNCMAP;
+  @override
+  int get SIOCGIFBOND => ffi.SIOCGIFBOND;
   @override
   int get SIOCGIFBR => throw UnsupportedError('SIOCGIFBR');
   @override
-  int get SIOCGIFBRDADDR => throw UnsupportedError('SIOCGIFBRDADDR');
+  int get SIOCGIFBRDADDR => ffi.SIOCGIFBRDADDR;
   @override
-  int get SIOCGIFCONF => throw UnsupportedError('SIOCGIFCONF');
+  int get SIOCGIFCAP => ffi.SIOCGIFCAP;
+  @override
+  int get SIOCGIFCONF => ffi.SIOCGIFCONF;
   @override
   int get SIOCGIFCOUNT => throw UnsupportedError('SIOCGIFCOUNT');
   @override
-  int get SIOCGIFDSTADDR => throw UnsupportedError('SIOCGIFDSTADDR');
+  int get SIOCGIFDEVMTU => ffi.SIOCGIFDEVMTU;
+  @override
+  int get SIOCGIFDIRECTLINK => ffi.SIOCGIFDIRECTLINK;
+  @override
+  int get SIOCGIFDSTADDR => ffi.SIOCGIFDSTADDR;
   @override
   int get SIOCGIFENCAP => throw UnsupportedError('SIOCGIFENCAP');
   @override
-  int get SIOCGIFFLAGS => throw UnsupportedError('SIOCGIFFLAGS');
+  int get SIOCGIFFLAGS => ffi.SIOCGIFFLAGS;
+  @override
+  int get SIOCGIFFUNCTIONALTYPE => ffi.SIOCGIFFUNCTIONALTYPE;
+  @override
+  int get SIOCGIFGENERIC => ffi.SIOCGIFGENERIC;
   @override
   int get SIOCGIFHWADDR => throw UnsupportedError('SIOCGIFHWADDR');
   @override
   int get SIOCGIFINDEX => throw UnsupportedError('SIOCGIFINDEX');
   @override
+  int get SIOCGIFKPI => ffi.SIOCGIFKPI;
+  @override
+  int get SIOCGIFMAC => ffi.SIOCGIFMAC;
+  @override
   int get SIOCGIFMAP => throw UnsupportedError('SIOCGIFMAP');
+  @override
+  int get SIOCGIFMEDIA => ffi.SIOCGIFMEDIA;
   @override
   int get SIOCGIFMEM => throw UnsupportedError('SIOCGIFMEM');
   @override
-  int get SIOCGIFMETRIC => throw UnsupportedError('SIOCGIFMETRIC');
+  int get SIOCGIFMETRIC => ffi.SIOCGIFMETRIC;
   @override
-  int get SIOCGIFMTU => throw UnsupportedError('SIOCGIFMTU');
+  int get SIOCGIFMTU => ffi.SIOCGIFMTU;
   @override
   int get SIOCGIFNAME => throw UnsupportedError('SIOCGIFNAME');
   @override
-  int get SIOCGIFNETMASK => throw UnsupportedError('SIOCGIFNETMASK');
+  int get SIOCGIFNETMASK => ffi.SIOCGIFNETMASK;
+  @override
+  int get SIOCGIFPDSTADDR => ffi.SIOCGIFPDSTADDR;
   @override
   int get SIOCGIFPFLAGS => throw UnsupportedError('SIOCGIFPFLAGS');
   @override
+  int get SIOCGIFPHYS => ffi.SIOCGIFPHYS;
+  @override
+  int get SIOCGIFPSRCADDR => ffi.SIOCGIFPSRCADDR;
+  @override
   int get SIOCGIFSLAVE => throw UnsupportedError('SIOCGIFSLAVE');
   @override
+  int get SIOCGIFSTATUS => ffi.SIOCGIFSTATUS;
+  @override
   int get SIOCGIFTXQLEN => throw UnsupportedError('SIOCGIFTXQLEN');
+  @override
+  int get SIOCGIFVLAN => ffi.SIOCGIFVLAN;
+  @override
+  int get SIOCGIFWAKEFLAGS => ffi.SIOCGIFWAKEFLAGS;
+  @override
+  int get SIOCGIFXMEDIA => ffi.SIOCGIFXMEDIA;
   @override
   int get SIOCGLOWAT => ffi.SIOCGLOWAT;
   @override
@@ -1588,49 +2220,91 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get SIOCGRARP => throw UnsupportedError('SIOCGRARP');
   @override
+  int get SIOCIFCREATE => ffi.SIOCIFCREATE;
+  @override
+  int get SIOCIFCREATE2 => ffi.SIOCIFCREATE2;
+  @override
+  int get SIOCIFDESTROY => ffi.SIOCIFDESTROY;
+  @override
+  int get SIOCIFGCLONERS => ffi.SIOCIFGCLONERS;
+  @override
   int get SIOCPROTOPRIVATE => throw UnsupportedError('SIOCPROTOPRIVATE');
+  @override
+  int get SIOCRSLVMULTI => ffi.SIOCRSLVMULTI;
   @override
   int get SIOCRTMSG => throw UnsupportedError('SIOCRTMSG');
   @override
   int get SIOCSARP => throw UnsupportedError('SIOCSARP');
   @override
+  int get SIOCSDRVSPEC => ffi.SIOCSDRVSPEC;
+  @override
+  int get SIOCSETVLAN => ffi.SIOCSETVLAN;
+  @override
   int get SIOCSHIWAT => ffi.SIOCSHIWAT;
   @override
-  int get SIOCSIFADDR => throw UnsupportedError('SIOCSIFADDR');
+  int get SIOCSIF6LOWPAN => ffi.SIOCSIF6LOWPAN;
+  @override
+  int get SIOCSIFADDR => ffi.SIOCSIFADDR;
+  @override
+  int get SIOCSIFALTMTU => ffi.SIOCSIFALTMTU;
+  @override
+  int get SIOCSIFASYNCMAP => ffi.SIOCSIFASYNCMAP;
+  @override
+  int get SIOCSIFBOND => ffi.SIOCSIFBOND;
   @override
   int get SIOCSIFBR => throw UnsupportedError('SIOCSIFBR');
   @override
-  int get SIOCSIFBRDADDR => throw UnsupportedError('SIOCSIFBRDADDR');
+  int get SIOCSIFBRDADDR => ffi.SIOCSIFBRDADDR;
   @override
-  int get SIOCSIFDSTADDR => throw UnsupportedError('SIOCSIFDSTADDR');
+  int get SIOCSIFCAP => ffi.SIOCSIFCAP;
+  @override
+  int get SIOCSIFDSTADDR => ffi.SIOCSIFDSTADDR;
   @override
   int get SIOCSIFENCAP => throw UnsupportedError('SIOCSIFENCAP');
   @override
-  int get SIOCSIFFLAGS => throw UnsupportedError('SIOCSIFFLAGS');
+  int get SIOCSIFFLAGS => ffi.SIOCSIFFLAGS;
+  @override
+  int get SIOCSIFGENERIC => ffi.SIOCSIFGENERIC;
   @override
   int get SIOCSIFHWADDR => throw UnsupportedError('SIOCSIFHWADDR');
   @override
   int get SIOCSIFHWBROADCAST => throw UnsupportedError('SIOCSIFHWBROADCAST');
   @override
+  int get SIOCSIFKPI => ffi.SIOCSIFKPI;
+  @override
   int get SIOCSIFLINK => throw UnsupportedError('SIOCSIFLINK');
+  @override
+  int get SIOCSIFLLADDR => ffi.SIOCSIFLLADDR;
+  @override
+  int get SIOCSIFMAC => ffi.SIOCSIFMAC;
+  @override
+  int get SIOCSIFMANAGEMENT => ffi.SIOCSIFMANAGEMENT;
   @override
   int get SIOCSIFMAP => throw UnsupportedError('SIOCSIFMAP');
   @override
+  int get SIOCSIFMEDIA => ffi.SIOCSIFMEDIA;
+  @override
   int get SIOCSIFMEM => throw UnsupportedError('SIOCSIFMEM');
   @override
-  int get SIOCSIFMETRIC => throw UnsupportedError('SIOCSIFMETRIC');
+  int get SIOCSIFMETRIC => ffi.SIOCSIFMETRIC;
   @override
-  int get SIOCSIFMTU => throw UnsupportedError('SIOCSIFMTU');
+  int get SIOCSIFMTU => ffi.SIOCSIFMTU;
   @override
   int get SIOCSIFNAME => throw UnsupportedError('SIOCSIFNAME');
   @override
-  int get SIOCSIFNETMASK => throw UnsupportedError('SIOCSIFNETMASK');
+  int get SIOCSIFNETMASK => ffi.SIOCSIFNETMASK;
   @override
   int get SIOCSIFPFLAGS => throw UnsupportedError('SIOCSIFPFLAGS');
+  @override
+  int get SIOCSIFPHYADDR => ffi.SIOCSIFPHYADDR;
+  @override
+  int get SIOCSIFPHYS => ffi.SIOCSIFPHYS;
   @override
   int get SIOCSIFSLAVE => throw UnsupportedError('SIOCSIFSLAVE');
   @override
   int get SIOCSIFTXQLEN => throw UnsupportedError('SIOCSIFTXQLEN');
+  @override
+  int get SIOCSIFVLAN => ffi.SIOCSIFVLAN;
   @override
   int get SIOCSLOWAT => ffi.SIOCSLOWAT;
   @override
@@ -1656,11 +2330,109 @@ mixin BsdMacroMixin on PlatformLibC {
   @override
   int get SLIPDISC => ffi.SLIPDISC;
   @override
+  int get SOCK_DGRAM => ffi.SOCK_DGRAM;
+  @override
+  int get SOCK_MAXADDRLEN => ffi.SOCK_MAXADDRLEN;
+  @override
+  int get SOCK_RAW => ffi.SOCK_RAW;
+  @override
+  int get SOCK_RDM => ffi.SOCK_RDM;
+  @override
+  int get SOCK_SEQPACKET => ffi.SOCK_SEQPACKET;
+  @override
+  int get SOCK_STREAM => ffi.SOCK_STREAM;
+  @override
+  int get SOL_SOCKET => ffi.SOL_SOCKET;
+  @override
+  int get SOMAXCONN => ffi.SOMAXCONN;
+  @override
+  int get SONPX_SETOPTSHUT => ffi.SONPX_SETOPTSHUT;
+  @override
+  int get SO_ACCEPTCONN => ffi.SO_ACCEPTCONN;
+  @override
+  int get SO_BINDTODEVICE => ffi.SO_BINDTODEVICE;
+  @override
+  int get SO_BROADCAST => ffi.SO_BROADCAST;
+  @override
+  int get SO_DEBUG => ffi.SO_DEBUG;
+  @override
+  int get SO_DONTROUTE => ffi.SO_DONTROUTE;
+  @override
+  int get SO_DONTTRUNC => ffi.SO_DONTTRUNC;
+  @override
+  int get SO_ERROR => ffi.SO_ERROR;
+  @override
+  int get SO_KEEPALIVE => ffi.SO_KEEPALIVE;
+  @override
+  int get SO_LABEL => ffi.SO_LABEL;
+  @override
+  int get SO_LINGER => ffi.SO_LINGER;
+  @override
+  int get SO_LINGER_SEC => ffi.SO_LINGER_SEC;
+  @override
+  int get SO_NETSVC_MARKING_LEVEL => ffi.SO_NETSVC_MARKING_LEVEL;
+  @override
+  int get SO_NET_SERVICE_TYPE => ffi.SO_NET_SERVICE_TYPE;
+  @override
+  int get SO_NKE => ffi.SO_NKE;
+  @override
+  int get SO_NOADDRERR => ffi.SO_NOADDRERR;
+  @override
+  int get SO_NOSIGPIPE => ffi.SO_NOSIGPIPE;
+  @override
+  int get SO_NOTIFYCONFLICT => ffi.SO_NOTIFYCONFLICT;
+  @override
+  int get SO_NP_EXTENSIONS => ffi.SO_NP_EXTENSIONS;
+  @override
+  int get SO_NREAD => ffi.SO_NREAD;
+  @override
+  int get SO_NUMRCVPKT => ffi.SO_NUMRCVPKT;
+  @override
+  int get SO_NWRITE => ffi.SO_NWRITE;
+  @override
+  int get SO_OOBINLINE => ffi.SO_OOBINLINE;
+  @override
+  int get SO_PEERLABEL => ffi.SO_PEERLABEL;
+  @override
+  int get SO_RANDOMPORT => ffi.SO_RANDOMPORT;
+  @override
+  int get SO_RCVBUF => ffi.SO_RCVBUF;
+  @override
+  int get SO_RCVLOWAT => ffi.SO_RCVLOWAT;
+  @override
+  int get SO_RCVTIMEO => ffi.SO_RCVTIMEO;
+  @override
+  int get SO_RESOLVER_SIGNATURE => ffi.SO_RESOLVER_SIGNATURE;
+  @override
+  int get SO_REUSEADDR => ffi.SO_REUSEADDR;
+  @override
+  int get SO_REUSEPORT => ffi.SO_REUSEPORT;
+  @override
+  int get SO_REUSESHAREUID => ffi.SO_REUSESHAREUID;
+  @override
+  int get SO_SNDBUF => ffi.SO_SNDBUF;
+  @override
+  int get SO_SNDLOWAT => ffi.SO_SNDLOWAT;
+  @override
+  int get SO_SNDTIMEO => ffi.SO_SNDTIMEO;
+  @override
+  int get SO_TIMESTAMP => ffi.SO_TIMESTAMP;
+  @override
+  int get SO_TIMESTAMP_MONOTONIC => ffi.SO_TIMESTAMP_MONOTONIC;
+  @override
+  int get SO_TYPE => ffi.SO_TYPE;
+  @override
+  int get SO_UPCALLCLOSEWAIT => ffi.SO_UPCALLCLOSEWAIT;
+  @override
+  int get SO_USELOOPBACK => ffi.SO_USELOOPBACK;
+  @override
+  int get SO_WANTMORE => ffi.SO_WANTMORE;
+  @override
+  int get SO_WANTOOBFLAG => ffi.SO_WANTOOBFLAG;
+  @override
   int get SS_DISABLE => ffi.SS_DISABLE;
   @override
   int get SS_ONSTACK => ffi.SS_ONSTACK;
-  @override
-  int get STAT_VER => throw UnsupportedError('STAT_VER');
   @override
   int get STDERR_FILENO => ffi.STDERR_FILENO;
   @override
