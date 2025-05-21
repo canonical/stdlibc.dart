@@ -9,12 +9,11 @@ on:
 
 jobs:
   ffigen:
-    if: ${{false}}
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v4
     - run: sudo apt update
-    - run: sudo apt install -y libclang-9-dev
+    - run: sudo apt install -y libclang-16-dev
     - uses: dart-lang/setup-dart@v1
     - run: dart pub get
     - run: dart run ffigen --config lib/src/gnu/ffigen.yaml
@@ -26,6 +25,10 @@ jobs:
         add-paths: lib/src/gnu/ffigen.dart
         branch: regenerate/gnu
         delete-branch: true
+    - uses: actions/upload-artifact@v4
+      with:
+        name: ffigen.dart
+        path: lib/src/gnu/ffigen.dart  
     - run: |
         git diff > lib_src_gnu_ffigen.dart.diff
         [ -s lib_src_gnu_ffigen.dart.diff ] || rm lib_src_gnu_ffigen.dart.diff

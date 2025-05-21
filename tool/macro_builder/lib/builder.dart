@@ -1,3 +1,6 @@
+// TODO: Remove usages of deprecated analyzer features.
+// ignore_for_file: deprecated_member_use
+
 import 'package:analyzer/dart/element/element.dart';
 import 'package:analyzer/dart/element/type.dart';
 import 'package:build/build.dart';
@@ -86,7 +89,8 @@ class MacroBuilder implements Builder {
         buildStep.inputId.package,
         p.join('lib', 'src', 'macros.g.dart'),
       ),
-      DartFormatter().format('${lib.accept(DartEmitter.scoped())}'),
+      DartFormatter(languageVersion: DartFormatter.latestLanguageVersion)
+          .format('${lib.accept(DartEmitter.scoped())}'),
     );
 
     for (final impl in libs.entries) {
@@ -119,7 +123,8 @@ class MacroBuilder implements Builder {
           buildStep.inputId.package,
           p.join('lib', 'src', impl.key, 'macros.g.dart'),
         ),
-        DartFormatter().format('${lib.accept(DartEmitter.scoped())}'),
+        DartFormatter(languageVersion: DartFormatter.latestLanguageVersion)
+            .format('${lib.accept(DartEmitter.scoped())}'),
       );
     }
   }

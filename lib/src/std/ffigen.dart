@@ -852,13 +852,13 @@ class StdLibC {
   late final _strerror =
       _strerrorPtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
 
-  void sync1() {
-    return _sync1();
+  void sync$() {
+    return _sync$();
   }
 
-  late final _sync1Ptr =
+  late final _sync$Ptr =
       _lookup<ffi.NativeFunction<ffi.Void Function()>>('sync');
-  late final _sync1 = _sync1Ptr.asFunction<void Function()>();
+  late final _sync$ = _sync$Ptr.asFunction<void Function()>();
 
   void syslog(
     int __pri,
@@ -976,7 +976,7 @@ class StdLibC {
       _writePtr.asFunction<int Function(int, ffi.Pointer<ffi.Void>, int)>();
 }
 
-final class UnnamedStruct1 extends ffi.Struct {
+final class UnnamedStruct2 extends ffi.Struct {
   @ffi.Int()
   external int tv_sec;
 
@@ -1063,7 +1063,7 @@ final class utmpx_t extends ffi.Struct {
   @ffi.Int()
   external int ut_session;
 
-  external UnnamedStruct1 ut_tv;
+  external UnnamedStruct2 ut_tv;
 
   @ffi.Array.multi([4])
   external ffi.Array<ffi.Int> ut_addr_v6;

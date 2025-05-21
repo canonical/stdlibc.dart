@@ -21,7 +21,7 @@ mixin GnuUtmpxMixin on StdUtmpxMixin {
   }
 }
 
-extension _GnuTimeval on ffi.UnnamedStruct1 {
+extension _GnuTimeval on ffi.UnnamedStruct3 {
   DateTime toDateTime() {
     final tv = Duration(seconds: tv_sec, microseconds: tv_usec);
     return DateTime.fromMicrosecondsSinceEpoch(tv.inMicroseconds);

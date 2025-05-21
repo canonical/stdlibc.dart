@@ -9,8 +9,7 @@ on:
 
 jobs:
   ffigen:
-    if: ${{false}}
-    runs-on: macos-14
+    runs-on: macos-15
     steps:
     - uses: actions/checkout@v4
     - uses: dart-lang/setup-dart@v1
@@ -24,6 +23,10 @@ jobs:
         add-paths: lib/src/bsd/ffigen.dart
         branch: regenerate/bsd
         delete-branch: true
+    - uses: actions/upload-artifact@v4
+      with:
+        name: ffigen.dart
+        path: lib/src/bsd/ffigen.dart
     - run: |
         git diff > lib_src_bsd_ffigen.dart.diff
         [ -s lib_src_bsd_ffigen.dart.diff ] || rm lib_src_bsd_ffigen.dart.diff

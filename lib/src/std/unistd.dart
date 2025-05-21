@@ -120,7 +120,7 @@ mixin StdUnistdMixin on PlatformLibC {
   int setuid(int uid) => std.setuid(uid);
 
   @override
-  void sync() => std.sync1();
+  void sync() => std.sync$();
 
   @override
   int unlink(String path) {
