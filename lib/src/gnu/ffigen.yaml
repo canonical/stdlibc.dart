@@ -29,6 +29,8 @@ headers:
     - "/usr/include/x86_64-linux-gnu/sys/stat.h"
     - "/usr/include/x86_64-linux-gnu/sys/sysinfo.h"
     - "/usr/include/x86_64-linux-gnu/sys/utsname.h"
+    - "/usr/include/x86_64-linux-gnu/sys/epoll.h"
+    - "/usr/include/x86_64-linux-gnu/sys/eventfd.h"
 globals:
   exclude:
     - ".*"
@@ -46,6 +48,12 @@ functions:
     - "sysinfo"
     # utsname.h
     - "uname"
+    # epoll.h
+    - "epoll_create1"
+    - "epoll_ctl"
+    - "epoll_wait"
+    # eventfd.h
+    - "eventfd"
   rename:
     "__errno_location": "errno"
 macros:

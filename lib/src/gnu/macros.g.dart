@@ -359,6 +359,18 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get EFBIG => ffi.EFBIG;
   @override
+  int get EFD_CLOEXEC => ffi.EFD_CLOEXEC;
+  @override
+  int get EFD_CLOEXEC1 => ffi.EFD_CLOEXEC1;
+  @override
+  int get EFD_NONBLOCK => ffi.EFD_NONBLOCK;
+  @override
+  int get EFD_NONBLOCK1 => ffi.EFD_NONBLOCK1;
+  @override
+  int get EFD_SEMAPHORE => ffi.EFD_SEMAPHORE;
+  @override
+  int get EFD_SEMAPHORE1 => ffi.EFD_SEMAPHORE1;
+  @override
   int get EFTYPE => throw UnsupportedError('EFTYPE');
   @override
   int get EF_IS_PURGEABLE => throw UnsupportedError('EF_IS_PURGEABLE');
@@ -533,6 +545,46 @@ mixin GnuMacroMixin on PlatformLibC {
   int get EPFNOSUPPORT => ffi.EPFNOSUPPORT;
   @override
   int get EPIPE => ffi.EPIPE;
+  @override
+  int get EPOLLERR => ffi.EPOLLERR;
+  @override
+  int get EPOLLET => ffi.EPOLLET;
+  @override
+  int get EPOLLEXCLUSIVE => ffi.EPOLLEXCLUSIVE;
+  @override
+  int get EPOLLHUP => ffi.EPOLLHUP;
+  @override
+  int get EPOLLIN => ffi.EPOLLIN;
+  @override
+  int get EPOLLMSG => ffi.EPOLLMSG;
+  @override
+  int get EPOLLONESHOT => ffi.EPOLLONESHOT;
+  @override
+  int get EPOLLOUT => ffi.EPOLLOUT;
+  @override
+  int get EPOLLPRI => ffi.EPOLLPRI;
+  @override
+  int get EPOLLRDBAND => ffi.EPOLLRDBAND;
+  @override
+  int get EPOLLRDHUP => ffi.EPOLLRDHUP;
+  @override
+  int get EPOLLRDNORM => ffi.EPOLLRDNORM;
+  @override
+  int get EPOLLWAKEUP => ffi.EPOLLWAKEUP;
+  @override
+  int get EPOLLWRBAND => ffi.EPOLLWRBAND;
+  @override
+  int get EPOLLWRNORM => ffi.EPOLLWRNORM;
+  @override
+  int get EPOLL_CLOEXEC => ffi.EPOLL_CLOEXEC;
+  @override
+  int get EPOLL_CLOEXEC1 => ffi.EPOLL_CLOEXEC1;
+  @override
+  int get EPOLL_CTL_ADD => ffi.EPOLL_CTL_ADD;
+  @override
+  int get EPOLL_CTL_DEL => ffi.EPOLL_CTL_DEL;
+  @override
+  int get EPOLL_CTL_MOD => ffi.EPOLL_CTL_MOD;
   @override
   int get EPROCLIM => throw UnsupportedError('EPROCLIM');
   @override
@@ -1097,61 +1149,61 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get INIT_PROCESS => ffi.INIT_PROCESS;
   @override
-  int get INT16_MAX => throw UnsupportedError('INT16_MAX');
+  int get INT16_MAX => ffi.INT16_MAX;
   @override
-  int get INT16_MIN => throw UnsupportedError('INT16_MIN');
+  int get INT16_MIN => ffi.INT16_MIN;
   @override
-  int get INT32_MAX => throw UnsupportedError('INT32_MAX');
+  int get INT32_MAX => ffi.INT32_MAX;
   @override
-  int get INT32_MIN => throw UnsupportedError('INT32_MIN');
+  int get INT32_MIN => ffi.INT32_MIN;
   @override
-  int get INT64_MAX => throw UnsupportedError('INT64_MAX');
+  int get INT64_MAX => ffi.INT64_MAX;
   @override
-  int get INT64_MIN => throw UnsupportedError('INT64_MIN');
+  int get INT64_MIN => ffi.INT64_MIN;
   @override
-  int get INT8_MAX => throw UnsupportedError('INT8_MAX');
+  int get INT8_MAX => ffi.INT8_MAX;
   @override
-  int get INT8_MIN => throw UnsupportedError('INT8_MIN');
+  int get INT8_MIN => ffi.INT8_MIN;
   @override
-  int get INTMAX_MAX => throw UnsupportedError('INTMAX_MAX');
+  int get INTMAX_MAX => ffi.INTMAX_MAX;
   @override
-  int get INTMAX_MIN => throw UnsupportedError('INTMAX_MIN');
+  int get INTMAX_MIN => ffi.INTMAX_MIN;
   @override
-  int get INTPTR_MAX => throw UnsupportedError('INTPTR_MAX');
+  int get INTPTR_MAX => ffi.INTPTR_MAX;
   @override
-  int get INTPTR_MIN => throw UnsupportedError('INTPTR_MIN');
+  int get INTPTR_MIN => ffi.INTPTR_MIN;
   @override
-  int get INT_FAST16_MAX => throw UnsupportedError('INT_FAST16_MAX');
+  int get INT_FAST16_MAX => ffi.INT_FAST16_MAX;
   @override
-  int get INT_FAST16_MIN => throw UnsupportedError('INT_FAST16_MIN');
+  int get INT_FAST16_MIN => ffi.INT_FAST16_MIN;
   @override
-  int get INT_FAST32_MAX => throw UnsupportedError('INT_FAST32_MAX');
+  int get INT_FAST32_MAX => ffi.INT_FAST32_MAX;
   @override
-  int get INT_FAST32_MIN => throw UnsupportedError('INT_FAST32_MIN');
+  int get INT_FAST32_MIN => ffi.INT_FAST32_MIN;
   @override
-  int get INT_FAST64_MAX => throw UnsupportedError('INT_FAST64_MAX');
+  int get INT_FAST64_MAX => ffi.INT_FAST64_MAX;
   @override
-  int get INT_FAST64_MIN => throw UnsupportedError('INT_FAST64_MIN');
+  int get INT_FAST64_MIN => ffi.INT_FAST64_MIN;
   @override
-  int get INT_FAST8_MAX => throw UnsupportedError('INT_FAST8_MAX');
+  int get INT_FAST8_MAX => ffi.INT_FAST8_MAX;
   @override
-  int get INT_FAST8_MIN => throw UnsupportedError('INT_FAST8_MIN');
+  int get INT_FAST8_MIN => ffi.INT_FAST8_MIN;
   @override
-  int get INT_LEAST16_MAX => throw UnsupportedError('INT_LEAST16_MAX');
+  int get INT_LEAST16_MAX => ffi.INT_LEAST16_MAX;
   @override
-  int get INT_LEAST16_MIN => throw UnsupportedError('INT_LEAST16_MIN');
+  int get INT_LEAST16_MIN => ffi.INT_LEAST16_MIN;
   @override
-  int get INT_LEAST32_MAX => throw UnsupportedError('INT_LEAST32_MAX');
+  int get INT_LEAST32_MAX => ffi.INT_LEAST32_MAX;
   @override
-  int get INT_LEAST32_MIN => throw UnsupportedError('INT_LEAST32_MIN');
+  int get INT_LEAST32_MIN => ffi.INT_LEAST32_MIN;
   @override
-  int get INT_LEAST64_MAX => throw UnsupportedError('INT_LEAST64_MAX');
+  int get INT_LEAST64_MAX => ffi.INT_LEAST64_MAX;
   @override
-  int get INT_LEAST64_MIN => throw UnsupportedError('INT_LEAST64_MIN');
+  int get INT_LEAST64_MIN => ffi.INT_LEAST64_MIN;
   @override
-  int get INT_LEAST8_MAX => throw UnsupportedError('INT_LEAST8_MAX');
+  int get INT_LEAST8_MAX => ffi.INT_LEAST8_MAX;
   @override
-  int get INT_LEAST8_MIN => throw UnsupportedError('INT_LEAST8_MIN');
+  int get INT_LEAST8_MIN => ffi.INT_LEAST8_MIN;
   @override
   int get IOCPARM_MASK => throw UnsupportedError('IOCPARM_MASK');
   @override
@@ -1944,9 +1996,9 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get PROT_WRITE => ffi.PROT_WRITE;
   @override
-  int get PTRDIFF_MAX => throw UnsupportedError('PTRDIFF_MAX');
+  int get PTRDIFF_MAX => ffi.PTRDIFF_MAX;
   @override
-  int get PTRDIFF_MIN => throw UnsupportedError('PTRDIFF_MIN');
+  int get PTRDIFF_MIN => ffi.PTRDIFF_MIN;
   @override
   int get RAND_MAX => ffi.RAND_MAX;
   @override
@@ -2176,9 +2228,9 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get SIGXFSZ => throw UnsupportedError('SIGXFSZ');
   @override
-  int get SIG_ATOMIC_MAX => throw UnsupportedError('SIG_ATOMIC_MAX');
+  int get SIG_ATOMIC_MAX => ffi.SIG_ATOMIC_MAX;
   @override
-  int get SIG_ATOMIC_MIN => throw UnsupportedError('SIG_ATOMIC_MIN');
+  int get SIG_ATOMIC_MIN => ffi.SIG_ATOMIC_MIN;
   @override
   int get SIG_BLOCK => throw UnsupportedError('SIG_BLOCK');
   @override
@@ -2403,7 +2455,7 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get SIOGIFINDEX => ffi.SIOGIFINDEX;
   @override
-  int get SIZE_MAX => throw UnsupportedError('SIZE_MAX');
+  int get SIZE_MAX => ffi.SIZE_MAX;
   @override
   int get SI_ASYNCIO => throw UnsupportedError('SI_ASYNCIO');
   @override
@@ -2861,33 +2913,33 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get UF_TRACKED => throw UnsupportedError('UF_TRACKED');
   @override
-  int get UINT16_MAX => throw UnsupportedError('UINT16_MAX');
+  int get UINT16_MAX => ffi.UINT16_MAX;
   @override
-  int get UINT32_MAX => throw UnsupportedError('UINT32_MAX');
+  int get UINT32_MAX => ffi.UINT32_MAX;
   @override
-  int get UINT64_MAX => throw UnsupportedError('UINT64_MAX');
+  int get UINT64_MAX => ffi.UINT64_MAX;
   @override
-  int get UINT8_MAX => throw UnsupportedError('UINT8_MAX');
+  int get UINT8_MAX => ffi.UINT8_MAX;
   @override
-  int get UINTMAX_MAX => throw UnsupportedError('UINTMAX_MAX');
+  int get UINTMAX_MAX => ffi.UINTMAX_MAX;
   @override
-  int get UINTPTR_MAX => throw UnsupportedError('UINTPTR_MAX');
+  int get UINTPTR_MAX => ffi.UINTPTR_MAX;
   @override
-  int get UINT_FAST16_MAX => throw UnsupportedError('UINT_FAST16_MAX');
+  int get UINT_FAST16_MAX => ffi.UINT_FAST16_MAX;
   @override
-  int get UINT_FAST32_MAX => throw UnsupportedError('UINT_FAST32_MAX');
+  int get UINT_FAST32_MAX => ffi.UINT_FAST32_MAX;
   @override
-  int get UINT_FAST64_MAX => throw UnsupportedError('UINT_FAST64_MAX');
+  int get UINT_FAST64_MAX => ffi.UINT_FAST64_MAX;
   @override
-  int get UINT_FAST8_MAX => throw UnsupportedError('UINT_FAST8_MAX');
+  int get UINT_FAST8_MAX => ffi.UINT_FAST8_MAX;
   @override
-  int get UINT_LEAST16_MAX => throw UnsupportedError('UINT_LEAST16_MAX');
+  int get UINT_LEAST16_MAX => ffi.UINT_LEAST16_MAX;
   @override
-  int get UINT_LEAST32_MAX => throw UnsupportedError('UINT_LEAST32_MAX');
+  int get UINT_LEAST32_MAX => ffi.UINT_LEAST32_MAX;
   @override
-  int get UINT_LEAST64_MAX => throw UnsupportedError('UINT_LEAST64_MAX');
+  int get UINT_LEAST64_MAX => ffi.UINT_LEAST64_MAX;
   @override
-  int get UINT_LEAST8_MAX => throw UnsupportedError('UINT_LEAST8_MAX');
+  int get UINT_LEAST8_MAX => ffi.UINT_LEAST8_MAX;
   @override
   int get USER_ADDR_NULL => throw UnsupportedError('USER_ADDR_NULL');
   @override
@@ -2951,9 +3003,9 @@ mixin GnuMacroMixin on PlatformLibC {
   int get WAKEMON_SET_DEFAULTS =>
       throw UnsupportedError('WAKEMON_SET_DEFAULTS');
   @override
-  int get WCHAR_MAX => throw UnsupportedError('WCHAR_MAX');
+  int get WCHAR_MAX => ffi.WCHAR_MAX;
   @override
-  int get WCHAR_MIN => throw UnsupportedError('WCHAR_MIN');
+  int get WCHAR_MIN => ffi.WCHAR_MIN;
   @override
   int get WCONTINUED => ffi.WCONTINUED;
   @override
@@ -2961,9 +3013,9 @@ mixin GnuMacroMixin on PlatformLibC {
   @override
   int get WEXITED => ffi.WEXITED;
   @override
-  int get WINT_MAX => throw UnsupportedError('WINT_MAX');
+  int get WINT_MAX => ffi.WINT_MAX;
   @override
-  int get WINT_MIN => throw UnsupportedError('WINT_MIN');
+  int get WINT_MIN => ffi.WINT_MIN;
   @override
   int get WNOHANG => ffi.WNOHANG;
   @override

@@ -22,6 +22,60 @@ class GnuLibC {
           lookup)
       : _lookup = lookup;
 
+  int epoll_create1(
+    int __flags,
+  ) {
+    return _epoll_create1(
+      __flags,
+    );
+  }
+
+  late final _epoll_create1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('epoll_create1');
+  late final _epoll_create1 = _epoll_create1Ptr.asFunction<int Function(int)>();
+
+  int epoll_ctl(
+    int __epfd,
+    int __op,
+    int __fd,
+    ffi.Pointer<epoll_event> __event,
+  ) {
+    return _epoll_ctl(
+      __epfd,
+      __op,
+      __fd,
+      __event,
+    );
+  }
+
+  late final _epoll_ctlPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Int, ffi.Int, ffi.Int,
+              ffi.Pointer<epoll_event>)>>('epoll_ctl');
+  late final _epoll_ctl = _epoll_ctlPtr
+      .asFunction<int Function(int, int, int, ffi.Pointer<epoll_event>)>();
+
+  int epoll_wait(
+    int __epfd,
+    ffi.Pointer<epoll_event> __events,
+    int __maxevents,
+    int __timeout,
+  ) {
+    return _epoll_wait(
+      __epfd,
+      __events,
+      __maxevents,
+      __timeout,
+    );
+  }
+
+  late final _epoll_waitPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Int, ffi.Pointer<epoll_event>, ffi.Int,
+              ffi.Int)>>('epoll_wait');
+  late final _epoll_wait = _epoll_waitPtr
+      .asFunction<int Function(int, ffi.Pointer<epoll_event>, int, int)>();
+
   ffi.Pointer<ffi.Int> errno() {
     return _errno();
   }
@@ -30,6 +84,39 @@ class GnuLibC {
       _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Int> Function()>>(
           '__errno_location');
   late final _errno = _errnoPtr.asFunction<ffi.Pointer<ffi.Int> Function()>();
+
+  int eventfd(
+    int __count,
+    int __flags,
+  ) {
+    return _eventfd(
+      __count,
+      __flags,
+    );
+  }
+
+  late final _eventfdPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.UnsignedInt, ffi.Int)>>(
+          'eventfd');
+  late final _eventfd = _eventfdPtr.asFunction<int Function(int, int)>();
+
+  int fstat(
+    int __ver,
+    int __fildes,
+    ffi.Pointer<stat_t> __stat_buf,
+  ) {
+    return _fstat(
+      __ver,
+      __fildes,
+      __stat_buf,
+    );
+  }
+
+  late final _fstatPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Int, ffi.Int, ffi.Pointer<stat_t>)>>('__fxstat');
+  late final _fstat =
+      _fstatPtr.asFunction<int Function(int, int, ffi.Pointer<stat_t>)>();
 
   int glob(
     ffi.Pointer<ffi.Char> __pattern,
@@ -285,6 +372,18 @@ const int EFAULT = 14;
 
 const int EFBIG = 27;
 
+const int EFD_CLOEXEC = 524288;
+
+const int EFD_CLOEXEC1 = 524288;
+
+const int EFD_NONBLOCK = 2048;
+
+const int EFD_NONBLOCK1 = 2048;
+
+const int EFD_SEMAPHORE = 1;
+
+const int EFD_SEMAPHORE1 = 1;
+
 const int EHOSTDOWN = 112;
 
 const int EHOSTUNREACH = 113;
@@ -434,6 +533,46 @@ const int EPERM = 1;
 const int EPFNOSUPPORT = 96;
 
 const int EPIPE = 32;
+
+const int EPOLLERR = 8;
+
+const int EPOLLET = 2147483648;
+
+const int EPOLLEXCLUSIVE = 268435456;
+
+const int EPOLLHUP = 16;
+
+const int EPOLLIN = 1;
+
+const int EPOLLMSG = 1024;
+
+const int EPOLLONESHOT = 1073741824;
+
+const int EPOLLOUT = 4;
+
+const int EPOLLPRI = 2;
+
+const int EPOLLRDBAND = 128;
+
+const int EPOLLRDHUP = 8192;
+
+const int EPOLLRDNORM = 64;
+
+const int EPOLLWAKEUP = 536870912;
+
+const int EPOLLWRBAND = 512;
+
+const int EPOLLWRNORM = 256;
+
+const int EPOLL_CLOEXEC = 524288;
+
+const int EPOLL_CLOEXEC1 = 524288;
+
+const int EPOLL_CTL_ADD = 1;
+
+const int EPOLL_CTL_DEL = 2;
+
+const int EPOLL_CTL_MOD = 3;
 
 const int EPROTO = 71;
 
@@ -634,6 +773,62 @@ const int GLOB_TILDE = 4096;
 const int GLOB_TILDE_CHECK = 16384;
 
 const int INIT_PROCESS = 5;
+
+const int INT16_MAX = 32767;
+
+const int INT16_MIN = -32768;
+
+const int INT32_MAX = 2147483647;
+
+const int INT32_MIN = -2147483648;
+
+const int INT64_MAX = 9223372036854775807;
+
+const int INT64_MIN = -9223372036854775808;
+
+const int INT8_MAX = 127;
+
+const int INT8_MIN = -128;
+
+const int INTMAX_MAX = 9223372036854775807;
+
+const int INTMAX_MIN = -9223372036854775808;
+
+const int INTPTR_MAX = 9223372036854775807;
+
+const int INTPTR_MIN = -9223372036854775808;
+
+const int INT_FAST16_MAX = 9223372036854775807;
+
+const int INT_FAST16_MIN = -9223372036854775808;
+
+const int INT_FAST32_MAX = 9223372036854775807;
+
+const int INT_FAST32_MIN = -9223372036854775808;
+
+const int INT_FAST64_MAX = 9223372036854775807;
+
+const int INT_FAST64_MIN = -9223372036854775808;
+
+const int INT_FAST8_MAX = 127;
+
+const int INT_FAST8_MIN = -128;
+
+const int INT_LEAST16_MAX = 32767;
+
+const int INT_LEAST16_MIN = -32768;
+
+const int INT_LEAST32_MAX = 2147483647;
+
+const int INT_LEAST32_MIN = -2147483648;
+
+const int INT_LEAST64_MAX = 9223372036854775807;
+
+const int INT_LEAST64_MIN = -9223372036854775808;
+
+const int INT_LEAST8_MAX = 127;
+
+const int INT_LEAST8_MIN = -128;
 
 const int IOCSIZE_MASK = 1073676288;
 
@@ -987,6 +1182,10 @@ const int PROT_READ = 1;
 
 const int PROT_WRITE = 2;
 
+const int PTRDIFF_MAX = 9223372036854775807;
+
+const int PTRDIFF_MIN = -9223372036854775808;
+
 const int RAND_MAX = 2147483647;
 
 const int RUN_LVL = 1;
@@ -1000,6 +1199,10 @@ const int SEEK_END = 2;
 const int SEEK_SET = 0;
 
 const int SHADOW_STACK_SET_TOKEN = 1;
+
+const int SIG_ATOMIC_MAX = 2147483647;
+
+const int SIG_ATOMIC_MIN = -2147483648;
 
 const int SIOCADDDLCI = 35200;
 
@@ -1108,6 +1311,8 @@ const int SIOCSIFTXQLEN = 35139;
 const int SIOCSRARP = 35170;
 
 const int SIOGIFINDEX = 35123;
+
+const int SIZE_MAX = -1;
 
 const int SI_LOAD_SHIFT = 16;
 
@@ -1343,6 +1548,34 @@ const int TIOCSWINSZ = 21524;
 
 const int TIOCVHANGUP = 21559;
 
+const int UINT16_MAX = 65535;
+
+const int UINT32_MAX = 4294967295;
+
+const int UINT64_MAX = -1;
+
+const int UINT8_MAX = 255;
+
+const int UINTMAX_MAX = -1;
+
+const int UINTPTR_MAX = -1;
+
+const int UINT_FAST16_MAX = -1;
+
+const int UINT_FAST32_MAX = -1;
+
+const int UINT_FAST64_MAX = -1;
+
+const int UINT_FAST8_MAX = 255;
+
+const int UINT_LEAST16_MAX = 65535;
+
+const int UINT_LEAST32_MAX = 4294967295;
+
+const int UINT_LEAST64_MAX = -1;
+
+const int UINT_LEAST8_MAX = 255;
+
 const int USER_PROCESS = 7;
 
 const int UTIME_NOW = 1073741823;
@@ -1383,9 +1616,17 @@ final class UnnamedStruct3 extends ffi.Struct {
   external int tv_usec;
 }
 
+const int WCHAR_MAX = 2147483647;
+
+const int WCHAR_MIN = -2147483648;
+
 const int WCONTINUED = 8;
 
 const int WEXITED = 4;
+
+const int WINT_MAX = 4294967295;
+
+const int WINT_MIN = 0;
 
 const int WNOHANG = 1;
 
@@ -1431,6 +1672,27 @@ final class __exit_status extends ffi.Struct {
 
   @ffi.Short()
   external int __e_exit;
+}
+
+final class epoll_data extends ffi.Union {
+  external ffi.Pointer<ffi.Void> ptr;
+
+  @ffi.Int()
+  external int fd;
+
+  @ffi.Uint32()
+  external int u32;
+
+  @ffi.Uint64()
+  external int u64;
+}
+
+@ffi.Packed(1)
+final class epoll_event extends ffi.Struct {
+  @ffi.Uint32()
+  external int events;
+
+  external epoll_data data;
 }
 
 final class flock_t extends ffi.Struct {
