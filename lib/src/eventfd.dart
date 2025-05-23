@@ -1,5 +1,5 @@
-import '../gnu/linux/eventfd.dart';
-import '../platform.dart';
+import 'gnu/eventfd.dart';
+import 'platform.dart';
 
 int eventfd(
   int initialValue, {

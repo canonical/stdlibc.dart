@@ -2,10 +2,10 @@ import 'dart:ffi' as ffi;
 
 import 'package:ffi/ffi.dart' as ffi;
 
-import '../../platform.dart';
-import '../ffigen.dart' as ffi;
-import '../ffigen.dart';
-import '../gnu.dart';
+import '../platform.dart';
+import 'ffigen.dart' as ffi;
+import 'ffigen.dart';
+import 'gnu.dart';
 
 /// The operation that epoll_ctl should perform.
 ///

@@ -1,7 +1,7 @@
-import '../gnu/linux/epoll.dart';
-import '../platform.dart';
+import 'gnu/epoll.dart';
+import 'platform.dart';
 
-export '../gnu/linux/epoll.dart';
+export 'gnu/epoll.dart';
 
 /// Creates a new epoll instance.
 ///

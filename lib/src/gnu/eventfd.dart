@@ -1,6 +1,6 @@
-import '../../platform.dart';
-import '../ffigen.dart' as ffi;
-import '../gnu.dart';
+import '../platform.dart';
+import 'ffigen.dart' as ffi;
+import 'gnu.dart';
 
 mixin GnuLinuxEventFdMixin on PlatformLibC {
   int eventfd(
