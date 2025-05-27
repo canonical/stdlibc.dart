@@ -100,24 +100,6 @@ class GnuLibC {
           'eventfd');
   late final _eventfd = _eventfdPtr.asFunction<int Function(int, int)>();
 
-  int fstat(
-    int __ver,
-    int __fildes,
-    ffi.Pointer<stat_t> __stat_buf,
-  ) {
-    return _fstat(
-      __ver,
-      __fildes,
-      __stat_buf,
-    );
-  }
-
-  late final _fstatPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.Int, ffi.Int, ffi.Pointer<stat_t>)>>('__fxstat');
-  late final _fstat =
-      _fstatPtr.asFunction<int Function(int, int, ffi.Pointer<stat_t>)>();
-
   int glob(
     ffi.Pointer<ffi.Char> __pattern,
     int __flags,
@@ -374,15 +356,15 @@ const int EFBIG = 27;
 
 const int EFD_CLOEXEC = 524288;
 
-const int EFD_CLOEXEC1 = 524288;
+const int EFD_CLOEXEC$1 = 524288;
 
 const int EFD_NONBLOCK = 2048;
 
-const int EFD_NONBLOCK1 = 2048;
+const int EFD_NONBLOCK$1 = 2048;
 
 const int EFD_SEMAPHORE = 1;
 
-const int EFD_SEMAPHORE1 = 1;
+const int EFD_SEMAPHORE$1 = 1;
 
 const int EHOSTDOWN = 112;
 
@@ -566,7 +548,7 @@ const int EPOLLWRNORM = 256;
 
 const int EPOLL_CLOEXEC = 524288;
 
-const int EPOLL_CLOEXEC1 = 524288;
+const int EPOLL_CLOEXEC$1 = 524288;
 
 const int EPOLL_CTL_ADD = 1;
 
