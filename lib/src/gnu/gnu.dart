@@ -1,12 +1,12 @@
 import 'dart:ffi' as ffi;
 
 import '../std/std.dart';
+import 'epoll.dart';
 import 'errno.dart';
+import 'eventfd.dart';
 import 'fcntl.dart';
 import 'ffigen.dart' as ffi;
 import 'glob.dart';
-import 'epoll.dart';
-import 'eventfd.dart';
 import 'macros.g.dart';
 import 'mman.dart';
 import 'pwd.dart';
