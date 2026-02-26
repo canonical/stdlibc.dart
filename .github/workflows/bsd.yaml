@@ -23,14 +23,14 @@ jobs:
         add-paths: lib/src/bsd/ffigen.dart
         branch: regenerate/bsd
         delete-branch: true
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v7
       with:
         name: ffigen.dart
         path: lib/src/bsd/ffigen.dart
     - run: |
         git diff > lib_src_bsd_ffigen.dart.diff
         [ -s lib_src_bsd_ffigen.dart.diff ] || rm lib_src_bsd_ffigen.dart.diff
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v7
       with:
         name: lib_src_bsd_ffigen.dart.diff
         path: lib_src_bsd_ffigen.dart.diff
