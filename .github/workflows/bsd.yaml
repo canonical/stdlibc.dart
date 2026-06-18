@@ -11,7 +11,7 @@ jobs:
   ffigen:
     runs-on: macos-15
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
     - uses: dart-lang/setup-dart@v1
     - run: dart pub get
     - run: dart run ffigen --config lib/src/bsd/ffigen.yaml
